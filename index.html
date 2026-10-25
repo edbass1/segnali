@@ -62,7 +62,7 @@ tr.value td{background:rgba(25,227,107,.13)}
 tr.value td:first-child{border-left:5px solid var(--grn)}
 .pos{color:var(--grn);font-weight:800}.neg{color:#ff7a7a}.mut{color:var(--mut)}
 .tag{display:inline-block;font-size:.72rem;font-weight:800;padding:2px 7px;border-radius:6px;background:var(--grn);color:#000}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:14px}.grid2>*{min-width:0}
 @media (max-width:860px){.grid2{grid-template-columns:1fr}html{font-size:19px}.verdict .big{font-size:2.2rem}}
 .form{display:inline-flex;gap:4px;vertical-align:middle}
 .form i{font-style:normal;display:inline-block;width:28px;height:28px;line-height:28px;text-align:center;border-radius:6px;font-weight:900;font-size:.8rem;color:#000}
@@ -90,6 +90,12 @@ tr.value td:first-child{border-left:5px solid var(--grn)}
 .gpro{border:1px solid rgba(34,197,94,.45)}.gpro .gch{color:var(--grn);font-weight:800}
 .gcon{border:1px solid rgba(239,68,68,.45)}.gcon .gch{color:var(--red);font-weight:800}
 .pts{display:inline-block;font-size:.75rem;font-weight:800;padding:0 5px;border-radius:5px;background:#222;white-space:nowrap}
+.pshort{border-left:4px solid var(--acc);font-size:.95rem}.pshort a{color:var(--acc)}
+.amb{color:var(--amb)}
+.prono{border-width:3px}.ptxt p{margin:8px 0;font-size:1.05rem;line-height:1.45}.ptxt p.pval{font-size:.92rem;color:#ffd98a;border-left:3px solid var(--amb);padding-left:8px}
+.ptab{width:100%;border-collapse:collapse}.ptab td,.ptab th{padding:3px 6px;font-size:.9rem;text-align:left}.ptab th{color:var(--acc);padding-top:8px}
+.ptab tr.pbest td{font-weight:800}.pbar{height:10px;background:#222;border-radius:5px;overflow:hidden}.pbar div{height:100%}
+.ptag{display:inline-block;font-size:.72rem;font-weight:800;padding:0 6px;border-radius:5px;background:#1d2a33;color:var(--acc);white-space:nowrap}
 .gneu{color:var(--mut);font-size:.82rem;text-align:left;margin-top:8px}
 .chip.cpos{border-color:rgba(34,197,94,.6);color:#9ff0bd}.chip.cneg{border-color:rgba(239,68,68,.6);color:#ffb0b0}.chip.cneu{color:var(--mut)}
 @media(max-width:600px){.gcols{grid-template-columns:1fr}}
@@ -1025,7 +1031,7 @@ VB.analyze = function (A, D, S, opts) {
   mat.forEach((r, i) => r.forEach((p, j) => { const fh = hs + i, fa = as + j; if (fh > 0 && fa > 0) b += p; if (fh > fa) h1 += p; else if (fh === fa) dx += p; else a2 += p; }));
   P.btts = b; P.x12 = [h1, dx, a2];
   P.nextHome = lhr / Math.max(1e-9, lhr + lar) * P.more; P.nextAway = P.more - P.nextHome;
-  R.P = P; R.M = M;
+  R.P = P; R.M = M; R.mat = mat;
 
   // ---- mercato live (de-vig) – quote alert + quote manuali
   const Q = {};
@@ -1154,7 +1160,157 @@ VB.analyze = function (A, D, S, opts) {
   R.reasons = VB.reasons(R);
   R.callouts = VB.callouts(R);
   R.goal = VB.goalOpinion(R);
+  try { R.prono = VB.pronostico(R); } catch (e) { R.prono = null; R.notes.push('Pronostico non disponibile: ' + e.message); }
   return R;
+};
+
+
+/* ======================= PRONOSTICO FINALE (sintesi deterministica a regole) ======================= */
+VB.pronostico = function (R) {
+  const A = R.A, P = R.P, M = R.M, L = M.live, mat = R.mat, hs = A.score[0], as = A.score[1], tot = hs + as;
+  const hn = R.D.home.team.name, an = R.D.away.team.name, pc = x => Math.round(x * 100) + '%';
+  const out = { final: A.phase === 'FT' };
+  // 1) distribuzione dei risultati finali
+  const sc = [];
+  mat.forEach((r, i) => r.forEach((p, j) => sc.push({ h: hs + i, a: as + j, p })));
+  sc.sort((x, y) => y.p - x.p);
+  const top = sc.slice(0, 5), pTop = top.reduce((s, x) => s + x.p, 0);
+  out.scores = top.map(x => ({ s: x.h + '-' + x.a, h: x.h, a: x.a, p: x.p })); out.other = Math.max(0, 1 - pTop);
+  // 2) esiti
+  const Q = R.Q, mk = k => (R.markets || []).find(m => m.key === k);
+  const x12 = [['1', hn, P.x12[0]], ['X', 'pareggio', P.x12[1]], ['2', an, P.x12[2]]].map(([k, n, p], i) => ({ k, n, p, q: Q.x12 ? Q.x12.p[i] : null }));
+  const nl = tot + 0.5, nl2 = tot + 1.5, qou = L0 => Q.ou && Q.ou[L0] ? Q.ou[L0].p[0] : null;
+  const bothIn = hs > 0 && as > 0;
+  out.x12 = x12; out.x12best = [...x12].sort((a, b) => b.p - a.p)[0];
+  out.ou = [{ line: nl, over: P.over[nl], q: qou(nl) }, { line: nl2, over: P.over[nl2], q: qou(nl2) }];
+  out.btts = bothIn ? { done: true } : { p: P.btts, q: Q.btts ? Q.btts.p[0] : null };
+  const pNone = 1 - P.more;
+  out.next = [{ k: 'home', n: hn, p: P.nextHome }, { k: 'away', n: an, p: P.nextAway }, { k: 'none', n: 'nessuno', p: pNone }];
+  // finestra del prossimo gol: intensità per fascia (forma del campionato x tendenze squadre, normalizzata ai λ residui)
+  const ak = alertKey(A), H = R.goalStats.home, W = R.goalStats.away, B = H.base && H.base.n >= 20 ? H.base : (W.base && W.base.n >= 20 ? W.base : null);
+  const rems = BANDS.map((_, b) => bandRemaining(b, ak));
+  const lenB = b => (b === 2 || b === 5) ? 18 : 15;
+  const shapeOf = (att, conc) => BANDS.map((_, b) => {
+    if (!rems[b]) return 0;
+    const q = B ? B.rate[b] : lenB(b) / 93;
+    const a = att && att.bands[b] && att.bands[b].att ? att.bands[b].att.rs : q, c = conc && conc.bands[b] && conc.bands[b].conc ? conc.bands[b].conc.rs : q;
+    return Math.sqrt(a * c) * rems[b];
+  });
+  const norm = (v, lam) => { const s = v.reduce((x, y) => x + y, 0); return s ? v.map(x => x / s * lam) : v.map(() => 0); };
+  const iH = norm(shapeOf(H.vs, W.vs), L.lhr), iA = norm(shapeOf(W.vs, H.vs), L.lar);
+  let surv = 1; const bands = [];
+  BANDS.forEach((bd, b) => { if (!rems[b]) return; const lb = iH[b] + iA[b], pb = surv * (1 - Math.exp(-lb)); bands.push({ b, lbl: bd[2], p: pb, pH: lb ? pb * iH[b] / lb : 0, pA: lb ? pb * iA[b] / lb : 0 }); surv *= Math.exp(-lb); });
+  out.bands = bands; out.bandBest = bands.length ? [...bands].sort((x, y) => y.p - x.p)[0] : null;
+  if (out.final) { out.text = ['Partita finita: nessun pronostico.']; out.conf = { label: '–', score: 0 }; out.pro = []; out.contro = []; out.caveats = []; return out; }
+
+  // 3) pronostico principale
+  const Gp = R.goal && R.goal.p != null ? R.goal.p : P.more, goal = (P.more + Gp) / 2 >= 0.5;
+  const pGoalTxt = Math.abs(Gp - P.more) >= 0.03 ? `modello ${pc(P.more)}, stima calibrata sul campionato ${pc(Gp)}` : pc(P.more);
+  const nx = P.nextHome >= P.nextAway ? out.next[0] : out.next[1];
+  const nxShare = P.more ? nx.p / P.more : 0.5;
+  const scorerClear = nxShare >= 0.56;
+  const main = { goal, scorer: goal && scorerClear ? nx.k : null, x12: out.x12best.k };
+  out.main = main;
+  const T = { goal: 'Altro gol', nogoal: 'Nessun altro gol', home: 'Gol ' + hn, away: 'Gol ' + an, '1': '1 ' + hn, X: 'X', '2': '2 ' + an };
+  const supports = tag => (tag === 'goal' && goal) || (tag === 'nogoal' && !goal) || (tag === main.scorer) || (tag === main.x12) ||
+    (main.scorer == null && goal && (tag === 'home' || tag === 'away')) ;
+  const F = [];
+  const add = (tag, w, txt) => { if (w > 0) F.push({ tag, tagLbl: T[tag], w, txt }); };
+  // modello vs mercato
+  const nm = mk('O' + nl);
+  if (Q.ou && Q.ou[nl]) { const d = P.over[nl] - Q.ou[nl].p[0]; if (Math.abs(d) >= 0.03) add(d > 0 ? 'goal' : 'nogoal', Math.min(1, Math.abs(d) * 8), `Modello vs mercato sull'Over ${nl}: ${pc(P.over[nl])} contro ${pc(Q.ou[nl].p[0])} implicito nella quota (${d > 0 ? '+' : ''}${Math.round(d * 100)} punti)`); }
+  if (Q.x12) x12.forEach(o => { const d = o.p - o.q; if (d >= 0.04) add(o.k, Math.min(1, d * 7), `Modello più ottimista del mercato sul ${o.k} (${o.n}): ${pc(o.p)} vs ${pc(o.q)}`); });
+  // ARRIVA IL GOL? vs media campionato
+  const G = R.goal;
+  if (G && G.rel) {
+    if (G.rel === 'SOPRA') add('goal', Math.min(1, G.delta / 10), `Arriva il gol?: ${pc(G.p)} vs ${pc(G.base.p)} media campionato in questa situazione (+${G.delta.toFixed(1)} punti)`);
+    else if (G.rel === 'SOTTO') add('nogoal', Math.min(1, -G.delta / 10), `Arriva il gol?: ${pc(G.p)} vs ${pc(G.base.p)} media campionato in questa situazione (${G.delta.toFixed(1)} punti): partita meno da gol della media`);
+    else F.push({ tag: null, w: 0.2, neutral: true, txt: `Arriva il gol?: ${pc(G.p)}, nella media del campionato (${pc(G.base.p)})` });
+    const keep = x => x.pts != null && /^(Gol dopo|xG storici)/.test(x.txt);
+    (G.pro || []).filter(keep).slice(0, 2).forEach(x => add('goal', Math.min(1, x.pts / 6), x.txt));
+    (G.contro || []).filter(keep).slice(0, 2).forEach(x => add('nogoal', Math.min(1, -x.pts / 6), x.txt));
+  }
+  // tendenze squadre (tempi dei gol)
+  (R.callouts || []).slice(0, 4).forEach(c => {
+    const team = c.side; // segna di più -> gol di quella squadra; subisce di più -> gol dell'avversaria
+    const scorer = c.kind === 'att' ? team : (team === 'home' ? 'away' : 'home');
+    add(c.up ? scorer : 'nogoal', Math.min(0.8, Math.abs(c.idx) * c.rel * 1.5 + 0.15), c.txt);
+  });
+  // pressione live per squadra
+  if (L.obs[0] != null && M.elapsed > 0.1) {
+    [0, 1].forEach(i => { const r = (L.obs[i] + 0.3) / (L.exp[i] + 0.3) - 1, tm = i ? an : hn, st = A.stats;
+      if (r >= 0.2) add(i ? 'away' : 'home', Math.min(1, r), `Pressione live di ${tm}: ${st.xg ? 'xG ' + st.xg[i] : 'tiri in porta ' + (st.sot ? st.sot[i] : '?')} vs ${L.exp[i].toFixed(2)} attesi a questo punto (+${Math.round(r * 100)}%)`); });
+    const o = L.obs[0] + L.obs[1], e = L.exp[0] + L.exp[1], r = (o + 0.5) / (e + 0.5) - 1;
+    if (r <= -0.2) add('nogoal', Math.min(1, -r * 1.5), `Ritmo live basso: xG/tiri ${o.toFixed(2)} vs ${e.toFixed(2)} attesi (${Math.round(r * 100)}%)`);
+  }
+  // espulsioni
+  const red = (A.stats.red || [0, 0]); if (red[0] !== red[1]) add(red[0] > red[1] ? 'away' : 'home', 0.7, `Superiorità numerica di ${red[0] > red[1] ? an : hn} (rossi ${red.join('-')})`);
+  // storico stessa situazione
+  const hp = R.histP;
+  if (hp.more && hp.more.n >= 8) add(hp.more.p >= 0.5 ? 'goal' : 'nogoal', Math.min(0.8, Math.abs(hp.more.p - 0.5) * 2 * Math.min(1, hp.more.n / 20)), `Storico delle due squadre nella stessa situazione: altro gol nel ${pc(hp.more.p)} (${hp.more.n} gare)`);
+  if (hp.x12 && hp.x12.n >= 8) { const i = hp.x12.p.indexOf(Math.max(...hp.x12.p)), k = ['1', 'X', '2'][i]; add(k, Math.min(0.7, (hp.x12.p[i] - 0.34) * 2), `Storico stessa situazione di punteggio: esito finale ${k} nel ${pc(hp.x12.p[i])} (${hp.x12.n} gare)`); }
+  // H2H
+  const h2 = R.h2h || [];
+  if (h2.length >= 3) {
+    const w = h2.filter(x => x.gf > x.ga).length, d = h2.filter(x => x.gf === x.ga).length, l = h2.length - w - d, g = h2.reduce((s, x) => s + x.gf + x.ga, 0) / h2.length;
+    const k = w > l && w >= d ? '1' : l > w && l >= d ? '2' : 'X';
+    add(k, Math.min(0.5, 0.1 * h2.length), `Scontri diretti (${h2.length}): ${hn} ${w}V ${d}N ${l}P, ${g.toFixed(1)} gol a partita`);
+    if (g >= 3) add('goal', 0.3, `Scontri diretti con molti gol (${g.toFixed(1)} a partita)`); else if (g <= 1.8) add('nogoal', 0.3, `Scontri diretti con pochi gol (${g.toFixed(1)} a partita)`);
+  }
+  // forma e classifica
+  const fp = f => f.reduce((s, x) => s + (x === 'V' ? 3 : x === 'N' ? 1 : 0), 0);
+  const fh = fp(R.home.form || []), fa = fp(R.away.form || []);
+  if (Math.abs(fh - fa) >= 5) add(fh > fa ? '1' : '2', 0.35, `Forma (ultime 5): ${hn} ${(R.home.form || []).join('')} vs ${an} ${(R.away.form || []).join('')}`);
+  const rh = R.home.row, ra = R.away.row;
+  if (rh && ra && rh.group === ra.group && Math.abs(rh.pos - ra.pos) >= 5) add(rh.pos < ra.pos ? '1' : '2', 0.3, `Classifica: ${hn} ${rh.pos}° (${rh.pts} pt) vs ${an} ${ra.pos}° (${ra.pts} pt)`);
+  // squadre in vantaggio/svantaggio: modello sul prossimo gol
+  if (goal) add(nx.k, Math.min(0.9, (nxShare - 0.5) * 3), `Modello: il prossimo gol è di ${nx.n} nel ${pc(nxShare)} dei casi in cui arriva (gol attesi residui ${L.lhr.toFixed(2)} - ${L.lar.toFixed(2)})`);
+  F.sort((a, b) => b.w - a.w);
+  out.pro = F.filter(f => !f.neutral && supports(f.tag)).slice(0, 6);
+  out.contro = F.filter(f => !f.neutral && !supports(f.tag)).slice(0, 6);
+  out.neutral = F.filter(f => f.neutral);
+  // avvertenze
+  const cav = [];
+  if (!R.sampleOK) cav.push('Poche partite storiche per almeno una squadra: stima meno affidabile');
+  if (R.dataQ < 0.6) cav.push(`Qualità dati limitata (${Math.round(R.dataQ * 100)}/100)`);
+  if (!M.pre) cav.push('Quote pre-match assenti: forza delle squadre stimata solo dallo storico');
+  if (!B) cav.push('Campione del campionato insufficiente per il confronto dei tempi dei gol');
+  if (R.leagueGoal && R.leagueGoal.xgTeam == null) cav.push('xG storici non disponibili per questo campionato');
+  if (L.obs[0] == null) cav.push('Statistiche live (xG/tiri) assenti nell\'alert');
+  if (top[0].p < 0.2) cav.push(`Il risultato esatto è sempre incerto: anche il più probabile arriva solo nel ${pc(top[0].p)} dei casi`);
+  out.caveats = cav;
+  // 4) confidenza (qualità dati + accordo fra fonti + nettezza)
+  const agreeMkt = Q.ou && Q.ou[nl] ? 1 - clamp(Math.abs(P.over[nl] - Q.ou[nl].p[0]) / 0.15, 0, 1) : 0.5;
+  const agreeHist = hp.more && hp.more.n >= 8 ? 1 - clamp(Math.abs(P.more - hp.more.p) / 0.25, 0, 1) : 0.5;
+  const agreeBase = G && G.rel ? (G.rel === 'NELLA' ? 0.7 : ((G.rel === 'SOPRA') === goal ? 1 : 0.3)) : 0.5;
+  const decisive = clamp(Math.abs(P.more - 0.5) / 0.35, 0, 1);
+  const sumPro = out.pro.reduce((s, f) => s + f.w, 0), sumCon = out.contro.reduce((s, f) => s + f.w, 0), balance = (sumPro + 0.5) / (sumPro + sumCon + 1);
+  let cs = 100 * (0.3 * R.dataQ + 0.15 * agreeMkt + 0.15 * agreeHist + 0.1 * agreeBase + 0.15 * decisive + 0.15 * balance) - 4 * Math.max(0, cav.length - 2);
+  cs = Math.round(clamp(cs, 0, 100));
+  out.conf = { score: cs, label: cs >= 70 ? 'alta' : cs >= 50 ? 'media' : 'bassa', agreeMkt, agreeHist, agreeBase, decisive, balance };
+  // testo
+  const when = A.phase === 'HT' ? "dall'intervallo" : A.phase === 'PRE' ? 'dal fischio d\'inizio' : `dal ${A.minute}'`;
+  const s1 = [];
+  if (goal) {
+    let t = `Pronostico: almeno un altro gol (${pGoalTxt})`;
+    if (main.scorer) t += `, più probabile di ${nx.n} (${pc(nx.p)} che segni lei il prossimo)`;
+    else t += `, senza una squadra nettamente favorita per segnarlo (${hn} ${pc(P.nextHome)}, ${an} ${pc(P.nextAway)})`;
+    const bb = out.bandBest;
+    if (bb) { const bs = main.scorer ? (main.scorer === 'home' ? bb.pH : bb.pA) : bb.p; t += `; fascia più probabile per il prossimo gol ${bb.lbl} (${pc(bb.p)}${main.scorer ? `, di cui ${pc(bs)} ${nx.n}` : ''})`; }
+    s1.push(t + '.');
+  } else s1.push(`Pronostico: nessun altro gol ${when} (${pc(pNone)}${Math.abs(Gp - P.more) >= 0.03 ? `; stima calibrata sul campionato ${pc(1 - Gp)}` : ''}), risultato finale ${hs}-${as}.`);
+  s1.push(`Risultato esatto più probabile ${top[0].h}-${top[0].a} (${pc(top[0].p)}), poi ${top.slice(1, 3).map(x => `${x.h}-${x.a} (${pc(x.p)})`).join(' e ')}; esito finale più probabile ${out.x12best.k === 'X' ? 'pareggio' : out.x12best.k + ' (' + out.x12best.n + ')'} al ${pc(out.x12best.p)}${bothIn ? '' : `, Goal (entrambe segnano) ${pc(P.btts)}`}.`);
+  if (goal && top[0].h === hs && top[0].a === as) s1[s1.length - 1] = s1[s1.length - 1].replace(/\.$/, ` (${hs}-${as} è il singolo risultato più probabile, ma sommando tutti gli altri è più probabile che arrivi almeno un gol).`);
+  s1.push(`Fiducia ${out.conf.label} sul pronostico ${goal ? 'gol' : 'nessun gol'} (${cs}/100): ${[R.dataQ >= 0.75 ? 'dati completi' : R.dataQ >= 0.55 ? 'dati discreti' : 'dati scarsi', agreeMkt >= 0.7 ? 'modello e mercato concordano' : agreeMkt <= 0.35 ? 'modello e mercato divergono' : null, agreeHist >= 0.7 ? 'lo storico conferma' : agreeHist <= 0.35 ? 'lo storico non conferma' : null, sumCon > sumPro ? 'più fattori contro che a favore' : null].filter(Boolean).join(', ')}.`);
+  // nota valore
+  const vm = goal ? (R.overNext || nm) : mk('U' + nl);
+  let vt = `Questo è l'esito più probabile, non una giocata di valore: verdetto valore = ${R.verdict}`;
+  if (vm) vt += `; ad esempio ${goal ? 'Over' : 'Under'} ${nl} ha probabilità ${pc(vm.p)} ma a quota ${vm.odds.toFixed(2)} l'EV è ${vm.ev >= 0 ? '+' : ''}${(vm.ev * 100).toFixed(1)}%${vm.value ? ' (con valore)' : ' (senza valore)'}`;
+  else vt += `; la quota ${goal ? 'Over' : 'Under'} ${nl} non è presente: per avere valore servirebbe almeno ${goal && R.overNextModel.minOdds ? R.overNextModel.minOdds.toFixed(2) : '–'}`;
+  s1.push(vt + '.');
+  out.text = s1;
+  out.short = goal ? `almeno un altro gol (${pGoalTxt})${main.scorer ? ', più probabile di ' + nx.n : ''}` : `nessun altro gol (${pc(pNone)})`;
+  return out;
 };
 
 /* ======================= QUOTE EFFETTIVE (alert + manuali) ======================= */
@@ -1558,6 +1714,7 @@ function render(R) {
     ${warn.length ? `<div class="notes">⚠️ ${warn.map(esc).join(' · ')}</div>` : ''}
     ${(b || ba) && v !== 'SEGNALE' ? `<div class="btns" style="justify-content:center"><button class="small" id="btnLogManual">➕ Salva comunque nel registro</button></div>` : ''}</div>`;
 
+  h += pronoShort(R);
   h += goalBox(R);
   // filtri
   h += `<h2>🎯 Filtri</h2><div class="card">${filterHtml(R.filters, false)}</div>`;
@@ -1600,8 +1757,48 @@ function render(R) {
   h += `<h2>🗓️ Ultime 10 partite</h2><div class="grid2">${lastCard(R, 'home')}${lastCard(R, 'away')}</div>`;
   if (R.h2h.length) h += `<h2>⚔️ Scontri diretti (nei dati scaricati)</h2><div class="card tw">${matchTable(R.h2h, R.D.home.team.name)}</div>`;
   h += modelDetails(R);
+  h += pronoSection(R);
   $('out').innerHTML = h;
   const bl = $('btnLogManual'); if (bl) bl.onclick = () => { const isNew = addSignal(VB.signalFromResult(R, R.best || R.bestAny), true); bl.textContent = isNew ? '✔ Salvato nel registro' : '✔ Già nel registro (aggiornato)'; bl.disabled = true; };
+}
+/* ---------- PRONOSTICO FINALE ---------- */
+function pronoShort(R) {
+  const X = R.prono; if (!X || X.final) return '';
+  const t = X.scores[0], cc = X.conf.label === 'alta' ? 'pos' : X.conf.label === 'bassa' ? 'neg' : 'amb';
+  return `<div class="card pshort"><b>🧠 Pronostico</b> <span class="mut" style="font-size:.78rem">(sintesi automatica del modello)</span>: <b>${esc(X.short)}</b> · risultato più probabile <b>${t.s}</b> (${P0(t.p)}) · esito finale ${X.x12best.k} ${P0(X.x12best.p)} · fiducia <b class="${cc}">${X.conf.label}</b> <a href="#pronostico">→ dettagli</a>
+    <div class="mut" style="font-size:.75rem">Pronostico ≠ valore: per la giocata vale il verdetto qui sopra.</div></div>`;
+}
+function pronoSection(R) {
+  const X = R.prono; if (!X) return '';
+  let h = `<h2 id="pronostico">🧠 PRONOSTICO FINALE</h2>`;
+  if (X.final) return h + `<div class="card mut">Partita finita: nessun pronostico.</div>`;
+  const cc = X.conf.label === 'alta' ? 'var(--grn)' : X.conf.label === 'bassa' ? 'var(--red)' : 'var(--amb)';
+  const bar = (p, col) => `<div class="pbar"><div style="width:${Math.round(p * 100)}%;background:${col || 'var(--acc)'}"></div></div>`;
+  const mq = q => q != null ? `<span class="mut"> · mercato ${P0(q)}</span>` : '';
+  h += `<div class="card prono" style="border-color:${cc}">
+    <div class="mut" style="font-size:.8rem">Sintesi automatica del modello: regole fisse applicate a tutti i dati analizzati (statistiche, tempi dei gol, live, quote). Nessuna AI esterna.</div>
+    <div class="ptxt">${X.text.map((t, i) => `<p${i === X.text.length - 1 ? ' class="pval"' : ''}>${i === 0 ? '<b>' + esc(t) + '</b>' : esc(t)}</p>`).join('')}</div>
+    <div class="mut" style="font-size:.75rem">Fiducia = qualità dei dati, accordo tra modello, mercato, storico e media del campionato, nettezza della probabilità e bilancio pro/contro.</div></div>`;
+  // risultati esatti
+  h += `<div class="grid2"><div class="card"><h3 style="margin-top:0">🎯 Risultati finali più probabili</h3><table class="ptab">${X.scores.map((s, i) => `<tr><td><b>${s.s}</b></td><td style="width:60%">${bar(s.p, i ? 'var(--acc)' : 'var(--grn)')}</td><td>${P0(s.p)}</td></tr>`).join('')}<tr><td class="mut">altro</td><td>${bar(X.other, '#555')}</td><td class="mut">${P0(X.other)}</td></tr></table>
+    <div class="mut" style="font-size:.75rem">Dal punteggio attuale, con i gol attesi residui del modello (storico, live, tempi dei gol, quote pre-match).</div></div>`;
+  // esiti
+  const row = (lbl, p, q, best) => `<tr${best ? ' class="pbest"' : ''}><td>${lbl}</td><td style="width:45%">${bar(p, best ? 'var(--grn)' : 'var(--acc)')}</td><td>${P0(p)}${mq(q)}</td></tr>`;
+  const bx = X.x12best.k;
+  let e = `<tr><th colspan="3">Esito finale 1X2</th></tr>` + X.x12.map(o => row(o.k === 'X' ? 'X pareggio' : o.k + ' ' + esc(o.n), o.p, o.q, o.k === bx)).join('');
+  e += `<tr><th colspan="3">Gol</th></tr>` + X.ou.map(o => row(`Over ${o.line}`, o.over, o.q, false) + row(`Under ${o.line}`, 1 - o.over, o.q != null ? 1 - o.q : null, false)).join('');
+  e += X.btts.done ? `<tr><td>Goal (GG)</td><td colspan="2" class="mut">già fatto</td></tr>` : row('Goal (GG)', X.btts.p, X.btts.q, X.btts.p >= 0.5) + row('No Goal (NG)', 1 - X.btts.p, X.btts.q != null ? 1 - X.btts.q : null, X.btts.p < 0.5);
+  const nb = [...X.next].sort((a, b) => b.p - a.p)[0].k;
+  e += `<tr><th colspan="3">Prossimo gol</th></tr>` + X.next.map(n => row(n.k === 'none' ? 'nessun altro gol' : esc(n.n), n.p, null, n.k === nb)).join('');
+  if (X.bands.length) { const bb = X.bandBest.b; e += `<tr><th colspan="3">Quando arriva il prossimo gol</th></tr>` + X.bands.map(b => row(`${b.lbl} <span class="mut" style="font-size:.75rem">(casa ${P0(b.pH)} · ospite ${P0(b.pA)})</span>`, b.p, null, b.b === bb)).join(''); }
+  h += `<div class="card"><h3 style="margin-top:0">📊 Esiti più probabili</h3><table class="ptab">${e}</table></div></div>`;
+  // pro e contro
+  const li = f => `<li><span class="ptag">${esc(f.tagLbl || '')}</span> ${esc(f.txt)}</li>`;
+  h += `<div class="gcols" style="margin-bottom:12px"><div class="gcol gpro"><div class="gch">➕ Pro del pronostico</div>${X.pro.length ? `<ul>${X.pro.map(li).join('')}</ul>` : '<div class="mut">nessuno</div>'}</div>
+    <div class="gcol gcon"><div class="gch">➖ Contro (sostengono altri esiti)</div>${X.contro.length ? `<ul>${X.contro.map(li).join('')}</ul>` : '<div class="mut">nessuno</div>'}</div></div>`;
+  if (X.neutral && X.neutral.length) h += `<div class="gneu" style="margin-bottom:8px">${X.neutral.map(f => esc(f.txt)).join(' · ')}</div>`;
+  if (X.caveats.length) h += `<div class="card notes"><b>⚠️ Limiti dei dati</b><ul>${X.caveats.map(c => `<li>${esc(c)}</li>`).join('')}</ul></div>`;
+  return h;
 }
 /* ---------- ARRIVA IL GOL? e tempi dei gol ---------- */
 const sgnI = x => x == null || !isFinite(x) ? '–' : (x >= 0 ? '+' : '') + Math.round(x * 100) + '%';
