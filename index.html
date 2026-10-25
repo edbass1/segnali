@@ -81,7 +81,18 @@ tr.value td:first-child{border-left:5px solid var(--grn)}
 .gbh{display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left}
 .gbt{font-size:1.7rem;font-weight:900;letter-spacing:.5px}
 .gbs{font-size:2.6rem;font-weight:900;line-height:1}
-.gbl{font-size:1.35rem;font-weight:800;margin-top:4px}
+.gbl{font-size:1.5rem;font-weight:900;margin-top:6px}
+.gbd{font-size:1.05rem;margin-top:2px}.gbm{font-size:.9rem;margin-top:2px}
+.gmeter{position:relative;height:14px;background:#222;border:1px solid #444;border-radius:7px;margin:10px 0;overflow:visible}
+.gmeter div{height:100%;border-radius:7px}.gmeter i{position:absolute;top:-5px;width:3px;height:22px;background:#fff;border-radius:2px;margin-left:-1px}
+.gcols{display:grid;grid-template-columns:1fr 1fr;gap:10px;text-align:left}
+.gcol{border-radius:8px;padding:8px 10px;background:#141414}.gcol ul{margin:4px 0 0;padding-left:16px}.gcol li{margin:4px 0;font-size:.9rem}
+.gpro{border:1px solid rgba(34,197,94,.45)}.gpro .gch{color:var(--grn);font-weight:800}
+.gcon{border:1px solid rgba(239,68,68,.45)}.gcon .gch{color:var(--red);font-weight:800}
+.pts{display:inline-block;font-size:.75rem;font-weight:800;padding:0 5px;border-radius:5px;background:#222;white-space:nowrap}
+.gneu{color:var(--mut);font-size:.82rem;text-align:left;margin-top:8px}
+.chip.cpos{border-color:rgba(34,197,94,.6);color:#9ff0bd}.chip.cneg{border-color:rgba(239,68,68,.6);color:#ffb0b0}.chip.cneu{color:var(--mut)}
+@media(max-width:600px){.gcols{grid-template-columns:1fr}}
 .hi{color:var(--grn);font-weight:700}.lo{color:#ff8a8a}
 tr.remrow td:first-child{color:var(--txt);font-weight:600}
 .tw table td:first-child{min-width:190px}
@@ -713,7 +724,7 @@ VB.xgStats = function (list) {
 // baseline campionato da un campione di partite con dettaglio eventi
 VB.leagueTiming = function (ids, details, compact, ak) {
   const ms = ids.map(id => ({ d: details[id], c: compact[id] })).filter(x => x.d && x.d.ok);
-  const n = ms.length, r = { n, b: [0, 0, 0, 0, 0, 0], bH: [0, 0, 0, 0, 0, 0], bA: [0, 0, 0, 0, 0, 0], g1: 0, g2: 0 };
+  const n = ms.length, r = { n, b: [0, 0, 0, 0, 0, 0], bH: [0, 0, 0, 0, 0, 0], bA: [0, 0, 0, 0, 0, 0], g1: 0, g2: 0, byTot: {}, byScore: {} };
   if (!n) return r;
   let any2 = 0, any60 = 0, any75 = 0, anyM = 0, tm2 = 0, tm60 = 0, tm75 = 0, tmM = 0, xs = 0, xn = 0;
   ms.forEach(({ d }) => {
@@ -722,6 +733,10 @@ VB.leagueTiming = function (ids, details, compact, ak) {
     if (d.goals.some(g => g[0] > 45)) any2++; if (d.goals.some(g => g[0] > 60)) any60++; if (d.goals.some(g => g[0] > 75)) any75++; if (d.goals.some(g => k(g) > ak)) anyM++;
     [1, 0].forEach(side => { const G = d.goals.filter(g => g[2] === side); if (G.some(g => g[0] > 45)) tm2++; if (G.some(g => g[0] > 60)) tm60++; if (G.some(g => g[0] > 75)) tm75++; if (G.some(g => k(g) > ak)) tmM++; });
     if (d.xg) { xs += d.xg[0] + d.xg[1]; xn++; }
+    // stato al minuto dell'alert (gol già segnati) e se poi è arrivato un altro gol
+    const bef = d.goals.filter(g => k(g) <= ak), hs = bef.filter(g => g[2]).length, more = d.goals.some(g => k(g) > ak) ? 1 : 0;
+    const t = r.byTot[bef.length] || (r.byTot[bef.length] = [0, 0]); t[0]++; t[1] += more;
+    const sk = hs + '-' + (bef.length - hs), sc = r.byScore[sk] || (r.byScore[sk] = [0, 0]); sc[0]++; sc[1] += more;
   });
   const tot = r.g1 + r.g2;
   Object.assign(r, { gpm: tot / n, sh2: tot ? r.g2 / tot : null, any2: pct(any2, n), any60: pct(any60, n), any75: pct(any75, n), anyM: pct(anyM, n),
@@ -795,48 +810,86 @@ VB.callouts = function (R) {
   out.sort((a, b) => b.rel - a.rel);
   return out;
 };
+// media del campionato nella stessa situazione (minuto + punteggio): P(almeno un altro gol)
+VB.goalBaseline = function (R) {
+  const A = R.A, H = R.goalStats.home, W = R.goalStats.away;
+  const B = H.base && H.base.n >= 20 ? H.base : W.base && W.base.n >= 20 ? W.base : null;
+  if (!B || A.phase === 'FT') return null;
+  const u = B.anyM / 100, nU = B.n, sk = A.score[0] + '-' + A.score[1], tot = A.score[0] + A.score[1];
+  const sc = B.byScore[sk] || [0, 0], tt = B.byTot[tot] || [0, 0];
+  // condizionata al punteggio esatto se il campione basta, altrimenti al totale gol; shrink verso la media non condizionata
+  const c = sc[0] >= 12 ? { n: sc[0], k: sc[1], what: `${sk} ${A.phase === 'HT' ? "all'intervallo" : A.phase === 'PRE' ? 'a inizio partita' : 'al ' + A.minute + "'"}` }
+    : tt[0] >= 8 ? { n: tt[0], k: tt[1], what: `${tot} gol totali ${A.phase === 'HT' ? "all'intervallo" : A.phase === 'PRE' ? 'a inizio partita' : 'al ' + A.minute + "'"}` } : null;
+  const K = 20, p = c ? (c.k + K * u) / (c.n + K) : u, nEff = c ? c.n + K : nU;
+  // stessa media espressa "in termini di modello" (Poisson): gol a partita del campionato x quota dei gol nei minuti restanti
+  const ak = alertKey(A), gb = B.b.reduce((x, y) => x + y, 0), remSh = gb ? B.b.reduce((x, y, i) => x + y * bandRemaining(i, ak), 0) / gb : null;
+  const gpm = R.leagueGoal.gpmSeason || B.gpm, lam = remSh != null ? gpm * remSh : null;
+  return { p, u, nU, cond: c, se: Math.sqrt(p * (1 - p) / Math.max(10, nEff)), lam, pPois: lam != null ? 1 - Math.exp(-lam) : null };
+};
 VB.goalOpinion = function (R) {
-  const A = R.A, P = R.P, ak = alertKey(A), comps = [], why = [];
+  const A = R.A, P = R.P, comps = [];
   const hn = R.D.home.team.name, an = R.D.away.team.name;
-  if (A.phase === 'FT') return { score: 0, label: 'PARTITA FINITA', p: 0, comps, why };
-  const pM = P.more; comps.push({ k: 'Modello (gol residui)', p: pM, w: 0.55 });
+  if (A.phase === 'FT') return { score: 0, label: 'PARTITA FINITA', rel: null, p: 0, comps, why: [], pro: [], contro: [], neutral: [] };
+  const when = A.phase === 'HT' ? "l'intervallo" : A.phase === 'PRE' ? "l'inizio" : 'il ' + A.minute + "'";
+  const lg = x => Math.log(clamp(x, 0.01, 0.99) / (1 - clamp(x, 0.01, 0.99))), il = x => 1 / (1 + Math.exp(-x));
+  const base = VB.goalBaseline(R), L = R.M.live;
+  const pM = P.more, H = R.goalStats.home, W = R.goalStats.away;
+  const lgM = H.base && H.base.n >= 20 ? H.base.anyM / 100 : null;
+  const b = base ? base.p : pM; // senza campione di campionato: riferimento = modello
+  // ogni componente è confrontata con il proprio riferimento "media campionato":
+  //  modello vs media campionato in termini Poisson; storico/squadre vs frequenze reali del campionato
   const hp = R.histP.more;
-  if (hp && hp.n >= 5) comps.push({ k: `Storico stessa situazione (${hp.n} gare)`, p: (hp.p * hp.n + pM * 8) / (hp.n + 8), raw: hp.p, w: 0.2 });
-  const H = R.goalStats.home, W = R.goalStats.away, lgM = H.base && H.base.n >= 20 ? H.base.anyM / 100 : null;
-  const tm = (T, lg) => T && T.n >= 6 ? (T.kAnyM + 10 * (lg != null ? lg : pM)) / (T.n + 10) : null;
+  const tm = (T, lgv) => T && T.n >= 6 ? (T.kAnyM + 10 * (lgv != null ? lgv : pM)) / (T.n + 10) : null;
   const ph = tm(H.all, lgM), pa = tm(W.all, W.base && W.base.n >= 20 ? W.base.anyM / 100 : lgM);
-  if (ph != null || pa != null) {
-    const pt = mean([ph, pa].filter(x => x != null));
-    comps.push({ k: `Partite delle squadre con gol dopo ${A.phase === 'HT' ? "l'intervallo" : A.minute + "'"}`, p: pt, w: 0.25, raw: pt });
+  comps.push({ key: 'model', k: 'Modello (gol residui)', p: pM, ref: base && base.pPois != null ? base.pPois : b, w: 0.55 });
+  if (hp && hp.n >= 5) comps.push({ key: 'hist', k: `Storico stessa situazione (${hp.n} gare)`, p: (hp.p * hp.n + b * 8) / (hp.n + 8), raw: hp.p, ref: b, w: 0.2 });
+  if (ph != null || pa != null) comps.push({ key: 'teams', k: `Partite delle squadre con gol dopo ${when}`, p: mean([ph, pa].filter(x => x != null)), ref: lgM != null ? lgM : b, w: 0.25 });
+  const wS = comps.reduce((s, c) => s + c.w, 0), incs = [];
+  comps.forEach(c => { c.inc = (c.w / wS) * (lg(c.p) - lg(c.ref)); incs.push(c); });
+  // tendenze tempi dei gol: già dentro il modello, ne separo l'effetto
+  let tend = null;
+  if (L && L.tendM && (L.tendM[0] !== 1 || L.tendM[1] !== 1)) {
+    const lam0 = L.lhr / L.tendM[0] + L.lar / L.tendM[1], p0 = 1 - Math.exp(-lam0), mc = comps[0];
+    tend = { key: 'tend', inc: (mc.w / wS) * (lg(pM) - lg(p0)) }; mc.inc -= tend.inc; incs.push(tend);
   }
-  const wS = comps.reduce((s, c) => s + c.w, 0);
-  let p = comps.reduce((s, c) => s + c.w * c.p, 0) / wS;
-  const lg = x => Math.log(x / (1 - x)), il = x => 1 / (1 + Math.exp(-x));
-  let z = lg(clamp(p, 0.01, 0.99));
   // xG storico (fatti dagli attaccanti + concessi dai difensori) vs campionato
-  const lx = R.leagueGoal.xgTeam, XH = H.xg, XA = W.xg;
+  const lx = R.leagueGoal.xgTeam, XH = H.xg, XA = W.xg; let xgc = null, lvc = null;
   if (lx && XH && XA && XH.n >= 5 && XA.n >= 5) {
     const e = ((XH.xgF + XA.xgA) / 2 + (XA.xgF + XH.xgA) / 2) / (2 * lx) - 1, k = Math.min(XH.n, XA.n) / (Math.min(XH.n, XA.n) + 8), d = clamp(e * k, -0.4, 0.4);
-    z += 0.6 * d; comps.push({ k: 'xG storici vs campionato', adj: d });
-    why.push({ rel: Math.abs(d) * 1.2, txt: `xG storici: ${hn} ${XH.xgF.toFixed(2)} fatti / ${XH.xgA.toFixed(2)} concessi, ${an} ${XA.xgF.toFixed(2)} / ${XA.xgA.toFixed(2)} a partita (media campionato ${lx.toFixed(2)}) → ${d >= 0 ? 'partita da gol' : 'partita bloccata'} (${sgnP(d)})` });
+    xgc = { key: 'xg', k: 'xG storici vs campionato', adj: d, inc: 0.6 * d }; comps.push(xgc); incs.push(xgc);
   } else comps.push({ k: 'xG storici vs campionato', na: true });
-  // pressione live (xG/tiri osservati vs attesi, attacchi pericolosi)
-  const L = R.M.live;
   if (L && L.obs[0] != null && R.M.elapsed > 0.1) {
     const o = L.obs[0] + L.obs[1], e = L.exp[0] + L.exp[1], d = clamp((o + 0.5) / (e + 0.5) - 1, -0.5, 0.6);
-    z += 0.35 * d; comps.push({ k: 'Pressione live', adj: d });
-    const st = A.stats;
-    why.push({ rel: Math.abs(d) * 1.1, txt: `Pressione live: ${st.xg ? 'xG ' + st.xg.join('-') : 'tiri ' + (st.sot || ['?', '?']).join('-') + ' in porta'}${st.da ? ', att. pericolosi ' + st.da.join('-') : ''} → ${d >= 0 ? 'sopra' : 'sotto'} le attese pre-match (${sgnP(d)})` });
+    lvc = { key: 'live', k: 'Pressione live', adj: d, inc: 0.35 * d }; comps.push(lvc); incs.push(lvc);
   }
-  p = il(z);
+  const z0 = lg(b), zT = z0 + incs.reduce((s, x) => s + x.inc, 0), p = il(zT);
+  // contributo in punti percentuali (linearizzato attorno al punto medio, somma = scarto totale)
+  const sumInc = incs.reduce((s, x) => s + x.inc, 0), dTot = 100 * (p - b);
+  incs.forEach(x => { x.pts = Math.abs(sumInc) > 1e-6 ? dTot * x.inc / sumInc : 0; });
+  const pm = il((z0 + zT) / 2) * (1 - il((z0 + zT) / 2));
+  if (incs.some(x => Math.sign(x.inc) !== Math.sign(sumInc))) incs.forEach(x => { x.pts = 100 * x.inc * pm; }); // segni misti: niente riscalamento
   const score = Math.round(100 * p);
-  const label = score >= 70 ? 'ALTA' : score >= 50 ? 'MEDIA' : 'BASSA';
-  why.push({ rel: 1.5, txt: `Modello: probabilità di almeno un altro gol ${Math.round(pM * 100)}% (gol attesi residui ${(L.lhr + L.lar).toFixed(2)})` });
-  if (hp && hp.n >= 8) why.push({ rel: 0.4 + Math.abs(hp.p - pM), txt: `Stesso totale gol ${A.phase === 'HT' ? "all'intervallo" : 'al ' + A.minute + "'"} nelle partite delle due squadre: altro gol nel ${Math.round(hp.p * 100)}% (${hp.n} gare)` });
-  const perSide = {}; (R.callouts || []).filter(c => { perSide[c.side] = (perSide[c.side] || 0) + 1; return perSide[c.side] <= 2; }).slice(0, 3).forEach(c => why.push({ rel: c.rel * 1.6, txt: c.txt }));
-  if (ph != null && pa != null) why.push({ rel: 0.5, txt: `Gol dopo ${A.phase === 'HT' ? "l'intervallo" : 'il ' + A.minute + "'"}: nel ${Math.round(H.all.anyM)}% delle partite di ${hn} (${H.all.n}) e nel ${Math.round(W.all.anyM)}% di quelle di ${an} (${W.all.n})${lgM != null ? `; campionato ${Math.round(lgM * 100)}%` : ''}` });
-  why.sort((a, b) => b.rel - a.rel);
-  return { score, label, p, pM, comps, why: why.slice(0, 5).map(x => x.txt) };
+  const absLabel = score >= 70 ? 'ALTA' : score >= 50 ? 'MEDIA' : 'BASSA';
+  let rel = null, delta = null, thr = null;
+  if (base) { delta = dTot; thr = Math.max(4, Math.min(8, 100 * base.se)); rel = delta >= thr ? 'SOPRA' : delta <= -thr ? 'SOTTO' : 'NELLA'; }
+  // motivi
+  const items = [], st = A.stats, cm = k => comps.find(c => c.key === k);
+  const mc = cm('model');
+  items.push({ pts: mc.pts, txt: `Modello (forza squadre, punteggio, ritmo live): almeno un altro gol ${Math.round(pM * 100)}% con ${(L.lhr + L.lar).toFixed(2)} gol attesi residui${base && base.lam != null ? ` (partita media del campionato: ${base.lam.toFixed(2)} → ${Math.round(base.pPois * 100)}%)` : ''}` });
+  if (cm('hist')) items.push({ pts: cm('hist').pts, txt: `Partite delle due squadre con lo stesso totale gol ${A.phase === 'HT' ? "all'intervallo" : 'al ' + A.minute + "'"}: altro gol nel ${Math.round(hp.p * 100)}% (${hp.n} gare) vs ${Math.round(b * 100)}% del campionato` });
+  if (cm('teams')) items.push({ pts: cm('teams').pts, txt: `Gol dopo ${when}: nel ${Math.round(H.all.anyM)}% delle partite di ${hn} (${H.all.n}) e nel ${Math.round(W.all.anyM)}% di quelle di ${an} (${W.all.n})${lgM != null ? ` vs ${Math.round(lgM * 100)}% del campionato` : ''}` });
+  if (tend) items.push({ pts: tend.pts, txt: `Tendenze dei tempi dei gol nei minuti che restano (fattori ${L.tendM[0].toFixed(2)} / ${L.tendM[1].toFixed(2)} nel modello)` });
+  if (xgc) items.push({ pts: xgc.pts, txt: `xG storici: ${hn} ${XH.xgF.toFixed(2)} fatti / ${XH.xgA.toFixed(2)} concessi, ${an} ${XA.xgF.toFixed(2)} / ${XA.xgA.toFixed(2)} a partita (media campionato ${lx.toFixed(2)}): partita ${xgc.adj >= 0 ? 'più aperta' : 'più bloccata'} della media (${sgnP(xgc.adj)})` });
+  if (lvc) items.push({ pts: lvc.pts, txt: `Pressione live: ${st.xg ? 'xG ' + st.xg.join('-') : 'tiri in porta ' + (st.sot || ['?', '?']).join('-')}${st.da ? ', att. pericolosi ' + st.da.join('-') : ''} → ${lvc.adj >= 0 ? 'sopra' : 'sotto'} le attese pre-match (${sgnP(lvc.adj)})` });
+  const pro = [], contro = [], neutral = [];
+  items.forEach(it => { it.pts = Math.round(it.pts * 10) / 10; (it.pts >= 1 ? pro : it.pts <= -1 ? contro : neutral).push(it); });
+  const perSide = {};
+  (R.callouts || []).filter(c => { perSide[c.side] = (perSide[c.side] || 0) + 1; return perSide[c.side] <= 2; }).slice(0, 4)
+    .forEach(c => (c.up ? pro : contro).push({ pts: null, callout: true, idx: c.idx, txt: c.txt }));
+  const ord = (x, y) => (y.pts == null ? -1 : Math.abs(y.pts)) - (x.pts == null ? -1 : Math.abs(x.pts));
+  pro.sort(ord); contro.sort(ord); neutral.sort(ord);
+  const why = [...pro, ...contro].slice(0, 5).map(x => x.txt);
+  return { score, label: rel ? { SOPRA: 'SOPRA LA MEDIA', NELLA: 'NELLA MEDIA', SOTTO: 'SOTTO LA MEDIA' }[rel] : absLabel, absLabel, rel, delta, thr, base, p, pM, comps, pro, contro, neutral, why };
 };
 
 function shrink(sum, n, prior, k) { return (sum + prior * k) / (n + k); }
@@ -1554,14 +1607,33 @@ function render(R) {
 const sgnI = x => x == null || !isFinite(x) ? '–' : (x >= 0 ? '+' : '') + Math.round(x * 100) + '%';
 function goalBox(R) {
   const G = R.goal; if (!G) return '';
-  const col = G.label === 'ALTA' ? 'var(--grn)' : G.label === 'MEDIA' ? 'var(--amb)' : 'var(--red)';
-  const comp = G.comps.map(c => c.na ? `<span class="chip">${esc(c.k)} <b>n.d.</b></span>` : c.adj != null ? `<span class="chip">${esc(c.k)} <b class="${c.adj >= 0 ? 'pos' : 'neg'}">${sgnI(c.adj)}</b></span>` : `<span class="chip">${esc(c.k)} <b>${P0(c.raw != null ? c.raw : c.p)}</b></span>`).join('');
-  return `<div class="card goalbox" style="border-color:${col}"><div class="gbh"><div><div class="gbt">⚽ ARRIVA IL GOL?</div><div class="mut" style="font-size:.8rem">Giudizio sul prossimo gol, indipendente dal valore delle quote</div></div>
-    <div class="gbs" style="color:${col}">${G.score}<span style="font-size:1rem;color:var(--mut)">/100</span></div></div>
-    <div class="gbl" style="color:${col}">${G.label === 'PARTITA FINITA' ? 'PARTITA FINITA' : `${G.label} probabilità di gol`}</div>
-    <div class="meter" style="margin:8px 0"><div style="width:${G.score}%;background:${col}"></div></div>
-    <ul class="reasons" style="text-align:left">${G.why.map(w => `<li>${esc(w)}</li>`).join('')}</ul>
-    <div class="chips">${comp}</div></div>`;
+  if (G.label === 'PARTITA FINITA') return `<div class="card goalbox"><div class="gbt">⚽ ARRIVA IL GOL?</div><div class="gbl mut">PARTITA FINITA</div></div>`;
+  const B = G.base, pct = x => Math.round(x * 100) + '%';
+  const col = G.rel === 'SOPRA' ? 'var(--grn)' : G.rel === 'SOTTO' ? 'var(--red)' : G.rel === 'NELLA' ? 'var(--amb)' : 'var(--mut)';
+  const pts = x => x == null ? '' : `<span class="pts ${x >= 1 ? 'pos' : x <= -1 ? 'neg' : 'mut'}">${x > 0 ? '+' : ''}${x.toFixed(1)} pt</span>`;
+  const li = (it, sign) => `<li>${it.callout ? `<span class="pts ${sign > 0 ? 'pos' : 'neg'}">tendenza ${sgnI(it.idx)}</span>` : pts(it.pts)} ${esc(it.txt)}</li>`;
+  const absTxt = { ALTA: 'alta', MEDIA: 'media', BASSA: 'bassa' }[G.absLabel] || '';
+  let head;
+  if (B) {
+    const cond = B.cond ? `${esc(B.cond.what)}: ${B.cond.k}/${B.cond.n} partite con un altro gol; tutte le partite: ${pct(B.u)} su ${B.nU}` : `tutte le partite del campione: ${pct(B.u)} su ${B.nU}`;
+    head = `<div class="gbl" style="color:${col}">${G.rel === 'SOPRA' ? '▲ ' : G.rel === 'SOTTO' ? '▼ ' : '● '}${esc(G.label)}</div>
+      <div class="gbd"><b>${pct(G.p)}</b> vs <b>${pct(B.p)}</b> media: <b style="color:${col}">${G.delta >= 0 ? '+' : ''}${G.delta.toFixed(1)} punti</b> <span class="mut">(soglia ±${G.thr.toFixed(1)})</span></div>
+      <div class="gbm">Media campionato in questa situazione: <b>${pct(B.p)}</b> <span class="mut">(${cond})</span></div>`;
+  } else head = `<div class="gbl" style="color:${col}">Probabilità ${absTxt} di gol</div><div class="gbm mut">Media del campionato in questa situazione non disponibile (campione di campionato insufficiente): giudizio solo assoluto.</div>`;
+  const meter = `<div class="gmeter"><div style="width:${G.score}%;background:${col}"></div>${B ? `<i style="left:${Math.round(B.p * 100)}%" title="media campionato"></i>` : ''}</div>`;
+  const comp = G.comps.map(c => {
+    if (c.na) return `<span class="chip">${esc(c.k)} <b>n.d.</b></span>`;
+    const v = c.adj != null ? sgnI(c.adj) : P0(c.raw != null ? c.raw : c.p), cls = c.pts == null ? '' : c.pts >= 1 ? 'cpos' : c.pts <= -1 ? 'cneg' : 'cneu';
+    return `<span class="chip ${cls}">${esc(c.k)} <b>${v}</b>${c.pts != null ? ` · ${c.pts > 0 ? '+' : ''}${c.pts.toFixed(1)} pt` : ''}</span>`;
+  }).join('');
+  const col2 = (t, cls, arr, sg) => `<div class="gcol ${cls}"><div class="gch">${t}</div>${arr.length ? `<ul>${arr.map(x => li(x, sg)).join('')}</ul>` : '<div class="mut" style="font-size:.85rem">nessuno</div>'}</div>`;
+  return `<div class="card goalbox" style="border-color:${col}"><div class="gbh"><div><div class="gbt">⚽ ARRIVA IL GOL?</div><div class="mut" style="font-size:.8rem">Giudizio sul prossimo gol rispetto alla media del campionato, indipendente dalle quote</div></div>
+    <div style="text-align:right"><div class="gbs" style="color:${col}">${G.score}%</div><div class="mut" style="font-size:.75rem">stima: almeno un altro gol</div></div></div>
+    ${head}${meter}
+    <div class="gcols">${col2('➕ A favore del gol', 'gpro', G.pro, 1)}${col2('➖ Contro il gol', 'gcon', G.contro, -1)}</div>
+    ${G.neutral.length ? `<div class="gneu"><b>Fattori neutri</b> (meno di 1 punto): ${G.neutral.map(x => esc(x.txt) + ' ' + pts(x.pts)).join(' · ')}</div>` : ''}
+    <div class="chips" style="margin-top:8px">${comp}</div>
+    <div class="mut" style="font-size:.72rem;margin-top:6px;text-align:left">Come si legge: la stima parte dalla media reale del campionato nella stessa situazione e la corregge con lo scarto di ogni fattore dalla sua media di campionato (il modello è confrontato con una partita media del campionato). I punti indicano quanto ogni fattore sposta la stima; le “tendenze” (scarti per fascia di minuti) sono già incluse nel modello. Sopra/sotto la media solo se lo scarto supera la soglia d'incertezza del campione.</div></div>`;
 }
 function timingSection(R) {
   const A = R.A, LG = R.leagueGoal, ak = VB.alertKey(A);
