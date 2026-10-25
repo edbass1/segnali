@@ -77,6 +77,28 @@ tr.value td:first-child{border-left:5px solid var(--grn)}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.88rem}
 .kv div:nth-child(odd){color:var(--mut)}
 .hidden{display:none!important}
+.v-off{border-color:#888} .v-off .big{color:#ddd}
+.fl{list-style:none;padding:0;margin:6px 0 0}
+.fl li{padding:4px 0;font-size:.9rem;border-bottom:1px dashed #222}
+.st-ok{color:var(--grn);font-weight:800}.st-ko{color:var(--red);font-weight:800}.st-na{color:#aaa;font-weight:800}
+.pres{border:2px solid #333;border-radius:12px;padding:10px;margin:10px 0}
+.pres.on{border-color:#2f6f4a}
+.phead{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.phead input[type=text]{flex:1 1 200px}
+.crow{display:grid;grid-template-columns:minmax(150px,2.2fr) 90px 1fr 1fr 54px;gap:6px;margin:6px 0;align-items:center}
+.crow input,.crow select{min-height:44px;font-size:.9rem;padding:6px}
+@media (max-width:620px){.crow{grid-template-columns:1fr 1fr}.crow select:first-child{grid-column:1/-1}}
+.chk{display:flex;align-items:center;gap:8px;font-size:.9rem;color:var(--txt)}
+.chk input{width:26px;height:26px;min-height:0}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin-top:8px}
+.mgrid label{display:flex;flex-direction:column;font-size:.8rem;color:var(--mut);gap:3px}
+.mgrid label.focus{color:var(--grn);font-weight:700}
+.stats{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px;margin:8px 0 12px}
+.stat{background:#141414;border:1px solid #333;border-radius:10px;padding:8px 10px}
+.stat div:first-child{color:var(--mut);font-size:.75rem}.stat div:last-child{font-size:1.25rem;font-weight:800}
+.focusbox{border:2px solid #2a2a2a;border-radius:12px;padding:10px;margin:10px auto 0;max-width:900px;text-align:left}
+td select{min-height:38px;font-size:.85rem;padding:4px}
+
 </style>
 </head>
 <body>
@@ -106,9 +128,23 @@ tr.value td:first-child{border-left:5px solid var(--grn)}
       <label>N partite storiche (max 100)<input id="s_N" type="number" min="10" max="100" step="5" inputmode="numeric"></label>
       <label>Partite con minuti gol (per squadra)<input id="s_nDet" type="number" min="5" max="40" step="1" inputmode="numeric"></label>
       <label>Peso del mercato nella stima (%)<input id="s_mw" type="number" min="0" max="90" step="5" inputmode="numeric"></label>
-      <label>Confidenza minima per GIOCA<input id="s_minconf" type="number" min="0" max="100" step="5" inputmode="numeric"></label>
+      <label>Confidenza minima per SEGNALE<input id="s_minconf" type="number" min="0" max="100" step="5" inputmode="numeric"></label>
+      <label>Quota massima 1X2 (mai proporre oltre)<input id="s_cap1x2" type="number" min="1.01" max="50" step="0.05" inputmode="decimal"></label>
+      <label>Segnale solo se un filtro è soddisfatto<select id="s_reqf"><option value="1">Sì</option><option value="0">No</option></select></label>
     </div>
     <div class="btns"><button class="small" id="btnResetSet">Ripristina predefiniti</button><button class="small" id="btnCache">Svuota cache dati</button></div>
+  </details>
+
+  <div id="pre"></div>
+
+  <details class="card" id="filtBox">
+    <summary>🎯 Filtri (preset segnali)</summary>
+    <div id="filtEd"></div>
+  </details>
+
+  <details class="card" id="logBox">
+    <summary>📒 Registro segnali <span id="logCount" class="mut"></span></summary>
+    <div id="logView"></div>
   </details>
 
   <div class="card hidden" id="progBox">
@@ -208,7 +244,7 @@ function parseAlert(text) {
   const raw = String(text || '').replace(/\r/g, '');
   const lines = raw.split('\n').map(l => l.replace(/\u200b/g, '').trim()).filter(l => l.length);
   const A = { raw, leagueLine: null, league: null, iso2: null, posH: null, posA: null, home: null, away: null,
-    timer: null, minute: null, extra: 0, phase: null, score: null, lastGoal: null, stats: {}, odds: {}, ou: {}, warnings: [] };
+    timer: null, minute: null, extra: 0, phase: null, score: null, lastGoal: null, stats: {}, has: {}, odds: {}, ou: {}, warnings: [] };
   let teamIdx = -1;
   for (let i = 0; i < lines.length; i++) {
     const l = lines[i];
@@ -244,7 +280,7 @@ function parseAlert(text) {
       }
       pending = null;
       if (/^(timer|time|minute|minuto|tempo)$/.test(kl)) { A.timer = parseTimer(val); continue; }
-      if (/^(goals|score|risultato|punteggio)$/.test(kl)) { A.score = pair(val); continue; }
+      if (/^(goals|score|risultato|punteggio)$/.test(kl)) { A.score = pair(val); if (A.score) A.has.score = true; continue; }
       if (/last goal/.test(kl)) { A.lastGoal = /none|nessun/i.test(val) ? null : val; continue; }
       const p = pair(val);
       let sk = null;
@@ -258,15 +294,16 @@ function parseAlert(text) {
       else if (/red cards?|rossi|espulsioni/.test(kl)) sk = 'red';
       else if (/yellow cards?|gialli/.test(kl)) sk = 'yellow';
       else if (/possession|possesso/.test(kl)) sk = 'poss';
+      else if (/penalt|rigori/.test(kl)) sk = 'pen';
       else if (/goals scored avg|media gol/.test(kl)) sk = 'gsAvg';
       else if (/goals conceded avg/.test(kl)) sk = 'gcAvg';
       else if (/^shots$|total shots|tiri totali/.test(kl)) sk = 'shots';
-      if (sk && p) A.stats[sk] = p;
+      if (sk && p) { A.stats[sk] = p; A.has[sk] = true; }
       continue;
     }
     if (pending) { const n = nums(l); if (n.length >= 2) setOdds(A, pending, n); pending = null; }
   }
-  if (!A.timer) { A.warnings.push('Minuto non trovato: assumo intervallo (45\')'); A.timer = { minute: 45, extra: 0, phase: 'HT', label: '45\' (assunto)' }; }
+  if (!A.timer) { A.warnings.push('Minuto non trovato: assumo intervallo (45\')'); A.timer = { minute: 45, extra: 0, phase: 'HT', label: '45\' (assunto)', assumed: true }; }
   A.minute = A.timer.minute; A.extra = A.timer.extra; A.phase = A.timer.phase;
   if (!A.score) { A.warnings.push('Punteggio non trovato: assumo 0-0'); A.score = [0, 0]; }
   if (!A.stats.red) A.stats.red = [0, 0];
@@ -615,8 +652,9 @@ VB.leagueAverages = function (leagues) {
 
 function shrink(sum, n, prior, k) { return (sum + prior * k) / (n + k); }
 
-VB.analyze = function (A, D, S) {
-  const R = { A, D, S, notes: [] };
+VB.analyze = function (A, D, S, opts) {
+  opts = opts || {};
+  const R = { A, D, S, notes: [], opts };
   const hs = A.score[0], as = A.score[1], totNow = hs + as;
   const hId = D.home.team.id, aId = D.away.team.id;
   // ---- liste prospettiva
@@ -701,7 +739,9 @@ VB.analyze = function (A, D, S) {
   let pNo = mat[0][0];
   P.more = 1 - pNo;
   P.over = {}; P.under = {};
-  const lines = uniq([0.5, 1.5, 2.5, 3.5, 4.5, ...Object.values(A.ou).map(o => o.line)]).sort((a, b) => a - b);
+  const O = VB.effectiveOdds(A, opts.manual || {});
+  R.odds = O;
+  const lines = uniq([0.5, 1.5, 2.5, 3.5, 4.5, totNow + 0.5, totNow + 1.5, totNow + 2.5, ...Object.values(O.ou).map(o => o.line)]).sort((a, b) => a - b);
   lines.forEach(L => { let s = 0; mat.forEach((r, i) => r.forEach((p, j) => { if (totNow + i + j > L) s += p; })); P.over[L] = s; P.under[L] = 1 - s; });
   let b = 0, h1 = 0, dx = 0, a2 = 0;
   mat.forEach((r, i) => r.forEach((p, j) => { const fh = hs + i, fa = as + j; if (fh > 0 && fa > 0) b += p; if (fh > fa) h1 += p; else if (fh === fa) dx += p; else a2 += p; }));
@@ -709,12 +749,14 @@ VB.analyze = function (A, D, S) {
   P.nextHome = lhr / Math.max(1e-9, lhr + lar) * P.more; P.nextAway = P.more - P.nextHome;
   R.P = P; R.M = M;
 
-  // ---- mercato live (de-vig)
+  // ---- mercato live (de-vig) – quote alert + quote manuali
   const Q = {};
-  if (A.odds.x12live) Q.x12 = devig([A.odds.x12live.h, A.odds.x12live.d, A.odds.x12live.a]);
-  if (A.odds.btts) Q.btts = devig([A.odds.btts.yes, A.odds.btts.no]);
-  Q.ou = {}; Object.values(A.ou).forEach(o => { Q.ou[o.line] = devig([o.over, o.under]); });
-  Q.rem = VB.marketRemainingLambda(A);
+  const ox = O.x12;
+  if (ox && ox.h && ox.d && ox.a) Q.x12 = devig([ox.h, ox.d, ox.a]);
+  if (O.btts && O.btts.yes && O.btts.no) Q.btts = devig([O.btts.yes, O.btts.no]);
+  Q.ou = {}; const fullOu = {};
+  Object.values(O.ou).forEach(o => { if (o.over && o.under) { Q.ou[o.line] = devig([o.over, o.under]); fullOu[o.line] = o; } });
+  Q.rem = VB.marketRemainingLambda({ score: A.score, ou: fullOu });
   R.Q = Q;
 
   // ---- probabilità storiche condizionate (stessa situazione)
@@ -738,6 +780,7 @@ VB.analyze = function (A, D, S) {
 
   // ---- mercati e value
   const c = (S.commission || 0) / 100, wM = (S.marketWeight != null ? S.marketWeight : 25) / 100;
+  const thr = (S.evThreshold != null ? S.evThreshold : 3) / 100;
   const markets = [];
   const add = (key, label, pModel, odds, pMkt, hist) => {
     if (!odds || odds <= 1) return;
@@ -745,33 +788,34 @@ VB.analyze = function (A, D, S) {
     const bnet = (odds - 1) * (1 - c);
     const ev = p * (1 + bnet) - 1;
     const kelly = bnet > 0 ? (p * bnet - (1 - p)) / bnet : 0;
-    markets.push({ key, label, pModel, p, odds, pMkt, fair: 1 / p, ev, edge: pMkt != null ? p - pMkt : null, kelly, hist });
+    markets.push({ key, label, pModel, p, odds, pMkt, fair: 1 / p, ev, edge: pMkt != null ? p - pMkt : null, kelly, hist, manual: !!O.manualKeys[key], minOdds: VB.minOddsForValue(p, thr, c) });
   };
   const hn = D.home.team.name, an = D.away.team.name;
-  if (A.odds.x12live) {
-    const o = A.odds.x12live, q = Q.x12.p, hp = histP.x12;
-    add('1', `1 – vince ${hn}`, P.x12[0], o.h, q[0], hp && { p: hp.p[0], n: hp.n });
-    add('X', 'X – pareggio', P.x12[1], o.d, q[1], hp && { p: hp.p[1], n: hp.n });
-    add('2', `2 – vince ${an}`, P.x12[2], o.a, q[2], hp && { p: hp.p[2], n: hp.n });
+  if (ox) {
+    const q = Q.x12 ? Q.x12.p : [null, null, null], hp = histP.x12;
+    add('1', `1 – vince ${hn}`, P.x12[0], ox.h, q[0], hp && { p: hp.p[0], n: hp.n });
+    add('X', 'X – pareggio', P.x12[1], ox.d, q[1], hp && { p: hp.p[1], n: hp.n });
+    add('2', `2 – vince ${an}`, P.x12[2], ox.a, q[2], hp && { p: hp.p[2], n: hp.n });
   }
-  Object.values(A.ou).sort((a, b) => a.line - b.line).forEach(o => {
+  Object.values(O.ou).sort((a, b) => a.line - b.line).forEach(o => {
     if (o.line < totNow) { R.notes.push(`Over/Under ${o.line} già deciso (Over vinto)`); return; }
-    const need = Math.floor(o.line - totNow) + 1, q = Q.ou[o.line].p, hp = histP.over && histP.over[o.line];
+    const need = Math.floor(o.line - totNow) + 1, q = Q.ou[o.line] ? Q.ou[o.line].p : [null, null], hp = histP.over && histP.over[o.line];
     add('O' + o.line, `Over ${o.line} (serv${need > 1 ? 'ono' : 'e'} ${need} gol)`, P.over[o.line], o.over, q[0], hp);
     add('U' + o.line, `Under ${o.line} (${need - 1 === 0 ? 'nessun altro gol' : 'max ' + (need - 1) + ' altr' + (need - 1 === 1 ? 'o gol' : 'i gol')})`, P.under[o.line], o.under, q[1], hp && { p: 1 - hp.p, n: hp.n });
   });
-  if (A.odds.btts && !(hs > 0 && as > 0)) {
-    const q = Q.btts.p, hp = histP.btts;
-    add('GG', 'Goal (entrambe segnano)', P.btts, A.odds.btts.yes, q[0], hp);
-    add('NG', 'No Goal', 1 - P.btts, A.odds.btts.no, q[1], hp && { p: 1 - hp.p, n: hp.n });
+  if (O.btts && !(hs > 0 && as > 0)) {
+    const q = Q.btts ? Q.btts.p : [null, null], hp = histP.btts;
+    add('GG', 'Goal (entrambe segnano)', P.btts, O.btts.yes, q[0], hp);
+    add('NG', 'No Goal', 1 - P.btts, O.btts.no, q[1], hp && { p: 1 - hp.p, n: hp.n });
   }
   // ---- qualità dati / confidenza
   const nH = HS.n || 0, nA = AS.n || 0, dH = HS.nDet || 0, dA = AS.nDet || 0;
   const dataQ = 0.6 * Math.min(1, (Math.min(nH, 50) + Math.min(nA, 50)) / 80) + 0.4 * Math.min(1, (dH + dA) / 30);
   R.dataQ = dataQ;
   const sampleOK = nH >= 10 && nA >= 10;
-  const thr = (S.evThreshold != null ? S.evThreshold : 3) / 100;
   const bank = S.bankroll || 100, kf = S.kellyFraction || 0.25, cap = (S.maxStakePct != null ? S.maxStakePct : 5) / 100;
+  const cap1x2 = S.maxOdds1x2 != null ? S.maxOdds1x2 : 3;
+  const nextKey = 'O' + (totNow + 0.5);
   markets.forEach(m => {
     const diff = m.pMkt != null ? Math.abs(m.pModel - m.pMkt) : 0.1;
     const mAgree = 1 - clamp((diff - 0.03) / 0.22, 0, 0.85);
@@ -791,24 +835,128 @@ VB.analyze = function (A, D, S) {
     // salvaguardia: scarto enorme vs mercato = probabile informazione mancante (formazioni, infortuni, quota errata)
     m.suspicious = (m.pMkt != null && Math.abs(m.pModel - m.pMkt) > 0.12) || m.ev > 0.30;
     if (m.suspicious) m.conf = Math.max(0, m.conf - 15);
+    // mercati focus: Over successivo e 1X2 con quota massima
+    if (m.key === nextKey) m.focus = 'over';
+    else if (['1', 'X', '2'].includes(m.key)) {
+      if (m.odds > cap1x2 + 1e-9) { m.capped = true; m.value = false; m.focus = null; }
+      else m.focus = '1x2';
+    }
   });
-  R.markets = markets; R.sampleOK = sampleOK;
-  const vals = markets.filter(m => m.value).sort((a, b) => (b.ev * (0.5 + b.conf / 200)) - (a.ev * (0.5 + a.conf / 200)));
-  const bestAny = [...markets].sort((a, b) => b.ev - a.ev)[0] || null;
-  let verdict, best = vals[0] || null;
+  R.markets = markets; R.sampleOK = sampleOK; R.nextLine = totNow + 0.5; R.cap1x2 = cap1x2;
+  R.overNext = markets.find(m => m.key === nextKey) || null;
+  R.overNextModel = { p: P.over[totNow + 0.5], minOdds: VB.minOddsForValue(P.over[totNow + 0.5], thr, c) };
+  // ---- filtri
+  R.filters = VB.evalPresets(opts.presets || [], A);
+  const enabled = R.filters.filter(f => f.enabled);
+  R.filterMatched = enabled.filter(f => f.pass);
+  const requireFilter = S.requireFilter == null ? true : !!S.requireFilter;
+  R.filterOK = !requireFilter || !enabled.length || R.filterMatched.length > 0;
+  // ---- verdetto: prima i mercati focus
+  const score = m => m.ev * (0.5 + m.conf / 200);
+  const focusVals = markets.filter(m => m.focus && m.value).sort((a, b) => score(b) - score(a));
+  const focusAll = markets.filter(m => m.focus).sort((a, b) => b.ev - a.ev);
+  R.secondary = markets.filter(m => !m.focus && m.value).sort((a, b) => score(b) - score(a));
+  const bestAny = focusAll[0] || [...markets].sort((a, b) => b.ev - a.ev)[0] || null;
+  let verdict, best = focusVals[0] || null;
   const minConf = S.minConfidence != null ? S.minConfidence : 55;
-  if (A.phase === 'FT') { verdict = 'NON GIOCARE'; R.notes.push('Partita finita'); best = null; }
-  else if (best && best.conf >= minConf && !best.suspicious) verdict = 'GIOCA';
+  R.missingNextOdds = !R.overNext;
+  if (A.phase === 'FT') { verdict = 'NESSUN VALORE'; R.notes.push('Partita finita'); best = null; }
+  else if (best && !R.filterOK) { verdict = 'FUORI FILTRO'; }
   else if (best && best.suspicious) { verdict = 'ATTENZIONE'; R.notes.push('Scarto molto ampio tra modello e mercato: il mercato potrebbe sapere qualcosa (formazioni, infortuni, meteo) o la quota è errata — verifica prima di giocare'); }
-  else if (best) verdict = 'ATTENZIONE';
-  else if (bestAny && bestAny.ev > 0 && bestAny.ev < thr) { verdict = 'ATTENZIONE'; }
-  else verdict = 'NON GIOCARE';
-  if (!markets.length) { verdict = 'ATTENZIONE'; R.notes.push('Nessuna quota live nell\'alert: impossibile calcolare il valore'); }
+  else if (best && best.conf < minConf) verdict = 'ATTENZIONE';
+  else if (best) verdict = 'SEGNALE';
+  else if (R.missingNextOdds && !focusVals.length) verdict = 'QUOTA MANCANTE';
+  else verdict = 'NESSUN VALORE';
+  if (R.missingNextOdds) R.notes.push(`Quota Over ${R.nextLine} non presente: inseriscila nelle quote manuali (serve almeno ${R.overNextModel.minOdds ? R.overNextModel.minOdds.toFixed(2) : '–'} per avere valore)`);
+  if (!markets.length) R.notes.push('Nessuna quota live disponibile: impossibile calcolare il valore');
   R.verdict = verdict; R.best = best; R.bestAny = bestAny;
+  R.headline = verdict === 'SEGNALE' ? `SEGNALE: VALORE su ${best.key === nextKey ? 'Over ' + R.nextLine : best.label} @ ${best.odds.toFixed(2)}`
+    : verdict === 'QUOTA MANCANTE' ? `QUOTA OVER ${R.nextLine} MANCANTE` : verdict;
   R.confidence = best ? best.conf : (bestAny ? Math.round(bestAny.conf * 0.8) : Math.round(dataQ * 60));
   R.reasons = VB.reasons(R);
   return R;
 };
+
+/* ======================= QUOTE EFFETTIVE (alert + manuali) ======================= */
+VB.minOddsForValue = function (p, thr, c) { if (!p || p <= 0) return null; return 1 + ((1 + thr) / p - 1) / (1 - c); };
+VB.effectiveOdds = function (A, manual) {
+  const mv = k => { const v = manual && num(manual[k]); return v && v > 1 ? v : null; };
+  const O = { x12: null, btts: null, ou: {}, manualKeys: {} };
+  const ax = A.odds.x12live || {};
+  const x = { h: mv('1') || ax.h || null, d: mv('X') || ax.d || null, a: mv('2') || ax.a || null };
+  ['1', 'X', '2'].forEach(k => { if (mv(k)) O.manualKeys[k] = true; });
+  if (x.h || x.d || x.a) O.x12 = x;
+  const ab = A.odds.btts || {};
+  const bt = { yes: mv('GG') || ab.yes || null, no: mv('NG') || ab.no || null };
+  ['GG', 'NG'].forEach(k => { if (mv(k)) O.manualKeys[k] = true; });
+  if (bt.yes || bt.no) O.btts = bt;
+  Object.values(A.ou).forEach(o => { O.ou[o.line] = { line: o.line, over: o.over, under: o.under }; });
+  Object.keys(manual || {}).forEach(k => {
+    const m = k.match(/^([OU])(\d+(?:\.\d+)?)$/); if (!m || !mv(k)) return;
+    const L = +m[2]; O.ou[L] = O.ou[L] || { line: L, over: null, under: null };
+    O.ou[L][m[1] === 'O' ? 'over' : 'under'] = mv(k); O.manualKeys[k] = true;
+  });
+  return O;
+};
+
+/* ======================= FILTRI ======================= */
+const SUMP = p => p ? p[0] + p[1] : null;
+function statPair(A, k) {
+  if (k === 'goals') return A.has && A.has.score ? A.score : null;
+  if (k === 'shots') { const s = A.stats; if (A.has && A.has.shots) return s.shots; if (A.has && A.has.sot && A.has.soff) return [s.sot[0] + s.soff[0], s.sot[1] + s.soff[1]]; return null; }
+  return A.has && A.has[k] ? A.stats[k] : null;
+}
+const FIELD_SRC = [['goals', 'Gol'], ['xg', 'xG'], ['sot', 'Tiri in porta'], ['shots', 'Tiri totali'], ['corners', 'Corner'], ['da', 'Attacchi pericolosi'], ['momentum', 'Momentum'], ['poss', 'Possesso %'], ['red', 'Espulsioni'], ['pen', 'Rigori']];
+const MODES = [['total', 'totale'], ['home', 'casa'], ['away', 'ospite'], ['either', 'di una qualsiasi squadra'], ['both', 'di entrambe le squadre'], ['margin', 'differenza tra squadre']];
+VB.FIELDS = { minute: { label: 'Minuto', get: A => A.timer && A.timer.assumed ? null : (A.phase === 'HT' ? 45 : A.phase === 'PRE' ? 0 : A.minute) } };
+FIELD_SRC.forEach(([k, l]) => MODES.forEach(([m, ml]) => {
+  if (k === 'poss' && (m === 'total' || m === 'margin')) return;
+  VB.FIELDS[k + '_' + m] = { label: (k === 'goals' && m === 'margin') ? 'Differenza gol' : `${l} ${ml}`, src: k, mode: m };
+}));
+VB.FIELDS.goals_total.label = 'Gol totali'; VB.FIELDS.xg_either.label = 'xG di una qualsiasi squadra'; VB.FIELDS.red_margin.label = 'Differenza espulsi'; VB.FIELDS.red_total.label = 'Espulsi totali'; VB.FIELDS.pen_total.label = 'Rigori (totale)';
+function fieldValues(f, A) {
+  const F = VB.FIELDS[f]; if (!F) return null;
+  if (F.get) { const v = F.get(A); return v == null ? null : [v]; }
+  const p = statPair(A, F.src); if (!p) return null;
+  switch (F.mode) {
+    case 'total': return [p[0] + p[1]]; case 'home': return [p[0]]; case 'away': return [p[1]];
+    case 'either': case 'both': return [p[0], p[1]]; case 'margin': return [Math.abs(p[0] - p[1])];
+  }
+  return null;
+}
+function cmpOne(v, c) {
+  const e = 1e-9, a = +c.v, b = +c.v2;
+  switch (c.op) {
+    case '=': return Math.abs(v - a) <= (+c.tol || 0) + e;
+    case '>=': return v >= a - e; case '<=': return v <= a + e;
+    case 'between': return v >= Math.min(a, b) - e && v <= Math.max(a, b) + e;
+  }
+  return false;
+}
+VB.condText = function (c) {
+  const F = VB.FIELDS[c.f]; const l = F ? F.label : c.f;
+  if (c.op === 'between') return `${l} tra ${c.v} e ${c.v2}`;
+  return `${l} ${c.op === '>=' ? '≥' : c.op === '<=' ? '≤' : '='} ${c.v}${c.op === '=' && +c.tol ? ` (±${c.tol})` : ''}`;
+};
+VB.evalPreset = function (preset, A) {
+  const conds = (preset.conds || []).map(c => {
+    const vals = fieldValues(c.f, A); const txt = VB.condText(c);
+    if (!vals) return { c, text: txt, status: preset.missing === 'fail' ? 'ko' : 'na', actual: 'non disponibile' };
+    const F = VB.FIELDS[c.f] || {};
+    const ok = F.mode === 'both' ? vals.every(v => cmpOne(v, c)) : vals.some(v => cmpOne(v, c));
+    return { c, text: txt, status: ok ? 'ok' : 'ko', actual: vals.map(v => Math.round(v * 100) / 100).join(' / ') };
+  });
+  const ko = conds.filter(x => x.status === 'ko').length, na = conds.filter(x => x.status === 'na').length;
+  return { id: preset.id, name: preset.name, enabled: preset.enabled !== false, pass: ko === 0 && conds.length > 0 && na < conds.length, conds, ko, na };
+};
+VB.evalPresets = (presets, A) => (presets || []).map(p => VB.evalPreset(p, A));
+VB.defaultPresets = () => [
+  { id: 'ipg-60-xg175', name: "60′ 0-0 xG 1.75", enabled: true, missing: 'na', conds: [
+    { f: 'xg_either', op: '>=', v: 0.9 }, { f: 'xg_total', op: '>=', v: 1.75 }, { f: 'goals_total', op: '=', v: 0 },
+    { f: 'minute', op: '=', v: 60, tol: 2 }, { f: 'pen_total', op: '=', v: 0 }, { f: 'red_margin', op: '=', v: 0 }] },
+  { id: 'ipg-ht-xg067', name: 'HT 0-0 xG 0.67', enabled: true, missing: 'na', conds: [
+    { f: 'minute', op: '=', v: 45, tol: 1 }, { f: 'xg_total', op: '>=', v: 0.67 }, { f: 'goals_total', op: '=', v: 0 },
+    { f: 'red_total', op: '=', v: 0 }] }];
 
 const f0 = x => x == null ? '–' : Math.round(x) + '%';
 const f1 = x => x == null ? '–' : (Math.round(x * 10) / 10).toFixed(1);
@@ -842,6 +990,62 @@ VB.reasons = function (R) {
   return out.slice(0, 6);
 };
 function totNowIs0(A) { return A.score[0] + A.score[1] === 0; }
+
+/* ======================= REGISTRO SEGNALI ======================= */
+VB.LOG_COLS = ['id', 'date', 'league', 'home', 'away', 'minute', 'score', 'presets', 'market', 'mkey', 'odds', 'p', 'ev', 'stake', 'conf', 'comm', 'verdict', 'outcome', 'note'];
+VB.signalFromResult = function (R, m) {
+  m = m || R.best || R.bestAny; if (!m) return null;
+  const A = R.A, d = new Date();
+  const day = d.getFullYear() + '-' + ('0' + (d.getMonth() + 1)).slice(-2) + '-' + ('0' + d.getDate()).slice(-2);
+  const home = R.D.home.team.name, away = R.D.away.team.name, score = A.score.join('-'), minute = A.timer.label;
+  return { id: [normName(home), normName(away), score, minute, m.key, day].join('|'), date: d.toISOString(), league: A.league || '', home, away, minute, score,
+    presets: (R.filterMatched || []).map(f => f.name).join(' | '), market: m.key === 'O' + R.nextLine ? `Over ${R.nextLine}` : m.label, mkey: m.key,
+    odds: +m.odds.toFixed(2), p: +m.p.toFixed(4), ev: +m.ev.toFixed(4), stake: +m.stake.toFixed(2), conf: m.conf, comm: R.S.commission || 0, verdict: R.verdict, outcome: '', note: '' };
+};
+VB.signalPL = function (s, unit) {
+  const st = unit ? 1 : (+s.stake || 0), c = (+s.comm || 0) / 100;
+  if (s.outcome === 'vinta') return st * (+s.odds - 1) * (1 - c);
+  if (s.outcome === 'persa') return -st;
+  return 0;
+};
+VB.signalStats = function (list) {
+  const r = { n: list.length, won: 0, lost: 0, void: 0, open: 0, staked: 0, pl: 0, plU: 0, nU: 0 };
+  list.forEach(s => {
+    if (s.outcome === 'vinta') r.won++; else if (s.outcome === 'persa') r.lost++; else if (s.outcome === 'void') r.void++; else r.open++;
+    if (s.outcome === 'vinta' || s.outcome === 'persa') { r.staked += +s.stake || 0; r.pl += VB.signalPL(s); r.plU += VB.signalPL(s, true); r.nU++; }
+  });
+  r.settled = r.won + r.lost; r.hit = r.settled ? r.won / r.settled : null;
+  r.roi = r.staked ? r.pl / r.staked : null; r.roiU = r.nU ? r.plU / r.nU : null;
+  r.avgEV = list.length ? list.reduce((a, s) => a + (+s.ev || 0), 0) / list.length : null;
+  r.avgOdds = list.length ? list.reduce((a, s) => a + (+s.odds || 0), 0) / list.length : null;
+  return r;
+};
+VB.toCSV = function (list) {
+  const q = v => { const s = v == null ? '' : String(v); return /[",;\n\r]/.test(s) ? '"' + s.replace(/"/g, '""') + '"' : s; };
+  return [VB.LOG_COLS.join(','), ...list.map(s => VB.LOG_COLS.map(k => q(s[k])).join(','))].join('\r\n');
+};
+VB.parseCSV = function (text) {
+  const rows = []; let row = [], f = '', i = 0, inq = false; text = String(text).replace(/^\uFEFF/, '');
+  const sep = (text.split('\n')[0].match(/;/g) || []).length > (text.split('\n')[0].match(/,/g) || []).length ? ';' : ',';
+  for (; i < text.length; i++) {
+    const ch = text[i];
+    if (inq) { if (ch === '"') { if (text[i + 1] === '"') { f += '"'; i++; } else inq = false; } else f += ch; }
+    else if (ch === '"') inq = true;
+    else if (ch === sep) { row.push(f); f = ''; }
+    else if (ch === '\n' || ch === '\r') { if (ch === '\r' && text[i + 1] === '\n') i++; row.push(f); rows.push(row); row = []; f = ''; }
+    else f += ch;
+  }
+  if (f.length || row.length) { row.push(f); rows.push(row); }
+  if (!rows.length) return [];
+  const head = rows[0].map(h => h.trim());
+  return rows.slice(1).filter(r => r.some(x => x.trim())).map(r => { const o = {}; head.forEach((h, k) => o[h] = r[k] != null ? r[k] : '');
+    ['odds', 'p', 'ev', 'stake', 'conf', 'comm'].forEach(k => { if (o[k] !== '' && o[k] != null) o[k] = num(o[k]); }); return o; });
+};
+VB.mergeSignals = function (cur, inc) {
+  const m = new Map(cur.map(s => [s.id, s]));
+  let added = 0; (inc || []).forEach(s => { if (!s || !s.id) return; if (!m.has(s.id)) added++; m.set(s.id, Object.assign({}, m.get(s.id) || {}, s)); });
+  return { list: [...m.values()].sort((a, b) => String(b.date).localeCompare(String(a.date))), added };
+};
 
 /* ======================= PIPELINE COMPLETA ======================= */
 VB.run = async function (text, S, hooks) {
@@ -887,7 +1091,7 @@ VB.run = async function (text, S, hooks) {
   const D = { home: { team: ht, list: hl, cand: hc, sel: hSel }, away: { team: at, list: al, cand: ac, sel: aSel }, details, leagues,
     curLeagueTable: (hh.curLeague && hh.curLeague.table) || [], detailFails: fail };
   prog(97, 'Calcolo modello e value…');
-  const R = VB.analyze(A, D, S);
+  const R = VB.analyze(A, D, S, { manual: hooks.manual || {}, presets: hooks.presets || [] });
   R.elapsedMs = Date.now() - t0; R.requests = VB.stats.requests;
   if (fail) R.notes.push(`${fail} dettagli partita non scaricati`);
   prog(100, 'Fatto');
@@ -901,8 +1105,8 @@ root.VB = VB;
 (function () {
 'use strict';
 const VB = window.VB, $ = id => document.getElementById(id);
-const DEF = { bankroll: 100, commission: 5, evThreshold: 3, kellyFraction: 0.25, maxStakePct: 5, N: 100, nDet: 20, marketWeight: 25, minConfidence: 55 };
-const MAP = { s_bankroll: 'bankroll', s_commission: 'commission', s_ev: 'evThreshold', s_kelly: 'kellyFraction', s_cap: 'maxStakePct', s_N: 'N', s_nDet: 'nDet', s_mw: 'marketWeight', s_minconf: 'minConfidence' };
+const DEF = { bankroll: 100, commission: 5, evThreshold: 3, kellyFraction: 0.25, maxStakePct: 5, N: 100, nDet: 20, marketWeight: 25, minConfidence: 55, maxOdds1x2: 3, requireFilter: 1 };
+const MAP = { s_bankroll: 'bankroll', s_commission: 'commission', s_ev: 'evThreshold', s_kelly: 'kellyFraction', s_cap: 'maxStakePct', s_N: 'N', s_nDet: 'nDet', s_mw: 'marketWeight', s_minconf: 'minConfidence', s_cap1x2: 'maxOdds1x2', s_reqf: 'requireFilter' };
 const EXAMPLE = `🇹🇷 Türkiye 1 Lig (5th vs 15th)
 Batman Petrolspor vs Esenler Erokspor
 
@@ -948,9 +1152,9 @@ let S = loadS(); fillS(S);
 Object.keys(MAP).forEach(id => $(id).addEventListener('change', () => { S = readS(); saveS(S); if (lastR) rerender(); }));
 $('btnResetSet').onclick = () => { S = Object.assign({}, DEF); fillS(S); saveS(S); if (lastR) rerender(); };
 $('btnCache').onclick = () => { VB.Cache.clear(); alert('Cache svuotata.'); };
-$('btnExample').onclick = () => { $('alert').value = EXAMPLE; };
-$('btnClear').onclick = () => { $('alert').value = ''; $('out').innerHTML = ''; $('picker').innerHTML = ''; $('progBox').classList.add('hidden'); };
-$('btnPaste').onclick = async () => { try { $('alert').value = await navigator.clipboard.readText(); } catch (e) { $('alert').focus(); alert('Il browser non permette di leggere gli appunti: incolla manualmente (tieni premuto → Incolla).'); } };
+$('btnExample').onclick = () => { $('alert').value = EXAMPLE; updatePre(true); };
+$('btnClear').onclick = () => { $('alert').value = ''; $('pre').innerHTML = ''; $('out').innerHTML = ''; $('picker').innerHTML = ''; $('progBox').classList.add('hidden'); };
+$('btnPaste').onclick = async () => { try { $('alert').value = await navigator.clipboard.readText(); updatePre(true); } catch (e) { $('alert').focus(); alert('Il browser non permette di leggere gli appunti: incolla manualmente (tieni premuto → Incolla).'); } };
 try { const last = localStorage.getItem('vb:lastAlert'); if (last) $('alert').value = last; } catch (e) {}
 
 const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
@@ -995,10 +1199,12 @@ $('btnGo').onclick = async () => {
   const txt = $('alert').value;
   if (!txt.trim()) { $('out').innerHTML = '<div class="card err">Incolla prima il testo dell\'alert.</div>'; return; }
   try { localStorage.setItem('vb:lastAlert', txt); } catch (e) {}
+  updatePre(true);
   busy = true; $('btnGo').disabled = true; $('out').innerHTML = ''; $('plog').textContent = ''; S = readS(); saveS(S);
   try {
-    lastR = await VB.run(txt, S, { progress, pick });
-    render(lastR);
+    lastR = await VB.run(txt, S, { progress, pick, manual, presets });
+    lastR.sig = sigOf(lastR.A);
+    render(lastR); autoLog(lastR);
     setTimeout(() => $('progBox').classList.add('hidden'), 800);
     $('out').scrollIntoView({ behavior: 'smooth', block: 'start' });
   } catch (e) {
@@ -1006,41 +1212,73 @@ $('btnGo').onclick = async () => {
     $('out').innerHTML = `<div class="card err"><b>Errore:</b> ${esc(e.message || e)}</div>`;
   } finally { busy = false; $('btnGo').disabled = false; }
 };
-function rerender() { try { lastR = VB.analyze(lastR.A, lastR.D, S); render(lastR); } catch (e) { console.error(e); } }
+function rerender() {
+  if (!lastR) return;
+  try { const sig = lastR.sig; lastR = VB.analyze(lastR.A, lastR.D, S, { manual: sig === curSig ? manual : {}, presets }); lastR.sig = sig; render(lastR); autoLog(lastR); }
+  catch (e) { console.error(e); $('out').insertAdjacentHTML('afterbegin', `<div class="card err">Errore: ${esc(e.message)}</div>`); }
+}
 
+/* ---------- verdetto / risultato ---------- */
+function mktRow(m) {
+  const tags = (m.value ? '<span class="tag">VALUE</span>' : '') + (m.focus === 'over' ? ' <span class="tag" style="background:var(--acc)">OVER SUCC.</span>' : '') + (m.focus === '1x2' ? ' <span class="tag" style="background:var(--acc)">FOCUS 1X2</span>' : '')
+    + (m.capped ? ` <span class="tag" style="background:#777" title="Quota oltre il massimo impostato">> ${R0cap()}</span>` : '') + (m.value && m.suspicious ? ' <span class="tag" style="background:var(--amb)" title="Scarto molto ampio dal mercato">SCARTO</span>' : '') + (m.manual ? ' <span class="tag" style="background:#ddd">MANUALE</span>' : '');
+  return `<tr class="${m.value ? 'value' : ''}"><td>${esc(m.label)} ${tags}</td><td><b>${m.odds.toFixed(2)}</b></td><td>${m.minOdds ? m.minOdds.toFixed(2) : '–'}</td><td>${P0(m.p)} <span class="mut" title="modello puro">(${P0(m.pModel)})</span></td><td>${P0(m.pMkt)}</td>
+      <td>${m.hist ? P0(m.hist.p) + ` <span class="mut">n${m.hist.n}</span>` : '–'}</td><td>${m.fair < 100 ? m.fair.toFixed(2) : '>100'}</td><td class="${m.ev >= 0 ? 'pos' : 'neg'}">${sgn(m.ev)}</td><td>${m.conf}</td><td>${m.value ? EUR(m.stake) : '–'}</td></tr>`;
+}
+function R0cap() { return (S.maxOdds1x2 || 3).toFixed(2); }
+const MKT_HEAD = '<tr><th>Mercato</th><th>Quota</th><th>Quota min. valore</th><th>Prob. stimata</th><th>Mercato (no vig)</th><th>Storico</th><th>Quota equa</th><th>EV</th><th>Conf.</th><th>Puntata</th></tr>';
+function filterHtml(list, compact) {
+  if (!list.length) return '<div class="mut">Nessun filtro definito.</div>';
+  return list.map(f => {
+    const ic = !f.enabled ? '⏸️' : f.pass ? '✅' : '❌';
+    const st = !f.enabled ? 'disattivato' : f.pass ? (f.na ? `soddisfatto (${f.na} non verificabil${f.na > 1 ? 'i' : 'e'})` : 'soddisfatto') : `non soddisfatto (${f.ko} condizion${f.ko > 1 ? 'i' : 'e'} KO)`;
+    return `<div style="margin:6px 0"><b>${ic} ${esc(f.name)}</b> <span class="${f.enabled && f.pass ? 'st-ok' : f.enabled ? 'st-ko' : 'mut'}" style="font-size:.85rem">– ${st}</span>
+      ${compact && f.enabled && f.pass && !f.na ? '' : `<ul class="fl">${f.conds.map(c => `<li><span class="st-${c.status}">${c.status === 'ok' ? '✔' : c.status === 'ko' ? '✘' : '?'}</span> ${esc(c.text)} <span class="mut">→ ${esc(c.actual)}${c.status === 'na' ? ' (non verificabile)' : ''}</span></li>`).join('')}</ul>`}</div>`;
+  }).join('');
+}
 function render(R) {
   const A = R.A, hn = R.D.home.team.name, an = R.D.away.team.name;
-  const v = R.verdict, cls = v === 'GIOCA' ? 'v-gioca' : v === 'NON GIOCARE' ? 'v-no' : 'v-att';
-  const icon = v === 'GIOCA' ? '✅' : v === 'NON GIOCARE' ? '⛔' : '⚠️';
+  const v = R.verdict;
+  const cls = v === 'SEGNALE' ? 'v-gioca' : v === 'NESSUN VALORE' ? 'v-no' : v === 'FUORI FILTRO' ? 'v-off' : 'v-att';
+  const icon = v === 'SEGNALE' ? '✅' : v === 'NESSUN VALORE' ? '⛔' : v === 'FUORI FILTRO' ? '🚫' : '⚠️';
   const b = R.best, ba = R.bestAny;
-  let bestHtml;
-  if (b) bestHtml = `<div class="vbest">Mercato: <b>${esc(b.label)}</b> @ <b>${b.odds.toFixed(2)}</b></div>
-     <div style="font-size:1.1rem">Puntata consigliata: <b class="pos">${EUR(b.stake)}</b> <span class="mut">(${(b.stake / S.bankroll * 100).toFixed(1)}% bankroll · Kelly ${fracLbl(S.kellyFraction)})</span> · EV <b class="pos">${sgn(b.ev)}</b> · quota equa ${b.fair.toFixed(2)}</div>`;
-  else if (ba) bestHtml = `<div class="vbest">Nessun mercato con valore sufficiente.</div><div class="mut">Migliore: ${esc(ba.label)} @ ${ba.odds.toFixed(2)} – EV <span class="${ba.ev >= 0 ? 'pos' : 'neg'}">${sgn(ba.ev)}</span> (soglia ${S.evThreshold}%)</div>`;
-  else bestHtml = `<div class="vbest">Nessuna quota live da valutare.</div>`;
+  let bestHtml = '';
+  if (b) bestHtml = `<div class="vbest">${v === 'SEGNALE' ? '' : 'Valore su '}<b>${esc(b.focus === 'over' ? 'Over ' + R.nextLine + ' (Over successivo)' : b.label)}</b> @ <b>${b.odds.toFixed(2)}</b></div>
+     <div style="font-size:1.1rem">Puntata: <b class="pos">${EUR(b.stake)}</b> <span class="mut">(${(b.stake / S.bankroll * 100).toFixed(1)}% bankroll · Kelly ${fracLbl(S.kellyFraction)})</span> · prob. ${P0(b.p)} · EV <b class="pos">${sgn(b.ev)}</b> · quota equa ${b.fair.toFixed(2)}</div>`;
+  else if (ba) bestHtml = `<div class="mut" style="margin-top:6px">Migliore tra i mercati focus: ${esc(ba.label)} @ ${ba.odds.toFixed(2)} – EV <span class="${ba.ev >= 0 ? 'pos' : 'neg'}">${sgn(ba.ev)}</span> (soglia ${S.evThreshold}%)</div>`;
+  if (v === 'FUORI FILTRO') bestHtml += `<div class="notes" style="text-align:center">L'alert non soddisfa nessun filtro attivo: non è un segnale (valore solo informativo).</div>`;
+  // box mercati focus
+  const on = R.overNext, om = R.overNextModel;
+  const x12 = R.markets.filter(m => ['1', 'X', '2'].includes(m.key));
+  const focusBox = `<div class="focusbox"><div><b>🎯 Over successivo – Over ${R.nextLine}</b>: ${on ? `quota ${on.odds.toFixed(2)}${on.manual ? ' (manuale)' : ''} · prob. ${P0(on.p)} · EV <span class="${on.ev >= 0 ? 'pos' : 'neg'}">${sgn(on.ev)}</span> → ${on.value ? '<span class="st-ok">VALORE</span>' : '<span class="st-ko">nessun valore</span>'}` : `<span class="st-na">quota non disponibile</span> · prob. modello ${P0(om.p)} · serve quota ≥ <b>${om.minOdds ? om.minOdds.toFixed(2) : '–'}</b> (inseriscila nelle quote manuali)`}</div>
+     <div style="margin-top:6px"><b>🎯 1X2 (quota max ${R0cap()})</b>: ${x12.length ? x12.map(m => `${m.key} @ ${m.odds.toFixed(2)} ${m.capped ? '<span class="mut">(oltre il max)</span>' : `EV <span class="${m.ev >= 0 ? 'pos' : 'neg'}">${sgn(m.ev)}</span>${m.value ? ' <span class="st-ok">VALORE</span>' : ''}`}`).join(' · ') : '<span class="st-na">quote 1X2 non disponibili</span>'}</div></div>`;
   const conf = R.confidence, cc = conf >= 70 ? 'var(--grn)' : conf >= 50 ? 'var(--amb)' : 'var(--red)';
   const warn = [...A.warnings, ...R.notes];
-  let h = `<div class="card verdict ${cls}"><div class="big">${icon} ${v}</div>${bestHtml}
+  const fm = R.filterMatched.length ? `✅ Filtri soddisfatti: ${R.filterMatched.map(f => esc(f.name)).join(', ')}` : (R.filters.some(f => f.enabled) ? '❌ Nessun filtro attivo soddisfatto' : 'Nessun filtro attivo');
+  let h = `<div class="card verdict ${cls}"><div class="big">${icon} ${esc(R.headline)}</div>
+    <div style="font-size:.95rem;margin-top:6px">${fm}</div>${bestHtml}${focusBox}
     <div class="conf"><span>Confidenza</span><div class="meter"><div style="width:${conf}%;background:${cc}"></div></div><b>${conf}/100</b></div>
     <ul class="reasons">${R.reasons.map(r => `<li>${esc(r)}</li>`).join('')}</ul>
-    ${warn.length ? `<div class="notes">⚠️ ${warn.map(esc).join(' · ')}</div>` : ''}</div>`;
+    ${warn.length ? `<div class="notes">⚠️ ${warn.map(esc).join(' · ')}</div>` : ''}
+    ${(b || ba) && v !== 'SEGNALE' ? `<div class="btns" style="justify-content:center"><button class="small" id="btnLogManual">➕ Salva comunque nel registro</button></div>` : ''}</div>`;
+
+  // filtri
+  h += `<h2>🎯 Filtri</h2><div class="card">${filterHtml(R.filters, false)}</div>`;
 
   // partita
   const st = A.stats, chip = (l, p) => p ? `<span class="chip">${l} <b>${p[0]} – ${p[1]}</b></span>` : '';
   const pos = (r, p) => r ? `${r.pos}° (${r.pts} pt)` : (p ? p + '°' : '');
-  h += `<div class="card"><div class="match"><div><div class="mut" style="font-size:.85rem">${esc(A.league || '')}${A.leagueLine ? '' : ''}</div>
+  h += `<div class="card"><div class="match"><div><div class="mut" style="font-size:.85rem">${esc(A.league || '')}</div>
      <div class="teams">${esc(hn)} <span class="mut" style="font-size:.85rem">${esc(pos(R.home.row, A.posH))}</span> – ${esc(an)} <span class="mut" style="font-size:.85rem">${esc(pos(R.away.row, A.posA))}</span></div>
      <div class="mut" style="font-size:.8rem">Alert: “${esc(A.home)}” → ${esc(R.D.home.sel.name)} (${esc(R.D.home.sel.leagueName || '?')}), “${esc(A.away)}” → ${esc(R.D.away.sel.name)} (${esc(R.D.away.sel.leagueName || '?')})</div></div>
      <div style="text-align:right"><div class="score">${A.score[0]} – ${A.score[1]}</div><div><b>${esc(A.timer.label)}</b></div></div></div>
-     <div class="chips">${chip('xG', st.xg)}${chip('Tiri in porta', st.sot)}${chip('Tiri fuori', st.soff)}${chip('Corner', st.corners)}${chip('Att. pericolosi', st.da)}${chip('Momentum', st.momentum)}${chip('Possesso %', st.poss)}${chip('Rossi', st.red)}${chip('Media gol (ult.5)', st.gsAvg)}</div></div>`;
+     <div class="chips">${chip('xG', st.xg)}${chip('Tiri in porta', st.sot)}${chip('Tiri fuori', st.soff)}${chip('Corner', st.corners)}${chip('Att. pericolosi', st.da)}${chip('Momentum', st.momentum)}${chip('Possesso %', st.poss)}${chip('Rossi', A.has.red ? st.red : null)}${chip('Rigori', st.pen)}${chip('Media gol (ult.5)', st.gsAvg)}</div></div>`;
 
-  // value table
-  h += `<h2>💰 Mercati e valore</h2><div class="card tw"><table><thead><tr><th>Mercato</th><th>Quota</th><th>Prob. stimata</th><th>Mercato (no vig)</th><th>Storico</th><th>Quota equa</th><th>EV</th><th>Conf.</th><th>Puntata</th></tr></thead><tbody>`;
-  R.markets.forEach(m => {
-    h += `<tr class="${m.value ? 'value' : ''}"><td>${esc(m.label)} ${m.value ? '<span class="tag">VALUE</span>' : ''}${m.value && m.suspicious ? ' <span class="tag" style="background:var(--amb)" title="Scarto molto ampio dal mercato">SCARTO</span>' : ''}</td><td><b>${m.odds.toFixed(2)}</b></td><td>${P0(m.p)} <span class="mut" title="modello puro">(${P0(m.pModel)})</span></td><td>${P0(m.pMkt)}</td>
-      <td>${m.hist ? P0(m.hist.p) + ` <span class="mut">n${m.hist.n}</span>` : '–'}</td><td>${m.fair < 100 ? m.fair.toFixed(2) : '>100'}</td><td class="${m.ev >= 0 ? 'pos' : 'neg'}">${sgn(m.ev)}</td><td>${m.conf}</td><td>${m.value ? EUR(m.stake) : '–'}</td></tr>`;
-  });
-  h += `</tbody></table><div class="mut" style="font-size:.75rem;margin-top:8px">Prob. stimata = ${100 - S.marketWeight}% modello + ${S.marketWeight}% mercato (tra parentesi il modello puro). EV al netto della commissione del ${S.commission}%. VALUE se EV ≥ ${S.evThreshold}% e almeno 10 partite storiche per squadra. Storico = stessa situazione (punteggio/totale gol al minuto dell'alert) nelle partite recenti delle due squadre.</div></div>`;
+  // value table: prima i focus
+  const focus = R.markets.filter(m => m.focus || m.capped), other = R.markets.filter(m => !m.focus && !m.capped);
+  h += `<h2>💰 Mercati focus</h2><div class="card tw"><table><thead>${MKT_HEAD}</thead><tbody>${focus.map(mktRow).join('') || `<tr><td colspan="10" class="mut">Nessuna quota per i mercati focus: inseriscile in “Quote manuali” e premi Ricalcola.</td></tr>`}</tbody></table></div>`;
+  h += `<details class="card tw"><summary>Altri mercati (secondari)${R.secondary.length ? ` – ${R.secondary.length} con valore` : ''}</summary><table style="margin-top:8px"><thead>${MKT_HEAD}</thead><tbody>${other.map(mktRow).join('') || '<tr><td colspan="10" class="mut">–</td></tr>'}</tbody></table></details>`;
+  h += `<div class="mut" style="font-size:.75rem;margin:-4px 0 8px">Prob. stimata = ${100 - S.marketWeight}% modello + ${S.marketWeight}% mercato (tra parentesi il modello puro). EV al netto della commissione del ${S.commission}%. VALUE se EV ≥ ${S.evThreshold}% e almeno 10 partite storiche per squadra. “Quota min. valore” = quota minima per avere EV ≥ soglia. 1X2 con quota oltre ${R0cap()} mai proposti.</div>`;
 
   // probabilità
   const P = R.P, Q = R.Q, hp = R.histP;
@@ -1064,6 +1302,7 @@ function render(R) {
   if (R.h2h.length) h += `<h2>⚔️ Scontri diretti (nei dati scaricati)</h2><div class="card tw">${matchTable(R.h2h, R.D.home.team.name)}</div>`;
   h += modelDetails(R);
   $('out').innerHTML = h;
+  const bl = $('btnLogManual'); if (bl) bl.onclick = () => { const isNew = addSignal(VB.signalFromResult(R, R.best || R.bestAny), true); bl.textContent = isNew ? '✔ Salvato nel registro' : '✔ Già nel registro (aggiornato)'; bl.disabled = true; };
 }
 function fracLbl(k) { return k === 0.125 ? '1/8' : k === 0.25 ? '1/4' : k === 0.5 ? '1/2' : k === 1 ? 'pieno' : k; }
 function formHtml(f) { return `<span class="form">${f.map(x => `<i class="f${x}">${x}</i>`).join('')}</span>`; }
@@ -1125,6 +1364,136 @@ function modelDetails(R) {
   return `<details class="card"><summary>🧮 Dettagli del modello</summary><div class="kv" style="margin-top:10px">${kv.map(([k, v]) => `<div>${esc(k)}</div><div>${esc(v)}</div>`).join('')}</div>
    <p class="mut" style="font-size:.8rem">Metodo: λ pre-match = 70% quote 1X2 pre-match (de-vig "power", poi fit di un modello Poisson con correzione Dixon-Coles) + 30% forza attacco/difesa storica casa/trasferta (ridotta verso la media del campionato). In-play: i gol residui seguono una curva di intensità crescente nel secondo tempo; xG e tiri osservati aggiornano il ritmo di ciascuna squadra con un prior gamma; attacchi pericolosi/momentum, espulsioni e punteggio applicano correzioni moderate. Le probabilità finali derivano dalla matrice dei gol residui sommata al punteggio attuale. La stima usata per l'EV miscela modello e mercato (peso impostabile) per ridurre i falsi segnali. Confidenza = qualità dati (35%) + accordo con lo storico nella stessa situazione (35%) + plausibilità dello scarto rispetto al mercato (30%).</p></details>`;
 }
+/* ======================= FILTRI (preset) ======================= */
+const OPS = [['=', '='], ['>=', '≥'], ['<=', '≤'], ['between', 'tra']];
+const FIELD_ORDER = Object.keys(VB.FIELDS);
+function loadPresets() { try { const p = JSON.parse(localStorage.getItem('vb:presets') || 'null'); if (Array.isArray(p)) return p; } catch (e) {} return VB.defaultPresets(); }
+let presets = loadPresets();
+function savePresets() { try { localStorage.setItem('vb:presets', JSON.stringify(presets)); } catch (e) {} }
+const uid = () => 'p' + Date.now().toString(36) + Math.random().toString(36).slice(2, 6);
+function presetsChanged(full) { savePresets(); if (full) renderFiltEd(); updatePre(true); if (lastR) rerender(); }
+function fieldOpts(sel) { return FIELD_ORDER.map(k => `<option value="${k}"${k === sel ? ' selected' : ''}>${esc(VB.FIELDS[k].label)}</option>`).join(''); }
+function renderFiltEd() {
+  const el = $('filtEd');
+  el.innerHTML = `<p class="mut" style="font-size:.85rem">Ogni filtro è un insieme di condizioni in <b>E</b> (tutte devono essere vere). Basta che <b>un</b> filtro attivo sia soddisfatto perché l'alert possa diventare SEGNALE. Per il minuto “=” con tolleranza (es. 60 ± 2 = 58–62); “Half Time”/intervallo vale 45. Se un dato manca nell'alert: “non verificabile” (la condizione viene ignorata) oppure “fallisce”.</p>
+  ${presets.map((p, i) => `<div class="pres ${p.enabled ? 'on' : ''}" data-i="${i}">
+    <div class="phead"><label class="chk"><input type="checkbox" data-k="enabled" ${p.enabled ? 'checked' : ''}> Attivo</label>
+      <input type="text" data-k="name" value="${esc(p.name)}" aria-label="Nome filtro">
+      <label class="chk">Dato mancante <select data-k="missing"><option value="na"${p.missing !== 'fail' ? ' selected' : ''}>non verificabile</option><option value="fail"${p.missing === 'fail' ? ' selected' : ''}>fallisce</option></select></label></div>
+    ${p.conds.map((c, j) => `<div class="crow" data-j="${j}"><select data-c="f">${fieldOpts(c.f)}</select>
+      <select data-c="op">${OPS.map(([v, l]) => `<option value="${v}"${v === c.op ? ' selected' : ''}>${l}</option>`).join('')}</select>
+      <input data-c="v" type="text" inputmode="decimal" value="${c.v == null ? '' : c.v}" placeholder="valore">
+      ${c.op === 'between' ? `<input data-c="v2" type="text" inputmode="decimal" value="${c.v2 == null ? '' : c.v2}" placeholder="fino a">` : c.op === '=' ? `<input data-c="tol" type="text" inputmode="decimal" value="${c.tol ? c.tol : ''}" placeholder="± toll.">` : '<span></span>'}
+      <button class="small" data-act="delc" title="Elimina condizione">✕</button></div>`).join('')}
+    <div class="btns"><button class="small" data-act="addc">➕ Condizione</button><button class="small" data-act="dup">⧉ Duplica</button><button class="small" data-act="delp">🗑️ Elimina filtro</button></div>
+  </div>`).join('')}
+  <div class="btns"><button class="small" id="btnNewP">➕ Nuovo filtro</button><button class="small" id="btnDefP">↺ Ripristina filtri predefiniti</button></div>`;
+  $('btnNewP').onclick = () => { presets.push({ id: uid(), name: 'Nuovo filtro', enabled: true, missing: 'na', conds: [{ f: 'minute', op: '=', v: 60, tol: 2 }] }); presetsChanged(true); };
+  $('btnDefP').onclick = () => { if (confirm('Ripristinare i filtri predefiniti? I filtri personalizzati verranno persi.')) { presets = VB.defaultPresets(); presetsChanged(true); } };
+}
+const numOrNull = v => { const x = parseFloat(String(v).replace(',', '.')); return isFinite(x) ? x : null; };
+$('filtEd').addEventListener('change', e => {
+  const t = e.target, pe = t.closest('.pres'); if (!pe) return; const p = presets[+pe.dataset.i];
+  if (t.dataset.k === 'enabled') { p.enabled = t.checked; pe.classList.toggle('on', t.checked); return presetsChanged(false); }
+  if (t.dataset.k === 'name') { p.name = t.value.trim() || 'Filtro'; return presetsChanged(false); }
+  if (t.dataset.k === 'missing') { p.missing = t.value; return presetsChanged(false); }
+  const ce = t.closest('.crow'); if (!ce) return; const c = p.conds[+ce.dataset.j], k = t.dataset.c;
+  if (k === 'f' || k === 'op') { c[k] = t.value; if (k === 'op') { if (c.op !== 'between') delete c.v2; if (c.op !== '=') delete c.tol; } return presetsChanged(k === 'op'); }
+  c[k] = numOrNull(t.value); if (c[k] == null) delete c[k]; presetsChanged(false);
+});
+$('filtEd').addEventListener('click', e => {
+  const b = e.target.closest('button[data-act]'); if (!b) return; const pe = b.closest('.pres'), i = +pe.dataset.i, p = presets[i];
+  if (b.dataset.act === 'addc') p.conds.push({ f: 'xg_total', op: '>=', v: 1 });
+  if (b.dataset.act === 'delc') p.conds.splice(+b.closest('.crow').dataset.j, 1);
+  if (b.dataset.act === 'dup') presets.splice(i + 1, 0, Object.assign(JSON.parse(JSON.stringify(p)), { id: uid(), name: p.name + ' (copia)' }));
+  if (b.dataset.act === 'delp') { if (!confirm(`Eliminare il filtro “${p.name}”?`)) return; presets.splice(i, 1); }
+  presetsChanged(true);
+});
+
+/* ======================= PANNELLO PRE-ANALISI (filtri live + quote manuali) ======================= */
+let manual = {}, curSig = null, curA = null;
+try { const m = JSON.parse(localStorage.getItem('vb:manual') || 'null'); if (m && m.sig) { curSig = m.sig; manual = m.odds || {}; } } catch (e) {}
+function saveManual() { try { localStorage.setItem('vb:manual', JSON.stringify({ sig: curSig, odds: manual })); } catch (e) {} }
+function sigOf(A) { return A ? [VB.normName(A.home), VB.normName(A.away), A.score.join('-'), A.timer.label].join('|') : null; }
+function manFields(A) {
+  const t = A.score[0] + A.score[1], f = [];
+  [0.5, 1.5, 2.5].forEach((d, i) => { const L = t + d, o = A.ou[L] || {}; f.push({ k: 'O' + L, l: `Over ${L}${i === 0 ? ' (succ.)' : ''}`, ph: o.over, focus: i === 0 }, { k: 'U' + L, l: `Under ${L}`, ph: o.under }); });
+  const x = A.odds.x12live || {}; f.push({ k: '1', l: '1', ph: x.h, focus: true }, { k: 'X', l: 'X', ph: x.d, focus: true }, { k: '2', l: '2', ph: x.a, focus: true });
+  const b = A.odds.btts || {}; f.push({ k: 'GG', l: 'GG', ph: b.yes }, { k: 'NG', l: 'NG', ph: b.no });
+  return f;
+}
+let preT = null;
+function updatePre(now) {
+  clearTimeout(preT); if (!now) { preT = setTimeout(() => updatePre(true), 300); return; }
+  const txt = $('alert').value.trim(), el = $('pre');
+  if (!txt) { el.innerHTML = ''; curA = null; return; }
+  let A; try { A = VB.parseAlert(txt); } catch (e) { el.innerHTML = ''; return; }
+  if (!A.home || !A.away) { el.innerHTML = ''; return; }
+  const sig = sigOf(A), sameMatch = sig === curSig && curA;
+  if (sig !== curSig) { curSig = sig; manual = {}; saveManual(); }
+  curA = A;
+  const fr = VB.evalPresets(presets, A), ok = fr.filter(f => f.enabled && f.pass);
+  const fhtml = `<div style="font-size:1.05rem;margin-bottom:4px"><b>${ok.length ? '✅ Filtri soddisfatti: ' + ok.map(f => esc(f.name)).join(', ') : (fr.some(f => f.enabled) ? '❌ Nessun filtro attivo soddisfatto' : 'Nessun filtro attivo')}</b> <span class="mut" style="font-size:.8rem">(${esc(A.home)} – ${esc(A.away)}, ${A.score.join('-')}, ${esc(A.timer.label)})</span></div>${filterHtml(fr, false)}`;
+  if (sameMatch && $('preFilt')) { $('preFilt').innerHTML = fhtml; return; }
+  el.innerHTML = `<div class="card"><h3 style="margin-top:0">🎯 Filtri su questo alert</h3><div id="preFilt">${fhtml}</div></div>
+   <details class="card" id="manBox" ${Object.keys(manual).length || !A.ou[A.score[0] + A.score[1] + 0.5] ? 'open' : ''}><summary>✍️ Quote manuali (live)</summary>
+   <p class="mut" style="font-size:.85rem">Inserisci le quote live che vedi sul tuo bookmaker (lascia vuoto per usare quelle dell'alert, mostrate in grigio). Per l'Over basta la quota Over: con anche l'Under il mercato viene depurato dal margine.</p>
+   <div class="mgrid">${manFields(A).map(f => `<label class="${f.focus ? 'focus' : ''}">${esc(f.l)}<input data-mk="${esc(f.k)}" type="text" inputmode="decimal" placeholder="${f.ph ? f.ph.toFixed(2) : '–'}" value="${manual[f.k] != null ? manual[f.k] : ''}"></label>`).join('')}</div>
+   <div class="btns"><button class="small" id="btnManCalc">🔄 Ricalcola con queste quote</button><button class="small" id="btnManClr">Svuota quote manuali</button></div></details>`;
+  $('manBox').addEventListener('change', e => { const k = e.target.dataset && e.target.dataset.mk; if (!k) return; const v = numOrNull(e.target.value); if (v && v > 1) manual[k] = v; else delete manual[k]; saveManual(); if (lastR && lastR.sig === curSig) rerender(); });
+  $('btnManCalc').onclick = () => { $('manBox').querySelectorAll('input[data-mk]').forEach(i => { const v = numOrNull(i.value); if (v && v > 1) manual[i.dataset.mk] = v; else delete manual[i.dataset.mk]; }); saveManual(); if (lastR && lastR.sig === curSig) { rerender(); $('out').scrollIntoView({ behavior: 'smooth', block: 'start' }); } else $('btnGo').click(); };
+  $('btnManClr').onclick = () => { manual = {}; saveManual(); $('manBox').querySelectorAll('input[data-mk]').forEach(i => { i.value = ''; }); if (lastR && lastR.sig === curSig) rerender(); };
+}
+$('alert').addEventListener('input', () => updatePre(false));
+
+/* ======================= REGISTRO SEGNALI ======================= */
+function loadSignals() { try { const l = JSON.parse(localStorage.getItem('vb:signals') || '[]'); return Array.isArray(l) ? l : []; } catch (e) { return []; } }
+let signals = loadSignals();
+function saveSignals() { try { localStorage.setItem('vb:signals', JSON.stringify(signals)); } catch (e) { alert('Impossibile salvare il registro (spazio esaurito?).'); } }
+function addSignal(s, manualSave) {
+  if (!s) return false;
+  const old = signals.find(x => x.id === s.id);
+  if (old) { s.outcome = old.outcome || ''; s.note = old.note || ''; s.date = old.date; }
+  if (manualSave) s.note = s.note || 'salvato manualmente';
+  signals = VB.mergeSignals(signals, [s]).list; saveSignals(); renderLog(); return !old;
+}
+function autoLog(R) {
+  if (R.verdict === 'SEGNALE' && R.best) { const isNew = addSignal(VB.signalFromResult(R, R.best)); const v = $('out').querySelector('.verdict'); if (v) v.insertAdjacentHTML('beforeend', `<div class="mut" style="margin-top:6px">📒 ${isNew ? 'Segnale salvato nel registro.' : 'Segnale già presente nel registro (aggiornato).'}</div>`); }
+}
+const F2 = x => x == null || !isFinite(x) ? '–' : (+x).toFixed(2);
+function renderLog() {
+  const st = VB.signalStats(signals);
+  $('logCount').textContent = signals.length ? `(${signals.length})` : '';
+  const card = (l, v, c) => `<div class="stat"><div>${l}</div><div class="${c || ''}">${v}</div></div>`;
+  let h = `<div class="stats">${card('Segnali', st.n)}${card('Vinte / perse / void', `${st.won} / ${st.lost} / ${st.void}`)}${card('Da chiudere', st.open)}
+    ${card('Hit rate', st.hit == null ? '–' : Math.round(st.hit * 100) + '%')}${card('Profitto', st.settled ? EUR(st.pl) : '–', st.pl > 0 ? 'pos' : st.pl < 0 ? 'neg' : '')}
+    ${card('ROI (puntate)', st.roi == null ? '–' : sgn(st.roi), st.roi > 0 ? 'pos' : st.roi < 0 ? 'neg' : '')}${card('ROI (1 unità)', st.roiU == null ? '–' : sgn(st.roiU), st.roiU > 0 ? 'pos' : st.roiU < 0 ? 'neg' : '')}
+    ${card('EV medio', st.avgEV == null ? '–' : sgn(st.avgEV))}${card('Quota media', F2(st.avgOdds))}</div>`;
+  h += `<div class="btns"><button class="small" id="btnExpJ">⬇️ Esporta JSON</button><button class="small" id="btnExpC">⬇️ Esporta CSV</button><button class="small" id="btnImp">⬆️ Importa (JSON/CSV)</button><button class="small" id="btnLogClr">🗑️ Svuota registro</button><input type="file" id="impFile" accept=".json,.csv,application/json,text/csv" class="hidden"></div>`;
+  h += signals.length ? `<div class="tw"><table><thead><tr><th>Data</th><th>Partita</th><th>Min</th><th>Ris.</th><th>Filtro</th><th>Mercato</th><th>Quota</th><th>Prob.</th><th>EV</th><th>Puntata</th><th>Esito</th><th>P/L</th><th></th></tr></thead><tbody>
+    ${signals.map((s, i) => { const pl = VB.signalPL(s); return `<tr data-i="${i}"><td>${esc(fmtDate(s.date))}</td><td>${esc(s.home)} – ${esc(s.away)}<div class="goalmins">${esc(s.league || '')}${s.verdict && s.verdict !== 'SEGNALE' ? ' · ' + esc(s.verdict) : ''}</div></td><td>${esc(s.minute)}</td><td>${esc(s.score)}</td><td>${esc(s.presets || '–')}</td><td><b>${esc(s.market)}</b></td><td>${F2(s.odds)}</td><td>${P0(s.p)}</td><td class="${s.ev >= 0 ? 'pos' : 'neg'}">${sgn(s.ev)}</td><td>${EUR(s.stake)}</td>
+      <td><select data-out><option value=""${!s.outcome ? ' selected' : ''}>aperta</option><option value="vinta"${s.outcome === 'vinta' ? ' selected' : ''}>vinta</option><option value="persa"${s.outcome === 'persa' ? ' selected' : ''}>persa</option><option value="void"${s.outcome === 'void' ? ' selected' : ''}>void</option></select></td>
+      <td class="${pl > 0 ? 'pos' : pl < 0 ? 'neg' : ''}">${s.outcome === 'vinta' || s.outcome === 'persa' ? EUR(pl) : '–'}</td><td><button class="small" data-del title="Elimina">✕</button></td></tr>`; }).join('')}</tbody></table></div>`
+    : '<p class="mut">Nessun segnale registrato. I SEGNALI vengono salvati automaticamente; gli altri esiti si possono salvare con “Salva comunque nel registro”.</p>';
+  $('logView').innerHTML = h;
+  const dl = (name, data, type) => { const a = document.createElement('a'); a.href = URL.createObjectURL(new Blob([data], { type })); a.download = name; document.body.appendChild(a); a.click(); setTimeout(() => { URL.revokeObjectURL(a.href); a.remove(); }, 500); };
+  const stamp = () => new Date().toISOString().slice(0, 10);
+  $('btnExpJ').onclick = () => dl(`segnali-${stamp()}.json`, JSON.stringify(signals, null, 2), 'application/json');
+  $('btnExpC').onclick = () => dl(`segnali-${stamp()}.csv`, '\uFEFF' + VB.toCSV(signals), 'text/csv;charset=utf-8');
+  $('btnImp').onclick = () => $('impFile').click();
+  $('impFile').onchange = async e => {
+    const f = e.target.files[0]; if (!f) return;
+    try {
+      const t = await f.text(); let inc;
+      if (/^\s*[\[{]/.test(t)) { inc = JSON.parse(t); if (!Array.isArray(inc)) inc = inc.signals || [inc]; } else inc = VB.parseCSV(t);
+      const r = VB.mergeSignals(signals, inc); signals = r.list; saveSignals(); renderLog(); alert(`Importati ${r.added} nuovi segnali (${inc.length} righe lette).`);
+    } catch (err) { alert('File non valido: ' + err.message); }
+  };
+  $('btnLogClr').onclick = () => { if (signals.length && confirm('Svuotare tutto il registro segnali? (Esporta prima se vuoi conservarlo)')) { signals = []; saveSignals(); renderLog(); } };
+  $('logView').querySelectorAll('select[data-out]').forEach(sel => sel.onchange = () => { signals[+sel.closest('tr').dataset.i].outcome = sel.value; saveSignals(); renderLog(); $('logBox').open = true; });
+  $('logView').querySelectorAll('button[data-del]').forEach(b => b.onclick = () => { const s = signals[+b.closest('tr').dataset.i]; if (confirm(`Eliminare il segnale ${s.home} – ${s.away} (${s.market})?`)) { signals.splice(+b.closest('tr').dataset.i, 1); saveSignals(); renderLog(); } });
+}
+renderFiltEd(); renderLog(); updatePre(true);
 window.addEventListener('error', e => { const o = $('out'); if (o) o.insertAdjacentHTML('afterbegin', `<div class="card err">Errore JavaScript: ${esc(e.message)}</div>`); });
 })();
 </script>
