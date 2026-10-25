@@ -77,6 +77,15 @@ tr.value td:first-child{border-left:5px solid var(--grn)}
 .kv{display:grid;grid-template-columns:auto 1fr;gap:4px 14px;font-size:.88rem}
 .kv div:nth-child(odd){color:var(--mut)}
 .hidden{display:none!important}
+.goalbox{border-width:3px;text-align:center}
+.gbh{display:flex;justify-content:space-between;align-items:center;gap:10px;text-align:left}
+.gbt{font-size:1.7rem;font-weight:900;letter-spacing:.5px}
+.gbs{font-size:2.6rem;font-weight:900;line-height:1}
+.gbl{font-size:1.35rem;font-weight:800;margin-top:4px}
+.hi{color:var(--grn);font-weight:700}.lo{color:#ff8a8a}
+tr.remrow td:first-child{color:var(--txt);font-weight:600}
+.tw table td:first-child{min-width:190px}
+@media(max-width:600px){.gbt{font-size:1.25rem}.gbs{font-size:2.1rem}.tw table td:first-child{min-width:120px}}
 .v-off{border-color:#888} .v-off .big{color:#ddd}
 .fl{list-style:none;padding:0;margin:6px 0 0}
 .fl li{padding:4px 0;font-size:.9rem;border-bottom:1px dashed #222}
@@ -127,6 +136,7 @@ td select{min-height:38px;font-size:.85rem;padding:4px}
       <label>Puntata massima (% bankroll)<input id="s_cap" type="number" min="0.5" max="100" step="0.5" inputmode="decimal"></label>
       <label>N partite storiche (max 100)<input id="s_N" type="number" min="10" max="100" step="5" inputmode="numeric"></label>
       <label>Partite con minuti gol (per squadra)<input id="s_nDet" type="number" min="5" max="40" step="1" inputmode="numeric"></label>
+      <label>Partite di campionato per la media (tempi dei gol)<input id="s_nLeague" type="number" min="0" max="120" step="10" inputmode="numeric"></label>
       <label>Peso del mercato nella stima (%)<input id="s_mw" type="number" min="0" max="90" step="5" inputmode="numeric"></label>
       <label>Confidenza minima per SEGNALE<input id="s_minconf" type="number" min="0" max="100" step="5" inputmode="numeric"></label>
       <label>Quota massima 1X2 (mai proporre oltre)<input id="s_cap1x2" type="number" min="1.01" max="50" step="0.05" inputmode="decimal"></label>
@@ -334,12 +344,13 @@ const Cache = {
     if (!s) { mem.set(k, raw); return; }
     try { s.setItem(k, raw); } catch (e) { Cache.purge(); try { s.setItem(k, raw); } catch (e2) { mem.set(k, raw); } }
   },
-  keys() { const s = store(); const r = []; if (!s) return r; for (let i = 0; i < s.length; i++) { const k = s.key(i); if (k && k.startsWith('vb:') && k !== 'vb:settings') r.push(k); } return r; },
+  keys() { const s = store(); const r = []; if (!s) return r; for (let i = 0; i < s.length; i++) { const k = s.key(i); if (k && /^vb:(s|t|l2?|m2?):/.test(k)) r.push(k); } return r; },
   purge() {
     const s = store(); if (!s) return; const ks = Cache.keys();
     ks.forEach(k => { try { const o = JSON.parse(s.getItem(k)); if (o.e && Date.now() > o.e) s.removeItem(k); } catch (e) { s.removeItem(k); } });
-    Cache.keys().filter(k => /^vb:(l|t|s):/.test(k)).forEach(k => s.removeItem(k));
+    Cache.keys().filter(k => /^vb:(l2?|t|s|m):/.test(k)).forEach(k => s.removeItem(k));
   },
+  migrate() { const s = store(); if (!s) return; try { if (s.getItem('vb:cachev') === '2') return; Cache.keys().filter(k => /^vb:(m|l):/.test(k)).forEach(k => s.removeItem(k)); s.setItem('vb:cachev', '2'); } catch (e) {} },
   clear() { const s = store(); Cache.keys().forEach(k => s.removeItem(k)); mem.clear(); }
 };
 VB.Cache = Cache;
@@ -397,6 +408,11 @@ function tableRows(tbl) {
   } catch (e) {}
   return out;
 }
+function xgRows(tbl) {
+  const out = [];
+  try { (tbl || []).forEach(tb => { const x = tb && tb.data && tb.data.table && tb.data.table.xg; (x || []).forEach(r => { if (r && r.played && r.xg != null) out.push({ id: String(r.id), played: r.played, xg: +r.xg, xga: +r.xgConceded }); }); }); } catch (e) {}
+  return out;
+}
 VB.searchTeams = function (term) {
   const q = String(term || '').trim(); if (!q) return Promise.resolve([]);
   return cached('vb:s:' + normName(q), DAY, async () => {
@@ -423,7 +439,7 @@ VB.getTeam = function (id) {
   });
 };
 VB.getLeague = function (lid, season) {
-  const key = 'vb:l:' + lid + ':' + (season || 'cur');
+  const key = 'vb:l2:' + lid + ':' + (season || 'cur');
   return cached(key, v => (v.selected && v.latest && v.selected !== v.latest) ? 30 * DAY : H, async () => {
     const d = await getJSON(API + 'leagues?id=' + encodeURIComponent(lid) + (season ? '&season=' + encodeURIComponent(season) : ''));
     const det = d.details || {};
@@ -432,12 +448,12 @@ VB.getLeague = function (lid, season) {
       id: String(lid), name: det.name || '', ccode: det.country || '', selected: det.selectedSeason || '', latest: det.latestSeason || '',
       seasons: d.allAvailableSeasons || [],
       matches: am.map(m => compactFixture(m.id, m.status, m.home, m.away, lid, det.name)).filter(Boolean),
-      table: tableRows(d.table)
+      table: tableRows(d.table), xgTable: xgRows(d.table)
     };
   });
 };
 VB.getMatchDetail = function (mid) {
-  return cached('vb:m:' + mid, v => v && v.fin ? 365 * DAY : H, async () => {
+  return cached('vb:m2:' + mid, v => v && v.fin ? 365 * DAY : H, async () => {
     const d = await getJSON(API + 'matchDetails?matchId=' + encodeURIComponent(mid));
     const g = d.general || {}, hd = d.header || {};
     const evs = ((((d.content || {}).matchFacts || {}).events || {}).events) || [];
@@ -448,7 +464,9 @@ VB.getMatchDetail = function (mid) {
     let ok = false;
     if (sc) { const gh = goals.filter(x => x[2]).length, ga = goals.length - gh; ok = gh === sc[0] && ga === sc[1]; }
     if (!ht && ok) ht = [goals.filter(x => x[2] && x[0] <= 45).length, goals.filter(x => !x[2] && x[0] <= 45).length];
-    return { fin: !!g.finished, ok, goals, ht, sc };
+    const per = (((d.content || {}).stats || {}).Periods) || {};
+    const xgOf = k => { const P = per[k]; if (!P) return null; for (const gr of P.stats || []) for (const x of (gr && gr.stats) || []) if (x && x.key === 'expected_goals' && Array.isArray(x.stats) && x.stats[0] != null && x.stats[1] != null) { const a = num(x.stats[0]), b = num(x.stats[1]); if (a != null && b != null) return [+a.toFixed(2), +b.toFixed(2)]; } return null; };
+    return { fin: !!g.finished, ok, goals, ht, sc, xg: xgOf('All'), xg2: xgOf('SecondHalf') };
   });
 };
 
@@ -601,7 +619,8 @@ function detPersp(det, home) {
   if (!det) return null;
   const goals = det.ok ? det.goals.map(g => ({ m: g[0], o: g[1], k: goalKey(g), f: (g[2] === 1) === home })) : null;
   const ht = det.ht ? (home ? det.ht : [det.ht[1], det.ht[0]]) : null;
-  return { goals, ht };
+  const fl = v => v ? (home ? v : [v[1], v[0]]) : null;
+  return { goals, ht, xg: fl(det.xg), xg2: fl(det.xg2) };
 }
 VB.teamStats = function (list, A, curF, curA) {
   const n = list.length; const r = { n };
@@ -650,6 +669,176 @@ VB.leagueAverages = function (leagues) {
   return { avgH: hg / n, avgA: ag / n, n, p00: 100 * z / n, def: false };
 };
 
+/* ======================= TEMPI DEI GOL / xG STORICI / BASELINE CAMPIONATO ======================= */
+// fasce: 0-15, 16-30, 31-45+, 46-60, 61-75, 76-90+
+const BANDS = [[0, 15, "0-15'"], [15, 30, "16-30'"], [30, 45, "31-45+'"], [45, 60, "46-60'"], [60, 75, "61-75'"], [75, 90, "76-90+'"]];
+VB.BANDS = BANDS;
+const bandOf = m => m <= 15 ? 0 : m <= 30 ? 1 : m <= 45 ? 2 : m <= 60 ? 3 : m <= 75 ? 4 : 5;
+// quota della fascia ancora da giocare dopo il minuto dell'alert (0..1)
+function bandRemaining(b, ak) {
+  // chiavi: 45.xx / 90.xx = recupero; l'intervallo (45.99) chiude del tutto la fascia 31-45+
+  const [s, e] = BANDS[b], st = (b === 3 ? 45.99 : s), end = (b === 2 || b === 5) ? e + 0.99 : e;
+  if (ak <= st) return 1; if (ak >= end) return 0; return Math.min(1, (end - ak) / (e - s));
+}
+VB.bandRemaining = bandRemaining;
+// statistiche temporali in prospettiva squadra (lista di persp con det.goals)
+VB.timing = function (list, ak) {
+  const dl = list.filter(x => x.det && x.det.goals);
+  const n = dl.length, r = { n, bF: [0, 0, 0, 0, 0, 0], bA: [0, 0, 0, 0, 0, 0], f1: 0, f2: 0, a1: 0, a2: 0 };
+  if (!n) return r;
+  let sc2 = 0, co2 = 0, any2 = 0, sc60 = 0, co60 = 0, any60 = 0, sc75 = 0, co75 = 0, any75 = 0, scM = 0, coM = 0, anyM = 0;
+  dl.forEach(x => {
+    const G = x.det.goals;
+    G.forEach(g => { const b = bandOf(g.m); (g.f ? r.bF : r.bA)[b]++; if (g.m <= 45) g.f ? r.f1++ : r.a1++; else g.f ? r.f2++ : r.a2++; });
+    const has = (fn) => G.some(fn);
+    if (has(g => g.f && g.m > 45)) sc2++; if (has(g => !g.f && g.m > 45)) co2++; if (has(g => g.m > 45)) any2++;
+    if (has(g => g.f && g.m > 60)) sc60++; if (has(g => !g.f && g.m > 60)) co60++; if (has(g => g.m > 60)) any60++;
+    if (has(g => g.f && g.m > 75)) sc75++; if (has(g => !g.f && g.m > 75)) co75++; if (has(g => g.m > 75)) any75++;
+    if (has(g => g.f && g.k > ak)) scM++; if (has(g => !g.f && g.k > ak)) coM++; if (has(g => g.k > ak)) anyM++;
+  });
+  Object.assign(r, { sc2: pct(sc2, n), co2: pct(co2, n), any2: pct(any2, n), sc60: pct(sc60, n), co60: pct(co60, n), any60: pct(any60, n),
+    sc75: pct(sc75, n), co75: pct(co75, n), any75: pct(any75, n), scM: pct(scM, n), coM: pct(coM, n), anyM: pct(anyM, n), kAnyM: anyM });
+  r.gf = (r.f1 + r.f2) / n; r.ga = (r.a1 + r.a2) / n;
+  r.sh2F = r.f1 + r.f2 ? r.f2 / (r.f1 + r.f2) : null; r.sh2A = r.a1 + r.a2 ? r.a2 / (r.a1 + r.a2) : null;
+  return r;
+};
+VB.xgStats = function (list) {
+  const xl = list.filter(x => x.det && x.det.xg);
+  const n = xl.length; if (!n) return { n: 0 };
+  const r = { n, xgF: mean(xl.map(x => x.det.xg[0])), xgA: mean(xl.map(x => x.det.xg[1])), gF: mean(xl.map(x => x.gf)), gA: mean(xl.map(x => x.ga)) };
+  const x2 = xl.filter(x => x.det.xg2);
+  if (x2.length) { r.n2 = x2.length; r.xg2F = mean(x2.map(x => x.det.xg2[0])); r.xg2A = mean(x2.map(x => x.det.xg2[1])); }
+  return r;
+};
+// baseline campionato da un campione di partite con dettaglio eventi
+VB.leagueTiming = function (ids, details, compact, ak) {
+  const ms = ids.map(id => ({ d: details[id], c: compact[id] })).filter(x => x.d && x.d.ok);
+  const n = ms.length, r = { n, b: [0, 0, 0, 0, 0, 0], bH: [0, 0, 0, 0, 0, 0], bA: [0, 0, 0, 0, 0, 0], g1: 0, g2: 0 };
+  if (!n) return r;
+  let any2 = 0, any60 = 0, any75 = 0, anyM = 0, tm2 = 0, tm60 = 0, tm75 = 0, tmM = 0, xs = 0, xn = 0;
+  ms.forEach(({ d }) => {
+    d.goals.forEach(g => { const b = bandOf(g[0]); r.b[b]++; (g[2] ? r.bH : r.bA)[b]++; if (g[0] <= 45) r.g1++; else r.g2++; });
+    const k = g => goalKey(g);
+    if (d.goals.some(g => g[0] > 45)) any2++; if (d.goals.some(g => g[0] > 60)) any60++; if (d.goals.some(g => g[0] > 75)) any75++; if (d.goals.some(g => k(g) > ak)) anyM++;
+    [1, 0].forEach(side => { const G = d.goals.filter(g => g[2] === side); if (G.some(g => g[0] > 45)) tm2++; if (G.some(g => g[0] > 60)) tm60++; if (G.some(g => g[0] > 75)) tm75++; if (G.some(g => k(g) > ak)) tmM++; });
+    if (d.xg) { xs += d.xg[0] + d.xg[1]; xn++; }
+  });
+  const tot = r.g1 + r.g2;
+  Object.assign(r, { gpm: tot / n, sh2: tot ? r.g2 / tot : null, any2: pct(any2, n), any60: pct(any60, n), any75: pct(any75, n), anyM: pct(anyM, n),
+    tm2: pct(tm2, 2 * n), tm60: pct(tm60, 2 * n), tm75: pct(tm75, 2 * n), tmM: pct(tmM, 2 * n),
+    rate: r.b.map(x => x / (2 * n)), rateH: r.bH.map(x => x / n), rateA: r.bA.map(x => x / n), xgpm: xn >= 5 ? xs / xn : null, xn });
+  return r;
+};
+// indici squadra vs campionato (con shrinkage) e indicazioni automatiche
+const SHK = 10; // partite "virtuali" di campionato aggiunte al campione squadra
+function bandIdx(cnt, n, q) { if (!q || !n) return null; const rs = (cnt + SHK * q) / (n + SHK); return { idx: rs / q - 1, z: (cnt - n * q) / Math.sqrt(Math.max(1e-6, n * q)), raw: cnt / n, rs }; }
+VB.teamVsLeague = function (T, base, ak) {
+  // T = { all, venue, venueBase } timing; base = league timing
+  const out = { bands: [], remAtt: null, remConc: null, shapeAtt: 1, shapeConc: 1 };
+  if (!base || base.n < 20 || !T.all || T.all.n < 6) return out;
+  const t = T.all, q = base.rate, w = BANDS.map((_, b) => bandRemaining(b, ak));
+  for (let b = 0; b < 6; b++) out.bands.push({ b, att: bandIdx(t.bF[b], t.n, q[b]), conc: bandIdx(t.bA[b], t.n, q[b]), rem: w[b] });
+  const qTot = q.reduce((a, x) => a + x, 0);
+  const rem = (key) => { let s = 0, sq = 0; for (let b = 0; b < 6; b++) { const x = out.bands[b][key]; if (!x || !w[b]) continue; s += w[b] * x.rs; sq += w[b] * q[b]; } return sq ? s / sq : null; };
+  out.remAtt = rem('att'); out.remConc = rem('conc');
+  const allAtt = ((t.f1 + t.f2) + SHK * qTot) / (t.n + SHK) / qTot, allConc = ((t.a1 + t.a2) + SHK * qTot) / (t.n + SHK) / qTot;
+  out.allAtt = allAtt; out.allConc = allConc;
+  if (out.remAtt != null) out.shapeAtt = out.remAtt / allAtt; if (out.remConc != null) out.shapeConc = out.remConc / allConc;
+  // 2° tempo
+  const q2 = (base.g2 / base.n) / 2;
+  out.h2Att = bandIdx(t.f2, t.n, q2); out.h2Conc = bandIdx(t.a2, t.n, q2);
+  return out;
+};
+const sgnP = x => (x >= 0 ? '+' : '') + Math.round(x * 100) + '%';
+VB.callouts = function (R) {
+  const A = R.A, ak = alertKey(A), out = [];
+  if (A.phase === 'FT') return out;
+  const rem2 = BANDS.slice(3).reduce((s, _, i) => s + bandRemaining(i + 3, ak), 0) / 3;
+  [['home', R.D.home.team.name], ['away', R.D.away.team.name]].forEach(([side, nm]) => {
+    const G = R.goalStats[side], V = G.vs, t = G.all, base = G.base; if (!t || !base || base.n < 20 || t.n < 8) return;
+    V.bands.forEach(x => {
+      if (!x.rem) return;
+      [['att', 'segna', 'gol fatti', t.bF[x.b]], ['conc', 'subisce', 'gol subiti', t.bA[x.b]]].forEach(([k, verb, lbl, cnt]) => {
+        const s = x[k]; if (!s) return;
+        const pos = s.idx > 0; if (Math.abs(s.idx) < 0.25 || Math.abs(s.z) < 1.3 || (pos && cnt < 4)) return;
+        const txt = `${nm} ${pos ? (k === 'att' ? 'segna più' : 'subisce più') : (k === 'att' ? 'segna meno' : 'subisce meno')} della media del campionato tra ${BANDS[x.b][2]} (${sgnP(s.idx)}: ${cnt} ${lbl} in ${t.n} partite)`;
+        out.push({ side, kind: k, band: x.b, idx: s.idx, n: t.n, rel: Math.abs(s.idx) * x.rem * (1 + 0.3 * Math.min(1, Math.abs(s.z) / 3)), up: pos, txt });
+      });
+    });
+    if (rem2 > 0) {
+      [['h2Att', 'att', 'nel 2° tempo segna', t.f2], ['h2Conc', 'conc', 'nel 2° tempo subisce', t.a2]].forEach(([k, kind, verb, cnt]) => {
+        const s = V[k]; if (!s || Math.abs(s.idx) < 0.15 || Math.abs(s.z) < 1.0) return;
+        out.push({ side, kind, band: 'h2', idx: s.idx, n: t.n, up: s.idx > 0, rel: Math.abs(s.idx) * rem2 * 1.15,
+          txt: `${nm} ${verb} ${s.idx > 0 ? 'più' : 'meno'} della media del campionato (${(cnt / t.n).toFixed(2)} gol a partita vs ${((base.g2 / base.n) / 2).toFixed(2)}, ${sgnP(s.idx)}, ${t.n} partite)` });
+      });
+      // quota gol nella ripresa (shrink verso quota campionato)
+      [['sh2F', 'att', t.f2, t.f1 + t.f2, 'dei gol fatti'], ['sh2A', 'conc', t.a2, t.a1 + t.a2, 'dei gol subiti']].forEach(([k, kind, g2, gt, lbl]) => {
+        if (gt < 10 || base.sh2 == null) return;
+        const sh = (g2 + 8 * base.sh2) / (gt + 8), d = sh - base.sh2; if (Math.abs(d) < 0.07) return;
+        const raw = g2 / gt;
+        out.push({ side, kind, band: 'sh2', idx: d / base.sh2, n: gt, up: d > 0, rel: Math.abs(d / base.sh2) * rem2,
+          txt: `${nm} ${kind === 'att' ? (d > 0 ? 'segna molto nella ripresa' : 'segna soprattutto nel 1° tempo') : (d > 0 ? 'subisce molto nella ripresa' : 'subisce soprattutto nel 1° tempo')} (${Math.round(raw * 100)}% ${lbl} nel 2T, campionato ${Math.round(base.sh2 * 100)}%; ${gt} gol)` });
+      });
+    }
+    // xG storici
+    const X = G.xg, lx = R.leagueGoal.xgTeam;
+    if (X && X.n >= 5 && lx) {
+      const k = X.n / (X.n + 6);
+      [['xgF', 'att', 'xG medio prodotto', 'sopra', 'sotto'], ['xgA', 'conc', 'xG medio concesso', 'sopra', 'sotto']].forEach(([key, kind, lbl, up, dn]) => {
+        const d = (X[key] / lx - 1) * k; if (Math.abs(d) < 0.12) return;
+        out.push({ side, kind, band: 'xg', idx: d, n: X.n, up: d > 0, rel: Math.abs(d) * 0.9 * Math.max(0.3, R.M.rem),
+          txt: `${lbl} da ${nm} ${X[key].toFixed(2)} a partita, ${d > 0 ? up : dn} la media del campionato ${lx.toFixed(2)} (${X.n} partite)` });
+      });
+    }
+  });
+  // stessa tipologia: tieni solo la più rilevante per lato/tipo/fascia
+  out.sort((a, b) => b.rel - a.rel);
+  return out;
+};
+VB.goalOpinion = function (R) {
+  const A = R.A, P = R.P, ak = alertKey(A), comps = [], why = [];
+  const hn = R.D.home.team.name, an = R.D.away.team.name;
+  if (A.phase === 'FT') return { score: 0, label: 'PARTITA FINITA', p: 0, comps, why };
+  const pM = P.more; comps.push({ k: 'Modello (gol residui)', p: pM, w: 0.55 });
+  const hp = R.histP.more;
+  if (hp && hp.n >= 5) comps.push({ k: `Storico stessa situazione (${hp.n} gare)`, p: (hp.p * hp.n + pM * 8) / (hp.n + 8), raw: hp.p, w: 0.2 });
+  const H = R.goalStats.home, W = R.goalStats.away, lgM = H.base && H.base.n >= 20 ? H.base.anyM / 100 : null;
+  const tm = (T, lg) => T && T.n >= 6 ? (T.kAnyM + 10 * (lg != null ? lg : pM)) / (T.n + 10) : null;
+  const ph = tm(H.all, lgM), pa = tm(W.all, W.base && W.base.n >= 20 ? W.base.anyM / 100 : lgM);
+  if (ph != null || pa != null) {
+    const pt = mean([ph, pa].filter(x => x != null));
+    comps.push({ k: `Partite delle squadre con gol dopo ${A.phase === 'HT' ? "l'intervallo" : A.minute + "'"}`, p: pt, w: 0.25, raw: pt });
+  }
+  const wS = comps.reduce((s, c) => s + c.w, 0);
+  let p = comps.reduce((s, c) => s + c.w * c.p, 0) / wS;
+  const lg = x => Math.log(x / (1 - x)), il = x => 1 / (1 + Math.exp(-x));
+  let z = lg(clamp(p, 0.01, 0.99));
+  // xG storico (fatti dagli attaccanti + concessi dai difensori) vs campionato
+  const lx = R.leagueGoal.xgTeam, XH = H.xg, XA = W.xg;
+  if (lx && XH && XA && XH.n >= 5 && XA.n >= 5) {
+    const e = ((XH.xgF + XA.xgA) / 2 + (XA.xgF + XH.xgA) / 2) / (2 * lx) - 1, k = Math.min(XH.n, XA.n) / (Math.min(XH.n, XA.n) + 8), d = clamp(e * k, -0.4, 0.4);
+    z += 0.6 * d; comps.push({ k: 'xG storici vs campionato', adj: d });
+    why.push({ rel: Math.abs(d) * 1.2, txt: `xG storici: ${hn} ${XH.xgF.toFixed(2)} fatti / ${XH.xgA.toFixed(2)} concessi, ${an} ${XA.xgF.toFixed(2)} / ${XA.xgA.toFixed(2)} a partita (media campionato ${lx.toFixed(2)}) → ${d >= 0 ? 'partita da gol' : 'partita bloccata'} (${sgnP(d)})` });
+  } else comps.push({ k: 'xG storici vs campionato', na: true });
+  // pressione live (xG/tiri osservati vs attesi, attacchi pericolosi)
+  const L = R.M.live;
+  if (L && L.obs[0] != null && R.M.elapsed > 0.1) {
+    const o = L.obs[0] + L.obs[1], e = L.exp[0] + L.exp[1], d = clamp((o + 0.5) / (e + 0.5) - 1, -0.5, 0.6);
+    z += 0.35 * d; comps.push({ k: 'Pressione live', adj: d });
+    const st = A.stats;
+    why.push({ rel: Math.abs(d) * 1.1, txt: `Pressione live: ${st.xg ? 'xG ' + st.xg.join('-') : 'tiri ' + (st.sot || ['?', '?']).join('-') + ' in porta'}${st.da ? ', att. pericolosi ' + st.da.join('-') : ''} → ${d >= 0 ? 'sopra' : 'sotto'} le attese pre-match (${sgnP(d)})` });
+  }
+  p = il(z);
+  const score = Math.round(100 * p);
+  const label = score >= 70 ? 'ALTA' : score >= 50 ? 'MEDIA' : 'BASSA';
+  why.push({ rel: 1.5, txt: `Modello: probabilità di almeno un altro gol ${Math.round(pM * 100)}% (gol attesi residui ${(L.lhr + L.lar).toFixed(2)})` });
+  if (hp && hp.n >= 8) why.push({ rel: 0.4 + Math.abs(hp.p - pM), txt: `Stesso totale gol ${A.phase === 'HT' ? "all'intervallo" : 'al ' + A.minute + "'"} nelle partite delle due squadre: altro gol nel ${Math.round(hp.p * 100)}% (${hp.n} gare)` });
+  const perSide = {}; (R.callouts || []).filter(c => { perSide[c.side] = (perSide[c.side] || 0) + 1; return perSide[c.side] <= 2; }).slice(0, 3).forEach(c => why.push({ rel: c.rel * 1.6, txt: c.txt }));
+  if (ph != null && pa != null) why.push({ rel: 0.5, txt: `Gol dopo ${A.phase === 'HT' ? "l'intervallo" : 'il ' + A.minute + "'"}: nel ${Math.round(H.all.anyM)}% delle partite di ${hn} (${H.all.n}) e nel ${Math.round(W.all.anyM)}% di quelle di ${an} (${W.all.n})${lgM != null ? `; campionato ${Math.round(lgM * 100)}%` : ''}` });
+  why.sort((a, b) => b.rel - a.rel);
+  return { score, label, p, pM, comps, why: why.slice(0, 5).map(x => x.txt) };
+};
+
 function shrink(sum, n, prior, k) { return (sum + prior * k) / (n + k); }
 
 VB.analyze = function (A, D, S, opts) {
@@ -671,6 +860,36 @@ VB.analyze = function (A, D, S, opts) {
   R.home.row = row(D.home.team); R.away.row = row(D.away.team);
   R.home.form = LH.slice(0, 5).map(x => x.gf > x.ga ? 'V' : x.gf === x.ga ? 'N' : 'P');
   R.away.form = LA.slice(0, 5).map(x => x.gf > x.ga ? 'V' : x.gf === x.ga ? 'N' : 'P');
+
+  // ---- tempi dei gol, xG storici, baseline campionato
+  const akA = alertKey(A);
+  const lgInfo = {};
+  const leagueBase = lid => {
+    if (lgInfo[lid]) return lgInfo[lid];
+    const ids = (D.leagueSample || {})[lid] || [];
+    return (lgInfo[lid] = VB.leagueTiming(ids, D.details, {}, akA));
+  };
+  const gstat = (L, side) => {
+    const team = D[side].team, ss = D[side].seasonStart || 0;
+    const withDet = L.slice(0, Math.max(S.nDet || 35, 10) + 5);
+    const venue = L.filter(x => side === 'home' ? x.home : !x.home);
+    const season = L.filter(x => x.t >= ss);
+    const g = { all: VB.timing(withDet, akA), venue: VB.timing(venue, akA), season: ss ? VB.timing(season, akA) : { n: 0 },
+      xgAll: VB.xgStats(L), xgVenue: VB.xgStats(venue), xgSeason: ss ? VB.xgStats(season) : { n: 0 }, base: leagueBase(team.primaryLeagueId), lid: team.primaryLeagueId };
+    g.xg = g.xgSeason.n >= 5 ? g.xgSeason : (g.xgAll.n ? g.xgAll : null); g.xgSrc = g.xgSeason.n >= 5 ? 'stagione' : 'ultime partite';
+    g.vs = VB.teamVsLeague(g, g.base, akA);
+    return g;
+  };
+  R.goalStats = { home: gstat(LH, 'home'), away: gstat(LA, 'away') };
+  {
+    const lid = D.home.team.primaryLeagueId, base = R.goalStats.home.base;
+    const cl = (D.leagues || []).find(L => L.id === lid && L.selected === L.latest) || (D.leagues || []).find(L => L.id === lid);
+    const cm = cl ? cl.matches : [];
+    const xt = (cl && cl.xgTable) || [];
+    const sp = xt.reduce((a, r) => a + r.played, 0), sx = xt.reduce((a, r) => a + r.xg, 0);
+    R.leagueGoal = { lid, name: cl ? cl.name : '', season: cl ? cl.selected : '', nSeason: cm.length, gpmSeason: cm.length ? cm.reduce((a, c) => a + c[6] + c[7], 0) / cm.length : null,
+      sh2: base.sh2, nSample: base.n, any2: base.any2, xgTeam: sp >= 20 ? sx / sp : (base.xgpm != null ? base.xgpm / 2 : null), xgSrc: sp >= 20 ? 'tabella xG FotMob' : (base.xgpm != null ? 'campione partite' : null) };
+  }
 
   // ---- 1) lambda pre-match da mercato
   const M = { };
@@ -729,9 +948,15 @@ VB.analyze = function (A, D, S, opts) {
   // stato del punteggio
   const ssM = [1, 1];
   if (hs > as) { ssM[0] = 0.92; ssM[1] = 1.12; } else if (as > hs) { ssM[0] = 1.12; ssM[1] = 0.92; }
-  mult = mult.map((m, i) => clamp(m, 0.6, 1.7) * redM[i] * ssM[i]);
+  // tendenze temporali (quando segnano/subiscono rispetto al loro rendimento medio, ridotte verso il campionato)
+  const tendM = [1, 1]; {
+    const vh = R.goalStats.home.vs, va = R.goalStats.away.vs;
+    if (rem > 0.02 && vh.remAtt != null && va.remConc != null) tendM[0] = clamp(Math.pow(vh.shapeAtt * va.shapeConc, 0.3), 0.88, 1.13);
+    if (rem > 0.02 && va.remAtt != null && vh.remConc != null) tendM[1] = clamp(Math.pow(va.shapeAtt * vh.shapeConc, 0.3), 0.88, 1.13);
+  }
+  mult = mult.map((m, i) => clamp(m, 0.6, 1.7) * redM[i] * ssM[i] * tendM[i]);
   const lhr = lh * mult[0] * rem, lar = la * mult[1] * rem;
-  M.live = { obs, exp, mult, tilt, redM, ssM, lhr, lar, why };
+  M.live = { obs, exp, mult, tilt, redM, ssM, tendM, lhr, lar, why };
   const rho = -0.06 * rem;
   const mat = matrix(lhr, lar, rho, 10);
   // probabilità finali
@@ -874,6 +1099,8 @@ VB.analyze = function (A, D, S, opts) {
     : verdict === 'QUOTA MANCANTE' ? `QUOTA OVER ${R.nextLine} MANCANTE` : verdict;
   R.confidence = best ? best.conf : (bestAny ? Math.round(bestAny.conf * 0.8) : Math.round(dataQ * 60));
   R.reasons = VB.reasons(R);
+  R.callouts = VB.callouts(R);
+  R.goal = VB.goalOpinion(R);
   return R;
 };
 
@@ -981,7 +1208,7 @@ VB.reasons = function (R) {
   if (R.histP.more && R.histP.more.n >= 8) out.push(`Storico combinato (stesso totale gol ${minLbl}, ${R.histP.more.n} gare): altro gol nel ${f0(R.histP.more.p * 100)}; modello ${f0(R.P.more * 100)}`);
   const L = R.M.live;
   if (A.stats.xg && R.M.elapsed > 0.05) {
-    const d0 = L.mult[0] / (L.redM[0] * L.ssM[0]) - 1, d1 = L.mult[1] / (L.redM[1] * L.ssM[1]) - 1;
+    const d0 = L.mult[0] / (L.redM[0] * L.ssM[0] * L.tendM[0]) - 1, d1 = L.mult[1] / (L.redM[1] * L.ssM[1] * L.tendM[1]) - 1;
     out.push(`xG ${A.stats.xg.join('-')}: ritmo ${hn} ${d0 >= 0 ? '+' : ''}${Math.round(d0 * 100)}%, ${an} ${d1 >= 0 ? '+' : ''}${Math.round(d1 * 100)}% rispetto alle attese pre-match`);
   }
   if ((A.stats.red || [0, 0]).some(x => x > 0)) out.push(`Espulsioni ${A.stats.red.join('-')}: intensità gol corretta (-28% chi è in 10, +25% avversario)`);
@@ -1050,6 +1277,7 @@ VB.mergeSignals = function (cur, inc) {
 /* ======================= PIPELINE COMPLETA ======================= */
 VB.run = async function (text, S, hooks) {
   hooks = hooks || {}; const prog = hooks.progress || (() => {}); const t0 = Date.now();
+  VB.Cache.migrate();
   const A = parseAlert(text);
   if (!A.home || !A.away) throw new Error('Non riesco a leggere le squadre dall\'alert. Serve una riga tipo "Squadra A vs Squadra B".');
   prog(3, `Alert letto: ${A.home} – ${A.away} (${A.timer.label}, ${A.score.join('-')})`);
@@ -1078,17 +1306,32 @@ VB.run = async function (text, S, hooks) {
   const isCurrent = m => ((m.h === ht.id && m.a === at.id) || (m.h === at.id && m.a === ht.id)) && Math.abs(now - m.t) < 5 * H;
   const hl = hh.list.filter(m => !isCurrent(m)).slice(0, opt.N), al = ah.list.filter(m => !isCurrent(m)).slice(0, opt.N);
   // dettagli partite recenti (minuti gol)
-  const nDet = S.nDet || 20;
+  const nDet = S.nDet || 35;
   const ids = uniq([...hl.slice(0, nDet), ...al.slice(0, nDet)].map(m => m.id));
   const details = {}; let done = 0, fail = 0;
   prog(58, `Scarico i dettagli di ${ids.length} partite (minuti dei gol)…`);
   await pool(ids, 4, async id => {
     try { details[id] = await VB.getMatchDetail(id); } catch (e) { fail++; }
-    done++; prog(58 + 37 * done / ids.length, `Dettagli partite: ${done}/${ids.length}`);
+    done++; prog(58 + 22 * done / ids.length, `Dettagli partite: ${done}/${ids.length}`);
   });
+  // campione di partite di campionato (baseline tempi dei gol)
+  const nLg = S.nLeague != null ? S.nLeague : 60, leagueSample = {};
+  if (nLg > 0) {
+    const lids = uniq([ht.primaryLeagueId, at.primaryLeagueId].filter(Boolean));
+    const lgIds = [];
+    lids.forEach(lid => {
+      const seen = new Set(), ms = [];
+      [...hh.leagues, ...ah.leagues].filter(L => L.id === lid).forEach(L => L.matches.forEach(c => { if (!seen.has(c[0])) { seen.add(c[0]); ms.push(c); } }));
+      ms.sort((a, b) => b[1] - a[1]); leagueSample[lid] = ms.slice(0, nLg).map(c => c[0]); lgIds.push(...leagueSample[lid]);
+    });
+    const todo = uniq(lgIds).filter(id => !details[id]); let dn = 0;
+    if (todo.length) prog(80, `Campione del campionato: ${todo.length} partite (tempi dei gol)…`);
+    await pool(todo, 4, async id => { try { details[id] = await VB.getMatchDetail(id); } catch (e) { fail++; } dn++; prog(80 + 16 * dn / todo.length, `Campionato: ${dn}/${todo.length}`); });
+  }
+  const seasonStart = L => { const c = L && L.matches; return c && c.length ? Math.min(...c.map(x => x[1])) - 3 * DAY : 0; };
   const leagues = []; const seenL = new Set();
   [...hh.leagues, ...ah.leagues].forEach(L => { const k = L.id + ':' + L.selected; if (!seenL.has(k) && (L.id === ht.primaryLeagueId || L.id === at.primaryLeagueId)) { seenL.add(k); leagues.push(L); } });
-  const D = { home: { team: ht, list: hl, cand: hc, sel: hSel }, away: { team: at, list: al, cand: ac, sel: aSel }, details, leagues,
+  const D = { home: { team: ht, list: hl, cand: hc, sel: hSel, seasonStart: seasonStart(hh.curLeague) }, away: { team: at, list: al, cand: ac, sel: aSel, seasonStart: seasonStart(ah.curLeague) }, details, leagues, leagueSample,
     curLeagueTable: (hh.curLeague && hh.curLeague.table) || [], detailFails: fail };
   prog(97, 'Calcolo modello e value…');
   const R = VB.analyze(A, D, S, { manual: hooks.manual || {}, presets: hooks.presets || [] });
@@ -1105,8 +1348,8 @@ root.VB = VB;
 (function () {
 'use strict';
 const VB = window.VB, $ = id => document.getElementById(id);
-const DEF = { bankroll: 100, commission: 5, evThreshold: 3, kellyFraction: 0.25, maxStakePct: 5, N: 100, nDet: 20, marketWeight: 25, minConfidence: 55, maxOdds1x2: 3, requireFilter: 1 };
-const MAP = { s_bankroll: 'bankroll', s_commission: 'commission', s_ev: 'evThreshold', s_kelly: 'kellyFraction', s_cap: 'maxStakePct', s_N: 'N', s_nDet: 'nDet', s_mw: 'marketWeight', s_minconf: 'minConfidence', s_cap1x2: 'maxOdds1x2', s_reqf: 'requireFilter' };
+const DEF = { bankroll: 100, commission: 5, evThreshold: 3, kellyFraction: 0.25, maxStakePct: 5, N: 100, nDet: 35, nLeague: 60, marketWeight: 25, minConfidence: 55, maxOdds1x2: 3, requireFilter: 1 };
+const MAP = { s_bankroll: 'bankroll', s_commission: 'commission', s_ev: 'evThreshold', s_kelly: 'kellyFraction', s_cap: 'maxStakePct', s_N: 'N', s_nDet: 'nDet', s_nLeague: 'nLeague', s_mw: 'marketWeight', s_minconf: 'minConfidence', s_cap1x2: 'maxOdds1x2', s_reqf: 'requireFilter' };
 const EXAMPLE = `🇹🇷 Türkiye 1 Lig (5th vs 15th)
 Batman Petrolspor vs Esenler Erokspor
 
@@ -1140,12 +1383,12 @@ Over/Under 3.50 Odds:
 10.00 1.06
 Both Teams To Score:
 2.75 1.40`;
-function loadS() { let s = {}; try { s = JSON.parse(localStorage.getItem('vb:settings') || '{}'); } catch (e) {} return Object.assign({}, DEF, s); }
-function saveS(s) { try { localStorage.setItem('vb:settings', JSON.stringify(s)); } catch (e) {} }
+function loadS() { let s = {}; try { s = JSON.parse(localStorage.getItem('vb:settings') || '{}'); } catch (e) {} if (!s.sv) { if (s.nDet === 20) s.nDet = 35; s.sv = 2; } return Object.assign({}, DEF, s); }
+function saveS(s) { try { localStorage.setItem('vb:settings', JSON.stringify(Object.assign({ sv: 2 }, s))); } catch (e) {} }
 function fillS(s) { Object.entries(MAP).forEach(([id, k]) => { $(id).value = s[k]; }); }
 function readS() {
   const s = {}; Object.entries(MAP).forEach(([id, k]) => { const v = parseFloat(String($(id).value).replace(',', '.')); s[k] = isFinite(v) ? v : DEF[k]; });
-  s.N = Math.round(Math.min(100, Math.max(10, s.N))); s.nDet = Math.round(Math.min(40, Math.max(5, s.nDet)));
+  s.N = Math.round(Math.min(100, Math.max(10, s.N))); s.nDet = Math.round(Math.min(40, Math.max(5, s.nDet))); s.nLeague = Math.round(Math.min(120, Math.max(0, s.nLeague)));
   return s;
 }
 let S = loadS(); fillS(S);
@@ -1262,6 +1505,7 @@ function render(R) {
     ${warn.length ? `<div class="notes">⚠️ ${warn.map(esc).join(' · ')}</div>` : ''}
     ${(b || ba) && v !== 'SEGNALE' ? `<div class="btns" style="justify-content:center"><button class="small" id="btnLogManual">➕ Salva comunque nel registro</button></div>` : ''}</div>`;
 
+  h += goalBox(R);
   // filtri
   h += `<h2>🎯 Filtri</h2><div class="card">${filterHtml(R.filters, false)}</div>`;
 
@@ -1279,6 +1523,8 @@ function render(R) {
   h += `<h2>💰 Mercati focus</h2><div class="card tw"><table><thead>${MKT_HEAD}</thead><tbody>${focus.map(mktRow).join('') || `<tr><td colspan="10" class="mut">Nessuna quota per i mercati focus: inseriscile in “Quote manuali” e premi Ricalcola.</td></tr>`}</tbody></table></div>`;
   h += `<details class="card tw"><summary>Altri mercati (secondari)${R.secondary.length ? ` – ${R.secondary.length} con valore` : ''}</summary><table style="margin-top:8px"><thead>${MKT_HEAD}</thead><tbody>${other.map(mktRow).join('') || '<tr><td colspan="10" class="mut">–</td></tr>'}</tbody></table></details>`;
   h += `<div class="mut" style="font-size:.75rem;margin:-4px 0 8px">Prob. stimata = ${100 - S.marketWeight}% modello + ${S.marketWeight}% mercato (tra parentesi il modello puro). EV al netto della commissione del ${S.commission}%. VALUE se EV ≥ ${S.evThreshold}% e almeno 10 partite storiche per squadra. “Quota min. valore” = quota minima per avere EV ≥ soglia. 1X2 con quota oltre ${R0cap()} mai proposti.</div>`;
+
+  h += timingSection(R);
 
   // probabilità
   const P = R.P, Q = R.Q, hp = R.histP;
@@ -1304,6 +1550,82 @@ function render(R) {
   $('out').innerHTML = h;
   const bl = $('btnLogManual'); if (bl) bl.onclick = () => { const isNew = addSignal(VB.signalFromResult(R, R.best || R.bestAny), true); bl.textContent = isNew ? '✔ Salvato nel registro' : '✔ Già nel registro (aggiornato)'; bl.disabled = true; };
 }
+/* ---------- ARRIVA IL GOL? e tempi dei gol ---------- */
+const sgnI = x => x == null || !isFinite(x) ? '–' : (x >= 0 ? '+' : '') + Math.round(x * 100) + '%';
+function goalBox(R) {
+  const G = R.goal; if (!G) return '';
+  const col = G.label === 'ALTA' ? 'var(--grn)' : G.label === 'MEDIA' ? 'var(--amb)' : 'var(--red)';
+  const comp = G.comps.map(c => c.na ? `<span class="chip">${esc(c.k)} <b>n.d.</b></span>` : c.adj != null ? `<span class="chip">${esc(c.k)} <b class="${c.adj >= 0 ? 'pos' : 'neg'}">${sgnI(c.adj)}</b></span>` : `<span class="chip">${esc(c.k)} <b>${P0(c.raw != null ? c.raw : c.p)}</b></span>`).join('');
+  return `<div class="card goalbox" style="border-color:${col}"><div class="gbh"><div><div class="gbt">⚽ ARRIVA IL GOL?</div><div class="mut" style="font-size:.8rem">Giudizio sul prossimo gol, indipendente dal valore delle quote</div></div>
+    <div class="gbs" style="color:${col}">${G.score}<span style="font-size:1rem;color:var(--mut)">/100</span></div></div>
+    <div class="gbl" style="color:${col}">${G.label === 'PARTITA FINITA' ? 'PARTITA FINITA' : `${G.label} probabilità di gol`}</div>
+    <div class="meter" style="margin:8px 0"><div style="width:${G.score}%;background:${col}"></div></div>
+    <ul class="reasons" style="text-align:left">${G.why.map(w => `<li>${esc(w)}</li>`).join('')}</ul>
+    <div class="chips">${comp}</div></div>`;
+}
+function timingSection(R) {
+  const A = R.A, LG = R.leagueGoal, ak = VB.alertKey(A);
+  const minLbl = A.phase === 'HT' ? "l'intervallo" : A.minute + "'";
+  let h = `<h2>⏱️ Tempi dei gol e xG storici</h2>`;
+  const lgParts = [];
+  lgParts.push(LG.gpmSeason != null ? `<b>${D2(LG.gpmSeason)}</b> gol a partita in stagione (${LG.nSeason} gare)` : 'gol a partita in stagione non disponibili');
+  lgParts.push(LG.sh2 != null ? `<b>${Math.round(LG.sh2 * 100)}%</b> dei gol nel 2° tempo (campione ${LG.nSample} gare)` : '2° tempo: campione non disponibile');
+  lgParts.push(LG.xgTeam != null ? `xG medio <b>${D2(LG.xgTeam)}</b> per squadra a partita (${esc(LG.xgSrc)})` : 'xG campionato <b>non disponibile</b>');
+  h += `<div class="card"><b>Campionato${LG.name ? ' – ' + esc(LG.name) + (LG.season ? ' ' + esc(LG.season) : '') : ''}:</b> ${lgParts.join(' · ')}</div>`;
+  if (R.callouts.length) h += `<div class="card"><h3 style="margin-top:0">🧠 Indicazioni automatiche</h3><ul class="reasons">${R.callouts.slice(0, 8).map(c => `<li><span class="${(c.kind === 'att' ? c.up : c.up) ? 'pos' : 'neg'}">${c.up ? '▲' : '▼'}</span> ${esc(c.txt)}</li>`).join('')}</ul>
+    <div class="mut" style="font-size:.72rem">Solo scarti significativi (campione ≥ 8 partite, scarto ≥ 25% dopo shrinkage verso la media del campionato, test statistico); ordinati per rilevanza rispetto ai minuti che restano da giocare.</div></div>`;
+  else h += `<div class="card mut">Nessuno scarto significativo dei tempi dei gol rispetto al campionato${R.goalStats.home.base.n < 20 ? ' (campione campionato insufficiente)' : ''}.</div>`;
+  h += timingCard(R, 'home') + timingCard(R, 'away');
+  return h;
+}
+function timingCard(R, side) {
+  const G = R.goalStats[side], team = R.D[side].team, B = G.base, ak = VB.alertKey(R.A), A = R.A;
+  const minLbl = A.phase === 'HT' ? "l'intervallo" : 'il ' + A.minute + "'";
+  const vl = side === 'home' ? 'Casa' : 'Trasf.';
+  const cols = [[`Tutte (${G.all.n})`, G.all], [`${vl} (${G.venue.n})`, G.venue], [`Stagione (${G.season.n})`, G.season]];
+  const okB = B && B.n >= 20;
+  const pm = (t, k) => t.n ? D2(t[k] / t.n) : '–';
+  const cell = (t, v, q) => { if (!t.n || v == null) return '<td>–</td>'; const d = q ? v / q - 1 : null; const c = d != null && t.n >= 8 && Math.abs(d) >= 0.25 ? (d > 0 ? 'pos' : 'neg') : ''; return `<td class="${c}">${typeof v === 'number' ? D2(v) : v}</td>`; };
+  const pc = (t, v) => t.n && v != null ? PC(v) : '–';
+  let rows = '';
+  rows += `<tr><td>Gol fatti 1T / 2T (a partita)</td>${cols.map(([, t]) => `<td>${pm(t, 'f1')} / ${pm(t, 'f2')}</td>`).join('')}<td>${okB ? D2(B.g1 / B.n / 2) + ' / ' + D2(B.g2 / B.n / 2) : '–'}</td></tr>`;
+  rows += `<tr><td>Gol subiti 1T / 2T (a partita)</td>${cols.map(([, t]) => `<td>${pm(t, 'a1')} / ${pm(t, 'a2')}</td>`).join('')}<td>${okB ? D2(B.g1 / B.n / 2) + ' / ' + D2(B.g2 / B.n / 2) : '–'}</td></tr>`;
+  rows += `<tr><td>% gol fatti nel 2T</td>${cols.map(([, t]) => `<td>${t.sh2F != null ? PC(t.sh2F * 100) : '–'}</td>`).join('')}<td>${okB && B.sh2 != null ? PC(B.sh2 * 100) : '–'}</td></tr>`;
+  rows += `<tr><td>% gol subiti nel 2T</td>${cols.map(([, t]) => `<td>${t.sh2A != null ? PC(t.sh2A * 100) : '–'}</td>`).join('')}<td>${okB && B.sh2 != null ? PC(B.sh2 * 100) : '–'}</td></tr>`;
+  VB.BANDS.forEach(([, , lbl], b) => {
+    const rem = VB.bandRemaining(b, ak), q = okB ? B.rate[b] : null;
+    rows += `<tr class="${rem > 0 ? 'remrow' : ''}"><td>${rem > 0 ? '▶ ' : ''}Fascia ${lbl} fatti / subiti</td>${cols.map(([, t]) => t.n ? `<td><span class="${cellCls(t, t.bF[b] / t.n, q)}">${D2(t.bF[b] / t.n)}</span> / <span class="${cellCls(t, t.bA[b] / t.n, q)}">${D2(t.bA[b] / t.n)}</span></td>` : '<td>–</td>').join('')}<td>${q != null ? D2(q) : '–'}</td></tr>`;
+  });
+  rows += `<tr><td>% partite con gol fatto / subito nel 2T</td>${cols.map(([, t]) => `<td>${pc(t, t.sc2)} / ${pc(t, t.co2)}</td>`).join('')}<td>${okB ? PC(B.tm2) : '–'}</td></tr>`;
+  rows += `<tr><td>% partite con gol fatto / subito dopo il 60'</td>${cols.map(([, t]) => `<td>${pc(t, t.sc60)} / ${pc(t, t.co60)}</td>`).join('')}<td>${okB ? PC(B.tm60) : '–'}</td></tr>`;
+  rows += `<tr><td>% partite con gol fatto / subito dopo il 75'</td>${cols.map(([, t]) => `<td>${pc(t, t.sc75)} / ${pc(t, t.co75)}</td>`).join('')}<td>${okB ? PC(B.tm75) : '–'}</td></tr>`;
+  if (![45.99, 60, 75].includes(ak)) rows += `<tr><td>% partite con gol fatto / subito dopo ${esc(minLbl)}</td>${cols.map(([, t]) => `<td>${pc(t, t.scM)} / ${pc(t, t.coM)}</td>`).join('')}<td>${okB ? PC(B.tmM) : '–'}</td></tr>`;
+  rows += `<tr><td><b>% partite con almeno un gol dopo ${esc(minLbl)}</b></td>${cols.map(([, t]) => `<td><b>${pc(t, t.anyM)}</b></td>`).join('')}<td><b>${okB ? PC(B.anyM) : '–'}</b></td></tr>`;
+  // xG
+  const X = [[`Tutte (${G.xgAll.n})`, G.xgAll], [`${vl} (${G.xgVenue.n})`, G.xgVenue], [`Stagione (${G.xgSeason.n})`, G.xgSeason]];
+  const lx = R.leagueGoal.xgTeam;
+  const xc = (x, k) => x.n && x[k] != null ? D2(x[k]) : '–';
+  let xr = '';
+  if (G.xgAll.n) {
+    xr += `<tr><td>xG fatti a partita</td>${X.map(([, x]) => `<td class="${xCls(x, x.xgF, lx)}">${xc(x, 'xgF')}</td>`).join('')}<td>${lx != null ? D2(lx) : 'n.d.'}</td></tr>`;
+    xr += `<tr><td>xG concessi a partita</td>${X.map(([, x]) => `<td class="${xCls(x, x.xgA, lx, true)}">${xc(x, 'xgA')}</td>`).join('')}<td>${lx != null ? D2(lx) : 'n.d.'}</td></tr>`;
+    xr += `<tr><td>xG 2° tempo fatti / concessi</td>${X.map(([, x]) => `<td>${xc(x, 'xg2F')} / ${xc(x, 'xg2A')}</td>`).join('')}<td>–</td></tr>`;
+    xr += `<tr><td>Gol reali fatti / subiti (stesse partite)</td>${X.map(([, x]) => `<td>${xc(x, 'gF')} / ${xc(x, 'gA')}</td>`).join('')}<td>–</td></tr>`;
+  }
+  const V = G.vs;
+  const idx = [];
+  if (V.h2Att) idx.push(`attacco 2T <b class="${V.h2Att.idx >= 0 ? 'pos' : 'neg'}">${sgnI(V.h2Att.idx)}</b>`);
+  if (V.h2Conc) idx.push(`difesa 2T concede <b class="${V.h2Conc.idx > 0 ? 'neg' : 'pos'}">${sgnI(V.h2Conc.idx)}</b>`);
+  if (V.remAtt != null) idx.push(`attacco nei minuti restanti <b class="${V.remAtt >= 1 ? 'pos' : 'neg'}">${sgnI(V.remAtt - 1)}</b>`);
+  if (V.remConc != null) idx.push(`difesa nei minuti restanti concede <b class="${V.remConc > 1 ? 'neg' : 'pos'}">${sgnI(V.remConc - 1)}</b>`);
+  return `<div class="card tw"><h3>${esc(team.name)} <span class="mut" style="font-size:.8rem">${side === 'home' ? 'casa' : 'ospite'}</span></h3>
+    ${idx.length ? `<div style="font-size:.9rem;margin-bottom:6px">vs media campionato: ${idx.join(' · ')}</div>` : `<div class="mut" style="font-size:.85rem;margin-bottom:6px">Indici vs campionato non disponibili (campione insufficiente).</div>`}
+    <table><thead><tr><th></th>${cols.map(c => `<th>${c[0]}</th>`).join('')}<th>Camp.</th></tr></thead><tbody>${rows}</tbody></table>
+    ${xr ? `<table style="margin-top:10px"><thead><tr><th>xG storici</th>${X.map(c => `<th>${c[0]}</th>`).join('')}<th>Camp.</th></tr></thead><tbody>${xr}</tbody></table>` : `<div class="notes" style="margin-top:8px">xG storici: <b>non disponibili</b> per queste partite su FotMob.</div>`}
+    <div class="mut" style="font-size:.72rem;margin-top:6px">Fonte: eventi gol FotMob delle ultime ${G.all.n} partite con dettaglio. “Camp.” = media per squadra a partita nel campione di campionato (${B ? B.n : 0} gare). ▶ = fasce ancora da giocare. Verde = più gol della media del campionato, rosso = meno (scarto ≥ 25%, campione ≥ 8).</div></div>`;
+}
+function cellCls(t, v, q) { if (q == null || !q || t.n < 8) return ''; const d = v / q - 1; return Math.abs(d) >= 0.25 ? (d > 0 ? 'hi' : 'lo') : ''; }
+function xCls(x, v, lx, inv) { if (!x.n || x.n < 5 || lx == null || v == null) return ''; const d = v / lx - 1; if (Math.abs(d) < 0.12) return ''; return (d > 0) !== !!inv ? 'pos' : 'neg'; }
 function fracLbl(k) { return k === 0.125 ? '1/8' : k === 0.25 ? '1/4' : k === 0.5 ? '1/2' : k === 1 ? 'pieno' : k; }
 function formHtml(f) { return `<span class="form">${f.map(x => `<i class="f${x}">${x}</i>`).join('')}</span>`; }
 function teamCard(R, side) {
@@ -1357,8 +1679,10 @@ function modelDetails(R) {
   if (L.why.length) kv.push(['Aggiornamento live', L.why.join('; ') + ` → fattore (prior gamma α=2): ${D2(L.mult[0] / L.redM[0] / L.ssM[0])} – ${D2(L.mult[1] / L.redM[1] / L.ssM[1])}`]);
   kv.push(['Pressione (att. pericolosi + momentum)', `fattore ${D2(L.tilt)} / ${D2(1 / L.tilt)}`]);
   if (L.redM[0] !== 1 || L.redM[1] !== 1) kv.push(['Espulsioni', `fattori ${D2(L.redM[0])} – ${D2(L.redM[1])}`]);
+  if (L.tendM && (L.tendM[0] !== 1 || L.tendM[1] !== 1)) kv.push(['Tendenze tempi dei gol', `fattori ${D2(L.tendM[0])} – ${D2(L.tendM[1])} (quando segnano/subiscono nei minuti restanti rispetto alla loro media, ridotti verso il campionato)`]);
   if (L.ssM[0] !== 1) kv.push(['Stato del punteggio', `fattori ${D2(L.ssM[0])} – ${D2(L.ssM[1])} (chi è sotto spinge, chi è avanti gestisce)`]);
   kv.push(['Gol attesi residui', `${hn} ${D2(L.lhr)} · ${an} ${D2(L.lar)} · totale ${D2(L.lhr + L.lar)}${R.Q.rem ? ` (mercato: ${D2(R.Q.rem.lambda)})` : ''}`]);
+  kv.push(['Campione campionato (tempi dei gol)', `${R.goalStats.home.base.n} partite con eventi${R.leagueGoal.xgSrc ? ' · xG da ' + R.leagueGoal.xgSrc : ' · xG non disponibile'}`]);
   kv.push(['Qualità dati', `${R.home.all.n} + ${R.away.all.n} partite storiche, ${R.home.all.nDet || 0} + ${R.away.all.nDet || 0} con minuti gol · indice ${Math.round(R.dataQ * 100)}/100`]);
   kv.push(['Richieste / tempo', `${R.requests} richieste FotMob in questa sessione · ${(R.elapsedMs / 1000).toFixed(1)} s`]);
   return `<details class="card"><summary>🧮 Dettagli del modello</summary><div class="kv" style="margin-top:10px">${kv.map(([k, v]) => `<div>${esc(k)}</div><div>${esc(v)}</div>`).join('')}</div>
