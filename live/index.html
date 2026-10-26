@@ -40,7 +40,7 @@
   <div class="rules" id="rules">Caricamento regole…</div>
 </header>
 <div class="tabs">
-  <button class="tab on" data-t="storico">📚 Storico gol</button>
+  <button class="tab on" data-t="storico">📚 Storico senza 0-0</button>
   <button class="tab" data-t="xg">📈 xG</button>
   <button class="tab" data-t="segna">⚽ Segna sempre</button>
   <button class="tab" data-t="subisce">🥅 Subisce sempre</button>
@@ -60,12 +60,13 @@ document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===b));
   document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+b.dataset.t));
 });
+let DESC={};
 function render(id,list){
   const el=document.getElementById('p-'+id);
   const done=list.filter(s=>s.status==='won'||s.status==='lost');
   const won=done.filter(s=>s.status==='won').length;
   const rate=done.length?(100*won/done.length).toFixed(1)+'%':'–';
-  let h=`<div class="sum">
+  let h=(DESC[id]?`<div class="d" style="color:#cfcfcf;margin:0 0 12px;font-size:16px">${DESC[id]}</div>`:'')+`<div class="sum">
     <div class="box"><div class="v">${list.length}</div><div class="l">Segnali</div></div>
     <div class="box"><div class="v won">${won}</div><div class="l">Vinti</div></div>
     <div class="box"><div class="v lost">${done.length-won}</div><div class="l">Persi</div></div>
@@ -76,7 +77,7 @@ function render(id,list){
       <div class="m"><a href="${esc(s.url)}" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">${esc(s.home)} – ${esc(s.away)}</a></div>
       <div class="o ${esc(s.status)}">${ICON[s.status]||''} ${esc(s.final||'')}</div>
       <div class="d">${esc(s.time)} · ${esc(s.league)} (${esc(s.country)}) · segnale al ${esc(s.minute)}'</div>
-      <div class="r">🎯 ${esc(s.reason)}</div></div>`;
+      <div class="r">🎯 ${esc(s.reason)}</div>${s.streak!=null?`<div class="r">🔥 Serie senza 0-0: <b>${s.streak}${s.streak_complete===false?'+':''}</b> partite di campionato consecutive</div>`:''}</div>`;
   }
   el.innerHTML=h;
 }
@@ -84,17 +85,22 @@ const nc='?t='+Date.now();
 Promise.all([fetch('data/signals.json'+nc).then(r=>r.json()).catch(()=>[]),
              fetch('data/state.json'+nc).then(r=>r.json()).catch(()=>({}))]).then(([sig,st])=>{
   document.getElementById('last').textContent=(st.last_scan||st.last_write||'–')+' (ora italiana)';
-  const r=Object.assign({window:"60-70'",hist_n:50,hist_goal_pct:100,hist_max_00:3,xg_min:2.7,cur_min:10,
+  const r=Object.assign({window:"60-70'",hist_n:50,streak_min:50,hist_max_00:3,xg_min:2.7,cur_min:9,
     segna_strong:100,segna_other:80,subisce:100,mai00_strong:100,mai00_other:90},st.rules||{});
   document.getElementById('rules').innerHTML=
    `Solo partite di <b>campionato nazionale</b> (no coppe, amichevoli, nazionali), sullo <b>0-0</b> tra il <b>${esc(r.window)}</b>.<br>
-    📚 <b>Storico gol</b>: una squadra con almeno 1 gol nel ${r.hist_goal_pct}% delle ultime ${r.hist_n} di campionato, l'altra con al massimo ${r.hist_max_00} 0-0 nelle ultime ${r.hist_n}.<br>
+    📚 <b>Storico senza 0-0</b>: una squadra ha una serie di almeno <b>${r.streak_min} partite di campionato consecutive senza 0-0</b> (over 0.5 gol totali: basta che segni una delle due squadre; stagioni passate incluse, viene mostrata la serie completa), l'altra ha al massimo ${r.hist_max_00} 0-0 nelle ultime ${r.hist_n} di campionato.<br>
     📈 <b>xG</b>: xG totale atteso prematch (stagione corrente) ≥ <b>${r.xg_min}</b>.<br>
-    <i>Stagione corrente di campionato, almeno ${r.cur_min} partite giocate da entrambe:</i><br>
-    ⚽ <b>Segna sempre</b>: una squadra ha segnato nel ${r.segna_strong}% delle partite, l'altra in almeno il ${r.segna_other}%.<br>
-    🥅 <b>Subisce sempre</b>: una squadra ha subito gol nel ${r.subisce}% delle partite.<br>
-    🚫 <b>Mai 0-0</b>: una squadra senza 0-0 nel ${r.mai00_strong}% delle partite, l'altra in almeno il ${r.mai00_other}%.<br>
+    
+    ⚽ <b>Segna sempre</b>: una squadra ha <b>segnato</b> almeno 1 gol nel ${r.segna_strong}% delle sue partite, l'altra in almeno il ${r.segna_other}%. <i>(solo campionato in corso, minimo ${r.cur_min} partite per squadra)</i><br>
+    🥅 <b>Subisce sempre</b>: una squadra ha <b>subito</b> almeno 1 gol nel ${r.subisce}% delle sue partite. <i>(solo campionato in corso, minimo ${r.cur_min} partite per squadra)</i><br>
+    🚫 <b>Mai 0-0</b>: una squadra con <b>over 0.5 gol totali</b> (nessuno 0-0) nel ${r.mai00_strong}% delle partite, l'altra in almeno il ${r.mai00_other}%. <i>(solo campionato in corso, minimo ${r.cur_min} partite per squadra)</i><br>
     Esito: ✅ se arriva almeno un gol dopo il segnale (finale ≠ 0-0), ❌ se finisce 0-0, ⏳ in corso.`;
+  DESC={storico:`Serie di almeno ${r.streak_min} partite di campionato consecutive <b>senza 0-0</b> (over 0.5 totali) per una squadra; l'altra max ${r.hist_max_00} 0-0 nelle ultime ${r.hist_n}.`,
+    xg:`xG totale atteso prematch ≥ ${r.xg_min} (stagione corrente).`,
+    segna:`Una squadra ha <b>segnato</b> in ogni partita di campionato della stagione (${r.segna_strong}%), l'altra ≥ ${r.segna_other}%. <i>(solo campionato in corso, minimo ${r.cur_min} partite per squadra)</i>`,
+    subisce:`Una squadra ha <b>subito</b> almeno 1 gol in ogni partita di campionato della stagione (${r.subisce}%). <i>(solo campionato in corso, minimo ${r.cur_min} partite per squadra)</i>`,
+    mai00:`Una squadra <b>senza 0-0</b> (over 0.5 totali) nel ${r.mai00_strong}% delle partite di stagione, l'altra ≥ ${r.mai00_other}%. <i>(solo campionato in corso, minimo ${r.cur_min} partite per squadra)</i>`};
   render('storico',sig.filter(s=>s.type==='storico'));
   for(const t of ['xg','segna','subisce','mai00']) render(t,sig.filter(s=>s.type===t));
 });

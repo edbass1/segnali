@@ -18,15 +18,17 @@ CFG = {
     "MIN_FROM": 60,              # finestra minuti (inclusa)
     "MIN_TO": 70,
     # Segnale 1 - STORICO GOL
-    "HIST_N": 50,                # ultime N partite di campionato
-    "HIST_GOAL_PCT": 100,        # % partite con almeno 1 gol (squadra "forte")
-    "HIST_MAX_00": 3,            # max 0-0 dell'altra squadra nelle ultime N
-    "HIST_MAX_SEASONS": 8,       # max stagioni di campionato da scaricare per squadra
+    # 0-0 = partita finita senza gol (over 0.5 totali = almeno 1 gol di una delle due squadre)
+    "HIST_STREAK_MIN": 50,       # serie minima di partite di campionato CONSECUTIVE senza 0-0 (squadra "forte")
+    "HIST_STREAK_CAP": 200,      # oltre questo numero smette di contare ("200+")
+    "HIST_N": 50,                # finestra per l'altra squadra: ultime N partite di campionato...
+    "HIST_MAX_00": 3,            # ...con al massimo questi 0-0
+    "HIST_MAX_SEASONS": 15,      # max stagioni di campionato da scaricare per squadra
     # Segnale 2 - xG prematch
     "XG_MIN_TOTAL": 2.7,
     "XG_SPLIT_MAX_MATCHES": 19,  # max partite casa/trasferta lette per lo split xG
     # Segnali 3-5: solo stagione CORRENTE di campionato
-    "CUR_MIN_MATCHES": 10,       # partite minime giocate in stagione da ciascuna squadra
+    "CUR_MIN_MATCHES": 9,        # partite minime giocate in stagione da ciascuna squadra
     "SEGNA_STRONG_PCT": 100,     # 3) SEGNA SEMPRE: una squadra ha segnato nel 100%...
     "SEGNA_OTHER_PCT": 80,       #    ...e l'altra in almeno l'80%
     "SUBISCE_PCT": 100,          # 4) SUBISCE SEMPRE: una squadra ha subito gol nel 100%
@@ -64,7 +66,7 @@ CACHE_F = os.path.join(CACHE_DIR, "cache.json")
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 FM = "https://www.fotmob.com/api/data"
 TYPES = ["storico", "xg", "segna", "subisce", "mai00"]
-TYPE_NAMES = {"storico": "STORICO GOL", "xg": "xG", "segna": "SEGNA SEMPRE", "subisce": "SUBISCE SEMPRE", "mai00": "MAI 0-0"}
+TYPE_NAMES = {"storico": "STORICO GOL (serie senza 0-0)", "xg": "xG", "segna": "SEGNA SEMPRE", "subisce": "SUBISCE SEMPRE", "mai00": "MAI 0-0"}
 TYPE_ICONS = {"storico": "📚", "xg": "📈", "segna": "⚽", "subisce": "🥅", "mai00": "🚫"}
 NREQ = [0]
 _RUNCACHE = {}
@@ -183,7 +185,7 @@ def league_ok(meta, name=""):
 def team_history(tid):
     """Ultime partite di campionato (tutte le stagioni disponibili) per squadra. Lista ordinata per data."""
     c = cget("team", tid, CFG["TEAM_TTL_H"] * 3600)
-    if c: return c
+    if c and c.get("v") == 2: return c
     t = get(f"{FM}/teams?id={tid}")
     name = (t.get("details") or {}).get("name")
     ts_list = (t.get("stats") or {}).get("tournamentSeasons") or []
@@ -208,9 +210,10 @@ def team_history(tid):
         for m in ls["matches"]:
             if tid in (m[2], m[4]): pool[m[1]] = m
         used.append(f"{nm} {season}: {len(pool) - n0}")
-        if len(pool) >= CFG["HIST_N"] + 3: break
+        has00 = any(m[6] + m[7] == 0 for m in pool.values())
+        if len(pool) >= CFG["HIST_N"] + 3 and (has00 or len(pool) >= CFG["HIST_STREAK_CAP"] + 3): break
     hist = sorted(pool.values(), key=lambda m: m[0])
-    out = {"id": tid, "name": name, "matches": hist, "seasons": used, "skipped": skipped}
+    out = {"v": 2, "id": tid, "name": name, "matches": hist, "seasons": used, "skipped": skipped}
     cput("team", tid, out)
     return out
 
@@ -219,6 +222,29 @@ def hist_stats(h, tid, n):
     goals = sum(1 for m in last if m[6] + m[7] >= 1)
     z = sum(1 for m in last if m[6] + m[7] == 0)
     return {"n": len(last), "with_goal": goals, "zz": z}
+
+def streak_no00(h, tid):
+    """Serie attuale di partite di campionato consecutive senza 0-0 (dalla più recente all'indietro)."""
+    n, last = 0, None
+    for m in reversed(h["matches"]):
+        if m[6] + m[7] == 0:
+            last = m; break
+        n += 1
+        if n >= CFG["HIST_STREAK_CAP"]: break
+    out = {"streak": n, "complete": last is not None, "capped": last is None and n >= CFG["HIST_STREAK_CAP"]}
+    if last:
+        opp = last[5] if last[2] == tid else last[3]
+        d = last[0][:10]
+        out["last00"] = {"date": f"{d[8:10]}/{d[5:7]}/{d[0:4]}", "opp": opp, "home": last[2] == tid}
+    return out
+
+def streak_text(x):
+    if x["complete"]:
+        l = x["last00"]
+        return (f"{x['streak']} partite di campionato consecutive senza 0-0 "
+                f"(ultimo 0-0: {l['date']} {'vs' if l['home'] else '@'} {l['opp']})")
+    if x["capped"]: return f"{x['streak']}+ partite di campionato consecutive senza 0-0"
+    return f"almeno {x['streak']} partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato)"
 
 def form(h, tid, n):
     last = h["matches"][-n:]
@@ -315,13 +341,14 @@ def evaluate(md, force=False):
     ev["hist"] = {}
     for side, h, tid in (("home", hh, hid), ("away", ha, aid)):
         ev["hist"][side] = dict(hist_stats(h, tid, N), avail=len(h["matches"]), seasons=h["seasons"],
-                                form=form(h, tid, CFG["FORM_N"]))
+                                form=form(h, tid, CFG["FORM_N"]), **streak_no00(h, tid))
     H, A = ev["hist"]["home"], ev["hist"]["away"]
-    def strong(x): return x["n"] >= N and x["with_goal"] * 100 >= CFG["HIST_GOAL_PCT"] * x["n"]
+    def strong(x): return x["streak"] >= CFG["HIST_STREAK_MIN"]
     def weakok(x): return x["n"] >= N and x["zz"] <= CFG["HIST_MAX_00"]
     s1 = None
-    if strong(H) and weakok(A): s1 = "home"
-    elif strong(A) and weakok(H): s1 = "away"
+    for st, ot, X, Y in (("home", "away", H, A), ("away", "home", A, H)):
+        if strong(X) and weakok(Y):
+            if s1 is None or X["streak"] > ev["hist"][s1]["streak"]: s1 = st
     ev["storico"] = {"ok": bool(s1), "strong": s1}
     try: ev["xg"] = xg_expected(lid, hid, aid, ko)
     except Exception as e: ev["xg"] = {"ok": False, "why": f"errore xG: {e}"}
@@ -394,11 +421,11 @@ def reason_text(ev, typ):
     N = CFG["HIST_N"]
     if typ == "storico":
         H, A = ev["hist"]["home"], ev["hist"]["away"]
-        s = ev["storico"]["strong"] or ("home" if H["with_goal"] / max(H["n"], 1) >= A["with_goal"] / max(A["n"], 1) else "away")
+        s = ev["storico"]["strong"] or ("home" if H["streak"] >= A["streak"] else "away")
         st, ot = (H, A) if s == "home" else (A, H)
         sl, ol = ("Casa", "Ospite") if s == "home" else ("Ospite", "Casa")
-        return (f"{sl}: gol in {st['with_goal']}/{st['n']} ultime partite di campionato; "
-                f"{ol}: {ot['zz']} 0-0 nelle ultime {ot['n']}")
+        return (f"{sl}: {streak_text(st)}; "
+                f"{ol}: {ot['zz']} 0-0 nelle ultime {ot['n']} di campionato")
     if typ in ("segna", "subisce", "mai00"):
         st = ev[typ]["strong"]; ot = "away" if st == "home" else "home"
         S, O = ev["cur"][st], ev["cur"][ot]
@@ -407,15 +434,16 @@ def reason_text(ev, typ):
         def pc(x, k): return f"{round(100 * x[k] / x['n']) if x['n'] else 0}%"
         txt = ""
         if typ == "segna":
-            txt = (f"{sl} ha segnato in {S['scored']}/{S['n']} partite di campionato {sea}; "
+            txt = (f"{sl} ha segnato almeno 1 gol in {S['scored']}/{S['n']} partite di campionato {sea}; "
                    f"{ol} in {O['scored']}/{O['n']} ({pc(O, 'scored')})")
         elif typ == "subisce":
-            txt = (f"{sl} ha subito gol in {S['conceded']}/{S['n']} partite di campionato {sea} "
+            txt = (f"{sl} ha subito almeno 1 gol in {S['conceded']}/{S['n']} partite di campionato {sea} "
                    f"({ol}: {O['conceded']}/{O['n']})")
         else:
-            txt = (f"{sl}: nessuno 0-0 in {S['no00']}/{S['n']} partite di campionato {sea}; "
+            txt = (f"{sl}: over 0.5 totali (nessuno 0-0) in {S['no00']}/{S['n']} partite di campionato {sea}; "
                    f"{ol}: {O['no00']}/{O['n']} senza 0-0 ({pc(O, 'no00')})")
-        if not ev[typ]["enough"]: txt += f" — meno di {CFG['CUR_MIN_MATCHES']} partite in stagione"
+        txt += f" [solo campionato in corso, min. {CFG['CUR_MIN_MATCHES']} partite per squadra]"
+        if not ev[typ]["enough"]: txt += f" — NON valido: meno di {CFG['CUR_MIN_MATCHES']} partite in stagione"
         return txt
     x = ev["xg"]
     if not x.get("ok"): return f"xG non disponibile ({x.get('why')})"
@@ -443,7 +471,9 @@ def build_message(ev, live, types, test=False):
         L.append(f"   {esc(reason_text(ev, typ))}")
         if typ == "storico":
             H, A = ev["hist"]["home"], ev["hist"]["away"]
-            L.append(f"   Casa: {H['zz']} 0-0 e gol in {H['with_goal']}/{H['n']} | Ospite: {A['zz']} 0-0 e gol in {A['with_goal']}/{A['n']}")
+            L.append(f"   (0-0 = nessun gol; over 0.5 totali = almeno 1 gol di una delle due squadre, minimo {CFG['HIST_STREAK_MIN']} di fila)")
+            L.append(f"   Serie senza 0-0: casa {H['streak']}{'' if H['complete'] else '+'} | ospite {A['streak']}{'' if A['complete'] else '+'}")
+            L.append(f"   0-0 nelle ultime {CFG['HIST_N']}: casa {H['zz']}/{H['n']} | ospite {A['zz']}/{A['n']}")
         elif typ == "xg":
             x = ev["xg"]
             if x.get("ok"):
@@ -452,7 +482,7 @@ def build_message(ev, live, types, test=False):
                 L.append(f"   Stagione {esc(x.get('season'))}, metodo: {x.get('method')}")
     H, A = ev["cur"]["home"], ev["cur"]["away"]
     L.append("")
-    L.append(f"📅 <b>Stagione {esc(ev['cur_season'])}</b> (campionato)")
+    L.append(f"📅 <b>Stagione {esc(ev['cur_season'])}</b> (solo campionato in corso, minimo {CFG['CUR_MIN_MATCHES']} partite per squadra)")
     for lab, X in (("🏠 Casa", H), ("✈️ Ospite", A)):
         L.append(f"   {lab}: segna {X['scored']}/{X['n']} | subisce {X['conceded']}/{X['n']} | no 0-0 {X['no00']}/{X['n']}")
     L.append("")
@@ -519,7 +549,11 @@ def signal_record(ev, live, typ):
            "stats": live, "status": "pending", "final": None,
            "url": f"https://www.fotmob.com/match/{ev['matchId']}"}
     if typ == "storico":
-        rec["details"] = {k: {kk: ev["hist"][k][kk] for kk in ("n", "with_goal", "zz", "avail")} for k in ("home", "away")}
+        rec["details"] = {k: {kk: ev["hist"][k].get(kk) for kk in ("streak", "complete", "capped", "last00", "n", "zz", "avail")}
+                          for k in ("home", "away")}
+        rec["details"]["strong"] = ev["storico"]["strong"]
+        rec["streak"] = ev["hist"][ev["storico"]["strong"]]["streak"]
+        rec["streak_complete"] = ev["hist"][ev["storico"]["strong"]]["complete"]
     elif typ in ("segna", "subisce", "mai00"):
         rec["details"] = {"season": ev["cur_season"], "strong": ev[typ]["strong"], "home": ev["cur"]["home"], "away": ev["cur"]["away"]}
     else:
@@ -601,7 +635,7 @@ def scan(dry=False):
             if snap.get("score") and parse_score({"scoreStr": snap["score"]}) not in (None, (0, 0)):
                 log("   non più 0-0"); continue
             H, A = ev["hist"]["home"], ev["hist"]["away"]
-            log(f"   storico casa {H['with_goal']}/{H['n']} gol, {H['zz']} 0-0 | ospite {A['with_goal']}/{A['n']} gol, {A['zz']} 0-0 -> {ev['storico']['ok']}")
+            log(f"   storico: serie senza 0-0 casa {H['streak']} / ospite {A['streak']}; 0-0 ultime {CFG['HIST_N']}: casa {H['zz']} / ospite {A['zz']} -> {ev['storico']['ok']}")
             log(f"   xG: {reason_text(ev, 'xg')} -> {ev['xg']['signal']}")
             for t in ("segna", "subisce", "mai00"): log(f"   {TYPE_NAMES[t]}: {reason_text(ev, t)} -> {ev['sig'][t]}")
             res = dict(ev["sig"])
@@ -641,7 +675,7 @@ def state_fingerprint(state):
     return json.dumps({k: v for k, v in state.items() if k not in VOLATILE}, sort_keys=True)
 
 def rules_dict():
-    return {"window": f"{CFG['MIN_FROM']}-{CFG['MIN_TO']}'", "hist_n": CFG["HIST_N"], "hist_goal_pct": CFG["HIST_GOAL_PCT"],
+    return {"window": f"{CFG['MIN_FROM']}-{CFG['MIN_TO']}'", "hist_n": CFG["HIST_N"], "streak_min": CFG["HIST_STREAK_MIN"],
             "hist_max_00": CFG["HIST_MAX_00"], "xg_min": CFG["XG_MIN_TOTAL"], "cur_min": CFG["CUR_MIN_MATCHES"],
             "segna_strong": CFG["SEGNA_STRONG_PCT"], "segna_other": CFG["SEGNA_OTHER_PCT"], "subisce": CFG["SUBISCE_PCT"],
             "mai00_strong": CFG["MAI00_STRONG_PCT"], "mai00_other": CFG["MAI00_OTHER_PCT"]}
@@ -657,7 +691,7 @@ def test(mids, send=False, save=False):
         log(f"{ev['home']} - {ev['away']}  stato: {snap['score']}  min {snap['minute']}")
         for side in ("home", "away"):
             h = ev["hist"][side]
-            log(f"  {side}: disponibili {h['avail']} partite camp. | ultime {h['n']}: con gol {h['with_goal']}, 0-0 {h['zz']}")
+            log(f"  {side}: disponibili {h['avail']} partite camp. | SERIE senza 0-0: {h['streak']} (completa={h['complete']}, cap={h['capped']}, ultimo 0-0={h.get('last00')}) | ultime {h['n']}: 0-0 {h['zz']}")
             log(f"        stagioni: {h['seasons']}")
             log(f"        forma: {h['form']}")
         log(f"  STORICO GOL -> {ev['storico']}  | {reason_text(ev, 'storico')}")
