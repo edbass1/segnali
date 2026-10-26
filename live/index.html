@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Segnali Live – Storico gol & xG</title>
+<style>
+  :root{--bg:#000;--card:#111;--line:#262626;--txt:#f2f2f2;--mut:#9a9a9a;--ok:#22c55e;--ko:#ef4444;--pend:#eab308;--acc:#38bdf8}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:18px/1.45 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif}
+  header{padding:16px 16px 6px;max-width:1000px;margin:auto}
+  h1{font-size:28px;margin:0 0 6px}
+  a{color:var(--acc)}
+  .meta{color:var(--mut);font-size:16px}
+  .rules{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:10px 14px;margin:12px 0;font-size:16px}
+  .rules b{color:#fff}
+  .tabs{display:flex;flex-wrap:wrap;gap:8px;max-width:1000px;margin:8px auto 10px;padding:0 16px}
+  .tab{flex:1 1 30%;padding:12px 8px;font-size:18px;font-weight:700;background:var(--card);color:var(--mut);border:1px solid var(--line);border-radius:12px;cursor:pointer}
+  .tab.on{color:#000;background:#fff;border-color:#fff}
+  main{max-width:1000px;margin:0 auto;padding:0 16px 40px}
+  .panel{display:none;background:#1c1c1c;border:1px solid var(--line);border-radius:12px;padding:14px}
+  .panel.on{display:block}
+  .sum{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-bottom:14px}
+  .box{background:#000;border:1px solid var(--line);border-radius:10px;padding:10px;text-align:center}
+  .box .v{font-size:28px;font-weight:800}.box .l{font-size:14px;color:var(--mut)}
+  .sig{background:#000;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0;display:grid;grid-template-columns:1fr auto;gap:4px 12px}
+  .sig .m{font-size:21px;font-weight:700}
+  .sig .d{color:var(--mut);font-size:15px}
+  .sig .r{grid-column:1/3;font-size:16px;color:#d6d6d6}
+  .sig .o{grid-row:1/3;grid-column:2;text-align:right;font-size:22px;font-weight:800;white-space:nowrap}
+  .won{color:var(--ok)}.lost{color:var(--ko)}.pending{color:var(--pend)}.void{color:var(--mut)}
+  .empty{color:var(--mut);padding:20px;text-align:center}
+  @media(max-width:600px){body{font-size:17px}.sum{grid-template-columns:repeat(2,1fr)}h1{font-size:24px}.tab{font-size:18px}}
+</style>
+</head>
+<body>
+<header>
+  <h1>⚽ Segnali Live 0-0</h1>
+  <div class="meta">Ultima scansione: <b id="last">–</b> · <a href="../">← Analizzatore alert</a></div>
+  <div class="rules" id="rules">Caricamento regole…</div>
+</header>
+<div class="tabs">
+  <button class="tab on" data-t="storico">📚 Storico gol</button>
+  <button class="tab" data-t="xg">📈 xG</button>
+  <button class="tab" data-t="segna">⚽ Segna sempre</button>
+  <button class="tab" data-t="subisce">🥅 Subisce sempre</button>
+  <button class="tab" data-t="mai00">🚫 Mai 0-0</button>
+</div>
+<main>
+  <section class="panel on" id="p-storico"></section>
+  <section class="panel" id="p-xg"></section>
+  <section class="panel" id="p-segna"></section>
+  <section class="panel" id="p-subisce"></section>
+  <section class="panel" id="p-mai00"></section>
+</main>
+<script>
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const ICON={won:'✅',lost:'❌',pending:'⏳',void:'➖'};
+document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+b.dataset.t));
+});
+function render(id,list){
+  const el=document.getElementById('p-'+id);
+  const done=list.filter(s=>s.status==='won'||s.status==='lost');
+  const won=done.filter(s=>s.status==='won').length;
+  const rate=done.length?(100*won/done.length).toFixed(1)+'%':'–';
+  let h=`<div class="sum">
+    <div class="box"><div class="v">${list.length}</div><div class="l">Segnali</div></div>
+    <div class="box"><div class="v won">${won}</div><div class="l">Vinti</div></div>
+    <div class="box"><div class="v lost">${done.length-won}</div><div class="l">Persi</div></div>
+    <div class="box"><div class="v">${rate}</div><div class="l">Hit rate</div></div></div>`;
+  if(!list.length) h+='<div class="empty">Nessun segnale ancora.</div>';
+  for(const s of list.slice().reverse()){
+    h+=`<div class="sig">
+      <div class="m"><a href="${esc(s.url)}" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">${esc(s.home)} – ${esc(s.away)}</a></div>
+      <div class="o ${esc(s.status)}">${ICON[s.status]||''} ${esc(s.final||'')}</div>
+      <div class="d">${esc(s.time)} · ${esc(s.league)} (${esc(s.country)}) · segnale al ${esc(s.minute)}'</div>
+      <div class="r">🎯 ${esc(s.reason)}</div></div>`;
+  }
+  el.innerHTML=h;
+}
+const nc='?t='+Date.now();
+Promise.all([fetch('data/signals.json'+nc).then(r=>r.json()).catch(()=>[]),
+             fetch('data/state.json'+nc).then(r=>r.json()).catch(()=>({}))]).then(([sig,st])=>{
+  document.getElementById('last').textContent=(st.last_scan||st.last_write||'–')+' (ora italiana)';
+  const r=Object.assign({window:"60-70'",hist_n:50,hist_goal_pct:100,hist_max_00:3,xg_min:2.7,cur_min:10,
+    segna_strong:100,segna_other:80,subisce:100,mai00_strong:100,mai00_other:90},st.rules||{});
+  document.getElementById('rules').innerHTML=
+   `Solo partite di <b>campionato nazionale</b> (no coppe, amichevoli, nazionali), sullo <b>0-0</b> tra il <b>${esc(r.window)}</b>.<br>
+    📚 <b>Storico gol</b>: una squadra con almeno 1 gol nel ${r.hist_goal_pct}% delle ultime ${r.hist_n} di campionato, l'altra con al massimo ${r.hist_max_00} 0-0 nelle ultime ${r.hist_n}.<br>
+    📈 <b>xG</b>: xG totale atteso prematch (stagione corrente) ≥ <b>${r.xg_min}</b>.<br>
+    <i>Stagione corrente di campionato, almeno ${r.cur_min} partite giocate da entrambe:</i><br>
+    ⚽ <b>Segna sempre</b>: una squadra ha segnato nel ${r.segna_strong}% delle partite, l'altra in almeno il ${r.segna_other}%.<br>
+    🥅 <b>Subisce sempre</b>: una squadra ha subito gol nel ${r.subisce}% delle partite.<br>
+    🚫 <b>Mai 0-0</b>: una squadra senza 0-0 nel ${r.mai00_strong}% delle partite, l'altra in almeno il ${r.mai00_other}%.<br>
+    Esito: ✅ se arriva almeno un gol dopo il segnale (finale ≠ 0-0), ❌ se finisce 0-0, ⏳ in corso.`;
+  render('storico',sig.filter(s=>s.type==='storico'));
+  for(const t of ['xg','segna','subisce','mai00']) render(t,sig.filter(s=>s.type===t));
+});
+</script>
+</body>
+</html>

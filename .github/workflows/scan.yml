@@ -1,0 +1,50 @@
+name: Scanner segnali live
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: segnali-live-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Ripristina cache storici squadre
+        uses: actions/cache@v4
+        with:
+          path: scanner/.cache
+          key: scan-cache-${{ github.run_id }}
+          restore-keys: scan-cache-
+
+      - name: Scansione
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          TELEGRAM_CHAT_ID: ${{ secrets.TELEGRAM_CHAT_ID }}
+        run: python scanner/scan.py
+
+      - name: Commit dati
+        run: |
+          git config user.name "segnali-bot"
+          git config user.email "segnali-bot@users.noreply.github.com"
+          git add live/data/signals.json live/data/state.json
+          if git diff --cached --quiet; then echo "nessuna modifica"; exit 0; fi
+          git commit -m "live: aggiorna segnali $(TZ=Europe/Rome date '+%Y-%m-%d %H:%M')"
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          exit 1

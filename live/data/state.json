@@ -1,0 +1,12 @@
+{
+ "last_scan": null,
+ "rules": {
+  "window": "60-70'",
+  "hist_n": 50,
+  "hist_goal_pct": 100,
+  "hist_max_00": 3,
+  "xg_min": 2.7
+ },
+ "sent": {},
+ "checked": {}
+}
