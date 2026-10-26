@@ -77,7 +77,7 @@ function render(id,list){
       <div class="m"><a href="${esc(s.url)}" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">${esc(s.home)} – ${esc(s.away)}</a></div>
       <div class="o ${esc(s.status)}">${ICON[s.status]||''} ${esc(s.final||'')}</div>
       <div class="d">${esc(s.time)} · ${esc(s.league)} (${esc(s.country)}) · segnale al ${esc(s.minute)}'</div>
-      <div class="r">🎯 ${esc(s.reason)}</div>${s.streak!=null?`<div class="r">🔥 Serie senza 0-0: <b>${s.streak}${s.streak_complete===false?'+':''}</b> partite di campionato consecutive</div>`:''}</div>`;
+      <div class="r">🎯 ${esc(s.reason)}</div>${s.streak!=null?`<div class="r">🔥 Serie senza 0-0: <b>${s.streak}${s.streak_complete===false?'+':''}</b> partite di campionato consecutive</div>`:''}${('over05' in s)?`<div class="r">💰 Over 0.5 live: <b>${s.over05!=null?Number(s.over05).toFixed(2):'non disponibile'}</b></div>`:''}</div>`;
   }
   el.innerHTML=h;
 }

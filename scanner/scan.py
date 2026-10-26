@@ -10,7 +10,7 @@ Uso:
         stampa i numeri; con --send invia il messaggio marcato 🧪 TEST.
 Solo libreria standard Python 3.
 """
-import argparse, datetime, html, json, os, re, sys, time, urllib.parse, urllib.request, urllib.error
+import argparse, datetime, difflib, html, json, os, re, sys, time, unicodedata, urllib.parse, urllib.request, urllib.error
 from zoneinfo import ZoneInfo
 
 # ============================ CONFIG ============================
@@ -54,6 +54,26 @@ EXCLUDE_NAME_RE = re.compile(
     r"puchar|beker|kupa|cupa|kup|trophy|shield|super ?cup|supercopa|supercoppa|play-?offs?)\b", re.I)
 RESERVE_TEAM_RE = re.compile(r"(\s(II|2|B|U-?\d\d)$|^jong\s|\breserves?\b|\bacademy\b)", re.I)
 EXCLUDE_RESERVE_TEAMS = True     # esclude squadre riserve/B (es. "Brann 2", "Jong PSV")
+# --- Quota live Over 0.5 (The Odds API v4, env ODDS_API_KEY) ---
+ODDS_BOOKMAKER = "paddypower"        # uso interno: il bookmaker non viene mai mostrato
+ODDS_MARKET = "alternate_totals"     # 1 credito per chiamata
+ODDS_TIME_TOL_H = 3                  # tolleranza orario d'inizio per abbinare l'evento
+# lega FotMob (id) -> sport key The Odds API (solo campionati nazionali)
+ODDS_SPORT = {
+    112: "soccer_argentina_primera_division", 113: "soccer_australia_aleague", 38: "soccer_austria_bundesliga",
+    40: "soccer_belgium_first_div", 268: "soccer_brazil_campeonato", 8814: "soccer_brazil_serie_b",
+    273: "soccer_chile_campeonato", 46: "soccer_denmark_superliga", 47: "soccer_epl", 48: "soccer_efl_champ",
+    108: "soccer_england_league1", 109: "soccer_england_league2", 51: "soccer_finland_veikkausliiga",
+    53: "soccer_france_ligue_one", 110: "soccer_france_ligue_two", 54: "soccer_germany_bundesliga",
+    146: "soccer_germany_bundesliga2", 208: "soccer_germany_liga3", 135: "soccer_greece_super_league",
+    55: "soccer_italy_serie_a", 86: "soccer_italy_serie_b", 223: "soccer_japan_j_league", 9080: "soccer_korea_kleague1",
+    126: "soccer_league_of_ireland", 230: "soccer_mexico_ligamx", 57: "soccer_netherlands_eredivisie",
+    59: "soccer_norway_eliteserien", 196: "soccer_poland_ekstraklasa", 61: "soccer_portugal_primeira_liga",
+    63: "soccer_russia_premier_league", 536: "soccer_saudi_arabia_pro_league", 87: "soccer_spain_la_liga",
+    140: "soccer_spain_segunda_division", 64: "soccer_spl", 67: "soccer_sweden_allsvenskan",
+    168: "soccer_sweden_superettan", 69: "soccer_switzerland_superleague", 71: "soccer_turkey_super_league",
+    130: "soccer_usa_mls",
+}
 # ================================================================
 
 ROME = ZoneInfo("Europe/Rome")
@@ -335,6 +355,7 @@ def evaluate(md, force=False):
     if not ok and not force: return ev
     N = CFG["HIST_N"]
     ko = (g.get("matchTimeUTCDate") or "9999")
+    ev["ko"] = g.get("matchTimeUTCDate")
     def cut(h):  # solo partite precedenti al calcio d'inizio (utile in --test su gare concluse)
         return dict(h, matches=[m for m in h["matches"] if m[1] != ev["matchId"] and m[0][:16] < ko[:16]])
     hh, ha = cut(team_history(hid)), cut(team_history(aid))
@@ -453,7 +474,7 @@ def reason_text(ev, typ):
 def fmt_pair(v, suffix=""):
     return f"{v[0]}{suffix} - {v[1]}{suffix}" if v else "n.d."
 
-def build_message(ev, live, types, test=False):
+def build_message(ev, live, types, test=False, odds=None):
     """Un solo messaggio con tutti i tipi di segnale scattati sulla partita."""
     L = []
     if test: L.append("🧪 <b>TEST</b> (messaggio di prova, non è un segnale reale)")
@@ -463,6 +484,7 @@ def build_message(ev, live, types, test=False):
     L.append(f"⚽ <b>{esc(ev['home'])} - {esc(ev['away'])}</b>")
     mnt = f"{live['minute']}'" if live.get("minute") is not None else ("FINITA" if live.get("finished") else (live.get("phase") or "?"))
     L.append(f"⏱ {mnt}   📊 {esc(live.get('score') or '0 - 0')}")
+    if odds is not None: L.append(odds_line(odds))
     for typ in types:
         L.append("")
         cond = ""
@@ -526,6 +548,105 @@ def send_telegram(text):
     except Exception as e:
         log(f"  [telegram] errore {type(e).__name__}"); return False
 
+# ---------------------------------------------------------------- quota Over 0.5 live
+ODDS_API = "https://api.the-odds-api.com/v4"
+ODDS_STATUS = {}
+_STOP = {"fc", "cf", "sk", "ac", "as", "sc", "fk", "cd", "ud", "sd", "rc", "rcd", "afc", "ss", "us", "ssc", "vfb", "vfl",
+         "tsg", "sv", "bk", "if", "ik", "ff", "aik", "club", "de", "del", "la", "le", "the", "calcio", "cfc", "fbc", "bsc",
+         "kv", "krc", "rsc", "osc", "ogc", "sco", "esp", "nk", "hnk", "gnk", "ks", "sl", "ca", "cs", "ec", "se", "cr", "fbk",
+         "1", "04", "05", "07", "08", "09", "1899", "1900", "1909", "1913"}
+
+_TRANSLIT = str.maketrans({"æ": "ae", "Æ": "ae", "ø": "o", "Ø": "o", "œ": "oe", "ß": "ss", "ł": "l", "Ł": "l",
+                           "ı": "i", "đ": "d", "Đ": "d", "þ": "th", "ð": "d"})
+_ALIAS = {"hamkam": "hamarkameratene", "olympiakos": "olympiacos", "man": "manchester", "wolves": "wolverhampton",
+          "spurs": "tottenham", "psg": "paris saint germain", "inter": "inter", "gladbach": "monchengladbach"}
+
+def _norm_tokens(name, keep_generic=False):
+    t = unicodedata.normalize("NFKD", str(name or "").translate(_TRANSLIT)).encode("ascii", "ignore").decode().lower()
+    t = re.sub(r"[^a-z0-9 ]+", " ", t.replace("-", " ").replace(".", " ").replace("'", ""))
+    toks = [w for x in t.split() if x for w in _ALIAS.get(x, x).split()]
+    core = [w for w in toks if w not in _STOP]
+    return set(core if core and not keep_generic else toks)
+
+def _tok_eq(x, y):
+    if x == y: return True
+    if len(x) >= 3 and len(y) >= 3 and (x.startswith(y) or y.startswith(x)): return True
+    return len(x) >= 5 and len(y) >= 5 and difflib.SequenceMatcher(None, x, y).ratio() >= 0.8
+
+def name_score(a, b):
+    """Somiglianza 0..1 tra due nomi squadra (accenti, sigle FC/CF/SK..., token comuni o prefissi)."""
+    best = 0.0
+    for kg in (False, True):
+        A, B = _norm_tokens(a, kg), _norm_tokens(b, kg)
+        if not A or not B: continue
+        hit = sum(1 for x in A if any(_tok_eq(x, y) for y in B))
+        best = max(best, hit / min(len(A), len(B)))
+    return best
+
+def odds_get(path, params):
+    key = os.environ.get("ODDS_API_KEY")
+    q = urllib.parse.urlencode(dict(params, apiKey=key))
+    req = urllib.request.Request(f"{ODDS_API}{path}?{q}", headers={"User-Agent": UA})
+    try:
+        with urllib.request.urlopen(req, timeout=30) as r:
+            data = json.load(r); hdr = r.headers
+    except urllib.error.HTTPError as e:   # mai stampare l'URL (contiene la chiave)
+        raise RuntimeError(f"Odds API HTTP {e.code}") from None
+    except Exception as e:
+        raise RuntimeError(f"Odds API errore {type(e).__name__}") from None
+    if hdr.get("x-requests-remaining") is not None:
+        ODDS_STATUS.update({"remaining": hdr.get("x-requests-remaining"), "used": hdr.get("x-requests-used"),
+                            "last_cost": hdr.get("x-requests-last"), "time": rome_str()})
+    return data
+
+def find_odds_event(sport, home, away, ko_iso):
+    """Evento The Odds API per la partita (endpoint /events: gratuito)."""
+    evs = odds_get(f"/sports/{sport}/events", {"dateFormat": "iso"})
+    try: ko = datetime.datetime.fromisoformat(ko_iso.replace("Z", "+00:00"))
+    except Exception: ko = None
+    best, bs = None, 0
+    for e in evs:
+        ct = None
+        if ko:
+            try:
+                ct = datetime.datetime.fromisoformat(e["commence_time"].replace("Z", "+00:00"))
+                if abs((ct - ko).total_seconds()) > ODDS_TIME_TOL_H * 3600: continue
+            except Exception: pass
+        sh, sa = name_score(home, e.get("home_team")), name_score(away, e.get("away_team"))
+        # entrambe simili, oppure una identica e stesso orario (una squadra non gioca due partite insieme)
+        if min(sh, sa) < 0.5 and not (max(sh, sa) >= 1 and ko and ct and abs((ct - ko).total_seconds()) <= 1800): continue
+        sc = sh + sa
+        if sc > bs: best, bs = e, sc
+    return best
+
+def over05_live(ev):
+    """Quota live Over 0.5 (una chiamata a pagamento: 1 credito). Ritorna dict con price o reason."""
+    out = {"price": None}
+    if not os.environ.get("ODDS_API_KEY"): out["reason"] = "chiave API assente"; return out
+    sport = ODDS_SPORT.get(int(ev["lid"]))
+    if not sport: out["reason"] = "campionato non coperto"; return out
+    try:
+        e = find_odds_event(sport, ev["home"], ev["away"], ev.get("ko") or "")
+        if not e: out["reason"] = "partita non trovata"; return out
+        out["event"] = e["id"]
+        d = odds_get(f"/sports/{sport}/events/{e['id']}/odds",
+                     {"bookmakers": ODDS_BOOKMAKER, "markets": ODDS_MARKET, "oddsFormat": "decimal"})
+        for b in d.get("bookmakers") or []:
+            if b.get("key") != ODDS_BOOKMAKER: continue
+            for mk in b.get("markets") or []:
+                if mk.get("key") != ODDS_MARKET: continue
+                for o in mk.get("outcomes") or []:
+                    if str(o.get("name")).lower() == "over" and abs(float(o.get("point", -1)) - 0.5) < 1e-6:
+                        out["price"] = float(o["price"]); out["time"] = rome_str(); return out
+        out["reason"] = "quota non offerta"
+    except Exception as ex:
+        out["reason"] = str(ex)[:80]
+    return out
+
+def odds_line(od):
+    if od and od.get("price"): return f"💰 Over 0.5 live: <b>{od['price']:.2f}</b>"
+    return "💰 Over 0.5 live: non disponibile"
+
 # ---------------------------------------------------------------- live scan
 def live_matches():
     today = now_utc().astimezone(ROME)
@@ -541,13 +662,14 @@ def live_matches():
                 out[int(m["id"])] = m
     return out
 
-def signal_record(ev, live, typ):
+def signal_record(ev, live, typ, odds=None):
     rec = {"id": f"{ev['matchId']}-{typ}", "type": typ, "time": rome_str(), "ts": int(ts()),
            "league": ev["league"], "country": ev["country"], "leagueId": ev["lid"],
            "home": ev["home"], "away": ev["away"], "matchId": ev["matchId"],
            "reason": reason_text(ev, typ), "minute": live.get("minute"), "score_at_signal": live.get("score"),
            "stats": live, "status": "pending", "final": None,
-           "url": f"https://www.fotmob.com/match/{ev['matchId']}"}
+           "url": f"https://www.fotmob.com/match/{ev['matchId']}",
+           "over05": (odds or {}).get("price"), "over05_note": None if (odds or {}).get("price") else (odds or {}).get("reason")}
     if typ == "storico":
         rec["details"] = {k: {kk: ev["hist"][k].get(kk) for kk in ("streak", "complete", "capped", "last00", "n", "zz", "avail")}
                           for k in ("home", "away")}
@@ -643,10 +765,12 @@ def scan(dry=False):
             hits = [t for t in TYPES if res.get(t) and t not in sent]
             if hits:
                 log("   >>> SEGNALE " + " + ".join(TYPE_NAMES[t] for t in hits))
-                if not dry: send_telegram(build_message(ev, snap, hits))
+                od = over05_live(ev) if not dry else {"price": None, "reason": "dry-run"}   # 1 sola chiamata per partita
+                log(f"   quota Over 0.5 live: {od.get('price') or od.get('reason')}")
+                if not dry: send_telegram(build_message(ev, snap, hits, odds=od))
                 for t in hits:
                     sent[t] = rome_str()
-                    signals.append(signal_record(ev, snap, t)); n_sig += 1
+                    signals.append(signal_record(ev, snap, t, od)); n_sig += 1
             state["checked"][str(mid)] = {"t": int(ts()), "r": "valutata", "res": res}
         except Exception as e:
             log(f"   errore: {type(e).__name__}: {e}")
@@ -656,6 +780,7 @@ def scan(dry=False):
               and k not in state["checked"]]:
         del state["sent"][k]
     state["rules"] = rules_dict()
+    if ODDS_STATUS: state["odds_api"] = dict(ODDS_STATUS)
     state["live_count"] = len(live)
     state["candidates_last"] = len(cands)
     state["last_scan"] = rome_str()
@@ -681,7 +806,7 @@ def rules_dict():
             "mai00_strong": CFG["MAI00_STRONG_PCT"], "mai00_other": CFG["MAI00_OTHER_PCT"]}
 
 # ---------------------------------------------------------------- test mode
-def test(mids, send=False, save=False):
+def test(mids, send=False, save=False, odds=False):
     for mid in mids:
         log(f"\n================ TEST matchId {mid} ================")
         md = get(f"{FM}/matchDetails?matchId={mid}")
@@ -702,7 +827,11 @@ def test(mids, send=False, save=False):
         for t in ("segna", "subisce", "mai00"):
             log(f"  {TYPE_NAMES[t]} -> {ev['sig'][t]} | {reason_text(ev, t)}")
         types = [t for t in TYPES if not (t == "xg" and not x.get("ok"))]
-        msg = build_message(ev, snap, types, test=True)
+        od = None
+        if odds:
+            od = over05_live(ev)
+            log(f"  quota Over 0.5 live -> {od} | crediti: {ODDS_STATUS}")
+        msg = build_message(ev, snap, types, test=True, odds=od)
         log("\n--- messaggio (tutti i tipi, con esito condizione) ---\n" + msg)
         if send:
             send_telegram(msg); send = False   # un solo messaggio di prova
@@ -713,12 +842,13 @@ def main():
     ap.add_argument("--test", action="append", help="matchId da valutare forzatamente")
     ap.add_argument("--send", action="store_true", help="in --test invia 1 messaggio Telegram 🧪 TEST")
     ap.add_argument("--dry-run", action="store_true")
+    ap.add_argument("--odds", action="store_true", help="in --test legge anche la quota Over 0.5 live (1 credito)")
     a = ap.parse_args()
     global CACHE
     CACHE = load_json(CACHE_F, {})
     t0 = time.time()
     try:
-        if a.test: test(a.test, send=a.send)
+        if a.test: test(a.test, send=a.send, odds=a.odds)
         else:
             try: scan(dry=a.dry_run)
             except Exception as e:   # errore di rete/FotMob: non far fallire il workflow, riprova al prossimo giro

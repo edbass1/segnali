@@ -6,7 +6,7 @@
 - `scanner/scan.py` – scanner FotMob (solo stdlib). Config in cima al file.
 - `.github/workflows/scan.yml` – cron ogni 5 minuti + avvio manuale
 
-Segreti del repo: `TELEGRAM_BOT_TOKEN` (obbligatorio), `TELEGRAM_CHAT_ID` (facoltativo, default 621551511).
+Segreti del repo: `TELEGRAM_BOT_TOKEN` (obbligatorio), `TELEGRAM_CHAT_ID` (facoltativo, default 621551511). `ODDS_API_KEY` (facoltativo: quota live Over 0.5 al momento del segnale, 1 credito The Odds API per partita segnalata; senza chiave la riga mostra "non disponibile").
 In Settings > Actions > General > Workflow permissions: "Read and write permissions".
 
 Test locali:
