@@ -30,8 +30,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "1-2",
   "url": "https://www.fotmob.com/match/5906529",
   "over05": null,
   "over05_note": "campionato non coperto",
@@ -50,7 +50,8 @@
     "conceded": 10,
     "no00": 14
    }
-  }
+  },
+  "resolved": "2026-10-27 22:55"
  },
  {
   "id": "5907648-mai00",
@@ -83,8 +84,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "2-0",
   "url": "https://www.fotmob.com/match/5907648",
   "over05": null,
   "over05_note": "campionato non coperto",
@@ -103,6 +104,7 @@
     "conceded": 10,
     "no00": 13
    }
-  }
+  },
+  "resolved": "2026-10-27 22:55"
  }
 ]
