@@ -2,11 +2,12 @@ name: Archivio completo delle partite
 
 on:
   schedule:
-    - cron: '*/5 * * * *'
+    - cron: '*/15 * * * *'
   push:
     paths:
       - '.github/workflows/daily.yml'
       - 'scanner/archive.py'
+      - 'scanner/scan.py'
       - 'live/archive.js'
       - 'live/index.html'
   workflow_dispatch:
@@ -26,7 +27,9 @@ jobs:
       - name: Collega la vista archivio alla pagina
         run: |
           grep -q 'archive.js' live/index.html || sed -i '/<\/body>/i <script src="archive.js"></script>' live/index.html
-      - name: Aggiorna partite, risultati e strike rate
+      - name: Aggiorna la lista originale di partite con statistiche prematch
+        run: python scanner/scan.py --daily --budget 7
+      - name: Aggiorna archivio completo, risultati e strike rate
         run: python scanner/archive.py
       - name: Commit archivio giornaliero
         run: |
