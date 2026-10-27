@@ -119,7 +119,7 @@ def fixture_to_entry(m, league, old=None):
         "away": (m.get("away") or {}).get("name") or m.get("awayTeam", {}).get("name") or "Ospite",
         "url": f"https://www.fotmob.com/match/{mid}", "status": status,
         "score": score_text(sc), "final": score_text(sc) if finished else None,
-        "ht_score": ht, "types": old.get("types") or [], "info": old.get("info") or {},
+        "ht_score": ht, "ht_checked": bool(old.get("ht_checked", False)), "types": old.get("types") or [], "info": old.get("info") or {},
         "started": bool(st.get("started")), "finished": finished
     }
 
@@ -161,11 +161,12 @@ def main():
     # Per ogni partita conclusa, recupera l'intervallo una volta sola. Se non è disponibile,
     # ritenta alle scansioni successive senza trasformare il dato mancante in 0-0.
     for m in fixtures:
-        if not m.get("finished") or m.get("ht_score") or not m.get("matchId"): continue
+        if not m.get("finished") or m.get("ht_checked") or not m.get("matchId"): continue
         try:
             md = get(f"{FM}/matchDetails?matchId={m['matchId']}")
             ht = halftime_score(md)
-            if ht is not None: m["ht_score"] = score_text(ht)
+            m["ht_score"] = score_text(ht) if ht is not None else None
+            m["ht_checked"] = True
             time.sleep(0.12)
         except Exception as e:
             print(f"Intervallo non disponibile per {m['home']} - {m['away']}: {e}", flush=True)
@@ -188,7 +189,8 @@ def main():
                 try:
                     md = get(f"{FM}/matchDetails?matchId={match['matchId']}")
                     ht = halftime_score(md)
-                    if ht is not None: match["ht_score"] = score_text(ht)
+                    match["ht_score"] = score_text(ht) if ht is not None else None
+                    match["ht_checked"] = True
                     time.sleep(0.12)
                 except Exception as e:
                     print(f"Intervallo storico non disponibile per {match['home']} - {match['away']}: {e}", flush=True)
