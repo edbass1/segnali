@@ -6,8 +6,22 @@
   const dateLabel = d => { const p=String(d||"").split("-"); return p.length===3 ? p[2]+"/"+p[1]+"/"+p[0] : d; };
   const el = (tag, cls, value, parent) => { const n=document.createElement(tag); if(cls)n.className=cls; if(value!==undefined)n.textContent=value; if(parent)parent.appendChild(n); return n; };
   async function json(url) { const r=await fetch(url+"?t="+Date.now(),{cache:"no-store"}); if(!r.ok)throw new Error("HTTP "+r.status); return r.json(); }
-  window.renderDay = async function(day, signals) {
-    const root=document.getElementById("p-oggi"); if(!root)return;
+  function setupArchiveTab() {
+    const tabs=document.querySelector(".tabs"), main=document.querySelector("main");
+    if(!tabs||!main||document.querySelector('.tab[data-t="archivio"]')) return;
+    const btn=document.createElement("button");
+    btn.className="tab day"; btn.dataset.t="archivio"; btn.textContent="📚 Archivio giornaliero";
+    tabs.appendChild(btn);
+    const panel=document.createElement("section"); panel.className="panel"; panel.id="p-archivio"; main.appendChild(panel);
+    btn.addEventListener("click",()=>{
+      history.replaceState(null,"", "#archivio");
+      document.querySelectorAll(".tab").forEach(x=>x.classList.toggle("on",x===btn));
+      document.querySelectorAll(".panel").forEach(p=>p.classList.toggle("on",p.id==="p-archivio"));
+      renderArchive(window.__archiveDay, window.__archiveSignals || []);
+    });
+  }
+  window.renderArchive = async function(day, signals) {
+    const root=document.getElementById("p-archivio"); if(!root)return;
     const request=++seq;
     try {
       const idx=await json("data/archive/index.json");
@@ -40,7 +54,7 @@
     el("label","", "Scegli giornata:",picker).style.fontWeight="700";
     const select=el("select","",undefined,picker); select.id="archive-date"; select.style.cssText="background:#000;color:#fff;border:1px solid #555;border-radius:8px;padding:10px;font-size:17px;max-width:100%";
     dates.forEach(d=>{const o=el("option","",dateLabel(d),select);o.value=d;o.selected=d===doc.date;});
-    select.addEventListener("change",()=>{selectedDate=select.value;window.renderDay({date:selectedDate},signals);});
+    select.addEventListener("change",()=>{selectedDate=select.value;window.renderArchive({date:selectedDate},signals);});
     const sum=el("div","sum",undefined,root);
     const stat=(v,l)=>{const b=el("div","box",undefined,sum);el("div","v",v,b);el("div","l",l,b);};
     stat(String(matches.length),"Tutte le partite");
@@ -67,6 +81,7 @@
       el("div","r","⏱️ Intervallo: "+(m.ht_score||"non disponibile")+" · 🏁 Risultato: "+result,card).classList.add(rc);
       if(ss.length)el("div","gotsig","🚨 Segnale live: "+ss.map(s=>labels[s.type]||s.type).join(" + ")+(ss[0].final?" · "+ss[0].final:""),card);
     });
-    const tab=document.querySelector('.tab[data-t="oggi"]');if(tab)tab.textContent="📚 Archivio giornaliero";
   }
+  setupArchiveTab();
+  if(location.hash==="#archivio") { const b=document.querySelector('.tab[data-t="archivio"]'); if(b)b.click(); }
 })();
