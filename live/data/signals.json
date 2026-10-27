@@ -1,1 +1,108 @@
-[]
+[
+ {
+  "id": "5906529-mai00",
+  "type": "mai00",
+  "time": "2026-10-27 22:16",
+  "ts": 1793135814,
+  "league": "National League",
+  "country": "ENG",
+  "leagueId": 117,
+  "home": "Hornchurch",
+  "away": "Yeovil Town",
+  "matchId": 5906529,
+  "reason": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 67,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 67,
+   "phase": "67",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5906529",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 14,
+    "scored": 9,
+    "conceded": 10,
+    "no00": 14
+   },
+   "away": {
+    "n": 14,
+    "scored": 14,
+    "conceded": 10,
+    "no00": 14
+   }
+  }
+ },
+ {
+  "id": "5907648-mai00",
+  "type": "mai00",
+  "time": "2026-10-27 22:17",
+  "ts": 1793135820,
+  "league": "National League South",
+  "country": "ENG",
+  "leagueId": 8944,
+  "home": "Tonbridge Angels",
+  "away": "Folkestone Invicta",
+  "matchId": 5907648,
+  "reason": "Casa: over 0.5 totali (nessuno 0-0) in 13/13 partite di campionato 2026/27; Ospite: 13/13 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 70,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 70,
+   "phase": "70",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5907648",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 13,
+    "scored": 11,
+    "conceded": 8,
+    "no00": 13
+   },
+   "away": {
+    "n": 13,
+    "scored": 11,
+    "conceded": 10,
+    "no00": 13
+   }
+  }
+ }
+]
