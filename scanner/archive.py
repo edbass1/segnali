@@ -87,7 +87,7 @@ def halftime_score(md):
         if own: home = not home
         if home: h += 1
         else: a += 1
-    return (h, a) if found_goal or events else None
+    return (h, a) if found_goal else None
 
 def match_status(m):
     st = m.get("status") or {}
