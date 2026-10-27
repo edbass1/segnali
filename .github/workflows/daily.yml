@@ -8,10 +8,6 @@ on:
 permissions:
   contents: write
 
-concurrency:
-  group: segnali-live-scan
-  cancel-in-progress: false
-
 jobs:
   archive:
     runs-on: ubuntu-latest
@@ -21,13 +17,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
+      - name: Collega la vista archivio alla pagina
+        run: |
+          grep -q 'archive.js' live/index.html || sed -i '/<\/body>/i <script src="archive.js"></script>' live/index.html
       - name: Aggiorna partite, risultati e strike rate
         run: python scanner/archive.py
       - name: Commit archivio giornaliero
         run: |
           git config user.name "segnali-bot"
           git config user.email "segnali-bot@users.noreply.github.com"
-          git add live/data/today.json live/data/archive/
+          git add live/index.html live/data/today.json live/data/archive/
           if git diff --cached --quiet; then echo "nessuna modifica"; exit 0; fi
           git commit -m "live: aggiorna archivio partite $(TZ=Europe/Rome date '+%Y-%m-%d %H:%M')"
           for i in 1 2 3; do
