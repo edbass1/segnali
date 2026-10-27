@@ -147,10 +147,11 @@ function renderDay(d,sig){
   }
   el.innerHTML=h;
 }
+function loadData(){
 const nc='?t='+Date.now();
-Promise.all([fetch('data/signals.json'+nc).then(r=>r.json()).catch(()=>[]),
-             fetch('data/state.json'+nc).then(r=>r.json()).catch(()=>({})),
-             fetch('data/today.json'+nc).then(r=>r.json()).catch(()=>null)]).then(([sig,st,day])=>{
+Promise.all([fetch('data/signals.json'+nc,{cache:'no-store'}).then(r=>r.json()).catch(()=>[]),
+             fetch('data/state.json'+nc,{cache:'no-store'}).then(r=>r.json()).catch(()=>({})),
+             fetch('data/today.json'+nc,{cache:'no-store'}).then(r=>r.json()).catch(()=>null)]).then(([sig,st,day])=>{
   renderDay(day,sig);
   if(location.hash==='#oggi') document.querySelector('.tab[data-t="oggi"]').click();
   document.getElementById('last').textContent=(st.last_scan||st.last_write||'–')+' (ora italiana)';
@@ -173,8 +174,10 @@ Promise.all([fetch('data/signals.json'+nc).then(r=>r.json()).catch(()=>[]),
   render('storico',sig.filter(s=>s.type==='storico'));
   for(const t of ['xg','segna','subisce','mai00']) render(t,sig.filter(s=>s.type===t));
 });
-  // Ricarica la pagina ogni 60 secondi per mostrare rapidamente eventuali nuovi segnali.
-  setInterval(() => window.location.reload(), 60 * 1000);
+}
+// Rilegge i dati pubblicati ogni 60 secondi, senza ricaricare tutta la pagina.
+loadData();
+setInterval(loadData, 60 * 1000);
 </script>
 </body>
 </html>
