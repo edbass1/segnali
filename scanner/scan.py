@@ -5,12 +5,16 @@
 Uso:
   python scanner/scan.py                 # scansione normale (cron)
   python scanner/scan.py --dry-run       # come sopra ma senza Telegram e senza salvare
+  python scanner/scan.py --daily [--date 20261027] [--out file.json]
+        "Partite del giorno": partite di campionato della data (ora italiana) le cui squadre
+        soddisfano GIÀ i requisiti prematch di almeno un segnale -> live/data/today.json
+        (nessun Telegram, nessuna chiamata The Odds API).
   python scanner/scan.py --test 5802971 [--test ID2] [--send]
         forza la valutazione di una partita ignorando punteggio/minuto,
         stampa i numeri; con --send invia il messaggio marcato 🧪 TEST.
 Solo libreria standard Python 3.
 """
-import argparse, datetime, difflib, html, json, os, re, sys, time, unicodedata, urllib.parse, urllib.request, urllib.error
+import argparse, concurrent.futures, datetime, difflib, html, json, os, re, sys, threading, time, unicodedata, urllib.parse, urllib.request, urllib.error
 from zoneinfo import ZoneInfo
 
 # ============================ CONFIG ============================
@@ -45,6 +49,11 @@ CFG = {
     "HEARTBEAT_MIN": 30,         # riscrive state.json almeno ogni N minuti
     "RESULT_FOLLOWUP": True,     # messaggio Telegram con esito finale
     "PENDING_GIVEUP_H": 8,
+    # Partite del giorno (--daily)
+    "DAILY_BUDGET_MIN": 45,      # tempo massimo di calcolo: poi scrive il file parziale
+    "DAILY_DELAY": 0.25,         # pausa extra tra una partita e l'altra (s)
+    "DAILY_SAVE_EVERY": 25,
+    "DAILY_WORKERS": 4,          # partite valutate in parallelo (richieste FotMob contemporanee)      # salva la cache ogni N partite (job interrotto = lavoro non perso)
 }
 DEFAULT_CHAT_ID = "621551511"
 EXCLUDE_NAME_RE = re.compile(
@@ -83,6 +92,7 @@ SIGNALS_F = os.path.join(DATA, "signals.json")
 STATE_F = os.path.join(DATA, "state.json")
 CACHE_DIR = os.path.join(ROOT, "scanner", ".cache")
 CACHE_F = os.path.join(CACHE_DIR, "cache.json")
+TODAY_F = os.path.join(DATA, "today.json")
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0 Safari/537.36"
 FM = "https://www.fotmob.com/api/data"
 TYPES = ["storico", "xg", "segna", "subisce", "mai00"]
@@ -90,6 +100,11 @@ TYPE_NAMES = {"storico": "STORICO GOL (serie senza 0-0)", "xg": "xG", "segna": "
 TYPE_ICONS = {"storico": "📚", "xg": "📈", "segna": "⚽", "subisce": "🥅", "mai00": "🚫"}
 NREQ = [0]
 _RUNCACHE = {}
+_LOCK = threading.RLock()          # cache/contatori (thread-safe per --daily in parallelo)
+_KEYLOCKS = {}
+def keylock(k):
+    """Lock per chiave: due thread non scaricano la stessa stagione/squadra/partita insieme."""
+    with _LOCK: return _KEYLOCKS.setdefault(k, threading.Lock())
 
 def now_utc(): return datetime.datetime.now(datetime.timezone.utc)
 def ts(): return time.time()
@@ -101,7 +116,7 @@ def get(url, tries=3):
     err = None
     for i in range(tries):
         try:
-            NREQ[0] += 1
+            with _LOCK: NREQ[0] += 1
             req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
             with urllib.request.urlopen(req, timeout=30) as r:
                 data = json.load(r)
@@ -126,10 +141,11 @@ def save_json(p, obj, compact=False):
 
 CACHE = {}
 def cget(bucket, key, ttl_s):
-    e = CACHE.setdefault(bucket, {}).get(str(key))
+    e = CACHE.get(bucket, {}).get(str(key))
     if e and ts() - e["t"] < ttl_s: return e["v"]
     return None
-def cput(bucket, key, val): CACHE.setdefault(bucket, {})[str(key)] = {"t": ts(), "v": val}
+def cput(bucket, key, val):
+    with _LOCK: CACHE.setdefault(bucket, {})[str(key)] = {"t": ts(), "v": val}
 
 def prune_cache():
     lim = {"team": CFG["TEAM_TTL_H"] * 3600, "season": CFG["PAST_SEASON_TTL_D"] * 86400,
@@ -151,6 +167,10 @@ def parse_score(st):
 def league_season(lid, season=None):
     """Calendario compatto di una stagione di campionato + meta. Ritorna dict o None."""
     key = f"{lid}|{season or 'cur'}"
+    if key in _RUNCACHE: return _RUNCACHE[key]
+    with keylock("ls|" + key): return _league_season(lid, season, key)
+
+def _league_season(lid, season, key):
     if key in _RUNCACHE: return _RUNCACHE[key]
     cached = cget("season", key, CFG["PAST_SEASON_TTL_D"] * 86400)
     if cached and (cached.get("past") or ts() - CACHE["season"][key]["t"] < CFG["CUR_SEASON_TTL_H"] * 3600):
@@ -204,6 +224,9 @@ def league_ok(meta, name=""):
 
 def team_history(tid):
     """Ultime partite di campionato (tutte le stagioni disponibili) per squadra. Lista ordinata per data."""
+    with keylock(f"team|{tid}"): return _team_history(tid)
+
+def _team_history(tid):
     c = cget("team", tid, CFG["TEAM_TTL_H"] * 3600)
     if c and c.get("v") == 2: return c
     t = get(f"{FM}/teams?id={tid}")
@@ -280,6 +303,9 @@ def form(h, tid, n):
             "o15": sum(1 for m in last if m[6] + m[7] >= 2)}
 
 def match_xg(mid):
+    with keylock(f"mxg|{mid}"): return _match_xg(mid)
+
+def _match_xg(mid):
     c = cget("mxg", mid, 400 * 86400)
     if c is not None: return c
     md = get(f"{FM}/matchDetails?matchId={mid}")
@@ -805,6 +831,124 @@ def rules_dict():
             "segna_strong": CFG["SEGNA_STRONG_PCT"], "segna_other": CFG["SEGNA_OTHER_PCT"], "subisce": CFG["SUBISCE_PCT"],
             "mai00_strong": CFG["MAI00_STRONG_PCT"], "mai00_other": CFG["MAI00_OTHER_PCT"]}
 
+# ---------------------------------------------------------------- partite del giorno (--daily)
+def day_matches(day):
+    """Partite FotMob della data (YYYYMMDD, calendario ora italiana) in campionati nazionali candidati."""
+    j = get(f"{FM}/matches?date={day}&timezone=Europe%2FRome")
+    out, n_all = [], 0
+    for L in j.get("leagues") or []:
+        for m in L.get("matches") or []:
+            n_all += 1
+            st = m.get("status") or {}
+            if st.get("cancelled") or st.get("awarded"): continue
+            if (L.get("ccode") or "").upper() == "INT": continue
+            if EXCLUDE_NAME_RE.search(L.get("name") or ""): continue
+            if EXCLUDE_RESERVE_TEAMS and (RESERVE_TEAM_RE.search(m["home"].get("name") or "") or RESERVE_TEAM_RE.search(m["away"].get("name") or "")):
+                continue
+            m["_league"] = {"ccode": L.get("ccode"), "name": L.get("name"), "id": L.get("id"),
+                            "pid": L.get("primaryId") or L.get("parentLeagueId") or L.get("id")}
+            out.append(m)
+    out.sort(key=lambda m: ((m.get("status") or {}).get("utcTime") or "", m["_league"]["name"] or ""))
+    return out, n_all
+
+def pseudo_md(m):
+    """matchDetails minimale costruito dalla lista partite: evaluate() lavora solo su dati prematch,
+    così si evita 1 richiesta matchDetails per partita (niente H2H, che è solo informativo)."""
+    return {"general": {"matchId": int(m["id"]), "homeTeam": {"id": m["home"]["id"], "name": m["home"]["name"]},
+                        "awayTeam": {"id": m["away"]["id"], "name": m["away"]["name"]},
+                        "parentLeagueId": m["_league"]["pid"], "leagueId": m["_league"]["id"],
+                        "leagueName": m["_league"]["name"], "countryCode": m["_league"]["ccode"],
+                        "matchTimeUTCDate": (m.get("status") or {}).get("utcTime")},
+            "header": {}, "content": {}}
+
+def daily_entry(ev, m, hits):
+    """Numeri chiave per ogni tipo soddisfatto (stessa struttura di signal_record)."""
+    st = m.get("status") or {}
+    try: ko = datetime.datetime.fromisoformat(st["utcTime"].replace("Z", "+00:00")).astimezone(ROME)
+    except Exception: ko = None
+    e = {"matchId": ev["matchId"], "kickoff": ko.strftime("%H:%M") if ko else None,
+         "kickoff_utc": st.get("utcTime"), "league": ev["league"], "country": ev["country"], "leagueId": ev["lid"],
+         "home": ev["home"], "away": ev["away"], "url": f"https://www.fotmob.com/match/{ev['matchId']}",
+         "types": hits, "reasons": {t: reason_text(ev, t) for t in hits}, "info": {}}
+    if "storico" in hits:
+        s = ev["storico"]["strong"]; o = "away" if s == "home" else "home"
+        S, O = ev["hist"][s], ev["hist"][o]
+        e["info"]["storico"] = {"strong": s, "streak": S["streak"], "complete": S["complete"], "capped": S["capped"],
+                                "last00": S.get("last00"), "other_zz": O["zz"], "other_n": O["n"]}
+    if "xg" in hits:
+        x = ev["xg"]
+        e["info"]["xg"] = {"total": round(x["total"], 2), "exp_home": round(x["exp_home"], 2),
+                           "exp_away": round(x["exp_away"], 2), "method": x.get("method"), "season": x.get("season")}
+    for t, k in (("segna", "scored"), ("subisce", "conceded"), ("mai00", "no00")):
+        if t not in hits: continue
+        s = ev[t]["strong"]; o = "away" if s == "home" else "home"
+        S, O = ev["cur"][s], ev["cur"][o]
+        e["info"][t] = {"strong": s, "season": ev["cur_season"], "strong_k": S[k], "strong_n": S["n"],
+                        "strong_pct": round(100 * S[k] / S["n"]) if S["n"] else 0,
+                        "other_k": O[k], "other_n": O["n"], "other_pct": round(100 * O[k] / O["n"]) if O["n"] else 0}
+    if ev.get("cur"):
+        e["cur"] = ev["cur"]
+    return e
+
+def daily(day=None, out_path=None, budget_min=None):
+    t0 = time.time()
+    day = day or now_utc().astimezone(ROME).strftime("%Y%m%d")
+    budget = (budget_min or CFG["DAILY_BUDGET_MIN"]) * 60
+    ms, n_all = day_matches(day)
+    log(f"partite del {day}: {n_all} totali, {len(ms)} candidate (campionati nazionali, filtro nome)")
+    res, skipped_leagues = [], {}
+    cnt = {"eval": 0, "err": 0, "done": 0, "skip_budget": 0}
+    bad_leagues = {}
+    def work(i, m):
+        if time.time() - t0 > budget:
+            with _LOCK: cnt["skip_budget"] += 1
+            return
+        pid = int(m["_league"]["pid"])
+        lname = f"{m['_league']['ccode']} {m['_league']['name']}"
+        if pid in bad_leagues: return
+        try:
+            meta = league_meta(pid)
+            ok, why = league_ok(meta, m["_league"]["name"])
+            if not ok:
+                bad_leagues[pid] = why; skipped_leagues[lname] = why; return
+            ev = evaluate(pseudo_md(m))
+            if not ev["league_ok"]:
+                skipped_leagues[lname] = ev["league_why"]; return
+            hits = [t for t in TYPES if ev["sig"].get(t)]
+            with _LOCK:
+                cnt["eval"] += 1
+                if hits: res.append(daily_entry(ev, m, hits))
+            log(f"[{i + 1}/{len(ms)}] {lname}: {ev['home']} - {ev['away']} -> {'+'.join(hits) if hits else '-'}  (req {NREQ[0]})")
+        except Exception as e:
+            with _LOCK: cnt["err"] += 1
+            log(f"[{i + 1}/{len(ms)}] errore {m['home'].get('name')} - {m['away'].get('name')}: {type(e).__name__}: {e}")
+        finally:
+            time.sleep(CFG["DAILY_DELAY"])
+    # prima una partita per campionato (scarica metadati/calendario una volta sola e scarta subito le leghe non valide), poi le altre
+    first = {}
+    for i, m in enumerate(ms): first.setdefault(int(m["_league"]["pid"]), (i, m))
+    rest = [(i, m) for i, m in enumerate(ms) if first[int(m["_league"]["pid"])][0] != i]
+    with concurrent.futures.ThreadPoolExecutor(max_workers=CFG["DAILY_WORKERS"]) as ex:
+        for batch in (list(first.values()), rest):
+            futs = [ex.submit(work, i, m) for i, m in batch]
+            for f in concurrent.futures.as_completed(futs):
+                cnt["done"] += 1
+                if cnt["done"] % CFG["DAILY_SAVE_EVERY"] == 0:
+                    with _LOCK: save_json(CACHE_F, CACHE, compact=True)
+    n_eval, n_err = cnt["eval"], cnt["err"]
+    partial = cnt["skip_budget"] > 0
+    if partial: log(f"!! budget di {budget / 60:.0f} min esaurito: {cnt['skip_budget']} partite non valutate")
+    res.sort(key=lambda e: (e.get("kickoff_utc") or "", e["league"] or ""))
+    by_type = {t: sum(1 for e in res if t in e["types"]) for t in TYPES}
+    out = {"date": f"{day[:4]}-{day[4:6]}-{day[6:]}", "generated_at": rome_str(), "partial": partial,
+           "stats": {"matches_day": n_all, "candidates": len(ms), "evaluated": n_eval, "qualified": len(res),
+                     "errors": n_err, "not_evaluated_budget": cnt["skip_budget"], "by_type": by_type, "requests": NREQ[0], "seconds": round(time.time() - t0)},
+           "skipped_leagues": skipped_leagues, "rules": rules_dict(), "matches": res}
+    save_json(out_path or TODAY_F, out)
+    log(f"fine daily: valutate {n_eval}, qualificate {len(res)} {by_type}, errori {n_err}, "
+        f"richieste HTTP {NREQ[0]}, {time.time() - t0:.0f}s -> {out_path or TODAY_F}")
+    return out
+
 # ---------------------------------------------------------------- test mode
 def test(mids, send=False, save=False, odds=False):
     for mid in mids:
@@ -843,12 +987,17 @@ def main():
     ap.add_argument("--send", action="store_true", help="in --test invia 1 messaggio Telegram 🧪 TEST")
     ap.add_argument("--dry-run", action="store_true")
     ap.add_argument("--odds", action="store_true", help="in --test legge anche la quota Over 0.5 live (1 credito)")
+    ap.add_argument("--daily", action="store_true", help="genera live/data/today.json (partite del giorno)")
+    ap.add_argument("--date", help="in --daily: data YYYYMMDD (default oggi, ora italiana)")
+    ap.add_argument("--out", help="in --daily: file di uscita (default live/data/today.json)")
+    ap.add_argument("--budget", type=float, help="in --daily: minuti massimi di calcolo")
     a = ap.parse_args()
     global CACHE
     CACHE = load_json(CACHE_F, {})
     t0 = time.time()
     try:
-        if a.test: test(a.test, send=a.send, odds=a.odds)
+        if a.daily: daily(a.date, a.out, a.budget)
+        elif a.test: test(a.test, send=a.send, odds=a.odds)
         else:
             try: scan(dry=a.dry_run)
             except Exception as e:   # errore di rete/FotMob: non far fallire il workflow, riprova al prossimo giro

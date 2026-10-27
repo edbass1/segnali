@@ -1,0 +1,104 @@
+name: Partite del giorno
+
+# Ogni notte a mezzanotte italiana genera live/data/today.json.
+# Il cron di GitHub è in UTC: 22:00 UTC = 00:00 ora legale (CEST), 23:00 UTC = 00:00 ora solare (CET).
+# Partono entrambi, ma lavora solo quello per cui a Roma è mezzanotte (tollerati ritardi del cron fino alle 02:59,
+# una sola volta per data). Avvio manuale: sempre.
+on:
+  schedule:
+    - cron: '0 22 * * *'
+    - cron: '0 23 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Data YYYYMMDD (vuoto = oggi, ora italiana)'
+        required: false
+        default: ''
+
+permissions:
+  contents: write
+
+jobs:
+  # 1) calcolo: senza concurrency group, così non blocca lo scanner ogni 5 minuti
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    outputs:
+      run: ${{ steps.gate.outputs.run }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Controllo mezzanotte (Europe/Rome)
+        id: gate
+        env:
+          EVENT: ${{ github.event_name }}
+        run: |
+          H=$(TZ=Europe/Rome date +%H); D=$(TZ=Europe/Rome date +%Y-%m-%d)
+          OLD=$(python3 -c "import json;print(json.load(open('live/data/today.json')).get('date',''))" 2>/dev/null || true)
+          echo "ora a Roma: $(TZ=Europe/Rome date '+%Y-%m-%d %H:%M') | today.json attuale: ${OLD:-nessuno}"
+          # cron in ritardo: accetta fino alle 02:59, ma una sola volta per data
+          if [ "$EVENT" = "workflow_dispatch" ]; then RUN=true
+          elif [ "$H" -le 2 ] && [ "$OLD" != "$D" ]; then RUN=true
+          else RUN=false; echo "non è mezzanotte a Roma (o lista di oggi già fatta): salto"; fi
+          echo "run=$RUN" >> "$GITHUB_OUTPUT"
+
+      - uses: actions/setup-python@v5
+        if: steps.gate.outputs.run == 'true'
+        with:
+          python-version: '3.12'
+
+      - name: Ripristina cache storici squadre
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/cache@v4
+        with:
+          path: scanner/.cache
+          key: scan-cache-${{ github.run_id }}
+          restore-keys: scan-cache-
+
+      - name: Calcola partite del giorno
+        if: steps.gate.outputs.run == 'true'
+        env:
+          DAY: ${{ github.event.inputs.date }}
+        run: |
+          if [ -n "$DAY" ]; then
+            python scanner/scan.py --daily --budget 45 --date "$DAY"
+          else
+            python scanner/scan.py --daily --budget 45
+          fi
+
+      - uses: actions/upload-artifact@v4
+        if: steps.gate.outputs.run == 'true'
+        with:
+          name: today
+          path: live/data/today.json
+          retention-days: 3
+
+  # 2) commit: stesso concurrency group dello scanner per evitare conflitti di push
+  commit:
+    needs: build
+    if: needs.build.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    concurrency:
+      group: segnali-live-scan
+      cancel-in-progress: false
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/download-artifact@v4
+        with:
+          name: today
+          path: live/data
+
+      - name: Commit today.json
+        run: |
+          git config user.name "segnali-bot"
+          git config user.email "segnali-bot@users.noreply.github.com"
+          git add live/data/today.json
+          if git diff --cached --quiet; then echo "nessuna modifica"; exit 0; fi
+          git commit -m "live: partite del giorno $(TZ=Europe/Rome date '+%Y-%m-%d %H:%M')"
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          exit 1

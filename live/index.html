@@ -30,6 +30,18 @@
   .sig .o{grid-row:1/3;grid-column:2;text-align:right;font-size:22px;font-weight:800;white-space:nowrap}
   .won{color:var(--ok)}.lost{color:var(--ko)}.pending{color:var(--pend)}.void{color:var(--mut)}
   .empty{color:var(--mut);padding:20px;text-align:center}
+  .tab.day{flex-basis:100%}
+  .dmeta{color:#cfcfcf;font-size:16px;margin:0 0 12px}
+  .ko{font-size:22px;font-weight:800;color:#fff;margin:18px 0 4px;padding-bottom:4px;border-bottom:1px solid var(--line)}
+  .dm{background:#000;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
+  .dm.hit{border-color:var(--pend)}
+  .dm .m{font-size:21px;font-weight:700}
+  .dm .d{color:var(--mut);font-size:15px}
+  .dm .r{font-size:16px;color:#d6d6d6;margin-top:4px}
+  .badges{margin:8px 0 2px;display:flex;flex-wrap:wrap;gap:6px}
+  .bdg{font-size:15px;font-weight:700;padding:4px 10px;border-radius:999px;background:#fff;color:#000;white-space:nowrap}
+  .bdg.storico{background:#a78bfa}.bdg.xg{background:#38bdf8}.bdg.segna{background:#22c55e}.bdg.subisce{background:#f97316}.bdg.mai00{background:#f472b6}
+  .gotsig{display:inline-block;margin-top:6px;font-size:16px;font-weight:800}
   @media(max-width:600px){body{font-size:17px}.sum{grid-template-columns:repeat(2,1fr)}h1{font-size:24px}.tab{font-size:18px}}
 </style>
 </head>
@@ -40,6 +52,7 @@
   <div class="rules" id="rules">Caricamento regole…</div>
 </header>
 <div class="tabs">
+  <button class="tab day" data-t="oggi">📅 Partite del giorno</button>
   <button class="tab on" data-t="storico">📚 Storico senza 0-0</button>
   <button class="tab" data-t="xg">📈 xG</button>
   <button class="tab" data-t="segna">⚽ Segna sempre</button>
@@ -47,6 +60,7 @@
   <button class="tab" data-t="mai00">🚫 Mai 0-0</button>
 </div>
 <main>
+  <section class="panel" id="p-oggi"></section>
   <section class="panel on" id="p-storico"></section>
   <section class="panel" id="p-xg"></section>
   <section class="panel" id="p-segna"></section>
@@ -57,6 +71,7 @@
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const ICON={won:'✅',lost:'❌',pending:'⏳',void:'➖'};
 document.querySelectorAll('.tab').forEach(b=>b.onclick=()=>{
+  history.replaceState(null,'',b.dataset.t==='oggi'?'#oggi':location.pathname+location.search);
   document.querySelectorAll('.tab').forEach(x=>x.classList.toggle('on',x===b));
   document.querySelectorAll('.panel').forEach(p=>p.classList.toggle('on',p.id==='p-'+b.dataset.t));
 });
@@ -81,9 +96,63 @@ function render(id,list){
   }
   el.innerHTML=h;
 }
+const NAME={storico:'📚 Storico senza 0-0',xg:'📈 xG',segna:'⚽ Segna sempre',subisce:'🥅 Subisce sempre',mai00:'🚫 Mai 0-0'};
+const SIDE={home:'Casa',away:'Ospite'};
+function badge(t,x){
+  if(!x) return `<span class="bdg ${t}">${NAME[t]}</span>`;
+  let n='';
+  if(t==='storico') n=`serie ${x.streak}${x.complete===false?'+':''} · altra ${x.other_zz} 0-0 su ${x.other_n}`;
+  else if(t==='xg') return `<span class="bdg xg">📈 xG atteso ${Number(x.total).toFixed(2)}</span>`;
+  else n=`${x.strong_pct}% · altra ${x.other_pct}%`;
+  return `<span class="bdg ${t}">${NAME[t]}: ${esc(n)}</span>`;
+}
+function detail(t,e){
+  const x=(e.info||{})[t]; if(!x) return esc((e.reasons||{})[t]||'');
+  const s=SIDE[x.strong]||'', o=x.strong==='home'?'Ospite':'Casa';
+  if(t==='storico') return `${s}: <b>${x.streak}${x.complete===false?'+':''}</b> partite di campionato consecutive senza 0-0`+
+     (x.last00?` (ultimo 0-0: ${esc(x.last00.date)} ${x.last00.home?'vs':'@'} ${esc(x.last00.opp)})`:'')+`; ${o}: <b>${x.other_zz}</b> 0-0 nelle ultime ${x.other_n}`;
+  if(t==='xg') return `xG atteso prematch <b>${Number(x.total).toFixed(2)}</b> (casa ${Number(x.exp_home).toFixed(2)} + ospite ${Number(x.exp_away).toFixed(2)}, ${esc(x.method)})`;
+  const w={segna:'ha segnato',subisce:'ha subito gol',mai00:'nessuno 0-0'}[t];
+  return `${s}: ${w} in <b>${x.strong_k}/${x.strong_n}</b> (${x.strong_pct}%)`+(t==='subisce'?` · ${o}: ${x.other_k}/${x.other_n}`:`; ${o}: ${x.other_k}/${x.other_n} (<b>${x.other_pct}%</b>)`)+` — stagione ${esc(x.season)}`;
+}
+function renderDay(d,sig){
+  const el=document.getElementById('p-oggi');
+  if(!d||!d.matches){el.innerHTML='<div class="empty">Lista del giorno non ancora disponibile (viene generata ogni notte a mezzanotte, ora italiana).</div>';return;}
+  const dd=d.date?d.date.split('-').reverse().join('/'):'';
+  const bySig={};for(const s of sig){(bySig[s.matchId]=bySig[s.matchId]||[]).push(s);}
+  const st=d.stats||{};
+  const nsig=d.matches.filter(e=>bySig[e.matchId]).length;
+  let h=`<div class="dmeta">Partite di campionato di <b>oggi ${esc(dd)}</b> in cui le squadre <b>soddisfano già</b> i requisiti prematch di almeno un segnale: se sono sullo <b>0-0 tra il 60' e il 70'</b> parte il segnale.<br>
+    Aggiornato: <b>${esc(d.generated_at)}</b> (ora italiana)${d.partial?' · <span class="pending">lista parziale</span>':''}${st.evaluated!=null?` · ${st.evaluated} partite analizzate`:''}</div>
+    <div class="sum">
+    <div class="box"><div class="v">${d.matches.length}</div><div class="l">Partite in lista</div></div>
+    <div class="box"><div class="v">${st.evaluated??'–'}</div><div class="l">Analizzate</div></div>
+    <div class="box"><div class="v pending">${nsig}</div><div class="l">Già segnalate</div></div>
+    <div class="box"><div class="v">${esc(dd)}</div><div class="l">Data</div></div></div>`;
+  if(!d.matches.length) h+='<div class="empty">Nessuna partita oggi soddisfa i requisiti.</div>';
+  let last=null;
+  for(const e of d.matches){
+    if(e.kickoff!==last){h+=`<div class="ko">🕒 ${esc(e.kickoff||'?')}</div>`;last=e.kickoff;}
+    const ss=bySig[e.matchId]||[];
+    let g='';
+    if(ss.length){
+      const s=ss[0];
+      g=`<div class="gotsig ${esc(s.status)}">🚨 Segnalata al ${esc(s.minute)}' (${ss.map(x=>NAME[x.type]||x.type).join(' + ')}) ${ICON[s.status]||''} ${esc(s.final||'')}</div>`;
+    }
+    h+=`<div class="dm${ss.length?' hit':''}">
+      <div class="m"><a href="${esc(e.url)}" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">${esc(e.home)} – ${esc(e.away)}</a></div>
+      <div class="d">${esc(e.kickoff)} · ${esc(e.league)} (${esc(e.country)})</div>
+      <div class="badges">${e.types.map(t=>badge(t,(e.info||{})[t])).join('')}</div>
+      ${e.types.map(t=>`<div class="r">${NAME[t].split(' ')[0]} ${detail(t,e)}</div>`).join('')}${g}</div>`;
+  }
+  el.innerHTML=h;
+}
 const nc='?t='+Date.now();
 Promise.all([fetch('data/signals.json'+nc).then(r=>r.json()).catch(()=>[]),
-             fetch('data/state.json'+nc).then(r=>r.json()).catch(()=>({}))]).then(([sig,st])=>{
+             fetch('data/state.json'+nc).then(r=>r.json()).catch(()=>({})),
+             fetch('data/today.json'+nc).then(r=>r.json()).catch(()=>null)]).then(([sig,st,day])=>{
+  renderDay(day,sig);
+  if(location.hash==='#oggi') document.querySelector('.tab[data-t="oggi"]').click();
   document.getElementById('last').textContent=(st.last_scan||st.last_write||'–')+' (ora italiana)';
   const r=Object.assign({window:"60-70'",hist_n:50,streak_min:50,hist_max_00:3,xg_min:2.7,cur_min:9,
     segna_strong:100,segna_other:80,subisce:100,mai00_strong:100,mai00_other:90},st.rules||{});
