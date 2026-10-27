@@ -15,6 +15,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: segnali-archive-refresh
+  cancel-in-progress: true
+
 jobs:
   archive:
     runs-on: ubuntu-latest
