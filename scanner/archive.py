@@ -8,6 +8,7 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "live", "data")
 ARCHIVE = os.path.join(DATA, "archive")
 INDEX = os.path.join(ARCHIVE, "index.json")
+TODAY = os.path.join(DATA, "today.json")
 FM = "https://www.fotmob.com/api/data"
 ROME = ZoneInfo("Europe/Rome")
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
@@ -159,15 +160,27 @@ def main():
     path = os.path.join(ARCHIVE, day + ".json")
     old_doc = load(path, {})
     old_by_id = {str(m.get("matchId")): m for m in old_doc.get("matches", [])}
+    today_doc = load(TODAY, {})
+    today_by_id = {str(m.get("matchId")): m for m in today_doc.get("matches", [])}
     data = get(f"{FM}/matches?date={day_api}&timezone=Europe%2FRome")
     fixtures = []
     for league in data.get("leagues") or []:
         for m in league.get("matches") or []:
-            fixtures.append(fixture_to_entry(m, league, old_by_id.get(str(m.get("id") or m.get("matchId")))))
+            mid = str(m.get("id") or m.get("matchId"))
+            entry = fixture_to_entry(m, league, old_by_id.get(mid))
+            signal = today_by_id.get(mid, {})
+            if signal.get("types"):
+                entry["types"] = signal.get("types") or []
+                entry["info"] = signal.get("info") or {}
+                entry["reasons"] = signal.get("reasons") or {}
+            fixtures.append(entry)
     # Mantieni le partite già archiviate anche se la fonte non le ripropone più a giornata conclusa.
     present = {m["matchId"] for m in fixtures}
     for old in old_doc.get("matches", []):
         if str(old.get("matchId")) not in present:
+            if not old.get("types") and str(old.get("matchId")) in today_by_id:
+                sig = today_by_id[str(old.get("matchId"))]
+                old["types"], old["info"], old["reasons"] = sig.get("types", []), sig.get("info", {}), sig.get("reasons", {})
             fixtures.append(old)
     fixtures.sort(key=lambda m: (m.get("kickoff_utc") or "", m.get("league") or "", m.get("home") or ""))
     # Per ogni partita conclusa, recupera l'intervallo una volta sola. Se non è disponibile,
