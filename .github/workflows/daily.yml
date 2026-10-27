@@ -3,6 +3,12 @@ name: Archivio completo delle partite
 on:
   schedule:
     - cron: '*/5 * * * *'
+  push:
+    paths:
+      - '.github/workflows/daily.yml'
+      - 'scanner/archive.py'
+      - 'live/archive.js'
+      - 'live/index.html'
   workflow_dispatch:
 
 permissions:
