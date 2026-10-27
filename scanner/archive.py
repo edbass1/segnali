@@ -125,11 +125,23 @@ def fixture_to_entry(m, league, old=None):
 
 def calc_stats(matches):
     finished = [m for m in matches if m.get("finished") and m.get("score")]
+    categories = {}
+    category_names = {"storico": "Storico senza 0-0", "xg": "xG", "segna": "Segna sempre", "subisce": "Subisce sempre", "mai00": "Mai 0-0"}
+    for category, name in category_names.items():
+        sample = [m for m in finished if category in (m.get("types") or [])]
+        wins = sum(1 for m in sample if sum(parse_score(m.get("final") or m.get("score")) or (0, 0)) > 0)
+        losses = len(sample) - wins
+        categories[category] = {"label": name, "total": len(sample), "wins": wins, "losses": losses,
+                                "strike_rate": round(100 * wins / len(sample), 1) if sample else None,
+                                "failed_matches": [{"matchId": m.get("matchId"), "home": m.get("home"), "away": m.get("away"),
+                                                   "score": m.get("final") or m.get("score")}
+                                                  for m in sample if sum(parse_score(m.get("final") or m.get("score")) or (0, 0)) == 0]}
     over = sum(1 for m in finished if (parse_score(m["score"]) or (0,0))[0] + (parse_score(m["score"]) or (0,0))[1] > 0)
     ht_known = [m for m in matches if m.get("ht_score")]
     ht_over = sum(1 for m in ht_known if sum(parse_score(m["ht_score"]) or (0,0)) > 0)
     return {
         "matches_total": len(matches), "finished": len(finished),
+        "categories": categories,
         "over05_final": over, "zero_zero_final": len(finished)-over,
         "over05_final_rate": round(100*over/len(finished), 1) if finished else None,
         "halftime_known": len(ht_known), "over05_first_half": ht_over,
