@@ -173,6 +173,8 @@ Promise.all([fetch('data/signals.json'+nc).then(r=>r.json()).catch(()=>[]),
   render('storico',sig.filter(s=>s.type==='storico'));
   for(const t of ['xg','segna','subisce','mai00']) render(t,sig.filter(s=>s.type===t));
 });
+  // Ricarica la pagina ogni 60 secondi per mostrare rapidamente eventuali nuovi segnali.
+  setInterval(() => window.location.reload(), 60 * 1000);
 </script>
 </body>
 </html>
