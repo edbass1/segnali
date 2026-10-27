@@ -61,6 +61,17 @@
     stat(finalOver+"/"+finished.length+" · "+pct(finalOver,finished.length),"Over 0,5 finale");
     stat(htOver+"/"+ht.length+" · "+pct(htOver,ht.length),"Over 0,5 primo tempo");
     stat(live+" / "+future,"In corso / future");
+    const catStats = (doc.stats && doc.stats.categories) || {};
+    const catWrap = el("div","rules",undefined,root);
+    el("b","", "📊 Strike rate per categoria (solo partite concluse)", catWrap);
+    const catGrid = el("div","",undefined,catWrap);
+    catGrid.style.cssText="display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:8px;margin-top:10px";
+    ["storico","xg","segna","subisce","mai00"].forEach(type=>{
+      const s=catStats[type]||{};
+      const box=el("div","box",undefined,catGrid);
+      el("div","v",s.total ? (s.wins+"/"+s.total+" · "+pct(s.wins,s.total)) : "—",box);
+      el("div","l",(labels[type]||type)+" · perse "+(s.losses||0),box);
+    });
     const note=el("div","rules",undefined,root);
     note.appendChild(document.createTextNode("Finali: "+finished.length+" · Over 0,5: "+finalOver+" ("+pct(finalOver,finished.length)+") · 0-0: "+zeroFinal));
     el("br","",undefined,note);
@@ -79,6 +90,15 @@
       const result=m.finished?(m.final||m.score||"FT"):m.status==="in_corso"?(m.score||"In corso"):status;
       const rc=m.finished?(fin&&fin[0]+fin[1]>0?"won":"lost"):m.status==="in_corso"?"pending":"void";
       el("div","r","⏱️ Intervallo: "+(m.ht_score||"non disponibile")+" · 🏁 Risultato: "+result,card).classList.add(rc);
+      const types = Array.isArray(m.types) ? m.types : [];
+      if(types.length) {
+        el("div","gotsig","📌 Categorie prematch: "+types.map(t=>labels[t]||t).join(" + "),card);
+        if(m.finished && fin && fin[0]+fin[1]===0) {
+          el("div","r lost","❌ Segnali persi: "+types.map(t=>labels[t]||t).join(" + "),card);
+        } else if(m.finished && fin && fin[0]+fin[1]>0) {
+          el("div","r won","✅ Segnali vincenti: "+types.map(t=>labels[t]||t).join(" + "),card);
+        }
+      }
       if(ss.length)el("div","gotsig","🚨 Segnale live: "+ss.map(s=>labels[s.type]||s.type).join(" + ")+(ss[0].final?" · "+ss[0].final:""),card);
     });
   }
