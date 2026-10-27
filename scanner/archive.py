@@ -8,7 +8,6 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, "live", "data")
 ARCHIVE = os.path.join(DATA, "archive")
 INDEX = os.path.join(ARCHIVE, "index.json")
-TODAY = os.path.join(DATA, "today.json")
 FM = "https://www.fotmob.com/api/data"
 ROME = ZoneInfo("Europe/Rome")
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
@@ -173,8 +172,32 @@ def main():
     stats = calc_stats(fixtures)
     doc = {"date": day, "generated_at": now.strftime("%Y-%m-%d %H:%M"), "stats": stats, "matches": fixtures}
     save(path, doc)
-    # today.json alimenta la pagina già esistente; contiene ora tutte le partite, non solo quelle filtrate.
-    save(TODAY, doc)
+    # Recupera anche ieri se manca: evita che il cambio di data faccia sparire la giornata precedente.
+    yesterday = (now.date() - datetime.timedelta(days=1)).strftime("%Y-%m-%d")
+    yesterday_path = os.path.join(ARCHIVE, yesterday + ".json")
+    if not os.path.exists(yesterday_path):
+        try:
+            yd = datetime.datetime.strptime(yesterday, "%Y-%m-%d").replace(tzinfo=ROME)
+            ydata = get(f"{FM}/matches?date={yd.strftime('%Y%m%d')}&timezone=Europe%2FRome")
+            yfixtures = []
+            for league in ydata.get("leagues") or []:
+                for match in league.get("matches") or []:
+                    yfixtures.append(fixture_to_entry(match, league))
+            for match in yfixtures:
+                if not match.get("finished") or not match.get("matchId"): continue
+                try:
+                    md = get(f"{FM}/matchDetails?matchId={match['matchId']}")
+                    ht = halftime_score(md)
+                    if ht is not None: match["ht_score"] = score_text(ht)
+                    time.sleep(0.12)
+                except Exception as e:
+                    print(f"Intervallo storico non disponibile per {match['home']} - {match['away']}: {e}", flush=True)
+            yfixtures.sort(key=lambda m: (m.get("kickoff_utc") or "", m.get("league") or "", m.get("home") or ""))
+            ydoc = {"date": yesterday, "generated_at": now.strftime("%Y-%m-%d %H:%M"), "stats": calc_stats(yfixtures), "matches": yfixtures}
+            save(yesterday_path, ydoc)
+            print(f"Archivio recuperato {yesterday}: {len(yfixtures)} partite", flush=True)
+        except Exception as e:
+            print(f"Non è stato possibile recuperare automaticamente lo storico del {yesterday}: {e}", flush=True)
     # Indice di tutte le giornate archiviate, dalla più recente.
     days = sorted([f[:-5] for f in os.listdir(ARCHIVE) if re.fullmatch(r"\d{4}-\d{2}-\d{2}\.json", f)], reverse=True)
     save(INDEX, {"updated_at": now.strftime("%Y-%m-%d %H:%M"), "dates": days})
