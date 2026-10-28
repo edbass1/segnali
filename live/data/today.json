@@ -1,11 +1,11 @@
 {
  "date": "2026-10-28",
- "generated_at": "2026-10-28 13:12",
+ "generated_at": "2026-10-28 14:08",
  "partial": false,
  "stats": {
-  "matches_day": 264,
-  "candidates": 73,
-  "evaluated": 70,
+  "matches_day": 263,
+  "candidates": 72,
+  "evaluated": 69,
   "qualified": 35,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 2,
    "mai00": 25
   },
-  "requests": 630,
-  "seconds": 146
+  "requests": 628,
+  "seconds": 183
  },
  "skipped_leagues": {
   "JPN WE League": "femminile"
@@ -133,7 +133,7 @@
    "home": "Belshina Bobruisk",
    "away": "Dinamo Minsk",
    "url": "https://www.fotmob.com/match/5215479",
-   "finished": false,
+   "finished": true,
    "score": "2-3",
    "types": [
     "mai00"
