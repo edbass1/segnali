@@ -1,6 +1,6 @@
 # Scheduler esterno per gli alert Telegram
 
-Questo servizio è separato dal rendering del sito Segnali. Ogni minuto invia a GitHub una richiesta `workflow_dispatch` per avviare lo scanner Python già presente in `scanner/scan.py`. Il sito non viene modificato e il workflow GitHub già esistente rimane come backup ogni 5 minuti.
+Questo servizio è separato dal rendering del sito Segnali. Ogni cinque minuti invia a GitHub una richiesta `workflow_dispatch` per avviare lo scanner Python già presente in `scanner/scan.py`. Il sito non viene modificato e il workflow GitHub già esistente rimane come backup.
 
 ## Stato importante
 
@@ -13,7 +13,7 @@ Il codice è pronto nel repository, ma **non è attivo finché il Worker non vie
 3. Incolla il contenuto di `worker.js` oppure distribuisci questa cartella con Wrangler.
 4. Nelle impostazioni del Worker aggiungi il secret `GITHUB_TOKEN`.
 5. Crea un fine-grained personal access token GitHub limitato al solo repository `edbass1/segnali`, con permesso **Actions: Read and write**. Non inserirlo nel codice, nel sito o nei log.
-6. Configura il Cron Trigger `* * * * *` (una volta al minuto), come in `wrangler.toml`.
+6. Configura il Cron Trigger `*/5 * * * *` (ogni cinque minuti), come in `wrangler.toml`.
 7. Controlla i log del Worker e GitHub Actions: devono comparire dispatch e scansioni regolari.
 
 ## Cosa usa
@@ -26,5 +26,5 @@ Il codice è pronto nel repository, ma **non è attivo finché il Worker non vie
 
 - Il token GitHub va conservato solo come secret del Worker.
 - La risposta HTTP del Worker non avvia scansioni manuali: gli avvii sono solo tramite cron.
-- Il cron esterno migliora la frequenza dei tentativi, ma non può garantire che GitHub avvii ogni singolo job puntualmente; controllare i log dopo l'attivazione.
+- Il cron esterno migliora la regolarità dei tentativi, ma non può garantire che GitHub avvii ogni singolo job puntualmente; controllare i log dopo l'attivazione.
 - La scansione continua a usare FotMob come fonte, quindi resta soggetta alla disponibilità e ai limiti della fonte dati.
