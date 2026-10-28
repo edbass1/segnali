@@ -12,6 +12,21 @@ TODAY = os.path.join(DATA, "today.json")
 FM = "https://www.fotmob.com/api/data"
 ROME = ZoneInfo("Europe/Rome")
 UA = "Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 Chrome/124 Safari/537.36"
+# Allineato ai criteri dello scanner: solo campionati nazionali senior maschili.
+EXCLUDE_COMPETITION_RE = re.compile(
+    r"\b(u-?1[5-9]|u-?2[0-3]|under ?\d\d|youth|primavera|reserve|reserves|women|woman|femenil|femenina|"
+    r"feminine|f[ée]minine|frauen|damallsvenskan|wsl|nwsl|futsal|beach|esports|amateur|"
+    r"premier league 2|professional development|next pro|friendl\w*|cup|copa|coppa|coupe|pokal|ta[cç]a|"
+    r"puchar|beker|kupa|cupa|kup|trophy|shield|super ?cup|supercopa|supercoppa|play-?offs?)\b", re.I)
+
+def eligible_league(league):
+    name = str(league.get("name") or "")
+    country = str(league.get("ccode") or league.get("country") or "").upper()
+    if country in ("INT", ""):
+        return False
+    if EXCLUDE_COMPETITION_RE.search(name):
+        return False
+    return True
 
 def get(url):
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept": "application/json"})
@@ -165,6 +180,8 @@ def main():
     data = get(f"{FM}/matches?date={day_api}&timezone=Europe%2FRome")
     fixtures = []
     for league in data.get("leagues") or []:
+        if not eligible_league(league):
+            continue
         for m in league.get("matches") or []:
             mid = str(m.get("id") or m.get("matchId"))
             entry = fixture_to_entry(m, league, old_by_id.get(mid))
@@ -207,6 +224,8 @@ def main():
             ydata = get(f"{FM}/matches?date={yd.strftime('%Y%m%d')}&timezone=Europe%2FRome")
             yfixtures = []
             for league in ydata.get("leagues") or []:
+                if not eligible_league(league):
+                    continue
                 for match in league.get("matches") or []:
                     yfixtures.append(fixture_to_entry(match, league))
             for match in yfixtures:
