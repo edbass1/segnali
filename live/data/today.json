@@ -1,23 +1,23 @@
 {
  "date": "2026-10-28",
- "generated_at": "2026-10-28 14:08",
+ "generated_at": "2026-10-28 15:09",
  "partial": false,
  "stats": {
-  "matches_day": 263,
+  "matches_day": 262,
   "candidates": 72,
   "evaluated": 69,
-  "qualified": 35,
+  "qualified": 34,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 2,
-   "xg": 19,
+   "xg": 18,
    "segna": 3,
    "subisce": 2,
    "mai00": 25
   },
   "requests": 628,
-  "seconds": 183
+  "seconds": 150
  },
  "skipped_leagues": {
   "JPN WE League": "femminile"
@@ -165,48 +165,6 @@
      "scored": 20,
      "conceded": 16,
      "no00": 23
-    }
-   }
-  },
-  {
-   "matchId": 6362007,
-   "kickoff": "15:00",
-   "kickoff_utc": "2026-10-28T14:00:00.000Z",
-   "league": "Indian Super League",
-   "country": "IND",
-   "leagueId": 9478,
-   "home": "FC Goa",
-   "away": "SC Delhi",
-   "url": "https://www.fotmob.com/match/6362007",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.76 (casa 1.56 + ospite 1.20) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.76,
-     "exp_home": 1.56,
-     "exp_away": 1.2,
-     "method": "media generale",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 1,
-     "scored": 1,
-     "conceded": 1,
-     "no00": 1
-    },
-    "away": {
-     "n": 2,
-     "scored": 2,
-     "conceded": 2,
-     "no00": 2
     }
    }
   },
@@ -1009,51 +967,6 @@
    }
   },
   {
-   "matchId": 1000016751,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-28T19:45:00.000Z",
-   "league": "Lowland League West",
-   "country": "SCO",
-   "leagueId": 9545,
-   "home": "Renfrew FC",
-   "away": "Troon Juniors",
-   "url": "https://www.fotmob.com/match/1000016751",
-   "finished": false,
-   "score": null,
-   "types": [
-    "mai00"
-   ],
-   "reasons": {
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 11/11 partite di campionato 2026/27; Ospite: 12/12 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 11,
-     "strong_n": 11,
-     "strong_pct": 100,
-     "other_k": 12,
-     "other_n": 12,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 11,
-     "scored": 10,
-     "conceded": 10,
-     "no00": 11
-    },
-    "away": {
-     "n": 12,
-     "scored": 9,
-     "conceded": 11,
-     "no00": 12
-    }
-   }
-  },
-  {
    "matchId": 1000016752,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-28T19:45:00.000Z",
@@ -1095,6 +1008,51 @@
      "scored": 10,
      "conceded": 7,
      "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 1000016751,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-28T19:45:00.000Z",
+   "league": "Lowland League West",
+   "country": "SCO",
+   "leagueId": 9545,
+   "home": "Renfrew FC",
+   "away": "Troon Juniors",
+   "url": "https://www.fotmob.com/match/1000016751",
+   "finished": false,
+   "score": null,
+   "types": [
+    "mai00"
+   ],
+   "reasons": {
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 11/11 partite di campionato 2026/27; Ospite: 12/12 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 11,
+     "strong_n": 11,
+     "strong_pct": 100,
+     "other_k": 12,
+     "other_n": 12,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 10,
+     "conceded": 10,
+     "no00": 11
+    },
+    "away": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 11,
+     "no00": 12
     }
    }
   },
@@ -1333,168 +1291,6 @@
    }
   },
   {
-   "matchId": 5793960,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-28T19:45:00.000Z",
-   "league": "Premiership",
-   "country": "SCO",
-   "leagueId": 64,
-   "home": "Dundee FC",
-   "away": "Kilmarnock",
-   "url": "https://www.fotmob.com/match/5793960",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "mai00"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.97 (casa 1.59 + ospite 1.38) ≥ 2.7",
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 9/10 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 2.97,
-     "exp_home": 1.59,
-     "exp_away": 1.38,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 9,
-     "other_n": 10,
-     "other_pct": 90
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 9,
-     "conceded": 8,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 8,
-     "no00": 9
-    }
-   }
-  },
-  {
-   "matchId": 5793959,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-28T19:45:00.000Z",
-   "league": "Premiership",
-   "country": "SCO",
-   "leagueId": 64,
-   "home": "Celtic",
-   "away": "Dundee United",
-   "url": "https://www.fotmob.com/match/5793959",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "mai00"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.31 (casa 2.10 + ospite 1.21) ≥ 2.7",
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 10/10 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 3.31,
-     "exp_home": 2.1,
-     "exp_away": 1.21,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 10,
-     "other_n": 10,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 9,
-     "conceded": 6,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 7,
-     "conceded": 7,
-     "no00": 10
-    }
-   }
-  },
-  {
-   "matchId": 5793962,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-28T19:45:00.000Z",
-   "league": "Premiership",
-   "country": "SCO",
-   "leagueId": 64,
-   "home": "St. Johnstone",
-   "away": "Motherwell",
-   "url": "https://www.fotmob.com/match/5793962",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "mai00"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.56 (casa 1.95 + ospite 1.61) ≥ 2.7",
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 9/10 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 3.56,
-     "exp_home": 1.95,
-     "exp_away": 1.61,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 9,
-     "other_n": 10,
-     "other_pct": 90
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 7,
-     "conceded": 9,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 5,
-     "conceded": 8,
-     "no00": 9
-    }
-   }
-  },
-  {
    "matchId": 5793963,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-28T19:45:00.000Z",
@@ -1557,6 +1353,168 @@
      "scored": 8,
      "conceded": 10,
      "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5793962,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-28T19:45:00.000Z",
+   "league": "Premiership",
+   "country": "SCO",
+   "leagueId": 64,
+   "home": "St. Johnstone",
+   "away": "Motherwell",
+   "url": "https://www.fotmob.com/match/5793962",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "mai00"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.56 (casa 1.95 + ospite 1.61) ≥ 2.7",
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 9/10 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.56,
+     "exp_home": 1.95,
+     "exp_away": 1.61,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 10,
+     "other_pct": 90
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 7,
+     "conceded": 9,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 5,
+     "conceded": 8,
+     "no00": 9
+    }
+   }
+  },
+  {
+   "matchId": 5793959,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-28T19:45:00.000Z",
+   "league": "Premiership",
+   "country": "SCO",
+   "leagueId": 64,
+   "home": "Celtic",
+   "away": "Dundee United",
+   "url": "https://www.fotmob.com/match/5793959",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "mai00"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.31 (casa 2.10 + ospite 1.21) ≥ 2.7",
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 10/10 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.31,
+     "exp_home": 2.1,
+     "exp_away": 1.21,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 10,
+     "other_n": 10,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 9,
+     "conceded": 6,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 7,
+     "conceded": 7,
+     "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5793960,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-28T19:45:00.000Z",
+   "league": "Premiership",
+   "country": "SCO",
+   "leagueId": 64,
+   "home": "Dundee FC",
+   "away": "Kilmarnock",
+   "url": "https://www.fotmob.com/match/5793960",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "mai00"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.97 (casa 1.59 + ospite 1.38) ≥ 2.7",
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 9/10 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 2.97,
+     "exp_home": 1.59,
+     "exp_away": 1.38,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 10,
+     "other_pct": 90
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 9,
+     "conceded": 8,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 8,
+     "no00": 9
     }
    }
   },
