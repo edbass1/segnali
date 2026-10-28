@@ -866,9 +866,12 @@ def daily_entry(ev, m, hits):
     st = m.get("status") or {}
     try: ko = datetime.datetime.fromisoformat(st["utcTime"].replace("Z", "+00:00")).astimezone(ROME)
     except Exception: ko = None
+    score = parse_score(st)
+    finished = bool(st.get("finished"))
     e = {"matchId": ev["matchId"], "kickoff": ko.strftime("%H:%M") if ko else None,
          "kickoff_utc": st.get("utcTime"), "league": ev["league"], "country": ev["country"], "leagueId": ev["lid"],
          "home": ev["home"], "away": ev["away"], "url": f"https://www.fotmob.com/match/{ev['matchId']}",
+         "finished": finished, "score": f"{score[0]}-{score[1]}" if score is not None else None,
          "types": hits, "reasons": {t: reason_text(ev, t) for t in hits}, "info": {}}
     if "storico" in hits:
         s = ev["storico"]["strong"]; o = "away" if s == "home" else "home"
