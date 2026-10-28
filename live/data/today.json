@@ -1,6 +1,6 @@
 {
  "date": "2026-10-28",
- "generated_at": "2026-10-28 19:24",
+ "generated_at": "2026-10-28 20:26",
  "partial": false,
  "stats": {
   "matches_day": 262,
@@ -17,7 +17,7 @@
    "mai00": 25
   },
   "requests": 628,
-  "seconds": 185
+  "seconds": 196
  },
  "skipped_leagues": {
   "JPN WE League": "femminile"
@@ -268,8 +268,8 @@
    "home": "FC Košice",
    "away": "DAC 1904 Dunajska Streda",
    "url": "https://www.fotmob.com/match/5772154",
-   "finished": false,
-   "score": "0-0",
+   "finished": true,
+   "score": "0-1",
    "types": [
     "segna",
     "mai00"
@@ -325,7 +325,7 @@
    "home": "Trenčín",
    "away": "Slovan Bratislava",
    "url": "https://www.fotmob.com/match/5772151",
-   "finished": false,
+   "finished": true,
    "score": "0-2",
    "types": [
     "mai00"
@@ -370,8 +370,8 @@
    "home": "Paide Linnameeskond",
    "away": "Nõmme JK Kalju",
    "url": "https://www.fotmob.com/match/1000007991",
-   "finished": false,
-   "score": "0-1",
+   "finished": true,
+   "score": "0-2",
    "types": [
     "storico",
     "mai00"
@@ -430,7 +430,7 @@
    "home": "Parma",
    "away": "Udinese",
    "url": "https://www.fotmob.com/match/5749726",
-   "finished": false,
+   "finished": true,
    "score": "0-0",
    "types": [
     "xg"
@@ -472,8 +472,8 @@
    "home": "Venezia",
    "away": "Inter",
    "url": "https://www.fotmob.com/match/5749729",
-   "finished": false,
-   "score": "0-0",
+   "finished": true,
+   "score": "0-2",
    "types": [
     "storico",
     "xg"
@@ -530,7 +530,7 @@
    "away": "Djurgården",
    "url": "https://www.fotmob.com/match/5107639",
    "finished": false,
-   "score": "0-0",
+   "score": "1-1",
    "types": [
     "xg",
     "mai00"
@@ -638,7 +638,7 @@
    "away": "Västerås SK",
    "url": "https://www.fotmob.com/match/5107642",
    "finished": false,
-   "score": "0-0",
+   "score": "0-2",
    "types": [
     "xg",
     "mai00"
@@ -803,7 +803,7 @@
    "away": "Palermo",
    "url": "https://www.fotmob.com/match/5967128",
    "finished": false,
-   "score": "0-0",
+   "score": "2-2",
    "types": [
     "xg"
    ],
@@ -845,7 +845,7 @@
    "away": "Hellas Verona",
    "url": "https://www.fotmob.com/match/5967124",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -1399,60 +1399,6 @@
    }
   },
   {
-   "matchId": 5793962,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-28T19:45:00.000Z",
-   "league": "Premiership",
-   "country": "SCO",
-   "leagueId": 64,
-   "home": "St. Johnstone",
-   "away": "Motherwell",
-   "url": "https://www.fotmob.com/match/5793962",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "mai00"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.56 (casa 1.95 + ospite 1.61) ≥ 2.7",
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 9/10 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 3.56,
-     "exp_home": 1.95,
-     "exp_away": 1.61,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 9,
-     "other_n": 10,
-     "other_pct": 90
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 7,
-     "conceded": 9,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 5,
-     "conceded": 8,
-     "no00": 9
-    }
-   }
-  },
-  {
    "matchId": 5793963,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-28T19:45:00.000Z",
@@ -1515,6 +1461,60 @@
      "scored": 8,
      "conceded": 10,
      "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5793962,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-28T19:45:00.000Z",
+   "league": "Premiership",
+   "country": "SCO",
+   "leagueId": 64,
+   "home": "St. Johnstone",
+   "away": "Motherwell",
+   "url": "https://www.fotmob.com/match/5793962",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "mai00"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.56 (casa 1.95 + ospite 1.61) ≥ 2.7",
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 9/10 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.56,
+     "exp_home": 1.95,
+     "exp_away": 1.61,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 10,
+     "other_pct": 90
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 7,
+     "conceded": 9,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 5,
+     "conceded": 8,
+     "no00": 9
     }
    }
   },
