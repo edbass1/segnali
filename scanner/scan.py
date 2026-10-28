@@ -46,7 +46,7 @@ CFG = {
     "PAST_SEASON_TTL_D": 30,     # cache calendario stagioni concluse
     "CUR_SEASON_TTL_H": 3,       # cache calendario stagione corrente
     "LEAGUE_META_TTL_D": 30,
-    "HEARTBEAT_MIN": 30,         # riscrive state.json almeno ogni N minuti
+    "HEARTBEAT_MIN": 4,          # aggiorna il timestamp visibile a ogni scansione prevista
     "RESULT_FOLLOWUP": True,     # messaggio Telegram con esito finale
     "PENDING_GIVEUP_H": 8,
     # Partite del giorno (--daily)
