@@ -106,5 +106,147 @@
    }
   },
   "resolved": "2026-10-27 22:55"
+ },
+ {
+  "id": "5772154-segna",
+  "type": "segna",
+  "time": "2026-10-28 19:18",
+  "ts": 1793211508,
+  "league": "1. Liga",
+  "country": "SVK",
+  "leagueId": 176,
+  "home": "FC Košice",
+  "away": "DAC 1904 Dunajska Streda",
+  "matchId": 5772154,
+  "reason": "Casa ha segnato almeno 1 gol in 11/11 partite di campionato 2026/27; Ospite in 11/11 (100%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 61,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 61,
+   "phase": "61",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": [
+    36,
+    64
+   ],
+   "shots": [
+    5,
+    13
+   ],
+   "sot": [
+    1,
+    4
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    9,
+    23
+   ],
+   "corners": [
+    2,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5772154",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 11,
+    "scored": 11,
+    "conceded": 9,
+    "no00": 11
+   },
+   "away": {
+    "n": 11,
+    "scored": 11,
+    "conceded": 5,
+    "no00": 11
+   }
+  }
+ },
+ {
+  "id": "5772154-mai00",
+  "type": "mai00",
+  "time": "2026-10-28 19:18",
+  "ts": 1793211508,
+  "league": "1. Liga",
+  "country": "SVK",
+  "leagueId": 176,
+  "home": "FC Košice",
+  "away": "DAC 1904 Dunajska Streda",
+  "matchId": 5772154,
+  "reason": "Casa: over 0.5 totali (nessuno 0-0) in 11/11 partite di campionato 2026/27; Ospite: 11/11 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 61,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 61,
+   "phase": "61",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": [
+    36,
+    64
+   ],
+   "shots": [
+    5,
+    13
+   ],
+   "sot": [
+    1,
+    4
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    9,
+    23
+   ],
+   "corners": [
+    2,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5772154",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 11,
+    "scored": 11,
+    "conceded": 9,
+    "no00": 11
+   },
+   "away": {
+    "n": 11,
+    "scored": 11,
+    "conceded": 5,
+    "no00": 11
+   }
+  }
  }
 ]
