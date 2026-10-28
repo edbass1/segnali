@@ -135,7 +135,7 @@ def fixture_to_entry(m, league, old=None):
         "away": (m.get("away") or {}).get("name") or m.get("awayTeam", {}).get("name") or "Ospite",
         "url": f"https://www.fotmob.com/match/{mid}", "status": status,
         "score": score_text(sc), "final": score_text(sc) if finished else None,
-        "ht_score": ht, "ht_checked": bool(old.get("ht_checked", False)), "types": old.get("types") or [], "info": old.get("info") or {},
+        "ht_score": ht, "ht_checked": bool(old.get("ht_checked", False)), "types": old.get("types") or [], "info": old.get("info") or {}, "reasons": old.get("reasons") or {},
         "started": bool(st.get("started")), "finished": finished
     }
 
@@ -173,6 +173,29 @@ def main():
     day_api = now.strftime("%Y%m%d")
     os.makedirs(ARCHIVE, exist_ok=True)
     path = os.path.join(ARCHIVE, day + ".json")
+    # Bonifica tutti gli archivi esistenti: resta solo ciò che documenta chiaramente il motivo del segnale.
+    for filename in os.listdir(ARCHIVE):
+        if not re.fullmatch(r"\d{4}-\d{2}-\d{2}\.json", filename):
+            continue
+        archive_path = os.path.join(ARCHIVE, filename)
+        archived = load(archive_path, {})
+        previous = archived.get("matches", [])
+        kept = []
+        for item in previous:
+            types = item.get("types") or []
+            reasons = item.get("reasons") or {}
+            documented = [t for t in types if isinstance(reasons.get(t), str) and reasons[t].strip()]
+            if documented:
+                item["types"] = documented
+                item["info"] = {t: v for t, v in (item.get("info") or {}).items() if t in documented}
+                item["reasons"] = {t: reasons[t] for t in documented}
+                kept.append(item)
+        if len(kept) != len(previous):
+            archived["matches"] = kept
+            archived["stats"] = calc_stats(kept)
+            archived["generated_at"] = now.strftime("%Y-%m-%d %H:%M")
+            save(archive_path, archived)
+            print(f"Bonifica {filename}: {len(kept)} partite con motivazione", flush=True)
     old_doc = load(path, {})
     old_by_id = {str(m.get("matchId")): m for m in old_doc.get("matches", [])}
     today_doc = load(TODAY, {})
@@ -186,18 +209,23 @@ def main():
             mid = str(m.get("id") or m.get("matchId"))
             entry = fixture_to_entry(m, league, old_by_id.get(mid))
             signal = today_by_id.get(mid, {})
-            if signal.get("types"):
-                entry["types"] = signal.get("types") or []
-                entry["info"] = signal.get("info") or {}
-                entry["reasons"] = signal.get("reasons") or {}
-            fixtures.append(entry)
+            types = signal.get("types") or []
+            reasons = signal.get("reasons") or {}
+            documented = [t for t in types if isinstance(reasons.get(t), str) and reasons[t].strip()]
+            if documented:
+                entry["types"] = documented
+                entry["info"] = {t: v for t, v in (signal.get("info") or {}).items() if t in documented}
+                entry["reasons"] = {t: reasons[t] for t in documented}
+                fixtures.append(entry)
     # Mantieni le partite già archiviate anche se la fonte non le ripropone più a giornata conclusa.
     present = {m["matchId"] for m in fixtures}
     for old in old_doc.get("matches", []):
-        if str(old.get("matchId")) not in present and old.get("country") and old.get("country") != "INT" and not EXCLUDE_COMPETITION_RE.search(str(old.get("league") or "")):
-            if not old.get("types") and str(old.get("matchId")) in today_by_id:
-                sig = today_by_id[str(old.get("matchId"))]
-                old["types"], old["info"], old["reasons"] = sig.get("types", []), sig.get("info", {}), sig.get("reasons", {})
+        reasons = old.get("reasons") or {}
+        documented = [t for t in (old.get("types") or []) if isinstance(reasons.get(t), str) and reasons[t].strip()]
+        if str(old.get("matchId")) not in present and old.get("country") and old.get("country") != "INT" and not EXCLUDE_COMPETITION_RE.search(str(old.get("league") or "")) and documented:
+            old["types"] = documented
+            old["info"] = {t: v for t, v in (old.get("info") or {}).items() if t in documented}
+            old["reasons"] = {t: reasons[t] for t in documented}
             fixtures.append(old)
     fixtures.sort(key=lambda m: (m.get("kickoff_utc") or "", m.get("league") or "", m.get("home") or ""))
     # Per ogni partita conclusa, recupera l'intervallo una volta sola. Se non è disponibile,
@@ -223,11 +251,8 @@ def main():
             yd = datetime.datetime.strptime(yesterday, "%Y-%m-%d").replace(tzinfo=ROME)
             ydata = get(f"{FM}/matches?date={yd.strftime('%Y%m%d')}&timezone=Europe%2FRome")
             yfixtures = []
-            for league in ydata.get("leagues") or []:
-                if not eligible_league(league):
-                    continue
-                for match in league.get("matches") or []:
-                    yfixtures.append(fixture_to_entry(match, league))
+            # Non inserire partite generiche senza una statistica che ne documenti la qualificazione.
+            yfixtures = []
             for match in yfixtures:
                 if not match.get("finished") or not match.get("matchId"): continue
                 try:
