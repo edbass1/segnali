@@ -1,6 +1,6 @@
 {
  "date": "2026-10-28",
- "generated_at": "2026-10-28 08:08",
+ "generated_at": "2026-10-28 09:09",
  "partial": false,
  "stats": {
   "matches_day": 263,
@@ -17,7 +17,7 @@
    "mai00": 25
   },
   "requests": 630,
-  "seconds": 127
+  "seconds": 148
  },
  "skipped_leagues": {
   "JPN WE League": "femminile"
