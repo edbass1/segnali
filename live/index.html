@@ -121,17 +121,21 @@ function renderDay(d,sig){
   const dd=d.date?d.date.split('-').reverse().join('/'):'';
   const bySig={};for(const s of sig){(bySig[s.matchId]=bySig[s.matchId]||[]).push(s);}
   const st=d.stats||{};
-  const nsig=d.matches.filter(e=>bySig[e.matchId]).length;
+  // L'archivio conserva le gare concluse; la lista oggi mostra solo quelle non ancora finite.
+  const active=d.matches.filter(e=>!e.finished);
+  const finishedCount=d.matches.length-active.length;
+  const nsig=active.filter(e=>bySig[e.matchId]).length;
   let h=`<div class="dmeta">Partite di campionato di <b>oggi ${esc(dd)}</b> in cui le squadre <b>soddisfano già</b> i requisiti prematch di almeno un segnale: se sono sullo <b>0-0 tra il 60' e il 70'</b> parte il segnale.<br>
     Aggiornato: <b>${esc(d.generated_at)}</b> (ora italiana)${d.partial?' · <span class="pending">lista parziale</span>':''}${st.evaluated!=null?` · ${st.evaluated} partite analizzate`:''}</div>
     <div class="sum">
-    <div class="box"><div class="v">${d.matches.length}</div><div class="l">Partite in lista</div></div>
+    <div class="box"><div class="v">${active.length}</div><div class="l">Partite in lista</div></div>
     <div class="box"><div class="v">${st.evaluated??'–'}</div><div class="l">Analizzate</div></div>
     <div class="box"><div class="v pending">${nsig}</div><div class="l">Già segnalate</div></div>
     <div class="box"><div class="v">${esc(dd)}</div><div class="l">Data</div></div></div>`;
-  if(!d.matches.length) h+='<div class="empty">Nessuna partita oggi soddisfa i requisiti.</div>';
+  if(finishedCount) h+='<div class="dmeta">'+finishedCount+' partite concluse sono state archiviate.</div>';
+  if(!active.length) h+='<div class="empty">Nessuna partita ancora da giocare o in corso soddisfa i requisiti.</div>';
   let last=null;
-  for(const e of d.matches){
+  for(const e of active){
     if(e.kickoff!==last){h+=`<div class="ko">🕒 ${esc(e.kickoff||'?')}</div>`;last=e.kickoff;}
     const ss=bySig[e.matchId]||[];
     let g='';
