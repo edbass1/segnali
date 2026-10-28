@@ -1,0 +1,6 @@
+name = "segnali-telegram-scheduler"
+main = "worker.js"
+compatibility_date = "2026-10-28"
+
+[triggers]
+crons = ["* * * * *"]
