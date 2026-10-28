@@ -93,6 +93,12 @@
       const types = Array.isArray(m.types) ? m.types : [];
       if(types.length) {
         el("div","gotsig","📌 Categorie prematch: "+types.map(t=>labels[t]||t).join(" + "),card);
+        const reasons=m.reasons||{};
+        types.forEach(t=>{
+          if(typeof reasons[t]==="string" && reasons[t].trim()) {
+            el("div","d","📊 "+(labels[t]||t)+": "+reasons[t],card);
+          }
+        });
         if(m.finished && fin && fin[0]+fin[1]===0) {
           el("div","r lost","❌ Segnali persi: "+types.map(t=>labels[t]||t).join(" + "),card);
         } else if(m.finished && fin && fin[0]+fin[1]>0) {
