@@ -1,6 +1,6 @@
 {
  "date": "2026-10-28",
- "generated_at": "2026-10-28 11:52",
+ "generated_at": "2026-10-28 12:25",
  "partial": false,
  "stats": {
   "matches_day": 264,
@@ -17,7 +17,7 @@
    "mai00": 25
   },
   "requests": 630,
-  "seconds": 115
+  "seconds": 193
  },
  "skipped_leagues": {
   "JPN WE League": "femminile"
@@ -134,7 +134,7 @@
    "away": "Dinamo Minsk",
    "url": "https://www.fotmob.com/match/5215479",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "mai00"
    ],
