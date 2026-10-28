@@ -194,7 +194,7 @@ def main():
     # Mantieni le partite già archiviate anche se la fonte non le ripropone più a giornata conclusa.
     present = {m["matchId"] for m in fixtures}
     for old in old_doc.get("matches", []):
-        if str(old.get("matchId")) not in present:
+        if str(old.get("matchId")) not in present and old.get("country") and old.get("country") != "INT" and not EXCLUDE_COMPETITION_RE.search(str(old.get("league") or "")):
             if not old.get("types") and str(old.get("matchId")) in today_by_id:
                 sig = today_by_id[str(old.get("matchId"))]
                 old["types"], old["info"], old["reasons"] = sig.get("types", []), sig.get("info", {}), sig.get("reasons", {})
