@@ -1,6 +1,6 @@
 {
  "date": "2026-10-28",
- "generated_at": "2026-10-28 21:13",
+ "generated_at": "2026-10-28 21:55",
  "partial": false,
  "stats": {
   "matches_day": 262,
@@ -17,7 +17,7 @@
    "mai00": 25
   },
   "requests": 628,
-  "seconds": 166
+  "seconds": 125
  },
  "skipped_leagues": {
   "JPN WE League": "femminile"
@@ -745,7 +745,7 @@
    "home": "Coastal Union",
    "away": "Kagera Sugar",
    "url": "https://www.fotmob.com/match/5998349",
-   "finished": false,
+   "finished": true,
    "score": "1-0",
    "types": [
     "subisce",
@@ -845,7 +845,7 @@
    "away": "Hellas Verona",
    "url": "https://www.fotmob.com/match/5967124",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "xg"
    ],
@@ -932,7 +932,7 @@
    "away": "Broxburn Athletic",
    "url": "https://www.fotmob.com/match/1000017017",
    "finished": false,
-   "score": "0-2",
+   "score": "0-3",
    "types": [
     "mai00"
    ],
@@ -977,7 +977,7 @@
    "away": "Troon Juniors",
    "url": "https://www.fotmob.com/match/1000016751",
    "finished": false,
-   "score": "1-2",
+   "score": "2-5",
    "types": [
     "mai00"
    ],
@@ -1022,7 +1022,7 @@
    "away": "Cumnock Juniors",
    "url": "https://www.fotmob.com/match/1000016752",
    "finished": false,
-   "score": "1-1",
+   "score": "2-1",
    "types": [
     "mai00"
    ],
@@ -1124,7 +1124,7 @@
    "away": "Eastleigh",
    "url": "https://www.fotmob.com/match/5906535",
    "finished": false,
-   "score": "0-0",
+   "score": "1-0",
    "types": [
     "mai00"
    ],
@@ -1301,7 +1301,7 @@
    "away": "Dundee United",
    "url": "https://www.fotmob.com/match/5793959",
    "finished": false,
-   "score": "1-0",
+   "score": "1-2",
    "types": [
     "xg",
     "mai00"
@@ -1355,7 +1355,7 @@
    "away": "Kilmarnock",
    "url": "https://www.fotmob.com/match/5793960",
    "finished": false,
-   "score": "0-0",
+   "score": "1-0",
    "types": [
     "xg",
     "mai00"
@@ -1409,7 +1409,7 @@
    "away": "Motherwell",
    "url": "https://www.fotmob.com/match/5793962",
    "finished": false,
-   "score": "1-0",
+   "score": "1-1",
    "types": [
     "xg",
     "mai00"
@@ -1529,7 +1529,7 @@
    "away": "Napoli",
    "url": "https://www.fotmob.com/match/5749725",
    "finished": false,
-   "score": "0-1",
+   "score": "1-2",
    "types": [
     "xg"
    ],
@@ -1571,7 +1571,7 @@
    "away": "Rangers",
    "url": "https://www.fotmob.com/match/5793961",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "xg",
     "segna",
