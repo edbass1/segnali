@@ -741,6 +741,55 @@ def resolve_pending(signals, lm, dry):
                           f"🏁 Finale: <b>{s['final']}</b> (segnale al {s.get('minute')}' sullo 0-0)")
     return changed
 
+def add_daily_catchup_matches(lm, state):
+    """Recupera partite candidate prematch se FotMob le omette dalla lista live.
+    Consulta matchDetails solo vicino alla finestra 60-70', senza inviare alert retroattivi."""
+    day = now_utc().astimezone(ROME).strftime("%Y-%m-%d")
+    daily_data = load_json(TODAY_F, {})
+    if daily_data.get("date") != day:
+        return
+    now = now_utc()
+    added = 0
+    for e in daily_data.get("matches") or []:
+        try:
+            mid = int(e["matchId"])
+            if mid in lm or str(mid) in state.get("checked", {}):
+                continue
+            ko = datetime.datetime.fromisoformat(e["kickoff_utc"].replace("Z", "+00:00"))
+            elapsed = (now - ko).total_seconds() / 60
+            # Un margine ampio per recuperare ritardi del feed; il minuto reale viene verificato sotto.
+            if elapsed < 52 or elapsed > 78:
+                continue
+            md = get(f"{FM}/matchDetails?matchId={mid}")
+            g = md.get("general") or {}
+            st = (md.get("header") or {}).get("status") or {}
+            minute = live_minute(st)
+            score = parse_score(st)
+            if st.get("finished") or st.get("cancelled") or minute is None:
+                continue
+            if not (CFG["MIN_FROM"] <= minute <= CFG["MIN_TO"]) or score != (0, 0):
+                continue
+            h = g.get("homeTeam") or {}
+            a = g.get("awayTeam") or {}
+            if not h.get("id") or not a.get("id"):
+                continue
+            lid = int(g.get("parentLeagueId") or g.get("leagueId") or e.get("leagueId") or 0)
+            lm[mid] = {
+                "id": mid,
+                "home": {"id": h["id"], "name": h.get("name") or e.get("home"), "score": 0},
+                "away": {"id": a["id"], "name": a.get("name") or e.get("away"), "score": 0},
+                "status": dict(st, started=True),
+                "_league": {"ccode": e.get("country"), "name": e.get("league"),
+                            "id": lid, "pid": int(g.get("parentLeagueId") or g.get("leagueId") or lid)}
+            }
+            added += 1
+            log(f"recuperata da matchDetails: {e.get('home')} - {e.get('away')} ({minute}', 0-0)")
+        except Exception as ex:
+            log(f"catch-up {e.get('home', '?')} - {e.get('away', '?')}: {type(ex).__name__}: {ex}")
+    if added:
+        log(f"catch-up: aggiunte {added} partite assenti dal feed live")
+    return added
+
 def scan(dry=False):
     state = load_json(STATE_F, {})
     signals = load_json(SIGNALS_F, [])
@@ -748,6 +797,7 @@ def scan(dry=False):
     old_state = state_fingerprint(state)
     old_signals = json.dumps(signals, sort_keys=True)
     lm = live_matches()
+    catchup_added = add_daily_catchup_matches(lm, state)
     changed = resolve_pending(signals, lm, dry)
     live = [m for m in lm.values() if (m.get("status") or {}).get("started") and not m["status"].get("finished")
             and not m["status"].get("cancelled")]
