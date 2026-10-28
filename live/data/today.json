@@ -1,6 +1,6 @@
 {
  "date": "2026-10-28",
- "generated_at": "2026-10-28 11:40",
+ "generated_at": "2026-10-28 11:45",
  "partial": false,
  "stats": {
   "matches_day": 264,
@@ -17,7 +17,7 @@
    "mai00": 25
   },
   "requests": 630,
-  "seconds": 130
+  "seconds": 137
  },
  "skipped_leagues": {
   "JPN WE League": "femminile"
@@ -46,6 +46,8 @@
    "home": "Cúcuta",
    "away": "Águilas Doradas",
    "url": "https://www.fotmob.com/match/1000014089",
+   "finished": true,
+   "score": "0-2",
    "types": [
     "mai00"
    ],
@@ -89,6 +91,8 @@
    "home": "Ceará",
    "away": "Goiás",
    "url": "https://www.fotmob.com/match/5190783",
+   "finished": true,
+   "score": "0-2",
    "types": [
     "xg"
    ],
@@ -129,6 +133,8 @@
    "home": "Belshina Bobruisk",
    "away": "Dinamo Minsk",
    "url": "https://www.fotmob.com/match/5215479",
+   "finished": false,
+   "score": null,
    "types": [
     "mai00"
    ],
@@ -172,6 +178,8 @@
    "home": "FC Goa",
    "away": "SC Delhi",
    "url": "https://www.fotmob.com/match/6362007",
+   "finished": false,
+   "score": null,
    "types": [
     "xg"
    ],
@@ -212,6 +220,8 @@
    "home": "Fratria",
    "away": "Montana",
    "url": "https://www.fotmob.com/match/5874247",
+   "finished": false,
+   "score": null,
    "types": [
     "mai00"
    ],
@@ -255,6 +265,8 @@
    "home": "Radnički Niš",
    "away": "Partizan Beograd",
    "url": "https://www.fotmob.com/match/1000015091",
+   "finished": false,
+   "score": null,
    "types": [
     "mai00"
    ],
@@ -298,6 +310,8 @@
    "home": "FC Košice",
    "away": "DAC 1904 Dunajska Streda",
    "url": "https://www.fotmob.com/match/5772154",
+   "finished": false,
+   "score": null,
    "types": [
     "segna",
     "mai00"
@@ -353,6 +367,8 @@
    "home": "Trenčín",
    "away": "Slovan Bratislava",
    "url": "https://www.fotmob.com/match/5772151",
+   "finished": false,
+   "score": null,
    "types": [
     "mai00"
    ],
@@ -396,6 +412,8 @@
    "home": "Paide Linnameeskond",
    "away": "Nõmme JK Kalju",
    "url": "https://www.fotmob.com/match/1000007991",
+   "finished": false,
+   "score": null,
    "types": [
     "storico",
     "mai00"
@@ -454,6 +472,8 @@
    "home": "Parma",
    "away": "Udinese",
    "url": "https://www.fotmob.com/match/5749726",
+   "finished": false,
+   "score": null,
    "types": [
     "xg"
    ],
@@ -494,6 +514,8 @@
    "home": "Venezia",
    "away": "Inter",
    "url": "https://www.fotmob.com/match/5749729",
+   "finished": false,
+   "score": null,
    "types": [
     "storico",
     "xg"
@@ -549,6 +571,8 @@
    "home": "IFK Göteborg",
    "away": "Djurgården",
    "url": "https://www.fotmob.com/match/5107639",
+   "finished": false,
+   "score": null,
    "types": [
     "xg",
     "mai00"
@@ -601,6 +625,8 @@
    "home": "Brommapojkarna",
    "away": "Häcken",
    "url": "https://www.fotmob.com/match/5107641",
+   "finished": false,
+   "score": null,
    "types": [
     "xg",
     "mai00"
@@ -653,6 +679,8 @@
    "home": "Degerfors",
    "away": "Västerås SK",
    "url": "https://www.fotmob.com/match/5107642",
+   "finished": false,
+   "score": null,
    "types": [
     "xg",
     "mai00"
@@ -705,6 +733,8 @@
    "home": "Halmstads BK",
    "away": "Malmö FF",
    "url": "https://www.fotmob.com/match/5107644",
+   "finished": false,
+   "score": null,
    "types": [
     "xg",
     "mai00"
@@ -757,6 +787,8 @@
    "home": "Coastal Union",
    "away": "Kagera Sugar",
    "url": "https://www.fotmob.com/match/5998349",
+   "finished": false,
+   "score": null,
    "types": [
     "subisce",
     "mai00"
@@ -812,6 +844,8 @@
    "home": "Pisa",
    "away": "Palermo",
    "url": "https://www.fotmob.com/match/5967128",
+   "finished": false,
+   "score": null,
    "types": [
     "xg"
    ],
@@ -852,6 +886,8 @@
    "home": "Juve Stabia",
    "away": "Hellas Verona",
    "url": "https://www.fotmob.com/match/5967124",
+   "finished": false,
+   "score": null,
    "types": [
     "xg"
    ],
@@ -892,6 +928,8 @@
    "home": "Stirling University FC",
    "away": "Berwick Rangers",
    "url": "https://www.fotmob.com/match/1000017014",
+   "finished": false,
+   "score": null,
    "types": [
     "mai00"
    ],
@@ -935,6 +973,8 @@
    "home": "Gala Fairydean Rovers",
    "away": "Broxburn Athletic",
    "url": "https://www.fotmob.com/match/1000017017",
+   "finished": false,
+   "score": null,
    "types": [
     "mai00"
    ],
@@ -978,6 +1018,8 @@
    "home": "Renfrew FC",
    "away": "Troon Juniors",
    "url": "https://www.fotmob.com/match/1000016751",
+   "finished": false,
+   "score": null,
    "types": [
     "mai00"
    ],
@@ -1021,6 +1063,8 @@
    "home": "Largs Thistle",
    "away": "Cumnock Juniors",
    "url": "https://www.fotmob.com/match/1000016752",
+   "finished": false,
+   "score": null,
    "types": [
     "mai00"
    ],
@@ -1064,6 +1108,8 @@
    "home": "Carlisle United",
    "away": "Harrogate Town",
    "url": "https://www.fotmob.com/match/5906534",
+   "finished": false,
+   "score": null,
    "types": [
     "segna",
     "mai00"
@@ -1119,6 +1165,8 @@
    "home": "Forest Green Rovers",
    "away": "Eastleigh",
    "url": "https://www.fotmob.com/match/5906535",
+   "finished": false,
+   "score": null,
    "types": [
     "mai00"
    ],
@@ -1162,6 +1210,8 @@
    "home": "Sutton United",
    "away": "Aldershot Town",
    "url": "https://www.fotmob.com/match/5906536",
+   "finished": false,
+   "score": null,
    "types": [
     "mai00"
    ],
@@ -1205,6 +1255,8 @@
    "home": "Farnborough",
    "away": "Weston Super Mare",
    "url": "https://www.fotmob.com/match/5907651",
+   "finished": false,
+   "score": null,
    "types": [
     "mai00"
    ],
@@ -1248,6 +1300,8 @@
    "home": "Aberdeen",
    "away": "Falkirk",
    "url": "https://www.fotmob.com/match/5793958",
+   "finished": false,
+   "score": null,
    "types": [
     "xg"
    ],
@@ -1279,110 +1333,6 @@
    }
   },
   {
-   "matchId": 5793959,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-28T19:45:00.000Z",
-   "league": "Premiership",
-   "country": "SCO",
-   "leagueId": 64,
-   "home": "Celtic",
-   "away": "Dundee United",
-   "url": "https://www.fotmob.com/match/5793959",
-   "types": [
-    "xg",
-    "mai00"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.31 (casa 2.10 + ospite 1.21) ≥ 2.7",
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 10/10 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 3.31,
-     "exp_home": 2.1,
-     "exp_away": 1.21,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 10,
-     "other_n": 10,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 9,
-     "conceded": 6,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 7,
-     "conceded": 7,
-     "no00": 10
-    }
-   }
-  },
-  {
-   "matchId": 5793960,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-28T19:45:00.000Z",
-   "league": "Premiership",
-   "country": "SCO",
-   "leagueId": 64,
-   "home": "Dundee FC",
-   "away": "Kilmarnock",
-   "url": "https://www.fotmob.com/match/5793960",
-   "types": [
-    "xg",
-    "mai00"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.97 (casa 1.59 + ospite 1.38) ≥ 2.7",
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 9/10 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 2.97,
-     "exp_home": 1.59,
-     "exp_away": 1.38,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 9,
-     "other_n": 10,
-     "other_pct": 90
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 9,
-     "conceded": 8,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 8,
-     "no00": 9
-    }
-   }
-  },
-  {
    "matchId": 5793963,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-28T19:45:00.000Z",
@@ -1392,6 +1342,8 @@
    "home": "St. Mirren",
    "away": "Hibernian",
    "url": "https://www.fotmob.com/match/5793963",
+   "finished": false,
+   "score": null,
    "types": [
     "xg",
     "subisce",
@@ -1447,6 +1399,114 @@
    }
   },
   {
+   "matchId": 5793959,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-28T19:45:00.000Z",
+   "league": "Premiership",
+   "country": "SCO",
+   "leagueId": 64,
+   "home": "Celtic",
+   "away": "Dundee United",
+   "url": "https://www.fotmob.com/match/5793959",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "mai00"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.31 (casa 2.10 + ospite 1.21) ≥ 2.7",
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 10/10 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.31,
+     "exp_home": 2.1,
+     "exp_away": 1.21,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 10,
+     "other_n": 10,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 9,
+     "conceded": 6,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 7,
+     "conceded": 7,
+     "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5793960,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-28T19:45:00.000Z",
+   "league": "Premiership",
+   "country": "SCO",
+   "leagueId": 64,
+   "home": "Dundee FC",
+   "away": "Kilmarnock",
+   "url": "https://www.fotmob.com/match/5793960",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "mai00"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.97 (casa 1.59 + ospite 1.38) ≥ 2.7",
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 9/10 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 2.97,
+     "exp_home": 1.59,
+     "exp_away": 1.38,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 10,
+     "other_pct": 90
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 9,
+     "conceded": 8,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 8,
+     "no00": 9
+    }
+   }
+  },
+  {
    "matchId": 5793962,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-28T19:45:00.000Z",
@@ -1456,6 +1516,8 @@
    "home": "St. Johnstone",
    "away": "Motherwell",
    "url": "https://www.fotmob.com/match/5793962",
+   "finished": false,
+   "score": null,
    "types": [
     "xg",
     "mai00"
@@ -1508,6 +1570,8 @@
    "home": "Monza",
    "away": "Napoli",
    "url": "https://www.fotmob.com/match/5749725",
+   "finished": false,
+   "score": null,
    "types": [
     "xg"
    ],
@@ -1548,6 +1612,8 @@
    "home": "Heart of Midlothian",
    "away": "Rangers",
    "url": "https://www.fotmob.com/match/5793961",
+   "finished": false,
+   "score": null,
    "types": [
     "xg",
     "segna",
@@ -1612,6 +1678,8 @@
    "home": "Fluminense",
    "away": "Internacional",
    "url": "https://www.fotmob.com/match/5103684",
+   "finished": false,
+   "score": null,
    "types": [
     "xg"
    ],
@@ -1652,6 +1720,8 @@
    "home": "RB Bragantino",
    "away": "Chapecoense",
    "url": "https://www.fotmob.com/match/5103688",
+   "finished": false,
+   "score": null,
    "types": [
     "xg"
    ],
