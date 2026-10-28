@@ -4,6 +4,11 @@ on:
   schedule:
     - cron: '*/5 * * * *'
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'scanner/scan.py'
+      - '.github/workflows/scan.yml'
 
 permissions:
   contents: write
