@@ -1,6 +1,6 @@
 {
  "date": "2026-10-28",
- "generated_at": "2026-10-28 18:02",
+ "generated_at": "2026-10-28 18:40",
  "partial": false,
  "stats": {
   "matches_day": 262,
@@ -17,7 +17,7 @@
    "mai00": 25
   },
   "requests": 628,
-  "seconds": 158
+  "seconds": 187
  },
  "skipped_leagues": {
   "JPN WE League": "femminile"
@@ -179,7 +179,7 @@
    "away": "Montana",
    "url": "https://www.fotmob.com/match/5874247",
    "finished": false,
-   "score": "0-1",
+   "score": "1-1",
    "types": [
     "mai00"
    ],
@@ -224,7 +224,7 @@
    "away": "Partizan Beograd",
    "url": "https://www.fotmob.com/match/1000015091",
    "finished": false,
-   "score": "0-2",
+   "score": "2-3",
    "types": [
     "mai00"
    ],
@@ -269,7 +269,7 @@
    "away": "DAC 1904 Dunajska Streda",
    "url": "https://www.fotmob.com/match/5772154",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "segna",
     "mai00"
@@ -326,7 +326,7 @@
    "away": "Slovan Bratislava",
    "url": "https://www.fotmob.com/match/5772151",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "mai00"
    ],
@@ -371,7 +371,7 @@
    "away": "Nõmme JK Kalju",
    "url": "https://www.fotmob.com/match/1000007991",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "storico",
     "mai00"
@@ -431,7 +431,7 @@
    "away": "Udinese",
    "url": "https://www.fotmob.com/match/5749726",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -473,7 +473,7 @@
    "away": "Inter",
    "url": "https://www.fotmob.com/match/5749729",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "storico",
     "xg"
@@ -574,60 +574,6 @@
    }
   },
   {
-   "matchId": 5107642,
-   "kickoff": "19:00",
-   "kickoff_utc": "2026-10-28T18:00:00.000Z",
-   "league": "Allsvenskan",
-   "country": "SWE",
-   "leagueId": 67,
-   "home": "Degerfors",
-   "away": "Västerås SK",
-   "url": "https://www.fotmob.com/match/5107642",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "mai00"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.93 (casa 1.54 + ospite 1.40) ≥ 2.7",
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 25/25 partite di campionato 2026; Ospite: 23/25 senza 0-0 (92%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 2.93,
-     "exp_home": 1.54,
-     "exp_away": 1.4,
-     "method": "casa/trasferta",
-     "season": "2026"
-    },
-    "mai00": {
-     "strong": "home",
-     "season": "2026",
-     "strong_k": 25,
-     "strong_n": 25,
-     "strong_pct": 100,
-     "other_k": 23,
-     "other_n": 25,
-     "other_pct": 92
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 25,
-     "scored": 13,
-     "conceded": 22,
-     "no00": 25
-    },
-    "away": {
-     "n": 25,
-     "scored": 17,
-     "conceded": 17,
-     "no00": 23
-    }
-   }
-  },
-  {
    "matchId": 5107641,
    "kickoff": "19:00",
    "kickoff_utc": "2026-10-28T18:00:00.000Z",
@@ -677,6 +623,60 @@
      "n": 25,
      "scored": 22,
      "conceded": 14,
+     "no00": 23
+    }
+   }
+  },
+  {
+   "matchId": 5107642,
+   "kickoff": "19:00",
+   "kickoff_utc": "2026-10-28T18:00:00.000Z",
+   "league": "Allsvenskan",
+   "country": "SWE",
+   "leagueId": 67,
+   "home": "Degerfors",
+   "away": "Västerås SK",
+   "url": "https://www.fotmob.com/match/5107642",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "mai00"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.93 (casa 1.54 + ospite 1.40) ≥ 2.7",
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 25/25 partite di campionato 2026; Ospite: 23/25 senza 0-0 (92%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 2.93,
+     "exp_home": 1.54,
+     "exp_away": 1.4,
+     "method": "casa/trasferta",
+     "season": "2026"
+    },
+    "mai00": {
+     "strong": "home",
+     "season": "2026",
+     "strong_k": 25,
+     "strong_n": 25,
+     "strong_pct": 100,
+     "other_k": 23,
+     "other_n": 25,
+     "other_pct": 92
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 25,
+     "scored": 13,
+     "conceded": 22,
+     "no00": 25
+    },
+    "away": {
+     "n": 25,
+     "scored": 17,
+     "conceded": 17,
      "no00": 23
     }
    }
@@ -1114,51 +1114,6 @@
    }
   },
   {
-   "matchId": 5906535,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-28T19:45:00.000Z",
-   "league": "National League",
-   "country": "ENG",
-   "leagueId": 117,
-   "home": "Forest Green Rovers",
-   "away": "Eastleigh",
-   "url": "https://www.fotmob.com/match/5906535",
-   "finished": false,
-   "score": null,
-   "types": [
-    "mai00"
-   ],
-   "reasons": {
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 12/12 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 12,
-     "strong_n": 12,
-     "strong_pct": 100,
-     "other_k": 14,
-     "other_n": 14,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 10,
-     "conceded": 10,
-     "no00": 12
-    },
-    "away": {
-     "n": 14,
-     "scored": 12,
-     "conceded": 12,
-     "no00": 14
-    }
-   }
-  },
-  {
    "matchId": 5906536,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-28T19:45:00.000Z",
@@ -1198,6 +1153,51 @@
     "away": {
      "n": 14,
      "scored": 11,
+     "conceded": 12,
+     "no00": 14
+    }
+   }
+  },
+  {
+   "matchId": 5906535,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-28T19:45:00.000Z",
+   "league": "National League",
+   "country": "ENG",
+   "leagueId": 117,
+   "home": "Forest Green Rovers",
+   "away": "Eastleigh",
+   "url": "https://www.fotmob.com/match/5906535",
+   "finished": false,
+   "score": null,
+   "types": [
+    "mai00"
+   ],
+   "reasons": {
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 12/12 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 12,
+     "strong_n": 12,
+     "strong_pct": 100,
+     "other_k": 14,
+     "other_n": 14,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 10,
+     "conceded": 10,
+     "no00": 12
+    },
+    "away": {
+     "n": 14,
+     "scored": 12,
      "conceded": 12,
      "no00": 14
     }
@@ -1291,15 +1291,15 @@
    }
   },
   {
-   "matchId": 5793962,
+   "matchId": 5793959,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-28T19:45:00.000Z",
    "league": "Premiership",
    "country": "SCO",
    "leagueId": 64,
-   "home": "St. Johnstone",
-   "away": "Motherwell",
-   "url": "https://www.fotmob.com/match/5793962",
+   "home": "Celtic",
+   "away": "Dundee United",
+   "url": "https://www.fotmob.com/match/5793959",
    "finished": false,
    "score": null,
    "types": [
@@ -1307,14 +1307,14 @@
     "mai00"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 3.56 (casa 1.95 + ospite 1.61) ≥ 2.7",
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 9/10 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
+    "xg": "xG atteso prematch 3.31 (casa 2.10 + ospite 1.21) ≥ 2.7",
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 10/10 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
    },
    "info": {
     "xg": {
-     "total": 3.56,
-     "exp_home": 1.95,
-     "exp_away": 1.61,
+     "total": 3.31,
+     "exp_home": 2.1,
+     "exp_away": 1.21,
      "method": "casa/trasferta",
      "season": "2026/2027"
     },
@@ -1324,23 +1324,23 @@
      "strong_k": 10,
      "strong_n": 10,
      "strong_pct": 100,
-     "other_k": 9,
+     "other_k": 10,
      "other_n": 10,
-     "other_pct": 90
+     "other_pct": 100
     }
    },
    "cur": {
     "home": {
      "n": 10,
-     "scored": 7,
-     "conceded": 9,
+     "scored": 9,
+     "conceded": 6,
      "no00": 10
     },
     "away": {
      "n": 10,
-     "scored": 5,
-     "conceded": 8,
-     "no00": 9
+     "scored": 7,
+     "conceded": 7,
+     "no00": 10
     }
    }
   },
@@ -1395,60 +1395,6 @@
      "scored": 6,
      "conceded": 8,
      "no00": 9
-    }
-   }
-  },
-  {
-   "matchId": 5793959,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-28T19:45:00.000Z",
-   "league": "Premiership",
-   "country": "SCO",
-   "leagueId": 64,
-   "home": "Celtic",
-   "away": "Dundee United",
-   "url": "https://www.fotmob.com/match/5793959",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "mai00"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.31 (casa 2.10 + ospite 1.21) ≥ 2.7",
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 10/10 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 3.31,
-     "exp_home": 2.1,
-     "exp_away": 1.21,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 10,
-     "other_n": 10,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 9,
-     "conceded": 6,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 7,
-     "conceded": 7,
-     "no00": 10
     }
    }
   },
@@ -1515,6 +1461,60 @@
      "scored": 8,
      "conceded": 10,
      "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5793962,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-28T19:45:00.000Z",
+   "league": "Premiership",
+   "country": "SCO",
+   "leagueId": 64,
+   "home": "St. Johnstone",
+   "away": "Motherwell",
+   "url": "https://www.fotmob.com/match/5793962",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "mai00"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.56 (casa 1.95 + ospite 1.61) ≥ 2.7",
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 9/10 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.56,
+     "exp_home": 1.95,
+     "exp_away": 1.61,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 10,
+     "other_pct": 90
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 7,
+     "conceded": 9,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 5,
+     "conceded": 8,
+     "no00": 9
     }
    }
   },
