@@ -1,6 +1,6 @@
 {
  "date": "2026-10-28",
- "generated_at": "2026-10-28 17:02",
+ "generated_at": "2026-10-28 17:51",
  "partial": false,
  "stats": {
   "matches_day": 262,
@@ -17,7 +17,7 @@
    "mai00": 25
   },
   "requests": 628,
-  "seconds": 179
+  "seconds": 139
  },
  "skipped_leagues": {
   "JPN WE League": "femminile"
@@ -179,7 +179,7 @@
    "away": "Montana",
    "url": "https://www.fotmob.com/match/5874247",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "mai00"
    ],
@@ -224,7 +224,7 @@
    "away": "Partizan Beograd",
    "url": "https://www.fotmob.com/match/1000015091",
    "finished": false,
-   "score": null,
+   "score": "0-2",
    "types": [
     "mai00"
    ],
