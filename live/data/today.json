@@ -1,6 +1,6 @@
 {
  "date": "2026-10-28",
- "generated_at": "2026-10-28 11:45",
+ "generated_at": "2026-10-28 11:52",
  "partial": false,
  "stats": {
   "matches_day": 264,
@@ -17,7 +17,7 @@
    "mai00": 25
   },
   "requests": 630,
-  "seconds": 137
+  "seconds": 115
  },
  "skipped_leagues": {
   "JPN WE League": "femminile"
@@ -1333,72 +1333,6 @@
    }
   },
   {
-   "matchId": 5793963,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-28T19:45:00.000Z",
-   "league": "Premiership",
-   "country": "SCO",
-   "leagueId": 64,
-   "home": "St. Mirren",
-   "away": "Hibernian",
-   "url": "https://www.fotmob.com/match/5793963",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "subisce",
-    "mai00"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.66 (casa 1.84 + ospite 1.82) ≥ 2.7",
-    "subisce": "Ospite ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Casa: 7/10) [solo campionato in corso, min. 9 partite per squadra]",
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 10/10 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 3.66,
-     "exp_home": 1.84,
-     "exp_away": 1.82,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "subisce": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 7,
-     "other_n": 10,
-     "other_pct": 70
-    },
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 10,
-     "other_n": 10,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 7,
-     "conceded": 7,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 8,
-     "conceded": 10,
-     "no00": 10
-    }
-   }
-  },
-  {
    "matchId": 5793959,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-28T19:45:00.000Z",
@@ -1503,6 +1437,72 @@
      "scored": 6,
      "conceded": 8,
      "no00": 9
+    }
+   }
+  },
+  {
+   "matchId": 5793963,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-28T19:45:00.000Z",
+   "league": "Premiership",
+   "country": "SCO",
+   "leagueId": 64,
+   "home": "St. Mirren",
+   "away": "Hibernian",
+   "url": "https://www.fotmob.com/match/5793963",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "subisce",
+    "mai00"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.66 (casa 1.84 + ospite 1.82) ≥ 2.7",
+    "subisce": "Ospite ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Casa: 7/10) [solo campionato in corso, min. 9 partite per squadra]",
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Ospite: 10/10 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.66,
+     "exp_home": 1.84,
+     "exp_away": 1.82,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "subisce": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 7,
+     "other_n": 10,
+     "other_pct": 70
+    },
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 10,
+     "other_n": 10,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 7,
+     "conceded": 7,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 8,
+     "conceded": 10,
+     "no00": 10
     }
    }
   },
