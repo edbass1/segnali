@@ -1,6 +1,6 @@
 {
  "date": "2026-10-29",
- "generated_at": "2026-10-29 16:10",
+ "generated_at": "2026-10-29 17:05",
  "partial": false,
  "stats": {
   "matches_day": 143,
@@ -16,8 +16,8 @@
    "subisce": 1,
    "mai00": 15
   },
-  "requests": 838,
-  "seconds": 174
+  "requests": 839,
+  "seconds": 150
  },
  "skipped_leagues": {},
  "rules": {
@@ -218,48 +218,6 @@
    }
   },
   {
-   "matchId": 5071459,
-   "kickoff": "00:40",
-   "kickoff_utc": "2026-10-28T23:40:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "New York City FC",
-   "away": "Atlanta United",
-   "url": "https://www.fotmob.com/match/5071459",
-   "finished": true,
-   "score": "2-1",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.06 (casa 1.65 + ospite 1.40) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.06,
-     "exp_home": 1.65,
-     "exp_away": 1.4,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 31,
-     "scored": 25,
-     "conceded": 26,
-     "no00": 30
-    },
-    "away": {
-     "n": 31,
-     "scored": 22,
-     "conceded": 27,
-     "no00": 29
-    }
-   }
-  },
-  {
    "matchId": 5071456,
    "kickoff": "00:40",
    "kickoff_utc": "2026-10-28T23:40:00.000Z",
@@ -298,6 +256,48 @@
      "scored": 19,
      "conceded": 27,
      "no00": 30
+    }
+   }
+  },
+  {
+   "matchId": 5071459,
+   "kickoff": "00:40",
+   "kickoff_utc": "2026-10-28T23:40:00.000Z",
+   "league": "Major League Soccer",
+   "country": "USA",
+   "leagueId": 130,
+   "home": "New York City FC",
+   "away": "Atlanta United",
+   "url": "https://www.fotmob.com/match/5071459",
+   "finished": true,
+   "score": "2-1",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.06 (casa 1.65 + ospite 1.40) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.06,
+     "exp_home": 1.65,
+     "exp_away": 1.4,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 31,
+     "scored": 25,
+     "conceded": 26,
+     "no00": 30
+    },
+    "away": {
+     "n": 31,
+     "scored": 22,
+     "conceded": 27,
+     "no00": 29
     }
    }
   },
@@ -476,48 +476,6 @@
    }
   },
   {
-   "matchId": 5071463,
-   "kickoff": "01:30",
-   "kickoff_utc": "2026-10-29T00:30:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "FC Dallas",
-   "away": "Columbus Crew",
-   "url": "https://www.fotmob.com/match/5071463",
-   "finished": true,
-   "score": "0-2",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.82 (casa 1.54 + ospite 1.27) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.82,
-     "exp_home": 1.54,
-     "exp_away": 1.27,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 31,
-     "scored": 24,
-     "conceded": 23,
-     "no00": 28
-    },
-    "away": {
-     "n": 31,
-     "scored": 27,
-     "conceded": 25,
-     "no00": 30
-    }
-   }
-  },
-  {
    "matchId": 5071464,
    "kickoff": "01:30",
    "kickoff_utc": "2026-10-29T00:30:00.000Z",
@@ -568,6 +526,48 @@
      "scored": 21,
      "conceded": 30,
      "no00": 31
+    }
+   }
+  },
+  {
+   "matchId": 5071463,
+   "kickoff": "01:30",
+   "kickoff_utc": "2026-10-29T00:30:00.000Z",
+   "league": "Major League Soccer",
+   "country": "USA",
+   "leagueId": 130,
+   "home": "FC Dallas",
+   "away": "Columbus Crew",
+   "url": "https://www.fotmob.com/match/5071463",
+   "finished": true,
+   "score": "0-2",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.82 (casa 1.54 + ospite 1.27) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.82,
+     "exp_home": 1.54,
+     "exp_away": 1.27,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 31,
+     "scored": 24,
+     "conceded": 23,
+     "no00": 28
+    },
+    "away": {
+     "n": 31,
+     "scored": 27,
+     "conceded": 25,
+     "no00": 30
     }
    }
   },
@@ -957,7 +957,7 @@
    "away": "Al Hazem",
    "url": "https://www.fotmob.com/match/5970191",
    "finished": false,
-   "score": "1-0",
+   "score": "2-2",
    "types": [
     "xg"
    ],
@@ -999,7 +999,7 @@
    "away": "Polisi Tanzania FC",
    "url": "https://www.fotmob.com/match/5998351",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "mai00"
    ],
@@ -1044,7 +1044,7 @@
    "away": "Hebar",
    "url": "https://www.fotmob.com/match/5874261",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "mai00"
    ],
