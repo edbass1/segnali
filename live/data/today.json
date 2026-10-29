@@ -1,6 +1,6 @@
 {
  "date": "2026-10-29",
- "generated_at": "2026-10-29 20:35",
+ "generated_at": "2026-10-29 21:27",
  "partial": false,
  "stats": {
   "matches_day": 143,
@@ -17,7 +17,7 @@
    "mai00": 15
   },
   "requests": 838,
-  "seconds": 252
+  "seconds": 233
  },
  "skipped_leagues": {},
  "rules": {
@@ -416,6 +416,60 @@
    }
   },
   {
+   "matchId": 5071464,
+   "kickoff": "01:30",
+   "kickoff_utc": "2026-10-29T00:30:00.000Z",
+   "league": "Major League Soccer",
+   "country": "USA",
+   "leagueId": 130,
+   "home": "Minnesota United",
+   "away": "Sporting Kansas City",
+   "url": "https://www.fotmob.com/match/5071464",
+   "finished": true,
+   "score": "3-1",
+   "types": [
+    "xg",
+    "mai00"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.12 (casa 2.03 + ospite 1.08) ≥ 2.7",
+    "mai00": "Ospite: over 0.5 totali (nessuno 0-0) in 31/31 partite di campionato 2026; Casa: 28/31 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.12,
+     "exp_home": 2.03,
+     "exp_away": 1.08,
+     "method": "casa/trasferta",
+     "season": "2026"
+    },
+    "mai00": {
+     "strong": "away",
+     "season": "2026",
+     "strong_k": 31,
+     "strong_n": 31,
+     "strong_pct": 100,
+     "other_k": 28,
+     "other_n": 31,
+     "other_pct": 90
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 31,
+     "scored": 25,
+     "conceded": 25,
+     "no00": 28
+    },
+    "away": {
+     "n": 31,
+     "scored": 21,
+     "conceded": 30,
+     "no00": 31
+    }
+   }
+  },
+  {
    "matchId": 5071461,
    "kickoff": "01:30",
    "kickoff_utc": "2026-10-29T00:30:00.000Z",
@@ -514,60 +568,6 @@
      "scored": 27,
      "conceded": 25,
      "no00": 30
-    }
-   }
-  },
-  {
-   "matchId": 5071464,
-   "kickoff": "01:30",
-   "kickoff_utc": "2026-10-29T00:30:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "Minnesota United",
-   "away": "Sporting Kansas City",
-   "url": "https://www.fotmob.com/match/5071464",
-   "finished": true,
-   "score": "3-1",
-   "types": [
-    "xg",
-    "mai00"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.12 (casa 2.03 + ospite 1.08) ≥ 2.7",
-    "mai00": "Ospite: over 0.5 totali (nessuno 0-0) in 31/31 partite di campionato 2026; Casa: 28/31 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 3.12,
-     "exp_home": 2.03,
-     "exp_away": 1.08,
-     "method": "casa/trasferta",
-     "season": "2026"
-    },
-    "mai00": {
-     "strong": "away",
-     "season": "2026",
-     "strong_k": 31,
-     "strong_n": 31,
-     "strong_pct": 100,
-     "other_k": 28,
-     "other_n": 31,
-     "other_pct": 90
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 31,
-     "scored": 25,
-     "conceded": 25,
-     "no00": 28
-    },
-    "away": {
-     "n": 31,
-     "scored": 21,
-     "conceded": 30,
-     "no00": 31
     }
    }
   },
@@ -1130,7 +1130,7 @@
    "home": "Hammarby",
    "away": "Sirius",
    "url": "https://www.fotmob.com/match/5107638",
-   "finished": false,
+   "finished": true,
    "score": "2-0",
    "types": [
     "storico",
@@ -1199,7 +1199,7 @@
    "home": "Örgryte",
    "away": "Mjällby",
    "url": "https://www.fotmob.com/match/5107640",
-   "finished": false,
+   "finished": true,
    "score": "1-2",
    "types": [
     "xg"
@@ -1241,8 +1241,8 @@
    "home": "Los Chankas",
    "away": "Cusco FC",
    "url": "https://www.fotmob.com/match/1000017273",
-   "finished": false,
-   "score": "0-0",
+   "finished": true,
+   "score": "0-1",
    "types": [
     "mai00"
    ],
@@ -1286,8 +1286,8 @@
    "home": "Al Riyadh",
    "away": "Al Qadsiah",
    "url": "https://www.fotmob.com/match/5970194",
-   "finished": false,
-   "score": "0-4",
+   "finished": true,
+   "score": "0-6",
    "types": [
     "xg",
     "mai00"
@@ -1340,8 +1340,8 @@
    "home": "Al Nassr FC",
    "away": "Al Kholood",
    "url": "https://www.fotmob.com/match/5970193",
-   "finished": false,
-   "score": "3-2",
+   "finished": true,
+   "score": "5-3",
    "types": [
     "xg",
     "subisce",
@@ -1407,7 +1407,7 @@
    "away": "Atalanta",
    "url": "https://www.fotmob.com/match/5749722",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
