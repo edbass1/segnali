@@ -1,6 +1,6 @@
 {
  "date": "2026-10-29",
- "generated_at": "2026-10-29 17:05",
+ "generated_at": "2026-10-29 18:04",
  "partial": false,
  "stats": {
   "matches_day": 143,
@@ -16,8 +16,8 @@
    "subisce": 1,
    "mai00": 15
   },
-  "requests": 839,
-  "seconds": 150
+  "requests": 838,
+  "seconds": 178
  },
  "skipped_leagues": {},
  "rules": {
@@ -416,66 +416,6 @@
    }
   },
   {
-   "matchId": 5071461,
-   "kickoff": "01:30",
-   "kickoff_utc": "2026-10-29T00:30:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "Austin FC",
-   "away": "Real Salt Lake",
-   "url": "https://www.fotmob.com/match/5071461",
-   "finished": true,
-   "score": "1-2",
-   "types": [
-    "storico",
-    "mai00"
-   ],
-   "reasons": {
-    "storico": "Ospite: 53 partite di campionato consecutive senza 0-0 (ultimo 0-0: 15/05/2025 vs Portland Timbers); Casa: 3 0-0 nelle ultime 50 di campionato",
-    "mai00": "Ospite: over 0.5 totali (nessuno 0-0) in 31/31 partite di campionato 2026; Casa: 29/31 senza 0-0 (94%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 53,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "15/05/2025",
-      "opp": "Portland Timbers",
-      "home": true
-     },
-     "other_zz": 3,
-     "other_n": 50
-    },
-    "mai00": {
-     "strong": "away",
-     "season": "2026",
-     "strong_k": 31,
-     "strong_n": 31,
-     "strong_pct": 100,
-     "other_k": 29,
-     "other_n": 31,
-     "other_pct": 94
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 31,
-     "scored": 25,
-     "conceded": 26,
-     "no00": 29
-    },
-    "away": {
-     "n": 31,
-     "scored": 25,
-     "conceded": 27,
-     "no00": 31
-    }
-   }
-  },
-  {
    "matchId": 5071464,
    "kickoff": "01:30",
    "kickoff_utc": "2026-10-29T00:30:00.000Z",
@@ -568,6 +508,66 @@
      "scored": 27,
      "conceded": 25,
      "no00": 30
+    }
+   }
+  },
+  {
+   "matchId": 5071461,
+   "kickoff": "01:30",
+   "kickoff_utc": "2026-10-29T00:30:00.000Z",
+   "league": "Major League Soccer",
+   "country": "USA",
+   "leagueId": 130,
+   "home": "Austin FC",
+   "away": "Real Salt Lake",
+   "url": "https://www.fotmob.com/match/5071461",
+   "finished": true,
+   "score": "1-2",
+   "types": [
+    "storico",
+    "mai00"
+   ],
+   "reasons": {
+    "storico": "Ospite: 53 partite di campionato consecutive senza 0-0 (ultimo 0-0: 15/05/2025 vs Portland Timbers); Casa: 3 0-0 nelle ultime 50 di campionato",
+    "mai00": "Ospite: over 0.5 totali (nessuno 0-0) in 31/31 partite di campionato 2026; Casa: 29/31 senza 0-0 (94%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 53,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "15/05/2025",
+      "opp": "Portland Timbers",
+      "home": true
+     },
+     "other_zz": 3,
+     "other_n": 50
+    },
+    "mai00": {
+     "strong": "away",
+     "season": "2026",
+     "strong_k": 31,
+     "strong_n": 31,
+     "strong_pct": 100,
+     "other_k": 29,
+     "other_n": 31,
+     "other_pct": 94
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 31,
+     "scored": 25,
+     "conceded": 26,
+     "no00": 29
+    },
+    "away": {
+     "n": 31,
+     "scored": 25,
+     "conceded": 27,
+     "no00": 31
     }
    }
   },
@@ -956,8 +956,8 @@
    "home": "Al Khaleej",
    "away": "Al Hazem",
    "url": "https://www.fotmob.com/match/5970191",
-   "finished": false,
-   "score": "2-2",
+   "finished": true,
+   "score": "4-2",
    "types": [
     "xg"
    ],
@@ -999,7 +999,7 @@
    "away": "Polisi Tanzania FC",
    "url": "https://www.fotmob.com/match/5998351",
    "finished": false,
-   "score": "0-0",
+   "score": "1-0",
    "types": [
     "mai00"
    ],
@@ -1044,7 +1044,7 @@
    "away": "Hebar",
    "url": "https://www.fotmob.com/match/5874261",
    "finished": false,
-   "score": "0-0",
+   "score": "3-0",
    "types": [
     "mai00"
    ],
