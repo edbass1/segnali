@@ -1,6 +1,6 @@
 {
  "date": "2026-10-29",
- "generated_at": "2026-10-29 05:30",
+ "generated_at": "2026-10-29 06:17",
  "partial": false,
  "stats": {
   "matches_day": 134,
@@ -17,7 +17,7 @@
    "mai00": 15
   },
   "requests": 838,
-  "seconds": 247
+  "seconds": 208
  },
  "skipped_leagues": {},
  "rules": {
@@ -416,6 +416,48 @@
    }
   },
   {
+   "matchId": 5071463,
+   "kickoff": "01:30",
+   "kickoff_utc": "2026-10-29T00:30:00.000Z",
+   "league": "Major League Soccer",
+   "country": "USA",
+   "leagueId": 130,
+   "home": "FC Dallas",
+   "away": "Columbus Crew",
+   "url": "https://www.fotmob.com/match/5071463",
+   "finished": true,
+   "score": "0-2",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.82 (casa 1.54 + ospite 1.27) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.82,
+     "exp_home": 1.54,
+     "exp_away": 1.27,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 31,
+     "scored": 24,
+     "conceded": 23,
+     "no00": 28
+    },
+    "away": {
+     "n": 31,
+     "scored": 27,
+     "conceded": 25,
+     "no00": 30
+    }
+   }
+  },
+  {
    "matchId": 5071461,
    "kickoff": "01:30",
    "kickoff_utc": "2026-10-29T00:30:00.000Z",
@@ -472,48 +514,6 @@
      "scored": 25,
      "conceded": 27,
      "no00": 31
-    }
-   }
-  },
-  {
-   "matchId": 5071463,
-   "kickoff": "01:30",
-   "kickoff_utc": "2026-10-29T00:30:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "FC Dallas",
-   "away": "Columbus Crew",
-   "url": "https://www.fotmob.com/match/5071463",
-   "finished": true,
-   "score": "0-2",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.82 (casa 1.54 + ospite 1.27) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.82,
-     "exp_home": 1.54,
-     "exp_away": 1.27,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 31,
-     "scored": 24,
-     "conceded": 23,
-     "no00": 28
-    },
-    "away": {
-     "n": 31,
-     "scored": 27,
-     "conceded": 25,
-     "no00": 30
     }
    }
   },
@@ -767,48 +767,6 @@
    }
   },
   {
-   "matchId": 5071466,
-   "kickoff": "03:30",
-   "kickoff_utc": "2026-10-29T02:30:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "San Jose Earthquakes",
-   "away": "Colorado Rapids",
-   "url": "https://www.fotmob.com/match/5071466",
-   "finished": false,
-   "score": "2-2",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.83 (casa 1.71 + ospite 1.12) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.83,
-     "exp_home": 1.71,
-     "exp_away": 1.12,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 31,
-     "scored": 26,
-     "conceded": 24,
-     "no00": 30
-    },
-    "away": {
-     "n": 31,
-     "scored": 23,
-     "conceded": 20,
-     "no00": 29
-    }
-   }
-  },
-  {
    "matchId": 5071467,
    "kickoff": "03:30",
    "kickoff_utc": "2026-10-29T02:30:00.000Z",
@@ -818,7 +776,7 @@
    "home": "Seattle Sounders FC",
    "away": "Houston Dynamo FC",
    "url": "https://www.fotmob.com/match/5071467",
-   "finished": false,
+   "finished": true,
    "score": "0-1",
    "types": [
     "xg"
@@ -851,6 +809,48 @@
    }
   },
   {
+   "matchId": 5071466,
+   "kickoff": "03:30",
+   "kickoff_utc": "2026-10-29T02:30:00.000Z",
+   "league": "Major League Soccer",
+   "country": "USA",
+   "leagueId": 130,
+   "home": "San Jose Earthquakes",
+   "away": "Colorado Rapids",
+   "url": "https://www.fotmob.com/match/5071466",
+   "finished": true,
+   "score": "2-2",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.83 (casa 1.71 + ospite 1.12) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.83,
+     "exp_home": 1.71,
+     "exp_away": 1.12,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 31,
+     "scored": 26,
+     "conceded": 24,
+     "no00": 30
+    },
+    "away": {
+     "n": 31,
+     "scored": 23,
+     "conceded": 20,
+     "no00": 29
+    }
+   }
+  },
+  {
    "matchId": 5071469,
    "kickoff": "03:40",
    "kickoff_utc": "2026-10-29T02:40:00.000Z",
@@ -860,7 +860,7 @@
    "home": "Vancouver Whitecaps",
    "away": "San Diego FC",
    "url": "https://www.fotmob.com/match/5071469",
-   "finished": false,
+   "finished": true,
    "score": "4-1",
    "types": [
     "xg",
@@ -914,7 +914,7 @@
    "home": "CF América",
    "away": "Tijuana",
    "url": "https://www.fotmob.com/match/1000014558",
-   "finished": false,
+   "finished": true,
    "score": "1-1",
    "types": [
     "xg"
