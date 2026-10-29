@@ -1,6 +1,6 @@
 {
  "date": "2026-10-29",
- "generated_at": "2026-10-29 02:10",
+ "generated_at": "2026-10-29 03:06",
  "partial": false,
  "stats": {
   "matches_day": 134,
@@ -17,7 +17,7 @@
    "mai00": 15
   },
   "requests": 838,
-  "seconds": 225
+  "seconds": 187
  },
  "skipped_leagues": {},
  "rules": {
@@ -89,8 +89,8 @@
    "home": "Inter Miami CF",
    "away": "FC Cincinnati",
    "url": "https://www.fotmob.com/match/5071457",
-   "finished": false,
-   "score": "1-0",
+   "finished": true,
+   "score": "2-2",
    "types": [
     "xg",
     "mai00"
@@ -143,8 +143,8 @@
    "home": "New England Revolution",
    "away": "Red Bull New York",
    "url": "https://www.fotmob.com/match/5071458",
-   "finished": false,
-   "score": "2-2",
+   "finished": true,
+   "score": "3-2",
    "types": [
     "xg"
    ],
@@ -185,8 +185,8 @@
    "home": "Toronto FC",
    "away": "DC United",
    "url": "https://www.fotmob.com/match/5071460",
-   "finished": false,
-   "score": "1-1",
+   "finished": true,
+   "score": "2-1",
    "types": [
     "xg"
    ],
@@ -227,8 +227,8 @@
    "home": "Charlotte FC",
    "away": "CF Montréal",
    "url": "https://www.fotmob.com/match/5071456",
-   "finished": false,
-   "score": "2-0",
+   "finished": true,
+   "score": "4-0",
    "types": [
     "xg"
    ],
@@ -269,8 +269,8 @@
    "home": "New York City FC",
    "away": "Atlanta United",
    "url": "https://www.fotmob.com/match/5071459",
-   "finished": false,
-   "score": "0-0",
+   "finished": true,
+   "score": "2-1",
    "types": [
     "xg"
    ],
@@ -311,8 +311,8 @@
    "home": "Deportivo Malacateco",
    "away": "Aurora FC",
    "url": "https://www.fotmob.com/match/5861307",
-   "finished": false,
-   "score": "0-1",
+   "finished": true,
+   "score": "0-2",
    "types": [
     "mai00"
    ],
@@ -357,7 +357,7 @@
    "away": "Orlando City",
    "url": "https://www.fotmob.com/match/5071462",
    "finished": false,
-   "score": "0-1",
+   "score": "1-2",
    "types": [
     "storico",
     "xg",
@@ -426,7 +426,7 @@
    "away": "Sporting Kansas City",
    "url": "https://www.fotmob.com/match/5071464",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "xg",
     "mai00"
@@ -480,7 +480,7 @@
    "away": "Real Salt Lake",
    "url": "https://www.fotmob.com/match/5071461",
    "finished": false,
-   "score": "0-0",
+   "score": "1-2",
    "types": [
     "storico",
     "mai00"
@@ -540,7 +540,7 @@
    "away": "Columbus Crew",
    "url": "https://www.fotmob.com/match/5071463",
    "finished": false,
-   "score": "0-1",
+   "score": "1-1",
    "types": [
     "xg"
    ],
@@ -624,7 +624,7 @@
    "away": "Portland Timbers",
    "url": "https://www.fotmob.com/match/5071468",
    "finished": false,
-   "score": "0-0",
+   "score": "1-3",
    "types": [
     "xg"
    ],
@@ -666,7 +666,7 @@
    "away": "São Paulo",
    "url": "https://www.fotmob.com/match/5103692",
    "finished": false,
-   "score": "2-0",
+   "score": "2-2",
    "types": [
     "storico",
     "xg",
@@ -735,7 +735,7 @@
    "away": "Botafogo",
    "url": "https://www.fotmob.com/match/5103693",
    "finished": false,
-   "score": "1-0",
+   "score": "2-0",
    "types": [
     "xg"
    ],
