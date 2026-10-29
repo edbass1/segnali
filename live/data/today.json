@@ -1,6 +1,6 @@
 {
  "date": "2026-10-29",
- "generated_at": "2026-10-29 00:30",
+ "generated_at": "2026-10-29 01:06",
  "partial": false,
  "stats": {
   "matches_day": 138,
@@ -17,7 +17,7 @@
    "mai00": 15
   },
   "requests": 921,
-  "seconds": 210
+  "seconds": 182
  },
  "skipped_leagues": {},
  "rules": {
@@ -45,7 +45,7 @@
    "away": "Internacional",
    "url": "https://www.fotmob.com/match/5103684",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "xg"
    ],
@@ -87,7 +87,7 @@
    "away": "Chapecoense",
    "url": "https://www.fotmob.com/match/5103688",
    "finished": false,
-   "score": "1-0",
+   "score": "2-0",
    "types": [
     "xg"
    ],
@@ -164,90 +164,6 @@
    }
   },
   {
-   "matchId": 5071456,
-   "kickoff": "00:30",
-   "kickoff_utc": "2026-10-28T23:30:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "Charlotte FC",
-   "away": "CF Montréal",
-   "url": "https://www.fotmob.com/match/5071456",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.21 (casa 1.94 + ospite 1.27) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.21,
-     "exp_home": 1.94,
-     "exp_away": 1.27,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 31,
-     "scored": 25,
-     "conceded": 26,
-     "no00": 29
-    },
-    "away": {
-     "n": 31,
-     "scored": 19,
-     "conceded": 27,
-     "no00": 30
-    }
-   }
-  },
-  {
-   "matchId": 5071458,
-   "kickoff": "00:30",
-   "kickoff_utc": "2026-10-28T23:30:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "New England Revolution",
-   "away": "Red Bull New York",
-   "url": "https://www.fotmob.com/match/5071458",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.21 (casa 1.76 + ospite 1.45) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.21,
-     "exp_home": 1.76,
-     "exp_away": 1.45,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 31,
-     "scored": 24,
-     "conceded": 25,
-     "no00": 30
-    },
-    "away": {
-     "n": 31,
-     "scored": 22,
-     "conceded": 26,
-     "no00": 30
-    }
-   }
-  },
-  {
    "matchId": 5071457,
    "kickoff": "00:30",
    "kickoff_utc": "2026-10-28T23:30:00.000Z",
@@ -258,7 +174,7 @@
    "away": "FC Cincinnati",
    "url": "https://www.fotmob.com/match/5071457",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg",
     "mai00"
@@ -302,9 +218,93 @@
    }
   },
   {
-   "matchId": 5071459,
+   "matchId": 5071458,
    "kickoff": "00:30",
    "kickoff_utc": "2026-10-28T23:30:00.000Z",
+   "league": "Major League Soccer",
+   "country": "USA",
+   "leagueId": 130,
+   "home": "New England Revolution",
+   "away": "Red Bull New York",
+   "url": "https://www.fotmob.com/match/5071458",
+   "finished": false,
+   "score": "1-0",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.21 (casa 1.76 + ospite 1.45) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.21,
+     "exp_home": 1.76,
+     "exp_away": 1.45,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 31,
+     "scored": 24,
+     "conceded": 25,
+     "no00": 30
+    },
+    "away": {
+     "n": 31,
+     "scored": 22,
+     "conceded": 26,
+     "no00": 30
+    }
+   }
+  },
+  {
+   "matchId": 5071460,
+   "kickoff": "00:30",
+   "kickoff_utc": "2026-10-28T23:30:00.000Z",
+   "league": "Major League Soccer",
+   "country": "USA",
+   "leagueId": 130,
+   "home": "Toronto FC",
+   "away": "DC United",
+   "url": "https://www.fotmob.com/match/5071460",
+   "finished": false,
+   "score": "0-0",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.79 (casa 1.47 + ospite 1.31) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.79,
+     "exp_home": 1.47,
+     "exp_away": 1.31,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 31,
+     "scored": 26,
+     "conceded": 27,
+     "no00": 29
+    },
+    "away": {
+     "n": 31,
+     "scored": 21,
+     "conceded": 25,
+     "no00": 27
+    }
+   }
+  },
+  {
+   "matchId": 5071459,
+   "kickoff": "00:40",
+   "kickoff_utc": "2026-10-28T23:40:00.000Z",
    "league": "Major League Soccer",
    "country": "USA",
    "leagueId": 130,
@@ -312,7 +312,7 @@
    "away": "Atlanta United",
    "url": "https://www.fotmob.com/match/5071459",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "xg"
    ],
@@ -344,28 +344,28 @@
    }
   },
   {
-   "matchId": 5071460,
-   "kickoff": "00:30",
-   "kickoff_utc": "2026-10-28T23:30:00.000Z",
+   "matchId": 5071456,
+   "kickoff": "00:40",
+   "kickoff_utc": "2026-10-28T23:40:00.000Z",
    "league": "Major League Soccer",
    "country": "USA",
    "leagueId": 130,
-   "home": "Toronto FC",
-   "away": "DC United",
-   "url": "https://www.fotmob.com/match/5071460",
+   "home": "Charlotte FC",
+   "away": "CF Montréal",
+   "url": "https://www.fotmob.com/match/5071456",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.79 (casa 1.47 + ospite 1.31) ≥ 2.7"
+    "xg": "xG atteso prematch 3.21 (casa 1.94 + ospite 1.27) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 2.79,
-     "exp_home": 1.47,
-     "exp_away": 1.31,
+     "total": 3.21,
+     "exp_home": 1.94,
+     "exp_away": 1.27,
      "method": "casa/trasferta",
      "season": "2026"
     }
@@ -373,15 +373,15 @@
    "cur": {
     "home": {
      "n": 31,
-     "scored": 26,
-     "conceded": 27,
+     "scored": 25,
+     "conceded": 26,
      "no00": 29
     },
     "away": {
      "n": 31,
-     "scored": 21,
-     "conceded": 25,
-     "no00": 27
+     "scored": 19,
+     "conceded": 27,
+     "no00": 30
     }
    }
   },
@@ -560,6 +560,60 @@
    }
   },
   {
+   "matchId": 5071464,
+   "kickoff": "01:30",
+   "kickoff_utc": "2026-10-29T00:30:00.000Z",
+   "league": "Major League Soccer",
+   "country": "USA",
+   "leagueId": 130,
+   "home": "Minnesota United",
+   "away": "Sporting Kansas City",
+   "url": "https://www.fotmob.com/match/5071464",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "mai00"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.12 (casa 2.03 + ospite 1.08) ≥ 2.7",
+    "mai00": "Ospite: over 0.5 totali (nessuno 0-0) in 31/31 partite di campionato 2026; Casa: 28/31 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.12,
+     "exp_home": 2.03,
+     "exp_away": 1.08,
+     "method": "casa/trasferta",
+     "season": "2026"
+    },
+    "mai00": {
+     "strong": "away",
+     "season": "2026",
+     "strong_k": 31,
+     "strong_n": 31,
+     "strong_pct": 100,
+     "other_k": 28,
+     "other_n": 31,
+     "other_pct": 90
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 31,
+     "scored": 25,
+     "conceded": 25,
+     "no00": 28
+    },
+    "away": {
+     "n": 31,
+     "scored": 21,
+     "conceded": 30,
+     "no00": 31
+    }
+   }
+  },
+  {
    "matchId": 5071463,
    "kickoff": "01:30",
    "kickoff_utc": "2026-10-29T00:30:00.000Z",
@@ -640,60 +694,6 @@
      "scored": 26,
      "conceded": 25,
      "no00": 29
-    }
-   }
-  },
-  {
-   "matchId": 5071464,
-   "kickoff": "01:30",
-   "kickoff_utc": "2026-10-29T00:30:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "Minnesota United",
-   "away": "Sporting Kansas City",
-   "url": "https://www.fotmob.com/match/5071464",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "mai00"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.12 (casa 2.03 + ospite 1.08) ≥ 2.7",
-    "mai00": "Ospite: over 0.5 totali (nessuno 0-0) in 31/31 partite di campionato 2026; Casa: 28/31 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 3.12,
-     "exp_home": 2.03,
-     "exp_away": 1.08,
-     "method": "casa/trasferta",
-     "season": "2026"
-    },
-    "mai00": {
-     "strong": "away",
-     "season": "2026",
-     "strong_k": 31,
-     "strong_n": 31,
-     "strong_pct": 100,
-     "other_k": 28,
-     "other_n": 31,
-     "other_pct": 90
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 31,
-     "scored": 25,
-     "conceded": 25,
-     "no00": 28
-    },
-    "away": {
-     "n": 31,
-     "scored": 21,
-     "conceded": 30,
-     "no00": 31
     }
    }
   },
@@ -1004,12 +1004,12 @@
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 3.04 (casa 1.80 + ospite 1.25) ≥ 2.7"
+    "xg": "xG atteso prematch 3.04 (casa 1.79 + ospite 1.25) ≥ 2.7"
    },
    "info": {
     "xg": {
      "total": 3.04,
-     "exp_home": 1.8,
+     "exp_home": 1.79,
      "exp_away": 1.25,
      "method": "casa/trasferta",
      "season": "2026/2027 - Apertura"
