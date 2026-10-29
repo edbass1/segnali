@@ -1,6 +1,6 @@
 {
  "date": "2026-10-29",
- "generated_at": "2026-10-29 18:04",
+ "generated_at": "2026-10-29 18:59",
  "partial": false,
  "stats": {
   "matches_day": 143,
@@ -17,7 +17,7 @@
    "mai00": 15
   },
   "requests": 838,
-  "seconds": 178
+  "seconds": 199
  },
  "skipped_leagues": {},
  "rules": {
@@ -218,48 +218,6 @@
    }
   },
   {
-   "matchId": 5071456,
-   "kickoff": "00:40",
-   "kickoff_utc": "2026-10-28T23:40:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "Charlotte FC",
-   "away": "CF Montréal",
-   "url": "https://www.fotmob.com/match/5071456",
-   "finished": true,
-   "score": "4-0",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.21 (casa 1.94 + ospite 1.27) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.21,
-     "exp_home": 1.94,
-     "exp_away": 1.27,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 31,
-     "scored": 25,
-     "conceded": 26,
-     "no00": 29
-    },
-    "away": {
-     "n": 31,
-     "scored": 19,
-     "conceded": 27,
-     "no00": 30
-    }
-   }
-  },
-  {
    "matchId": 5071459,
    "kickoff": "00:40",
    "kickoff_utc": "2026-10-28T23:40:00.000Z",
@@ -298,6 +256,48 @@
      "scored": 22,
      "conceded": 27,
      "no00": 29
+    }
+   }
+  },
+  {
+   "matchId": 5071456,
+   "kickoff": "00:40",
+   "kickoff_utc": "2026-10-28T23:40:00.000Z",
+   "league": "Major League Soccer",
+   "country": "USA",
+   "leagueId": 130,
+   "home": "Charlotte FC",
+   "away": "CF Montréal",
+   "url": "https://www.fotmob.com/match/5071456",
+   "finished": true,
+   "score": "4-0",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.21 (casa 1.94 + ospite 1.27) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.21,
+     "exp_home": 1.94,
+     "exp_away": 1.27,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 31,
+     "scored": 25,
+     "conceded": 26,
+     "no00": 29
+    },
+    "away": {
+     "n": 31,
+     "scored": 19,
+     "conceded": 27,
+     "no00": 30
     }
    }
   },
@@ -416,6 +416,66 @@
    }
   },
   {
+   "matchId": 5071461,
+   "kickoff": "01:30",
+   "kickoff_utc": "2026-10-29T00:30:00.000Z",
+   "league": "Major League Soccer",
+   "country": "USA",
+   "leagueId": 130,
+   "home": "Austin FC",
+   "away": "Real Salt Lake",
+   "url": "https://www.fotmob.com/match/5071461",
+   "finished": true,
+   "score": "1-2",
+   "types": [
+    "storico",
+    "mai00"
+   ],
+   "reasons": {
+    "storico": "Ospite: 53 partite di campionato consecutive senza 0-0 (ultimo 0-0: 15/05/2025 vs Portland Timbers); Casa: 3 0-0 nelle ultime 50 di campionato",
+    "mai00": "Ospite: over 0.5 totali (nessuno 0-0) in 31/31 partite di campionato 2026; Casa: 29/31 senza 0-0 (94%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 53,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "15/05/2025",
+      "opp": "Portland Timbers",
+      "home": true
+     },
+     "other_zz": 3,
+     "other_n": 50
+    },
+    "mai00": {
+     "strong": "away",
+     "season": "2026",
+     "strong_k": 31,
+     "strong_n": 31,
+     "strong_pct": 100,
+     "other_k": 29,
+     "other_n": 31,
+     "other_pct": 94
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 31,
+     "scored": 25,
+     "conceded": 26,
+     "no00": 29
+    },
+    "away": {
+     "n": 31,
+     "scored": 25,
+     "conceded": 27,
+     "no00": 31
+    }
+   }
+  },
+  {
    "matchId": 5071464,
    "kickoff": "01:30",
    "kickoff_utc": "2026-10-29T00:30:00.000Z",
@@ -508,66 +568,6 @@
      "scored": 27,
      "conceded": 25,
      "no00": 30
-    }
-   }
-  },
-  {
-   "matchId": 5071461,
-   "kickoff": "01:30",
-   "kickoff_utc": "2026-10-29T00:30:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "Austin FC",
-   "away": "Real Salt Lake",
-   "url": "https://www.fotmob.com/match/5071461",
-   "finished": true,
-   "score": "1-2",
-   "types": [
-    "storico",
-    "mai00"
-   ],
-   "reasons": {
-    "storico": "Ospite: 53 partite di campionato consecutive senza 0-0 (ultimo 0-0: 15/05/2025 vs Portland Timbers); Casa: 3 0-0 nelle ultime 50 di campionato",
-    "mai00": "Ospite: over 0.5 totali (nessuno 0-0) in 31/31 partite di campionato 2026; Casa: 29/31 senza 0-0 (94%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 53,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "15/05/2025",
-      "opp": "Portland Timbers",
-      "home": true
-     },
-     "other_zz": 3,
-     "other_n": 50
-    },
-    "mai00": {
-     "strong": "away",
-     "season": "2026",
-     "strong_k": 31,
-     "strong_n": 31,
-     "strong_pct": 100,
-     "other_k": 29,
-     "other_n": 31,
-     "other_pct": 94
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 31,
-     "scored": 25,
-     "conceded": 26,
-     "no00": 29
-    },
-    "away": {
-     "n": 31,
-     "scored": 25,
-     "conceded": 27,
-     "no00": 31
     }
    }
   },
@@ -998,7 +998,7 @@
    "home": "Namungo FC",
    "away": "Polisi Tanzania FC",
    "url": "https://www.fotmob.com/match/5998351",
-   "finished": false,
+   "finished": true,
    "score": "1-0",
    "types": [
     "mai00"
@@ -1043,7 +1043,7 @@
    "home": "Yantra",
    "away": "Hebar",
    "url": "https://www.fotmob.com/match/5874261",
-   "finished": false,
+   "finished": true,
    "score": "3-0",
    "types": [
     "mai00"
@@ -1079,9 +1079,51 @@
    }
   },
   {
-   "matchId": 5107638,
+   "matchId": 5749723,
    "kickoff": "18:30",
    "kickoff_utc": "2026-10-29T17:30:00.000Z",
+   "league": "Serie A",
+   "country": "ITA",
+   "leagueId": 55,
+   "home": "Frosinone",
+   "away": "Lecce",
+   "url": "https://www.fotmob.com/match/5749723",
+   "finished": false,
+   "score": "0-0",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.60 (casa 1.68 + ospite 1.92) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.6,
+     "exp_home": 1.68,
+     "exp_away": 1.92,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 8,
+     "scored": 6,
+     "conceded": 6,
+     "no00": 8
+    },
+    "away": {
+     "n": 8,
+     "scored": 4,
+     "conceded": 6,
+     "no00": 8
+    }
+   }
+  },
+  {
+   "matchId": 5107638,
+   "kickoff": "18:45",
+   "kickoff_utc": "2026-10-29T17:45:00.000Z",
    "league": "Allsvenskan",
    "country": "SWE",
    "leagueId": 67,
@@ -1089,7 +1131,7 @@
    "away": "Sirius",
    "url": "https://www.fotmob.com/match/5107638",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "storico",
     "xg",
@@ -1144,48 +1186,6 @@
      "scored": 23,
      "conceded": 17,
      "no00": 25
-    }
-   }
-  },
-  {
-   "matchId": 5749723,
-   "kickoff": "18:30",
-   "kickoff_utc": "2026-10-29T17:30:00.000Z",
-   "league": "Serie A",
-   "country": "ITA",
-   "leagueId": 55,
-   "home": "Frosinone",
-   "away": "Lecce",
-   "url": "https://www.fotmob.com/match/5749723",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.60 (casa 1.68 + ospite 1.92) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.6,
-     "exp_home": 1.68,
-     "exp_away": 1.92,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 8,
-     "scored": 6,
-     "conceded": 6,
-     "no00": 8
-    },
-    "away": {
-     "n": 8,
-     "scored": 4,
-     "conceded": 6,
-     "no00": 8
     }
    }
   },
@@ -1277,60 +1277,6 @@
    }
   },
   {
-   "matchId": 5970194,
-   "kickoff": "19:00",
-   "kickoff_utc": "2026-10-29T18:00:00.000Z",
-   "league": "Saudi Pro League",
-   "country": "KSA",
-   "leagueId": 536,
-   "home": "Al Riyadh",
-   "away": "Al Qadsiah",
-   "url": "https://www.fotmob.com/match/5970194",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "mai00"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.02 (casa 1.13 + ospite 1.90) ≥ 2.7",
-    "mai00": "Ospite: over 0.5 totali (nessuno 0-0) in 11/11 partite di campionato 2026/27; Casa: 9/10 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 3.02,
-     "exp_home": 1.13,
-     "exp_away": 1.9,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "mai00": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 11,
-     "strong_n": 11,
-     "strong_pct": 100,
-     "other_k": 9,
-     "other_n": 10,
-     "other_pct": 90
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 7,
-     "no00": 9
-    },
-    "away": {
-     "n": 11,
-     "scored": 10,
-     "conceded": 7,
-     "no00": 11
-    }
-   }
-  },
-  {
    "matchId": 5970193,
    "kickoff": "19:00",
    "kickoff_utc": "2026-10-29T18:00:00.000Z",
@@ -1393,6 +1339,60 @@
      "scored": 7,
      "conceded": 10,
      "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5970194,
+   "kickoff": "19:00",
+   "kickoff_utc": "2026-10-29T18:00:00.000Z",
+   "league": "Saudi Pro League",
+   "country": "KSA",
+   "leagueId": 536,
+   "home": "Al Riyadh",
+   "away": "Al Qadsiah",
+   "url": "https://www.fotmob.com/match/5970194",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "mai00"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.02 (casa 1.13 + ospite 1.90) ≥ 2.7",
+    "mai00": "Ospite: over 0.5 totali (nessuno 0-0) in 11/11 partite di campionato 2026/27; Casa: 9/10 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.02,
+     "exp_home": 1.13,
+     "exp_away": 1.9,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "mai00": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 11,
+     "strong_n": 11,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 10,
+     "other_pct": 90
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 7,
+     "no00": 9
+    },
+    "away": {
+     "n": 11,
+     "scored": 10,
+     "conceded": 7,
+     "no00": 11
     }
    }
   },
