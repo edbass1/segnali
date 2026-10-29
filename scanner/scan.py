@@ -555,24 +555,53 @@ def build_message(ev, live, types, test=False, odds=None):
     L.append(f'🔗 <a href="https://www.fotmob.com/match/{ev["matchId"]}">Apri su FotMob</a>')
     return "\n".join(L)
 
+TG_STATUS = {}
+def _tg_err(err):
+    """Testo di errore pubblicabile: state.json è nel repo, il token no. Una sola riga."""
+    s = str(err or "")
+    tok = os.environ.get("TELEGRAM_BOT_TOKEN") or ""
+    if tok:
+        s = s.replace(tok, "***")
+    s = re.sub(r"bot\d+:[A-Za-z0-9_-]+", "bot***", s)
+    s = re.sub(r"\s+", " ", s).strip()
+    return s[:200]
+
 def send_telegram(text):
+    """Invia un messaggio. Ritorna True/False e registra l'esito in TG_STATUS (salvato in state.json)."""
     tok = os.environ.get("TELEGRAM_BOT_TOKEN")
     chat = os.environ.get("TELEGRAM_CHAT_ID") or DEFAULT_CHAT_ID
+    def done(ok, err=""):
+        safe = _tg_err(err)
+        TG_STATUS.update({"last_try": rome_str(), "ok": ok, "error": safe})
+        if not ok: print(f"::error::Telegram non inviato: {safe}", flush=True)
+        return ok
     if not tok:
-        log("  [telegram] TELEGRAM_BOT_TOKEN assente: messaggio non inviato"); return False
+        log("  [telegram] TELEGRAM_BOT_TOKEN assente: messaggio non inviato")
+        return done(False, "secret TELEGRAM_BOT_TOKEN assente")
     body = urllib.parse.urlencode({"chat_id": chat, "text": text, "parse_mode": "HTML",
                                    "disable_web_page_preview": "true"}).encode()
-    try:
-        req = urllib.request.Request(f"https://api.telegram.org/bot{tok}/sendMessage", data=body)
-        with urllib.request.urlopen(req, timeout=30) as r:
-            ok = json.load(r).get("ok", False)
-        log(f"  [telegram] inviato: {ok}"); return ok
-    except urllib.error.HTTPError as e:
-        try: msg = e.read().decode()[:300]
-        except Exception: msg = ""
-        log(f"  [telegram] errore HTTP {e.code} {msg}"); return False
-    except Exception as e:
-        log(f"  [telegram] errore {type(e).__name__}"); return False
+    err = "errore sconosciuto"
+    for attempt in range(3):
+        try:
+            req = urllib.request.Request(f"https://api.telegram.org/bot{tok}/sendMessage", data=body)
+            with urllib.request.urlopen(req, timeout=30) as r:
+                ok = json.load(r).get("ok", False)
+            log(f"  [telegram] inviato: {ok}")
+            return done(bool(ok), "" if ok else "risposta ok=false")
+        except urllib.error.HTTPError as e:
+            try: msg = e.read().decode()[:300]
+            except Exception: msg = ""
+            log(f"  [telegram] errore HTTP {e.code} {_tg_err(msg)}")
+            # 400 chat not found / 403 bot bloccato o mai avviato / 401 token errato: inutile riprovare
+            if e.code in (400, 401, 403, 404):
+                return done(False, f"HTTP {e.code} {msg} (chat_id={chat})")
+            err = f"HTTP {e.code} {msg}"
+        except Exception as e:
+            err = f"{type(e).__name__}: {e}"
+            log(f"  [telegram] errore {_tg_err(err)}")
+        if attempt < 2:
+            time.sleep(3 * (attempt + 1))
+    return done(False, err)
 
 # ---------------------------------------------------------------- quota Over 0.5 live
 ODDS_API = "https://api.the-odds-api.com/v4"
@@ -843,10 +872,11 @@ def scan(dry=False):
                 log("   >>> SEGNALE " + " + ".join(TYPE_NAMES[t] for t in hits))
                 od = over05_live(ev) if not dry else {"price": None, "reason": "dry-run"}   # 1 sola chiamata per partita
                 log(f"   quota Over 0.5 live: {od.get('price') or od.get('reason')}")
-                if not dry: send_telegram(build_message(ev, snap, hits, odds=od))
+                tg_ok = send_telegram(build_message(ev, snap, hits, odds=od)) if not dry else None
                 for t in hits:
                     sent[t] = rome_str()
-                    signals.append(signal_record(ev, snap, t, od)); n_sig += 1
+                    rec = signal_record(ev, snap, t, od); rec["telegram"] = tg_ok
+                    signals.append(rec); n_sig += 1
             state["checked"][str(mid)] = {"t": int(ts()), "r": "valutata", "res": res}
         except Exception as e:
             log(f"   errore: {type(e).__name__}: {e}")
@@ -857,6 +887,7 @@ def scan(dry=False):
         del state["sent"][k]
     state["rules"] = rules_dict()
     if ODDS_STATUS: state["odds_api"] = dict(ODDS_STATUS)
+    if TG_STATUS: state["telegram"] = dict(TG_STATUS)
     state["live_count"] = len(live)
     state["candidates_last"] = len(cands)
     state["last_scan"] = rome_str()
@@ -1044,7 +1075,11 @@ def main():
     ap.add_argument("--date", help="in --daily: data YYYYMMDD (default oggi, ora italiana)")
     ap.add_argument("--out", help="in --daily: file di uscita (default live/data/today.json)")
     ap.add_argument("--budget", type=float, help="in --daily: minuti massimi di calcolo")
+    ap.add_argument("--ping", action="store_true", help="invia solo un messaggio Telegram di prova ed esce (exit 1 se fallisce)")
     a = ap.parse_args()
+    if a.ping:
+        ok = send_telegram(f"🧪 TEST Segnali: collegamento Telegram OK ({rome_str()})")
+        sys.exit(0 if ok else 1)
     global CACHE
     CACHE = load_json(CACHE_F, {})
     t0 = time.time()
