@@ -250,5 +250,77 @@
    }
   },
   "resolved": "2026-10-28 20:16"
+ },
+ {
+  "id": "1000017273-mai00",
+  "type": "mai00",
+  "time": "2026-10-29 20:22",
+  "ts": 1793301756,
+  "league": "Peru Liga 1",
+  "country": "PER",
+  "leagueId": 131,
+  "home": "Los Chankas",
+  "away": "Cusco FC",
+  "matchId": 1000017273,
+  "reason": "Ospite: over 0.5 totali (nessuno 0-0) in 30/30 partite di campionato 2026; Casa: 29/30 senza 0-0 (97%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": [
+    39,
+    61
+   ],
+   "shots": [
+    10,
+    6
+   ],
+   "sot": [
+    5,
+    0
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    13,
+    11
+   ],
+   "corners": [
+    1,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000017273",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026",
+   "strong": "away",
+   "home": {
+    "n": 30,
+    "scored": 23,
+    "conceded": 23,
+    "no00": 29
+   },
+   "away": {
+    "n": 30,
+    "scored": 25,
+    "conceded": 25,
+    "no00": 30
+   }
+  },
+  "telegram": true
  }
 ]
