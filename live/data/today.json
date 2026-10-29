@@ -1,6 +1,6 @@
 {
  "date": "2026-10-29",
- "generated_at": "2026-10-29 22:15",
+ "generated_at": "2026-10-29 22:58",
  "partial": false,
  "stats": {
   "matches_day": 143,
@@ -17,7 +17,7 @@
    "mai00": 15
   },
   "requests": 837,
-  "seconds": 156
+  "seconds": 186
  },
  "skipped_leagues": {},
  "rules": {
@@ -416,102 +416,6 @@
    }
   },
   {
-   "matchId": 5071464,
-   "kickoff": "01:30",
-   "kickoff_utc": "2026-10-29T00:30:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "Minnesota United",
-   "away": "Sporting Kansas City",
-   "url": "https://www.fotmob.com/match/5071464",
-   "finished": true,
-   "score": "3-1",
-   "types": [
-    "xg",
-    "mai00"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.12 (casa 2.03 + ospite 1.08) ≥ 2.7",
-    "mai00": "Ospite: over 0.5 totali (nessuno 0-0) in 31/31 partite di campionato 2026; Casa: 28/31 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 3.12,
-     "exp_home": 2.03,
-     "exp_away": 1.08,
-     "method": "casa/trasferta",
-     "season": "2026"
-    },
-    "mai00": {
-     "strong": "away",
-     "season": "2026",
-     "strong_k": 31,
-     "strong_n": 31,
-     "strong_pct": 100,
-     "other_k": 28,
-     "other_n": 31,
-     "other_pct": 90
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 31,
-     "scored": 25,
-     "conceded": 25,
-     "no00": 28
-    },
-    "away": {
-     "n": 31,
-     "scored": 21,
-     "conceded": 30,
-     "no00": 31
-    }
-   }
-  },
-  {
-   "matchId": 5071463,
-   "kickoff": "01:30",
-   "kickoff_utc": "2026-10-29T00:30:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "FC Dallas",
-   "away": "Columbus Crew",
-   "url": "https://www.fotmob.com/match/5071463",
-   "finished": true,
-   "score": "0-2",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.82 (casa 1.54 + ospite 1.27) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.82,
-     "exp_home": 1.54,
-     "exp_away": 1.27,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 31,
-     "scored": 24,
-     "conceded": 23,
-     "no00": 28
-    },
-    "away": {
-     "n": 31,
-     "scored": 27,
-     "conceded": 25,
-     "no00": 30
-    }
-   }
-  },
-  {
    "matchId": 5071461,
    "kickoff": "01:30",
    "kickoff_utc": "2026-10-29T00:30:00.000Z",
@@ -567,6 +471,102 @@
      "n": 31,
      "scored": 25,
      "conceded": 27,
+     "no00": 31
+    }
+   }
+  },
+  {
+   "matchId": 5071463,
+   "kickoff": "01:30",
+   "kickoff_utc": "2026-10-29T00:30:00.000Z",
+   "league": "Major League Soccer",
+   "country": "USA",
+   "leagueId": 130,
+   "home": "FC Dallas",
+   "away": "Columbus Crew",
+   "url": "https://www.fotmob.com/match/5071463",
+   "finished": true,
+   "score": "0-2",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.82 (casa 1.54 + ospite 1.27) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.82,
+     "exp_home": 1.54,
+     "exp_away": 1.27,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 31,
+     "scored": 24,
+     "conceded": 23,
+     "no00": 28
+    },
+    "away": {
+     "n": 31,
+     "scored": 27,
+     "conceded": 25,
+     "no00": 30
+    }
+   }
+  },
+  {
+   "matchId": 5071464,
+   "kickoff": "01:30",
+   "kickoff_utc": "2026-10-29T00:30:00.000Z",
+   "league": "Major League Soccer",
+   "country": "USA",
+   "leagueId": 130,
+   "home": "Minnesota United",
+   "away": "Sporting Kansas City",
+   "url": "https://www.fotmob.com/match/5071464",
+   "finished": true,
+   "score": "3-1",
+   "types": [
+    "xg",
+    "mai00"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.12 (casa 2.03 + ospite 1.08) ≥ 2.7",
+    "mai00": "Ospite: over 0.5 totali (nessuno 0-0) in 31/31 partite di campionato 2026; Casa: 28/31 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.12,
+     "exp_home": 2.03,
+     "exp_away": 1.08,
+     "method": "casa/trasferta",
+     "season": "2026"
+    },
+    "mai00": {
+     "strong": "away",
+     "season": "2026",
+     "strong_k": 31,
+     "strong_n": 31,
+     "strong_pct": 100,
+     "other_k": 28,
+     "other_n": 31,
+     "other_pct": 90
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 31,
+     "scored": 25,
+     "conceded": 25,
+     "no00": 28
+    },
+    "away": {
+     "n": 31,
+     "scored": 21,
+     "conceded": 30,
      "no00": 31
     }
    }
@@ -1406,8 +1406,8 @@
    "home": "Fiorentina",
    "away": "Atalanta",
    "url": "https://www.fotmob.com/match/5749722",
-   "finished": false,
-   "score": "1-1",
+   "finished": true,
+   "score": "2-2",
    "types": [
     "xg"
    ],
@@ -1449,7 +1449,7 @@
    "away": "Alianza Lima",
    "url": "https://www.fotmob.com/match/1000017275",
    "finished": false,
-   "score": "1-1",
+   "score": "2-2",
    "types": [
     "mai00"
    ],
