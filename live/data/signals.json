@@ -1224,5 +1224,75 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5868120-xg",
+  "type": "xg",
+  "time": "2026-10-30 22:16",
+  "ts": 1793395005,
+  "league": "LaLiga",
+  "country": "ESP",
+  "leagueId": 87,
+  "home": "Villarreal",
+  "away": "Espanyol",
+  "matchId": 5868120,
+  "reason": "xG atteso prematch 3.19 (casa 1.98 + ospite 1.21) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.62",
+    "0.07"
+   ],
+   "poss": [
+    61,
+    39
+   ],
+   "shots": [
+    10,
+    3
+   ],
+   "sot": [
+    4,
+    1
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    16,
+    5
+   ],
+   "corners": [
+    3,
+    3
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5868120",
+  "over05": 1.22,
+  "over05_note": null,
+  "details": {
+   "total": 3.195,
+   "exp_home": 1.984,
+   "exp_away": 1.211,
+   "h_for": 2.435,
+   "h_ag": 1.333,
+   "a_for": 1.09,
+   "a_ag": 1.532,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
