@@ -1,6 +1,6 @@
 {
  "date": "2026-10-30",
- "generated_at": "2026-10-30 15:43",
+ "generated_at": "2026-10-30 16:35",
  "partial": false,
  "stats": {
   "matches_day": 169,
@@ -17,7 +17,7 @@
    "mai00": 52
   },
   "requests": 1187,
-  "seconds": 245
+  "seconds": 321
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -335,8 +335,8 @@
    "home": "Maccabi Ahi Nazareth",
    "away": "SC Kafr Qasim",
    "url": "https://www.fotmob.com/match/5832622",
-   "finished": false,
-   "score": "2-1",
+   "finished": true,
+   "score": "3-2",
    "types": [
     "mai00"
    ],
@@ -380,8 +380,8 @@
    "home": "Malavan",
    "away": "Chadormalu Ardakan SC",
    "url": "https://www.fotmob.com/match/1000022005",
-   "finished": false,
-   "score": "1-0",
+   "finished": true,
+   "score": "1-2",
    "types": [
     "subisce",
     "mai00"
@@ -438,7 +438,7 @@
    "away": "Neom SC",
    "url": "https://www.fotmob.com/match/5970184",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "mai00"
    ],
@@ -483,7 +483,7 @@
    "away": "Spartak Kostroma",
    "url": "https://www.fotmob.com/match/5897655",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "mai00"
    ],
@@ -528,7 +528,7 @@
    "away": "Spartak Varna",
    "url": "https://www.fotmob.com/match/5760526",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "mai00"
    ],
@@ -2215,6 +2215,48 @@
    }
   },
   {
+   "matchId": 5803304,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-10-30T19:00:00.000Z",
+   "league": "Ligue 2",
+   "country": "FRA",
+   "leagueId": 110,
+   "home": "Nantes",
+   "away": "Clermont Foot",
+   "url": "https://www.fotmob.com/match/5803304",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.93 (casa 1.96 + ospite 0.97) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.93,
+     "exp_home": 1.96,
+     "exp_away": 0.97,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 8,
+     "no00": 9
+    },
+    "away": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 7,
+     "no00": 7
+    }
+   }
+  },
+  {
    "matchId": 5803302,
    "kickoff": "20:00",
    "kickoff_utc": "2026-10-30T19:00:00.000Z",
@@ -2310,48 +2352,6 @@
      "scored": 7,
      "conceded": 8,
      "no00": 10
-    }
-   }
-  },
-  {
-   "matchId": 5803304,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-10-30T19:00:00.000Z",
-   "league": "Ligue 2",
-   "country": "FRA",
-   "leagueId": 110,
-   "home": "Nantes",
-   "away": "Clermont Foot",
-   "url": "https://www.fotmob.com/match/5803304",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.93 (casa 1.96 + ospite 0.97) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.93,
-     "exp_home": 1.96,
-     "exp_away": 0.97,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 8,
-     "no00": 9
-    },
-    "away": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 7,
-     "no00": 7
     }
    }
   },
