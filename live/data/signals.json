@@ -598,5 +598,77 @@
   },
   "telegram": true,
   "resolved": "2026-10-30 18:53"
+ },
+ {
+  "id": "5765953-mai00",
+  "type": "mai00",
+  "time": "2026-10-30 19:17",
+  "ts": 1793384278,
+  "league": "HNL",
+  "country": "CRO",
+  "leagueId": 252,
+  "home": "Slaven",
+  "away": "NK Istra 1961",
+  "matchId": 5765953,
+  "reason": "Casa: over 0.5 totali (nessuno 0-0) in 11/11 partite di campionato 2026/27; Ospite: 10/11 senza 0-0 (91%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": [
+    50,
+    50
+   ],
+   "shots": [
+    5,
+    5
+   ],
+   "sot": [
+    1,
+    3
+   ],
+   "big": [
+    0,
+    1
+   ],
+   "box": [
+    10,
+    17
+   ],
+   "corners": [
+    3,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5765953",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 11,
+    "scored": 7,
+    "conceded": 10,
+    "no00": 11
+   },
+   "away": {
+    "n": 11,
+    "scored": 8,
+    "conceded": 9,
+    "no00": 10
+   }
+  },
+  "telegram": true
  }
 ]
