@@ -1279,8 +1279,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "0-1",
   "url": "https://www.fotmob.com/match/5868120",
   "over05": 1.22,
   "over05_note": null,
@@ -1295,7 +1295,8 @@
    "method": "casa/trasferta",
    "season": "2026/2027"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-10-30 22:53"
  },
  {
   "id": "5802974-xg",
