@@ -1,6 +1,6 @@
 {
  "date": "2026-10-30",
- "generated_at": "2026-10-30 13:00",
+ "generated_at": "2026-10-30 13:45",
  "partial": false,
  "stats": {
   "matches_day": 168,
@@ -17,7 +17,7 @@
    "mai00": 52
   },
   "requests": 1185,
-  "seconds": 267
+  "seconds": 288
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -243,7 +243,7 @@
    "away": "Van",
    "url": "https://www.fotmob.com/match/5972996",
    "finished": false,
-   "score": "2-1",
+   "score": "1-1",
    "types": [
     "mai00"
    ],
@@ -288,7 +288,7 @@
    "away": "FC Jurong",
    "url": "https://www.fotmob.com/match/5973210",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "storico"
    ],
@@ -2257,48 +2257,6 @@
    }
   },
   {
-   "matchId": 5803304,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-10-30T19:00:00.000Z",
-   "league": "Ligue 2",
-   "country": "FRA",
-   "leagueId": 110,
-   "home": "Nantes",
-   "away": "Clermont Foot",
-   "url": "https://www.fotmob.com/match/5803304",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.93 (casa 1.96 + ospite 0.97) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.93,
-     "exp_home": 1.96,
-     "exp_away": 0.97,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 8,
-     "no00": 9
-    },
-    "away": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 7,
-     "no00": 7
-    }
-   }
-  },
-  {
    "matchId": 5803302,
    "kickoff": "20:00",
    "kickoff_utc": "2026-10-30T19:00:00.000Z",
@@ -2394,6 +2352,48 @@
      "scored": 7,
      "conceded": 8,
      "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5803304,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-10-30T19:00:00.000Z",
+   "league": "Ligue 2",
+   "country": "FRA",
+   "leagueId": 110,
+   "home": "Nantes",
+   "away": "Clermont Foot",
+   "url": "https://www.fotmob.com/match/5803304",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.93 (casa 1.96 + ospite 0.97) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.93,
+     "exp_home": 1.96,
+     "exp_away": 0.97,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 8,
+     "no00": 9
+    },
+    "away": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 7,
+     "no00": 7
     }
    }
   },
@@ -2980,48 +2980,6 @@
    }
   },
   {
-   "matchId": 5100989,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-30T19:45:00.000Z",
-   "league": "Premier Division",
-   "country": "IRL",
-   "leagueId": 126,
-   "home": "Shelbourne",
-   "away": "Waterford FC",
-   "url": "https://www.fotmob.com/match/5100989",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.98 (casa 1.77 + ospite 1.22) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.98,
-     "exp_home": 1.77,
-     "exp_away": 1.22,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 35,
-     "scored": 28,
-     "conceded": 28,
-     "no00": 31
-    },
-    "away": {
-     "n": 35,
-     "scored": 25,
-     "conceded": 29,
-     "no00": 32
-    }
-   }
-  },
-  {
    "matchId": 5100988,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-30T19:45:00.000Z",
@@ -3062,6 +3020,48 @@
      "n": 35,
      "scored": 28,
      "conceded": 23,
+     "no00": 32
+    }
+   }
+  },
+  {
+   "matchId": 5100989,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-30T19:45:00.000Z",
+   "league": "Premier Division",
+   "country": "IRL",
+   "leagueId": 126,
+   "home": "Shelbourne",
+   "away": "Waterford FC",
+   "url": "https://www.fotmob.com/match/5100989",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.98 (casa 1.77 + ospite 1.22) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.98,
+     "exp_home": 1.77,
+     "exp_away": 1.22,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 35,
+     "scored": 28,
+     "conceded": 28,
+     "no00": 31
+    },
+    "away": {
+     "n": 35,
+     "scored": 25,
+     "conceded": 29,
      "no00": 32
     }
    }
@@ -3169,6 +3169,51 @@
    }
   },
   {
+   "matchId": 5882137,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-30T19:45:00.000Z",
+   "league": "Premier League",
+   "country": "WAL",
+   "leagueId": 116,
+   "home": "Ammanford",
+   "away": "Haverfordwest",
+   "url": "https://www.fotmob.com/match/5882137",
+   "finished": false,
+   "score": null,
+   "types": [
+    "mai00"
+   ],
+   "reasons": {
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 14,
+     "other_n": 14,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 7,
+     "conceded": 13,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 6,
+     "conceded": 13,
+     "no00": 14
+    }
+   }
+  },
+  {
    "matchId": 5882138,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-30T19:45:00.000Z",
@@ -3221,51 +3266,6 @@
      "n": 14,
      "scored": 6,
      "conceded": 14,
-     "no00": 14
-    }
-   }
-  },
-  {
-   "matchId": 5882137,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-30T19:45:00.000Z",
-   "league": "Premier League",
-   "country": "WAL",
-   "leagueId": 116,
-   "home": "Ammanford",
-   "away": "Haverfordwest",
-   "url": "https://www.fotmob.com/match/5882137",
-   "finished": false,
-   "score": null,
-   "types": [
-    "mai00"
-   ],
-   "reasons": {
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 14,
-     "other_n": 14,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 7,
-     "conceded": 13,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 6,
-     "conceded": 13,
      "no00": 14
     }
    }
