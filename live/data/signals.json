@@ -790,5 +790,125 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5864894-mai00",
+  "type": "mai00",
+  "time": "2026-10-30 20:18",
+  "ts": 1793387896,
+  "league": "3. Division",
+  "country": "DEN",
+  "leagueId": 240,
+  "home": "FC Helsingør",
+  "away": "Ringsted",
+  "matchId": 5864894,
+  "reason": "Casa: over 0.5 totali (nessuno 0-0) in 13/13 partite di campionato 2026/27; Ospite: 13/13 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5864894",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 13,
+    "scored": 12,
+    "conceded": 11,
+    "no00": 13
+   },
+   "away": {
+    "n": 13,
+    "scored": 11,
+    "conceded": 12,
+    "no00": 13
+   }
+  },
+  "telegram": true
+ },
+ {
+  "id": "5905960-mai00",
+  "type": "mai00",
+  "time": "2026-10-30 20:18",
+  "ts": 1793387901,
+  "league": "3. Liga",
+  "country": "GER",
+  "leagueId": 208,
+  "home": "Fortuna Düsseldorf",
+  "away": "Meppen",
+  "matchId": 5905960,
+  "reason": "Ospite: over 0.5 totali (nessuno 0-0) in 11/11 partite di campionato 2026/27; Casa: 10/11 senza 0-0 (91%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": [
+    68,
+    32
+   ],
+   "shots": [
+    11,
+    1
+   ],
+   "sot": [
+    10,
+    0
+   ],
+   "big": null,
+   "box": null,
+   "corners": [
+    4,
+    0
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5905960",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "season": "2026/27",
+   "strong": "away",
+   "home": {
+    "n": 11,
+    "scored": 8,
+    "conceded": 9,
+    "no00": 10
+   },
+   "away": {
+    "n": 11,
+    "scored": 9,
+    "conceded": 7,
+    "no00": 11
+   }
+  },
+  "telegram": true
  }
 ]
