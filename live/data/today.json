@@ -1,6 +1,6 @@
 {
  "date": "2026-10-30",
- "generated_at": "2026-10-30 20:00",
+ "generated_at": "2026-10-30 20:43",
  "partial": false,
  "stats": {
   "matches_day": 167,
@@ -17,7 +17,7 @@
    "mai00": 52
   },
   "requests": 1180,
-  "seconds": 325
+  "seconds": 253
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -860,7 +860,7 @@
    "home": "Konyaspor",
    "away": "Galatasaray",
    "url": "https://www.fotmob.com/match/5904790",
-   "finished": false,
+   "finished": true,
    "score": "0-4",
    "types": [
     "xg"
@@ -902,7 +902,7 @@
    "home": "Nizhny Novgorod",
    "away": "Arsenal Tula",
    "url": "https://www.fotmob.com/match/5897651",
-   "finished": false,
+   "finished": true,
    "score": "4-0",
    "types": [
     "mai00"
@@ -947,8 +947,8 @@
    "home": "Arminia Bielefeld",
    "away": "Eintracht Braunschweig",
    "url": "https://www.fotmob.com/match/5881708",
-   "finished": false,
-   "score": "2-1",
+   "finished": true,
+   "score": "3-1",
    "types": [
     "xg",
     "mai00"
@@ -1001,8 +1001,8 @@
    "home": "Energie Cottbus",
    "away": "Bochum",
    "url": "https://www.fotmob.com/match/5881709",
-   "finished": false,
-   "score": "1-0",
+   "finished": true,
+   "score": "1-2",
    "types": [
     "xg",
     "mai00"
@@ -1055,8 +1055,8 @@
    "home": "SKN St. Pölten",
    "away": "FC Hertha Wels",
    "url": "https://www.fotmob.com/match/5875010",
-   "finished": false,
-   "score": "2-0",
+   "finished": true,
+   "score": "2-1",
    "types": [
     "mai00"
    ],
@@ -1100,7 +1100,7 @@
    "home": "Austria Salzburg",
    "away": "SKU Amstetten",
    "url": "https://www.fotmob.com/match/5875005",
-   "finished": false,
+   "finished": true,
    "score": "3-0",
    "types": [
     "mai00"
@@ -1145,8 +1145,8 @@
    "home": "PFC Lokomotiv Sofia 1929",
    "away": "Botev Plovdiv",
    "url": "https://www.fotmob.com/match/5760524",
-   "finished": false,
-   "score": "2-4",
+   "finished": true,
+   "score": "2-5",
    "types": [
     "mai00"
    ],
@@ -1191,7 +1191,7 @@
    "away": "Nykøbing FC",
    "url": "https://www.fotmob.com/match/5864735",
    "finished": false,
-   "score": "0-2",
+   "score": "1-4",
    "types": [
     "storico",
     "mai00"
@@ -1251,7 +1251,7 @@
    "away": "Ringsted",
    "url": "https://www.fotmob.com/match/5864894",
    "finished": false,
-   "score": "0-0",
+   "score": "1-0",
    "types": [
     "mai00"
    ],
@@ -1410,7 +1410,7 @@
    "away": "Hässleholms IF",
    "url": "https://www.fotmob.com/match/5127985",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "storico",
     "mai00"
@@ -1466,7 +1466,7 @@
    "away": "Paris Saint-Germain",
    "url": "https://www.fotmob.com/match/5802973",
    "finished": false,
-   "score": "1-2",
+   "score": "1-5",
    "types": [
     "xg"
    ],
@@ -1508,7 +1508,7 @@
    "away": "Rennes",
    "url": "https://www.fotmob.com/match/5802978",
    "finished": false,
-   "score": "3-1",
+   "score": "5-2",
    "types": [
     "xg"
    ],
@@ -1607,7 +1607,7 @@
    "away": "Oldenburg",
    "url": "https://www.fotmob.com/match/5911938",
    "finished": false,
-   "score": "0-0",
+   "score": "1-1",
    "types": [
     "mai00"
    ],
@@ -1652,7 +1652,7 @@
    "away": "VSG Altglienicke",
    "url": "https://www.fotmob.com/match/5910909",
    "finished": false,
-   "score": "2-0",
+   "score": "3-1",
    "types": [
     "mai00"
    ],
@@ -1814,7 +1814,7 @@
    "away": "Al Ahli",
    "url": "https://www.fotmob.com/match/5970195",
    "finished": false,
-   "score": "3-1",
+   "score": "5-1",
    "types": [
     "xg"
    ],
@@ -1856,7 +1856,7 @@
    "away": "Randers FC",
    "url": "https://www.fotmob.com/match/5739538",
    "finished": false,
-   "score": "1-1",
+   "score": "2-1",
    "types": [
     "xg",
     "mai00"
@@ -1910,7 +1910,7 @@
    "away": "Hartberg",
    "url": "https://www.fotmob.com/match/5846013",
    "finished": false,
-   "score": "0-1",
+   "score": "0-2",
    "types": [
     "xg"
    ],
@@ -1997,7 +1997,7 @@
    "away": "De Graafschap",
    "url": "https://www.fotmob.com/match/5832926",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "mai00"
    ],
@@ -2042,7 +2042,7 @@
    "away": "FC Eindhoven",
    "url": "https://www.fotmob.com/match/5832927",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "subisce",
     "mai00"
@@ -2099,7 +2099,7 @@
    "away": "Almere City FC",
    "url": "https://www.fotmob.com/match/5832929",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "storico",
     "mai00"
@@ -2159,7 +2159,7 @@
    "away": "FC Liège",
    "url": "https://www.fotmob.com/match/1000015498",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -2201,7 +2201,7 @@
    "away": "Dijon",
    "url": "https://www.fotmob.com/match/5803300",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "xg",
     "subisce",
@@ -2257,6 +2257,51 @@
    }
   },
   {
+   "matchId": 5803302,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-10-30T19:00:00.000Z",
+   "league": "Ligue 2",
+   "country": "FRA",
+   "leagueId": 110,
+   "home": "Laval",
+   "away": "Boulogne",
+   "url": "https://www.fotmob.com/match/5803302",
+   "finished": false,
+   "score": "1-0",
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Ospite: 6/10) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 6,
+     "other_n": 10,
+     "other_pct": 60
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 8,
+     "conceded": 10,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 6,
+     "no00": 7
+    }
+   }
+  },
+  {
    "matchId": 5803303,
    "kickoff": "20:00",
    "kickoff_utc": "2026-10-30T19:00:00.000Z",
@@ -2267,7 +2312,7 @@
    "away": "Pau",
    "url": "https://www.fotmob.com/match/5803303",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "xg",
     "mai00"
@@ -2321,7 +2366,7 @@
    "away": "Clermont Foot",
    "url": "https://www.fotmob.com/match/5803304",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -2353,51 +2398,6 @@
    }
   },
   {
-   "matchId": 5803302,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-10-30T19:00:00.000Z",
-   "league": "Ligue 2",
-   "country": "FRA",
-   "leagueId": 110,
-   "home": "Laval",
-   "away": "Boulogne",
-   "url": "https://www.fotmob.com/match/5803302",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Ospite: 6/10) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 6,
-     "other_n": 10,
-     "other_pct": 60
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 8,
-     "conceded": 10,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 6,
-     "no00": 7
-    }
-   }
-  },
-  {
    "matchId": 5803307,
    "kickoff": "20:00",
    "kickoff_utc": "2026-10-30T19:00:00.000Z",
@@ -2408,7 +2408,7 @@
    "away": "Dunkerque",
    "url": "https://www.fotmob.com/match/5803307",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg",
     "subisce",
@@ -2474,7 +2474,7 @@
    "away": "Aarau",
    "url": "https://www.fotmob.com/match/5804611",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "subisce",
     "mai00"
@@ -2531,7 +2531,7 @@
    "away": "Kriens",
    "url": "https://www.fotmob.com/match/5804607",
    "finished": false,
-   "score": null,
+   "score": "1-1",
    "types": [
     "mai00"
    ],
@@ -2576,7 +2576,7 @@
    "away": "Mainz 05",
    "url": "https://www.fotmob.com/match/5881211",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -2618,7 +2618,7 @@
    "away": "Livingston",
    "url": "https://www.fotmob.com/match/5794357",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "mai00"
    ],
@@ -2663,7 +2663,7 @@
    "away": "Legia Warszawa",
    "url": "https://www.fotmob.com/match/5804024",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg",
     "segna",
@@ -2729,7 +2729,7 @@
    "away": "Stal Mielec",
    "url": "https://www.fotmob.com/match/5861968",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "mai00"
    ],
@@ -2774,7 +2774,7 @@
    "away": "Sambenedettese",
    "url": "https://www.fotmob.com/match/5990925",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "subisce",
     "mai00"
@@ -2980,6 +2980,48 @@
    }
   },
   {
+   "matchId": 5100989,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-30T19:45:00.000Z",
+   "league": "Premier Division",
+   "country": "IRL",
+   "leagueId": 126,
+   "home": "Shelbourne",
+   "away": "Waterford FC",
+   "url": "https://www.fotmob.com/match/5100989",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.98 (casa 1.77 + ospite 1.22) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.98,
+     "exp_home": 1.77,
+     "exp_away": 1.22,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 35,
+     "scored": 28,
+     "conceded": 28,
+     "no00": 31
+    },
+    "away": {
+     "n": 35,
+     "scored": 25,
+     "conceded": 29,
+     "no00": 32
+    }
+   }
+  },
+  {
    "matchId": 5100988,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-30T19:45:00.000Z",
@@ -3020,48 +3062,6 @@
      "n": 35,
      "scored": 28,
      "conceded": 23,
-     "no00": 32
-    }
-   }
-  },
-  {
-   "matchId": 5100989,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-30T19:45:00.000Z",
-   "league": "Premier Division",
-   "country": "IRL",
-   "leagueId": 126,
-   "home": "Shelbourne",
-   "away": "Waterford FC",
-   "url": "https://www.fotmob.com/match/5100989",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.98 (casa 1.77 + ospite 1.22) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.98,
-     "exp_home": 1.77,
-     "exp_away": 1.22,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 35,
-     "scored": 28,
-     "conceded": 28,
-     "no00": 31
-    },
-    "away": {
-     "n": 35,
-     "scored": 25,
-     "conceded": 29,
      "no00": 32
     }
    }
@@ -3169,6 +3169,51 @@
    }
   },
   {
+   "matchId": 5882137,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-30T19:45:00.000Z",
+   "league": "Premier League",
+   "country": "WAL",
+   "leagueId": 116,
+   "home": "Ammanford",
+   "away": "Haverfordwest",
+   "url": "https://www.fotmob.com/match/5882137",
+   "finished": false,
+   "score": null,
+   "types": [
+    "mai00"
+   ],
+   "reasons": {
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 14,
+     "other_n": 14,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 7,
+     "conceded": 13,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 6,
+     "conceded": 13,
+     "no00": 14
+    }
+   }
+  },
+  {
    "matchId": 5882138,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-30T19:45:00.000Z",
@@ -3226,51 +3271,6 @@
    }
   },
   {
-   "matchId": 5882137,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-30T19:45:00.000Z",
-   "league": "Premier League",
-   "country": "WAL",
-   "leagueId": 116,
-   "home": "Ammanford",
-   "away": "Haverfordwest",
-   "url": "https://www.fotmob.com/match/5882137",
-   "finished": false,
-   "score": null,
-   "types": [
-    "mai00"
-   ],
-   "reasons": {
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 14,
-     "other_n": 14,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 7,
-     "conceded": 13,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 6,
-     "conceded": 13,
-     "no00": 14
-    }
-   }
-  },
-  {
    "matchId": 5882141,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-30T19:45:00.000Z",
@@ -3305,51 +3305,6 @@
      "n": 14,
      "scored": 11,
      "conceded": 8,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 11,
-     "no00": 14
-    }
-   }
-  },
-  {
-   "matchId": 5882139,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-30T19:45:00.000Z",
-   "league": "Premier League",
-   "country": "WAL",
-   "leagueId": 116,
-   "home": "Briton Ferry Llansawel",
-   "away": "Llandudno FC",
-   "url": "https://www.fotmob.com/match/5882139",
-   "finished": false,
-   "score": null,
-   "types": [
-    "mai00"
-   ],
-   "reasons": {
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 14,
-     "other_n": 14,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 12,
      "no00": 14
     },
     "away": {
@@ -3414,6 +3369,51 @@
      "scored": 11,
      "conceded": 13,
      "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5882139,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-30T19:45:00.000Z",
+   "league": "Premier League",
+   "country": "WAL",
+   "leagueId": 116,
+   "home": "Briton Ferry Llansawel",
+   "away": "Llandudno FC",
+   "url": "https://www.fotmob.com/match/5882139",
+   "finished": false,
+   "score": null,
+   "types": [
+    "mai00"
+   ],
+   "reasons": {
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 14,
+     "other_n": 14,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 12,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 14
     }
    }
   },
