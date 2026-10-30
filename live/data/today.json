@@ -1,6 +1,6 @@
 {
  "date": "2026-10-30",
- "generated_at": "2026-10-30 22:13",
+ "generated_at": "2026-10-30 22:51",
  "partial": false,
  "stats": {
   "matches_day": 167,
@@ -17,7 +17,7 @@
    "mai00": 1
   },
   "requests": 1180,
-  "seconds": 327
+  "seconds": 279
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -1447,8 +1447,8 @@
    "home": "Xamax",
    "away": "Aarau",
    "url": "https://www.fotmob.com/match/5804611",
-   "finished": false,
-   "score": "1-2",
+   "finished": true,
+   "score": "1-3",
    "types": [
     "subisce"
    ],
@@ -1492,8 +1492,8 @@
    "home": "Elversberg",
    "away": "Mainz 05",
    "url": "https://www.fotmob.com/match/5881211",
-   "finished": false,
-   "score": "3-0",
+   "finished": true,
+   "score": "4-1",
    "types": [
     "xg"
    ],
@@ -1534,7 +1534,7 @@
    "home": "Górnik Zabrze",
    "away": "Legia Warszawa",
    "url": "https://www.fotmob.com/match/5804024",
-   "finished": false,
+   "finished": true,
    "score": "0-0",
    "types": [
     "xg",
@@ -1588,7 +1588,7 @@
    "home": "Reggiana",
    "away": "Sambenedettese",
    "url": "https://www.fotmob.com/match/5990925",
-   "finished": false,
+   "finished": true,
    "score": "2-0",
    "types": [
     "subisce"
@@ -1633,7 +1633,7 @@
    "home": "Zulte Waregem",
    "away": "Club Brugge",
    "url": "https://www.fotmob.com/match/5811799",
-   "finished": false,
+   "finished": true,
    "score": "2-4",
    "types": [
     "storico",
@@ -1690,7 +1690,7 @@
    "home": "Newport County",
    "away": "Chesterfield",
    "url": "https://www.fotmob.com/match/5838020",
-   "finished": false,
+   "finished": true,
    "score": "4-1",
    "types": [
     "xg"
@@ -1732,8 +1732,8 @@
    "home": "AFC Fylde",
    "away": "Hornchurch",
    "url": "https://www.fotmob.com/match/5906537",
-   "finished": false,
-   "score": "2-1",
+   "finished": true,
+   "score": "3-1",
    "types": [
     "storico"
    ],
@@ -1780,8 +1780,8 @@
    "home": "Shelbourne",
    "away": "Waterford FC",
    "url": "https://www.fotmob.com/match/5100989",
-   "finished": false,
-   "score": "1-2",
+   "finished": true,
+   "score": "2-3",
    "types": [
     "xg"
    ],
@@ -1822,7 +1822,7 @@
    "home": "St. Patrick's Athletic",
    "away": "Bohemian FC",
    "url": "https://www.fotmob.com/match/5100991",
-   "finished": false,
+   "finished": true,
    "score": "2-3",
    "types": [
     "xg"
@@ -1864,8 +1864,8 @@
    "home": "Airbus UK Broughton",
    "away": "Caernarfon",
    "url": "https://www.fotmob.com/match/5882136",
-   "finished": false,
-   "score": "3-1",
+   "finished": true,
+   "score": "3-2",
    "types": [
     "storico"
    ],
@@ -1912,7 +1912,7 @@
    "home": "Barry Town",
    "away": "Trefelin BGC",
    "url": "https://www.fotmob.com/match/5882138",
-   "finished": false,
+   "finished": true,
    "score": "3-0",
    "types": [
     "subisce"
@@ -1957,8 +1957,8 @@
    "home": "Flint Town United",
    "away": "Holywell Town",
    "url": "https://www.fotmob.com/match/5882142",
-   "finished": false,
-   "score": "3-0",
+   "finished": true,
+   "score": "5-0",
    "types": [
     "subisce"
    ],
@@ -2003,7 +2003,7 @@
    "away": "Espanyol",
    "url": "https://www.fotmob.com/match/5868120",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "xg"
    ],
