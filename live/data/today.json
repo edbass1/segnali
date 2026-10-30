@@ -1,6 +1,6 @@
 {
  "date": "2026-10-30",
- "generated_at": "2026-10-30 20:43",
+ "generated_at": "2026-10-30 21:26",
  "partial": false,
  "stats": {
   "matches_day": 167,
@@ -17,7 +17,7 @@
    "mai00": 1
   },
   "requests": 1180,
-  "seconds": 253
+  "seconds": 243
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -578,7 +578,7 @@
    "home": "HIK",
    "away": "Nykøbing FC",
    "url": "https://www.fotmob.com/match/5864735",
-   "finished": false,
+   "finished": true,
    "score": "1-4",
    "types": [
     "storico"
@@ -626,7 +626,7 @@
    "home": "Bodø/Glimt",
    "away": "Viking",
    "url": "https://www.fotmob.com/match/5105035",
-   "finished": false,
+   "finished": true,
    "score": "3-2",
    "types": [
     "storico",
@@ -683,8 +683,8 @@
    "home": "BK Olympic",
    "away": "Hässleholms IF",
    "url": "https://www.fotmob.com/match/5127985",
-   "finished": false,
-   "score": "0-1",
+   "finished": true,
+   "score": "1-1",
    "types": [
     "storico"
    ],
@@ -727,7 +727,7 @@
    "home": "Le Havre",
    "away": "Paris Saint-Germain",
    "url": "https://www.fotmob.com/match/5802973",
-   "finished": false,
+   "finished": true,
    "score": "1-5",
    "types": [
     "xg"
@@ -769,7 +769,7 @@
    "home": "Nice",
    "away": "Rennes",
    "url": "https://www.fotmob.com/match/5802978",
-   "finished": false,
+   "finished": true,
    "score": "5-2",
    "types": [
     "xg"
@@ -811,8 +811,8 @@
    "home": "1860 München",
    "away": "TSV Buchbach",
    "url": "https://www.fotmob.com/match/5911608",
-   "finished": false,
-   "score": "2-3",
+   "finished": true,
+   "score": "4-3",
    "types": [
     "segna"
    ],
@@ -856,7 +856,7 @@
    "home": "Homburg",
    "away": "Eintracht Trier",
    "url": "https://www.fotmob.com/match/5916092",
-   "finished": false,
+   "finished": true,
    "score": "0-0",
    "types": [
     "subisce"
@@ -901,8 +901,8 @@
    "home": "TSV Steinbach",
    "away": "FSV Frankfurt",
    "url": "https://www.fotmob.com/match/5916097",
-   "finished": false,
-   "score": "1-2",
+   "finished": true,
+   "score": "2-2",
    "types": [
     "storico"
    ],
@@ -949,8 +949,8 @@
    "home": "Al Shabab",
    "away": "Al Ahli",
    "url": "https://www.fotmob.com/match/5970195",
-   "finished": false,
-   "score": "5-1",
+   "finished": true,
+   "score": "6-1",
    "types": [
     "xg"
    ],
@@ -991,7 +991,7 @@
    "home": "Lyngby",
    "away": "Randers FC",
    "url": "https://www.fotmob.com/match/5739538",
-   "finished": false,
+   "finished": true,
    "score": "2-1",
    "types": [
     "xg"
@@ -1033,8 +1033,8 @@
    "home": "Grazer AK",
    "away": "Hartberg",
    "url": "https://www.fotmob.com/match/5846013",
-   "finished": false,
-   "score": "0-2",
+   "finished": true,
+   "score": "0-4",
    "types": [
     "xg"
    ],
@@ -1076,7 +1076,7 @@
    "away": "FC Eindhoven",
    "url": "https://www.fotmob.com/match/5832927",
    "finished": false,
-   "score": "0-1",
+   "score": "1-2",
    "types": [
     "subisce"
    ],
@@ -1169,7 +1169,7 @@
    "away": "FC Liège",
    "url": "https://www.fotmob.com/match/1000015498",
    "finished": false,
-   "score": "0-0",
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -1211,7 +1211,7 @@
    "away": "Dijon",
    "url": "https://www.fotmob.com/match/5803300",
    "finished": false,
-   "score": "0-1",
+   "score": "0-2",
    "types": [
     "xg",
     "subisce"
@@ -1251,6 +1251,48 @@
      "scored": 9,
      "conceded": 10,
      "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5803304,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-10-30T19:00:00.000Z",
+   "league": "Ligue 2",
+   "country": "FRA",
+   "leagueId": 110,
+   "home": "Nantes",
+   "away": "Clermont Foot",
+   "url": "https://www.fotmob.com/match/5803304",
+   "finished": false,
+   "score": "1-0",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.93 (casa 1.96 + ospite 0.97) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.93,
+     "exp_home": 1.96,
+     "exp_away": 0.97,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 8,
+     "no00": 9
+    },
+    "away": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 7,
+     "no00": 7
     }
    }
   },
@@ -1342,48 +1384,6 @@
    }
   },
   {
-   "matchId": 5803304,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-10-30T19:00:00.000Z",
-   "league": "Ligue 2",
-   "country": "FRA",
-   "leagueId": 110,
-   "home": "Nantes",
-   "away": "Clermont Foot",
-   "url": "https://www.fotmob.com/match/5803304",
-   "finished": false,
-   "score": "1-0",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.93 (casa 1.96 + ospite 0.97) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.93,
-     "exp_home": 1.96,
-     "exp_away": 0.97,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 8,
-     "no00": 9
-    },
-    "away": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 7,
-     "no00": 7
-    }
-   }
-  },
-  {
    "matchId": 5803307,
    "kickoff": "20:00",
    "kickoff_utc": "2026-10-30T19:00:00.000Z",
@@ -1394,7 +1394,7 @@
    "away": "Dunkerque",
    "url": "https://www.fotmob.com/match/5803307",
    "finished": false,
-   "score": "0-0",
+   "score": "1-0",
    "types": [
     "xg",
     "subisce"
@@ -1448,7 +1448,7 @@
    "away": "Aarau",
    "url": "https://www.fotmob.com/match/5804611",
    "finished": false,
-   "score": "0-0",
+   "score": "1-0",
    "types": [
     "subisce"
    ],
@@ -1493,7 +1493,7 @@
    "away": "Mainz 05",
    "url": "https://www.fotmob.com/match/5881211",
    "finished": false,
-   "score": "1-0",
+   "score": "3-0",
    "types": [
     "xg"
    ],
@@ -1634,7 +1634,7 @@
    "away": "Club Brugge",
    "url": "https://www.fotmob.com/match/5811799",
    "finished": false,
-   "score": null,
+   "score": "1-3",
    "types": [
     "storico",
     "xg"
@@ -1691,7 +1691,7 @@
    "away": "Chesterfield",
    "url": "https://www.fotmob.com/match/5838020",
    "finished": false,
-   "score": null,
+   "score": "3-0",
    "types": [
     "xg"
    ],
@@ -1733,7 +1733,7 @@
    "away": "Hornchurch",
    "url": "https://www.fotmob.com/match/5906537",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "storico"
    ],
@@ -1781,7 +1781,7 @@
    "away": "Waterford FC",
    "url": "https://www.fotmob.com/match/5100989",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -1823,7 +1823,7 @@
    "away": "Bohemian FC",
    "url": "https://www.fotmob.com/match/5100991",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -1865,7 +1865,7 @@
    "away": "Caernarfon",
    "url": "https://www.fotmob.com/match/5882136",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "storico"
    ],
@@ -1913,7 +1913,7 @@
    "away": "Trefelin BGC",
    "url": "https://www.fotmob.com/match/5882138",
    "finished": false,
-   "score": null,
+   "score": "2-0",
    "types": [
     "subisce"
    ],
@@ -1958,7 +1958,7 @@
    "away": "Holywell Town",
    "url": "https://www.fotmob.com/match/5882142",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "subisce"
    ],
@@ -2003,7 +2003,7 @@
    "away": "Espanyol",
    "url": "https://www.fotmob.com/match/5868120",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -2045,7 +2045,7 @@
    "away": "Lens",
    "url": "https://www.fotmob.com/match/5802974",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
