@@ -910,5 +910,167 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5911938-mai00",
+  "type": "mai00",
+  "time": "2026-10-30 20:19",
+  "ts": 1793387953,
+  "league": "Regionalliga North",
+  "country": "GER",
+  "leagueId": 512,
+  "home": "SV Atlas Delmenhorst",
+  "away": "Oldenburg",
+  "matchId": 5911938,
+  "reason": "Ospite: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Casa: 13/14 senza 0-0 (93%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    1,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5911938",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "away",
+   "home": {
+    "n": 14,
+    "scored": 9,
+    "conceded": 9,
+    "no00": 13
+   },
+   "away": {
+    "n": 14,
+    "scored": 13,
+    "conceded": 11,
+    "no00": 14
+   }
+  },
+  "telegram": true
+ },
+ {
+  "id": "5916092-subisce",
+  "type": "subisce",
+  "time": "2026-10-30 20:19",
+  "ts": 1793387956,
+  "league": "Regionalliga Southwest",
+  "country": "GER",
+  "leagueId": 512,
+  "home": "Homburg",
+  "away": "Eintracht Trier",
+  "matchId": 5916092,
+  "reason": "Casa ha subito almeno 1 gol in 13/13 partite di campionato 2026/27 (Ospite: 7/13) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5916092",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 13,
+    "scored": 10,
+    "conceded": 13,
+    "no00": 13
+   },
+   "away": {
+    "n": 13,
+    "scored": 9,
+    "conceded": 7,
+    "no00": 12
+   }
+  },
+  "telegram": true
+ },
+ {
+  "id": "5916092-mai00",
+  "type": "mai00",
+  "time": "2026-10-30 20:19",
+  "ts": 1793387956,
+  "league": "Regionalliga Southwest",
+  "country": "GER",
+  "leagueId": 512,
+  "home": "Homburg",
+  "away": "Eintracht Trier",
+  "matchId": 5916092,
+  "reason": "Casa: over 0.5 totali (nessuno 0-0) in 13/13 partite di campionato 2026/27; Ospite: 12/13 senza 0-0 (92%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5916092",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 13,
+    "scored": 10,
+    "conceded": 13,
+    "no00": 13
+   },
+   "away": {
+    "n": 13,
+    "scored": 9,
+    "conceded": 7,
+    "no00": 12
+   }
+  },
+  "telegram": true
  }
 ]
