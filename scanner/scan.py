@@ -447,6 +447,11 @@ def cur_eval(ev, lid, cutoff):
                            ("subisce", "conceded", CFG["SUBISCE_PCT"], None),
                            ("mai00", "no00", CFG["MAI00_STRONG_PCT"], CFG["MAI00_OTHER_PCT"])):
         st = pick(k, ps, po) if enough else None
+        if typ == "mai00" and st:
+            # condizione aggiuntiva: una squadra ha sempre segnato e l'altra ha sempre subito (100%, in un verso o nell'altro)
+            if not any(ge(cur[a], "scored", 100) and ge(cur[b], "conceded", 100)
+                       for a, b in (("home", "away"), ("away", "home"))):
+                st = None
         if not st:  # orientamento "migliore" solo per mostrare i numeri
             best = "home" if (H[k] / max(H["n"], 1)) >= (A[k] / max(A["n"], 1)) else "away"
         ev[typ] = {"ok": bool(st), "strong": st or best, "enough": enough}
@@ -511,6 +516,7 @@ def build_message(ev, live, types, test=False, odds=None):
     mnt = f"{live['minute']}'" if live.get("minute") is not None else ("FINITA" if live.get("finished") else (live.get("phase") or "?"))
     L.append(f"⏱ {mnt}   📊 {esc(live.get('score') or '0 - 0')}")
     if odds is not None: L.append(odds_line(odds))
+    L.append("👉 Consiglio: <b>Over 0.5</b> (gol in arrivo)")
     for typ in types:
         L.append("")
         cond = ""

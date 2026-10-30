@@ -168,13 +168,13 @@ Promise.all([fetch('data/signals.json'+nc,{cache:'no-store'}).then(r=>r.json()).
     
     ⚽ <b>Segna sempre</b>: una squadra ha <b>segnato</b> almeno 1 gol nel ${r.segna_strong}% delle sue partite, l'altra in almeno il ${r.segna_other}%. <i>(solo campionato in corso, minimo ${r.cur_min} partite per squadra)</i><br>
     🥅 <b>Subisce sempre</b>: una squadra ha <b>subito</b> almeno 1 gol nel ${r.subisce}% delle sue partite. <i>(solo campionato in corso, minimo ${r.cur_min} partite per squadra)</i><br>
-    🚫 <b>Mai 0-0</b>: una squadra con <b>over 0.5 gol totali</b> (nessuno 0-0) nel ${r.mai00_strong}% delle partite, l'altra in almeno il ${r.mai00_other}%. <i>(solo campionato in corso, minimo ${r.cur_min} partite per squadra)</i><br>
+    🚫 <b>Mai 0-0</b>: una squadra con <b>over 0.5 gol totali</b> (nessuno 0-0) nel ${r.mai00_strong}% delle partite, l'altra in almeno il ${r.mai00_other}%; inoltre una squadra ha <b>sempre segnato</b> (100% delle partite) e l'altra ha <b>sempre subito gol</b> (100%). <i>(solo campionato in corso, minimo ${r.cur_min} partite per squadra)</i><br>
     Esito: ✅ se arriva almeno un gol dopo il segnale (finale ≠ 0-0), ❌ se finisce 0-0, ⏳ in corso.`;
   DESC={storico:`Serie di almeno ${r.streak_min} partite di campionato consecutive <b>senza 0-0</b> (over 0.5 totali) per una squadra; l'altra max ${r.hist_max_00} 0-0 nelle ultime ${r.hist_n}.`,
     xg:`xG totale atteso prematch ≥ ${r.xg_min} (stagione corrente).`,
     segna:`Una squadra ha <b>segnato</b> in ogni partita di campionato della stagione (${r.segna_strong}%), l'altra ≥ ${r.segna_other}%. <i>(solo campionato in corso, minimo ${r.cur_min} partite per squadra)</i>`,
     subisce:`Una squadra ha <b>subito</b> almeno 1 gol in ogni partita di campionato della stagione (${r.subisce}%). <i>(solo campionato in corso, minimo ${r.cur_min} partite per squadra)</i>`,
-    mai00:`Una squadra <b>senza 0-0</b> (over 0.5 totali) nel ${r.mai00_strong}% delle partite di stagione, l'altra ≥ ${r.mai00_other}%. <i>(solo campionato in corso, minimo ${r.cur_min} partite per squadra)</i>`};
+    mai00:`Una squadra <b>senza 0-0</b> (over 0.5 totali) nel ${r.mai00_strong}% delle partite di stagione, l'altra ≥ ${r.mai00_other}%; inoltre una squadra ha <b>sempre segnato</b> e l'altra ha <b>sempre subito gol</b> (100%). <i>(solo campionato in corso, minimo ${r.cur_min} partite per squadra)</i>`};
   render('storico',sig.filter(s=>s.type==='storico'));
   for(const t of ['xg','segna','subisce','mai00']) render(t,sig.filter(s=>s.type===t));
 });

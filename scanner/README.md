@@ -8,6 +8,8 @@
 - `.github/workflows/scan.yml` – cron ogni 5 minuti + avvio manuale
 - `.github/workflows/daily.yml` – partite del giorno: cron 22:00 e 23:00 UTC, lavora solo quando a Roma è mezzanotte (gestisce ora legale/solare) + avvio manuale (opzionale una data YYYYMMDD). Calcolo senza bloccare lo scanner, commit nello stesso concurrency group dello scanner. Niente Telegram, niente The Odds API.
 
+Regola 🚫 Mai 0-0 (solo campionato in corso, minimo 9 partite per squadra): una squadra con over 0.5 gol totali (nessuno 0-0) nel 100% delle partite e l'altra in almeno il 90%; inoltre una squadra deve aver segnato almeno 1 gol nel 100% delle partite e l'altra deve aver subito almeno 1 gol nel 100% delle partite (vale in entrambi i versi: casa segna sempre e ospite subisce sempre, oppure ospite segna sempre e casa subisce sempre). I segnali già salvati in `signals.json` restano invariati.
+
 Segreti del repo: `TELEGRAM_BOT_TOKEN` (obbligatorio), `TELEGRAM_CHAT_ID` (facoltativo, default 621551511). `ODDS_API_KEY` (facoltativo: quota live Over 0.5 al momento del segnale, 1 credito The Odds API per partita segnalata; senza chiave la riga mostra "non disponibile").
 In Settings > Actions > General > Workflow permissions: "Read and write permissions".
 
