@@ -1,11 +1,11 @@
 {
  "date": "2026-10-30",
- "generated_at": "2026-10-30 18:20",
+ "generated_at": "2026-10-30 19:11",
  "partial": false,
  "stats": {
-  "matches_day": 169,
-  "candidates": 153,
-  "evaluated": 151,
+  "matches_day": 168,
+  "candidates": 152,
+  "evaluated": 150,
   "qualified": 70,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 12,
    "mai00": 52
   },
-  "requests": 1186,
-  "seconds": 255
+  "requests": 1184,
+  "seconds": 285
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -614,8 +614,8 @@
    "home": "Pirin Blagoevgrad",
    "away": "Etar",
    "url": "https://www.fotmob.com/match/5874258",
-   "finished": false,
-   "score": "0-1",
+   "finished": true,
+   "score": "0-2",
    "types": [
     "subisce",
     "mai00"
@@ -671,8 +671,8 @@
    "home": "FC Vlašim",
    "away": "Ústí nad Labem",
    "url": "https://www.fotmob.com/match/1000015750",
-   "finished": false,
-   "score": "2-0",
+   "finished": true,
+   "score": "3-0",
    "types": [
     "mai00"
    ],
@@ -716,7 +716,7 @@
    "home": "Steaua București",
    "away": "CS Dinamo București",
    "url": "https://www.fotmob.com/match/5976947",
-   "finished": false,
+   "finished": true,
    "score": "0-0",
    "types": [
     "subisce",
@@ -774,7 +774,7 @@
    "away": "Motor Lublin",
    "url": "https://www.fotmob.com/match/5804022",
    "finished": false,
-   "score": "1-0",
+   "score": "1-2",
    "types": [
     "xg"
    ],
@@ -861,7 +861,7 @@
    "away": "Galatasaray",
    "url": "https://www.fotmob.com/match/5904790",
    "finished": false,
-   "score": "0-1",
+   "score": "0-2",
    "types": [
     "xg"
    ],
@@ -903,7 +903,7 @@
    "away": "Arsenal Tula",
    "url": "https://www.fotmob.com/match/5897651",
    "finished": false,
-   "score": null,
+   "score": "2-0",
    "types": [
     "mai00"
    ],
@@ -948,7 +948,7 @@
    "away": "Eintracht Braunschweig",
    "url": "https://www.fotmob.com/match/5881708",
    "finished": false,
-   "score": null,
+   "score": "2-0",
    "types": [
     "xg",
     "mai00"
@@ -1002,7 +1002,7 @@
    "away": "Bochum",
    "url": "https://www.fotmob.com/match/5881709",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "xg",
     "mai00"
@@ -1056,7 +1056,7 @@
    "away": "FC Hertha Wels",
    "url": "https://www.fotmob.com/match/5875010",
    "finished": false,
-   "score": null,
+   "score": "2-0",
    "types": [
     "mai00"
    ],
@@ -1101,7 +1101,7 @@
    "away": "SKU Amstetten",
    "url": "https://www.fotmob.com/match/5875005",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "mai00"
    ],
@@ -1146,7 +1146,7 @@
    "away": "Botev Plovdiv",
    "url": "https://www.fotmob.com/match/5760524",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "mai00"
    ],
@@ -1191,7 +1191,7 @@
    "away": "Nykøbing FC",
    "url": "https://www.fotmob.com/match/5864735",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "storico",
     "mai00"
@@ -1251,7 +1251,7 @@
    "away": "Ringsted",
    "url": "https://www.fotmob.com/match/5864894",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "mai00"
    ],
@@ -1296,7 +1296,7 @@
    "away": "Meppen",
    "url": "https://www.fotmob.com/match/5905960",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "mai00"
    ],
@@ -1341,7 +1341,7 @@
    "away": "Viking",
    "url": "https://www.fotmob.com/match/5105035",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "storico",
     "xg",
@@ -1410,7 +1410,7 @@
    "away": "Hässleholms IF",
    "url": "https://www.fotmob.com/match/5127985",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "storico",
     "mai00"
@@ -1466,7 +1466,7 @@
    "away": "Paris Saint-Germain",
    "url": "https://www.fotmob.com/match/5802973",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -1508,7 +1508,7 @@
    "away": "Rennes",
    "url": "https://www.fotmob.com/match/5802978",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -1550,7 +1550,7 @@
    "away": "TSV Buchbach",
    "url": "https://www.fotmob.com/match/5911608",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "segna",
     "mai00"
@@ -1607,7 +1607,7 @@
    "away": "Oldenburg",
    "url": "https://www.fotmob.com/match/5911938",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "mai00"
    ],
@@ -1652,7 +1652,7 @@
    "away": "VSG Altglienicke",
    "url": "https://www.fotmob.com/match/5910909",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "mai00"
    ],
@@ -1697,7 +1697,7 @@
    "away": "Eintracht Trier",
    "url": "https://www.fotmob.com/match/5916092",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "subisce",
     "mai00"
@@ -1754,7 +1754,7 @@
    "away": "FSV Frankfurt",
    "url": "https://www.fotmob.com/match/5916097",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "storico",
     "mai00"
@@ -1814,7 +1814,7 @@
    "away": "Al Ahli",
    "url": "https://www.fotmob.com/match/5970195",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -1856,7 +1856,7 @@
    "away": "Randers FC",
    "url": "https://www.fotmob.com/match/5739538",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg",
     "mai00"
@@ -3271,51 +3271,6 @@
    }
   },
   {
-   "matchId": 5882141,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-30T19:45:00.000Z",
-   "league": "Premier League",
-   "country": "WAL",
-   "leagueId": 116,
-   "home": "Colwyn Bay",
-   "away": "Cambrian United",
-   "url": "https://www.fotmob.com/match/5882141",
-   "finished": false,
-   "score": null,
-   "types": [
-    "mai00"
-   ],
-   "reasons": {
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 14,
-     "other_n": 14,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 8,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 11,
-     "no00": 14
-    }
-   }
-  },
-  {
    "matchId": 5882142,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-30T19:45:00.000Z",
@@ -3369,6 +3324,51 @@
      "scored": 11,
      "conceded": 13,
      "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5882141,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-30T19:45:00.000Z",
+   "league": "Premier League",
+   "country": "WAL",
+   "leagueId": 116,
+   "home": "Colwyn Bay",
+   "away": "Cambrian United",
+   "url": "https://www.fotmob.com/match/5882141",
+   "finished": false,
+   "score": null,
+   "types": [
+    "mai00"
+   ],
+   "reasons": {
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 14,
+     "other_n": 14,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 8,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 14
     }
    }
   },
