@@ -703,8 +703,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "1-1",
   "url": "https://www.fotmob.com/match/5127985",
   "over05": null,
   "over05_note": "campionato non coperto",
@@ -735,7 +735,8 @@
   },
   "streak": 72,
   "streak_complete": false,
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-10-30 20:53"
  },
  {
   "id": "5127985-mai00",
@@ -768,8 +769,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "1-1",
   "url": "https://www.fotmob.com/match/5127985",
   "over05": null,
   "over05_note": "campionato non coperto",
@@ -789,7 +790,8 @@
     "no00": 28
    }
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-10-30 20:53"
  },
  {
   "id": "5864894-mai00",
@@ -888,8 +890,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "lost",
+  "final": "0-0",
   "url": "https://www.fotmob.com/match/5905960",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -909,7 +911,8 @@
     "no00": 11
    }
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-10-30 20:53"
  },
  {
   "id": "5911938-mai00",
