@@ -1,6 +1,6 @@
 {
  "date": "2026-10-30",
- "generated_at": "2026-10-30 17:34",
+ "generated_at": "2026-10-30 18:20",
  "partial": false,
  "stats": {
   "matches_day": 169,
@@ -16,8 +16,8 @@
    "subisce": 12,
    "mai00": 52
   },
-  "requests": 1188,
-  "seconds": 360
+  "requests": 1186,
+  "seconds": 255
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -479,7 +479,7 @@
    "home": "Al Diriyah",
    "away": "Neom SC",
    "url": "https://www.fotmob.com/match/5970184",
-   "finished": false,
+   "finished": true,
    "score": "1-2",
    "types": [
     "mai00"
@@ -524,7 +524,7 @@
    "home": "Veles Moscow",
    "away": "Spartak Kostroma",
    "url": "https://www.fotmob.com/match/5897655",
-   "finished": false,
+   "finished": true,
    "score": "1-1",
    "types": [
     "mai00"
@@ -569,8 +569,8 @@
    "home": "CSKA 1948",
    "away": "Spartak Varna",
    "url": "https://www.fotmob.com/match/5760526",
-   "finished": false,
-   "score": "4-1",
+   "finished": true,
+   "score": "6-1",
    "types": [
     "mai00"
    ],
@@ -615,7 +615,7 @@
    "away": "Etar",
    "url": "https://www.fotmob.com/match/5874258",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "subisce",
     "mai00"
@@ -672,7 +672,7 @@
    "away": "Ústí nad Labem",
    "url": "https://www.fotmob.com/match/1000015750",
    "finished": false,
-   "score": "1-0",
+   "score": "2-0",
    "types": [
     "mai00"
    ],
@@ -774,7 +774,7 @@
    "away": "Motor Lublin",
    "url": "https://www.fotmob.com/match/5804022",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -816,7 +816,7 @@
    "away": "NK Istra 1961",
    "url": "https://www.fotmob.com/match/5765953",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "mai00"
    ],
@@ -861,7 +861,7 @@
    "away": "Galatasaray",
    "url": "https://www.fotmob.com/match/5904790",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "xg"
    ],
@@ -2257,6 +2257,51 @@
    }
   },
   {
+   "matchId": 5803302,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-10-30T19:00:00.000Z",
+   "league": "Ligue 2",
+   "country": "FRA",
+   "leagueId": 110,
+   "home": "Laval",
+   "away": "Boulogne",
+   "url": "https://www.fotmob.com/match/5803302",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Ospite: 6/10) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 6,
+     "other_n": 10,
+     "other_pct": 60
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 8,
+     "conceded": 10,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 6,
+     "no00": 7
+    }
+   }
+  },
+  {
    "matchId": 5803304,
    "kickoff": "20:00",
    "kickoff_utc": "2026-10-30T19:00:00.000Z",
@@ -2349,51 +2394,6 @@
      "scored": 7,
      "conceded": 8,
      "no00": 10
-    }
-   }
-  },
-  {
-   "matchId": 5803302,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-10-30T19:00:00.000Z",
-   "league": "Ligue 2",
-   "country": "FRA",
-   "leagueId": 110,
-   "home": "Laval",
-   "away": "Boulogne",
-   "url": "https://www.fotmob.com/match/5803302",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Ospite: 6/10) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 6,
-     "other_n": 10,
-     "other_pct": 60
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 8,
-     "conceded": 10,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 6,
-     "no00": 7
     }
    }
   },
@@ -2980,6 +2980,48 @@
    }
   },
   {
+   "matchId": 5100989,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-30T19:45:00.000Z",
+   "league": "Premier Division",
+   "country": "IRL",
+   "leagueId": 126,
+   "home": "Shelbourne",
+   "away": "Waterford FC",
+   "url": "https://www.fotmob.com/match/5100989",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.98 (casa 1.77 + ospite 1.22) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.98,
+     "exp_home": 1.77,
+     "exp_away": 1.22,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 35,
+     "scored": 28,
+     "conceded": 28,
+     "no00": 31
+    },
+    "away": {
+     "n": 35,
+     "scored": 25,
+     "conceded": 29,
+     "no00": 32
+    }
+   }
+  },
+  {
    "matchId": 5100988,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-30T19:45:00.000Z",
@@ -3020,48 +3062,6 @@
      "n": 35,
      "scored": 28,
      "conceded": 23,
-     "no00": 32
-    }
-   }
-  },
-  {
-   "matchId": 5100989,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-30T19:45:00.000Z",
-   "league": "Premier Division",
-   "country": "IRL",
-   "leagueId": 126,
-   "home": "Shelbourne",
-   "away": "Waterford FC",
-   "url": "https://www.fotmob.com/match/5100989",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.98 (casa 1.77 + ospite 1.22) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.98,
-     "exp_home": 1.77,
-     "exp_away": 1.22,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 35,
-     "scored": 28,
-     "conceded": 28,
-     "no00": 31
-    },
-    "away": {
-     "n": 35,
-     "scored": 25,
-     "conceded": 29,
      "no00": 32
     }
    }
@@ -3271,6 +3271,51 @@
    }
   },
   {
+   "matchId": 5882141,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-30T19:45:00.000Z",
+   "league": "Premier League",
+   "country": "WAL",
+   "leagueId": 116,
+   "home": "Colwyn Bay",
+   "away": "Cambrian United",
+   "url": "https://www.fotmob.com/match/5882141",
+   "finished": false,
+   "score": null,
+   "types": [
+    "mai00"
+   ],
+   "reasons": {
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 14,
+     "other_n": 14,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 8,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 14
+    }
+   }
+  },
+  {
    "matchId": 5882142,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-30T19:45:00.000Z",
@@ -3362,51 +3407,6 @@
      "n": 14,
      "scored": 11,
      "conceded": 12,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 11,
-     "no00": 14
-    }
-   }
-  },
-  {
-   "matchId": 5882141,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-30T19:45:00.000Z",
-   "league": "Premier League",
-   "country": "WAL",
-   "leagueId": 116,
-   "home": "Colwyn Bay",
-   "away": "Cambrian United",
-   "url": "https://www.fotmob.com/match/5882141",
-   "finished": false,
-   "score": null,
-   "types": [
-    "mai00"
-   ],
-   "reasons": {
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 14,
-     "other_n": 14,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 8,
      "no00": 14
     },
     "away": {
