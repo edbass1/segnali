@@ -378,5 +378,113 @@
   },
   "telegram": true,
   "resolved": "2026-10-30 05:04"
+ },
+ {
+  "id": "5874258-subisce",
+  "type": "subisce",
+  "time": "2026-10-30 17:47",
+  "ts": 1793378868,
+  "league": "Second Professional League",
+  "country": "BUL",
+  "leagueId": 9096,
+  "home": "Pirin Blagoevgrad",
+  "away": "Etar",
+  "matchId": 5874258,
+  "reason": "Casa ha subito almeno 1 gol in 13/13 partite di campionato 2026/27 (Ospite: 9/12) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5874258",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 13,
+    "scored": 4,
+    "conceded": 13,
+    "no00": 13
+   },
+   "away": {
+    "n": 12,
+    "scored": 12,
+    "conceded": 9,
+    "no00": 12
+   }
+  },
+  "telegram": true
+ },
+ {
+  "id": "5874258-mai00",
+  "type": "mai00",
+  "time": "2026-10-30 17:47",
+  "ts": 1793378868,
+  "league": "Second Professional League",
+  "country": "BUL",
+  "leagueId": 9096,
+  "home": "Pirin Blagoevgrad",
+  "away": "Etar",
+  "matchId": 5874258,
+  "reason": "Casa: over 0.5 totali (nessuno 0-0) in 13/13 partite di campionato 2026/27; Ospite: 12/12 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5874258",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 13,
+    "scored": 4,
+    "conceded": 13,
+    "no00": 13
+   },
+   "away": {
+    "n": 12,
+    "scored": 12,
+    "conceded": 9,
+    "no00": 12
+   }
+  },
+  "telegram": true
  }
 ]
