@@ -1,6 +1,6 @@
 {
  "date": "2026-10-30",
- "generated_at": "2026-10-30 12:18",
+ "generated_at": "2026-10-30 13:00",
  "partial": false,
  "stats": {
   "matches_day": 168,
@@ -11,13 +11,13 @@
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 9,
-   "xg": 26,
+   "xg": 27,
    "segna": 2,
    "subisce": 12,
    "mai00": 52
   },
-  "requests": 1172,
-  "seconds": 332
+  "requests": 1185,
+  "seconds": 267
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -146,12 +146,21 @@
    "finished": true,
    "score": "1-0",
    "types": [
+    "xg",
     "mai00"
    ],
    "reasons": {
+    "xg": "xG atteso prematch 2.73 (casa 1.75 + ospite 0.97) ≥ 2.7",
     "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
    },
    "info": {
+    "xg": {
+     "total": 2.73,
+     "exp_home": 1.75,
+     "exp_away": 0.97,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
     "mai00": {
      "strong": "home",
      "season": "2026/27",
@@ -234,7 +243,7 @@
    "away": "Van",
    "url": "https://www.fotmob.com/match/5972996",
    "finished": false,
-   "score": null,
+   "score": "2-1",
    "types": [
     "mai00"
    ],
@@ -279,7 +288,7 @@
    "away": "FC Jurong",
    "url": "https://www.fotmob.com/match/5973210",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "storico"
    ],
@@ -2248,6 +2257,48 @@
    }
   },
   {
+   "matchId": 5803304,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-10-30T19:00:00.000Z",
+   "league": "Ligue 2",
+   "country": "FRA",
+   "leagueId": 110,
+   "home": "Nantes",
+   "away": "Clermont Foot",
+   "url": "https://www.fotmob.com/match/5803304",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.93 (casa 1.96 + ospite 0.97) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.93,
+     "exp_home": 1.96,
+     "exp_away": 0.97,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 8,
+     "no00": 9
+    },
+    "away": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 7,
+     "no00": 7
+    }
+   }
+  },
+  {
    "matchId": 5803302,
    "kickoff": "20:00",
    "kickoff_utc": "2026-10-30T19:00:00.000Z",
@@ -2288,48 +2339,6 @@
      "n": 10,
      "scored": 6,
      "conceded": 6,
-     "no00": 7
-    }
-   }
-  },
-  {
-   "matchId": 5803304,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-10-30T19:00:00.000Z",
-   "league": "Ligue 2",
-   "country": "FRA",
-   "leagueId": 110,
-   "home": "Nantes",
-   "away": "Clermont Foot",
-   "url": "https://www.fotmob.com/match/5803304",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.93 (casa 1.96 + ospite 0.97) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.93,
-     "exp_home": 1.96,
-     "exp_away": 0.97,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 8,
-     "no00": 9
-    },
-    "away": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 7,
      "no00": 7
     }
    }
@@ -3160,51 +3169,6 @@
    }
   },
   {
-   "matchId": 5882137,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-30T19:45:00.000Z",
-   "league": "Premier League",
-   "country": "WAL",
-   "leagueId": 116,
-   "home": "Ammanford",
-   "away": "Haverfordwest",
-   "url": "https://www.fotmob.com/match/5882137",
-   "finished": false,
-   "score": null,
-   "types": [
-    "mai00"
-   ],
-   "reasons": {
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 14,
-     "other_n": 14,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 7,
-     "conceded": 13,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 6,
-     "conceded": 13,
-     "no00": 14
-    }
-   }
-  },
-  {
    "matchId": 5882138,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-30T19:45:00.000Z",
@@ -3262,15 +3226,15 @@
    }
   },
   {
-   "matchId": 5882141,
+   "matchId": 5882137,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-30T19:45:00.000Z",
    "league": "Premier League",
    "country": "WAL",
    "leagueId": 116,
-   "home": "Colwyn Bay",
-   "away": "Cambrian United",
-   "url": "https://www.fotmob.com/match/5882141",
+   "home": "Ammanford",
+   "away": "Haverfordwest",
+   "url": "https://www.fotmob.com/match/5882137",
    "finished": false,
    "score": null,
    "types": [
@@ -3294,14 +3258,14 @@
    "cur": {
     "home": {
      "n": 14,
-     "scored": 11,
-     "conceded": 8,
+     "scored": 7,
+     "conceded": 13,
      "no00": 14
     },
     "away": {
      "n": 14,
-     "scored": 11,
-     "conceded": 11,
+     "scored": 6,
+     "conceded": 13,
      "no00": 14
     }
    }
@@ -3360,6 +3324,51 @@
      "scored": 11,
      "conceded": 13,
      "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5882141,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-30T19:45:00.000Z",
+   "league": "Premier League",
+   "country": "WAL",
+   "leagueId": 116,
+   "home": "Colwyn Bay",
+   "away": "Cambrian United",
+   "url": "https://www.fotmob.com/match/5882141",
+   "finished": false,
+   "score": null,
+   "types": [
+    "mai00"
+   ],
+   "reasons": {
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 14,
+     "other_n": 14,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 8,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 14
     }
    }
   },
