@@ -1,23 +1,23 @@
 {
  "date": "2026-10-30",
- "generated_at": "2026-10-30 16:35",
+ "generated_at": "2026-10-30 17:34",
  "partial": false,
  "stats": {
   "matches_day": 169,
   "candidates": 153,
   "evaluated": 151,
-  "qualified": 69,
+  "qualified": 70,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 9,
-   "xg": 26,
+   "xg": 27,
    "segna": 2,
    "subisce": 12,
    "mai00": 52
   },
-  "requests": 1187,
-  "seconds": 321
+  "requests": 1188,
+  "seconds": 360
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -428,6 +428,48 @@
    }
   },
   {
+   "matchId": 6362008,
+   "kickoff": "15:00",
+   "kickoff_utc": "2026-10-30T14:00:00.000Z",
+   "league": "Indian Super League",
+   "country": "IND",
+   "leagueId": 9478,
+   "home": "Northeast United FC",
+   "away": "Bengaluru FC",
+   "url": "https://www.fotmob.com/match/6362008",
+   "finished": true,
+   "score": "1-1",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.91 (casa 1.35 + ospite 1.57) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.91,
+     "exp_home": 1.35,
+     "exp_away": 1.57,
+     "method": "media generale",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 3,
+     "scored": 2,
+     "conceded": 1,
+     "no00": 2
+    },
+    "away": {
+     "n": 2,
+     "scored": 2,
+     "conceded": 1,
+     "no00": 2
+    }
+   }
+  },
+  {
    "matchId": 5970184,
    "kickoff": "15:50",
    "kickoff_utc": "2026-10-30T14:50:00.000Z",
@@ -438,7 +480,7 @@
    "away": "Neom SC",
    "url": "https://www.fotmob.com/match/5970184",
    "finished": false,
-   "score": "1-0",
+   "score": "1-2",
    "types": [
     "mai00"
    ],
@@ -483,7 +525,7 @@
    "away": "Spartak Kostroma",
    "url": "https://www.fotmob.com/match/5897655",
    "finished": false,
-   "score": "0-1",
+   "score": "1-1",
    "types": [
     "mai00"
    ],
@@ -528,7 +570,7 @@
    "away": "Spartak Varna",
    "url": "https://www.fotmob.com/match/5760526",
    "finished": false,
-   "score": "0-0",
+   "score": "4-1",
    "types": [
     "mai00"
    ],
@@ -573,7 +615,7 @@
    "away": "Etar",
    "url": "https://www.fotmob.com/match/5874258",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "subisce",
     "mai00"
@@ -630,7 +672,7 @@
    "away": "Ústí nad Labem",
    "url": "https://www.fotmob.com/match/1000015750",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "mai00"
    ],
@@ -675,7 +717,7 @@
    "away": "CS Dinamo București",
    "url": "https://www.fotmob.com/match/5976947",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "subisce",
     "mai00"
@@ -2257,51 +2299,6 @@
    }
   },
   {
-   "matchId": 5803302,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-10-30T19:00:00.000Z",
-   "league": "Ligue 2",
-   "country": "FRA",
-   "leagueId": 110,
-   "home": "Laval",
-   "away": "Boulogne",
-   "url": "https://www.fotmob.com/match/5803302",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Ospite: 6/10) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 6,
-     "other_n": 10,
-     "other_pct": 60
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 8,
-     "conceded": 10,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 6,
-     "no00": 7
-    }
-   }
-  },
-  {
    "matchId": 5803303,
    "kickoff": "20:00",
    "kickoff_utc": "2026-10-30T19:00:00.000Z",
@@ -2352,6 +2349,51 @@
      "scored": 7,
      "conceded": 8,
      "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5803302,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-10-30T19:00:00.000Z",
+   "league": "Ligue 2",
+   "country": "FRA",
+   "leagueId": 110,
+   "home": "Laval",
+   "away": "Boulogne",
+   "url": "https://www.fotmob.com/match/5803302",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Ospite: 6/10) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 6,
+     "other_n": 10,
+     "other_pct": 60
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 8,
+     "conceded": 10,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 6,
+     "no00": 7
     }
    }
   },
@@ -3286,51 +3328,6 @@
    }
   },
   {
-   "matchId": 5882141,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-30T19:45:00.000Z",
-   "league": "Premier League",
-   "country": "WAL",
-   "leagueId": 116,
-   "home": "Colwyn Bay",
-   "away": "Cambrian United",
-   "url": "https://www.fotmob.com/match/5882141",
-   "finished": false,
-   "score": null,
-   "types": [
-    "mai00"
-   ],
-   "reasons": {
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 14,
-     "other_n": 14,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 8,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 11,
-     "no00": 14
-    }
-   }
-  },
-  {
    "matchId": 5882139,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-30T19:45:00.000Z",
@@ -3365,6 +3362,51 @@
      "n": 14,
      "scored": 11,
      "conceded": 12,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 14
+    }
+   }
+  },
+  {
+   "matchId": 5882141,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-30T19:45:00.000Z",
+   "league": "Premier League",
+   "country": "WAL",
+   "leagueId": 116,
+   "home": "Colwyn Bay",
+   "away": "Cambrian United",
+   "url": "https://www.fotmob.com/match/5882141",
+   "finished": false,
+   "score": null,
+   "types": [
+    "mai00"
+   ],
+   "reasons": {
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 14,
+     "other_n": 14,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 8,
      "no00": 14
     },
     "away": {
