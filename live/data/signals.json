@@ -1294,5 +1294,75 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5802974-xg",
+  "type": "xg",
+  "time": "2026-10-30 22:21",
+  "ts": 1793395306,
+  "league": "Ligue 1",
+  "country": "FRA",
+  "leagueId": 53,
+  "home": "Lille",
+  "away": "Lens",
+  "matchId": 5802974,
+  "reason": "xG atteso prematch 3.09 (casa 1.70 + ospite 1.39) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.78",
+    "0.14"
+   ],
+   "poss": [
+    61,
+    39
+   ],
+   "shots": [
+    8,
+    3
+   ],
+   "sot": [
+    3,
+    2
+   ],
+   "big": [
+    1,
+    1
+   ],
+   "box": [
+    14,
+    11
+   ],
+   "corners": [
+    7,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5802974",
+  "over05": 1.5,
+  "over05_note": null,
+  "details": {
+   "total": 3.09,
+   "exp_home": 1.704,
+   "exp_away": 1.386,
+   "h_for": 1.565,
+   "h_ag": 0.985,
+   "a_for": 1.788,
+   "a_ag": 1.843,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
