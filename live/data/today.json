@@ -1,6 +1,6 @@
 {
  "date": "2026-10-30",
- "generated_at": "2026-10-30 22:51",
+ "generated_at": "2026-10-30 23:33",
  "partial": false,
  "stats": {
   "matches_day": 167,
@@ -17,7 +17,7 @@
    "mai00": 1
   },
   "requests": 1180,
-  "seconds": 279
+  "seconds": 265
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -1255,46 +1255,43 @@
    }
   },
   {
-   "matchId": 5803302,
+   "matchId": 5803304,
    "kickoff": "20:00",
    "kickoff_utc": "2026-10-30T19:00:00.000Z",
    "league": "Ligue 2",
    "country": "FRA",
    "leagueId": 110,
-   "home": "Laval",
-   "away": "Boulogne",
-   "url": "https://www.fotmob.com/match/5803302",
+   "home": "Nantes",
+   "away": "Clermont Foot",
+   "url": "https://www.fotmob.com/match/5803304",
    "finished": true,
-   "score": "1-0",
+   "score": "1-1",
    "types": [
-    "subisce"
+    "xg"
    ],
    "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Ospite: 6/10) [solo campionato in corso, min. 9 partite per squadra]"
+    "xg": "xG atteso prematch 2.93 (casa 1.96 + ospite 0.97) ≥ 2.7"
    },
    "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 6,
-     "other_n": 10,
-     "other_pct": 60
+    "xg": {
+     "total": 2.93,
+     "exp_home": 1.96,
+     "exp_away": 0.97,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
      "n": 10,
-     "scored": 8,
-     "conceded": 10,
-     "no00": 10
+     "scored": 6,
+     "conceded": 8,
+     "no00": 9
     },
     "away": {
      "n": 10,
      "scored": 6,
-     "conceded": 6,
+     "conceded": 7,
      "no00": 7
     }
    }
@@ -1342,43 +1339,46 @@
    }
   },
   {
-   "matchId": 5803304,
+   "matchId": 5803302,
    "kickoff": "20:00",
    "kickoff_utc": "2026-10-30T19:00:00.000Z",
    "league": "Ligue 2",
    "country": "FRA",
    "leagueId": 110,
-   "home": "Nantes",
-   "away": "Clermont Foot",
-   "url": "https://www.fotmob.com/match/5803304",
+   "home": "Laval",
+   "away": "Boulogne",
+   "url": "https://www.fotmob.com/match/5803302",
    "finished": true,
-   "score": "1-1",
+   "score": "1-0",
    "types": [
-    "xg"
+    "subisce"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.93 (casa 1.96 + ospite 0.97) ≥ 2.7"
+    "subisce": "Casa ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Ospite: 6/10) [solo campionato in corso, min. 9 partite per squadra]"
    },
    "info": {
-    "xg": {
-     "total": 2.93,
-     "exp_home": 1.96,
-     "exp_away": 0.97,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 6,
+     "other_n": 10,
+     "other_pct": 60
     }
    },
    "cur": {
     "home": {
      "n": 10,
-     "scored": 6,
-     "conceded": 8,
-     "no00": 9
+     "scored": 8,
+     "conceded": 10,
+     "no00": 10
     },
     "away": {
      "n": 10,
      "scored": 6,
-     "conceded": 7,
+     "conceded": 6,
      "no00": 7
     }
    }
@@ -2002,7 +2002,7 @@
    "home": "Villarreal",
    "away": "Espanyol",
    "url": "https://www.fotmob.com/match/5868120",
-   "finished": false,
+   "finished": true,
    "score": "0-1",
    "types": [
     "xg"
@@ -2044,8 +2044,8 @@
    "home": "Lille",
    "away": "Lens",
    "url": "https://www.fotmob.com/match/5802974",
-   "finished": false,
-   "score": "0-0",
+   "finished": true,
+   "score": "1-0",
    "types": [
     "xg"
    ],
