@@ -1,23 +1,23 @@
 {
  "date": "2026-10-30",
- "generated_at": "2026-10-30 01:07",
+ "generated_at": "2026-10-30 02:14",
  "partial": false,
  "stats": {
-  "matches_day": 169,
-  "candidates": 153,
-  "evaluated": 151,
-  "qualified": 71,
+  "matches_day": 168,
+  "candidates": 152,
+  "evaluated": 150,
+  "qualified": 70,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 9,
-   "xg": 27,
+   "xg": 26,
    "segna": 2,
    "subisce": 12,
    "mai00": 52
   },
-  "requests": 1205,
-  "seconds": 339
+  "requests": 1173,
+  "seconds": 286
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -38,48 +38,6 @@
  },
  "matches": [
   {
-   "matchId": 5103689,
-   "kickoff": "23:30",
-   "kickoff_utc": "2026-10-29T22:30:00.000Z",
-   "league": "Série A",
-   "country": "BRA",
-   "leagueId": 268,
-   "home": "Atlético-MG",
-   "away": "Cruzeiro",
-   "url": "https://www.fotmob.com/match/5103689",
-   "finished": false,
-   "score": "0-1",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.02 (casa 1.68 + ospite 1.34) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.02,
-     "exp_home": 1.68,
-     "exp_away": 1.34,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 32,
-     "scored": 23,
-     "conceded": 24,
-     "no00": 31
-    },
-    "away": {
-     "n": 32,
-     "scored": 28,
-     "conceded": 25,
-     "no00": 31
-    }
-   }
-  },
-  {
    "matchId": 5103685,
    "kickoff": "00:00",
    "kickoff_utc": "2026-10-29T23:00:00.000Z",
@@ -89,8 +47,8 @@
    "home": "Vasco da Gama",
    "away": "Flamengo",
    "url": "https://www.fotmob.com/match/5103685",
-   "finished": false,
-   "score": "1-2",
+   "finished": true,
+   "score": "1-4",
    "types": [
     "xg",
     "mai00"
@@ -144,7 +102,7 @@
    "away": "Athletico Paranaense",
    "url": "https://www.fotmob.com/match/5103690",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -186,7 +144,7 @@
    "away": "Mineros de Zacatecas",
    "url": "https://www.fotmob.com/match/5898772",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "mai00"
    ],
@@ -2290,60 +2248,6 @@
    }
   },
   {
-   "matchId": 5803303,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-10-30T19:00:00.000Z",
-   "league": "Ligue 2",
-   "country": "FRA",
-   "leagueId": 110,
-   "home": "Metz",
-   "away": "Pau",
-   "url": "https://www.fotmob.com/match/5803303",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "mai00"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.88 (casa 1.39 + ospite 1.48) ≥ 2.7",
-    "mai00": "Ospite: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Casa: 9/10 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 2.88,
-     "exp_home": 1.39,
-     "exp_away": 1.48,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "mai00": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 9,
-     "other_n": 10,
-     "other_pct": 90
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 8,
-     "conceded": 9,
-     "no00": 9
-    },
-    "away": {
-     "n": 10,
-     "scored": 7,
-     "conceded": 8,
-     "no00": 10
-    }
-   }
-  },
-  {
    "matchId": 5803302,
    "kickoff": "20:00",
    "kickoff_utc": "2026-10-30T19:00:00.000Z",
@@ -2427,6 +2331,60 @@
      "scored": 6,
      "conceded": 7,
      "no00": 7
+    }
+   }
+  },
+  {
+   "matchId": 5803303,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-10-30T19:00:00.000Z",
+   "league": "Ligue 2",
+   "country": "FRA",
+   "leagueId": 110,
+   "home": "Metz",
+   "away": "Pau",
+   "url": "https://www.fotmob.com/match/5803303",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "mai00"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.88 (casa 1.39 + ospite 1.48) ≥ 2.7",
+    "mai00": "Ospite: over 0.5 totali (nessuno 0-0) in 10/10 partite di campionato 2026/27; Casa: 9/10 senza 0-0 (90%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 2.88,
+     "exp_home": 1.39,
+     "exp_away": 1.48,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "mai00": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 10,
+     "other_pct": 90
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 8,
+     "conceded": 9,
+     "no00": 9
+    },
+    "away": {
+     "n": 10,
+     "scored": 7,
+     "conceded": 8,
+     "no00": 10
     }
    }
   },
@@ -3361,51 +3319,6 @@
    }
   },
   {
-   "matchId": 5882141,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-30T19:45:00.000Z",
-   "league": "Premier League",
-   "country": "WAL",
-   "leagueId": 116,
-   "home": "Colwyn Bay",
-   "away": "Cambrian United",
-   "url": "https://www.fotmob.com/match/5882141",
-   "finished": false,
-   "score": null,
-   "types": [
-    "mai00"
-   ],
-   "reasons": {
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 14,
-     "other_n": 14,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 8,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 11,
-     "no00": 14
-    }
-   }
-  },
-  {
    "matchId": 5882139,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-30T19:45:00.000Z",
@@ -3440,6 +3353,51 @@
      "n": 14,
      "scored": 11,
      "conceded": 12,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 14
+    }
+   }
+  },
+  {
+   "matchId": 5882141,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-30T19:45:00.000Z",
+   "league": "Premier League",
+   "country": "WAL",
+   "leagueId": 116,
+   "home": "Colwyn Bay",
+   "away": "Cambrian United",
+   "url": "https://www.fotmob.com/match/5882141",
+   "finished": false,
+   "score": null,
+   "types": [
+    "mai00"
+   ],
+   "reasons": {
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 14,
+     "other_n": 14,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 8,
      "no00": 14
     },
     "away": {
