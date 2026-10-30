@@ -1079,5 +1079,150 @@
   },
   "telegram": true,
   "resolved": "2026-10-30 20:55"
+ },
+ {
+  "id": "5804024-xg",
+  "type": "xg",
+  "time": "2026-10-30 21:49",
+  "ts": 1793393379,
+  "league": "Ekstraklasa",
+  "country": "POL",
+  "leagueId": 196,
+  "home": "Górnik Zabrze",
+  "away": "Legia Warszawa",
+  "matchId": 5804024,
+  "reason": "xG atteso prematch 2.99 (casa 1.50 + ospite 1.49) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.55",
+    "0.30"
+   ],
+   "poss": [
+    51,
+    49
+   ],
+   "shots": [
+    11,
+    3
+   ],
+   "sot": [
+    0,
+    0
+   ],
+   "big": [
+    0,
+    1
+   ],
+   "box": [
+    16,
+    6
+   ],
+   "corners": [
+    3,
+    0
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5804024",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.986,
+   "exp_home": 1.498,
+   "exp_away": 1.487,
+   "h_for": 1.61,
+   "h_ag": 1.098,
+   "a_for": 1.877,
+   "a_ag": 1.387,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
+ },
+ {
+  "id": "5804024-segna",
+  "type": "segna",
+  "time": "2026-10-30 21:49",
+  "ts": 1793393379,
+  "league": "Ekstraklasa",
+  "country": "POL",
+  "leagueId": 196,
+  "home": "Górnik Zabrze",
+  "away": "Legia Warszawa",
+  "matchId": 5804024,
+  "reason": "Ospite ha segnato almeno 1 gol in 12/12 partite di campionato 2026/27; Casa in 11/12 (92%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.55",
+    "0.30"
+   ],
+   "poss": [
+    51,
+    49
+   ],
+   "shots": [
+    11,
+    3
+   ],
+   "sot": [
+    0,
+    0
+   ],
+   "big": [
+    0,
+    1
+   ],
+   "box": [
+    16,
+    6
+   ],
+   "corners": [
+    3,
+    0
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5804024",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "season": "2026/27",
+   "strong": "away",
+   "home": {
+    "n": 12,
+    "scored": 11,
+    "conceded": 9,
+    "no00": 11
+   },
+   "away": {
+    "n": 12,
+    "scored": 12,
+    "conceded": 9,
+    "no00": 12
+   }
+  },
+  "telegram": true
  }
 ]
