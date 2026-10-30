@@ -671,5 +671,124 @@
   },
   "telegram": true,
   "resolved": "2026-10-30 19:54"
+ },
+ {
+  "id": "5127985-storico",
+  "type": "storico",
+  "time": "2026-10-30 20:02",
+  "ts": 1793386932,
+  "league": "Ettan Soedra",
+  "country": "SWE",
+  "leagueId": 169,
+  "home": "BK Olympic",
+  "away": "Hässleholms IF",
+  "matchId": 5127985,
+  "reason": "Ospite: almeno 72 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Casa: 0 0-0 nelle ultime 50 di campionato",
+  "minute": 62,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 62,
+   "phase": "HT",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5127985",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 55,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "26/04/2025",
+     "opp": "Oskarshamns AIK",
+     "home": false
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 60
+   },
+   "away": {
+    "streak": 72,
+    "complete": false,
+    "capped": false,
+    "last00": null,
+    "n": 50,
+    "zz": 0,
+    "avail": 72
+   },
+   "strong": "away"
+  },
+  "streak": 72,
+  "streak_complete": false,
+  "telegram": true
+ },
+ {
+  "id": "5127985-mai00",
+  "type": "mai00",
+  "time": "2026-10-30 20:02",
+  "ts": 1793386932,
+  "league": "Ettan Soedra",
+  "country": "SWE",
+  "leagueId": 169,
+  "home": "BK Olympic",
+  "away": "Hässleholms IF",
+  "matchId": 5127985,
+  "reason": "Casa: over 0.5 totali (nessuno 0-0) in 28/28 partite di campionato 2026; Ospite: 28/28 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 62,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 62,
+   "phase": "HT",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5127985",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026",
+   "strong": "home",
+   "home": {
+    "n": 28,
+    "scored": 24,
+    "conceded": 25,
+    "no00": 28
+   },
+   "away": {
+    "n": 28,
+    "scored": 24,
+    "conceded": 20,
+    "no00": 28
+   }
+  },
+  "telegram": true
  }
 ]
