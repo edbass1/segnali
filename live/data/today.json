@@ -1,6 +1,6 @@
 {
  "date": "2026-10-30",
- "generated_at": "2026-10-30 10:37",
+ "generated_at": "2026-10-30 11:34",
  "partial": false,
  "stats": {
   "matches_day": 168,
@@ -16,8 +16,8 @@
    "subisce": 12,
    "mai00": 52
   },
-  "requests": 1173,
-  "seconds": 205
+  "requests": 1172,
+  "seconds": 353
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -3262,6 +3262,96 @@
    }
   },
   {
+   "matchId": 5882141,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-30T19:45:00.000Z",
+   "league": "Premier League",
+   "country": "WAL",
+   "leagueId": 116,
+   "home": "Colwyn Bay",
+   "away": "Cambrian United",
+   "url": "https://www.fotmob.com/match/5882141",
+   "finished": false,
+   "score": null,
+   "types": [
+    "mai00"
+   ],
+   "reasons": {
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 14,
+     "other_n": 14,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 8,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 14
+    }
+   }
+  },
+  {
+   "matchId": 5882139,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-10-30T19:45:00.000Z",
+   "league": "Premier League",
+   "country": "WAL",
+   "leagueId": 116,
+   "home": "Briton Ferry Llansawel",
+   "away": "Llandudno FC",
+   "url": "https://www.fotmob.com/match/5882139",
+   "finished": false,
+   "score": null,
+   "types": [
+    "mai00"
+   ],
+   "reasons": {
+    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "mai00": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 14,
+     "other_n": 14,
+     "other_pct": 100
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 12,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 14
+    }
+   }
+  },
+  {
    "matchId": 5882142,
    "kickoff": "20:45",
    "kickoff_utc": "2026-10-30T19:45:00.000Z",
@@ -3315,96 +3405,6 @@
      "scored": 11,
      "conceded": 13,
      "no00": 13
-    }
-   }
-  },
-  {
-   "matchId": 5882139,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-30T19:45:00.000Z",
-   "league": "Premier League",
-   "country": "WAL",
-   "leagueId": 116,
-   "home": "Briton Ferry Llansawel",
-   "away": "Llandudno FC",
-   "url": "https://www.fotmob.com/match/5882139",
-   "finished": false,
-   "score": null,
-   "types": [
-    "mai00"
-   ],
-   "reasons": {
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 14,
-     "other_n": 14,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 12,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 11,
-     "no00": 14
-    }
-   }
-  },
-  {
-   "matchId": 5882141,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-10-30T19:45:00.000Z",
-   "league": "Premier League",
-   "country": "WAL",
-   "leagueId": 116,
-   "home": "Colwyn Bay",
-   "away": "Cambrian United",
-   "url": "https://www.fotmob.com/match/5882141",
-   "finished": false,
-   "score": null,
-   "types": [
-    "mai00"
-   ],
-   "reasons": {
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 14/14 partite di campionato 2026/27; Ospite: 14/14 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 14,
-     "other_n": 14,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 8,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 11,
-     "no00": 14
     }
    }
   },
