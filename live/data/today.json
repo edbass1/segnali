@@ -1,6 +1,6 @@
 {
  "date": "2026-10-30",
- "generated_at": "2026-10-30 08:57",
+ "generated_at": "2026-10-30 09:48",
  "partial": false,
  "stats": {
   "matches_day": 168,
@@ -17,7 +17,7 @@
    "mai00": 52
   },
   "requests": 1173,
-  "seconds": 335
+  "seconds": 258
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -2248,6 +2248,48 @@
    }
   },
   {
+   "matchId": 5803304,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-10-30T19:00:00.000Z",
+   "league": "Ligue 2",
+   "country": "FRA",
+   "leagueId": 110,
+   "home": "Nantes",
+   "away": "Clermont Foot",
+   "url": "https://www.fotmob.com/match/5803304",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.93 (casa 1.96 + ospite 0.97) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.93,
+     "exp_home": 1.96,
+     "exp_away": 0.97,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 8,
+     "no00": 9
+    },
+    "away": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 7,
+     "no00": 7
+    }
+   }
+  },
+  {
    "matchId": 5803302,
    "kickoff": "20:00",
    "kickoff_utc": "2026-10-30T19:00:00.000Z",
@@ -2288,48 +2330,6 @@
      "n": 10,
      "scored": 6,
      "conceded": 6,
-     "no00": 7
-    }
-   }
-  },
-  {
-   "matchId": 5803304,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-10-30T19:00:00.000Z",
-   "league": "Ligue 2",
-   "country": "FRA",
-   "leagueId": 110,
-   "home": "Nantes",
-   "away": "Clermont Foot",
-   "url": "https://www.fotmob.com/match/5803304",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.93 (casa 1.96 + ospite 0.97) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.93,
-     "exp_home": 1.96,
-     "exp_away": 0.97,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 8,
-     "no00": 9
-    },
-    "away": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 7,
      "no00": 7
     }
    }
