@@ -1853,5 +1853,128 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5916095-storico",
+  "type": "storico",
+  "time": "2026-10-31 15:16",
+  "ts": 1793456207,
+  "league": "Regionalliga Southwest",
+  "country": "GER",
+  "leagueId": 512,
+  "home": "Hessen Kassel",
+  "away": "SG Barockstadt Fulda Lehnerz",
+  "matchId": 5916095,
+  "reason": "Ospite: 52 partite di campionato consecutive senza 0-0 (ultimo 0-0: 12/04/2025 @ Eintracht Trier); Casa: 2 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5916095",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 29,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "22/11/2025",
+     "opp": "Homburg",
+     "home": true
+    },
+    "n": 50,
+    "zz": 2,
+    "avail": 81
+   },
+   "away": {
+    "streak": 52,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "12/04/2025",
+     "opp": "Eintracht Trier",
+     "home": false
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 81
+   },
+   "strong": "away"
+  },
+  "streak": 52,
+  "streak_complete": true,
+  "telegram": true
+ },
+ {
+  "id": "5911252-segna",
+  "type": "segna",
+  "time": "2026-10-31 15:16",
+  "ts": 1793456216,
+  "league": "Regionalliga West",
+  "country": "GER",
+  "leagueId": 512,
+  "home": "SC Wiedenbrück",
+  "away": "Oberhausen",
+  "matchId": 5911252,
+  "reason": "Casa ha segnato almeno 1 gol in 14/14 partite di campionato 2026/27; Ospite in 13/14 (93%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 61,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 61,
+   "phase": "61",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5911252",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 14,
+    "scored": 14,
+    "conceded": 13,
+    "no00": 14
+   },
+   "away": {
+    "n": 14,
+    "scored": 13,
+    "conceded": 9,
+    "no00": 13
+   }
+  },
+  "telegram": true
  }
 ]

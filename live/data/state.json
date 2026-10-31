@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-10-31 15:12",
+ "last_scan": "2026-10-31 15:17",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -124,7 +124,17 @@
   "5837250": {
    "storico": "2026-10-31 14:48",
    "xg": "2026-10-31 14:48"
-  }
+  },
+  "5911607": {},
+  "5916095": {
+   "storico": "2026-10-31 15:16"
+  },
+  "5916093": {},
+  "5916098": {},
+  "5911252": {
+   "segna": "2026-10-31 15:16"
+  },
+  "5911250": {}
  },
  "checked": {
   "6050536": {
@@ -883,15 +893,81 @@
     "subisce": false,
     "mai00": false
    }
+  },
+  "5911607": {
+   "t": 1793456204,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5916095": {
+   "t": 1793456207,
+   "r": "valutata",
+   "res": {
+    "storico": true,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5916093": {
+   "t": 1793456210,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5916098": {
+   "t": 1793456212,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5911252": {
+   "t": 1793456216,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": true,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5911250": {
+   "t": 1793456221,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
   }
  },
  "live_count": 138,
- "candidates_last": 0,
- "requests_last": 1,
- "last_write": "2026-10-31 15:12",
- "last_write_ts": 1793455956,
+ "candidates_last": 6,
+ "requests_last": 24,
+ "last_write": "2026-10-31 15:17",
+ "last_write_ts": 1793456221,
  "telegram": {
-  "last_try": "2026-10-31 14:54",
+  "last_try": "2026-10-31 15:16",
   "ok": true,
   "error": ""
  },
