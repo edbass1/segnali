@@ -2105,5 +2105,59 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5949332-subisce",
+  "type": "subisce",
+  "time": "2026-10-31 17:07",
+  "ts": 1793462824,
+  "league": "Northern Premier Division",
+  "country": "ENG",
+  "leagueId": 8947,
+  "home": "FC United of Manchester",
+  "away": "Lancaster City",
+  "matchId": 5949332,
+  "reason": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 13/16) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 46,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 46,
+   "phase": "46",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5949332",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 14,
+    "scored": 10,
+    "conceded": 14,
+    "no00": 14
+   },
+   "away": {
+    "n": 16,
+    "scored": 13,
+    "conceded": 13,
+    "no00": 16
+   }
+  },
+  "telegram": true
  }
 ]
