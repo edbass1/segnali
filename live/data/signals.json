@@ -2553,5 +2553,240 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5781791-storico",
+  "type": "storico",
+  "time": "2026-10-31 20:05",
+  "ts": 1793473538,
+  "league": "Eredivisie",
+  "country": "NED",
+  "leagueId": 57,
+  "home": "SC Heerenveen",
+  "away": "NEC Nijmegen",
+  "matchId": 5781791,
+  "reason": "Ospite: 55 partite di campionato consecutive senza 0-0 (ultimo 0-0: 01/03/2025 @ Feyenoord); Casa: 2 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.00",
+    "0.87"
+   ],
+   "poss": [
+    39,
+    61
+   ],
+   "shots": [
+    7,
+    16
+   ],
+   "sot": [
+    1,
+    2
+   ],
+   "big": [
+    2,
+    1
+   ],
+   "box": [
+    14,
+    28
+   ],
+   "corners": [
+    4,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5781791",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "home": {
+    "streak": 4,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "13/09/2026",
+     "opp": "Telstar",
+     "home": true
+    },
+    "n": 50,
+    "zz": 2,
+    "avail": 80
+   },
+   "away": {
+    "streak": 55,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "01/03/2025",
+     "opp": "Feyenoord",
+     "home": false
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 79
+   },
+   "strong": "away"
+  },
+  "streak": 55,
+  "streak_complete": true,
+  "telegram": true
+ },
+ {
+  "id": "5781791-xg",
+  "type": "xg",
+  "time": "2026-10-31 20:05",
+  "ts": 1793473538,
+  "league": "Eredivisie",
+  "country": "NED",
+  "leagueId": 57,
+  "home": "SC Heerenveen",
+  "away": "NEC Nijmegen",
+  "matchId": 5781791,
+  "reason": "xG atteso prematch 3.36 (casa 1.85 + ospite 1.51) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.00",
+    "0.87"
+   ],
+   "poss": [
+    39,
+    61
+   ],
+   "shots": [
+    7,
+    16
+   ],
+   "sot": [
+    1,
+    2
+   ],
+   "big": [
+    2,
+    1
+   ],
+   "box": [
+    14,
+    28
+   ],
+   "corners": [
+    4,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5781791",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.361,
+   "exp_home": 1.852,
+   "exp_away": 1.509,
+   "h_for": 1.458,
+   "h_ag": 1.128,
+   "a_for": 1.89,
+   "a_ag": 2.245,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
+ },
+ {
+  "id": "5781791-subisce",
+  "type": "subisce",
+  "time": "2026-10-31 20:05",
+  "ts": 1793473538,
+  "league": "Eredivisie",
+  "country": "NED",
+  "leagueId": 57,
+  "home": "SC Heerenveen",
+  "away": "NEC Nijmegen",
+  "matchId": 5781791,
+  "reason": "Ospite ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Casa: 6/10) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.00",
+    "0.87"
+   ],
+   "poss": [
+    39,
+    61
+   ],
+   "shots": [
+    7,
+    16
+   ],
+   "sot": [
+    1,
+    2
+   ],
+   "big": [
+    2,
+    1
+   ],
+   "box": [
+    14,
+    28
+   ],
+   "corners": [
+    4,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5781791",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "season": "2026/27",
+   "strong": "away",
+   "home": {
+    "n": 10,
+    "scored": 7,
+    "conceded": 6,
+    "no00": 9
+   },
+   "away": {
+    "n": 10,
+    "scored": 9,
+    "conceded": 10,
+    "no00": 10
+   }
+  },
+  "telegram": true
  }
 ]
