@@ -1746,8 +1746,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "lost",
+  "final": "0-0",
   "url": "https://www.fotmob.com/match/5837250",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -1782,7 +1782,8 @@
   },
   "streak": 66,
   "streak_complete": true,
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-10-31 15:24"
  },
  {
   "id": "5837250-xg",
@@ -1836,8 +1837,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "lost",
+  "final": "0-0",
   "url": "https://www.fotmob.com/match/5837250",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -1852,7 +1853,8 @@
    "method": "casa/trasferta",
    "season": "2026/2027"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-10-31 15:24"
  },
  {
   "id": "5916095-storico",
