@@ -1,30 +1,30 @@
 {
  "date": "2026-10-31",
- "generated_at": "2026-10-31 18:55",
+ "generated_at": "2026-10-31 19:37",
  "partial": true,
  "stats": {
   "matches_day": 722,
   "candidates": 621,
-  "evaluated": 289,
-  "qualified": 77,
+  "evaluated": 262,
+  "qualified": 74,
   "errors": 0,
-  "not_evaluated_budget": 315,
+  "not_evaluated_budget": 344,
   "by_type": {
    "storico": 24,
-   "xg": 38,
-   "segna": 9,
-   "subisce": 19,
+   "xg": 37,
+   "segna": 8,
+   "subisce": 18,
    "mai00": 1
   },
-  "requests": 1762,
-  "seconds": 430
+  "requests": 1679,
+  "seconds": 436
  },
  "skipped_leagues": {
   "JPN WE League": "femminile",
   "ESP Liga F": "femminile",
   "ITA Serie A Femminile": "femminile",
-  "SWE Elitettan": "femminile",
   "DEN A-Liga": "femminile",
+  "SWE Elitettan": "femminile",
   "NOR Toppserien": "femminile",
   "NOR Toppserien Qualification": "femminile",
   "FRA Premiere Ligue": "femminile",
@@ -304,60 +304,6 @@
    }
   },
   {
-   "matchId": 5803643,
-   "kickoff": "06:00",
-   "kickoff_utc": "2026-10-31T05:00:00.000Z",
-   "league": "J. League",
-   "country": "JPN",
-   "leagueId": 223,
-   "home": "Mito Hollyhock",
-   "away": "Sanfrecce Hiroshima",
-   "url": "https://www.fotmob.com/match/5803643",
-   "finished": true,
-   "score": "0-3",
-   "types": [
-    "xg",
-    "subisce"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.94 (casa 0.93 + ospite 2.02) ≥ 2.7",
-    "subisce": "Casa ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Ospite: 5/12) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 2.94,
-     "exp_home": 0.93,
-     "exp_away": 2.02,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 12,
-     "strong_n": 12,
-     "strong_pct": 100,
-     "other_k": 5,
-     "other_n": 12,
-     "other_pct": 42
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 7,
-     "conceded": 12,
-     "no00": 12
-    },
-    "away": {
-     "n": 12,
-     "scored": 10,
-     "conceded": 5,
-     "no00": 11
-    }
-   }
-  },
-  {
    "matchId": 5803641,
    "kickoff": "06:00",
    "kickoff_utc": "2026-10-31T05:00:00.000Z",
@@ -408,6 +354,60 @@
      "scored": 7,
      "conceded": 10,
      "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 5803643,
+   "kickoff": "06:00",
+   "kickoff_utc": "2026-10-31T05:00:00.000Z",
+   "league": "J. League",
+   "country": "JPN",
+   "leagueId": 223,
+   "home": "Mito Hollyhock",
+   "away": "Sanfrecce Hiroshima",
+   "url": "https://www.fotmob.com/match/5803643",
+   "finished": true,
+   "score": "0-3",
+   "types": [
+    "xg",
+    "subisce"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.94 (casa 0.93 + ospite 2.02) ≥ 2.7",
+    "subisce": "Casa ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Ospite: 5/12) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 2.94,
+     "exp_home": 0.93,
+     "exp_away": 2.02,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 12,
+     "strong_n": 12,
+     "strong_pct": 100,
+     "other_k": 5,
+     "other_n": 12,
+     "other_pct": 42
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 7,
+     "conceded": 12,
+     "no00": 12
+    },
+    "away": {
+     "n": 12,
+     "scored": 10,
+     "conceded": 5,
+     "no00": 11
     }
    }
   },
@@ -1748,51 +1748,6 @@
    }
   },
   {
-   "matchId": 5836906,
-   "kickoff": "13:30",
-   "kickoff_utc": "2026-10-31T12:30:00.000Z",
-   "league": "Championship",
-   "country": "ENG",
-   "leagueId": 48,
-   "home": "Stoke City",
-   "away": "Preston North End",
-   "url": "https://www.fotmob.com/match/5836906",
-   "finished": true,
-   "score": "2-0",
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Ospite ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Casa: 8/12) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 12,
-     "strong_n": 12,
-     "strong_pct": 100,
-     "other_k": 8,
-     "other_n": 12,
-     "other_pct": 67
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 11,
-     "conceded": 8,
-     "no00": 11
-    },
-    "away": {
-     "n": 12,
-     "scored": 8,
-     "conceded": 12,
-     "no00": 12
-    }
-   }
-  },
-  {
    "matchId": 5836903,
    "kickoff": "13:30",
    "kickoff_utc": "2026-10-31T12:30:00.000Z",
@@ -1862,6 +1817,51 @@
    }
   },
   {
+   "matchId": 5836906,
+   "kickoff": "13:30",
+   "kickoff_utc": "2026-10-31T12:30:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Stoke City",
+   "away": "Preston North End",
+   "url": "https://www.fotmob.com/match/5836906",
+   "finished": true,
+   "score": "2-0",
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Ospite ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Casa: 8/12) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 12,
+     "strong_n": 12,
+     "strong_pct": 100,
+     "other_k": 8,
+     "other_n": 12,
+     "other_pct": 67
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 11,
+     "conceded": 8,
+     "no00": 11
+    },
+    "away": {
+     "n": 12,
+     "scored": 8,
+     "conceded": 12,
+     "no00": 12
+    }
+   }
+  },
+  {
    "matchId": 5837244,
    "kickoff": "13:30",
    "kickoff_utc": "2026-10-31T12:30:00.000Z",
@@ -1900,48 +1900,6 @@
      "scored": 11,
      "conceded": 9,
      "no00": 11
-    }
-   }
-  },
-  {
-   "matchId": 5837246,
-   "kickoff": "13:30",
-   "kickoff_utc": "2026-10-31T12:30:00.000Z",
-   "league": "League One",
-   "country": "ENG",
-   "leagueId": 108,
-   "home": "Leyton Orient",
-   "away": "Cambridge United",
-   "url": "https://www.fotmob.com/match/5837246",
-   "finished": true,
-   "score": "3-0",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.87 (casa 1.32 + ospite 1.55) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.87,
-     "exp_home": 1.32,
-     "exp_away": 1.55,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 9,
-     "conceded": 7,
-     "no00": 11
-    },
-    "away": {
-     "n": 13,
-     "scored": 13,
-     "conceded": 12,
-     "no00": 13
     }
    }
   },
@@ -1995,6 +1953,48 @@
      "scored": 10,
      "conceded": 8,
      "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 5837246,
+   "kickoff": "13:30",
+   "kickoff_utc": "2026-10-31T12:30:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Leyton Orient",
+   "away": "Cambridge United",
+   "url": "https://www.fotmob.com/match/5837246",
+   "finished": true,
+   "score": "3-0",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.87 (casa 1.32 + ospite 1.55) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.87,
+     "exp_home": 1.32,
+     "exp_away": 1.55,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 7,
+     "no00": 11
+    },
+    "away": {
+     "n": 13,
+     "scored": 13,
+     "conceded": 12,
+     "no00": 13
     }
    }
   },
@@ -2654,93 +2654,6 @@
    }
   },
   {
-   "matchId": 5804028,
-   "kickoff": "14:45",
-   "kickoff_utc": "2026-10-31T13:45:00.000Z",
-   "league": "Ekstraklasa",
-   "country": "POL",
-   "leagueId": 196,
-   "home": "Wieczysta Kraków",
-   "away": "Jagiellonia Białystok",
-   "url": "https://www.fotmob.com/match/5804028",
-   "finished": true,
-   "score": "1-3",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.21 (casa 1.58 + ospite 1.63) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.21,
-     "exp_home": 1.58,
-     "exp_away": 1.63,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 9,
-     "conceded": 11,
-     "no00": 12
-    },
-    "away": {
-     "n": 11,
-     "scored": 8,
-     "conceded": 9,
-     "no00": 11
-    }
-   }
-  },
-  {
-   "matchId": 5886568,
-   "kickoff": "14:45",
-   "kickoff_utc": "2026-10-31T13:45:00.000Z",
-   "league": "Ligue 3",
-   "country": "FRA",
-   "leagueId": 8970,
-   "home": "La Roche VF",
-   "away": "Bourg en Bresse Péronnas",
-   "url": "https://www.fotmob.com/match/5886568",
-   "finished": true,
-   "score": "2-0",
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Ospite ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Casa: 7/10) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 7,
-     "other_n": 10,
-     "other_pct": 70
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 9,
-     "conceded": 7,
-     "no00": 9
-    },
-    "away": {
-     "n": 10,
-     "scored": 3,
-     "conceded": 10,
-     "no00": 10
-    }
-   }
-  },
-  {
    "matchId": 5943697,
    "kickoff": "15:00",
    "kickoff_utc": "2026-10-31T14:00:00.000Z",
@@ -2830,51 +2743,6 @@
      "scored": 6,
      "conceded": 5,
      "no00": 7
-    }
-   }
-  },
-  {
-   "matchId": 5922818,
-   "kickoff": "15:00",
-   "kickoff_utc": "2026-10-31T14:00:00.000Z",
-   "league": "NB II",
-   "country": "HUN",
-   "leagueId": 9117,
-   "home": "Tiszakécske",
-   "away": "Videoton FC Fehérvár",
-   "url": "https://www.fotmob.com/match/5922818",
-   "finished": true,
-   "score": "0-1",
-   "types": [
-    "segna"
-   ],
-   "reasons": {
-    "segna": "Casa ha segnato almeno 1 gol in 11/11 partite di campionato 2026/27; Ospite in 9/11 (82%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "segna": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 11,
-     "strong_n": 11,
-     "strong_pct": 100,
-     "other_k": 9,
-     "other_n": 11,
-     "other_pct": 82
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 11,
-     "scored": 11,
-     "conceded": 8,
-     "no00": 11
-    },
-    "away": {
-     "n": 11,
-     "scored": 9,
-     "conceded": 8,
-     "no00": 11
     }
    }
   },
@@ -3431,7 +3299,7 @@
    "home": "Altach",
    "away": "Ried",
    "url": "https://www.fotmob.com/match/5846011",
-   "finished": false,
+   "finished": true,
    "score": "1-1",
    "types": [
     "xg"
@@ -3474,7 +3342,7 @@
    "away": "Orlando City",
    "url": "https://www.fotmob.com/match/5071470",
    "finished": false,
-   "score": "1-0",
+   "score": "2-0",
    "types": [
     "storico",
     "xg"
@@ -3531,7 +3399,7 @@
    "away": "FC Vaduz",
    "url": "https://www.fotmob.com/match/5804286",
    "finished": false,
-   "score": "1-1",
+   "score": "1-2",
    "types": [
     "xg",
     "segna"
