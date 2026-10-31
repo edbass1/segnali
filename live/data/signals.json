@@ -1980,5 +1980,59 @@
   },
   "telegram": true,
   "resolved": "2026-10-31 15:59"
+ },
+ {
+  "id": "5922818-segna",
+  "type": "segna",
+  "time": "2026-10-31 16:17",
+  "ts": 1793459878,
+  "league": "NB II",
+  "country": "HUN",
+  "leagueId": 9117,
+  "home": "Tiszakécske",
+  "away": "Videoton FC Fehérvár",
+  "matchId": 5922818,
+  "reason": "Casa ha segnato almeno 1 gol in 11/11 partite di campionato 2026/27; Ospite in 9/11 (82%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5922818",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 11,
+    "scored": 11,
+    "conceded": 8,
+    "no00": 11
+   },
+   "away": {
+    "n": 11,
+    "scored": 9,
+    "conceded": 8,
+    "no00": 11
+   }
+  },
+  "telegram": true
  }
 ]
