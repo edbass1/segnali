@@ -2373,5 +2373,75 @@
   "streak_complete": true,
   "telegram": true,
   "resolved": "2026-10-31 18:58"
+ },
+ {
+  "id": "5847221-xg",
+  "type": "xg",
+  "time": "2026-10-31 19:11",
+  "ts": 1793470296,
+  "league": "Premier League",
+  "country": "RUS",
+  "leagueId": 63,
+  "home": "Rodina",
+  "away": "FC Krasnodar",
+  "matchId": 5847221,
+  "reason": "xG atteso prematch 3.06 (casa 1.16 + ospite 1.90) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.39",
+    "0.42"
+   ],
+   "poss": [
+    50,
+    50
+   ],
+   "shots": [
+    7,
+    6
+   ],
+   "sot": [
+    2,
+    2
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    10,
+    10
+   ],
+   "corners": [
+    1,
+    1
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5847221",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.059,
+   "exp_home": 1.159,
+   "exp_away": 1.901,
+   "h_for": 1.212,
+   "h_ag": 2.216,
+   "a_for": 1.585,
+   "a_ag": 1.105,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
