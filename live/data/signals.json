@@ -2302,5 +2302,74 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5972993-storico",
+  "type": "storico",
+  "time": "2026-10-31 18:20",
+  "ts": 1793467209,
+  "league": "Premier League",
+  "country": "ARM",
+  "leagueId": 118,
+  "home": "Ararat",
+  "away": "Alashkert FC",
+  "matchId": 5972993,
+  "reason": "Ospite: 60 partite di campionato consecutive senza 0-0 (ultimo 0-0: 23/09/2024 @ Shirak); Casa: 1 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5972993",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 25,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "09/11/2025",
+     "opp": "Shirak",
+     "home": true
+    },
+    "n": 50,
+    "zz": 1,
+    "avail": 67
+   },
+   "away": {
+    "streak": 60,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "23/09/2024",
+     "opp": "Shirak",
+     "home": false
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 67
+   },
+   "strong": "away"
+  },
+  "streak": 60,
+  "streak_complete": true,
+  "telegram": true
  }
 ]
