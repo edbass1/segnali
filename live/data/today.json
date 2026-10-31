@@ -1,23 +1,23 @@
 {
  "date": "2026-10-31",
- "generated_at": "2026-10-31 14:27",
+ "generated_at": "2026-10-31 15:12",
  "partial": true,
  "stats": {
   "matches_day": 723,
   "candidates": 622,
-  "evaluated": 235,
-  "qualified": 66,
+  "evaluated": 298,
+  "qualified": 78,
   "errors": 0,
-  "not_evaluated_budget": 373,
+  "not_evaluated_budget": 307,
   "by_type": {
-   "storico": 19,
-   "xg": 37,
-   "segna": 7,
-   "subisce": 16,
+   "storico": 24,
+   "xg": 38,
+   "segna": 9,
+   "subisce": 20,
    "mai00": 1
   },
-  "requests": 1585,
-  "seconds": 434
+  "requests": 1797,
+  "seconds": 431
  },
  "skipped_leagues": {
   "JPN WE League": "femminile",
@@ -1090,7 +1090,7 @@
    "home": "Hougang United FC",
    "away": "Young Lions",
    "url": "https://www.fotmob.com/match/5973211",
-   "finished": false,
+   "finished": true,
    "score": "0-2",
    "types": [
     "storico"
@@ -1138,8 +1138,8 @@
    "home": "Kaiserslautern",
    "away": "Hertha BSC",
    "url": "https://www.fotmob.com/match/5881713",
-   "finished": false,
-   "score": "0-2",
+   "finished": true,
+   "score": "0-3",
    "types": [
     "xg"
    ],
@@ -1180,7 +1180,7 @@
    "home": "Wolfsburg",
    "away": "VfL Osnabrück",
    "url": "https://www.fotmob.com/match/5881716",
-   "finished": false,
+   "finished": true,
    "score": "2-0",
    "types": [
     "xg"
@@ -1222,8 +1222,8 @@
    "home": "Brattvåg",
    "away": "Træff",
    "url": "https://www.fotmob.com/match/5143425",
-   "finished": false,
-   "score": "2-2",
+   "finished": true,
+   "score": "4-5",
    "types": [
     "storico"
    ],
@@ -1270,18 +1270,18 @@
    "home": "Sandviken",
    "away": "Bjarg",
    "url": "https://www.fotmob.com/match/5143420",
-   "finished": false,
+   "finished": true,
    "score": "0-0",
    "types": [
     "storico"
    ],
    "reasons": {
-    "storico": "Ospite: almeno 93 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Casa: 3 0-0 nelle ultime 50 di campionato"
+    "storico": "Ospite: almeno 53 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Casa: 3 0-0 nelle ultime 50 di campionato"
    },
    "info": {
     "storico": {
      "strong": "away",
-     "streak": 93,
+     "streak": 53,
      "complete": false,
      "capped": false,
      "last00": null,
@@ -1314,8 +1314,8 @@
    "home": "Notodden",
    "away": "Vidar",
    "url": "https://www.fotmob.com/match/5143421",
-   "finished": false,
-   "score": "4-0",
+   "finished": true,
+   "score": "5-1",
    "types": [
     "storico"
    ],
@@ -1349,6 +1349,54 @@
    }
   },
   {
+   "matchId": 5143631,
+   "kickoff": "13:00",
+   "kickoff_utc": "2026-10-31T12:00:00.000Z",
+   "league": "2. Divisjon Avd. 2",
+   "country": "NOR",
+   "leagueId": 204,
+   "home": "Hønefoss",
+   "away": "Kjelsås",
+   "url": "https://www.fotmob.com/match/5143631",
+   "finished": true,
+   "score": "1-2",
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: 64 partite di campionato consecutive senza 0-0 (ultimo 0-0: 07/09/2024 @ Follo); Casa: 1 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 64,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "07/09/2024",
+      "opp": "Follo",
+      "home": false
+     },
+     "other_zz": 1,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 25,
+     "scored": 23,
+     "conceded": 21,
+     "no00": 24
+    },
+    "away": {
+     "n": 25,
+     "scored": 23,
+     "conceded": 19,
+     "no00": 25
+    }
+   }
+  },
+  {
    "matchId": 5143636,
    "kickoff": "13:00",
    "kickoff_utc": "2026-10-31T12:00:00.000Z",
@@ -1358,8 +1406,8 @@
    "home": "Grorud",
    "away": "Ull/Kisa",
    "url": "https://www.fotmob.com/match/5143636",
-   "finished": false,
-   "score": "1-0",
+   "finished": true,
+   "score": "3-0",
    "types": [
     "storico",
     "subisce"
@@ -1409,54 +1457,6 @@
    }
   },
   {
-   "matchId": 5143631,
-   "kickoff": "13:00",
-   "kickoff_utc": "2026-10-31T12:00:00.000Z",
-   "league": "2. Divisjon Avd. 2",
-   "country": "NOR",
-   "leagueId": 204,
-   "home": "Hønefoss",
-   "away": "Kjelsås",
-   "url": "https://www.fotmob.com/match/5143631",
-   "finished": false,
-   "score": "1-1",
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 64 partite di campionato consecutive senza 0-0 (ultimo 0-0: 07/09/2024 @ Follo); Casa: 1 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 64,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "07/09/2024",
-      "opp": "Follo",
-      "home": false
-     },
-     "other_zz": 1,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 25,
-     "scored": 23,
-     "conceded": 21,
-     "no00": 24
-    },
-    "away": {
-     "n": 25,
-     "scored": 23,
-     "conceded": 19,
-     "no00": 25
-    }
-   }
-  },
-  {
    "matchId": 5143630,
    "kickoff": "13:00",
    "kickoff_utc": "2026-10-31T12:00:00.000Z",
@@ -1466,8 +1466,8 @@
    "home": "Skeid",
    "away": "Stjørdals Blink",
    "url": "https://www.fotmob.com/match/5143630",
-   "finished": false,
-   "score": "2-0",
+   "finished": true,
+   "score": "3-1",
    "types": [
     "storico"
    ],
@@ -1514,7 +1514,7 @@
    "home": "Trygg/Lade",
    "away": "Rana FK",
    "url": "https://www.fotmob.com/match/5143634",
-   "finished": false,
+   "finished": true,
    "score": "0-1",
    "types": [
     "storico",
@@ -1574,8 +1574,8 @@
    "home": "Ishøj IF",
    "away": "Holstebro Boldklub",
    "url": "https://www.fotmob.com/match/5864895",
-   "finished": false,
-   "score": "2-0",
+   "finished": true,
+   "score": "3-0",
    "types": [
     "storico"
    ],
@@ -1622,8 +1622,8 @@
    "home": "Bærum",
    "away": "Frigg",
    "url": "https://www.fotmob.com/match/5143881",
-   "finished": false,
-   "score": "3-2",
+   "finished": true,
+   "score": "4-4",
    "types": [
     "storico"
    ],
@@ -1716,7 +1716,7 @@
    "away": "Birmingham City",
    "url": "https://www.fotmob.com/match/5836900",
    "finished": false,
-   "score": "0-1",
+   "score": "1-2",
    "types": [
     "xg"
    ],
@@ -1758,7 +1758,7 @@
    "away": "Watford",
    "url": "https://www.fotmob.com/match/5836903",
    "finished": false,
-   "score": "0-2",
+   "score": "3-2",
    "types": [
     "storico",
     "xg",
@@ -1827,7 +1827,7 @@
    "away": "Preston North End",
    "url": "https://www.fotmob.com/match/5836906",
    "finished": false,
-   "score": "1-0",
+   "score": "2-0",
    "types": [
     "subisce"
    ],
@@ -1872,7 +1872,7 @@
    "away": "Huddersfield Town",
    "url": "https://www.fotmob.com/match/5837244",
    "finished": false,
-   "score": "0-1",
+   "score": "0-3",
    "types": [
     "xg"
    ],
@@ -1900,48 +1900,6 @@
      "scored": 11,
      "conceded": 9,
      "no00": 11
-    }
-   }
-  },
-  {
-   "matchId": 5837246,
-   "kickoff": "13:30",
-   "kickoff_utc": "2026-10-31T12:30:00.000Z",
-   "league": "League One",
-   "country": "ENG",
-   "leagueId": 108,
-   "home": "Leyton Orient",
-   "away": "Cambridge United",
-   "url": "https://www.fotmob.com/match/5837246",
-   "finished": false,
-   "score": "1-0",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.87 (casa 1.32 + ospite 1.55) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.87,
-     "exp_home": 1.32,
-     "exp_away": 1.55,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 9,
-     "conceded": 7,
-     "no00": 11
-    },
-    "away": {
-     "n": 13,
-     "scored": 13,
-     "conceded": 12,
-     "no00": 13
     }
    }
   },
@@ -2003,6 +1961,48 @@
    }
   },
   {
+   "matchId": 5837246,
+   "kickoff": "13:30",
+   "kickoff_utc": "2026-10-31T12:30:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Leyton Orient",
+   "away": "Cambridge United",
+   "url": "https://www.fotmob.com/match/5837246",
+   "finished": false,
+   "score": "3-0",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.87 (casa 1.32 + ospite 1.55) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.87,
+     "exp_home": 1.32,
+     "exp_away": 1.55,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 7,
+     "no00": 11
+    },
+    "away": {
+     "n": 13,
+     "scored": 13,
+     "conceded": 12,
+     "no00": 13
+    }
+   }
+  },
+  {
    "matchId": 5838019,
    "kickoff": "13:30",
    "kickoff_utc": "2026-10-31T12:30:00.000Z",
@@ -2013,7 +2013,7 @@
    "away": "York City",
    "url": "https://www.fotmob.com/match/5838019",
    "finished": false,
-   "score": "2-2",
+   "score": "3-2",
    "types": [
     "storico",
     "xg"
@@ -2070,7 +2070,7 @@
    "away": "Yeovil Town",
    "url": "https://www.fotmob.com/match/5906543",
    "finished": false,
-   "score": "0-0",
+   "score": "2-0",
    "types": [
     "segna"
    ],
@@ -2153,6 +2153,95 @@
    }
   },
   {
+   "matchId": 5864898,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-10-31T13:00:00.000Z",
+   "league": "3. Division",
+   "country": "DEN",
+   "leagueId": 240,
+   "home": "Hørsholm Usserød IK",
+   "away": "Sundby BK",
+   "url": "https://www.fotmob.com/match/5864898",
+   "finished": false,
+   "score": "1-1",
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Casa: almeno 56 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Ospite: 1 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 56,
+     "complete": false,
+     "capped": false,
+     "last00": null,
+     "other_zz": 1,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 12,
+     "conceded": 11,
+     "no00": 13
+    },
+    "away": {
+     "n": 13,
+     "scored": 11,
+     "conceded": 10,
+     "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5905966,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-10-31T13:00:00.000Z",
+   "league": "3. Liga",
+   "country": "GER",
+   "leagueId": 208,
+   "home": "TSV Havelse",
+   "away": "Ingolstadt",
+   "url": "https://www.fotmob.com/match/5905966",
+   "finished": false,
+   "score": "1-1",
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 7/11) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 11,
+     "strong_n": 11,
+     "strong_pct": 100,
+     "other_k": 7,
+     "other_n": 11,
+     "other_pct": 64
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 9,
+     "conceded": 11,
+     "no00": 11
+    },
+    "away": {
+     "n": 11,
+     "scored": 9,
+     "conceded": 7,
+     "no00": 11
+    }
+   }
+  },
+  {
    "matchId": 5868117,
    "kickoff": "14:00",
    "kickoff_utc": "2026-10-31T13:00:00.000Z",
@@ -2163,7 +2252,7 @@
    "away": "Atlético Madrid",
    "url": "https://www.fotmob.com/match/5868117",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "xg"
    ],
@@ -2205,7 +2294,7 @@
    "away": "Montpellier",
    "url": "https://www.fotmob.com/match/5803299",
    "finished": false,
-   "score": "0-0",
+   "score": "0-2",
    "types": [
     "xg",
     "segna"
@@ -2249,6 +2338,284 @@
    }
   },
   {
+   "matchId": 1000007992,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-10-31T13:00:00.000Z",
+   "league": "Premium liiga",
+   "country": "EST",
+   "leagueId": 248,
+   "home": "Nõmme United",
+   "away": "FCI Levadia",
+   "url": "https://www.fotmob.com/match/1000007992",
+   "finished": false,
+   "score": "1-3",
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Casa: 67 partite di campionato consecutive senza 0-0 (ultimo 0-0: 17/03/2024 vs Nõmme JK Kalju); Ospite: 0 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 67,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "17/03/2024",
+      "opp": "Nõmme JK Kalju",
+      "home": true
+     },
+     "other_zz": 0,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 34,
+     "scored": 27,
+     "conceded": 32,
+     "no00": 34
+    },
+    "away": {
+     "n": 34,
+     "scored": 34,
+     "conceded": 21,
+     "no00": 34
+    }
+   }
+  },
+  {
+   "matchId": 5911609,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-10-31T13:00:00.000Z",
+   "league": "Regionalliga Bayern",
+   "country": "GER",
+   "leagueId": 512,
+   "home": "TSV Schwaben Augsburg",
+   "away": "SC Eltersdorf",
+   "url": "https://www.fotmob.com/match/5911609",
+   "finished": false,
+   "score": "1-0",
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Casa: almeno 83 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Ospite: 1 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 83,
+     "complete": false,
+     "capped": false,
+     "last00": null,
+     "other_zz": 1,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 10,
+     "conceded": 14,
+     "no00": 15
+    },
+    "away": {
+     "n": 15,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 14
+    }
+   }
+  },
+  {
+   "matchId": 5911944,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-10-31T13:00:00.000Z",
+   "league": "Regionalliga North",
+   "country": "GER",
+   "leagueId": 512,
+   "home": "SC Weiche Flensburg",
+   "away": "Kickers Emden",
+   "url": "https://www.fotmob.com/match/5911944",
+   "finished": false,
+   "score": "0-0",
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: 86 partite di campionato consecutive senza 0-0 (ultimo 0-0: 12/05/2023 vs SV Atlas Delmenhorst); Casa: 2 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 86,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "12/05/2023",
+      "opp": "SV Atlas Delmenhorst",
+      "home": true
+     },
+     "other_zz": 2,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 14,
+     "conceded": 10,
+     "no00": 15
+    },
+    "away": {
+     "n": 15,
+     "scored": 14,
+     "conceded": 13,
+     "no00": 15
+    }
+   }
+  },
+  {
+   "matchId": 5916095,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-10-31T13:00:00.000Z",
+   "league": "Regionalliga Southwest",
+   "country": "GER",
+   "leagueId": 512,
+   "home": "Hessen Kassel",
+   "away": "SG Barockstadt Fulda Lehnerz",
+   "url": "https://www.fotmob.com/match/5916095",
+   "finished": false,
+   "score": "0-0",
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: 52 partite di campionato consecutive senza 0-0 (ultimo 0-0: 12/04/2025 @ Eintracht Trier); Casa: 2 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 52,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "12/04/2025",
+      "opp": "Eintracht Trier",
+      "home": false
+     },
+     "other_zz": 2,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 12,
+     "no00": 13
+    },
+    "away": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 12,
+     "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5911252,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-10-31T13:00:00.000Z",
+   "league": "Regionalliga West",
+   "country": "GER",
+   "leagueId": 512,
+   "home": "SC Wiedenbrück",
+   "away": "Oberhausen",
+   "url": "https://www.fotmob.com/match/5911252",
+   "finished": false,
+   "score": "0-0",
+   "types": [
+    "segna"
+   ],
+   "reasons": {
+    "segna": "Casa ha segnato almeno 1 gol in 14/14 partite di campionato 2026/27; Ospite in 13/14 (93%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "segna": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 13,
+     "other_n": 14,
+     "other_pct": 93
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 14,
+     "conceded": 13,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 13,
+     "conceded": 9,
+     "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5911249,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-10-31T13:00:00.000Z",
+   "league": "Regionalliga West",
+   "country": "GER",
+   "leagueId": 512,
+   "home": "SV Rödinghausen",
+   "away": "Westfalia Rhynern",
+   "url": "https://www.fotmob.com/match/5911249",
+   "finished": false,
+   "score": "1-1",
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 13/14) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 13,
+     "other_n": 14,
+     "other_pct": 93
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 13,
+     "conceded": 14,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 13,
+     "conceded": 13,
+     "no00": 14
+    }
+   }
+  },
+  {
    "matchId": 5970196,
    "kickoff": "14:30",
    "kickoff_utc": "2026-10-31T13:30:00.000Z",
@@ -2259,7 +2626,7 @@
    "away": "Al-Ettifaq",
    "url": "https://www.fotmob.com/match/5970196",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -2291,6 +2658,93 @@
    }
   },
   {
+   "matchId": 5804028,
+   "kickoff": "14:45",
+   "kickoff_utc": "2026-10-31T13:45:00.000Z",
+   "league": "Ekstraklasa",
+   "country": "POL",
+   "leagueId": 196,
+   "home": "Wieczysta Kraków",
+   "away": "Jagiellonia Białystok",
+   "url": "https://www.fotmob.com/match/5804028",
+   "finished": false,
+   "score": "0-1",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.21 (casa 1.58 + ospite 1.63) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.21,
+     "exp_home": 1.58,
+     "exp_away": 1.63,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 11,
+     "no00": 12
+    },
+    "away": {
+     "n": 11,
+     "scored": 8,
+     "conceded": 9,
+     "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 5886568,
+   "kickoff": "14:45",
+   "kickoff_utc": "2026-10-31T13:45:00.000Z",
+   "league": "Ligue 3",
+   "country": "FRA",
+   "leagueId": 8970,
+   "home": "La Roche VF",
+   "away": "Bourg en Bresse Péronnas",
+   "url": "https://www.fotmob.com/match/5886568",
+   "finished": false,
+   "score": "0-0",
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Ospite ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Casa: 7/10) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 7,
+     "other_n": 10,
+     "other_pct": 70
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 9,
+     "conceded": 7,
+     "no00": 9
+    },
+    "away": {
+     "n": 10,
+     "scored": 3,
+     "conceded": 10,
+     "no00": 10
+    }
+   }
+  },
+  {
    "matchId": 5943697,
    "kickoff": "15:00",
    "kickoff_utc": "2026-10-31T14:00:00.000Z",
@@ -2301,7 +2755,7 @@
    "away": "FC Zlín",
    "url": "https://www.fotmob.com/match/5943697",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "subisce"
    ],
@@ -2346,7 +2800,7 @@
    "away": "AEK Larnaca",
    "url": "https://www.fotmob.com/match/5975438",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "storico"
    ],
@@ -2384,6 +2838,51 @@
    }
   },
   {
+   "matchId": 5922818,
+   "kickoff": "15:00",
+   "kickoff_utc": "2026-10-31T14:00:00.000Z",
+   "league": "NB II",
+   "country": "HUN",
+   "leagueId": 9117,
+   "home": "Tiszakécske",
+   "away": "Videoton FC Fehérvár",
+   "url": "https://www.fotmob.com/match/5922818",
+   "finished": false,
+   "score": null,
+   "types": [
+    "segna"
+   ],
+   "reasons": {
+    "segna": "Casa ha segnato almeno 1 gol in 11/11 partite di campionato 2026/27; Ospite in 9/11 (82%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "segna": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 11,
+     "strong_n": 11,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 11,
+     "other_pct": 82
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 11,
+     "conceded": 8,
+     "no00": 11
+    },
+    "away": {
+     "n": 11,
+     "scored": 9,
+     "conceded": 8,
+     "no00": 11
+    }
+   }
+  },
+  {
    "matchId": 5136442,
    "kickoff": "15:00",
    "kickoff_utc": "2026-10-31T14:00:00.000Z",
@@ -2394,7 +2893,7 @@
    "away": "NSÍ Runavík",
    "url": "https://www.fotmob.com/match/5136442",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "storico"
    ],
@@ -2442,7 +2941,7 @@
    "away": "Monza",
    "url": "https://www.fotmob.com/match/5749732",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -2469,6 +2968,51 @@
      "n": 9,
      "scored": 9,
      "conceded": 8,
+     "no00": 9
+    }
+   }
+  },
+  {
+   "matchId": 5967137,
+   "kickoff": "15:00",
+   "kickoff_utc": "2026-10-31T14:00:00.000Z",
+   "league": "Serie B",
+   "country": "ITA",
+   "leagueId": 86,
+   "home": "Südtirol",
+   "away": "Cesena",
+   "url": "https://www.fotmob.com/match/5967137",
+   "finished": false,
+   "score": "0-0",
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Ospite ha subito almeno 1 gol in 9/9 partite di campionato 2026/27 (Casa: 6/9) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 9,
+     "strong_n": 9,
+     "strong_pct": 100,
+     "other_k": 6,
+     "other_n": 9,
+     "other_pct": 67
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 9,
+     "scored": 6,
+     "conceded": 6,
+     "no00": 8
+    },
+    "away": {
+     "n": 9,
+     "scored": 7,
+     "conceded": 9,
      "no00": 9
     }
    }
