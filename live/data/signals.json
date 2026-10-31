@@ -2159,5 +2159,75 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5793968-xg",
+  "type": "xg",
+  "time": "2026-10-31 17:17",
+  "ts": 1793463439,
+  "league": "Premiership",
+  "country": "SCO",
+  "leagueId": 64,
+  "home": "Motherwell",
+  "away": "St. Mirren",
+  "matchId": 5793968,
+  "reason": "xG atteso prematch 2.80 (casa 1.65 + ospite 1.14) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.44",
+    "0.10"
+   ],
+   "poss": [
+    55,
+    45
+   ],
+   "shots": [
+    8,
+    2
+   ],
+   "sot": [
+    1,
+    0
+   ],
+   "big": [
+    3,
+    0
+   ],
+   "box": [
+    24,
+    7
+   ],
+   "corners": [
+    5,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5793968",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.796,
+   "exp_home": 1.654,
+   "exp_away": 1.142,
+   "h_for": 1.344,
+   "h_ag": 1.116,
+   "a_for": 1.168,
+   "a_ag": 1.964,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]

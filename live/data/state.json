@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-10-31 17:15",
+ "last_scan": "2026-10-31 17:17",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -154,7 +154,13 @@
    "subisce": "2026-10-31 17:07"
   },
   "5949331": {},
-  "5949330": {}
+  "5949330": {},
+  "5764523": {},
+  "5906546": {},
+  "5136440": {},
+  "5793968": {
+   "xg": "2026-10-31 17:17"
+  }
  },
  "checked": {
   "6028602": {
@@ -1133,22 +1139,66 @@
     "subisce": false,
     "mai00": false
    }
+  },
+  "5764523": {
+   "t": 1793463421,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5906546": {
+   "t": 1793463424,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5136440": {
+   "t": 1793463427,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5793968": {
+   "t": 1793463439,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": true,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
   }
  },
  "live_count": 236,
- "candidates_last": 0,
- "requests_last": 1,
- "last_write": "2026-10-31 17:15",
- "last_write_ts": 1793463357,
+ "candidates_last": 4,
+ "requests_last": 33,
+ "last_write": "2026-10-31 17:17",
+ "last_write_ts": 1793463439,
  "telegram": {
-  "last_try": "2026-10-31 17:07",
+  "last_try": "2026-10-31 17:17",
   "ok": true,
   "error": ""
  },
  "odds_api": {
   "remaining": "483",
   "used": "17",
-  "last_cost": "1",
-  "time": "2026-10-31 16:49"
+  "last_cost": "0",
+  "time": "2026-10-31 17:17"
  }
 }
