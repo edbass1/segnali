@@ -2443,5 +2443,59 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5864736-segna",
+  "type": "segna",
+  "time": "2026-10-31 19:19",
+  "ts": 1793470762,
+  "league": "2. Division",
+  "country": "DEN",
+  "leagueId": 239,
+  "home": "Næstved",
+  "away": "FC Roskilde",
+  "matchId": 5864736,
+  "reason": "Ospite ha segnato almeno 1 gol in 13/13 partite di campionato 2026/27; Casa in 12/13 (92%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5864736",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "away",
+   "home": {
+    "n": 13,
+    "scored": 12,
+    "conceded": 12,
+    "no00": 13
+   },
+   "away": {
+    "n": 13,
+    "scored": 13,
+    "conceded": 9,
+    "no00": 13
+   }
+  },
+  "telegram": true
  }
 ]
