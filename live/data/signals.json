@@ -2497,5 +2497,59 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5882143-segna",
+  "type": "segna",
+  "time": "2026-10-31 19:22",
+  "ts": 1793470952,
+  "league": "Premier League",
+  "country": "WAL",
+  "leagueId": 116,
+  "home": "The New Saints",
+  "away": "Connah's Quay Nomads",
+  "matchId": 5882143,
+  "reason": "Ospite ha segnato almeno 1 gol in 14/14 partite di campionato 2026/27; Casa in 13/14 (93%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 46,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 46,
+   "phase": "46",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5882143",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "away",
+   "home": {
+    "n": 14,
+    "scored": 13,
+    "conceded": 5,
+    "no00": 13
+   },
+   "away": {
+    "n": 14,
+    "scored": 14,
+    "conceded": 7,
+    "no00": 14
+   }
+  },
+  "telegram": true
  }
 ]
