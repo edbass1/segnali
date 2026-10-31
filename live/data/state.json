@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-10-31 14:16",
+ "last_scan": "2026-10-31 14:18",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -115,7 +115,11 @@
   },
   "5165395": {},
   "6362009": {},
-  "6141005": {}
+  "6141005": {},
+  "5143420": {
+   "storico": "2026-10-31 14:18"
+  },
+  "5200689": {}
  },
  "checked": {
   "6050536": {
@@ -830,15 +834,37 @@
   "5903854": {
    "t": 1793452588,
    "r": "femminile"
+  },
+  "5143420": {
+   "t": 1793452723,
+   "r": "valutata",
+   "res": {
+    "storico": true,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5200689": {
+   "t": 1793452726,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
   }
  },
  "live_count": 133,
- "candidates_last": 1,
- "requests_last": 2,
- "last_write": "2026-10-31 14:16",
- "last_write_ts": 1793452588,
+ "candidates_last": 2,
+ "requests_last": 22,
+ "last_write": "2026-10-31 14:18",
+ "last_write_ts": 1793452726,
  "telegram": {
-  "last_try": "2026-10-31 13:53",
+  "last_try": "2026-10-31 14:18",
   "ok": true,
   "error": ""
  },

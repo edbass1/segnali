@@ -1627,5 +1627,70 @@
   },
   "telegram": true,
   "resolved": "2026-10-31 13:53"
+ },
+ {
+  "id": "5143420-storico",
+  "type": "storico",
+  "time": "2026-10-31 14:18",
+  "ts": 1793452723,
+  "league": "2. Divisjon Avd. 1",
+  "country": "NOR",
+  "leagueId": 204,
+  "home": "Sandviken",
+  "away": "Bjarg",
+  "matchId": 5143420,
+  "reason": "Ospite: almeno 93 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Casa: 3 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5143420",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 0,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "24/10/2026",
+     "opp": "Pors",
+     "home": false
+    },
+    "n": 50,
+    "zz": 3,
+    "avail": 53
+   },
+   "away": {
+    "streak": 93,
+    "complete": false,
+    "capped": false,
+    "last00": null,
+    "n": 50,
+    "zz": 0,
+    "avail": 93
+   },
+   "strong": "away"
+  },
+  "streak": 93,
+  "streak_complete": false,
+  "telegram": true
  }
 ]
