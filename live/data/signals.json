@@ -2863,5 +2863,75 @@
   },
   "telegram": true,
   "resolved": "2026-10-31 21:05"
+ },
+ {
+  "id": "5804289-xg",
+  "type": "xg",
+  "time": "2026-10-31 21:49",
+  "ts": 1793479747,
+  "league": "Super League",
+  "country": "SUI",
+  "leagueId": 69,
+  "home": "Luzern",
+  "away": "Sion",
+  "matchId": 5804289,
+  "reason": "xG atteso prematch 3.70 (casa 2.01 + ospite 1.69) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.45",
+    "1.92"
+   ],
+   "poss": [
+    45,
+    55
+   ],
+   "shots": [
+    5,
+    11
+   ],
+   "sot": [
+    0,
+    1
+   ],
+   "big": [
+    1,
+    1
+   ],
+   "box": [
+    13,
+    23
+   ],
+   "corners": [
+    3,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5804289",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.701,
+   "exp_home": 2.012,
+   "exp_away": 1.689,
+   "h_for": 2.44,
+   "h_ag": 1.436,
+   "a_for": 1.942,
+   "a_ag": 1.584,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
