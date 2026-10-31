@@ -1692,5 +1692,165 @@
   "streak": 93,
   "streak_complete": false,
   "telegram": true
+ },
+ {
+  "id": "5837250-storico",
+  "type": "storico",
+  "time": "2026-10-31 14:48",
+  "ts": 1793454534,
+  "league": "English Football League - League One",
+  "country": "ENG",
+  "leagueId": 108,
+  "home": "Plymouth Argyle",
+  "away": "Reading",
+  "matchId": 5837250,
+  "reason": "Casa: 66 partite di campionato consecutive senza 0-0 (ultimo 0-0: 29/03/2025 @ Watford); Ospite: 1 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.67",
+    "0.57"
+   ],
+   "poss": [
+    43,
+    57
+   ],
+   "shots": [
+    11,
+    5
+   ],
+   "sot": [
+    3,
+    2
+   ],
+   "big": [
+    1,
+    2
+   ],
+   "box": [
+    14,
+    7
+   ],
+   "corners": [
+    1,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5837250",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "home": {
+    "streak": 66,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "29/03/2025",
+     "opp": "Watford",
+     "home": false
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 105
+   },
+   "away": {
+    "streak": 10,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "22/08/2026",
+     "opp": "AFC Wimbledon",
+     "home": false
+    },
+    "n": 50,
+    "zz": 1,
+    "avail": 58
+   },
+   "strong": "home"
+  },
+  "streak": 66,
+  "streak_complete": true,
+  "telegram": true
+ },
+ {
+  "id": "5837250-xg",
+  "type": "xg",
+  "time": "2026-10-31 14:48",
+  "ts": 1793454534,
+  "league": "English Football League - League One",
+  "country": "ENG",
+  "leagueId": 108,
+  "home": "Plymouth Argyle",
+  "away": "Reading",
+  "matchId": 5837250,
+  "reason": "xG atteso prematch 2.89 (casa 1.22 + ospite 1.67) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.67",
+    "0.57"
+   ],
+   "poss": [
+    43,
+    57
+   ],
+   "shots": [
+    11,
+    5
+   ],
+   "sot": [
+    3,
+    2
+   ],
+   "big": [
+    1,
+    2
+   ],
+   "box": [
+    14,
+    7
+   ],
+   "corners": [
+    1,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5837250",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.888,
+   "exp_home": 1.222,
+   "exp_away": 1.666,
+   "h_for": 1.398,
+   "h_ag": 1.34,
+   "a_for": 1.992,
+   "a_ag": 1.046,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
