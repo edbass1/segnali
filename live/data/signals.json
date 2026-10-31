@@ -2789,5 +2789,75 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5071471-xg",
+  "type": "xg",
+  "time": "2026-10-31 20:28",
+  "ts": 1793474890,
+  "league": "Major League Soccer",
+  "country": "USA",
+  "leagueId": 130,
+  "home": "FC Cincinnati",
+  "away": "Philadelphia Union",
+  "matchId": 5071471,
+  "reason": "xG atteso prematch 3.55 (casa 1.95 + ospite 1.60) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.09",
+    "1.04"
+   ],
+   "poss": [
+    55,
+    45
+   ],
+   "shots": [
+    2,
+    12
+   ],
+   "sot": [
+    0,
+    6
+   ],
+   "big": [
+    0,
+    3
+   ],
+   "box": [
+    9,
+    17
+   ],
+   "corners": [
+    1,
+    8
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5071471",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.552,
+   "exp_home": 1.954,
+   "exp_away": 1.598,
+   "h_for": 2.168,
+   "h_ag": 1.473,
+   "a_for": 1.723,
+   "a_ag": 1.74,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
  }
 ]
