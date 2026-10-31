@@ -1368,5 +1368,75 @@
   },
   "telegram": true,
   "resolved": "2026-10-30 22:57"
+ },
+ {
+  "id": "5898774-xg",
+  "type": "xg",
+  "time": "2026-10-31 03:20",
+  "ts": 1793413249,
+  "league": "Liga de Expansión MX",
+  "country": "MEX",
+  "leagueId": 8976,
+  "home": "Correcaminos de la UAT",
+  "away": "Venados FC",
+  "matchId": 5898774,
+  "reason": "xG atteso prematch 2.89 (casa 1.81 + ospite 1.08) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.02",
+    "0.98"
+   ],
+   "poss": [
+    66,
+    34
+   ],
+   "shots": [
+    1,
+    12
+   ],
+   "sot": [
+    0,
+    1
+   ],
+   "big": [
+    0,
+    1
+   ],
+   "box": [
+    8,
+    19
+   ],
+   "corners": [
+    5,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5898774",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "total": 2.891,
+   "exp_home": 1.806,
+   "exp_away": 1.085,
+   "h_for": 1.691,
+   "h_ag": 0.954,
+   "a_for": 1.216,
+   "a_ag": 1.921,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
