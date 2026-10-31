@@ -1887,8 +1887,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "0-1",
   "url": "https://www.fotmob.com/match/5916095",
   "over05": null,
   "over05_note": "campionato non coperto",
@@ -1923,7 +1923,8 @@
   },
   "streak": 52,
   "streak_complete": true,
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-10-31 16:03"
  },
  {
   "id": "5911252-segna",
