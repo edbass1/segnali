@@ -2088,8 +2088,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "lost",
+  "final": "0-0",
   "url": "https://www.fotmob.com/match/5881209",
   "over05": 1.36,
   "over05_note": null,
@@ -2104,7 +2104,8 @@
    "method": "casa/trasferta",
    "season": "2026/2027"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-10-31 17:23"
  },
  {
   "id": "5949332-subisce",

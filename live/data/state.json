@@ -1329,13 +1329,13 @@
    }
   }
  },
- "live_count": 229,
- "candidates_last": 1,
- "requests_last": 5,
+ "live_count": 228,
+ "candidates_last": 0,
+ "requests_last": 1,
  "last_write": "2026-10-31 17:23",
- "last_write_ts": 1793463780,
+ "last_write_ts": 1793463836,
  "telegram": {
-  "last_try": "2026-10-31 17:17",
+  "last_try": "2026-10-31 17:23",
   "ok": true,
   "error": ""
  },
