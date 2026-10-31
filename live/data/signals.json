@@ -2232,5 +2232,75 @@
   },
   "telegram": true,
   "resolved": "2026-10-31 17:53"
+ },
+ {
+  "id": "5846011-xg",
+  "type": "xg",
+  "time": "2026-10-31 18:18",
+  "ts": 1793467099,
+  "league": "Bundesliga",
+  "country": "AUT",
+  "leagueId": 38,
+  "home": "Altach",
+  "away": "Ried",
+  "matchId": 5846011,
+  "reason": "xG atteso prematch 2.80 (casa 1.62 + ospite 1.17) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.53",
+    "0.45"
+   ],
+   "poss": [
+    45,
+    55
+   ],
+   "shots": [
+    8,
+    9
+   ],
+   "sot": [
+    2,
+    2
+   ],
+   "big": [
+    0,
+    2
+   ],
+   "box": [
+    10,
+    12
+   ],
+   "corners": [
+    1,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5846011",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.796,
+   "exp_home": 1.622,
+   "exp_away": 1.174,
+   "h_for": 1.446,
+   "h_ag": 0.754,
+   "a_for": 1.594,
+   "a_ag": 1.798,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
