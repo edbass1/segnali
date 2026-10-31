@@ -2845,8 +2845,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "1-0",
   "url": "https://www.fotmob.com/match/5071471",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -2861,6 +2861,7 @@
    "method": "casa/trasferta",
    "season": "2026"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-10-31 21:05"
  }
 ]
