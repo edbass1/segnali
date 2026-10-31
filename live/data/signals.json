@@ -2034,5 +2034,75 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5881209-xg",
+  "type": "xg",
+  "time": "2026-10-31 16:49",
+  "ts": 1793461746,
+  "league": "Bundesliga",
+  "country": "GER",
+  "leagueId": 54,
+  "home": "Borussia Mönchengladbach",
+  "away": "Paderborn",
+  "matchId": 5881209,
+  "reason": "xG atteso prematch 3.59 (casa 2.04 + ospite 1.55) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.76",
+    "0.69"
+   ],
+   "poss": [
+    48,
+    52
+   ],
+   "shots": [
+    8,
+    9
+   ],
+   "sot": [
+    3,
+    3
+   ],
+   "big": [
+    3,
+    0
+   ],
+   "box": [
+    10,
+    15
+   ],
+   "corners": [
+    1,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5881209",
+  "over05": 1.36,
+  "over05_note": null,
+  "details": {
+   "total": 3.595,
+   "exp_home": 2.045,
+   "exp_away": 1.55,
+   "h_for": 2.023,
+   "h_ag": 2.31,
+   "a_for": 0.79,
+   "a_ag": 2.067,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
