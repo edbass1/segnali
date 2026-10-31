@@ -1438,5 +1438,75 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "1000014625-xg",
+  "type": "xg",
+  "time": "2026-10-31 03:24",
+  "ts": 1793413499,
+  "league": "Mexican Primera",
+  "country": "MEX",
+  "leagueId": 230,
+  "home": "Atlético de San Luis",
+  "away": "Atlas",
+  "matchId": 1000014625,
+  "reason": "xG atteso prematch 3.05 (casa 1.48 + ospite 1.57) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.58",
+    "1.10"
+   ],
+   "poss": [
+    56,
+    44
+   ],
+   "shots": [
+    13,
+    6
+   ],
+   "sot": [
+    1,
+    0
+   ],
+   "big": [
+    0,
+    2
+   ],
+   "box": [
+    15,
+    10
+   ],
+   "corners": [
+    5,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000014625",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.048,
+   "exp_home": 1.479,
+   "exp_away": 1.569,
+   "h_for": 1.297,
+   "h_ag": 1.411,
+   "a_for": 1.727,
+   "a_ag": 1.662,
+   "method": "casa/trasferta",
+   "season": "2026/2027 - Apertura"
+  },
+  "telegram": true
  }
 ]
