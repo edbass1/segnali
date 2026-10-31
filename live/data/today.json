@@ -1,30 +1,30 @@
 {
  "date": "2026-10-31",
- "generated_at": "2026-10-31 06:40",
+ "generated_at": "2026-10-31 07:25",
  "partial": true,
  "stats": {
   "matches_day": 721,
   "candidates": 622,
-  "evaluated": 334,
-  "qualified": 94,
+  "evaluated": 368,
+  "qualified": 107,
   "errors": 0,
-  "not_evaluated_budget": 270,
+  "not_evaluated_budget": 236,
   "by_type": {
-   "storico": 26,
-   "xg": 52,
-   "segna": 11,
-   "subisce": 20,
+   "storico": 27,
+   "xg": 63,
+   "segna": 12,
+   "subisce": 23,
    "mai00": 1
   },
-  "requests": 1973,
-  "seconds": 431
+  "requests": 2176,
+  "seconds": 432
  },
  "skipped_leagues": {
   "JPN WE League": "femminile",
   "ESP Liga F": "femminile",
   "ITA Serie A Femminile": "femminile",
-  "SWE Elitettan": "femminile",
   "DEN A-Liga": "femminile",
+  "SWE Elitettan": "femminile",
   "NOR Toppserien": "femminile",
   "NOR Toppserien Qualification": "femminile",
   "FRA Premiere Ligue": "femminile",
@@ -271,19 +271,19 @@
    "home": "Newcastle Jets",
    "away": "Wellington Phoenix",
    "url": "https://www.fotmob.com/match/1000017570",
-   "finished": false,
-   "score": "0-1",
+   "finished": true,
+   "score": "0-3",
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.93 (casa 1.26 + ospite 1.67) ≥ 2.7"
+    "xg": "xG atteso prematch 3.18 (casa 1.28 + ospite 1.90) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 2.93,
-     "exp_home": 1.26,
-     "exp_away": 1.67,
+     "total": 3.18,
+     "exp_home": 1.28,
+     "exp_away": 1.9,
      "method": "media generale",
      "season": "2026/2027"
     }
@@ -314,7 +314,7 @@
    "away": "Shimizu S-Pulse",
    "url": "https://www.fotmob.com/match/5803641",
    "finished": false,
-   "score": "1-0",
+   "score": "2-0",
    "types": [
     "xg",
     "subisce"
@@ -368,7 +368,7 @@
    "away": "Sanfrecce Hiroshima",
    "url": "https://www.fotmob.com/match/5803643",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "xg",
     "subisce"
@@ -422,7 +422,7 @@
    "away": "Matsumoto Yamaga",
    "url": "https://www.fotmob.com/match/5987217",
    "finished": false,
-   "score": "0-2",
+   "score": "1-3",
    "types": [
     "subisce"
    ],
@@ -509,7 +509,7 @@
    "away": "Ventforet Kofu",
    "url": "https://www.fotmob.com/match/5836340",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "subisce"
    ],
@@ -554,7 +554,7 @@
    "away": "Nagoya Grampus",
    "url": "https://www.fotmob.com/match/5803645",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "subisce"
    ],
@@ -599,7 +599,7 @@
    "away": "Cerezo Osaka",
    "url": "https://www.fotmob.com/match/5803639",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -1862,6 +1862,48 @@
    }
   },
   {
+   "matchId": 5837246,
+   "kickoff": "13:30",
+   "kickoff_utc": "2026-10-31T12:30:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Leyton Orient",
+   "away": "Cambridge United",
+   "url": "https://www.fotmob.com/match/5837246",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.87 (casa 1.32 + ospite 1.55) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.87,
+     "exp_home": 1.32,
+     "exp_away": 1.55,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 7,
+     "no00": 11
+    },
+    "away": {
+     "n": 13,
+     "scored": 13,
+     "conceded": 12,
+     "no00": 13
+    }
+   }
+  },
+  {
    "matchId": 5837250,
    "kickoff": "13:30",
    "kickoff_utc": "2026-10-31T12:30:00.000Z",
@@ -1915,48 +1957,6 @@
      "scored": 10,
      "conceded": 8,
      "no00": 11
-    }
-   }
-  },
-  {
-   "matchId": 5837246,
-   "kickoff": "13:30",
-   "kickoff_utc": "2026-10-31T12:30:00.000Z",
-   "league": "League One",
-   "country": "ENG",
-   "leagueId": 108,
-   "home": "Leyton Orient",
-   "away": "Cambridge United",
-   "url": "https://www.fotmob.com/match/5837246",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.87 (casa 1.32 + ospite 1.55) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.87,
-     "exp_home": 1.32,
-     "exp_away": 1.55,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 9,
-     "conceded": 7,
-     "no00": 11
-    },
-    "away": {
-     "n": 13,
-     "scored": 13,
-     "conceded": 12,
-     "no00": 13
     }
    }
   },
@@ -3060,48 +3060,6 @@
    }
   },
   {
-   "matchId": 5881212,
-   "kickoff": "15:30",
-   "kickoff_utc": "2026-10-31T14:30:00.000Z",
-   "league": "Bundesliga",
-   "country": "GER",
-   "leagueId": 54,
-   "home": "Schalke 04",
-   "away": "RB Leipzig",
-   "url": "https://www.fotmob.com/match/5881212",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.75 (casa 1.38 + ospite 1.37) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.75,
-     "exp_home": 1.38,
-     "exp_away": 1.37,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 7,
-     "scored": 2,
-     "conceded": 4,
-     "no00": 4
-    },
-    "away": {
-     "n": 7,
-     "scored": 6,
-     "conceded": 3,
-     "no00": 7
-    }
-   }
-  },
-  {
    "matchId": 5881207,
    "kickoff": "15:30",
    "kickoff_utc": "2026-10-31T14:30:00.000Z",
@@ -3139,6 +3097,48 @@
      "n": 7,
      "scored": 5,
      "conceded": 6,
+     "no00": 7
+    }
+   }
+  },
+  {
+   "matchId": 5881212,
+   "kickoff": "15:30",
+   "kickoff_utc": "2026-10-31T14:30:00.000Z",
+   "league": "Bundesliga",
+   "country": "GER",
+   "leagueId": 54,
+   "home": "Schalke 04",
+   "away": "RB Leipzig",
+   "url": "https://www.fotmob.com/match/5881212",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.75 (casa 1.38 + ospite 1.37) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.75,
+     "exp_home": 1.38,
+     "exp_away": 1.37,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 7,
+     "scored": 2,
+     "conceded": 4,
+     "no00": 4
+    },
+    "away": {
+     "n": 7,
+     "scored": 6,
+     "conceded": 3,
      "no00": 7
     }
    }
@@ -3582,6 +3582,48 @@
    }
   },
   {
+   "matchId": 5836907,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-10-31T15:00:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Swansea City",
+   "away": "Blackburn Rovers",
+   "url": "https://www.fotmob.com/match/5836907",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.83 (casa 1.96 + ospite 0.86) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.83,
+     "exp_home": 1.96,
+     "exp_away": 0.86,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 8,
+     "conceded": 7,
+     "no00": 10
+    },
+    "away": {
+     "n": 12,
+     "scored": 11,
+     "conceded": 9,
+     "no00": 11
+    }
+   }
+  },
+  {
    "matchId": 5836908,
    "kickoff": "16:00",
    "kickoff_utc": "2026-10-31T15:00:00.000Z",
@@ -3632,48 +3674,6 @@
      "scored": 10,
      "conceded": 10,
      "no00": 12
-    }
-   }
-  },
-  {
-   "matchId": 5836907,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-10-31T15:00:00.000Z",
-   "league": "Championship",
-   "country": "ENG",
-   "leagueId": 48,
-   "home": "Swansea City",
-   "away": "Blackburn Rovers",
-   "url": "https://www.fotmob.com/match/5836907",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.83 (casa 1.96 + ospite 0.86) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.83,
-     "exp_home": 1.96,
-     "exp_away": 0.86,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 8,
-     "conceded": 7,
-     "no00": 10
-    },
-    "away": {
-     "n": 12,
-     "scored": 11,
-     "conceded": 9,
-     "no00": 11
     }
    }
   },
@@ -3891,6 +3891,50 @@
    }
   },
   {
+   "matchId": 5954498,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-10-31T15:00:00.000Z",
+   "league": "Isthmian Premier Division",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Burgess Hill Town",
+   "away": "Enfield Town",
+   "url": "https://www.fotmob.com/match/5954498",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Casa: almeno 55 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Ospite: 2 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 55,
+     "complete": false,
+     "capped": false,
+     "last00": null,
+     "other_zz": 2,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 12,
+     "conceded": 11,
+     "no00": 13
+    },
+    "away": {
+     "n": 13,
+     "scored": 12,
+     "conceded": 10,
+     "no00": 13
+    }
+   }
+  },
+  {
    "matchId": 5954496,
    "kickoff": "16:00",
    "kickoff_utc": "2026-10-31T15:00:00.000Z",
@@ -3934,6 +3978,549 @@
      "n": 13,
      "scored": 11,
      "conceded": 9,
+     "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5954503,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-10-31T15:00:00.000Z",
+   "league": "Isthmian Premier Division",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Maldon & Tiptree",
+   "away": "Three Bridges",
+   "url": "https://www.fotmob.com/match/5954503",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Ospite ha subito almeno 1 gol in 13/13 partite di campionato 2026/27 (Casa: 15/16) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 13,
+     "strong_n": 13,
+     "strong_pct": 100,
+     "other_k": 15,
+     "other_n": 16,
+     "other_pct": 94
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 16,
+     "scored": 13,
+     "conceded": 15,
+     "no00": 16
+    },
+    "away": {
+     "n": 13,
+     "scored": 11,
+     "conceded": 13,
+     "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5837243,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-10-31T15:00:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Barnsley",
+   "away": "Oxford United",
+   "url": "https://www.fotmob.com/match/5837243",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.52 (casa 1.88 + ospite 1.63) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.52,
+     "exp_home": 1.88,
+     "exp_away": 1.63,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 8,
+     "conceded": 10,
+     "no00": 10
+    },
+    "away": {
+     "n": 11,
+     "scored": 10,
+     "conceded": 7,
+     "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5837245,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-10-31T15:00:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Leicester City",
+   "away": "Stevenage",
+   "url": "https://www.fotmob.com/match/5837245",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.88 (casa 1.62 + ospite 1.26) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.88,
+     "exp_home": 1.62,
+     "exp_away": 1.26,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 10,
+     "conceded": 8,
+     "no00": 11
+    },
+    "away": {
+     "n": 11,
+     "scored": 7,
+     "conceded": 8,
+     "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5837247,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-10-31T15:00:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Milton Keynes Dons",
+   "away": "Doncaster Rovers",
+   "url": "https://www.fotmob.com/match/5837247",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.06 (casa 1.49 + ospite 1.57) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.06,
+     "exp_home": 1.49,
+     "exp_away": 1.57,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 9,
+     "no00": 10
+    },
+    "away": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 8,
+     "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 5837248,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-10-31T15:00:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Mansfield Town",
+   "away": "Notts County",
+   "url": "https://www.fotmob.com/match/5837248",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.75 (casa 1.80 + ospite 0.95) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.75,
+     "exp_home": 1.8,
+     "exp_away": 0.95,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 8,
+     "conceded": 9,
+     "no00": 10
+    },
+    "away": {
+     "n": 11,
+     "scored": 8,
+     "conceded": 10,
+     "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 5837249,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-10-31T15:00:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Peterborough United",
+   "away": "Luton Town",
+   "url": "https://www.fotmob.com/match/5837249",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.10 (casa 1.68 + ospite 1.42) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.1,
+     "exp_home": 1.68,
+     "exp_away": 1.42,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 7,
+     "conceded": 11,
+     "no00": 11
+    },
+    "away": {
+     "n": 12,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 5837253,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-10-31T15:00:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Wigan Athletic",
+   "away": "Bromley",
+   "url": "https://www.fotmob.com/match/5837253",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.28 (casa 1.81 + ospite 1.47) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.28,
+     "exp_home": 1.81,
+     "exp_away": 1.47,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 5,
+     "conceded": 10,
+     "no00": 11
+    },
+    "away": {
+     "n": 12,
+     "scored": 8,
+     "conceded": 11,
+     "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 5837254,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-10-31T15:00:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Wycombe Wanderers",
+   "away": "Burton Albion",
+   "url": "https://www.fotmob.com/match/5837254",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.89 (casa 1.67 + ospite 1.21) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.89,
+     "exp_home": 1.67,
+     "exp_away": 1.21,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 12,
+     "conceded": 10,
+     "no00": 12
+    },
+    "away": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 11,
+     "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 5837252,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-10-31T15:00:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Stockport County",
+   "away": "AFC Wimbledon",
+   "url": "https://www.fotmob.com/match/5837252",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.90 (casa 1.76 + ospite 1.14) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.9,
+     "exp_home": 1.76,
+     "exp_away": 1.14,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 8,
+     "no00": 12
+    },
+    "away": {
+     "n": 12,
+     "scored": 7,
+     "conceded": 7,
+     "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5838017,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-10-31T15:00:00.000Z",
+   "league": "League Two",
+   "country": "ENG",
+   "leagueId": 109,
+   "home": "Crewe Alexandra",
+   "away": "Barnet",
+   "url": "https://www.fotmob.com/match/5838017",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "segna",
+    "subisce"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.10 (casa 1.45 + ospite 1.64) ≥ 2.7",
+    "segna": "Ospite ha segnato almeno 1 gol in 12/12 partite di campionato 2026/27; Casa in 11/13 (85%) [solo campionato in corso, min. 9 partite per squadra]",
+    "subisce": "Ospite ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Casa: 9/13) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.1,
+     "exp_home": 1.45,
+     "exp_away": 1.64,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "segna": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 12,
+     "strong_n": 12,
+     "strong_pct": 100,
+     "other_k": 11,
+     "other_n": 13,
+     "other_pct": 85
+    },
+    "subisce": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 12,
+     "strong_n": 12,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 13,
+     "other_pct": 69
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 11,
+     "conceded": 9,
+     "no00": 12
+    },
+    "away": {
+     "n": 12,
+     "scored": 12,
+     "conceded": 12,
+     "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 5838021,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-10-31T15:00:00.000Z",
+   "league": "League Two",
+   "country": "ENG",
+   "leagueId": 109,
+   "home": "Oldham Athletic",
+   "away": "Crawley Town",
+   "url": "https://www.fotmob.com/match/5838021",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "subisce"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.97 (casa 1.69 + ospite 1.28) ≥ 2.7",
+    "subisce": "Ospite ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Casa: 9/12) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 2.97,
+     "exp_home": 1.69,
+     "exp_away": 1.28,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "subisce": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 11,
+     "strong_n": 11,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 12,
+     "other_pct": 75
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 8,
+     "conceded": 9,
+     "no00": 11
+    },
+    "away": {
+     "n": 11,
+     "scored": 8,
+     "conceded": 11,
+     "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 5838025,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-10-31T15:00:00.000Z",
+   "league": "League Two",
+   "country": "ENG",
+   "leagueId": 109,
+   "home": "Swindon Town",
+   "away": "Rotherham United",
+   "url": "https://www.fotmob.com/match/5838025",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.83 (casa 1.45 + ospite 1.38) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.83,
+     "exp_home": 1.45,
+     "exp_away": 1.38,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 6,
+     "conceded": 11,
+     "no00": 11
+    },
+    "away": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 12,
      "no00": 13
     }
    }
