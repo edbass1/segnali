@@ -1510,5 +1510,66 @@
   },
   "telegram": true,
   "resolved": "2026-10-31 04:02"
+ },
+ {
+  "id": "6503832-xg",
+  "type": "xg",
+  "time": "2026-10-31 07:17",
+  "ts": 1793427457,
+  "league": "K-League 1 Final Group A",
+  "country": "KOR",
+  "leagueId": 9080,
+  "home": "Jeonbuk Hyundai Motors FC",
+  "away": "Daejeon Hana Citizen",
+  "matchId": 6503832,
+  "reason": "xG atteso prematch 3.28 (casa 1.76 + ospite 1.51) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": [
+    51,
+    49
+   ],
+   "shots": [
+    5,
+    6
+   ],
+   "sot": [
+    1,
+    1
+   ],
+   "big": null,
+   "box": null,
+   "corners": [
+    0,
+    3
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/6503832",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.276,
+   "exp_home": 1.763,
+   "exp_away": 1.513,
+   "h_for": 1.917,
+   "h_ag": 1.377,
+   "a_for": 1.649,
+   "a_ag": 1.609,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
  }
 ]
