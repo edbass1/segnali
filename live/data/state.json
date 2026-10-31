@@ -140,7 +140,8 @@
   "5987546": {},
   "5910904": {},
   "5990923": {},
-  "6028607": {}
+  "6028607": {},
+  "5990536": {}
  },
  "checked": {
   "6050536": {
@@ -1031,13 +1032,24 @@
     "subisce": false,
     "mai00": false
    }
+  },
+  "5990536": {
+   "t": 1793458189,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
   }
  },
  "live_count": 127,
- "candidates_last": 4,
- "requests_last": 21,
+ "candidates_last": 1,
+ "requests_last": 4,
  "last_write": "2026-10-31 15:49",
- "last_write_ts": 1793458145,
+ "last_write_ts": 1793458189,
  "telegram": {
   "last_try": "2026-10-31 15:24",
   "ok": true,
