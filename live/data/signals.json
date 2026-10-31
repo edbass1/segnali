@@ -2426,8 +2426,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "2-1",
   "url": "https://www.fotmob.com/match/5847221",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -2442,7 +2442,8 @@
    "method": "casa/trasferta",
    "season": "2026/2027"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-10-31 19:48"
  },
  {
   "id": "5864736-segna",
