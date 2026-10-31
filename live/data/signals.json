@@ -1659,8 +1659,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "lost",
+  "final": "0-0",
   "url": "https://www.fotmob.com/match/5143420",
   "over05": null,
   "over05_note": "campionato non coperto",
@@ -1691,7 +1691,8 @@
   },
   "streak": 93,
   "streak_complete": false,
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-10-31 14:54"
  },
  {
   "id": "5837250-storico",
