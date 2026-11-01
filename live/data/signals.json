@@ -3695,5 +3695,75 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5739540-xg",
+  "type": "xg",
+  "time": "2026-11-01 15:17",
+  "ts": 1793542660,
+  "league": "Superligaen",
+  "country": "DEN",
+  "leagueId": 46,
+  "home": "Viborg",
+  "away": "AC Horsens",
+  "matchId": 5739540,
+  "reason": "xG atteso prematch 3.05 (casa 1.57 + ospite 1.48) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.68",
+    "0.15"
+   ],
+   "poss": [
+    59,
+    41
+   ],
+   "shots": [
+    15,
+    6
+   ],
+   "sot": [
+    5,
+    1
+   ],
+   "big": [
+    7,
+    0
+   ],
+   "box": [
+    39,
+    5
+   ],
+   "corners": [
+    6,
+    3
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5739540",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.052,
+   "exp_home": 1.575,
+   "exp_away": 1.477,
+   "h_for": 1.65,
+   "h_ag": 1.278,
+   "a_for": 1.676,
+   "a_ag": 1.5,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]

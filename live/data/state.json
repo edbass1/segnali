@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-11-01 15:16",
+ "last_scan": "2026-11-01 15:17",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -260,7 +260,12 @@
   "6142310": {},
   "5868519": {
    "xg": "2026-11-01 15:16"
-  }
+  },
+  "5897648": {},
+  "5739540": {
+   "xg": "2026-11-01 15:17"
+  },
+  "1000022428": {}
  },
  "checked": {
   "5832617": {
@@ -1999,15 +2004,48 @@
     "subisce": false,
     "mai00": false
    }
+  },
+  "5897648": {
+   "t": 1793542647,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5739540": {
+   "t": 1793542660,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": true,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "1000022428": {
+   "t": 1793542662,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
   }
  },
  "live_count": 102,
- "candidates_last": 1,
- "requests_last": 17,
- "last_write": "2026-11-01 15:16",
- "last_write_ts": 1793542595,
+ "candidates_last": 3,
+ "requests_last": 26,
+ "last_write": "2026-11-01 15:17",
+ "last_write_ts": 1793542662,
  "telegram": {
-  "last_try": "2026-11-01 15:16",
+  "last_try": "2026-11-01 15:17",
   "ok": true,
   "error": ""
  },
@@ -2015,6 +2053,6 @@
   "remaining": "499",
   "used": "1",
   "last_cost": "0",
-  "time": "2026-11-01 15:16"
+  "time": "2026-11-01 15:17"
  }
 }
