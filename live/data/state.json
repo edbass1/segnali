@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-11-01 13:22",
+ "last_scan": "2026-11-01 13:24",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -243,7 +243,11 @@
   "1000017769": {
    "xg": "2026-11-01 13:21"
   },
-  "5883321": {}
+  "5883321": {},
+  "5143880": {
+   "storico": "2026-11-01 13:24"
+  },
+  "5885315": {}
  },
  "checked": {
   "1000022003": {
@@ -1879,15 +1883,37 @@
     "subisce": false,
     "mai00": false
    }
+  },
+  "5143880": {
+   "t": 1793535846,
+   "r": "valutata",
+   "res": {
+    "storico": true,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5885315": {
+   "t": 1793535851,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
   }
  },
- "live_count": 114,
- "candidates_last": 1,
- "requests_last": 5,
- "last_write": "2026-11-01 13:22",
- "last_write_ts": 1793535724,
+ "live_count": 112,
+ "candidates_last": 2,
+ "requests_last": 8,
+ "last_write": "2026-11-01 13:24",
+ "last_write_ts": 1793535851,
  "telegram": {
-  "last_try": "2026-11-01 13:21",
+  "last_try": "2026-11-01 13:24",
   "ok": true,
   "error": ""
  },

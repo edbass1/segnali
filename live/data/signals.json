@@ -3417,5 +3417,70 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5143880-storico",
+  "type": "storico",
+  "time": "2026-11-01 13:24",
+  "ts": 1793535846,
+  "league": "3. Divisjon Avd. 1",
+  "country": "NOR",
+  "leagueId": 205,
+  "home": "Nordstrand",
+  "away": "Ready",
+  "matchId": 5143880,
+  "reason": "Casa: almeno 87 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Ospite: 1 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5143880",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 87,
+    "complete": false,
+    "capped": false,
+    "last00": null,
+    "n": 50,
+    "zz": 0,
+    "avail": 87
+   },
+   "away": {
+    "streak": 19,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "16/05/2026",
+     "opp": "Heming",
+     "home": false
+    },
+    "n": 50,
+    "zz": 1,
+    "avail": 54
+   },
+   "strong": "home"
+  },
+  "streak": 87,
+  "streak_complete": false,
+  "telegram": true
  }
 ]
