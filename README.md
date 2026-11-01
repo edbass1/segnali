@@ -13,7 +13,7 @@ Cosa calcola, solo sul campionato nazionale della stagione in corso (coppe esclu
 - xG di campionato (fatti e subiti, in casa e in trasferta) confrontati con gli xG live dell'alert, con un consiglio e una spiegazione per chi parte da zero.
 - Quota equa, soglia per il back Over e, sullo 0-0, soglia per il lay del pareggio. La commissione si cambia nel campo in alto (predefinita 5%).
 
-I minuti dei gol stanno in `data/fotmob/`. L'archivio prende i campionati nazionali delle ultime giornate, Serie C compresa, e da quei minuti calcola fasce, secondo tempo e ultimi 30 minuti per ogni squadra. Non serve una chiave. Se una partita è più nuova dell'archivio, il browser la chiede a FotMob.
+I minuti dei gol stanno in `data/fotmob/`. La pagina cerca le squadre in quell'archivio (anche se nell'alert il nome è in un'altra lingua, per esempio Vienna e Wien) e non chiama FotMob dal browser. L'aggiornamento automatico aggiunge i campionati nazionali che hanno giocato negli ultimi giorni, partendo da quelli ancora vuoti. Se un campionato non c'è ancora, la pagina lo dice in italiano e chiede di scegliere la squadra dalla lista.
 
 SoccerStats resta solo di riserva, quando un campionato non è ancora nell'archivio. In pubblico quella fonte mostra 5 squadre sui campionati minori, e il browser non può leggerla da solo.
 

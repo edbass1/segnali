@@ -14,7 +14,11 @@ export function normName(s) {
 const STOP = new Set(['fc', 'fk', 'sk', 'sc', 'ac', 'as', 'cf', 'cd', 'ud', 'afc', 'club', 'calcio', 'ssc', 'ss', 'us', 'asd',
   'sv', 'vfb', 'vfl', 'tsv', 'bk', 'if', 'ik', 'nk', 'hnk', 'ks', 'cs', 'sd', 'rc', 'rcd', 'ca', 'ec', 'fbc', 'ssd', 'sad',
   'kulubu', 'futbol', 'football', 'de', 'the', 'and', 'ad', 'fsv', 'spa', 'srl', 'jk', 'kv', 'kvc', 'krc', 'aa', 'cp', 'ff', 'sl']);
-const ABBR = { utd: 'united', man: 'manchester', ath: 'athletic', atl: 'atletico', dep: 'deportivo', spt: 'sporting', wed: 'wednesday', st: 'saint', int: 'inter', intl: 'internacional', bor: 'borussia', mgladbach: 'monchengladbach', gladbach: 'monchengladbach', psg: 'paris saint germain' };
+const ABBR = { utd: 'united', man: 'manchester', ath: 'athletic', atl: 'atletico', dep: 'deportivo', spt: 'sporting', wed: 'wednesday', st: 'saint', int: 'inter', intl: 'internacional', bor: 'borussia', mgladbach: 'monchengladbach', gladbach: 'monchengladbach', psg: 'paris saint germain',
+  vienna: 'wien', wien: 'wien', munich: 'munchen', muenchen: 'munchen', cologne: 'koln', nuremberg: 'nurnberg', hanover: 'hannover',
+  rome: 'roma', milan: 'milano', naples: 'napoli', turin: 'torino', genoa: 'genova', florence: 'firenze', venice: 'venezia',
+  lisbon: 'lisboa', prague: 'praha', warsaw: 'warszawa', moscow: 'moskva', kiev: 'kyiv', seville: 'sevilla',
+  brussels: 'brussel', antwerp: 'antwerpen', thessaloniki: 'thessaloniki' };
 export function coreTokens(s) {
   const t = normName(s).split(' ').map(x => ABBR[x] || x).join(' ').split(' ').filter(x => x && !STOP.has(x));
   return t.length ? t : normName(s).split(' ').filter(Boolean);
@@ -519,6 +523,7 @@ export const XG_GUIDE = [
 /* Paesi: prefisso SoccerStats, codice FotMob, nome inglese della bandiera. */
 const CC_GROUPS = [
   ['ENG', 'EN', 'GB', 'ENGLAND'],
+  ['AUT', 'AT', 'AUSTRIA'],
   ['ITA', 'IT', 'ITALY'],
   ['SPA', 'ESP', 'ES', 'SPAIN'],
   ['FRA', 'FR', 'FRANCE'],
@@ -529,7 +534,6 @@ const CC_GROUPS = [
   ['BEL', 'BE', 'BELGIUM'],
   ['GRE', 'GR', 'GREECE'],
   ['SCO', 'SC', 'SCOTLAND'],
-  ['AUT', 'AT', 'AUSTRIA'],
   ['SUI', 'CH', 'SWITZERLAND'],
   ['DEN', 'DK', 'DENMARK'],
   ['POL', 'PL', 'POLAND'],
@@ -600,4 +604,31 @@ export function pickPair(hc, ac) {
     if (!best || s > best.score) best = { h, a, score: s };
   }));
   return best || { h: H[0], a: A[0], score: 0 };
+}
+
+/** Squadre dell'archivio più simili al nome dell'alert. */
+export function shortlist(name, teams, leagueName, iso2) {
+  const country = canonCountry(iso2);
+  return (teams || []).map(t => {
+    const sim = nameSim(name, t.name);
+    const lsim = Math.max(leagueSim(leagueName, t.league), leagueSim(leagueName, (t.country || '') + ' ' + (t.league || '')));
+    const sameCountry = !country || canonCountry(t.country) === country;
+    return { ...t, sim, lsim, sameCountry };
+  }).filter(t => t.sim >= 0.55 || (t.sameCountry && t.lsim >= 0.34 && t.sim >= 0.4))
+    .sort((a, b) => (b.sim + 0.22 * b.lsim + (b.sameCountry ? 0.04 : 0)) - (a.sim + 0.22 * a.lsim + (a.sameCountry ? 0.04 : 0)));
+}
+
+/** Coppia casa/ospite nello stesso campionato. sure=true se i nomi bastano senza chiedere. */
+export function choosePair(homeName, awayName, teams, leagueName, iso2) {
+  const home = shortlist(homeName, teams, leagueName, iso2).slice(0, 12);
+  const away = shortlist(awayName, teams, leagueName, iso2).slice(0, 12);
+  let best = null;
+  for (const h of home) for (const a of away) {
+    if (h.id === a.id) continue;
+    const same = h.leagueId && h.leagueId === a.leagueId ? 0.4 : -0.55;
+    const s = h.sim + a.sim + 0.2 * ((h.lsim || 0) + (a.lsim || 0)) + same;
+    if (!best || s > best.score) best = { h, a, score: s };
+  }
+  const sure = !!(best && best.h.leagueId === best.a.leagueId && best.h.sim >= 0.78 && best.a.sim >= 0.78);
+  return { best, sure, home, away };
 }

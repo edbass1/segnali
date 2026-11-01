@@ -226,10 +226,19 @@ def write_index():
                      "season": d.get("season"), "matches": len(ms), "withMinutes": ok, "withXg": xg,
                      "updated": d.get("updated")})
     rows.sort(key=lambda r: (r.get("country") or "", r.get("name") or ""))
-    save(os.path.join(OUT, "index.json"), {
-        "updated": datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ"),
-        "leagues": rows})
-    print(f"indice: {len(rows)} campionati", flush=True)
+    stamp = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    save(os.path.join(OUT, "index.json"), {"updated": stamp, "leagues": rows})
+    teams = {}
+    for row in rows:
+        doc = load(os.path.join(OUT, str(row["id"]) + ".json")) or {}
+        for m in (doc.get("matches") or {}).values():
+            for tid, name in ((m.get("h"), m.get("hn")), (m.get("a"), m.get("an"))):
+                if not tid or not name:
+                    continue
+                teams[str(tid)] = {"id": str(tid), "name": name, "leagueId": str(row["id"]),
+                                   "league": row.get("name") or "", "country": row.get("country") or ""}
+    save(os.path.join(OUT, "teams.json"), {"updated": stamp, "teams": sorted(teams.values(), key=lambda t: (t["country"], t["league"], t["name"]))})
+    print(f"indice: {len(rows)} campionati, {len(teams)} squadre", flush=True)
 
 
 def main():
@@ -259,7 +268,8 @@ def main():
             if not info or info["missing"] <= 0:
                 continue
             jobs.append(info)
-        jobs.sort(key=lambda j: (0 if j["id"] == 147 else 1, j["missing"], j["id"]))
+        # Prima i campionati mai scaricati (es. Austria), poi gli aggiornamenti delle partite nuove.
+        jobs.sort(key=lambda j: (0 if not os.path.exists(os.path.join(OUT, str(j["id"]) + ".json")) else 1, j["missing"], j["id"]))
         ids = [j["id"] for j in jobs]
         print("da aggiornare:", ", ".join(f"{j['id']} {j['name']} ({j['missing']})" for j in jobs[:18]), flush=True)
     budget = a.budget

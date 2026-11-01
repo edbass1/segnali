@@ -1,7 +1,7 @@
 import {
-  parseAlert, nameSim, leagueSim, leagueOk, alertWindow, scoreBoard, windowBoard,
-  xgProfile, trading, advice, XG_GUIDE, matchSoccerstats, pickSsTeam, pickPair,
-  timingFromArchive, archiveAsStats,
+  parseAlert, alertWindow, scoreBoard, windowBoard,
+  xgProfile, trading, advice, XG_GUIDE, matchSoccerstats, pickSsTeam,
+  timingFromArchive, archiveAsStats, choosePair, canonCountry,
 } from './logic.mjs';
 
 const $ = id => document.getElementById(id);
@@ -9,7 +9,6 @@ const esc = s => String(s ?? '').replace(/[&<>"']/g, c => ({ '&': '&amp;', '<': 
 const n1 = x => x == null || !isFinite(x) ? '–' : (Math.round(x * 10) / 10).toFixed(1).replace('.', ',');
 const n2 = x => x == null || !isFinite(x) ? '–' : Number(x).toFixed(2).replace('.', ',');
 const pct = x => x == null || !isFinite(x) ? '–' : Math.round(x * 100) + '%';
-const API = 'https://www.fotmob.com/api/data/';
 
 const EX45 = `🇮🇹 Serie A (6th vs 18th)
 Como vs Venezia
@@ -46,123 +45,6 @@ Red Cards: 0 - 0
 Over/Under 0.50 Odds:
 1.44 2.70`;
 
-function cacheGet(k) {
-  try {
-    const o = JSON.parse(localStorage.getItem(k) || 'null');
-    if (!o || (o.e && Date.now() > o.e)) return null;
-    return o.v;
-  } catch (e) { return null; }
-}
-function cacheSet(k, v, ttl) {
-  try { localStorage.setItem(k, JSON.stringify({ e: ttl ? Date.now() + ttl : 0, v })); } catch (e) {}
-}
-async function getJSON(url) {
-  let last;
-  for (let i = 0; i < 3; i++) {
-    try {
-      const r = await fetch(i ? url + (url.includes('?') ? '&' : '?') + '_=' + i : url);
-      if (!r.ok) throw new Error('FotMob HTTP ' + r.status);
-      return await r.json();
-    } catch (e) { last = e; await new Promise(res => setTimeout(res, 400 * (i + 1))); }
-  }
-  throw last;
-}
-async function searchTeams(term) {
-  const q = String(term || '').trim();
-  const key = 'sg:s:' + q.toLowerCase();
-  const hit = cacheGet(key);
-  if (hit) return hit;
-  const d = await getJSON(API + 'search/suggest?term=' + encodeURIComponent(q));
-  const res = new Map();
-  (Array.isArray(d) ? d : []).forEach(g => (g.suggestions || []).forEach(s => {
-    if (s.type === 'team' && !res.has(String(s.id))) res.set(String(s.id), { id: String(s.id), name: s.name, leagueId: s.leagueId != null ? String(s.leagueId) : '', leagueName: s.leagueName || '' });
-  }));
-  const out = [...res.values()];
-  cacheSet(key, out, 24 * 3600e3);
-  return out;
-}
-function parseScore(st) {
-  const m = String(st && st.scoreStr || '').match(/(\d+)\s*-\s*(\d+)/);
-  return m ? [+m[1], +m[2]] : null;
-}
-function compact(m, lid, ln) {
-  const st = m.status || {};
-  if (!st.finished || st.cancelled || st.awarded) return null;
-  const sc = parseScore(st);
-  if (!sc) return null;
-  const t = Date.parse(st.utcTime);
-  if (!isFinite(t)) return null;
-  return { id: String(m.id), t, h: String(m.home.id), a: String(m.away.id), hn: m.home.name, an: m.away.name, hg: sc[0], ag: sc[1], lid: String(lid), ln };
-}
-function xgRows(tbl) {
-  const out = [];
-  (tbl || []).forEach(tb => {
-    const blocks = [];
-    const d = tb && tb.data;
-    if (!d) return;
-    if (d.table) blocks.push(d.table);
-    (d.tables || []).forEach(s => s.table && blocks.push(s.table));
-    blocks.forEach(b => (b.xg || []).forEach(r => {
-      if (r && r.played && r.xg != null) out.push({ id: String(r.id), played: r.played, xg: +r.xg, xga: +r.xgConceded });
-    }));
-  });
-  return out;
-}
-async function getLeague(id) {
-  const key = 'sg:l:' + id;
-  const hit = cacheGet(key);
-  if (hit) return hit;
-  const d = await getJSON(API + 'leagues?id=' + encodeURIComponent(id));
-  const det = d.details || {};
-  const out = {
-    id: String(id), name: det.name || '', country: det.country || '', type: det.type || '', gender: det.gender || 'male',
-    season: det.selectedSeason || '', latest: det.latestSeason || '',
-    matches: ((d.fixtures || {}).allMatches || []).map(m => compact(m, id, det.name)).filter(Boolean),
-    xg: xgRows(d.table),
-  };
-  cacheSet(key, out, 3 * 3600e3);
-  return out;
-}
-async function getDetail(mid) {
-  const key = 'sg:m:' + mid;
-  const hit = cacheGet(key);
-  if (hit) return hit;
-  const d = await getJSON(API + 'matchDetails?matchId=' + encodeURIComponent(mid));
-  const hd = d.header || {};
-  const evs = ((((d.content || {}).matchFacts || {}).events || {}).events) || [];
-  const goals = evs.filter(e => e.type === 'Goal').map(e => [e.time | 0, e.overloadTime | 0, e.isHome ? 1 : 0]);
-  const sc = parseScore(hd.status || {});
-  let ok = false;
-  if (sc) {
-    const gh = goals.filter(x => x[2]).length, ga = goals.length - gh;
-    ok = gh === sc[0] && ga === sc[1];
-  }
-  const per = (((d.content || {}).stats || {}).Periods) || {};
-  const xgOf = k => {
-    const P = per[k]; if (!P) return null;
-    for (const gr of P.stats || []) for (const x of (gr && gr.stats) || []) {
-      if (x && x.key === 'expected_goals' && x.stats && x.stats[0] != null && x.stats[1] != null) {
-        const a = parseFloat(x.stats[0]), b = parseFloat(x.stats[1]);
-        if (isFinite(a) && isFinite(b)) return [a, b];
-      }
-    }
-    return null;
-  };
-  const out = { ok, goals, sc, xg: xgOf('All') };
-  cacheSet(key, out, ok ? 30 * 86400e3 : 3600e3);
-  return out;
-}
-async function pool(items, n, fn) {
-  const out = new Array(items.length);
-  let i = 0;
-  await Promise.all(Array.from({ length: Math.min(n, items.length) }, async () => {
-    while (i < items.length) {
-      const k = i++;
-      try { out[k] = await fn(items[k], k); } catch (e) { out[k] = null; }
-    }
-  }));
-  return out;
-}
 function romeDay(ts) {
   return new Intl.DateTimeFormat('en-CA', { timeZone: 'Europe/Rome' }).format(new Date(ts));
 }
@@ -174,30 +56,25 @@ function progress(p, msg) {
   $('pbar').style.width = Math.max(4, Math.min(100, p)) + '%';
   $('pmsg').textContent = msg;
 }
-async function candidates(name, A) {
-  const toks = name.split(/\s+/).filter(t => t.length >= 4);
-  const queries = [...new Set([name, toks.join(' ')].filter(Boolean))].slice(0, 3);
-  const map = new Map();
-  for (const q of queries) {
-    let rows = [];
-    try { rows = await searchTeams(q); } catch (e) { if (!map.size) throw e; }
-    rows.forEach(t => { if (!map.has(t.id)) map.set(t.id, t); });
-    if ([...map.values()].some(t => nameSim(name, t.name) >= 0.9)) break;
-  }
-  return [...map.values()].map(t => ({ ...t, sim: nameSim(name, t.name), lsim: leagueSim(A.league, t.leagueName) }))
-    .sort((a, b) => (b.sim + 0.15 * b.lsim) - (a.sim + 0.15 * a.lsim));
-}
-function ask(side, name, list) {
+function ask(side, alertName, list, catalog) {
   const box = $('picker');
   return new Promise(resolve => {
     const draw = (rows, note) => {
       box.innerHTML = `<div class="card warn pick"><h2>Quale ${side}?</h2><p>${esc(note)}</p>
-        ${rows.slice(0, 6).map((c, i) => `<button type="button" data-i="${i}">${esc(c.name)} <span class="muted">· ${esc(c.leagueName || 'campionato ?')} · ${Math.round(c.sim * 100)}%</span></button>`).join('') || '<p>Nessuna squadra.</p>'}
-        <button type="button" id="pickStop">Annulla</button></div>`;
+        ${rows.slice(0, 10).map((c, i) => `<button type="button" data-i="${i}">${esc(c.name)} <span class="muted">· ${esc(c.league || c.leagueName || 'campionato ?')}${c.country ? ' · ' + esc(c.country) : ''}</span></button>`).join('') || '<p>Nessuna squadra con questo nome.</p>'}
+        <div class="row"><input id="pickQ" type="text" value="${esc(alertName)}" placeholder="Scrivi il nome"><button type="button" id="pickGo">Cerca</button><button type="button" id="pickStop">Annulla</button></div></div>`;
       box.querySelectorAll('button[data-i]').forEach(b => b.onclick = () => { box.innerHTML = ''; resolve(rows[+b.dataset.i]); });
       $('pickStop').onclick = () => { box.innerHTML = ''; resolve(null); };
+      $('pickGo').onclick = () => {
+        const q = $('pickQ').value.trim();
+        const found = (catalog || []).map(t => ({ ...t, sim: 1 })).filter(t => {
+          const n = (t.name || '').toLowerCase();
+          return n.includes(q.toLowerCase()) || q.length >= 3 && n.split(/\s+/).some(w => w.startsWith(q.toLowerCase()));
+        }).slice(0, 10);
+        draw(found.length ? found : rows, found.length ? `Risultati per «${q}».` : `Niente per «${q}». Prova un altro nome.`);
+      };
     };
-    draw(list, `Non sono sicuro di «${name}». Scegli la squadra giusta.`);
+    draw(list, list.length ? `Non sono sicuro di «${alertName}». Scegli la squadra.` : `Non trovo «${alertName}» nell'archivio. Cerca il nome usato dal campionato.`);
   });
 }
 function viewOf(c, teamId, det) {
@@ -390,29 +267,39 @@ async function analyze() {
   }
   $('go').disabled = true;
   try {
-    progress(8, 'Cerco le squadre su FotMob…');
-    const hc = await candidates(A.home, A);
-    const ac = await candidates(A.away, A);
-    let pair = pickPair(hc, ac);
-    if (!pair.h || !pair.a) throw new Error('Squadra non trovata su FotMob');
-    if (pair.h.sim < 0.84) pair.h = await ask('squadra di casa', A.home, hc);
-    if (!pair.h) return;
-    if (pair.a.sim < 0.84) pair.a = await ask('squadra ospite', A.away, ac);
-    if (!pair.a) return;
-    progress(22, 'Apro il campionato…');
-    const ids = [...new Set([pair.h.leagueId, pair.a.leagueId].filter(Boolean))];
-    let league = null, why = '';
-    for (const id of ids) {
-      const L = await getLeague(id);
-      const ok = leagueOk(L, A.league);
-      if (!ok.ok) { why = ok.why; continue; }
-      const inL = new Set(L.matches.flatMap(m => [m.h, m.a]).concat((L.xg || []).map(x => x.id)));
-      if (inL.has(pair.h.id) && inL.has(pair.a.id)) { league = L; break; }
-      if (!league) league = L;
+    progress(8, 'Cerco le squadre nell\'archivio…');
+    const catRes = await fetch('data/fotmob/teams.json');
+    if (!catRes.ok) throw new Error('Elenco squadre non disponibile. Ricarica la pagina tra qualche minuto.');
+    const catalog = ((await catRes.json()).teams || []);
+    const choice = choosePair(A.home, A.away, catalog, A.league, A.iso2);
+    let homeTeam = choice.best && choice.best.h;
+    let awayTeam = choice.best && choice.best.a;
+    if (!choice.sure) {
+      const country = canonCountry(A.iso2);
+      const pool = country ? catalog.filter(t => canonCountry(t.country) === country) : catalog;
+      homeTeam = await ask('squadra di casa', A.home, choice.home.length ? choice.home : pool.slice(0, 10), pool.length ? pool : catalog);
+      if (!homeTeam) { $('out').innerHTML = '<section class="card"><p>Analisi annullata.</p></section>'; return; }
+      const same = (pool.length ? pool : catalog).filter(t => t.leagueId === homeTeam.leagueId && t.id !== homeTeam.id);
+      awayTeam = await ask('squadra ospite', A.away, choice.away.filter(t => t.leagueId === homeTeam.leagueId).length ? choice.away.filter(t => t.leagueId === homeTeam.leagueId) : same.slice(0, 10), same);
+      if (!awayTeam) { $('out').innerHTML = '<section class="card"><p>Analisi annullata.</p></section>'; return; }
     }
-    if (!league) throw new Error(why || 'Campionato nazionale non trovato');
-    const check = leagueOk(league, A.league);
-    if (!check.ok) throw new Error(check.why);
+    if (!homeTeam || !awayTeam || homeTeam.leagueId !== awayTeam.leagueId) {
+      $('out').innerHTML = '<section class="card bad"><p>Le due squadre devono essere dello stesso campionato. Riprova e scegli i nomi dalla lista.</p></section>';
+      return;
+    }
+    progress(22, 'Apro il campionato…');
+    const ar = await fetch('data/fotmob/' + homeTeam.leagueId + '.json');
+    if (!ar.ok) {
+      $('out').innerHTML = `<section class="card bad"><h2>Campionato non ancora pronto</h2><p>Ho trovato le squadre, ma le partite di questo campionato non sono ancora sul sito.</p><p class="def">L'aggiornamento automatico aggiunge i campionati che hanno giocato negli ultimi giorni. Riprova più tardi.</p></section>`;
+      return;
+    }
+    const doc = await ar.json();
+    const league = {
+      id: String(doc.leagueId), name: doc.name || homeTeam.league, country: doc.country || '', season: doc.season || '',
+      xg: doc.xg || [],
+      matches: Object.entries(doc.matches || {}).map(([id, m]) => ({ id, t: m.t, h: String(m.h), a: String(m.a), hn: m.hn, an: m.an, hg: m.hg, ag: m.ag })),
+    };
+    const pair = { h: { ...homeTeam, id: String(homeTeam.id), name: homeTeam.name }, a: { ...awayTeam, id: String(awayTeam.id), name: awayTeam.name } };
     const today = romeDay(Date.now());
     const hid = pair.h.id, aid = pair.a.id;
     const rowsOf = id => league.matches.filter(m => {
@@ -421,37 +308,22 @@ async function analyze() {
       return true;
     }).sort((a, b) => b.t - a.t);
     const hComp = rowsOf(hid), aComp = rowsOf(aid);
-    let archive = null;
-    try {
-      const ar = await fetch('data/fotmob/' + league.id + '.json');
-      if (ar.ok) archive = await ar.json();
-    } catch (e) {}
-    const idsDet = [...new Set(hComp.concat(aComp).map(m => m.id))];
+    const archive = doc;
     const detMap = new Map();
-    const need = [];
+    let missingMinutes = 0;
     for (const c of hComp.concat(aComp)) {
-      if (detMap.has(c.id) || need.includes(c.id)) continue;
-      const a = archive && archive.matches && archive.matches[c.id];
-      if (a && a.ok && a.hg === c.hg && a.ag === c.ag && Array.isArray(a.goals)) detMap.set(c.id, { ok: true, goals: a.goals, xg: a.xg || null });
-      else need.push(c.id);
+      if (detMap.has(c.id)) continue;
+      const a = archive.matches && archive.matches[c.id];
+      if (a && a.ok && Array.isArray(a.goals)) detMap.set(c.id, { ok: true, goals: a.goals, xg: a.xg || null });
+      else { detMap.set(c.id, null); missingMinutes++; }
     }
-    if (need.length) {
-      progress(35, `Leggo i minuti dei gol, ${need.length} partite…`);
-      let done = 0;
-      const dets = await pool(need, 4, async mid => {
-        const d = await getDetail(mid);
-        done++;
-        if (done % 3 === 0) progress(35 + 50 * done / Math.max(1, need.length), `Minuti gol ${done}/${need.length}`);
-        return d;
-      });
-      need.forEach((id, i) => detMap.set(id, dets[i]));
-    } else progress(80, 'Minuti dei gol già in archivio');
+    progress(80, 'Minuti dei gol già in archivio');
     const homeRows = hComp.map(c => viewOf(c, hid, detMap.get(c.id)));
     const awayRows = aComp.map(c => viewOf(c, aid, detMap.get(c.id)));
     const built = archive && archive.matches ? timingFromArchive(archive.matches) : null;
     const covered = built && built.teams.some(t => t.id === hid) && built.teams.some(t => t.id === aid);
     let ss = covered ? archiveAsStats(built, archive.updated) : null;
-    let ssNameH = null, ssNameA = null, note = '', source = covered ? 'fotmob' : '';
+    let ssNameH = null, ssNameA = null, note = missingMinutes ? `Mancano i minuti di ${missingMinutes} partite: quei ritardi sui tempi dei gol si fermano lì. Lo 0-0, l'1-0 e lo 0-1 usano comunque il risultato.` : '', source = covered ? 'fotmob' : '';
     if (!covered) {
       progress(90, 'Minuti non in archivio: provo SoccerStats…');
       try {
@@ -481,7 +353,7 @@ async function analyze() {
     render();
   } catch (e) {
     $('prog').hidden = true;
-    $('out').innerHTML = `<section class="card bad"><h2>Non sono riuscito a leggere i dati</h2><p>${esc(e.message || e)}</p><p class="def">FotMob va letto dal browser. Se il messaggio parla di rete o di CORS, riprova tra un minuto.</p></section>`;
+    $('out').innerHTML = `<section class="card bad"><h2>Non sono riuscito a leggere i dati</h2><p>${esc(e.message || e)}</p><p class="def">I conti usano l'archivio del sito, aggiornato da solo. Se il campionato è nuovo, riprova dopo il prossimo aggiornamento.</p></section>`;
   } finally {
     $('go').disabled = false;
   }
