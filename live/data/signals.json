@@ -2934,5 +2934,75 @@
   },
   "telegram": true,
   "resolved": "2026-10-31 22:24"
+ },
+ {
+  "id": "5898773-xg",
+  "type": "xg",
+  "time": "2026-11-01 03:17",
+  "ts": 1793499451,
+  "league": "Liga de Expansión MX",
+  "country": "MEX",
+  "leagueId": 8976,
+  "home": "Cancún FC",
+  "away": "Jaiba Brava del Tampico-Madero",
+  "matchId": 5898773,
+  "reason": "xG atteso prematch 2.90 (casa 2.03 + ospite 0.87) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.54",
+    "0.07"
+   ],
+   "poss": [
+    48,
+    52
+   ],
+   "shots": [
+    6,
+    2
+   ],
+   "sot": [
+    0,
+    1
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    9,
+    5
+   ],
+   "corners": [
+    2,
+    3
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5898773",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "total": 2.901,
+   "exp_home": 2.034,
+   "exp_away": 0.866,
+   "h_for": 2.117,
+   "h_ag": 1.064,
+   "a_for": 0.669,
+   "a_ag": 1.951,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
