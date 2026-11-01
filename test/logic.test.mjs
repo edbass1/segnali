@@ -3,7 +3,7 @@ import assert from 'node:assert/strict';
 import {
   parseAlert, alertWindow, goalAfter, ritardo, scoreBoard, windowBoard, scoreAt,
   thresholds, trading, nameSim, advice, bandTotals, cumShare, matchSoccerstats,
-  timingFromArchive,
+  timingFromArchive, choosePair,
 } from '../js/logic.mjs';
 
 const g = (min, teamFor) => ({ min, extra: 0, for: teamFor });
@@ -134,6 +134,54 @@ test('trading sullo 0-0 al 60 produce una probabilità e una soglia', () => {
   assert.match(text.move, /Mossa:/);
   const tot = bandTotals(ss.timing.overall);
   assert.equal(tot.matches, 10);
+});
+
+const AUSTRIA = `🇦🇹 Austria Bundesliga (11th vs 2nd)
+FK Austria Vienna vs Rapid Vienna
+
+Timer: Half Time
+Last Goal: None
+
+Goals: 0 - 0
+xG: 0.64 - 0.4
+Corners: 4 - 1
+Shots On Target: 3 - 1
+Dangerous Attacks: 31 - 12
+Red Cards: 0 - 0
+Possession %: 56 - 44
+
+Over/Under 0.50 Odds:
+1.25 3.75`;
+
+test('alert Austria: intervallo, nomi e 0-0', () => {
+  const A = parseAlert(AUSTRIA);
+  assert.equal(A.home, 'FK Austria Vienna');
+  assert.equal(A.away, 'Rapid Vienna');
+  assert.equal(A.phase, 'HT');
+  assert.equal(A.minute, 45);
+  assert.equal(A.is00, true);
+  assert.equal(A.iso2, 'AT');
+  assert.equal(A.league, 'Austria Bundesliga');
+  assert.equal(alertWindow(A).id, '2h');
+  assert.equal(A.stats.xg[0], 0.64);
+  assert.equal(A.stats.xg[1], 0.4);
+});
+
+test('Vienna si abbina a Wien, stesso campionato, senza chiedere', () => {
+  assert.ok(nameSim('FK Austria Vienna', 'Austria Wien') >= 0.9);
+  assert.ok(nameSim('Rapid Vienna', 'Rapid Wien') >= 0.9);
+  assert.ok(nameSim('Bayern Munich', 'Bayern München') >= 0.9);
+  const teams = [
+    { id: '1', name: 'Austria Wien', leagueId: '38', league: 'Bundesliga', country: 'AUT' },
+    { id: '2', name: 'Rapid Wien', leagueId: '38', league: 'Bundesliga', country: 'AUT' },
+    { id: '3', name: 'Austria Klagenfurt', leagueId: '38', league: 'Bundesliga', country: 'AUT' },
+    { id: '4', name: 'Rapid Bucuresti', leagueId: '99', league: 'Liga 1', country: 'ROU' },
+  ];
+  const c = choosePair('FK Austria Vienna', 'Rapid Vienna', teams, 'Austria Bundesliga', 'AT');
+  assert.equal(c.sure, true);
+  assert.equal(c.best.h.name, 'Austria Wien');
+  assert.equal(c.best.a.name, 'Rapid Wien');
+  assert.equal(c.best.h.leagueId, '38');
 });
 
 test('fasce dai minuti: 67 va in 61-75, 76 in 76-90, secondo tempo dal 46', () => {
