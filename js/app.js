@@ -1,6 +1,7 @@
 import {
   parseAlert, nameSim, leagueSim, leagueOk, alertWindow, scoreBoard, windowBoard,
   xgProfile, trading, advice, XG_GUIDE, matchSoccerstats, pickSsTeam, pickPair,
+  timingFromArchive, archiveAsStats,
 } from './logic.mjs';
 
 const $ = id => document.getElementById(id);
@@ -33,6 +34,17 @@ Dangerous Attacks: 41 - 22
 Red Cards: 0 - 0
 Over/Under 0.50 Odds:
 1.36 3.10`;
+
+const EXC = `🇮🇹 Serie C (1st vs 8th)
+Bari vs Cavese
+
+Timer: 60'
+Goals: 0 - 0
+xG: 0.84 - 0.37
+Shots On Target: 4 - 2
+Red Cards: 0 - 0
+Over/Under 0.50 Odds:
+1.44 2.70`;
 
 function cacheGet(k) {
   try {
@@ -239,7 +251,7 @@ function ssBlock(doc, key) {
 
 function render() {
   if (!LAST) return;
-  const { A, league, home, away, ss, ssNameH, ssNameA, note } = LAST;
+  const { A, league, home, away, ss, ssNameH, ssNameA, note, source, fmTeams } = LAST;
   const comm = Math.max(0, Math.min(20, parseFloat(String($('comm').value).replace(',', '.')) || 0)) / 100;
   const tr = trading(home.rows, away.rows, A, ss, comm);
   const ad = advice(A, home.name, away.name, tr, league.season);
@@ -339,11 +351,30 @@ function render() {
       ${block.h2h ? ` In casa, secondo tempo: ${n1(block.h2h.o05)}%.` : ''} ${block.h2a ? ` In trasferta, secondo tempo: ${n1(block.h2a.o05)}%.` : ''}</p>
       <p class="def">Porta inviolata (clean sheet) ${block.ou ? n1(block.ou.cs) + '%' : '–'} · non ha segnato ${block.ou ? n1(block.ou.fts) + '%' : '–'} · entrambe a segno ${block.ou ? n1(block.ou.bts) + '%' : '–'}.</p></article>`;
   };
-  html += `<section class="card"><h2>SoccerStats, stesso campionato</h2>
-    <p class="def">${ss ? `Archivio del ${esc((ss.updated || '').replace('T', ' ').replace('Z', ' UTC'))}. Queste cifre sono totali di stagione (gol per fascia, percentuale di partite), non il ritardo partita per partita. Il ritardo sta nei riquadri sopra e viene dai minuti di ogni gara su FotMob.` : 'Archivio SoccerStats assente per questo campionato. I ritardi e gli xG restano quelli di FotMob.'}${ss && Object.keys((ss.timing && ss.timing.overall) || {}).length <= 5 ? ' La pagina pubblica di SoccerStats, per questo campionato, mostra solo 5 squadre: se la tua non c\'è, vale il calcolo FotMob.' : ''}</p>
-    ${ss && ss.box && ss.box.matches ? `<p>Stagione SoccerStats: ${ss.box.matches} partite. Over 1,5 ${n1(ss.box.over15)}% · Over 2,5 ${n1(ss.box.over25)}% · Over 3,5 ${n1(ss.box.over35)}%. Vittorie casa ${n1(ss.box.homeWin)}%, pareggi ${n1(ss.box.draw)}%, vittorie trasferta ${n1(ss.box.awayWin)}%.</p>` : ''}
-    <div class="duo">${ssTeam(sh, home)}${ssTeam(sa, away)}</div>
-  </section>`;
+  const fmCard = (id, sideName) => {
+    const t = (fmTeams || []).find(x => x.id === id);
+    if (!t) return `<article class="card"><h3>${esc(sideName)}</h3><p>Questa squadra non è ancora nell'archivio dei minuti.</p></article>`;
+    const last = [t.b[4][0] + t.b[5][0], t.b[4][1] + t.b[5][1]];
+    const pc = (k, n) => n ? Math.round(100 * k / n) + '%' : '–';
+    return `<article class="card"><h3>${esc(t.name)}</h3>
+      <p>${t.gp} partite con i minuti. Gol segnati-subiti negli ultimi 30 minuti: <b>${last[0]}-${last[1]}</b>. Nel secondo tempo: ${t.h2[0]}-${t.h2[1]}.</p>
+      <p>Partite con almeno un gol dopo il 60′: <b>${pc(t.any60, t.gp)}</b>. Nel secondo tempo: <b>${pc(t.any2, t.gp)}</b>. Over 0,5 a fine gara: ${pc(t.over05, t.gp)}.</p>
+      <p class="def">In casa, gol nel secondo tempo: ${pc(t.home.any2, t.home.gp)} (${t.home.gp} gare). In trasferta: ${pc(t.away.any2, t.away.gp)} (${t.away.gp} gare).</p></article>`;
+  };
+  if (source === 'fotmob') {
+    const lg = (ss && ss.league) || {};
+    html += `<section class="card"><h2>Tempi dei gol, tutte le squadre</h2>
+      <p class="def">Calcolati sul minuto di ogni gol di questo campionato, stagione in corso. Fonte: archivio FotMob del ${esc((ss.updated || '').replace('T', ' ').replace('Z', ' UTC'))}, ${lg.matches || '–'} partite, ${ (fmTeams || []).length } squadre. Vale anche per Serie C e per i campionati minori: non è la tabella di SoccerStats, che in pubblico ne mostra solo 5.</p>
+      <p>Nel campionato, almeno un gol nel secondo tempo: <b>${pct(lg.p2h)}</b>. Almeno un gol dopo il 60′: <b>${pct(lg.p60)}</b>.</p>
+      <div class="duo">${fmCard(home.id, home.name)}${fmCard(away.id, away.name)}</div>
+    </section>`;
+  } else {
+    html += `<section class="card"><h2>SoccerStats, solo di riserva</h2>
+      <p class="def">${ss ? `I minuti gara per gara di questo campionato non sono ancora in archivio. Uso SoccerStats del ${esc((ss.updated || '').replace('T', ' ').replace('Z', ' UTC'))}.` : 'Né l\'archivio dei minuti né SoccerStats hanno questo campionato.'}${ss && Object.keys((ss.timing && ss.timing.overall) || {}).length <= 5 ? ' La pagina pubblica di SoccerStats mostra solo 5 squadre: se la tua non c\'è, il ritardo sopra resta quello calcolato sulle partite finite.' : ''}</p>
+      ${ss && ss.box && ss.box.matches ? `<p>Stagione: ${ss.box.matches} partite. Over 2,5 ${n1(ss.box.over25)}%.</p>` : ''}
+      <div class="duo">${ssTeam(sh, home)}${ssTeam(sa, away)}</div>
+    </section>`;
+  }
 
   html += `<p class="foot">Definizioni usate in questa schermata. 0-0 = partita finita senza gol. 1-0 / 0-1 = risultato della squadra, non il punteggio «casa-trasferta» della gara. Ultimi 30 minuti = minuti 61, 62, … 90 e recupero. Secondo tempo = dal 46′ compreso il recupero del secondo tempo. Campione: solo le gare finite di ${esc(league.name)} ${esc(league.season)}.</p>`;
   $('out').innerHTML = html;
@@ -417,30 +448,33 @@ async function analyze() {
     } else progress(80, 'Minuti dei gol già in archivio');
     const homeRows = hComp.map(c => viewOf(c, hid, detMap.get(c.id)));
     const awayRows = aComp.map(c => viewOf(c, aid, detMap.get(c.id)));
-    progress(90, 'Leggo l\'archivio SoccerStats…');
-    let ss = null, ssNameH = null, ssNameA = null, note = '';
-    try {
-      const idx = await (await fetch('data/soccerstats/index.json')).json();
-      const hit = matchSoccerstats(idx, { name: league.name, country: league.country || A.iso2 });
-      if (!hit) note = `SoccerStats: nessun campionato combacia con ${league.name}. I ritardi restano quelli di FotMob.`;
-      else {
-        const r = await fetch('data/soccerstats/' + hit.code + '.json');
-        if (!r.ok) note = `SoccerStats: ${hit.name || hit.code} non è ancora nell'archivio. I ritardi restano quelli di FotMob.`;
-        else {
-          ss = await r.json();
-          const names = Object.keys((ss.timing && ss.timing.overall) || {});
-          const ph = pickSsTeam(names, pair.h.name), pa = pickSsTeam(names, pair.a.name);
-          ssNameH = ph && ph.name; ssNameA = pa && pa.name;
-          if (!ssNameH || !ssNameA) note = 'SoccerStats ha il campionato, ma un nome squadra non combacia. I ritardi FotMob sono completi lo stesso.';
+    const built = archive && archive.matches ? timingFromArchive(archive.matches) : null;
+    const covered = built && built.teams.some(t => t.id === hid) && built.teams.some(t => t.id === aid);
+    let ss = covered ? archiveAsStats(built, archive.updated) : null;
+    let ssNameH = null, ssNameA = null, note = '', source = covered ? 'fotmob' : '';
+    if (!covered) {
+      progress(90, 'Minuti non in archivio: provo SoccerStats…');
+      try {
+        const idx = await (await fetch('data/soccerstats/index.json')).json();
+        const hit = matchSoccerstats(idx, { name: league.name, country: league.country || A.iso2 });
+        if (hit) {
+          const r = await fetch('data/soccerstats/' + hit.code + '.json');
+          if (r.ok) {
+            ss = await r.json();
+            source = 'soccerstats';
+            const names = Object.keys((ss.timing && ss.timing.overall) || {});
+            ssNameH = (pickSsTeam(names, pair.h.name) || {}).name || null;
+            ssNameA = (pickSsTeam(names, pair.a.name) || {}).name || null;
+            note = 'I minuti di questo campionato non sono ancora nell\'archivio. Mostro SoccerStats, che sui campionati minori elenca solo 5 squadre.';
+          }
         }
-      }
-    } catch (e) {
-      note = 'Archivio SoccerStats non raggiungibile. I ritardi e gli xG sono solo FotMob.';
+      } catch (e) {}
+      if (!ss) note = 'Archivio dei minuti non ancora pronto per questo campionato. I ritardi 0-0, 1-0 e 0-1 usano i risultati; i tempi dei gol arrivano appena la partita è nell\'archivio.';
     }
     LAST = {
-      A, league, note,
-      home: { name: pair.h.name, rows: homeRows, board: scoreBoard(homeRows), xg: xgProfile(homeRows), tableXg: tableXg(league, hid) },
-      away: { name: pair.a.name, rows: awayRows, board: scoreBoard(awayRows), xg: xgProfile(awayRows), tableXg: tableXg(league, aid) },
+      A, league, note, source, fmTeams: covered ? built.teams : null,
+      home: { id: hid, name: pair.h.name, rows: homeRows, board: scoreBoard(homeRows), xg: xgProfile(homeRows), tableXg: tableXg(league, hid) },
+      away: { id: aid, name: pair.a.name, rows: awayRows, board: scoreBoard(awayRows), xg: xgProfile(awayRows), tableXg: tableXg(league, aid) },
       ss, ssNameH, ssNameA,
     };
     $('prog').hidden = true;
@@ -456,5 +490,6 @@ async function analyze() {
 $('go').onclick = analyze;
 $('ex45').onclick = () => { $('alert').value = EX45; analyze(); };
 $('ex60').onclick = () => { $('alert').value = EX60; analyze(); };
+$('exC').onclick = () => { $('alert').value = EXC; analyze(); };
 $('comm').onchange = () => { try { localStorage.setItem('sg:comm', $('comm').value); } catch (e) {} render(); };
 try { const c = localStorage.getItem('sg:comm'); if (c) $('comm').value = c; } catch (e) {}

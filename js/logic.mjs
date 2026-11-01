@@ -369,18 +369,105 @@ export function trading(homeMatches, awayMatches, A, ss, commission) {
   };
 }
 
+function emptySide() {
+  return { gp: 0, b: [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], any2: 0, any60: 0 };
+}
+function bandOfMin(min) {
+  if (min <= 15) return 0;
+  if (min <= 30) return 1;
+  if (min <= 45) return 2;
+  if (min <= 60) return 3;
+  if (min <= 75) return 4;
+  return 5;
+}
+/** Fasce, secondo tempo e ultimi 30 minuti per ogni squadra, dai minuti reali. */
+export function timingFromArchive(matchMap) {
+  const teams = new Map();
+  const ensure = (id, name) => {
+    const k = String(id);
+    if (!teams.has(k)) teams.set(k, { id: k, name: name || '', gp: 0, b: [[0, 0], [0, 0], [0, 0], [0, 0], [0, 0], [0, 0]], h1: [0, 0], h2: [0, 0], any2: 0, any60: 0, over05: 0, home: emptySide(), away: emptySide() });
+    const t = teams.get(k);
+    if (name) t.name = name;
+    return t;
+  };
+  const list = Array.isArray(matchMap) ? matchMap : Object.values(matchMap || {});
+  let n = 0, bands = [0, 0, 0, 0, 0, 0], any2 = 0, any60 = 0;
+  for (const m of list) {
+    if (!m || !m.ok || !Array.isArray(m.goals)) continue;
+    n++;
+    let a2 = false, a60 = false;
+    for (const g of m.goals) {
+      bands[bandOfMin(g[0])]++;
+      if (g[0] > 45) a2 = true;
+      if (g[0] > 60) a60 = true;
+    }
+    if (a2) any2++;
+    if (a60) any60++;
+    for (const isHome of [true, false]) {
+      const T = ensure(isHome ? m.h : m.a, isHome ? m.hn : m.an);
+      const S = isHome ? T.home : T.away;
+      T.gp++; S.gp++;
+      if ((m.hg || 0) + (m.ag || 0) > 0) T.over05++;
+      let s2 = false, s60 = false;
+      for (const g of m.goals) {
+        const mine = (g[2] === 1) === isHome;
+        const i = bandOfMin(g[0]);
+        T.b[i][mine ? 0 : 1]++;
+        S.b[i][mine ? 0 : 1]++;
+        if (g[0] <= 45) T.h1[mine ? 0 : 1]++;
+        else T.h2[mine ? 0 : 1]++;
+        if (g[0] > 45) s2 = true;
+        if (g[0] > 60) s60 = true;
+      }
+      if (s2) { T.any2++; S.any2++; }
+      if (s60) { T.any60++; S.any60++; }
+    }
+  }
+  return { teams: [...teams.values()], matches: n, bands, p2h: n ? any2 / n : null, p60: n ? any60 / n : null };
+}
+export function archiveAsStats(built, updated) {
+  if (!built || !built.teams.length) return null;
+  const overall = {}, home = {}, away = {}, h2 = {}, h2h = {}, h2a = {}, full = {};
+  const pct = (k, n) => n ? Math.round(1000 * k / n) / 10 : null;
+  for (const t of built.teams) {
+    overall[t.name] = { gp: t.gp, b: t.b, h1: t.h1, h2: t.h2 };
+    home[t.name] = { gp: t.home.gp, b: t.home.b };
+    away[t.name] = { gp: t.away.gp, b: t.away.b };
+    h2[t.name] = { gp: t.gp, o05: pct(t.any2, t.gp) };
+    h2h[t.name] = { gp: t.home.gp, o05: pct(t.home.any2, t.home.gp) };
+    h2a[t.name] = { gp: t.away.gp, o05: pct(t.away.any2, t.away.gp) };
+    full[t.name] = { gp: t.gp, o05: pct(t.over05, t.gp) };
+  }
+  return { source: 'fotmob', updated: updated || '', timing: { overall, home, away }, ou: { 'h2:overall': h2, 'h2:home': h2h, 'h2:away': h2a, 'full:overall': full }, league: built };
+}
+
 export function advice(A, homeName, awayName, tr, seasonLabel) {
   const live = A.stats.xg;
   const H = tr.homeBase, W = tr.awayBase;
   const lines = [];
   const fmt = x => x == null ? '–' : x.toFixed(2).replace('.', ',');
-  lines.push(
+  if (!(H && H.n) && !(W && W.n)) {
+    lines.push(`Questi sono gli xG del campionato${seasonLabel ? ' ' + seasonLabel : ''}: questo campionato non li pubblica. Capita in Serie C e in molti campionati minori. I ritardi e i tempi dei gol, più sotto, non dipendono dagli xG: vengono dal minuto di ogni gol.`);
+    if (!live) lines.push('Attenzione che l\'alert non ha nemmeno gli xG live. Per il prezzo usa la quota equa calcolata sui gol di questa finestra.');
+    else {
+      const liveT = live[0] + live[1];
+      lines.push(`Attenzione che gli xG live sono ${fmt(live[0])} – ${fmt(live[1])} (totale ${fmt(liveT)}). Senza la media di stagione non so se è tanto per queste due squadre. Come bussola rozza: totale sopra 1,0 a questo punto, con lo 0-0, il campo ha già creato; sotto 0,6 lo 0-0 è coerente col gioco.`);
+    }
+  } else lines.push(
     `Questi sono gli xG del campionato${seasonLabel ? ' ' + seasonLabel : ''}: ` +
     `${homeName} ${H.n >= 3 && tr.homeXg.home.n >= 3 ? 'in casa' : 'in stagione'} fa ${fmt(H.xgFor)} xG a partita e ne subisce ${fmt(H.xgAg)} (${H.n} partite con xG). ` +
     `${awayName} ${W.n >= 3 && tr.awayXg.away.n >= 3 ? 'in trasferta' : 'in stagione'} fa ${fmt(W.xgFor)} xG e ne subisce ${fmt(W.xgAg)} (${W.n} partite).`
   );
   let move = 'Mossa: senza xG live nell\'alert non confronto il ritmo di oggi. Usa i ritardi e la quota equa qui sotto, che viene dallo storico dei gol in questa finestra.';
-  if (!live) {
+  const noHist = !(H && H.n) && !(W && W.n);
+  if (noHist) {
+    if (live && tr.th) {
+      const liveT = live[0] + live[1];
+      if (A.is00 && liveT >= 1) move = `Mossa: xG live ${fmt(liveT)}, senza media di stagione. Back Over 0,5 solo sopra ${fmt(tr.th.backMin)}. Lay del pareggio solo sotto ${fmt(tr.th.layMax)}.`;
+      else if (A.is00 && liveT < 0.6) move = `Mossa: xG live bassi (${fmt(liveT)}). L'Over 0,5 ha senso solo sopra ${fmt(tr.th.backMin)}.`;
+      else move = `Mossa: almeno un gol da qui ha quota equa ${fmt(tr.th.fair)}. Back sopra ${fmt(tr.th.backMin)}${A.is00 ? `, lay del pareggio sotto ${fmt(tr.th.layMax)}` : ''}.`;
+    }
+  } else if (!live) {
     lines.push('Attenzione che l\'alert non contiene gli xG live (riga «xG:»). Il confronto col campionato resta sullo storico, non sulla partita di oggi.');
   } else {
     const expT = (tr.paceNote ? tr.paceNote.expH + tr.paceNote.expA : null);

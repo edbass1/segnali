@@ -13,6 +13,10 @@ Cosa calcola, solo sul campionato nazionale della stagione in corso (coppe esclu
 - xG di campionato (fatti e subiti, in casa e in trasferta) confrontati con gli xG live dell'alert, con un consiglio e una spiegazione per chi parte da zero.
 - Quota equa, soglia per il back Over e, sullo 0-0, soglia per il lay del pareggio. La commissione si cambia nel campo in alto (predefinita 5%).
 
-I minuti dei gol e gli xG stanno in `data/fotmob/`, aggiornati da soli insieme alle tabelle. Se una partita è più nuova dell'archivio, il browser la chiede a FotMob. SoccerStats non si può leggere dal browser: la stessa azione automatica salva le sue tabelle in `data/soccerstats/`. Sui campionati minori la pagina pubblica di SoccerStats elenca solo 5 squadre: in quel caso restano validi i numeri di FotMob.
+I minuti dei gol stanno in `data/fotmob/`. L'archivio prende i campionati nazionali delle ultime giornate, Serie C compresa, e da quei minuti calcola fasce, secondo tempo e ultimi 30 minuti per ogni squadra. Non serve una chiave. Se una partita è più nuova dell'archivio, il browser la chiede a FotMob.
+
+SoccerStats resta solo di riserva, quando un campionato non è ancora nell'archivio. In pubblico quella fonte mostra 5 squadre sui campionati minori, e il browser non può leggerla da solo.
+
+Sofascore blocca le richieste automatiche. football-data.org senza chiave non apre le partite. Understat ha gli xG solo dei grandi campionati. Per questo i minuti restano quelli di FotMob: è la fonte che risponde anche in Serie C. Gli xG, se il campionato non li pubblica, la pagina lo dice e calcola lo stesso ritardi e quote sui gol.
 
 Lo storico degli alert automatici su Telegram è in `live/`.
