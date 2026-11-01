@@ -4163,8 +4163,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "0-1",
   "url": "https://www.fotmob.com/match/5868114",
   "over05": 1.5,
   "over05_note": null,
@@ -4179,6 +4179,7 @@
    "method": "casa/trasferta",
    "season": "2026/2027"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-01 20:25"
  }
 ]
