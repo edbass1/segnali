@@ -3967,5 +3967,75 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5887664-xg",
+  "type": "xg",
+  "time": "2026-11-01 17:48",
+  "ts": 1793551690,
+  "league": "Liga Portugal",
+  "country": "POR",
+  "leagueId": 61,
+  "home": "Arouca",
+  "away": "Nacional",
+  "matchId": 5887664,
+  "reason": "xG atteso prematch 2.78 (casa 1.86 + ospite 0.93) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.12",
+    "0.15"
+   ],
+   "poss": [
+    63,
+    37
+   ],
+   "shots": [
+    5,
+    3
+   ],
+   "sot": [
+    1,
+    1
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    4,
+    10
+   ],
+   "corners": [
+    3,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5887664",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.784,
+   "exp_home": 1.857,
+   "exp_away": 0.926,
+   "h_for": 1.358,
+   "h_ag": 1.075,
+   "a_for": 0.778,
+   "a_ag": 2.357,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
