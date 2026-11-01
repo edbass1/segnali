@@ -3209,5 +3209,143 @@
   },
   "telegram": true,
   "resolved": "2026-11-01 13:00"
+ },
+ {
+  "id": "5143884-storico",
+  "type": "storico",
+  "time": "2026-11-01 13:20",
+  "ts": 1793535607,
+  "league": "3. Divisjon Avd. 1",
+  "country": "NOR",
+  "leagueId": 205,
+  "home": "Lokomotiv Oslo FK",
+  "away": "Asker",
+  "matchId": 5143884,
+  "reason": "Ospite: 86 partite di campionato consecutive senza 0-0 (ultimo 0-0: 09/10/2022 vs Ull/Kisa); Casa: 2 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5143884",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 40,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "21/07/2025",
+     "opp": "Sarpsborg 08 2",
+     "home": true
+    },
+    "n": 50,
+    "zz": 2,
+    "avail": 78
+   },
+   "away": {
+    "streak": 86,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "09/10/2022",
+     "opp": "Ull/Kisa",
+     "home": true
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 110
+   },
+   "strong": "away"
+  },
+  "streak": 86,
+  "streak_complete": true,
+  "telegram": true
+ },
+ {
+  "id": "5144805-storico",
+  "type": "storico",
+  "time": "2026-11-01 13:20",
+  "ts": 1793535610,
+  "league": "3. Divisjon Avd. 6",
+  "country": "NOR",
+  "leagueId": 205,
+  "home": "Gjøvik-Lyn",
+  "away": "Fram Larvik",
+  "matchId": 5144805,
+  "reason": "Ospite: 76 partite di campionato consecutive senza 0-0 (ultimo 0-0: 27/04/2024 @ Vindbjart); Casa: 2 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5144805",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 16,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "13/06/2026",
+     "opp": "Drøbak/Frogn",
+     "home": true
+    },
+    "n": 50,
+    "zz": 2,
+    "avail": 53
+   },
+   "away": {
+    "streak": 76,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "27/04/2024",
+     "opp": "Vindbjart",
+     "home": false
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 80
+   },
+   "strong": "away"
+  },
+  "streak": 76,
+  "streak_complete": true,
+  "telegram": true
  }
 ]
