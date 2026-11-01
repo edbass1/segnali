@@ -4038,5 +4038,75 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5943286-xg",
+  "type": "xg",
+  "time": "2026-11-01 18:20",
+  "ts": 1793553613,
+  "league": "Super League",
+  "country": "GRE",
+  "leagueId": 135,
+  "home": "Panetolikos",
+  "away": "OFI Crete",
+  "matchId": 5943286,
+  "reason": "xG atteso prematch 2.82 (casa 1.44 + ospite 1.38) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.55",
+    "0.76"
+   ],
+   "poss": [
+    41,
+    59
+   ],
+   "shots": [
+    8,
+    7
+   ],
+   "sot": [
+    2,
+    0
+   ],
+   "big": [
+    1,
+    1
+   ],
+   "box": [
+    14,
+    6
+   ],
+   "corners": [
+    3,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5943286",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.82,
+   "exp_home": 1.445,
+   "exp_away": 1.375,
+   "h_for": 1.202,
+   "h_ag": 1.843,
+   "a_for": 0.907,
+   "a_ag": 1.688,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
