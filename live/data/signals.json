@@ -3347,5 +3347,75 @@
   "streak": 76,
   "streak_complete": true,
   "telegram": true
+ },
+ {
+  "id": "1000017769-xg",
+  "type": "xg",
+  "time": "2026-11-01 13:21",
+  "ts": 1793535680,
+  "league": "Thai League 1",
+  "country": "THA",
+  "leagueId": 8984,
+  "home": "Sukhothai FC",
+  "away": "Ayutthaya United FC",
+  "matchId": 1000017769,
+  "reason": "xG atteso prematch 3.08 (casa 1.29 + ospite 1.79) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.56",
+    "0.31"
+   ],
+   "poss": [
+    48,
+    52
+   ],
+   "shots": [
+    9,
+    8
+   ],
+   "sot": [
+    1,
+    0
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    17,
+    9
+   ],
+   "corners": [
+    5,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000017769",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "total": 3.082,
+   "exp_home": 1.292,
+   "exp_away": 1.79,
+   "h_for": 1.107,
+   "h_ag": 2.067,
+   "a_for": 1.513,
+   "a_ag": 1.477,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
