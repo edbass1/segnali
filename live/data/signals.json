@@ -3004,5 +3004,75 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5898775-xg",
+  "type": "xg",
+  "time": "2026-11-01 03:20",
+  "ts": 1793499621,
+  "league": "Liga de Expansión MX",
+  "country": "MEX",
+  "leagueId": 8976,
+  "home": "Piratas",
+  "away": "Tapatío",
+  "matchId": 5898775,
+  "reason": "xG atteso prematch 2.95 (casa 2.23 + ospite 0.73) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.63",
+    "0.60"
+   ],
+   "poss": [
+    60,
+    40
+   ],
+   "shots": [
+    12,
+    7
+   ],
+   "sot": [
+    4,
+    5
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    12,
+    10
+   ],
+   "corners": [
+    5,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5898775",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "total": 2.953,
+   "exp_home": 2.225,
+   "exp_away": 0.728,
+   "h_for": 2.373,
+   "h_ag": 0.447,
+   "a_for": 1.01,
+   "a_ag": 2.077,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
