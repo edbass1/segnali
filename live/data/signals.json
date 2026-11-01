@@ -3555,5 +3555,75 @@
   "streak": 63,
   "streak_complete": true,
   "telegram": true
+ },
+ {
+  "id": "5881711-xg",
+  "type": "xg",
+  "time": "2026-11-01 14:49",
+  "ts": 1793540973,
+  "league": "2. Bundesliga",
+  "country": "GER",
+  "leagueId": 146,
+  "home": "Greuther Fürth",
+  "away": "Holstein Kiel",
+  "matchId": 5881711,
+  "reason": "xG atteso prematch 2.82 (casa 1.44 + ospite 1.38) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.24",
+    "0.74"
+   ],
+   "poss": [
+    49,
+    51
+   ],
+   "shots": [
+    6,
+    8
+   ],
+   "sot": [
+    1,
+    1
+   ],
+   "big": [
+    0,
+    2
+   ],
+   "box": [
+    8,
+    11
+   ],
+   "corners": [
+    4,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5881711",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.82,
+   "exp_home": 1.441,
+   "exp_away": 1.379,
+   "h_for": 1.352,
+   "h_ag": 1.202,
+   "a_for": 1.555,
+   "a_ag": 1.53,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
