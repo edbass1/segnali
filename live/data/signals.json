@@ -3625,5 +3625,75 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5868519-xg",
+  "type": "xg",
+  "time": "2026-11-01 15:16",
+  "ts": 1793542595,
+  "league": "LaLiga2",
+  "country": "ESP",
+  "leagueId": 140,
+  "home": "Eldense",
+  "away": "Granada",
+  "matchId": 5868519,
+  "reason": "xG atteso prematch 3.24 (casa 1.66 + ospite 1.58) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.27",
+    "0.59"
+   ],
+   "poss": [
+    50,
+    50
+   ],
+   "shots": [
+    6,
+    6
+   ],
+   "sot": [
+    3,
+    1
+   ],
+   "big": [
+    0,
+    3
+   ],
+   "box": [
+    10,
+    8
+   ],
+   "corners": [
+    2,
+    0
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5868519",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.242,
+   "exp_home": 1.658,
+   "exp_away": 1.584,
+   "h_for": 1.838,
+   "h_ag": 1.166,
+   "a_for": 2.002,
+   "a_ag": 1.478,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
