@@ -3750,8 +3750,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "1-0",
   "url": "https://www.fotmob.com/match/5739540",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -3765,6 +3765,79 @@
    "a_ag": 1.5,
    "method": "casa/trasferta",
    "season": "2026/2027"
+  },
+  "telegram": true,
+  "resolved": "2026-11-01 15:52"
+ },
+ {
+  "id": "5990919-subisce",
+  "type": "subisce",
+  "time": "2026-11-01 15:52",
+  "ts": 1793544761,
+  "league": "Serie C Grp. B",
+  "country": "ITA",
+  "leagueId": 147,
+  "home": "Gubbio",
+  "away": "Vis Pesaro",
+  "matchId": 5990919,
+  "reason": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 11/11) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": [
+    48,
+    52
+   ],
+   "shots": [
+    11,
+    4
+   ],
+   "sot": [
+    4,
+    0
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    21,
+    1
+   ],
+   "corners": [
+    8,
+    1
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5990919",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 11,
+    "scored": 5,
+    "conceded": 11,
+    "no00": 11
+   },
+   "away": {
+    "n": 11,
+    "scored": 8,
+    "conceded": 11,
+    "no00": 11
+   }
   },
   "telegram": true
  }
