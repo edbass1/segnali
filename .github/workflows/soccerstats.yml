@@ -1,0 +1,44 @@
+name: Archivio SoccerStats
+
+# Il sito è statico e SoccerStats non accetta richieste dal browser (niente CORS).
+# Questo job scarica le tabelle e le pubblica nel repo: chi usa il sito non configura nulla.
+on:
+  schedule:
+    - cron: '30 4,16 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: segnali-soccerstats
+  cancel-in-progress: false
+
+jobs:
+  scrape:
+    runs-on: ubuntu-latest
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Scarica le tabelle SoccerStats
+        run: python3 scanner/soccerstats.py
+      - name: Scarica i minuti dei gol da FotMob
+        run: python3 scanner/fotmob_archive.py
+      - name: Pubblica l'archivio
+        run: |
+          git config user.name "segnali-bot"
+          git config user.email "segnali-bot@users.noreply.github.com"
+          git add data/soccerstats data/fotmob
+          if git diff --cached --quiet; then echo "nessuna modifica"; exit 0; fi
+          git commit -m "dati: aggiorna archivio SoccerStats $(date -u '+%Y-%m-%d %H:%M')"
+          for i in 1 2 3; do
+            git pull --rebase -X theirs origin main && git push origin HEAD:main && exit 0
+            sleep 5
+          done
+          exit 1
