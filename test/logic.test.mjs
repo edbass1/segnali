@@ -3,6 +3,7 @@ import assert from 'node:assert/strict';
 import {
   parseAlert, alertWindow, goalAfter, ritardo, scoreBoard, windowBoard, scoreAt,
   thresholds, trading, nameSim, advice, bandTotals, cumShare, matchSoccerstats,
+  timingFromArchive,
 } from '../js/logic.mjs';
 
 const g = (min, teamFor) => ({ min, extra: 0, for: teamFor });
@@ -133,6 +134,20 @@ test('trading sullo 0-0 al 60 produce una probabilità e una soglia', () => {
   assert.match(text.move, /Mossa:/);
   const tot = bandTotals(ss.timing.overall);
   assert.equal(tot.matches, 10);
+});
+
+test('fasce dai minuti: 67 va in 61-75, 76 in 76-90, secondo tempo dal 46', () => {
+  const m = { h: '1', a: '2', hn: 'Bari', an: 'Cavese', hg: 2, ag: 1, ok: true, goals: [[21, 0, 1], [46, 0, 0], [67, 0, 1], [76, 0, 0]] };
+  const t = timingFromArchive({ x: m });
+  const bari = t.teams.find(x => x.name === 'Bari');
+  assert.equal(bari.b[1][0], 1);      // 21' segnato, fascia 16-30
+  assert.equal(bari.b[3][1], 1);      // 46' subito
+  assert.equal(bari.b[4][0], 1);      // 67' segnato
+  assert.equal(bari.b[5][1], 1);      // 76' subito
+  assert.equal(bari.h2[0] + bari.h2[1], 3);
+  assert.equal(bari.any60, 1);
+  assert.equal(t.p2h, 1);
+  assert.equal(t.matches, 1);
 });
 
 test('abbina Serie A e non la Serie B', () => {
