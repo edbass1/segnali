@@ -3841,5 +3841,75 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5967129-xg",
+  "type": "xg",
+  "time": "2026-11-01 16:19",
+  "ts": 1793546393,
+  "league": "Serie B",
+  "country": "ITA",
+  "leagueId": 86,
+  "home": "Arezzo",
+  "away": "Ascoli",
+  "matchId": 5967129,
+  "reason": "xG atteso prematch 3.17 (casa 1.38 + ospite 1.79) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.91",
+    "0.49"
+   ],
+   "poss": [
+    24,
+    76
+   ],
+   "shots": [
+    5,
+    4
+   ],
+   "sot": [
+    2,
+    2
+   ],
+   "big": [
+    2,
+    1
+   ],
+   "box": [
+    5,
+    5
+   ],
+   "corners": [
+    2,
+    1
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5967129",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.166,
+   "exp_home": 1.377,
+   "exp_away": 1.789,
+   "h_for": 1.1,
+   "h_ag": 1.58,
+   "a_for": 1.998,
+   "a_ag": 1.655,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
