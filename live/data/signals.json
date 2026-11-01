@@ -3486,5 +3486,74 @@
   "streak_complete": false,
   "telegram": true,
   "resolved": "2026-11-01 14:03"
+ },
+ {
+  "id": "1000007996-storico",
+  "type": "storico",
+  "time": "2026-11-01 14:48",
+  "ts": 1793540908,
+  "league": "Estonian Premium liiga",
+  "country": "EST",
+  "leagueId": 248,
+  "home": "Flora Tallinn",
+  "away": "Narva Trans",
+  "matchId": 1000007996,
+  "reason": "Casa: 63 partite di campionato consecutive senza 0-0 (ultimo 0-0: 12/04/2025 @ FCI Levadia); Ospite: 3 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000007996",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 63,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "12/04/2025",
+     "opp": "FCI Levadia",
+     "home": false
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 70
+   },
+   "away": {
+    "streak": 18,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "16/06/2026",
+     "opp": "FC Kuressaare",
+     "home": false
+    },
+    "n": 50,
+    "zz": 3,
+    "avail": 70
+   },
+   "strong": "home"
+  },
+  "streak": 63,
+  "streak_complete": true,
+  "telegram": true
  }
 ]
