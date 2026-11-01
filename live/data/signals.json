@@ -4110,5 +4110,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-01 18:55"
+ },
+ {
+  "id": "5868114-xg",
+  "type": "xg",
+  "time": "2026-11-01 19:50",
+  "ts": 1793559027,
+  "league": "LaLiga",
+  "country": "ESP",
+  "leagueId": 87,
+  "home": "Elche",
+  "away": "Valencia",
+  "matchId": 5868114,
+  "reason": "xG atteso prematch 2.80 (casa 1.16 + ospite 1.64) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.51",
+    "0.12"
+   ],
+   "poss": [
+    71,
+    29
+   ],
+   "shots": [
+    7,
+    2
+   ],
+   "sot": [
+    2,
+    0
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    18,
+    7
+   ],
+   "corners": [
+    4,
+    1
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5868114",
+  "over05": 1.5,
+  "over05_note": null,
+  "details": {
+   "total": 2.804,
+   "exp_home": 1.164,
+   "exp_away": 1.64,
+   "h_for": 1.158,
+   "h_ag": 2.258,
+   "a_for": 1.022,
+   "a_ag": 1.17,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
