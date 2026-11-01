@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-11-02 00:23",
+ "last_scan": "2026-11-02 00:26",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -2366,13 +2366,17 @@
     "subisce": false,
     "mai00": false
    }
+  },
+  "5887399": {
+   "t": 1793575575,
+   "r": "femminile"
   }
  },
  "live_count": 29,
- "candidates_last": 0,
- "requests_last": 2,
- "last_write": "2026-11-02 00:23",
- "last_write_ts": 1793575393,
+ "candidates_last": 1,
+ "requests_last": 3,
+ "last_write": "2026-11-02 00:26",
+ "last_write_ts": 1793575575,
  "telegram": {
   "last_try": "2026-11-01 20:25",
   "ok": true,
