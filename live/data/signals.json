@@ -3076,5 +3076,66 @@
   },
   "telegram": true,
   "resolved": "2026-11-01 03:55"
+ },
+ {
+  "id": "6503834-xg",
+  "type": "xg",
+  "time": "2026-11-01 09:51",
+  "ts": 1793523111,
+  "league": "K-League 1 Final Group A",
+  "country": "KOR",
+  "leagueId": 9080,
+  "home": "FC Seoul",
+  "away": "Incheon United",
+  "matchId": 6503834,
+  "reason": "xG atteso prematch 2.77 (casa 1.52 + ospite 1.25) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": [
+    54,
+    46
+   ],
+   "shots": [
+    3,
+    4
+   ],
+   "sot": [
+    2,
+    2
+   ],
+   "big": null,
+   "box": null,
+   "corners": [
+    2,
+    0
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/6503834",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.772,
+   "exp_home": 1.52,
+   "exp_away": 1.252,
+   "h_for": 1.775,
+   "h_ag": 1.085,
+   "a_for": 1.419,
+   "a_ag": 1.266,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
  }
 ]
