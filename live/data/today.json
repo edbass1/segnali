@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02 19:37",
+ "generated_at": "2026-11-02 20:40",
  "partial": false,
  "stats": {
   "matches_day": 159,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 964,
-  "seconds": 252
+  "seconds": 200
  },
  "skipped_leagues": {
   "CAN Northern Super League - Championship - Semi-finals": "femminile",
@@ -496,8 +496,8 @@
    "home": "Radomiak Radom",
    "away": "Śląsk Wrocław",
    "url": "https://www.fotmob.com/match/5804026",
-   "finished": false,
-   "score": "2-1",
+   "finished": true,
+   "score": "3-1",
    "types": [
     "xg"
    ],
@@ -538,7 +538,7 @@
    "home": "Zagłębie Lubin",
    "away": "Korona Kielce",
    "url": "https://www.fotmob.com/match/5804030",
-   "finished": false,
+   "finished": true,
    "score": "1-0",
    "types": [
     "xg"
@@ -580,8 +580,8 @@
    "home": "Gençlerbirliği",
    "away": "Alanyaspor",
    "url": "https://www.fotmob.com/match/5904789",
-   "finished": false,
-   "score": "4-0",
+   "finished": true,
+   "score": "5-0",
    "types": [
     "xg"
    ],
@@ -622,8 +622,8 @@
    "home": "Real Valladolid",
    "away": "Leganés",
    "url": "https://www.fotmob.com/match/5868524",
-   "finished": false,
-   "score": "3-1",
+   "finished": true,
+   "score": "4-3",
    "types": [
     "xg"
    ],
@@ -664,8 +664,8 @@
    "home": "Sassuolo",
    "away": "Fiorentina",
    "url": "https://www.fotmob.com/match/5749738",
-   "finished": false,
-   "score": "1-1",
+   "finished": true,
+   "score": "2-4",
    "types": [
     "xg",
     "subisce"
@@ -718,8 +718,8 @@
    "home": "Kalamata",
    "away": "Iraklis",
    "url": "https://www.fotmob.com/match/5943282",
-   "finished": false,
-   "score": "0-0",
+   "finished": true,
+   "score": "1-1",
    "types": [
     "xg"
    ],
@@ -761,7 +761,7 @@
    "away": "Stabæk",
    "url": "https://www.fotmob.com/match/5105308",
    "finished": false,
-   "score": "0-1",
+   "score": "1-2",
    "types": [
     "storico"
    ],
@@ -809,7 +809,7 @@
    "away": "AIK",
    "url": "https://www.fotmob.com/match/5107646",
    "finished": false,
-   "score": "0-0",
+   "score": "2-1",
    "types": [
     "xg"
    ],
@@ -893,7 +893,7 @@
    "away": "FC København",
    "url": "https://www.fotmob.com/match/5739537",
    "finished": false,
-   "score": "0-1",
+   "score": "0-2",
    "types": [
     "xg"
    ],
@@ -935,7 +935,7 @@
    "away": "Kecskeméti TE",
    "url": "https://www.fotmob.com/match/5922813",
    "finished": false,
-   "score": "0-0",
+   "score": "1-2",
    "types": [
     "segna"
    ],
@@ -980,7 +980,7 @@
    "away": "Pogoń Szczecin",
    "url": "https://www.fotmob.com/match/5804027",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg",
     "subisce"
@@ -1034,7 +1034,7 @@
    "away": "Puszcza Niepołomice",
    "url": "https://www.fotmob.com/match/5861975",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "storico"
    ],
