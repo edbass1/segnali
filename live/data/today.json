@@ -1,11 +1,11 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02 15:43",
+ "generated_at": "2026-11-02 16:40",
  "partial": false,
  "stats": {
   "matches_day": 159,
-  "candidates": 130,
-  "evaluated": 126,
+  "candidates": 129,
+  "evaluated": 125,
   "qualified": 30,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 6,
    "mai00": 0
   },
-  "requests": 977,
-  "seconds": 187
+  "requests": 975,
+  "seconds": 233
  },
  "skipped_leagues": {
   "CAN Northern Super League - Championship - Semi-finals": "femminile",
@@ -364,8 +364,8 @@
    "home": "Bashkimi",
    "away": "Arsimi",
    "url": "https://www.fotmob.com/match/5804959",
-   "finished": false,
-   "score": "2-0",
+   "finished": true,
+   "score": "2-1",
    "types": [
     "subisce"
    ],
@@ -410,7 +410,7 @@
    "away": "Zenit St. Petersburg",
    "url": "https://www.fotmob.com/match/5847218",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "xg"
    ],
