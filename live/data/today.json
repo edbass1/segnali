@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02 05:43",
+ "generated_at": "2026-11-02 06:44",
  "partial": false,
  "stats": {
   "matches_day": 158,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 977,
-  "seconds": 222
+  "seconds": 185
  },
  "skipped_leagues": {
   "CAN Northern Super League - Championship - Semi-finals": "femminile",
@@ -322,7 +322,7 @@
    "home": "Portland Timbers",
    "away": "Houston Dynamo FC",
    "url": "https://www.fotmob.com/match/5071484",
-   "finished": false,
+   "finished": true,
    "score": "3-1",
    "types": [
     "xg"
