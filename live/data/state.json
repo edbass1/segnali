@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-11-02 01:12",
+ "last_scan": "2026-11-02 01:16",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -2372,11 +2372,11 @@
    "r": "femminile"
   }
  },
- "live_count": 14,
+ "live_count": 13,
  "candidates_last": 0,
  "requests_last": 2,
- "last_write": "2026-11-02 01:12",
- "last_write_ts": 1793578344,
+ "last_write": "2026-11-02 01:16",
+ "last_write_ts": 1793578584,
  "telegram": {
   "last_try": "2026-11-01 20:25",
   "ok": true,
