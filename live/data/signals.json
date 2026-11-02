@@ -4328,5 +4328,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-02 01:55"
+ },
+ {
+  "id": "5107648-xg",
+  "type": "xg",
+  "time": "2026-11-02 20:19",
+  "ts": 1793647178,
+  "league": "Swedish Allsvenskan",
+  "country": "SWE",
+  "leagueId": 67,
+  "home": "Mjällby",
+  "away": "Kalmar FF",
+  "matchId": 5107648,
+  "reason": "xG atteso prematch 3.02 (casa 1.38 + ospite 1.64) ≥ 2.7",
+  "minute": 61,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 61,
+   "phase": "61",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.47",
+    "0.37"
+   ],
+   "poss": [
+    53,
+    47
+   ],
+   "shots": [
+    11,
+    6
+   ],
+   "sot": [
+    1,
+    3
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    17,
+    6
+   ],
+   "corners": [
+    2,
+    6
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5107648",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.02,
+   "exp_home": 1.377,
+   "exp_away": 1.643,
+   "h_for": 1.201,
+   "h_ag": 1.785,
+   "a_for": 1.502,
+   "a_ag": 1.554,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
  }
 ]
