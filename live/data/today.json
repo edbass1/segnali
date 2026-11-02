@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02 02:00",
+ "generated_at": "2026-11-02 02:58",
  "partial": false,
  "stats": {
   "matches_day": 158,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 977,
-  "seconds": 282
+  "seconds": 212
  },
  "skipped_leagues": {
   "CAN Northern Super League - Championship - Semi-finals": "femminile",
@@ -103,8 +103,8 @@
    "home": "Universitario de Vinto",
    "away": "Always Ready",
    "url": "https://www.fotmob.com/match/1000022369",
-   "finished": false,
-   "score": "1-2",
+   "finished": true,
+   "score": "1-3",
    "types": [
     "storico"
    ],
@@ -152,7 +152,7 @@
    "away": "Inter Miami CF",
    "url": "https://www.fotmob.com/match/5071483",
    "finished": false,
-   "score": "0-0",
+   "score": "1-1",
    "types": [
     "xg"
    ],
@@ -194,7 +194,7 @@
    "away": "León",
    "url": "https://www.fotmob.com/match/1000014633",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -236,7 +236,7 @@
    "away": "Platense FC",
    "url": "https://www.fotmob.com/match/6365904",
    "finished": false,
-   "score": null,
+   "score": "2-0",
    "types": [
     "subisce"
    ],
@@ -281,7 +281,7 @@
    "away": "Minnesota United",
    "url": "https://www.fotmob.com/match/5071482",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
