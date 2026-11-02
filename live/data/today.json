@@ -1,11 +1,11 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02 18:42",
+ "generated_at": "2026-11-02 19:37",
  "partial": false,
  "stats": {
   "matches_day": 159,
-  "candidates": 128,
-  "evaluated": 124,
+  "candidates": 127,
+  "evaluated": 123,
   "qualified": 30,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 6,
    "mai00": 0
   },
-  "requests": 966,
-  "seconds": 285
+  "requests": 964,
+  "seconds": 252
  },
  "skipped_leagues": {
   "CAN Northern Super League - Championship - Semi-finals": "femminile",
@@ -451,8 +451,8 @@
    "home": "Simba SC",
    "away": "Namungo FC",
    "url": "https://www.fotmob.com/match/5998359",
-   "finished": false,
-   "score": "1-2",
+   "finished": true,
+   "score": "3-2",
    "types": [
     "segna"
    ],
@@ -497,7 +497,7 @@
    "away": "Śląsk Wrocław",
    "url": "https://www.fotmob.com/match/5804026",
    "finished": false,
-   "score": "1-1",
+   "score": "2-1",
    "types": [
     "xg"
    ],
@@ -581,7 +581,7 @@
    "away": "Alanyaspor",
    "url": "https://www.fotmob.com/match/5904789",
    "finished": false,
-   "score": "1-0",
+   "score": "4-0",
    "types": [
     "xg"
    ],
@@ -623,7 +623,7 @@
    "away": "Leganés",
    "url": "https://www.fotmob.com/match/5868524",
    "finished": false,
-   "score": "0-0",
+   "score": "3-1",
    "types": [
     "xg"
    ],
@@ -665,7 +665,7 @@
    "away": "Fiorentina",
    "url": "https://www.fotmob.com/match/5749738",
    "finished": false,
-   "score": "0-0",
+   "score": "1-1",
    "types": [
     "xg",
     "subisce"
@@ -761,7 +761,7 @@
    "away": "Stabæk",
    "url": "https://www.fotmob.com/match/5105308",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "storico"
    ],
@@ -809,7 +809,7 @@
    "away": "AIK",
    "url": "https://www.fotmob.com/match/5107646",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -851,7 +851,7 @@
    "away": "Kalmar FF",
    "url": "https://www.fotmob.com/match/5107648",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -893,7 +893,7 @@
    "away": "FC København",
    "url": "https://www.fotmob.com/match/5739537",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "xg"
    ],
@@ -935,7 +935,7 @@
    "away": "Kecskeméti TE",
    "url": "https://www.fotmob.com/match/5922813",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "segna"
    ],
