@@ -1,11 +1,11 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02 16:40",
+ "generated_at": "2026-11-02 17:45",
  "partial": false,
  "stats": {
   "matches_day": 159,
-  "candidates": 129,
-  "evaluated": 125,
+  "candidates": 128,
+  "evaluated": 124,
   "qualified": 30,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,7 +16,7 @@
    "subisce": 6,
    "mai00": 0
   },
-  "requests": 975,
+  "requests": 966,
   "seconds": 233
  },
  "skipped_leagues": {
@@ -410,7 +410,7 @@
    "away": "Zenit St. Petersburg",
    "url": "https://www.fotmob.com/match/5847218",
    "finished": false,
-   "score": "0-1",
+   "score": "0-3",
    "types": [
     "xg"
    ],
@@ -452,7 +452,7 @@
    "away": "Namungo FC",
    "url": "https://www.fotmob.com/match/5998359",
    "finished": false,
-   "score": null,
+   "score": "1-1",
    "types": [
     "segna"
    ],
