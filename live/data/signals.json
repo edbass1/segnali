@@ -4234,8 +4234,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "1-0",
   "url": "https://www.fotmob.com/match/1000014632",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -4250,7 +4250,8 @@
    "method": "casa/trasferta",
    "season": "2026/2027 - Apertura"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-02 01:55"
  },
  {
   "id": "1000014632-subisce",
@@ -4304,8 +4305,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "1-0",
   "url": "https://www.fotmob.com/match/1000014632",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -4325,6 +4326,7 @@
     "no00": 14
    }
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-02 01:55"
  }
 ]
