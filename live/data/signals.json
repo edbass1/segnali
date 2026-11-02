@@ -4469,5 +4469,70 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5907616-storico",
+  "type": "storico",
+  "time": "2026-11-02 22:03",
+  "ts": 1793653394,
+  "league": "National League South",
+  "country": "ENG",
+  "leagueId": 8944,
+  "home": "Chelmsford",
+  "away": "Farnham Town",
+  "matchId": 5907616,
+  "reason": "Ospite: almeno 58 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Casa: 2 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5907616",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 4,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "26/09/2026",
+     "opp": "Horsham",
+     "home": true
+    },
+    "n": 50,
+    "zz": 2,
+    "avail": 59
+   },
+   "away": {
+    "streak": 58,
+    "complete": false,
+    "capped": false,
+    "last00": null,
+    "n": 50,
+    "zz": 0,
+    "avail": 58
+   },
+   "strong": "away"
+  },
+  "streak": 58,
+  "streak_complete": false,
+  "telegram": true
  }
 ]
