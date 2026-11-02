@@ -4181,5 +4181,150 @@
   },
   "telegram": true,
   "resolved": "2026-11-01 20:25"
+ },
+ {
+  "id": "1000014632-xg",
+  "type": "xg",
+  "time": "2026-11-02 01:20",
+  "ts": 1793578833,
+  "league": "Mexican Primera",
+  "country": "MEX",
+  "leagueId": 230,
+  "home": "Santos Laguna",
+  "away": "Necaxa",
+  "matchId": 1000014632,
+  "reason": "xG atteso prematch 3.20 (casa 1.76 + ospite 1.44) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.30",
+    "2.27"
+   ],
+   "poss": [
+    50,
+    50
+   ],
+   "shots": [
+    3,
+    19
+   ],
+   "sot": [
+    2,
+    7
+   ],
+   "big": [
+    0,
+    5
+   ],
+   "box": [
+    6,
+    29
+   ],
+   "corners": [
+    6,
+    5
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000014632",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.197,
+   "exp_home": 1.759,
+   "exp_away": 1.438,
+   "h_for": 2.036,
+   "h_ag": 1.146,
+   "a_for": 1.73,
+   "a_ag": 1.482,
+   "method": "casa/trasferta",
+   "season": "2026/2027 - Apertura"
+  },
+  "telegram": true
+ },
+ {
+  "id": "1000014632-subisce",
+  "type": "subisce",
+  "time": "2026-11-02 01:20",
+  "ts": 1793578833,
+  "league": "Mexican Primera",
+  "country": "MEX",
+  "leagueId": 230,
+  "home": "Santos Laguna",
+  "away": "Necaxa",
+  "matchId": 1000014632,
+  "reason": "Ospite ha subito almeno 1 gol in 14/14 partite di campionato 2026/2027 - Apertura (Casa: 10/14) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.30",
+    "2.27"
+   ],
+   "poss": [
+    50,
+    50
+   ],
+   "shots": [
+    3,
+    19
+   ],
+   "sot": [
+    2,
+    7
+   ],
+   "big": [
+    0,
+    5
+   ],
+   "box": [
+    6,
+    29
+   ],
+   "corners": [
+    6,
+    5
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000014632",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "season": "2026/2027 - Apertura",
+   "strong": "away",
+   "home": {
+    "n": 14,
+    "scored": 9,
+    "conceded": 10,
+    "no00": 13
+   },
+   "away": {
+    "n": 14,
+    "scored": 11,
+    "conceded": 14,
+    "no00": 14
+   }
+  },
+  "telegram": true
  }
 ]
