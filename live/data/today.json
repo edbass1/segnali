@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02 12:26",
+ "generated_at": "2026-11-02 13:24",
  "partial": false,
  "stats": {
   "matches_day": 159,
@@ -17,13 +17,13 @@
    "mai00": 0
   },
   "requests": 977,
-  "seconds": 210
+  "seconds": 233
  },
  "skipped_leagues": {
   "CAN Northern Super League - Championship - Semi-finals": "femminile",
   "NOR Toppserien": "femminile",
-  "ESP Liga F": "femminile",
-  "ITA Serie A Femminile": "femminile"
+  "ITA Serie A Femminile": "femminile",
+  "ESP Liga F": "femminile"
  },
  "rules": {
   "window": "60-70'",
