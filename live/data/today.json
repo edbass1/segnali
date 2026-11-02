@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02 02:58",
+ "generated_at": "2026-11-02 03:47",
  "partial": false,
  "stats": {
   "matches_day": 158,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 977,
-  "seconds": 212
+  "seconds": 209
  },
  "skipped_leagues": {
   "CAN Northern Super League - Championship - Semi-finals": "femminile",
@@ -151,8 +151,8 @@
    "home": "New England Revolution",
    "away": "Inter Miami CF",
    "url": "https://www.fotmob.com/match/5071483",
-   "finished": false,
-   "score": "1-1",
+   "finished": true,
+   "score": "1-2",
    "types": [
     "xg"
    ],
@@ -194,7 +194,7 @@
    "away": "León",
    "url": "https://www.fotmob.com/match/1000014633",
    "finished": false,
-   "score": "0-0",
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -236,7 +236,7 @@
    "away": "Platense FC",
    "url": "https://www.fotmob.com/match/6365904",
    "finished": false,
-   "score": "2-0",
+   "score": "4-0",
    "types": [
     "subisce"
    ],
@@ -281,7 +281,7 @@
    "away": "Minnesota United",
    "url": "https://www.fotmob.com/match/5071482",
    "finished": false,
-   "score": "0-0",
+   "score": "0-2",
    "types": [
     "xg"
    ],
