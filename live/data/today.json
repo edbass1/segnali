@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02 23:01",
+ "generated_at": "2026-11-02 23:39",
  "partial": false,
  "stats": {
   "matches_day": 159,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 964,
-  "seconds": 266
+  "seconds": 202
  },
  "skipped_leagues": {
   "CAN Northern Super League - Championship - Semi-finals": "femminile",
@@ -1311,7 +1311,7 @@
    "home": "Newcastle United",
    "away": "Everton",
    "url": "https://www.fotmob.com/match/5795503",
-   "finished": false,
+   "finished": true,
    "score": "0-1",
    "types": [
     "xg"
@@ -1353,7 +1353,7 @@
    "home": "Benfica",
    "away": "Alverca",
    "url": "https://www.fotmob.com/match/5887671",
-   "finished": false,
+   "finished": true,
    "score": "1-0",
    "types": [
     "xg"
