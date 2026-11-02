@@ -4399,5 +4399,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-02 20:53"
+ },
+ {
+  "id": "5802975-xg",
+  "type": "xg",
+  "time": "2026-11-02 22:01",
+  "ts": 1793653279,
+  "league": "Ligue 1",
+  "country": "FRA",
+  "leagueId": 53,
+  "home": "Lorient",
+  "away": "Brest",
+  "matchId": 5802975,
+  "reason": "xG atteso prematch 2.71 (casa 1.27 + ospite 1.44) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.73",
+    "0.15"
+   ],
+   "poss": [
+    49,
+    51
+   ],
+   "shots": [
+    12,
+    3
+   ],
+   "sot": [
+    0,
+    1
+   ],
+   "big": [
+    2,
+    0
+   ],
+   "box": [
+    30,
+    5
+   ],
+   "corners": [
+    6,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5802975",
+  "over05": 1.5,
+  "over05_note": null,
+  "details": {
+   "total": 2.715,
+   "exp_home": 1.274,
+   "exp_away": 1.441,
+   "h_for": 1.093,
+   "h_ag": 1.33,
+   "a_for": 1.552,
+   "a_ag": 1.455,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
