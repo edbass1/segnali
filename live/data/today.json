@@ -1,23 +1,23 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02 00:21",
+ "generated_at": "2026-11-02 01:01",
  "partial": false,
  "stats": {
-  "matches_day": 183,
-  "candidates": 143,
-  "evaluated": 137,
-  "qualified": 34,
+  "matches_day": 170,
+  "candidates": 132,
+  "evaluated": 126,
+  "qualified": 30,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 5,
-   "xg": 24,
+   "xg": 21,
    "segna": 2,
-   "subisce": 7,
+   "subisce": 6,
    "mai00": 0
   },
-  "requests": 1124,
-  "seconds": 288
+  "requests": 982,
+  "seconds": 206
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -40,177 +40,6 @@
   "mai00_other": 90
  },
  "matches": [
-  {
-   "matchId": 1000019608,
-   "kickoff": "22:30",
-   "kickoff_utc": "2026-11-01T21:30:00.000Z",
-   "league": "Liga Profesional",
-   "country": "ARG",
-   "leagueId": 112,
-   "home": "Newell's Old Boys",
-   "away": "Unión",
-   "url": "https://www.fotmob.com/match/1000019608",
-   "finished": false,
-   "score": "1-1",
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Ospite ha subito almeno 1 gol in 14/14 partite di campionato 2026 - Clausura (Casa: 8/14) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "away",
-     "season": "2026 - Clausura",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 8,
-     "other_n": 14,
-     "other_pct": 57
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 9,
-     "conceded": 8,
-     "no00": 11
-    },
-    "away": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 14,
-     "no00": 14
-    }
-   }
-  },
-  {
-   "matchId": 5071481,
-   "kickoff": "22:30",
-   "kickoff_utc": "2026-11-01T21:30:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "Atlanta United",
-   "away": "Toronto FC",
-   "url": "https://www.fotmob.com/match/5071481",
-   "finished": false,
-   "score": "3-0",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.03 (casa 1.64 + ospite 1.39) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.03,
-     "exp_home": 1.64,
-     "exp_away": 1.39,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 32,
-     "scored": 23,
-     "conceded": 28,
-     "no00": 30
-    },
-    "away": {
-     "n": 32,
-     "scored": 27,
-     "conceded": 28,
-     "no00": 30
-    }
-   }
-  },
-  {
-   "matchId": 5071473,
-   "kickoff": "22:30",
-   "kickoff_utc": "2026-11-01T21:30:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "Nashville SC",
-   "away": "Red Bull New York",
-   "url": "https://www.fotmob.com/match/5071473",
-   "finished": false,
-   "score": "2-2",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.49 (casa 2.02 + ospite 1.47) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.49,
-     "exp_home": 2.02,
-     "exp_away": 1.47,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 32,
-     "scored": 26,
-     "conceded": 16,
-     "no00": 28
-    },
-    "away": {
-     "n": 32,
-     "scored": 23,
-     "conceded": 27,
-     "no00": 31
-    }
-   }
-  },
-  {
-   "matchId": 5190790,
-   "kickoff": "22:30",
-   "kickoff_utc": "2026-11-01T21:30:00.000Z",
-   "league": "Série B",
-   "country": "BRA",
-   "leagueId": 8814,
-   "home": "Novorizontino",
-   "away": "Operário-PR",
-   "url": "https://www.fotmob.com/match/5190790",
-   "finished": false,
-   "score": "2-1",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.83 (casa 1.82 + ospite 1.01) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.83,
-     "exp_home": 1.82,
-     "exp_away": 1.01,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 35,
-     "scored": 27,
-     "conceded": 22,
-     "no00": 31
-    },
-    "away": {
-     "n": 35,
-     "scored": 26,
-     "conceded": 23,
-     "no00": 31
-    }
-   }
-  },
   {
    "matchId": 1000014632,
    "kickoff": "00:00",
@@ -276,7 +105,7 @@
    "away": "Always Ready",
    "url": "https://www.fotmob.com/match/1000022369",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "storico"
    ],
