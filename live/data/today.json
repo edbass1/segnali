@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02 09:10",
+ "generated_at": "2026-11-02 10:19",
  "partial": false,
  "stats": {
   "matches_day": 159,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 977,
-  "seconds": 222
+  "seconds": 245
  },
  "skipped_leagues": {
   "CAN Northern Super League - Championship - Semi-finals": "femminile",
