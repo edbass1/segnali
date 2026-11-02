@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02 14:44",
+ "generated_at": "2026-11-02 15:43",
  "partial": false,
  "stats": {
   "matches_day": 159,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 977,
-  "seconds": 227
+  "seconds": 187
  },
  "skipped_leagues": {
   "CAN Northern Super League - Championship - Semi-finals": "femminile",
@@ -365,7 +365,7 @@
    "away": "Arsimi",
    "url": "https://www.fotmob.com/match/5804959",
    "finished": false,
-   "score": "0-0",
+   "score": "2-0",
    "types": [
     "subisce"
    ],
