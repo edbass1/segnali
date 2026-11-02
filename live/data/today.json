@@ -1,6 +1,6 @@
 {
  "date": "2026-11-02",
- "generated_at": "2026-11-02 21:30",
+ "generated_at": "2026-11-02 22:18",
  "partial": false,
  "stats": {
   "matches_day": 159,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 964,
-  "seconds": 254
+  "seconds": 200
  },
  "skipped_leagues": {
   "CAN Northern Super League - Championship - Semi-finals": "femminile",
@@ -980,7 +980,7 @@
    "away": "Pogoń Szczecin",
    "url": "https://www.fotmob.com/match/5804027",
    "finished": false,
-   "score": "0-1",
+   "score": "2-1",
    "types": [
     "xg",
     "subisce"
@@ -1034,7 +1034,7 @@
    "away": "Puszcza Niepołomice",
    "url": "https://www.fotmob.com/match/5861975",
    "finished": false,
-   "score": "0-1",
+   "score": "1-2",
    "types": [
     "storico"
    ],
@@ -1082,7 +1082,7 @@
    "away": "Brest",
    "url": "https://www.fotmob.com/match/5802975",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "xg"
    ],
@@ -1166,7 +1166,7 @@
    "away": "Farnham Town",
    "url": "https://www.fotmob.com/match/5907616",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "storico"
    ],
@@ -1210,7 +1210,7 @@
    "away": "Parma",
    "url": "https://www.fotmob.com/match/5749731",
    "finished": false,
-   "score": "0-0",
+   "score": "0-3",
    "types": [
     "xg"
    ],
@@ -1252,7 +1252,7 @@
    "away": "Osasuna",
    "url": "https://www.fotmob.com/match/5868113",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "storico",
     "subisce"
@@ -1312,7 +1312,7 @@
    "away": "Everton",
    "url": "https://www.fotmob.com/match/5795503",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "xg"
    ],
