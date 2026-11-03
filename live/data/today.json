@@ -1,6 +1,6 @@
 {
  "date": "2026-11-03",
- "generated_at": "2026-11-03 09:52",
+ "generated_at": "2026-11-03 10:51",
  "partial": false,
  "stats": {
   "matches_day": 166,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 534,
-  "seconds": 105
+  "seconds": 154
  },
  "skipped_leagues": {
   "DEN A-Liga": "femminile"
@@ -316,6 +316,93 @@
    }
   },
   {
+   "matchId": 5836914,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-03T19:45:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Preston North End",
+   "away": "Sheffield United",
+   "url": "https://www.fotmob.com/match/5836914",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 13/13 partite di campionato 2026/27 (Ospite: 8/13) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 13,
+     "strong_n": 13,
+     "strong_pct": 100,
+     "other_k": 8,
+     "other_n": 13,
+     "other_pct": 62
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 8,
+     "conceded": 13,
+     "no00": 13
+    },
+    "away": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 8,
+     "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 5836913,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-03T19:45:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Portsmouth",
+   "away": "Swansea City",
+   "url": "https://www.fotmob.com/match/5836913",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.85 (casa 1.59 + ospite 1.26) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.85,
+     "exp_home": 1.59,
+     "exp_away": 1.26,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 9,
+     "conceded": 9,
+     "no00": 11
+    },
+    "away": {
+     "n": 13,
+     "scored": 9,
+     "conceded": 7,
+     "no00": 11
+    }
+   }
+  },
+  {
    "matchId": 5836912,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-03T19:45:00.000Z",
@@ -381,93 +468,6 @@
      "scored": 9,
      "conceded": 13,
      "no00": 13
-    }
-   }
-  },
-  {
-   "matchId": 5836913,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-03T19:45:00.000Z",
-   "league": "Championship",
-   "country": "ENG",
-   "leagueId": 48,
-   "home": "Portsmouth",
-   "away": "Swansea City",
-   "url": "https://www.fotmob.com/match/5836913",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.85 (casa 1.59 + ospite 1.26) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.85,
-     "exp_home": 1.59,
-     "exp_away": 1.26,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 9,
-     "conceded": 9,
-     "no00": 11
-    },
-    "away": {
-     "n": 13,
-     "scored": 9,
-     "conceded": 7,
-     "no00": 11
-    }
-   }
-  },
-  {
-   "matchId": 5836914,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-03T19:45:00.000Z",
-   "league": "Championship",
-   "country": "ENG",
-   "leagueId": 48,
-   "home": "Preston North End",
-   "away": "Sheffield United",
-   "url": "https://www.fotmob.com/match/5836914",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 13/13 partite di campionato 2026/27 (Ospite: 8/13) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 13,
-     "strong_n": 13,
-     "strong_pct": 100,
-     "other_k": 8,
-     "other_n": 13,
-     "other_pct": 62
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 8,
-     "conceded": 13,
-     "no00": 13
-    },
-    "away": {
-     "n": 13,
-     "scored": 10,
-     "conceded": 8,
-     "no00": 11
     }
    }
   },
@@ -792,6 +792,54 @@
    }
   },
   {
+   "matchId": 5953905,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-03T19:45:00.000Z",
+   "league": "Southern Premier Division South",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Plymouth Parkway",
+   "away": "Uxbridge",
+   "url": "https://www.fotmob.com/match/5953905",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Casa: 76 partite di campionato consecutive senza 0-0 (ultimo 0-0: 01/01/2025 vs Tiverton); Ospite: 2 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 76,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "01/01/2025",
+      "opp": "Tiverton",
+      "home": true
+     },
+     "other_zz": 2,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 13,
+     "conceded": 10,
+     "no00": 14
+    },
+    "away": {
+     "n": 13,
+     "scored": 11,
+     "conceded": 5,
+     "no00": 12
+    }
+   }
+  },
+  {
    "matchId": 5953957,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-03T19:45:00.000Z",
@@ -848,54 +896,6 @@
      "scored": 9,
      "conceded": 11,
      "no00": 13
-    }
-   }
-  },
-  {
-   "matchId": 5953905,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-03T19:45:00.000Z",
-   "league": "Southern Premier Division South",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Plymouth Parkway",
-   "away": "Uxbridge",
-   "url": "https://www.fotmob.com/match/5953905",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Casa: 76 partite di campionato consecutive senza 0-0 (ultimo 0-0: 01/01/2025 vs Tiverton); Ospite: 2 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "home",
-     "streak": 76,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "01/01/2025",
-      "opp": "Tiverton",
-      "home": true
-     },
-     "other_zz": 2,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 13,
-     "conceded": 10,
-     "no00": 14
-    },
-    "away": {
-     "n": 13,
-     "scored": 11,
-     "conceded": 5,
-     "no00": 12
     }
    }
   },
