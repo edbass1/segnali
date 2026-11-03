@@ -181,7 +181,9 @@
   "5987233": {},
   "5987234": {
    "subisce": "2026-11-03 07:21"
-  }
+  },
+  "5836347": {},
+  "5836351": {}
  },
  "checked": {
   "5803642": {
@@ -1566,13 +1568,35 @@
     "subisce": true,
     "mai00": false
    }
+  },
+  "5836347": {
+   "t": 1793686910,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5836351": {
+   "t": 1793686913,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
   }
  },
  "live_count": 18,
- "candidates_last": 5,
- "requests_last": 16,
+ "candidates_last": 2,
+ "requests_last": 7,
  "last_write": "2026-11-03 07:21",
- "last_write_ts": 1793686861,
+ "last_write_ts": 1793686913,
  "telegram": {
   "last_try": "2026-11-03 07:21",
   "ok": true,
