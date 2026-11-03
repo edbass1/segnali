@@ -1,23 +1,23 @@
 {
  "date": "2026-11-03",
- "generated_at": "2026-11-03 01:01",
+ "generated_at": "2026-11-03 01:58",
  "partial": false,
  "stats": {
   "matches_day": 166,
   "candidates": 76,
   "evaluated": 75,
-  "qualified": 20,
+  "qualified": 21,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
-   "storico": 6,
+   "storico": 7,
    "xg": 11,
    "segna": 2,
-   "subisce": 4,
+   "subisce": 6,
    "mai00": 0
   },
-  "requests": 453,
-  "seconds": 126
+  "requests": 534,
+  "seconds": 132
  },
  "skipped_leagues": {
   "DEN A-Liga": "femminile"
@@ -217,44 +217,101 @@
    }
   },
   {
-   "matchId": 5836912,
+   "matchId": 5107651,
+   "kickoff": "19:00",
+   "kickoff_utc": "2026-11-03T18:00:00.000Z",
+   "league": "Allsvenskan",
+   "country": "SWE",
+   "leagueId": 67,
+   "home": "Sirius",
+   "away": "Halmstads BK",
+   "url": "https://www.fotmob.com/match/5107651",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico",
+    "xg"
+   ],
+   "reasons": {
+    "storico": "Casa: 83 partite di campionato consecutive senza 0-0 (ultimo 0-0: 20/05/2024 vs Västerås SK); Ospite: 2 0-0 nelle ultime 50 di campionato",
+    "xg": "xG atteso prematch 3.20 (casa 2.08 + ospite 1.11) ≥ 2.7"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 83,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "20/05/2024",
+      "opp": "Västerås SK",
+      "home": true
+     },
+     "other_zz": 2,
+     "other_n": 50
+    },
+    "xg": {
+     "total": 3.2,
+     "exp_home": 2.08,
+     "exp_away": 1.11,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 26,
+     "scored": 23,
+     "conceded": 18,
+     "no00": 26
+    },
+    "away": {
+     "n": 26,
+     "scored": 14,
+     "conceded": 24,
+     "no00": 26
+    }
+   }
+  },
+  {
+   "matchId": 5836911,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-03T19:45:00.000Z",
    "league": "Championship",
    "country": "ENG",
    "leagueId": 48,
-   "home": "Derby County",
-   "away": "Norwich City",
-   "url": "https://www.fotmob.com/match/5836912",
+   "home": "Blackburn Rovers",
+   "away": "Stoke City",
+   "url": "https://www.fotmob.com/match/5836911",
    "finished": false,
    "score": null,
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 3.01 (casa 1.28 + ospite 1.73) ≥ 2.7"
+    "xg": "xG atteso prematch 2.93 (casa 1.81 + ospite 1.12) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 3.01,
-     "exp_home": 1.28,
-     "exp_away": 1.73,
-     "method": "media generale",
+     "total": 2.93,
+     "exp_home": 1.81,
+     "exp_away": 1.12,
+     "method": "casa/trasferta",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 0,
-     "scored": 0,
-     "conceded": 0,
-     "no00": 0
+     "n": 13,
+     "scored": 11,
+     "conceded": 10,
+     "no00": 12
     },
     "away": {
-     "n": 0,
-     "scored": 0,
-     "conceded": 0,
-     "no00": 0
+     "n": 13,
+     "scored": 12,
+     "conceded": 8,
+     "no00": 12
     }
    }
   },
@@ -271,47 +328,146 @@
    "finished": false,
    "score": null,
    "types": [
-    "storico",
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 13/13 partite di campionato 2026/27 (Ospite: 8/13) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 13,
+     "strong_n": 13,
+     "strong_pct": 100,
+     "other_k": 8,
+     "other_n": 13,
+     "other_pct": 62
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 8,
+     "conceded": 13,
+     "no00": 13
+    },
+    "away": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 8,
+     "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 5836913,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-03T19:45:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Portsmouth",
+   "away": "Swansea City",
+   "url": "https://www.fotmob.com/match/5836913",
+   "finished": false,
+   "score": null,
+   "types": [
     "xg"
    ],
    "reasons": {
-    "storico": "Ospite: 55 partite di campionato consecutive senza 0-0 (ultimo 0-0: 04/02/2023 @ Rotherham United); Casa: 3 0-0 nelle ultime 50 di campionato",
-    "xg": "xG atteso prematch 2.72 (casa 1.31 + ospite 1.41) ≥ 2.7"
+    "xg": "xG atteso prematch 2.85 (casa 1.59 + ospite 1.26) ≥ 2.7"
    },
    "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 55,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "04/02/2023",
-      "opp": "Rotherham United",
-      "home": false
-     },
-     "other_zz": 3,
-     "other_n": 50
-    },
     "xg": {
-     "total": 2.72,
-     "exp_home": 1.31,
-     "exp_away": 1.41,
-     "method": "media generale",
+     "total": 2.85,
+     "exp_home": 1.59,
+     "exp_away": 1.26,
+     "method": "casa/trasferta",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 0,
-     "scored": 0,
-     "conceded": 0,
-     "no00": 0
+     "n": 13,
+     "scored": 9,
+     "conceded": 9,
+     "no00": 11
     },
     "away": {
-     "n": 0,
-     "scored": 0,
-     "conceded": 0,
-     "no00": 0
+     "n": 13,
+     "scored": 9,
+     "conceded": 7,
+     "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 5836912,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-03T19:45:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Derby County",
+   "away": "Norwich City",
+   "url": "https://www.fotmob.com/match/5836912",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico",
+    "xg",
+    "subisce"
+   ],
+   "reasons": {
+    "storico": "Ospite: 60 partite di campionato consecutive senza 0-0 (ultimo 0-0: 26/04/2025 @ Middlesbrough); Casa: 0 0-0 nelle ultime 50 di campionato",
+    "xg": "xG atteso prematch 3.06 (casa 1.34 + ospite 1.71) ≥ 2.7",
+    "subisce": "Ospite ha subito almeno 1 gol in 13/13 partite di campionato 2026/27 (Casa: 12/13) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 60,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "26/04/2025",
+      "opp": "Middlesbrough",
+      "home": false
+     },
+     "other_zz": 0,
+     "other_n": 50
+    },
+    "xg": {
+     "total": 3.06,
+     "exp_home": 1.34,
+     "exp_away": 1.71,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "subisce": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 13,
+     "strong_n": 13,
+     "strong_pct": 100,
+     "other_k": 12,
+     "other_n": 13,
+     "other_pct": 92
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 9,
+     "conceded": 12,
+     "no00": 13
+    },
+    "away": {
+     "n": 13,
+     "scored": 9,
+     "conceded": 13,
+     "no00": 13
     }
    }
   },
@@ -331,113 +487,29 @@
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.89 (casa 1.64 + ospite 1.25) ≥ 2.7"
+    "xg": "xG atteso prematch 3.43 (casa 2.07 + ospite 1.36) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 2.89,
-     "exp_home": 1.64,
-     "exp_away": 1.25,
-     "method": "media generale",
+     "total": 3.43,
+     "exp_home": 2.07,
+     "exp_away": 1.36,
+     "method": "casa/trasferta",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 0,
-     "scored": 0,
-     "conceded": 0,
-     "no00": 0
+     "n": 13,
+     "scored": 9,
+     "conceded": 10,
+     "no00": 11
     },
     "away": {
-     "n": 0,
-     "scored": 0,
-     "conceded": 0,
-     "no00": 0
-    }
-   }
-  },
-  {
-   "matchId": 5836920,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-03T19:45:00.000Z",
-   "league": "Championship",
-   "country": "ENG",
-   "leagueId": 48,
-   "home": "Charlton Athletic",
-   "away": "Bolton Wanderers",
-   "url": "https://www.fotmob.com/match/5836920",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.01 (casa 1.51 + ospite 1.49) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.01,
-     "exp_home": 1.51,
-     "exp_away": 1.49,
-     "method": "media generale",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 0,
-     "scored": 0,
-     "conceded": 0,
-     "no00": 0
-    },
-    "away": {
-     "n": 0,
-     "scored": 0,
-     "conceded": 0,
-     "no00": 0
-    }
-   }
-  },
-  {
-   "matchId": 5836916,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-03T19:45:00.000Z",
-   "league": "Championship",
-   "country": "ENG",
-   "leagueId": 48,
-   "home": "Watford",
-   "away": "Lincoln City",
-   "url": "https://www.fotmob.com/match/5836916",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.89 (casa 1.29 + ospite 1.59) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.89,
-     "exp_home": 1.29,
-     "exp_away": 1.59,
-     "method": "media generale",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 0,
-     "scored": 0,
-     "conceded": 0,
-     "no00": 0
-    },
-    "away": {
-     "n": 0,
-     "scored": 0,
-     "conceded": 0,
-     "no00": 0
+     "n": 13,
+     "scored": 12,
+     "conceded": 11,
+     "no00": 12
     }
    }
   },
@@ -720,6 +792,54 @@
    }
   },
   {
+   "matchId": 5953905,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-03T19:45:00.000Z",
+   "league": "Southern Premier Division South",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Plymouth Parkway",
+   "away": "Uxbridge",
+   "url": "https://www.fotmob.com/match/5953905",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Casa: 76 partite di campionato consecutive senza 0-0 (ultimo 0-0: 01/01/2025 vs Tiverton); Ospite: 2 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 76,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "01/01/2025",
+      "opp": "Tiverton",
+      "home": true
+     },
+     "other_zz": 2,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 13,
+     "conceded": 10,
+     "no00": 14
+    },
+    "away": {
+     "n": 13,
+     "scored": 11,
+     "conceded": 5,
+     "no00": 12
+    }
+   }
+  },
+  {
    "matchId": 5953957,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-03T19:45:00.000Z",
@@ -780,49 +900,43 @@
    }
   },
   {
-   "matchId": 5953905,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-03T19:45:00.000Z",
-   "league": "Southern Premier Division South",
+   "matchId": 5836917,
+   "kickoff": "21:00",
+   "kickoff_utc": "2026-11-03T20:00:00.000Z",
+   "league": "Championship",
    "country": "ENG",
-   "leagueId": 8947,
-   "home": "Plymouth Parkway",
-   "away": "Uxbridge",
-   "url": "https://www.fotmob.com/match/5953905",
+   "leagueId": 48,
+   "home": "West Bromwich Albion",
+   "away": "Southampton",
+   "url": "https://www.fotmob.com/match/5836917",
    "finished": false,
    "score": null,
    "types": [
-    "storico"
+    "xg"
    ],
    "reasons": {
-    "storico": "Casa: 76 partite di campionato consecutive senza 0-0 (ultimo 0-0: 01/01/2025 vs Tiverton); Ospite: 2 0-0 nelle ultime 50 di campionato"
+    "xg": "xG atteso prematch 2.78 (casa 1.45 + ospite 1.33) ≥ 2.7"
    },
    "info": {
-    "storico": {
-     "strong": "home",
-     "streak": 76,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "01/01/2025",
-      "opp": "Tiverton",
-      "home": true
-     },
-     "other_zz": 2,
-     "other_n": 50
+    "xg": {
+     "total": 2.78,
+     "exp_home": 1.45,
+     "exp_away": 1.33,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 14,
-     "scored": 13,
-     "conceded": 10,
-     "no00": 14
+     "n": 13,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 13
     },
     "away": {
      "n": 13,
-     "scored": 11,
-     "conceded": 5,
+     "scored": 12,
+     "conceded": 10,
      "no00": 12
     }
    }
@@ -843,71 +957,29 @@
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 3.18 (casa 1.52 + ospite 1.66) ≥ 2.7"
+    "xg": "xG atteso prematch 3.02 (casa 1.47 + ospite 1.55) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 3.18,
-     "exp_home": 1.52,
-     "exp_away": 1.66,
-     "method": "media generale",
+     "total": 3.02,
+     "exp_home": 1.47,
+     "exp_away": 1.55,
+     "method": "casa/trasferta",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 0,
-     "scored": 0,
-     "conceded": 0,
-     "no00": 0
+     "n": 13,
+     "scored": 11,
+     "conceded": 9,
+     "no00": 12
     },
     "away": {
-     "n": 0,
-     "scored": 0,
-     "conceded": 0,
-     "no00": 0
-    }
-   }
-  },
-  {
-   "matchId": 5836917,
-   "kickoff": "21:00",
-   "kickoff_utc": "2026-11-03T20:00:00.000Z",
-   "league": "Championship",
-   "country": "ENG",
-   "leagueId": 48,
-   "home": "West Bromwich Albion",
-   "away": "Southampton",
-   "url": "https://www.fotmob.com/match/5836917",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.00 (casa 1.39 + ospite 1.61) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.0,
-     "exp_home": 1.39,
-     "exp_away": 1.61,
-     "method": "media generale",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 0,
-     "scored": 0,
-     "conceded": 0,
-     "no00": 0
-    },
-    "away": {
-     "n": 0,
-     "scored": 0,
-     "conceded": 0,
-     "no00": 0
+     "n": 13,
+     "scored": 11,
+     "conceded": 9,
+     "no00": 13
     }
    }
   },
