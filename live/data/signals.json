@@ -4646,5 +4646,70 @@
   },
   "telegram": true,
   "resolved": "2026-11-03 08:05"
+ },
+ {
+  "id": "5948110-storico",
+  "type": "storico",
+  "time": "2026-11-03 21:48",
+  "ts": 1793738922,
+  "league": "Isthmian Premier Division",
+  "country": "ENG",
+  "leagueId": 8947,
+  "home": "Wingate & Finchley",
+  "away": "Burgess Hill Town",
+  "matchId": 5948110,
+  "reason": "Ospite: almeno 56 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Casa: 1 0-0 nelle ultime 50 di campionato",
+  "minute": 47,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 47,
+   "phase": "47",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5948110",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 47,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "20/09/2025",
+     "opp": "Chichester City FC",
+     "home": true
+    },
+    "n": 50,
+    "zz": 1,
+    "avail": 55
+   },
+   "away": {
+    "streak": 56,
+    "complete": false,
+    "capped": false,
+    "last00": null,
+    "n": 50,
+    "zz": 0,
+    "avail": 56
+   },
+   "strong": "away"
+  },
+  "streak": 56,
+  "streak_complete": false,
+  "telegram": true
  }
 ]
