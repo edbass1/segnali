@@ -4711,5 +4711,75 @@
   "streak": 56,
   "streak_complete": false,
   "telegram": true
+ },
+ {
+  "id": "5837194-xg",
+  "type": "xg",
+  "time": "2026-11-03 22:06",
+  "ts": 1793739961,
+  "league": "League One",
+  "country": "ENG",
+  "leagueId": 108,
+  "home": "Wigan Athletic",
+  "away": "Mansfield Town",
+  "matchId": 5837194,
+  "reason": "xG atteso prematch 3.21 (casa 1.51 + ospite 1.70) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.89",
+    "0.78"
+   ],
+   "poss": [
+    45,
+    55
+   ],
+   "shots": [
+    10,
+    4
+   ],
+   "sot": [
+    1,
+    2
+   ],
+   "big": [
+    2,
+    2
+   ],
+   "box": [
+    13,
+    11
+   ],
+   "corners": [
+    2,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5837194",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.21,
+   "exp_home": 1.508,
+   "exp_away": 1.702,
+   "h_for": 1.597,
+   "h_ag": 1.88,
+   "a_for": 1.523,
+   "a_ag": 1.42,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
