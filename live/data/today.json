@@ -1,6 +1,6 @@
 {
  "date": "2026-11-03",
- "generated_at": "2026-11-03 23:52",
+ "generated_at": "2026-11-03 23:55",
  "partial": false,
  "stats": {
   "matches_day": 166,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 534,
-  "seconds": 138
+  "seconds": 125
  },
  "skipped_leagues": {
   "DEN A-Liga": "femminile"
@@ -472,6 +472,51 @@
    }
   },
   {
+   "matchId": 5836914,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-03T19:45:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Preston North End",
+   "away": "Sheffield United",
+   "url": "https://www.fotmob.com/match/5836914",
+   "finished": true,
+   "score": "2-3",
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 13/13 partite di campionato 2026/27 (Ospite: 8/13) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 13,
+     "strong_n": 13,
+     "strong_pct": 100,
+     "other_k": 8,
+     "other_n": 13,
+     "other_pct": 62
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 8,
+     "conceded": 13,
+     "no00": 13
+    },
+    "away": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 8,
+     "no00": 11
+    }
+   }
+  },
+  {
    "matchId": 5836915,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-03T19:45:00.000Z",
@@ -900,48 +945,6 @@
    }
   },
   {
-   "matchId": 5836910,
-   "kickoff": "21:00",
-   "kickoff_utc": "2026-11-03T20:00:00.000Z",
-   "league": "Championship",
-   "country": "ENG",
-   "leagueId": 48,
-   "home": "Birmingham City",
-   "away": "Millwall",
-   "url": "https://www.fotmob.com/match/5836910",
-   "finished": true,
-   "score": "3-0",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.02 (casa 1.47 + ospite 1.55) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.02,
-     "exp_home": 1.47,
-     "exp_away": 1.55,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 11,
-     "conceded": 9,
-     "no00": 12
-    },
-    "away": {
-     "n": 13,
-     "scored": 11,
-     "conceded": 9,
-     "no00": 13
-    }
-   }
-  },
-  {
    "matchId": 5836917,
    "kickoff": "21:00",
    "kickoff_utc": "2026-11-03T20:00:00.000Z",
@@ -980,6 +983,48 @@
      "scored": 12,
      "conceded": 10,
      "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 5836910,
+   "kickoff": "21:00",
+   "kickoff_utc": "2026-11-03T20:00:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Birmingham City",
+   "away": "Millwall",
+   "url": "https://www.fotmob.com/match/5836910",
+   "finished": true,
+   "score": "3-0",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.02 (casa 1.47 + ospite 1.55) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.02,
+     "exp_home": 1.47,
+     "exp_away": 1.55,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 11,
+     "conceded": 9,
+     "no00": 12
+    },
+    "away": {
+     "n": 13,
+     "scored": 11,
+     "conceded": 9,
+     "no00": 13
     }
    }
   },

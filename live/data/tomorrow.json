@@ -1,0 +1,340 @@
+{
+ "date": "2026-11-04",
+ "generated_at": "2026-11-03 23:56",
+ "partial": false,
+ "stats": {
+  "matches_day": 118,
+  "candidates": 28,
+  "evaluated": 26,
+  "qualified": 7,
+  "errors": 0,
+  "not_evaluated_budget": 0,
+  "by_type": {
+   "storico": 0,
+   "xg": 5,
+   "segna": 0,
+   "subisce": 2,
+   "mai00": 0
+  },
+  "requests": 246,
+  "seconds": 78
+ },
+ "skipped_leagues": {
+  "SCO SWPL 1": "femminile"
+ },
+ "rules": {
+  "window": "60-70'",
+  "hist_n": 50,
+  "streak_min": 50,
+  "hist_max_00": 3,
+  "xg_min": 2.7,
+  "cur_min": 9,
+  "segna_strong": 100,
+  "segna_other": 80,
+  "subisce": 100,
+  "mai00_strong": 100,
+  "mai00_other": 90
+ },
+ "matches": [
+  {
+   "matchId": 5103700,
+   "kickoff": "01:30",
+   "kickoff_utc": "2026-11-04T00:30:00.000Z",
+   "league": "Série A",
+   "country": "BRA",
+   "leagueId": 268,
+   "home": "Internacional",
+   "away": "Coritiba",
+   "url": "https://www.fotmob.com/match/5103700",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.92 (casa 1.82 + ospite 1.10) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.92,
+     "exp_home": 1.82,
+     "exp_away": 1.1,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 33,
+     "scored": 23,
+     "conceded": 26,
+     "no00": 30
+    },
+    "away": {
+     "n": 33,
+     "scored": 22,
+     "conceded": 26,
+     "no00": 32
+    }
+   }
+  },
+  {
+   "matchId": 6103137,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-04T15:00:00.000Z",
+   "league": "NPFL",
+   "country": "NGA",
+   "leagueId": 533,
+   "home": "Enugu Rangers",
+   "away": "Bendel Insurance",
+   "url": "https://www.fotmob.com/match/6103137",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Ospite ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Casa: 7/9) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 7,
+     "other_n": 9,
+     "other_pct": 78
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 9,
+     "scored": 8,
+     "conceded": 7,
+     "no00": 9
+    },
+    "away": {
+     "n": 10,
+     "scored": 8,
+     "conceded": 10,
+     "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5922738,
+   "kickoff": "17:00",
+   "kickoff_utc": "2026-11-04T16:00:00.000Z",
+   "league": "NB II",
+   "country": "HUN",
+   "leagueId": 9117,
+   "home": "Szeged-Csanád Grosics Akademia",
+   "away": "BVSC Zugló",
+   "url": "https://www.fotmob.com/match/5922738",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 8/11) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 11,
+     "strong_n": 11,
+     "strong_pct": 100,
+     "other_k": 8,
+     "other_n": 11,
+     "other_pct": 73
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 7,
+     "conceded": 11,
+     "no00": 11
+    },
+    "away": {
+     "n": 11,
+     "scored": 7,
+     "conceded": 8,
+     "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 1000015487,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-11-04T19:00:00.000Z",
+   "league": "First Division B",
+   "country": "BEL",
+   "leagueId": 264,
+   "home": "Francs Borains",
+   "away": "FCV Dender EH",
+   "url": "https://www.fotmob.com/match/1000015487",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.24 (casa 1.69 + ospite 1.55) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.24,
+     "exp_home": 1.69,
+     "exp_away": 1.55,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 7,
+     "scored": 4,
+     "conceded": 5,
+     "no00": 7
+    },
+    "away": {
+     "n": 8,
+     "scored": 7,
+     "conceded": 3,
+     "no00": 8
+    }
+   }
+  },
+  {
+   "matchId": 5836919,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-04T19:45:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Cardiff City",
+   "away": "West Ham United",
+   "url": "https://www.fotmob.com/match/5836919",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.63 (casa 2.11 + ospite 1.52) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.63,
+     "exp_home": 2.11,
+     "exp_away": 1.52,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 12,
+     "no00": 13
+    },
+    "away": {
+     "n": 13,
+     "scored": 13,
+     "conceded": 9,
+     "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5836921,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-04T19:45:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Wrexham",
+   "away": "Middlesbrough",
+   "url": "https://www.fotmob.com/match/5836921",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.84 (casa 1.04 + ospite 1.79) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.84,
+     "exp_home": 1.04,
+     "exp_away": 1.79,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 9,
+     "conceded": 11,
+     "no00": 12
+    },
+    "away": {
+     "n": 13,
+     "scored": 13,
+     "conceded": 10,
+     "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5837118,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-04T19:45:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Oxford United",
+   "away": "Reading",
+   "url": "https://www.fotmob.com/match/5837118",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.88 (casa 1.28 + ospite 1.59) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.88,
+     "exp_home": 1.28,
+     "exp_away": 1.59,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 11,
+     "conceded": 8,
+     "no00": 11
+    },
+    "away": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 8,
+     "no00": 11
+    }
+   }
+  }
+ ]
+}
