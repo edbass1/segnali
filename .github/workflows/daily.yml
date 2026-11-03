@@ -30,7 +30,7 @@ jobs:
           python-version: '3.12'
       - name: Collega la vista archivio alla pagina
         run: |
-          grep -q 'archive.js' live/index.html || sed -i '/<\\/body>/i <script src="archive.js"></script>' live/index.html
+          grep -q 'archive.js' live/index.html || sed -i '/<\/body>/i <script src="archive.js"></script>' live/index.html
       - name: Aggiorna partite di oggi, domani e dopodomani
         run: |
           TODAY=$(TZ=Europe/Rome date '+%Y%m%d')
