@@ -4590,5 +4590,59 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5836349-subisce",
+  "type": "subisce",
+  "time": "2026-11-03 07:29",
+  "ts": 1793687391,
+  "league": "J. League 2",
+  "country": "JPN",
+  "leagueId": 8974,
+  "home": "Ventforet Kofu",
+  "away": "Albirex Niigata",
+  "matchId": 5836349,
+  "reason": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 12/14) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5836349",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 14,
+    "scored": 8,
+    "conceded": 14,
+    "no00": 14
+   },
+   "away": {
+    "n": 14,
+    "scored": 12,
+    "conceded": 12,
+    "no00": 14
+   }
+  },
+  "telegram": true
  }
 ]
