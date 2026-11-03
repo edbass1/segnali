@@ -1,6 +1,6 @@
 {
  "date": "2026-11-03",
- "generated_at": "2026-11-03 15:51",
+ "generated_at": "2026-11-03 16:42",
  "partial": false,
  "stats": {
   "matches_day": 166,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 534,
-  "seconds": 159
+  "seconds": 109
  },
  "skipped_leagues": {
   "DEN A-Liga": "femminile"
@@ -316,6 +316,48 @@
    }
   },
   {
+   "matchId": 5836913,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-03T19:45:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Portsmouth",
+   "away": "Swansea City",
+   "url": "https://www.fotmob.com/match/5836913",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.85 (casa 1.59 + ospite 1.26) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.85,
+     "exp_home": 1.59,
+     "exp_away": 1.26,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 9,
+     "conceded": 9,
+     "no00": 11
+    },
+    "away": {
+     "n": 13,
+     "scored": 9,
+     "conceded": 7,
+     "no00": 11
+    }
+   }
+  },
+  {
    "matchId": 5836914,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-03T19:45:00.000Z",
@@ -430,48 +472,6 @@
    }
   },
   {
-   "matchId": 5836913,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-03T19:45:00.000Z",
-   "league": "Championship",
-   "country": "ENG",
-   "leagueId": 48,
-   "home": "Portsmouth",
-   "away": "Swansea City",
-   "url": "https://www.fotmob.com/match/5836913",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.85 (casa 1.59 + ospite 1.26) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.85,
-     "exp_home": 1.59,
-     "exp_away": 1.26,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 9,
-     "conceded": 9,
-     "no00": 11
-    },
-    "away": {
-     "n": 13,
-     "scored": 9,
-     "conceded": 7,
-     "no00": 11
-    }
-   }
-  },
-  {
    "matchId": 5836915,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-03T19:45:00.000Z",
@@ -510,6 +510,50 @@
      "scored": 12,
      "conceded": 11,
      "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 5948110,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-03T19:45:00.000Z",
+   "league": "Isthmian Premier Division",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Wingate & Finchley",
+   "away": "Burgess Hill Town",
+   "url": "https://www.fotmob.com/match/5948110",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: almeno 56 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Casa: 1 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 56,
+     "complete": false,
+     "capped": false,
+     "last00": null,
+     "other_zz": 1,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 12,
+     "conceded": 11,
+     "no00": 13
+    },
+    "away": {
+     "n": 14,
+     "scored": 12,
+     "conceded": 12,
+     "no00": 14
     }
    }
   },
@@ -557,50 +601,6 @@
      "n": 14,
      "scored": 12,
      "conceded": 10,
-     "no00": 14
-    }
-   }
-  },
-  {
-   "matchId": 5948110,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-03T19:45:00.000Z",
-   "league": "Isthmian Premier Division",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Wingate & Finchley",
-   "away": "Burgess Hill Town",
-   "url": "https://www.fotmob.com/match/5948110",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: almeno 56 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Casa: 1 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 56,
-     "complete": false,
-     "capped": false,
-     "last00": null,
-     "other_zz": 1,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 12,
-     "conceded": 11,
-     "no00": 13
-    },
-    "away": {
-     "n": 14,
-     "scored": 12,
-     "conceded": 12,
      "no00": 14
     }
    }
@@ -900,48 +900,6 @@
    }
   },
   {
-   "matchId": 5836917,
-   "kickoff": "21:00",
-   "kickoff_utc": "2026-11-03T20:00:00.000Z",
-   "league": "Championship",
-   "country": "ENG",
-   "leagueId": 48,
-   "home": "West Bromwich Albion",
-   "away": "Southampton",
-   "url": "https://www.fotmob.com/match/5836917",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.78 (casa 1.45 + ospite 1.33) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.78,
-     "exp_home": 1.45,
-     "exp_away": 1.33,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 11,
-     "conceded": 11,
-     "no00": 13
-    },
-    "away": {
-     "n": 13,
-     "scored": 12,
-     "conceded": 10,
-     "no00": 12
-    }
-   }
-  },
-  {
    "matchId": 5836910,
    "kickoff": "21:00",
    "kickoff_utc": "2026-11-03T20:00:00.000Z",
@@ -980,6 +938,48 @@
      "scored": 11,
      "conceded": 9,
      "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5836917,
+   "kickoff": "21:00",
+   "kickoff_utc": "2026-11-03T20:00:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "West Bromwich Albion",
+   "away": "Southampton",
+   "url": "https://www.fotmob.com/match/5836917",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.78 (casa 1.45 + ospite 1.33) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.78,
+     "exp_home": 1.45,
+     "exp_away": 1.33,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 13
+    },
+    "away": {
+     "n": 13,
+     "scored": 12,
+     "conceded": 10,
+     "no00": 12
     }
    }
   },
