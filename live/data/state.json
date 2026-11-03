@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-11-03 15:51",
+ "last_scan": "2026-11-03 15:53",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -14,9 +14,6 @@
   "mai00_other": 90
  },
  "sent": {
-  "5990919": {
-   "subisce": "2026-11-01 15:52"
-  },
   "1000015163": {},
   "1000015751": {},
   "5833601": {},
@@ -129,17 +126,6 @@
   }
  },
  "checked": {
-  "5990919": {
-   "t": 1793544761,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": true,
-    "mai00": false
-   }
-  },
   "1000015163": {
    "t": 1793546259,
    "r": "valutata",
@@ -1102,11 +1088,11 @@
    }
   }
  },
- "live_count": 9,
+ "live_count": 7,
  "candidates_last": 0,
  "requests_last": 1,
- "last_write": "2026-11-03 15:51",
- "last_write_ts": 1793717468,
+ "last_write": "2026-11-03 15:53",
+ "last_write_ts": 1793717588,
  "telegram": {
   "last_try": "2026-11-03 08:05",
   "ok": true,
