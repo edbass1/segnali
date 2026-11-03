@@ -4536,5 +4536,59 @@
   "streak_complete": false,
   "telegram": true,
   "resolved": "2026-11-02 22:42"
+ },
+ {
+  "id": "5987234-subisce",
+  "type": "subisce",
+  "time": "2026-11-03 07:21",
+  "ts": 1793686861,
+  "league": "J. League 3",
+  "country": "JPN",
+  "leagueId": 9136,
+  "home": "Tochigi SC",
+  "away": "Fukushima United",
+  "matchId": 5987234,
+  "reason": "Ospite ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Casa: 8/14) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 61,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 61,
+   "phase": "61",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5987234",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "away",
+   "home": {
+    "n": 14,
+    "scored": 9,
+    "conceded": 8,
+    "no00": 11
+   },
+   "away": {
+    "n": 14,
+    "scored": 13,
+    "conceded": 14,
+    "no00": 14
+   }
+  },
+  "telegram": true
  }
 ]
