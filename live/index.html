@@ -31,6 +31,9 @@
   .won{color:var(--ok)}.lost{color:var(--ko)}.pending{color:var(--pend)}.void{color:var(--mut)}
   .empty{color:var(--mut);padding:20px;text-align:center}
   .tab.day{flex-basis:100%}
+  .day-tabs{display:flex;gap:8px;margin:0 0 14px;flex-wrap:wrap}
+  .day-tab{flex:1;min-width:100px;padding:10px 8px;border:1px solid var(--line);border-radius:10px;background:#000;color:var(--mut);font-size:16px;font-weight:700;cursor:pointer}
+  .day-tab.on{background:#fff;color:#000;border-color:#fff}
   .dmeta{color:#cfcfcf;font-size:16px;margin:0 0 12px}
   .ko{font-size:22px;font-weight:800;color:#fff;margin:18px 0 4px;padding-bottom:4px;border-bottom:1px solid var(--line)}
   .dm{background:#000;border:1px solid var(--line);border-radius:12px;padding:12px 14px;margin:10px 0}
@@ -115,17 +118,22 @@ function detail(t,e){
   const w={segna:'ha segnato',subisce:'ha subito gol',mai00:'nessuno 0-0'}[t];
   return `${s}: ${w} in <b>${x.strong_k}/${x.strong_n}</b> (${x.strong_pct}%)`+(t==='subisce'?` · ${o}: ${x.other_k}/${x.other_n}`:`; ${o}: ${x.other_k}/${x.other_n} (<b>${x.other_pct}%</b>)`)+` — stagione ${esc(x.season)}`;
 }
-function renderDay(d,sig){
+let DAY_DATA={},DAY_SIG=[];
+let CURRENT_DAY='today';
+function selectDay(key){CURRENT_DAY=key;renderDay(DAY_DATA[key],DAY_SIG,key);}
+function renderDay(d,sig,dayKey='today'){
   const el=document.getElementById('p-oggi');
-  if(!d||!d.matches){el.innerHTML='<div class="empty">Lista del giorno non ancora disponibile (viene generata ogni notte a mezzanotte, ora italiana).</div>';return;}
-  const dd=d.date?d.date.split('-').reverse().join('/'):'';
+  const dayNames={today:'Oggi',tomorrow:'Domani',dayafter:'Dopodomani'};
+  const nav=`<div class="day-tabs">${[['today','📅 Oggi'],['tomorrow','Domani'],['dayafter','Dopodomani']].map(([k,v])=>`<button class="day-tab${dayKey===k?' on':''}" onclick="selectDay('${k}')">${v}</button>`).join('')}</div>`;
+  if(!d||!d.matches){el.innerHTML=nav+'<div class="empty">Calendario non ancora disponibile per questa data: sarà popolato dal prossimo aggiornamento automatico.</div>';return;}
+  const dd=d.date?d.date.split('-').reverse().join('/'):' ';
   const bySig={};for(const s of sig){(bySig[s.matchId]=bySig[s.matchId]||[]).push(s);}
   const st=d.stats||{};
   // L'archivio conserva le gare concluse; la lista oggi mostra solo quelle non ancora finite.
   const active=d.matches.filter(e=>!e.finished);
   const finishedCount=d.matches.length-active.length;
   const nsig=active.filter(e=>bySig[e.matchId]).length;
-  let h=`<div class="dmeta">Partite di campionato di <b>oggi ${esc(dd)}</b> in cui le squadre <b>soddisfano già</b> i requisiti prematch di almeno un segnale: se sono sullo <b>0-0 tra il 60' e il 70'</b> parte il segnale.<br>
+  let h=nav+`<div class="dmeta">Partite di campionato di <b>${dayNames[dayKey]} ${esc(dd)}</b> in cui le squadre <b>soddisfano già</b> i requisiti prematch di almeno un segnale: se sono sullo <b>0-0 tra il 60' e il 70'</b> parte il segnale.<br>
     Aggiornato: <b>${esc(d.generated_at)}</b> (ora italiana)${d.partial?' · <span class="pending">lista parziale</span>':''}${st.evaluated!=null?` · ${st.evaluated} partite analizzate`:''}</div>
     <div class="sum">
     <div class="box"><div class="v">${active.length}</div><div class="l">Partite in lista</div></div>
@@ -155,8 +163,11 @@ function loadData(){
 const nc='?t='+Date.now();
 Promise.all([fetch('data/signals.json'+nc,{cache:'no-store'}).then(r=>r.json()).catch(()=>[]),
              fetch('data/state.json'+nc,{cache:'no-store'}).then(r=>r.json()).catch(()=>({})),
-             fetch('data/today.json'+nc,{cache:'no-store'}).then(r=>r.json()).catch(()=>null)]).then(([sig,st,day])=>{
-  renderDay(day,sig);
+             fetch('data/today.json'+nc,{cache:'no-store'}).then(r=>r.json()).catch(()=>null),
+             fetch('data/tomorrow.json'+nc,{cache:'no-store'}).then(r=>r.json()).catch(()=>null),
+             fetch('data/dayafter.json'+nc,{cache:'no-store'}).then(r=>r.json()).catch(()=>null)]).then(([sig,st,day,tomorrow,dayafter])=>{
+  DAY_DATA={today:day,tomorrow,dayafter};DAY_SIG=sig;
+  renderDay(DAY_DATA[CURRENT_DAY],sig,CURRENT_DAY);
   if(location.hash==='#oggi') document.querySelector('.tab[data-t="oggi"]').click();
   document.getElementById('last').textContent=(st.last_scan||st.last_write||'–')+' (ora italiana)';
   const r=Object.assign({window:"60-70'",hist_n:50,streak_min:50,hist_max_00:3,xg_min:2.7,cur_min:9,
