@@ -2,7 +2,7 @@ name: Archivio completo delle partite
 
 on:
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '*/30 * * * *'
   push:
     paths:
       - '.github/workflows/daily.yml'
@@ -17,12 +17,12 @@ permissions:
 
 concurrency:
   group: segnali-archive-refresh
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   archive:
     runs-on: ubuntu-latest
-    timeout-minutes: 15
+    timeout-minutes: 40
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
@@ -30,18 +30,24 @@ jobs:
           python-version: '3.12'
       - name: Collega la vista archivio alla pagina
         run: |
-          grep -q 'archive.js' live/index.html || sed -i '/<\/body>/i <script src="archive.js"></script>' live/index.html
-      - name: Aggiorna la lista originale di partite con statistiche prematch
-        run: python scanner/scan.py --daily --budget 7
+          grep -q 'archive.js' live/index.html || sed -i '/<\\/body>/i <script src="archive.js"></script>' live/index.html
+      - name: Aggiorna partite di oggi, domani e dopodomani
+        run: |
+          TODAY=$(TZ=Europe/Rome date '+%Y%m%d')
+          TOMORROW=$(TZ=Europe/Rome date -d '+1 day' '+%Y%m%d')
+          DAY_AFTER=$(TZ=Europe/Rome date -d '+2 days' '+%Y%m%d')
+          python scanner/scan.py --daily --date "$TODAY" --budget 7 --out live/data/today.json
+          python scanner/scan.py --daily --date "$TOMORROW" --budget 7 --out live/data/tomorrow.json
+          python scanner/scan.py --daily --date "$DAY_AFTER" --budget 7 --out live/data/dayafter.json
       - name: Aggiorna archivio completo, risultati e strike rate
         run: python scanner/archive.py
       - name: Commit archivio giornaliero
         run: |
           git config user.name "segnali-bot"
           git config user.email "segnali-bot@users.noreply.github.com"
-          git add live/index.html live/data/today.json live/data/archive/
+          git add live/index.html live/data/today.json live/data/tomorrow.json live/data/dayafter.json live/data/archive/
           if git diff --cached --quiet; then echo "nessuna modifica"; exit 0; fi
-          git commit -m "live: aggiorna archivio partite $(TZ=Europe/Rome date '+%Y-%m-%d %H:%M')"
+          git commit -m "live: aggiorna calendario 3 giorni e archivio $(TZ=Europe/Rome date '+%Y-%m-%d %H:%M')"
           for i in 1 2 3; do
             git pull --rebase -X theirs origin main && git push origin HEAD:main && exit 0
             sleep 5
