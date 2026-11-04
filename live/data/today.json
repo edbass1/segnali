@@ -1,6 +1,6 @@
 {
  "date": "2026-11-04",
- "generated_at": "2026-11-04 16:45",
+ "generated_at": "2026-11-04 17:44",
  "partial": false,
  "stats": {
   "matches_day": 117,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 301,
-  "seconds": 88
+  "seconds": 75
  },
  "skipped_leagues": {
   "SCO SWPL 1": "femminile"
@@ -89,7 +89,7 @@
    "away": "Bendel Insurance",
    "url": "https://www.fotmob.com/match/6103137",
    "finished": false,
-   "score": "0-0",
+   "score": "1-0",
    "types": [
     "subisce"
    ],
@@ -134,7 +134,7 @@
    "away": "BVSC Zugló",
    "url": "https://www.fotmob.com/match/5922738",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "subisce"
    ],
