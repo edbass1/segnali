@@ -1,11 +1,11 @@
 {
  "date": "2026-11-06",
- "generated_at": "2026-11-04 09:16",
+ "generated_at": "2026-11-04 10:28",
  "partial": false,
  "stats": {
-  "matches_day": 176,
-  "candidates": 147,
-  "evaluated": 143,
+  "matches_day": 178,
+  "candidates": 149,
+  "evaluated": 145,
   "qualified": 44,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 14,
    "mai00": 0
   },
-  "requests": 867,
-  "seconds": 260
+  "requests": 878,
+  "seconds": 220
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -1882,13 +1882,13 @@
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.94 (casa 1.45 + ospite 1.49) ≥ 2.7"
+    "xg": "xG atteso prematch 2.98 (casa 1.45 + ospite 1.53) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 2.94,
+     "total": 2.98,
      "exp_home": 1.45,
-     "exp_away": 1.49,
+     "exp_away": 1.53,
      "method": "casa/trasferta",
      "season": "2026/2027"
     }
