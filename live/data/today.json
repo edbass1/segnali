@@ -1,6 +1,6 @@
 {
  "date": "2026-11-04",
- "generated_at": "2026-11-04 18:43",
+ "generated_at": "2026-11-04 19:44",
  "partial": false,
  "stats": {
   "matches_day": 117,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 301,
-  "seconds": 65
+  "seconds": 56
  },
  "skipped_leagues": {
   "SCO SWPL 1": "femminile"
@@ -133,8 +133,8 @@
    "home": "Szeged-Csanád Grosics Akademia",
    "away": "BVSC Zugló",
    "url": "https://www.fotmob.com/match/5922738",
-   "finished": false,
-   "score": "2-0",
+   "finished": true,
+   "score": "3-0",
    "types": [
     "subisce"
    ],
