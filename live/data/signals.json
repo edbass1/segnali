@@ -4783,5 +4783,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-03 22:39"
+ },
+ {
+  "id": "5103700-xg",
+  "type": "xg",
+  "time": "2026-11-04 02:54",
+  "ts": 1793757286,
+  "league": "Série A",
+  "country": "BRA",
+  "leagueId": 268,
+  "home": "Internacional",
+  "away": "Coritiba",
+  "matchId": 5103700,
+  "reason": "xG atteso prematch 2.92 (casa 1.82 + ospite 1.10) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.59",
+    "0.43"
+   ],
+   "poss": [
+    61,
+    39
+   ],
+   "shots": [
+    10,
+    5
+   ],
+   "sot": [
+    3,
+    1
+   ],
+   "big": [
+    1,
+    1
+   ],
+   "box": [
+    13,
+    8
+   ],
+   "corners": [
+    8,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5103700",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.916,
+   "exp_home": 1.816,
+   "exp_away": 1.1,
+   "h_for": 1.834,
+   "h_ag": 1.106,
+   "a_for": 1.094,
+   "a_ag": 1.797,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
  }
 ]
