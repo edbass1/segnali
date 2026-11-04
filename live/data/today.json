@@ -1,6 +1,6 @@
 {
  "date": "2026-11-04",
- "generated_at": "2026-11-04 00:30",
+ "generated_at": "2026-11-04 01:07",
  "partial": false,
  "stats": {
   "matches_day": 120,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 332,
-  "seconds": 96
+  "seconds": 76
  },
  "skipped_leagues": {
   "SCO SWPL 1": "femminile"
@@ -47,7 +47,7 @@
    "away": "Mirassol",
    "url": "https://www.fotmob.com/match/5103703",
    "finished": false,
-   "score": "1-1",
+   "score": "1-2",
    "types": [
     "xg"
    ],
