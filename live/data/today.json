@@ -1,6 +1,6 @@
 {
  "date": "2026-11-04",
- "generated_at": "2026-11-04 17:44",
+ "generated_at": "2026-11-04 18:43",
  "partial": false,
  "stats": {
   "matches_day": 117,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 301,
-  "seconds": 75
+  "seconds": 65
  },
  "skipped_leagues": {
   "SCO SWPL 1": "femminile"
@@ -88,7 +88,7 @@
    "home": "Enugu Rangers",
    "away": "Bendel Insurance",
    "url": "https://www.fotmob.com/match/6103137",
-   "finished": false,
+   "finished": true,
    "score": "1-0",
    "types": [
     "subisce"
@@ -134,7 +134,7 @@
    "away": "BVSC Zugló",
    "url": "https://www.fotmob.com/match/5922738",
    "finished": false,
-   "score": "0-0",
+   "score": "2-0",
    "types": [
     "subisce"
    ],
