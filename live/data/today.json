@@ -1,6 +1,6 @@
 {
  "date": "2026-11-04",
- "generated_at": "2026-11-04 20:48",
+ "generated_at": "2026-11-04 21:41",
  "partial": false,
  "stats": {
   "matches_day": 117,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 301,
-  "seconds": 52
+  "seconds": 74
  },
  "skipped_leagues": {
   "SCO SWPL 1": "femminile"
@@ -179,7 +179,7 @@
    "away": "FCV Dender EH",
    "url": "https://www.fotmob.com/match/1000015487",
    "finished": false,
-   "score": "0-0",
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -221,7 +221,7 @@
    "away": "West Ham United",
    "url": "https://www.fotmob.com/match/5836919",
    "finished": false,
-   "score": "0-0",
+   "score": "3-0",
    "types": [
     "xg"
    ],
