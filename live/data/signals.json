@@ -4854,5 +4854,145 @@
   },
   "telegram": true,
   "resolved": "2026-11-04 03:39"
+ },
+ {
+  "id": "5836921-xg",
+  "type": "xg",
+  "time": "2026-11-04 22:03",
+  "ts": 1793826184,
+  "league": "Championship",
+  "country": "ENG",
+  "leagueId": 48,
+  "home": "Wrexham",
+  "away": "Middlesbrough",
+  "matchId": 5836921,
+  "reason": "xG atteso prematch 2.84 (casa 1.04 + ospite 1.79) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.16",
+    "0.66"
+   ],
+   "poss": [
+    40,
+    60
+   ],
+   "shots": [
+    11,
+    7
+   ],
+   "sot": [
+    2,
+    2
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    9,
+    17
+   ],
+   "corners": [
+    2,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5836921",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.838,
+   "exp_home": 1.044,
+   "exp_away": 1.793,
+   "h_for": 1.182,
+   "h_ag": 1.263,
+   "a_for": 2.323,
+   "a_ag": 0.907,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
+ },
+ {
+  "id": "5837118-xg",
+  "type": "xg",
+  "time": "2026-11-04 22:03",
+  "ts": 1793826194,
+  "league": "League One",
+  "country": "ENG",
+  "leagueId": 108,
+  "home": "Oxford United",
+  "away": "Reading",
+  "matchId": 5837118,
+  "reason": "xG atteso prematch 2.88 (casa 1.28 + ospite 1.59) ≥ 2.7",
+  "minute": 61,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 61,
+   "phase": "61",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.17",
+    "1.70"
+   ],
+   "poss": [
+    71,
+    29
+   ],
+   "shots": [
+    5,
+    9
+   ],
+   "sot": [
+    2,
+    3
+   ],
+   "big": [
+    1,
+    4
+   ],
+   "box": [
+    8,
+    12
+   ],
+   "corners": [
+    3,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5837118",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.875,
+   "exp_home": 1.283,
+   "exp_away": 1.593,
+   "h_for": 1.55,
+   "h_ag": 1.343,
+   "a_for": 1.842,
+   "a_ag": 1.015,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
