@@ -1,6 +1,6 @@
 {
  "date": "2026-11-06",
- "generated_at": "2026-11-04 22:44",
+ "generated_at": "2026-11-04 23:45",
  "partial": false,
  "stats": {
   "matches_day": 178,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 878,
-  "seconds": 179
+  "seconds": 275
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
