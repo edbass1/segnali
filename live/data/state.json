@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-11-05 16:48",
+ "last_scan": "2026-11-05 16:53",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -282,8 +282,8 @@
  "live_count": 6,
  "candidates_last": 0,
  "requests_last": 1,
- "last_write": "2026-11-05 16:48",
- "last_write_ts": 1793893706,
+ "last_write": "2026-11-05 16:53",
+ "last_write_ts": 1793894005,
  "telegram": {
   "last_try": "2026-11-04 22:40",
   "ok": true,
