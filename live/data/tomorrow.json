@@ -1,6 +1,6 @@
 {
  "date": "2026-11-06",
- "generated_at": "2026-11-05 21:43",
+ "generated_at": "2026-11-05 22:38",
  "partial": false,
  "stats": {
   "matches_day": 178,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 892,
-  "seconds": 210
+  "seconds": 193
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -1130,56 +1130,44 @@
    }
   },
   {
-   "matchId": 5803311,
+   "matchId": 5803313,
    "kickoff": "20:00",
    "kickoff_utc": "2026-11-06T19:00:00.000Z",
    "league": "Ligue 2",
    "country": "FRA",
    "leagueId": 110,
-   "home": "Dunkerque",
-   "away": "Guingamp",
-   "url": "https://www.fotmob.com/match/5803311",
+   "home": "Montpellier",
+   "away": "Metz",
+   "url": "https://www.fotmob.com/match/5803313",
    "finished": false,
    "score": null,
    "types": [
-    "xg",
-    "subisce"
+    "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 3.13 (casa 1.51 + ospite 1.62) ≥ 2.7",
-    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 8/11) [solo campionato in corso, min. 9 partite per squadra]"
+    "xg": "xG atteso prematch 2.70 (casa 1.57 + ospite 1.13) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 3.13,
-     "exp_home": 1.51,
-     "exp_away": 1.62,
+     "total": 2.7,
+     "exp_home": 1.57,
+     "exp_away": 1.13,
      "method": "casa/trasferta",
      "season": "2026/2027"
-    },
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 11,
-     "strong_n": 11,
-     "strong_pct": 100,
-     "other_k": 8,
-     "other_n": 11,
-     "other_pct": 73
     }
    },
    "cur": {
     "home": {
      "n": 11,
-     "scored": 6,
-     "conceded": 11,
-     "no00": 11
+     "scored": 10,
+     "conceded": 4,
+     "no00": 10
     },
     "away": {
      "n": 11,
      "scored": 9,
-     "conceded": 8,
-     "no00": 11
+     "conceded": 10,
+     "no00": 10
     }
    }
   },
@@ -1238,44 +1226,56 @@
    }
   },
   {
-   "matchId": 5803313,
+   "matchId": 5803311,
    "kickoff": "20:00",
    "kickoff_utc": "2026-11-06T19:00:00.000Z",
    "league": "Ligue 2",
    "country": "FRA",
    "leagueId": 110,
-   "home": "Montpellier",
-   "away": "Metz",
-   "url": "https://www.fotmob.com/match/5803313",
+   "home": "Dunkerque",
+   "away": "Guingamp",
+   "url": "https://www.fotmob.com/match/5803311",
    "finished": false,
    "score": null,
    "types": [
-    "xg"
+    "xg",
+    "subisce"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.70 (casa 1.57 + ospite 1.13) ≥ 2.7"
+    "xg": "xG atteso prematch 3.13 (casa 1.51 + ospite 1.62) ≥ 2.7",
+    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 8/11) [solo campionato in corso, min. 9 partite per squadra]"
    },
    "info": {
     "xg": {
-     "total": 2.7,
-     "exp_home": 1.57,
-     "exp_away": 1.13,
+     "total": 3.13,
+     "exp_home": 1.51,
+     "exp_away": 1.62,
      "method": "casa/trasferta",
      "season": "2026/2027"
+    },
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 11,
+     "strong_n": 11,
+     "strong_pct": 100,
+     "other_k": 8,
+     "other_n": 11,
+     "other_pct": 73
     }
    },
    "cur": {
     "home": {
      "n": 11,
-     "scored": 10,
-     "conceded": 4,
-     "no00": 10
+     "scored": 6,
+     "conceded": 11,
+     "no00": 11
     },
     "away": {
      "n": 11,
      "scored": 9,
-     "conceded": 10,
-     "no00": 10
+     "conceded": 8,
+     "no00": 11
     }
    }
   },
