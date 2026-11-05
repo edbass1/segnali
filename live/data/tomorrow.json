@@ -1,23 +1,23 @@
 {
  "date": "2026-11-06",
- "generated_at": "2026-11-05 20:49",
+ "generated_at": "2026-11-05 21:43",
  "partial": false,
  "stats": {
-  "matches_day": 179,
-  "candidates": 150,
-  "evaluated": 146,
-  "qualified": 43,
+  "matches_day": 178,
+  "candidates": 148,
+  "evaluated": 144,
+  "qualified": 42,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 6,
-   "xg": 26,
+   "xg": 25,
    "segna": 3,
    "subisce": 13,
    "mai00": 0
   },
-  "requests": 910,
-  "seconds": 249
+  "requests": 892,
+  "seconds": 210
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -1130,6 +1130,60 @@
    }
   },
   {
+   "matchId": 5803311,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-11-06T19:00:00.000Z",
+   "league": "Ligue 2",
+   "country": "FRA",
+   "leagueId": 110,
+   "home": "Dunkerque",
+   "away": "Guingamp",
+   "url": "https://www.fotmob.com/match/5803311",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "subisce"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.13 (casa 1.51 + ospite 1.62) ≥ 2.7",
+    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 8/11) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.13,
+     "exp_home": 1.51,
+     "exp_away": 1.62,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 11,
+     "strong_n": 11,
+     "strong_pct": 100,
+     "other_k": 8,
+     "other_n": 11,
+     "other_pct": 73
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 6,
+     "conceded": 11,
+     "no00": 11
+    },
+    "away": {
+     "n": 11,
+     "scored": 9,
+     "conceded": 8,
+     "no00": 11
+    }
+   }
+  },
+  {
    "matchId": 5803310,
    "kickoff": "20:00",
    "kickoff_utc": "2026-11-06T19:00:00.000Z",
@@ -1222,60 +1276,6 @@
      "scored": 9,
      "conceded": 10,
      "no00": 10
-    }
-   }
-  },
-  {
-   "matchId": 5803311,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-11-06T19:00:00.000Z",
-   "league": "Ligue 2",
-   "country": "FRA",
-   "leagueId": 110,
-   "home": "Dunkerque",
-   "away": "Guingamp",
-   "url": "https://www.fotmob.com/match/5803311",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "subisce"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.13 (casa 1.51 + ospite 1.62) ≥ 2.7",
-    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 8/11) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 3.13,
-     "exp_home": 1.51,
-     "exp_away": 1.62,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 11,
-     "strong_n": 11,
-     "strong_pct": 100,
-     "other_k": 8,
-     "other_n": 11,
-     "other_pct": 73
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 11,
-     "scored": 6,
-     "conceded": 11,
-     "no00": 11
-    },
-    "away": {
-     "n": 11,
-     "scored": 9,
-     "conceded": 8,
-     "no00": 11
     }
    }
   },
@@ -1447,48 +1447,6 @@
      "scored": 9,
      "conceded": 11,
      "no00": 11
-    }
-   }
-  },
-  {
-   "matchId": 5868528,
-   "kickoff": "20:30",
-   "kickoff_utc": "2026-11-06T19:30:00.000Z",
-   "league": "LaLiga2",
-   "country": "ESP",
-   "leagueId": 140,
-   "home": "Castellón",
-   "away": "Eibar",
-   "url": "https://www.fotmob.com/match/5868528",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.20 (casa 2.00 + ospite 1.20) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.2,
-     "exp_home": 2.0,
-     "exp_away": 1.2,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 10,
-     "conceded": 5,
-     "no00": 11
-    },
-    "away": {
-     "n": 12,
-     "scored": 11,
-     "conceded": 8,
-     "no00": 12
     }
    }
   },
