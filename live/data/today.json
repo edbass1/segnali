@@ -1,6 +1,6 @@
 {
  "date": "2026-11-05",
- "generated_at": "2026-11-05 15:50",
+ "generated_at": "2026-11-05 16:48",
  "partial": false,
  "stats": {
   "matches_day": 97,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 348,
-  "seconds": 113
+  "seconds": 85
  },
  "skipped_leagues": {},
  "rules": {
@@ -129,7 +129,7 @@
    "away": "Popești Leordeni",
    "url": "https://www.fotmob.com/match/5976950",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "segna"
    ],
