@@ -1,23 +1,23 @@
 {
  "date": "2026-11-06",
- "generated_at": "2026-11-05 09:18",
+ "generated_at": "2026-11-05 10:32",
  "partial": false,
  "stats": {
-  "matches_day": 178,
-  "candidates": 149,
-  "evaluated": 145,
-  "qualified": 44,
+  "matches_day": 177,
+  "candidates": 148,
+  "evaluated": 144,
+  "qualified": 43,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 6,
    "xg": 26,
    "segna": 3,
-   "subisce": 14,
+   "subisce": 13,
    "mai00": 0
   },
-  "requests": 906,
-  "seconds": 281
+  "requests": 903,
+  "seconds": 231
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -379,51 +379,6 @@
      "scored": 3,
      "conceded": 2,
      "no00": 3
-    }
-   }
-  },
-  {
-   "matchId": 5973000,
-   "kickoff": "17:00",
-   "kickoff_utc": "2026-11-06T16:00:00.000Z",
-   "league": "Premier League",
-   "country": "ARM",
-   "leagueId": 118,
-   "home": "Gandzasar",
-   "away": "Syunik",
-   "url": "https://www.fotmob.com/match/5973000",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Ospite: 10/12) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 12,
-     "strong_n": 12,
-     "strong_pct": 100,
-     "other_k": 10,
-     "other_n": 12,
-     "other_pct": 83
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 4,
-     "conceded": 12,
-     "no00": 12
-    },
-    "away": {
-     "n": 12,
-     "scored": 7,
-     "conceded": 10,
-     "no00": 11
     }
    }
   },
@@ -1175,60 +1130,6 @@
    }
   },
   {
-   "matchId": 5803310,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-11-06T19:00:00.000Z",
-   "league": "Ligue 2",
-   "country": "FRA",
-   "leagueId": 110,
-   "home": "Dijon",
-   "away": "Red Star",
-   "url": "https://www.fotmob.com/match/5803310",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "subisce"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.51 (casa 1.45 + ospite 2.06) ≥ 2.7",
-    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 8/11) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 3.51,
-     "exp_home": 1.45,
-     "exp_away": 2.06,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 11,
-     "strong_n": 11,
-     "strong_pct": 100,
-     "other_k": 8,
-     "other_n": 11,
-     "other_pct": 73
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 11,
-     "scored": 10,
-     "conceded": 11,
-     "no00": 11
-    },
-    "away": {
-     "n": 11,
-     "scored": 9,
-     "conceded": 8,
-     "no00": 10
-    }
-   }
-  },
-  {
    "matchId": 5803311,
    "kickoff": "20:00",
    "kickoff_utc": "2026-11-06T19:00:00.000Z",
@@ -1279,6 +1180,60 @@
      "scored": 9,
      "conceded": 8,
      "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 5803310,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-11-06T19:00:00.000Z",
+   "league": "Ligue 2",
+   "country": "FRA",
+   "leagueId": 110,
+   "home": "Dijon",
+   "away": "Red Star",
+   "url": "https://www.fotmob.com/match/5803310",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "subisce"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.51 (casa 1.45 + ospite 2.06) ≥ 2.7",
+    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 8/11) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.51,
+     "exp_home": 1.45,
+     "exp_away": 2.06,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 11,
+     "strong_n": 11,
+     "strong_pct": 100,
+     "other_k": 8,
+     "other_n": 11,
+     "other_pct": 73
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 10,
+     "conceded": 11,
+     "no00": 11
+    },
+    "away": {
+     "n": 11,
+     "scored": 9,
+     "conceded": 8,
+     "no00": 10
     }
    }
   },
