@@ -1,6 +1,6 @@
 {
  "date": "2026-11-06",
- "generated_at": "2026-11-06 19:42",
+ "generated_at": "2026-11-06 20:47",
  "partial": false,
  "stats": {
   "matches_day": 177,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 957,
-  "seconds": 194
+  "seconds": 281
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -392,7 +392,7 @@
    "home": "Antalyaspor",
    "away": "Bursaspor",
    "url": "https://www.fotmob.com/match/5908696",
-   "finished": false,
+   "finished": true,
    "score": "1-1",
    "types": [
     "segna"
@@ -437,8 +437,8 @@
    "home": "Motor Lublin",
    "away": "Wisła Płock",
    "url": "https://www.fotmob.com/match/5804036",
-   "finished": false,
-   "score": "2-3",
+   "finished": true,
+   "score": "3-2",
    "types": [
     "xg"
    ],
@@ -479,7 +479,7 @@
    "home": "Ústí nad Labem",
    "away": "Žižkov",
    "url": "https://www.fotmob.com/match/1000015757",
-   "finished": false,
+   "finished": true,
    "score": "0-0",
    "types": [
     "storico"
@@ -527,7 +527,7 @@
    "home": "Dukla Praha",
    "away": "Příbram",
    "url": "https://www.fotmob.com/match/1000015759",
-   "finished": false,
+   "finished": true,
    "score": "1-0",
    "types": [
     "segna"
@@ -572,8 +572,8 @@
    "home": "Dynamo Dresden",
    "away": "Greuther Fürth",
    "url": "https://www.fotmob.com/match/5881724",
-   "finished": false,
-   "score": "2-0",
+   "finished": true,
+   "score": "3-0",
    "types": [
     "xg"
    ],
@@ -614,7 +614,7 @@
    "home": "Eintracht Braunschweig",
    "away": "Energie Cottbus",
    "url": "https://www.fotmob.com/match/5881718",
-   "finished": false,
+   "finished": true,
    "score": "0-0",
    "types": [
     "xg"
@@ -657,7 +657,7 @@
    "away": "HIK",
    "url": "https://www.fotmob.com/match/5864742",
    "finished": false,
-   "score": "0-0",
+   "score": "2-0",
    "types": [
     "storico"
    ],
@@ -750,7 +750,7 @@
    "away": "Lübeck",
    "url": "https://www.fotmob.com/match/5911949",
    "finished": false,
-   "score": "0-1",
+   "score": "1-1",
    "types": [
     "storico"
    ],
@@ -798,7 +798,7 @@
    "away": "Lyngby",
    "url": "https://www.fotmob.com/match/5739547",
    "finished": false,
-   "score": "0-0",
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -840,7 +840,7 @@
    "away": "Elfsborg",
    "url": "https://www.fotmob.com/match/5107654",
    "finished": false,
-   "score": "0-0",
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -882,7 +882,7 @@
    "away": "Wolfsberger AC",
    "url": "https://www.fotmob.com/match/5846020",
    "finished": false,
-   "score": "0-0",
+   "score": "2-0",
    "types": [
     "xg"
    ],
@@ -969,7 +969,7 @@
    "away": "FC Volendam",
    "url": "https://www.fotmob.com/match/5832937",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "subisce"
    ],
@@ -1014,7 +1014,7 @@
    "away": "Patro Eisden",
    "url": "https://www.fotmob.com/match/1000015501",
    "finished": false,
-   "score": null,
+   "score": "1-2",
    "types": [
     "xg"
    ],
@@ -1056,7 +1056,7 @@
    "away": "Annecy FC",
    "url": "https://www.fotmob.com/match/5803308",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -1088,60 +1088,6 @@
    }
   },
   {
-   "matchId": 5803311,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-11-06T19:00:00.000Z",
-   "league": "Ligue 2",
-   "country": "FRA",
-   "leagueId": 110,
-   "home": "Dunkerque",
-   "away": "Guingamp",
-   "url": "https://www.fotmob.com/match/5803311",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "subisce"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.13 (casa 1.51 + ospite 1.62) ≥ 2.7",
-    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 8/11) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 3.13,
-     "exp_home": 1.51,
-     "exp_away": 1.62,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 11,
-     "strong_n": 11,
-     "strong_pct": 100,
-     "other_k": 8,
-     "other_n": 11,
-     "other_pct": 73
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 11,
-     "scored": 6,
-     "conceded": 11,
-     "no00": 11
-    },
-    "away": {
-     "n": 11,
-     "scored": 9,
-     "conceded": 8,
-     "no00": 11
-    }
-   }
-  },
-  {
    "matchId": 5803313,
    "kickoff": "20:00",
    "kickoff_utc": "2026-11-06T19:00:00.000Z",
@@ -1152,7 +1098,7 @@
    "away": "Metz",
    "url": "https://www.fotmob.com/match/5803313",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "xg"
    ],
@@ -1194,7 +1140,7 @@
    "away": "Red Star",
    "url": "https://www.fotmob.com/match/5803310",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg",
     "subisce"
@@ -1238,6 +1184,60 @@
    }
   },
   {
+   "matchId": 5803311,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-11-06T19:00:00.000Z",
+   "league": "Ligue 2",
+   "country": "FRA",
+   "leagueId": 110,
+   "home": "Dunkerque",
+   "away": "Guingamp",
+   "url": "https://www.fotmob.com/match/5803311",
+   "finished": false,
+   "score": "1-0",
+   "types": [
+    "xg",
+    "subisce"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.13 (casa 1.51 + ospite 1.62) ≥ 2.7",
+    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 8/11) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.13,
+     "exp_home": 1.51,
+     "exp_away": 1.62,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 11,
+     "strong_n": 11,
+     "strong_pct": 100,
+     "other_k": 8,
+     "other_n": 11,
+     "other_pct": 73
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 6,
+     "conceded": 11,
+     "no00": 11
+    },
+    "away": {
+     "n": 11,
+     "scored": 9,
+     "conceded": 8,
+     "no00": 11
+    }
+   }
+  },
+  {
    "matchId": 5803314,
    "kickoff": "20:00",
    "kickoff_utc": "2026-11-06T19:00:00.000Z",
@@ -1248,7 +1248,7 @@
    "away": "Sochaux",
    "url": "https://www.fotmob.com/match/5803314",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -1290,7 +1290,7 @@
    "away": "Wil",
    "url": "https://www.fotmob.com/match/5804612",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "subisce"
    ],
@@ -1335,7 +1335,7 @@
    "away": "Borussia Mönchengladbach",
    "url": "https://www.fotmob.com/match/5881218",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -1377,7 +1377,7 @@
    "away": "Cracovia",
    "url": "https://www.fotmob.com/match/5804039",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -1419,7 +1419,7 @@
    "away": "Palermo",
    "url": "https://www.fotmob.com/match/5967139",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
