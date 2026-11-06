@@ -5138,5 +5138,74 @@
   },
   "telegram": true,
   "resolved": "2026-11-06 16:01"
+ },
+ {
+  "id": "1000015757-storico",
+  "type": "storico",
+  "time": "2026-11-06 19:18",
+  "ts": 1793989126,
+  "league": "FNL",
+  "country": "CZE",
+  "leagueId": 253,
+  "home": "Ústí nad Labem",
+  "away": "Žižkov",
+  "matchId": 1000015757,
+  "reason": "Ospite: 57 partite di campionato consecutive senza 0-0 (ultimo 0-0: 09/11/2024 @ Artis Brno); Casa: 1 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000015757",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 9,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "17/08/2026",
+     "opp": "Třinec",
+     "home": false
+    },
+    "n": 50,
+    "zz": 1,
+    "avail": 73
+   },
+   "away": {
+    "streak": 57,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "09/11/2024",
+     "opp": "Artis Brno",
+     "home": false
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 73
+   },
+   "strong": "away"
+  },
+  "streak": 57,
+  "streak_complete": true,
+  "telegram": true
  }
 ]
