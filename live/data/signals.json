@@ -5120,8 +5120,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "lost",
+  "final": "0-0",
   "url": "https://www.fotmob.com/match/1000017773",
   "over05": null,
   "over05_note": "campionato non coperto",
@@ -5136,6 +5136,7 @@
    "method": "casa/trasferta",
    "season": "2026/2027"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-06 16:01"
  }
 ]
