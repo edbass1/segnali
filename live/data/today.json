@@ -1,11 +1,11 @@
 {
  "date": "2026-11-06",
- "generated_at": "2026-11-06 00:38",
+ "generated_at": "2026-11-06 01:41",
  "partial": false,
  "stats": {
-  "matches_day": 184,
-  "candidates": 152,
-  "evaluated": 148,
+  "matches_day": 178,
+  "candidates": 148,
+  "evaluated": 144,
   "qualified": 42,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,12 +16,12 @@
    "subisce": 13,
    "mai00": 0
   },
-  "requests": 1036,
-  "seconds": 256
+  "requests": 959,
+  "seconds": 211
  },
  "skipped_leagues": {
-  "FRA Premiere Ligue": "femminile",
-  "SWE Elitettan": "femminile"
+  "SWE Elitettan": "femminile",
+  "FRA Premiere Ligue": "femminile"
  },
  "rules": {
   "window": "60-70'",
@@ -48,7 +48,7 @@
    "away": "Bahia",
    "url": "https://www.fotmob.com/match/5103699",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -689,51 +689,6 @@
    }
   },
   {
-   "matchId": 5864743,
-   "kickoff": "19:00",
-   "kickoff_utc": "2026-11-06T18:00:00.000Z",
-   "league": "2. Division",
-   "country": "DEN",
-   "leagueId": 239,
-   "home": "Thisted",
-   "away": "Fremad Amager",
-   "url": "https://www.fotmob.com/match/5864743",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 13/14) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 13,
-     "other_n": 14,
-     "other_pct": 93
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 8,
-     "conceded": 14,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 13,
-     "no00": 14
-    }
-   }
-  },
-  {
    "matchId": 5864742,
    "kickoff": "19:00",
    "kickoff_utc": "2026-11-06T18:00:00.000Z",
@@ -777,6 +732,51 @@
      "n": 14,
      "scored": 10,
      "conceded": 12,
+     "no00": 14
+    }
+   }
+  },
+  {
+   "matchId": 5864743,
+   "kickoff": "19:00",
+   "kickoff_utc": "2026-11-06T18:00:00.000Z",
+   "league": "2. Division",
+   "country": "DEN",
+   "leagueId": 239,
+   "home": "Thisted",
+   "away": "Fremad Amager",
+   "url": "https://www.fotmob.com/match/5864743",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 13/14) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 13,
+     "other_n": 14,
+     "other_pct": 93
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 8,
+     "conceded": 14,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 10,
+     "conceded": 13,
      "no00": 14
     }
    }
