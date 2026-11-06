@@ -5067,5 +5067,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-06 06:11"
+ },
+ {
+  "id": "1000017773-xg",
+  "type": "xg",
+  "time": "2026-11-06 15:29",
+  "ts": 1793975399,
+  "league": "Thai League",
+  "country": "THA",
+  "leagueId": 8984,
+  "home": "Lamphun Warrior",
+  "away": "Sukhothai FC",
+  "matchId": 1000017773,
+  "reason": "xG atteso prematch 3.10 (casa 1.86 + ospite 1.24) ≥ 2.7",
+  "minute": 62,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 62,
+   "phase": "62",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.42",
+    "0.14"
+   ],
+   "poss": [
+    59,
+    41
+   ],
+   "shots": [
+    11,
+    4
+   ],
+   "sot": [
+    4,
+    0
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    13,
+    6
+   ],
+   "corners": [
+    4,
+    1
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000017773",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "total": 3.098,
+   "exp_home": 1.857,
+   "exp_away": 1.242,
+   "h_for": 2.1,
+   "h_ag": 1.09,
+   "a_for": 1.393,
+   "a_ag": 1.613,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
