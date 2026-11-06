@@ -1,23 +1,23 @@
 {
  "date": "2026-11-07",
- "generated_at": "2026-11-06 22:40",
+ "generated_at": "2026-11-06 23:22",
  "partial": true,
  "stats": {
   "matches_day": 643,
   "candidates": 538,
-  "evaluated": 301,
-  "qualified": 68,
+  "evaluated": 307,
+  "qualified": 73,
   "errors": 0,
-  "not_evaluated_budget": 214,
+  "not_evaluated_budget": 208,
   "by_type": {
    "storico": 13,
-   "xg": 43,
-   "segna": 6,
-   "subisce": 15,
+   "xg": 48,
+   "segna": 7,
+   "subisce": 16,
    "mai00": 0
   },
-  "requests": 1570,
-  "seconds": 432
+  "requests": 1644,
+  "seconds": 431
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -2175,60 +2175,6 @@
    }
   },
   {
-   "matchId": 5967142,
-   "kickoff": "15:00",
-   "kickoff_utc": "2026-11-07T14:00:00.000Z",
-   "league": "Serie B",
-   "country": "ITA",
-   "leagueId": 86,
-   "home": "Cesena",
-   "away": "Catanzaro",
-   "url": "https://www.fotmob.com/match/5967142",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "subisce"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.80 (casa 1.78 + ospite 1.02) ≥ 2.7",
-    "subisce": "Casa ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Ospite: 9/10) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 2.8,
-     "exp_home": 1.78,
-     "exp_away": 1.02,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 9,
-     "other_n": 10,
-     "other_pct": 90
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 8,
-     "conceded": 10,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 9,
-     "conceded": 9,
-     "no00": 10
-    }
-   }
-  },
-  {
    "matchId": 5967148,
    "kickoff": "15:00",
    "kickoff_utc": "2026-11-07T14:00:00.000Z",
@@ -2309,6 +2255,120 @@
      "scored": 6,
      "conceded": 7,
      "no00": 8
+    }
+   }
+  },
+  {
+   "matchId": 5967142,
+   "kickoff": "15:00",
+   "kickoff_utc": "2026-11-07T14:00:00.000Z",
+   "league": "Serie B",
+   "country": "ITA",
+   "leagueId": 86,
+   "home": "Cesena",
+   "away": "Catanzaro",
+   "url": "https://www.fotmob.com/match/5967142",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "subisce"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.80 (casa 1.78 + ospite 1.02) ≥ 2.7",
+    "subisce": "Casa ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Ospite: 9/10) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 2.8,
+     "exp_home": 1.78,
+     "exp_away": 1.02,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 10,
+     "strong_n": 10,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 10,
+     "other_pct": 90
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 8,
+     "conceded": 10,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 9,
+     "conceded": 9,
+     "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5956763,
+   "kickoff": "15:00",
+   "kickoff_utc": "2026-11-07T14:00:00.000Z",
+   "league": "Tweede Divisie",
+   "country": "NED",
+   "leagueId": 9195,
+   "home": "Barendrecht",
+   "away": "Quick Boys",
+   "url": "https://www.fotmob.com/match/5956763",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico",
+    "segna"
+   ],
+   "reasons": {
+    "storico": "Casa: 55 partite di campionato consecutive senza 0-0 (ultimo 0-0: 22/02/2025 @ Koninklijke HFC); Ospite: 1 0-0 nelle ultime 50 di campionato",
+    "segna": "Ospite ha segnato almeno 1 gol in 11/11 partite di campionato 2026/27; Casa in 9/11 (82%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 55,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "22/02/2025",
+      "opp": "Koninklijke HFC",
+      "home": false
+     },
+     "other_zz": 1,
+     "other_n": 50
+    },
+    "segna": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 11,
+     "strong_n": 11,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 11,
+     "other_pct": 82
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 9,
+     "conceded": 10,
+     "no00": 11
+    },
+    "away": {
+     "n": 11,
+     "scored": 11,
+     "conceded": 5,
+     "no00": 11
     }
    }
   },
@@ -2401,66 +2461,6 @@
      "n": 11,
      "scored": 8,
      "conceded": 11,
-     "no00": 11
-    }
-   }
-  },
-  {
-   "matchId": 5956763,
-   "kickoff": "15:00",
-   "kickoff_utc": "2026-11-07T14:00:00.000Z",
-   "league": "Tweede Divisie",
-   "country": "NED",
-   "leagueId": 9195,
-   "home": "Barendrecht",
-   "away": "Quick Boys",
-   "url": "https://www.fotmob.com/match/5956763",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico",
-    "segna"
-   ],
-   "reasons": {
-    "storico": "Casa: 55 partite di campionato consecutive senza 0-0 (ultimo 0-0: 22/02/2025 @ Koninklijke HFC); Ospite: 1 0-0 nelle ultime 50 di campionato",
-    "segna": "Ospite ha segnato almeno 1 gol in 11/11 partite di campionato 2026/27; Casa in 9/11 (82%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "storico": {
-     "strong": "home",
-     "streak": 55,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "22/02/2025",
-      "opp": "Koninklijke HFC",
-      "home": false
-     },
-     "other_zz": 1,
-     "other_n": 50
-    },
-    "segna": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 11,
-     "strong_n": 11,
-     "strong_pct": 100,
-     "other_k": 9,
-     "other_n": 11,
-     "other_pct": 82
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 11,
-     "scored": 9,
-     "conceded": 10,
-     "no00": 11
-    },
-    "away": {
-     "n": 11,
-     "scored": 11,
-     "conceded": 5,
      "no00": 11
     }
    }
@@ -2672,6 +2672,240 @@
      "scored": 9,
      "conceded": 6,
      "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5836922,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-07T15:00:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Birmingham City",
+   "away": "Swansea City",
+   "url": "https://www.fotmob.com/match/5836922",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.99 (casa 1.55 + ospite 1.44) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.99,
+     "exp_home": 1.55,
+     "exp_away": 1.44,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 12,
+     "conceded": 9,
+     "no00": 13
+    },
+    "away": {
+     "n": 14,
+     "scored": 10,
+     "conceded": 8,
+     "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 5836923,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-07T15:00:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Blackburn Rovers",
+   "away": "West Ham United",
+   "url": "https://www.fotmob.com/match/5836923",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "segna"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.08 (casa 1.48 + ospite 1.60) ≥ 2.7",
+    "segna": "Ospite ha segnato almeno 1 gol in 14/14 partite di campionato 2026/27; Casa in 12/14 (86%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 3.08,
+     "exp_home": 1.48,
+     "exp_away": 1.6,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "segna": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 12,
+     "other_n": 14,
+     "other_pct": 86
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 12,
+     "conceded": 11,
+     "no00": 13
+    },
+    "away": {
+     "n": 14,
+     "scored": 14,
+     "conceded": 10,
+     "no00": 14
+    }
+   }
+  },
+  {
+   "matchId": 5836925,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-07T15:00:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Cardiff City",
+   "away": "Burnley",
+   "url": "https://www.fotmob.com/match/5836925",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.59 (casa 2.12 + ospite 1.47) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.59,
+     "exp_home": 2.12,
+     "exp_away": 1.47,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 13,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 13,
+     "conceded": 12,
+     "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5836929,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-07T15:00:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Preston North End",
+   "away": "Southampton",
+   "url": "https://www.fotmob.com/match/5836929",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg",
+    "subisce"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.87 (casa 1.35 + ospite 1.52) ≥ 2.7",
+    "subisce": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 11/14) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "xg": {
+     "total": 2.87,
+     "exp_home": 1.35,
+     "exp_away": 1.52,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    },
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 11,
+     "other_n": 14,
+     "other_pct": 79
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 9,
+     "conceded": 14,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 13,
+     "conceded": 11,
+     "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5836930,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-07T15:00:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Queens Park Rangers",
+   "away": "Lincoln City",
+   "url": "https://www.fotmob.com/match/5836930",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.74 (casa 1.82 + ospite 0.92) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.74,
+     "exp_home": 1.82,
+     "exp_away": 0.92,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 10,
+     "conceded": 11,
+     "no00": 12
+    },
+    "away": {
+     "n": 14,
+     "scored": 10,
+     "conceded": 10,
+     "no00": 13
     }
    }
   },

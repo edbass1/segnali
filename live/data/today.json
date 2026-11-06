@@ -1,6 +1,6 @@
 {
  "date": "2026-11-06",
- "generated_at": "2026-11-06 22:33",
+ "generated_at": "2026-11-06 23:15",
  "partial": false,
  "stats": {
   "matches_day": 177,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 957,
-  "seconds": 275
+  "seconds": 266
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -647,6 +647,51 @@
    }
   },
   {
+   "matchId": 5864743,
+   "kickoff": "19:00",
+   "kickoff_utc": "2026-11-06T18:00:00.000Z",
+   "league": "2. Division",
+   "country": "DEN",
+   "leagueId": 239,
+   "home": "Thisted",
+   "away": "Fremad Amager",
+   "url": "https://www.fotmob.com/match/5864743",
+   "finished": true,
+   "score": "0-0",
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 13/14) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 13,
+     "other_n": 14,
+     "other_pct": 93
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 8,
+     "conceded": 14,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 10,
+     "conceded": 13,
+     "no00": 14
+    }
+   }
+  },
+  {
    "matchId": 5864742,
    "kickoff": "19:00",
    "kickoff_utc": "2026-11-06T18:00:00.000Z",
@@ -690,51 +735,6 @@
      "n": 14,
      "scored": 10,
      "conceded": 12,
-     "no00": 14
-    }
-   }
-  },
-  {
-   "matchId": 5864743,
-   "kickoff": "19:00",
-   "kickoff_utc": "2026-11-06T18:00:00.000Z",
-   "league": "2. Division",
-   "country": "DEN",
-   "leagueId": 239,
-   "home": "Thisted",
-   "away": "Fremad Amager",
-   "url": "https://www.fotmob.com/match/5864743",
-   "finished": true,
-   "score": "0-0",
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 13/14) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 13,
-     "other_n": 14,
-     "other_pct": 93
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 8,
-     "conceded": 14,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 13,
      "no00": 14
     }
    }
@@ -1376,7 +1376,7 @@
    "home": "Wisła Kraków",
    "away": "Cracovia",
    "url": "https://www.fotmob.com/match/5804039",
-   "finished": false,
+   "finished": true,
    "score": "2-1",
    "types": [
     "xg"
@@ -1460,7 +1460,7 @@
    "home": "Standard Liège",
    "away": "SK Beveren",
    "url": "https://www.fotmob.com/match/5811806",
-   "finished": false,
+   "finished": true,
    "score": "3-0",
    "types": [
     "storico",
@@ -1517,7 +1517,7 @@
    "home": "Toulouse",
    "away": "Strasbourg",
    "url": "https://www.fotmob.com/match/5802989",
-   "finished": false,
+   "finished": true,
    "score": "3-1",
    "types": [
     "xg",
@@ -1571,8 +1571,8 @@
    "home": "Quorn",
    "away": "Alfreton Town",
    "url": "https://www.fotmob.com/match/5949341",
-   "finished": false,
-   "score": "3-0",
+   "finished": true,
+   "score": "4-0",
    "types": [
     "storico"
    ],
@@ -1615,8 +1615,8 @@
    "home": "Holywell Town",
    "away": "Airbus UK Broughton",
    "url": "https://www.fotmob.com/match/5882148",
-   "finished": false,
-   "score": "1-3",
+   "finished": true,
+   "score": "2-3",
    "types": [
     "subisce"
    ],
@@ -1660,7 +1660,7 @@
    "home": "Venezia",
    "away": "Udinese",
    "url": "https://www.fotmob.com/match/5749749",
-   "finished": false,
+   "finished": true,
    "score": "2-1",
    "types": [
     "xg"
@@ -1702,8 +1702,8 @@
    "home": "Derby County",
    "away": "Bolton Wanderers",
    "url": "https://www.fotmob.com/match/5836927",
-   "finished": false,
-   "score": "2-1",
+   "finished": true,
+   "score": "3-1",
    "types": [
     "xg"
    ],
@@ -1744,7 +1744,7 @@
    "home": "Sevilla",
    "away": "Deportivo Alavés",
    "url": "https://www.fotmob.com/match/5868128",
-   "finished": false,
+   "finished": true,
    "score": "0-0",
    "types": [
     "storico",
@@ -1804,8 +1804,8 @@
    "home": "Trefelin BGC",
    "away": "Colwyn Bay",
    "url": "https://www.fotmob.com/match/5882151",
-   "finished": false,
-   "score": "0-2",
+   "finished": true,
+   "score": "1-2",
    "types": [
     "subisce"
    ],
