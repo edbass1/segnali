@@ -5528,8 +5528,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "1-0",
   "url": "https://www.fotmob.com/match/5803310",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -5544,7 +5544,8 @@
    "method": "casa/trasferta",
    "season": "2026/2027"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-06 21:53"
  },
  {
   "id": "5803310-subisce",
@@ -5598,8 +5599,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "1-0",
   "url": "https://www.fotmob.com/match/5803310",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -5619,6 +5620,7 @@
     "no00": 10
    }
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-06 21:53"
  }
 ]
