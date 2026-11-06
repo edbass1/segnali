@@ -1,6 +1,6 @@
 {
  "date": "2026-11-06",
- "generated_at": "2026-11-06 15:47",
+ "generated_at": "2026-11-06 16:40",
  "partial": false,
  "stats": {
   "matches_day": 177,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 957,
-  "seconds": 228
+  "seconds": 203
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -308,7 +308,7 @@
    "home": "Lamphun Warrior",
    "away": "Sukhothai FC",
    "url": "https://www.fotmob.com/match/1000017773",
-   "finished": false,
+   "finished": true,
    "score": "0-0",
    "types": [
     "xg"
