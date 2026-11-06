@@ -5207,5 +5207,75 @@
   "streak": 57,
   "streak_complete": true,
   "telegram": true
+ },
+ {
+  "id": "5881718-xg",
+  "type": "xg",
+  "time": "2026-11-06 19:48",
+  "ts": 1793990931,
+  "league": "2. Bundesliga",
+  "country": "GER",
+  "leagueId": 146,
+  "home": "Eintracht Braunschweig",
+  "away": "Energie Cottbus",
+  "matchId": 5881718,
+  "reason": "xG atteso prematch 3.84 (casa 2.26 + ospite 1.58) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.50",
+    "0.30"
+   ],
+   "poss": [
+    45,
+    55
+   ],
+   "shots": [
+    8,
+    7
+   ],
+   "sot": [
+    1,
+    1
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    19,
+    10
+   ],
+   "corners": [
+    4,
+    3
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5881718",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.837,
+   "exp_home": 2.258,
+   "exp_away": 1.579,
+   "h_for": 1.596,
+   "h_ag": 1.644,
+   "a_for": 1.514,
+   "a_ag": 2.92,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
