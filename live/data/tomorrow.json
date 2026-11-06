@@ -1,31 +1,31 @@
 {
  "date": "2026-11-07",
- "generated_at": "2026-11-06 13:25",
+ "generated_at": "2026-11-06 14:49",
  "partial": true,
  "stats": {
-  "matches_day": 643,
-  "candidates": 538,
-  "evaluated": 297,
-  "qualified": 68,
+  "matches_day": 644,
+  "candidates": 539,
+  "evaluated": 277,
+  "qualified": 61,
   "errors": 0,
-  "not_evaluated_budget": 218,
+  "not_evaluated_budget": 239,
   "by_type": {
-   "storico": 14,
-   "xg": 43,
-   "segna": 6,
-   "subisce": 15,
+   "storico": 12,
+   "xg": 39,
+   "segna": 5,
+   "subisce": 14,
    "mai00": 0
   },
-  "requests": 1556,
-  "seconds": 429
+  "requests": 1490,
+  "seconds": 437
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
   "JPN WE League": "femminile",
   "ESP Liga F": "femminile",
   "ITA Serie A Femminile": "femminile",
-  "SWE Elitettan": "femminile",
   "DEN A-Liga": "femminile",
+  "SWE Elitettan": "femminile",
   "NOR Toppserien": "femminile",
   "NOR Toppserien Qualification": "femminile",
   "FRA Premiere Ligue": "femminile",
@@ -2175,6 +2175,48 @@
    }
   },
   {
+   "matchId": 5967144,
+   "kickoff": "15:00",
+   "kickoff_utc": "2026-11-07T14:00:00.000Z",
+   "league": "Serie B",
+   "country": "ITA",
+   "leagueId": 86,
+   "home": "Juve Stabia",
+   "away": "Arezzo",
+   "url": "https://www.fotmob.com/match/5967144",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.79 (casa 1.74 + ospite 1.05) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.79,
+     "exp_home": 1.74,
+     "exp_away": 1.05,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 7,
+     "conceded": 8,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 7,
+     "no00": 8
+    }
+   }
+  },
+  {
    "matchId": 5967142,
    "kickoff": "15:00",
    "kickoff_utc": "2026-11-07T14:00:00.000Z",
@@ -2229,243 +2271,6 @@
    }
   },
   {
-   "matchId": 5967148,
-   "kickoff": "15:00",
-   "kickoff_utc": "2026-11-07T14:00:00.000Z",
-   "league": "Serie B",
-   "country": "ITA",
-   "leagueId": 86,
-   "home": "Pisa",
-   "away": "Südtirol",
-   "url": "https://www.fotmob.com/match/5967148",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.09 (casa 1.98 + ospite 1.11) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.09,
-     "exp_home": 1.98,
-     "exp_away": 1.11,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 8,
-     "conceded": 8,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 7,
-     "conceded": 7,
-     "no00": 9
-    }
-   }
-  },
-  {
-   "matchId": 5967144,
-   "kickoff": "15:00",
-   "kickoff_utc": "2026-11-07T14:00:00.000Z",
-   "league": "Serie B",
-   "country": "ITA",
-   "leagueId": 86,
-   "home": "Juve Stabia",
-   "away": "Arezzo",
-   "url": "https://www.fotmob.com/match/5967144",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.79 (casa 1.74 + ospite 1.05) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.79,
-     "exp_home": 1.74,
-     "exp_away": 1.05,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 7,
-     "conceded": 8,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 7,
-     "no00": 8
-    }
-   }
-  },
-  {
-   "matchId": 5956765,
-   "kickoff": "15:00",
-   "kickoff_utc": "2026-11-07T14:00:00.000Z",
-   "league": "Tweede Divisie",
-   "country": "NED",
-   "leagueId": 9195,
-   "home": "Katwijk",
-   "away": "GVVV Veenendaal",
-   "url": "https://www.fotmob.com/match/5956765",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 72 partite di campionato consecutive senza 0-0 (ultimo 0-0: 28/09/2024 vs De Treffers); Casa: 2 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 72,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "28/09/2024",
-      "opp": "De Treffers",
-      "home": true
-     },
-     "other_zz": 2,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 11,
-     "scored": 9,
-     "conceded": 9,
-     "no00": 11
-    },
-    "away": {
-     "n": 11,
-     "scored": 10,
-     "conceded": 8,
-     "no00": 11
-    }
-   }
-  },
-  {
-   "matchId": 5956763,
-   "kickoff": "15:00",
-   "kickoff_utc": "2026-11-07T14:00:00.000Z",
-   "league": "Tweede Divisie",
-   "country": "NED",
-   "leagueId": 9195,
-   "home": "Barendrecht",
-   "away": "Quick Boys",
-   "url": "https://www.fotmob.com/match/5956763",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico",
-    "segna"
-   ],
-   "reasons": {
-    "storico": "Casa: 55 partite di campionato consecutive senza 0-0 (ultimo 0-0: 22/02/2025 @ Koninklijke HFC); Ospite: 1 0-0 nelle ultime 50 di campionato",
-    "segna": "Ospite ha segnato almeno 1 gol in 11/11 partite di campionato 2026/27; Casa in 9/11 (82%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "storico": {
-     "strong": "home",
-     "streak": 55,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "22/02/2025",
-      "opp": "Koninklijke HFC",
-      "home": false
-     },
-     "other_zz": 1,
-     "other_n": 50
-    },
-    "segna": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 11,
-     "strong_n": 11,
-     "strong_pct": 100,
-     "other_k": 9,
-     "other_n": 11,
-     "other_pct": 82
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 11,
-     "scored": 9,
-     "conceded": 10,
-     "no00": 11
-    },
-    "away": {
-     "n": 11,
-     "scored": 11,
-     "conceded": 5,
-     "no00": 11
-    }
-   }
-  },
-  {
-   "matchId": 5956766,
-   "kickoff": "15:00",
-   "kickoff_utc": "2026-11-07T14:00:00.000Z",
-   "league": "Tweede Divisie",
-   "country": "NED",
-   "leagueId": 9195,
-   "home": "Spakenburg",
-   "away": "Kloetinge",
-   "url": "https://www.fotmob.com/match/5956766",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Ospite ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Casa: 8/11) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 11,
-     "strong_n": 11,
-     "strong_pct": 100,
-     "other_k": 8,
-     "other_n": 11,
-     "other_pct": 73
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 11,
-     "scored": 9,
-     "conceded": 8,
-     "no00": 11
-    },
-    "away": {
-     "n": 11,
-     "scored": 8,
-     "conceded": 11,
-     "no00": 11
-    }
-   }
-  },
-  {
    "matchId": 5881215,
    "kickoff": "15:30",
    "kickoff_utc": "2026-11-07T14:30:00.000Z",
@@ -2503,132 +2308,6 @@
      "n": 8,
      "scored": 5,
      "conceded": 7,
-     "no00": 7
-    }
-   }
-  },
-  {
-   "matchId": 5881222,
-   "kickoff": "15:30",
-   "kickoff_utc": "2026-11-07T14:30:00.000Z",
-   "league": "Bundesliga",
-   "country": "GER",
-   "leagueId": 54,
-   "home": "RB Leipzig",
-   "away": "Augsburg",
-   "url": "https://www.fotmob.com/match/5881222",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 4.71 (casa 3.12 + ospite 1.58) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 4.71,
-     "exp_home": 3.12,
-     "exp_away": 1.58,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 8,
-     "scored": 7,
-     "conceded": 3,
-     "no00": 8
-    },
-    "away": {
-     "n": 8,
-     "scored": 8,
-     "conceded": 7,
-     "no00": 8
-    }
-   }
-  },
-  {
-   "matchId": 5881221,
-   "kickoff": "15:30",
-   "kickoff_utc": "2026-11-07T14:30:00.000Z",
-   "league": "Bundesliga",
-   "country": "GER",
-   "leagueId": 54,
-   "home": "Paderborn",
-   "away": "Eintracht Frankfurt",
-   "url": "https://www.fotmob.com/match/5881221",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.22 (casa 1.78 + ospite 1.44) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.22,
-     "exp_home": 1.78,
-     "exp_away": 1.44,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 8,
-     "scored": 3,
-     "conceded": 5,
-     "no00": 6
-    },
-    "away": {
-     "n": 8,
-     "scored": 6,
-     "conceded": 7,
-     "no00": 8
-    }
-   }
-  },
-  {
-   "matchId": 5881220,
-   "kickoff": "15:30",
-   "kickoff_utc": "2026-11-07T14:30:00.000Z",
-   "league": "Bundesliga",
-   "country": "GER",
-   "leagueId": 54,
-   "home": "Mainz 05",
-   "away": "Bayern München",
-   "url": "https://www.fotmob.com/match/5881220",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 4.11 (casa 1.59 + ospite 2.52) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 4.11,
-     "exp_home": 1.59,
-     "exp_away": 2.52,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 8,
-     "scored": 7,
-     "conceded": 5,
-     "no00": 7
-    },
-    "away": {
-     "n": 8,
-     "scored": 7,
-     "conceded": 6,
      "no00": 7
     }
    }
