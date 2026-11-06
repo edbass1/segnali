@@ -5623,5 +5623,170 @@
   },
   "telegram": true,
   "resolved": "2026-11-06 21:53"
+ },
+ {
+  "id": "5868128-storico",
+  "type": "storico",
+  "time": "2026-11-06 22:23",
+  "ts": 1794000201,
+  "league": "LaLiga",
+  "country": "ESP",
+  "leagueId": 87,
+  "home": "Sevilla",
+  "away": "Deportivo Alavés",
+  "matchId": 5868128,
+  "reason": "Casa: 65 partite di campionato consecutive senza 0-0 (ultimo 0-0: 01/02/2025 @ Getafe); Ospite: 2 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.30",
+    "0.19"
+   ],
+   "poss": [
+    61,
+    39
+   ],
+   "shots": [
+    9,
+    5
+   ],
+   "sot": [
+    2,
+    2
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    22,
+    6
+   ],
+   "corners": [
+    5,
+    1
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5868128",
+  "over05": 1.57,
+  "over05_note": null,
+  "details": {
+   "home": {
+    "streak": 65,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "01/02/2025",
+     "opp": "Getafe",
+     "home": false
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 87
+   },
+   "away": {
+    "streak": 4,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "19/09/2026",
+     "opp": "Athletic Club",
+     "home": false
+    },
+    "n": 50,
+    "zz": 2,
+    "avail": 87
+   },
+   "strong": "home"
+  },
+  "streak": 65,
+  "streak_complete": true,
+  "telegram": true
+ },
+ {
+  "id": "5868128-segna",
+  "type": "segna",
+  "time": "2026-11-06 22:23",
+  "ts": 1794000201,
+  "league": "LaLiga",
+  "country": "ESP",
+  "leagueId": 87,
+  "home": "Sevilla",
+  "away": "Deportivo Alavés",
+  "matchId": 5868128,
+  "reason": "Casa ha segnato almeno 1 gol in 11/11 partite di campionato 2026/27; Ospite in 9/11 (82%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.30",
+    "0.19"
+   ],
+   "poss": [
+    61,
+    39
+   ],
+   "shots": [
+    9,
+    5
+   ],
+   "sot": [
+    2,
+    2
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    22,
+    6
+   ],
+   "corners": [
+    5,
+    1
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5868128",
+  "over05": 1.57,
+  "over05_note": null,
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 11,
+    "scored": 11,
+    "conceded": 8,
+    "no00": 11
+   },
+   "away": {
+    "n": 11,
+    "scored": 9,
+    "conceded": 8,
+    "no00": 10
+   }
+  },
+  "telegram": true
  }
 ]
