@@ -5676,8 +5676,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "lost",
+  "final": "0-0",
   "url": "https://www.fotmob.com/match/5868128",
   "over05": 1.57,
   "over05_note": null,
@@ -5712,7 +5712,8 @@
   },
   "streak": 65,
   "streak_complete": true,
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-06 22:58"
  },
  {
   "id": "5868128-segna",
@@ -5766,8 +5767,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "lost",
+  "final": "0-0",
   "url": "https://www.fotmob.com/match/5868128",
   "over05": 1.57,
   "over05_note": null,
@@ -5787,6 +5788,7 @@
     "no00": 10
    }
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-06 22:58"
  }
 ]
