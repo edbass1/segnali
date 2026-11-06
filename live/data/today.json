@@ -1,6 +1,6 @@
 {
  "date": "2026-11-06",
- "generated_at": "2026-11-06 19:01",
+ "generated_at": "2026-11-06 19:19",
  "partial": false,
  "stats": {
   "matches_day": 177,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 957,
-  "seconds": 229
+  "seconds": 197
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -351,7 +351,7 @@
    "away": "Rubin Kazan",
    "url": "https://www.fotmob.com/match/5847228",
    "finished": false,
-   "score": "0-0",
+   "score": "0-1",
    "types": [
     "xg"
    ],
@@ -573,7 +573,7 @@
    "away": "Greuther Fürth",
    "url": "https://www.fotmob.com/match/5881724",
    "finished": false,
-   "score": "0-0",
+   "score": "2-0",
    "types": [
     "xg"
    ],
@@ -647,51 +647,6 @@
    }
   },
   {
-   "matchId": 5864743,
-   "kickoff": "19:00",
-   "kickoff_utc": "2026-11-06T18:00:00.000Z",
-   "league": "2. Division",
-   "country": "DEN",
-   "leagueId": 239,
-   "home": "Thisted",
-   "away": "Fremad Amager",
-   "url": "https://www.fotmob.com/match/5864743",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 13/14) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 13,
-     "other_n": 14,
-     "other_pct": 93
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 8,
-     "conceded": 14,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 13,
-     "no00": 14
-    }
-   }
-  },
-  {
    "matchId": 5864742,
    "kickoff": "19:00",
    "kickoff_utc": "2026-11-06T18:00:00.000Z",
@@ -702,7 +657,7 @@
    "away": "HIK",
    "url": "https://www.fotmob.com/match/5864742",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "storico"
    ],
@@ -740,44 +695,47 @@
    }
   },
   {
-   "matchId": 5107654,
+   "matchId": 5864743,
    "kickoff": "19:00",
    "kickoff_utc": "2026-11-06T18:00:00.000Z",
-   "league": "Allsvenskan",
-   "country": "SWE",
-   "leagueId": 67,
-   "home": "Hammarby",
-   "away": "Elfsborg",
-   "url": "https://www.fotmob.com/match/5107654",
+   "league": "2. Division",
+   "country": "DEN",
+   "leagueId": 239,
+   "home": "Thisted",
+   "away": "Fremad Amager",
+   "url": "https://www.fotmob.com/match/5864743",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
-    "xg"
+    "subisce"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.91 (casa 1.72 + ospite 1.19) ≥ 2.7"
+    "subisce": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 13/14) [solo campionato in corso, min. 9 partite per squadra]"
    },
    "info": {
-    "xg": {
-     "total": 2.91,
-     "exp_home": 1.72,
-     "exp_away": 1.19,
-     "method": "casa/trasferta",
-     "season": "2026"
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 13,
+     "other_n": 14,
+     "other_pct": 93
     }
    },
    "cur": {
     "home": {
-     "n": 27,
-     "scored": 24,
-     "conceded": 15,
-     "no00": 27
+     "n": 14,
+     "scored": 8,
+     "conceded": 14,
+     "no00": 14
     },
     "away": {
-     "n": 27,
-     "scored": 25,
-     "conceded": 18,
-     "no00": 26
+     "n": 14,
+     "scored": 10,
+     "conceded": 13,
+     "no00": 14
     }
    }
   },
@@ -792,7 +750,7 @@
    "away": "Lübeck",
    "url": "https://www.fotmob.com/match/5911949",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "storico"
    ],
@@ -840,7 +798,7 @@
    "away": "Lyngby",
    "url": "https://www.fotmob.com/match/5739547",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -868,6 +826,48 @@
      "scored": 11,
      "conceded": 12,
      "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5107654,
+   "kickoff": "19:15",
+   "kickoff_utc": "2026-11-06T18:15:00.000Z",
+   "league": "Allsvenskan",
+   "country": "SWE",
+   "leagueId": 67,
+   "home": "Hammarby",
+   "away": "Elfsborg",
+   "url": "https://www.fotmob.com/match/5107654",
+   "finished": false,
+   "score": "0-0",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.91 (casa 1.72 + ospite 1.19) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.91,
+     "exp_home": 1.72,
+     "exp_away": 1.19,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 27,
+     "scored": 24,
+     "conceded": 15,
+     "no00": 27
+    },
+    "away": {
+     "n": 27,
+     "scored": 25,
+     "conceded": 18,
+     "no00": 26
     }
    }
   },
