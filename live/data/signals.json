@@ -4996,5 +4996,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-04 22:39"
+ },
+ {
+  "id": "1000022934-xg",
+  "type": "xg",
+  "time": "2026-11-06 05:34",
+  "ts": 1793939691,
+  "league": "Liga de Expansión MX",
+  "country": "MEX",
+  "leagueId": 8976,
+  "home": "Alacranes de Durango",
+  "away": "Leones Negros",
+  "matchId": 1000022934,
+  "reason": "xG atteso prematch 2.91 (casa 1.42 + ospite 1.50) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.59",
+    "0.61"
+   ],
+   "poss": [
+    53,
+    47
+   ],
+   "shots": [
+    11,
+    6
+   ],
+   "sot": [
+    3,
+    1
+   ],
+   "big": [
+    2,
+    2
+   ],
+   "box": [
+    19,
+    11
+   ],
+   "corners": [
+    3,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000022934",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "total": 2.912,
+   "exp_home": 1.416,
+   "exp_away": 1.496,
+   "h_for": 1.599,
+   "h_ag": 1.103,
+   "a_for": 1.889,
+   "a_ag": 1.234,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
