@@ -5138,5 +5138,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-06 16:01"
+ },
+ {
+  "id": "5847228-xg",
+  "type": "xg",
+  "time": "2026-11-06 18:48",
+  "ts": 1793987313,
+  "league": "Premier League",
+  "country": "RUS",
+  "leagueId": 63,
+  "home": "Lokomotiv Moscow",
+  "away": "Rubin Kazan",
+  "matchId": 5847228,
+  "reason": "xG atteso prematch 2.96 (casa 1.43 + ospite 1.53) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.49",
+    "1.52"
+   ],
+   "poss": [
+    60,
+    40
+   ],
+   "shots": [
+    7,
+    17
+   ],
+   "sot": [
+    2,
+    3
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    11,
+    20
+   ],
+   "corners": [
+    4,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5847228",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.961,
+   "exp_home": 1.431,
+   "exp_away": 1.53,
+   "h_for": 1.2,
+   "h_ag": 1.927,
+   "a_for": 1.133,
+   "a_ag": 1.662,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
