@@ -5404,5 +5404,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-06 20:47"
+ },
+ {
+  "id": "5803314-xg",
+  "type": "xg",
+  "time": "2026-11-06 21:06",
+  "ts": 1793995570,
+  "league": "Ligue 2",
+  "country": "FRA",
+  "leagueId": 110,
+  "home": "Nancy",
+  "away": "Sochaux",
+  "matchId": 5803314,
+  "reason": "xG atteso prematch 2.72 (casa 1.75 + ospite 0.97) ≥ 2.7",
+  "minute": 66,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 66,
+   "phase": "HT",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.91",
+    "0.04"
+   ],
+   "poss": [
+    60,
+    40
+   ],
+   "shots": [
+    4,
+    1
+   ],
+   "sot": [
+    0,
+    0
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    6,
+    8
+   ],
+   "corners": [
+    1,
+    1
+   ],
+   "red": [
+    1,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5803314",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.723,
+   "exp_home": 1.748,
+   "exp_away": 0.975,
+   "h_for": 1.796,
+   "h_ag": 0.914,
+   "a_for": 1.035,
+   "a_ag": 1.7,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
