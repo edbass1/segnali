@@ -1,23 +1,23 @@
 {
  "date": "2026-11-06",
- "generated_at": "2026-11-06 14:42",
+ "generated_at": "2026-11-06 15:47",
  "partial": false,
  "stats": {
   "matches_day": 177,
   "candidates": 147,
   "evaluated": 143,
-  "qualified": 42,
+  "qualified": 41,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 6,
-   "xg": 25,
+   "xg": 24,
    "segna": 3,
    "subisce": 13,
    "mai00": 0
   },
   "requests": 957,
-  "seconds": 279
+  "seconds": 228
  },
  "skipped_leagues": {
   "SWE Elitettan": "femminile",
@@ -218,8 +218,8 @@
    "home": "Maccabi Tel Aviv",
    "away": "Maccabi Petach Tikva",
    "url": "https://www.fotmob.com/match/1000015310",
-   "finished": false,
-   "score": "1-1",
+   "finished": true,
+   "score": "2-2",
    "types": [
     "subisce"
    ],
@@ -263,7 +263,7 @@
    "home": "Sepahan",
    "away": "Malavan",
    "url": "https://www.fotmob.com/match/1000022012",
-   "finished": false,
+   "finished": true,
    "score": "4-0",
    "types": [
     "subisce"
@@ -337,48 +337,6 @@
      "scored": 4,
      "conceded": 7,
      "no00": 7
-    }
-   }
-  },
-  {
-   "matchId": 6362015,
-   "kickoff": "15:00",
-   "kickoff_utc": "2026-11-06T14:00:00.000Z",
-   "league": "Indian Super League",
-   "country": "IND",
-   "leagueId": 9478,
-   "home": "FC Goa",
-   "away": "Bengaluru FC",
-   "url": "https://www.fotmob.com/match/6362015",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.73 (casa 1.42 + ospite 1.31) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.73,
-     "exp_home": 1.42,
-     "exp_away": 1.31,
-     "method": "media generale",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 3,
-     "scored": 3,
-     "conceded": 3,
-     "no00": 3
-    },
-    "away": {
-     "n": 3,
-     "scored": 3,
-     "conceded": 2,
-     "no00": 3
     }
    }
   },
