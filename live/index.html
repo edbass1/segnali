@@ -47,6 +47,10 @@
   .gotsig{display:inline-block;margin-top:6px;font-size:16px;font-weight:800}
   @media(max-width:600px){body{font-size:17px}.sum{grid-template-columns:repeat(2,1fr)}h1{font-size:24px}.tab{font-size:18px}}
 </style>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=Source+Sans+3:wght@600;700&display=swap">
+<link rel="stylesheet" href="giocate.css">
 </head>
 <body>
 <header>
@@ -134,7 +138,7 @@ function renderDay(d,sig,dayKey='today'){
   const finishedCount=d.matches.length-active.length;
   const nsig=active.filter(e=>bySig[e.matchId]).length;
   let h=nav+`<div class="dmeta">Partite di campionato di <b>${dayNames[dayKey]} ${esc(dd)}</b> in cui le squadre <b>soddisfano già</b> i requisiti prematch di almeno un segnale: se sono sullo <b>0-0 tra il 60' e il 70'</b> parte il segnale.<br>
-    Aggiornato: <b>${esc(d.generated_at)}</b> (ora italiana)${d.partial?' · <span class="pending">lista parziale</span>':''}${st.evaluated!=null?` · ${st.evaluated} partite analizzate`:''}</div>
+    Aggiornato: <b>${esc(d.generated_at)}</b> (ora italiana)${d.partial?' · <span class="pending">lista parziale</span>':''}${st.evaluated!=null?` · ${st.evaluated} partite analizzate`:''}. Premi <b>AGGIUNGI</b> per metterla in schedina.</div>
     <div class="sum">
     <div class="box"><div class="v">${active.length}</div><div class="l">Partite in lista</div></div>
     <div class="box"><div class="v">${st.evaluated??'–'}</div><div class="l">Analizzate</div></div>
@@ -155,9 +159,11 @@ function renderDay(d,sig,dayKey='today'){
       <div class="m"><a href="${esc(e.url)}" target="_blank" rel="noopener" style="color:#fff;text-decoration:none">${esc(e.home)} – ${esc(e.away)}</a></div>
       <div class="d">${esc(e.kickoff)} · ${esc(e.league)} (${esc(e.country)})</div>
       <div class="badges">${e.types.map(t=>badge(t,(e.info||{})[t])).join('')}</div>
-      ${e.types.map(t=>`<div class="r">${NAME[t].split(' ')[0]} ${detail(t,e)}</div>`).join('')}${g}</div>`;
+      ${e.types.map(t=>`<div class="r">${NAME[t].split(' ')[0]} ${detail(t,e)}</div>`).join('')}${g}
+      <button type="button" class="add-slip" data-mid="${esc(e.matchId)}" data-date="${esc(d.date||'')}" data-ko="${esc(e.kickoff||'')}" data-home="${esc(e.home)}" data-away="${esc(e.away)}" data-league="${esc(e.league||'')}" data-country="${esc(e.country||'')}" data-url="${esc(e.url||'')}">AGGIUNGI</button></div>`;
   }
   el.innerHTML=h;
+  if (window.Giocate && window.Giocate.afterRenderDay) window.Giocate.afterRenderDay();
 }
 function loadData(){
 const nc='?t='+Date.now();
@@ -194,6 +200,7 @@ Promise.all([fetch('data/signals.json'+nc,{cache:'no-store'}).then(r=>r.json()).
 loadData();
 setInterval(loadData, 60 * 1000);
 </script>
+<script type="module" src="giocate-ui.js"></script>
 <script src="archive.js"></script>
 </body>
 </html>
