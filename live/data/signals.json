@@ -5861,5 +5861,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-07 04:12"
+ },
+ {
+  "id": "1000014636-xg",
+  "type": "xg",
+  "time": "2026-11-07 05:24",
+  "ts": 1794025488,
+  "league": "Liga MX",
+  "country": "MEX",
+  "leagueId": 230,
+  "home": "Atlante",
+  "away": "Santos Laguna",
+  "matchId": 1000014636,
+  "reason": "xG atteso prematch 3.04 (casa 1.73 + ospite 1.30) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.50",
+    "0.51"
+   ],
+   "poss": [
+    32,
+    68
+   ],
+   "shots": [
+    14,
+    9
+   ],
+   "sot": [
+    5,
+    1
+   ],
+   "big": [
+    3,
+    0
+   ],
+   "box": [
+    20,
+    5
+   ],
+   "corners": [
+    3,
+    5
+   ],
+   "red": [
+    1,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000014636",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.035,
+   "exp_home": 1.734,
+   "exp_away": 1.301,
+   "h_for": 1.46,
+   "h_ag": 1.199,
+   "a_for": 1.403,
+   "a_ag": 2.009,
+   "method": "casa/trasferta",
+   "season": "2026/2027 - Apertura"
+  },
+  "telegram": true
  }
 ]
