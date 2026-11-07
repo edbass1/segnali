@@ -5994,5 +5994,59 @@
   },
   "telegram": true,
   "resolved": "2026-11-07 10:27"
+ },
+ {
+  "id": "5804967-segna",
+  "type": "segna",
+  "time": "2026-11-07 13:17",
+  "ts": 1794053821,
+  "league": "Prva Liga",
+  "country": "MKD",
+  "leagueId": 249,
+  "home": "FK Struga",
+  "away": "KF Shkendija",
+  "matchId": 5804967,
+  "reason": "Casa ha segnato almeno 1 gol in 12/12 partite di campionato 2026/27; Ospite in 11/12 (92%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5804967",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 12,
+    "scored": 12,
+    "conceded": 4,
+    "no00": 12
+   },
+   "away": {
+    "n": 12,
+    "scored": 11,
+    "conceded": 8,
+    "no00": 11
+   }
+  },
+  "telegram": true
  }
 ]
