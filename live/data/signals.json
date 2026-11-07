@@ -7572,5 +7572,165 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5887679-storico",
+  "type": "storico",
+  "time": "2026-11-07 22:46",
+  "ts": 1794087998,
+  "league": "Liga Portugal",
+  "country": "POR",
+  "leagueId": 61,
+  "home": "Sporting CP",
+  "away": "Moreirense",
+  "matchId": 5887679,
+  "reason": "Casa: 63 partite di campionato consecutive senza 0-0 (ultimo 0-0: 22/12/2024 @ Gil Vicente); Ospite: 2 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.92",
+    "0.26"
+   ],
+   "poss": [
+    75,
+    25
+   ],
+   "shots": [
+    16,
+    5
+   ],
+   "sot": [
+    4,
+    1
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    32,
+    8
+   ],
+   "corners": [
+    7,
+    3
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5887679",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "home": {
+    "streak": 63,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "22/12/2024",
+     "opp": "Gil Vicente",
+     "home": false
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 78
+   },
+   "away": {
+    "streak": 10,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "16/05/2026",
+     "opp": "AVS Futebol SAD",
+     "home": true
+    },
+    "n": 50,
+    "zz": 2,
+    "avail": 78
+   },
+   "strong": "home"
+  },
+  "streak": 63,
+  "streak_complete": true,
+  "telegram": true
+ },
+ {
+  "id": "5887679-xg",
+  "type": "xg",
+  "time": "2026-11-07 22:46",
+  "ts": 1794087998,
+  "league": "Liga Portugal",
+  "country": "POR",
+  "leagueId": 61,
+  "home": "Sporting CP",
+  "away": "Moreirense",
+  "matchId": 5887679,
+  "reason": "xG atteso prematch 2.86 (casa 1.97 + ospite 0.89) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.92",
+    "0.26"
+   ],
+   "poss": [
+    75,
+    25
+   ],
+   "shots": [
+    16,
+    5
+   ],
+   "sot": [
+    4,
+    1
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    32,
+    8
+   ],
+   "corners": [
+    7,
+    3
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5887679",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.86,
+   "exp_home": 1.966,
+   "exp_away": 0.894,
+   "h_for": 2.024,
+   "h_ag": 0.946,
+   "a_for": 0.842,
+   "a_ag": 1.908,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
