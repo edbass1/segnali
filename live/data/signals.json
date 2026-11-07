@@ -6900,5 +6900,170 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5868124-storico",
+  "type": "storico",
+  "time": "2026-11-07 17:35",
+  "ts": 1794069350,
+  "league": "LaLiga",
+  "country": "ESP",
+  "leagueId": 87,
+  "home": "Espanyol",
+  "away": "Deportivo A Coruña",
+  "matchId": 5868124,
+  "reason": "Ospite: 51 partite di campionato consecutive senza 0-0 (ultimo 0-0: 24/08/2025 vs Burgos CF); Casa: 3 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.28",
+    "0.30"
+   ],
+   "poss": [
+    62,
+    38
+   ],
+   "shots": [
+    6,
+    5
+   ],
+   "sot": [
+    3,
+    1
+   ],
+   "big": [
+    0,
+    2
+   ],
+   "box": [
+    21,
+    8
+   ],
+   "corners": [
+    3,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5868124",
+  "over05": 1.44,
+  "over05_note": null,
+  "details": {
+   "home": {
+    "streak": 16,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "27/04/2026",
+     "opp": "Levante",
+     "home": true
+    },
+    "n": 50,
+    "zz": 3,
+    "avail": 87
+   },
+   "away": {
+    "streak": 51,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "24/08/2025",
+     "opp": "Burgos CF",
+     "home": true
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 53
+   },
+   "strong": "away"
+  },
+  "streak": 51,
+  "streak_complete": true,
+  "telegram": true
+ },
+ {
+  "id": "5868124-subisce",
+  "type": "subisce",
+  "time": "2026-11-07 17:35",
+  "ts": 1794069350,
+  "league": "LaLiga",
+  "country": "ESP",
+  "leagueId": 87,
+  "home": "Espanyol",
+  "away": "Deportivo A Coruña",
+  "matchId": 5868124,
+  "reason": "Ospite ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Casa: 8/11) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.28",
+    "0.30"
+   ],
+   "poss": [
+    62,
+    38
+   ],
+   "shots": [
+    6,
+    5
+   ],
+   "sot": [
+    3,
+    1
+   ],
+   "big": [
+    0,
+    2
+   ],
+   "box": [
+    21,
+    8
+   ],
+   "corners": [
+    3,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5868124",
+  "over05": 1.44,
+  "over05_note": null,
+  "details": {
+   "season": "2026/27",
+   "strong": "away",
+   "home": {
+    "n": 11,
+    "scored": 10,
+    "conceded": 8,
+    "no00": 11
+   },
+   "away": {
+    "n": 11,
+    "scored": 9,
+    "conceded": 11,
+    "no00": 11
+   }
+  },
+  "telegram": true
  }
 ]
