@@ -6192,5 +6192,75 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5803309-xg",
+  "type": "xg",
+  "time": "2026-11-07 15:17",
+  "ts": 1794061036,
+  "league": "Ligue 2",
+  "country": "FRA",
+  "leagueId": 110,
+  "home": "Clermont Foot",
+  "away": "Rodez",
+  "matchId": 5803309,
+  "reason": "xG atteso prematch 2.79 (casa 1.52 + ospite 1.27) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.40",
+    "0.43"
+   ],
+   "poss": [
+    68,
+    32
+   ],
+   "shots": [
+    6,
+    5
+   ],
+   "sot": [
+    2,
+    0
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    10,
+    11
+   ],
+   "corners": [
+    2,
+    3
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5803309",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.79,
+   "exp_home": 1.522,
+   "exp_away": 1.268,
+   "h_for": 0.778,
+   "h_ag": 1.12,
+   "a_for": 1.416,
+   "a_ag": 2.266,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
