@@ -6691,5 +6691,144 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5953985-storico",
+  "type": "storico",
+  "time": "2026-11-07 17:19",
+  "ts": 1794068396,
+  "league": "Southern Premier Division South",
+  "country": "ENG",
+  "leagueId": 8947,
+  "home": "Yate Town",
+  "away": "Gloucester City",
+  "matchId": 5953985,
+  "reason": "Ospite: 72 partite di campionato consecutive senza 0-0 (ultimo 0-0: 01/02/2025 vs AFC Totton); Casa: 2 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5953985",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 1,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "27/10/2026",
+     "opp": "Wimborne Town",
+     "home": true
+    },
+    "n": 50,
+    "zz": 2,
+    "avail": 56
+   },
+   "away": {
+    "streak": 72,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "01/02/2025",
+     "opp": "AFC Totton",
+     "home": true
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 100
+   },
+   "strong": "away"
+  },
+  "streak": 72,
+  "streak_complete": true,
+  "telegram": true
+ },
+ {
+  "id": "5836931-xg",
+  "type": "xg",
+  "time": "2026-11-07 17:20",
+  "ts": 1794068404,
+  "league": "Championship",
+  "country": "ENG",
+  "leagueId": 48,
+  "home": "Watford",
+  "away": "Middlesbrough",
+  "matchId": 5836931,
+  "reason": "xG atteso prematch 2.90 (casa 1.10 + ospite 1.81) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.17",
+    "1.40"
+   ],
+   "poss": [
+    24,
+    76
+   ],
+   "shots": [
+    3,
+    12
+   ],
+   "sot": [
+    0,
+    3
+   ],
+   "big": [
+    0,
+    3
+   ],
+   "box": [
+    5,
+    21
+   ],
+   "corners": [
+    3,
+    6
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5836931",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.903,
+   "exp_home": 1.096,
+   "exp_away": 1.806,
+   "h_for": 1.21,
+   "h_ag": 1.494,
+   "a_for": 2.119,
+   "a_ag": 0.983,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
