@@ -6830,5 +6830,75 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "1000015502-xg",
+  "type": "xg",
+  "time": "2026-11-07 17:22",
+  "ts": 1794068572,
+  "league": "First Division B",
+  "country": "BEL",
+  "leagueId": 264,
+  "home": "Francs Borains",
+  "away": "RFC Seraing",
+  "matchId": 1000015502,
+  "reason": "xG atteso prematch 3.15 (casa 1.79 + ospite 1.36) ≥ 2.7",
+  "minute": 61,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 61,
+   "phase": "61",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.29",
+    "1.64"
+   ],
+   "poss": [
+    35,
+    65
+   ],
+   "shots": [
+    5,
+    10
+   ],
+   "sot": [
+    0,
+    2
+   ],
+   "big": [
+    0,
+    2
+   ],
+   "box": [
+    7,
+    25
+   ],
+   "corners": [
+    1,
+    4
+   ],
+   "red": [
+    1,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000015502",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "total": 3.152,
+   "exp_home": 1.795,
+   "exp_away": 1.357,
+   "h_for": 1.958,
+   "h_ag": 1.42,
+   "a_for": 1.295,
+   "a_ag": 1.633,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
