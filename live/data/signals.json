@@ -6471,5 +6471,150 @@
   "streak": 73,
   "streak_complete": false,
   "telegram": true
+ },
+ {
+  "id": "5967142-xg",
+  "type": "xg",
+  "time": "2026-11-07 16:19",
+  "ts": 1794064769,
+  "league": "Serie B",
+  "country": "ITA",
+  "leagueId": 86,
+  "home": "Cesena",
+  "away": "Catanzaro",
+  "matchId": 5967142,
+  "reason": "xG atteso prematch 2.80 (casa 1.78 + ospite 1.02) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.42",
+    "0.21"
+   ],
+   "poss": [
+    50,
+    50
+   ],
+   "shots": [
+    6,
+    5
+   ],
+   "sot": [
+    2,
+    1
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    8,
+    6
+   ],
+   "corners": [
+    2,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5967142",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.8,
+   "exp_home": 1.776,
+   "exp_away": 1.024,
+   "h_for": 1.526,
+   "h_ag": 0.938,
+   "a_for": 1.11,
+   "a_ag": 2.027,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
+ },
+ {
+  "id": "5967142-subisce",
+  "type": "subisce",
+  "time": "2026-11-07 16:19",
+  "ts": 1794064769,
+  "league": "Serie B",
+  "country": "ITA",
+  "leagueId": 86,
+  "home": "Cesena",
+  "away": "Catanzaro",
+  "matchId": 5967142,
+  "reason": "Casa ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Ospite: 9/10) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.42",
+    "0.21"
+   ],
+   "poss": [
+    50,
+    50
+   ],
+   "shots": [
+    6,
+    5
+   ],
+   "sot": [
+    2,
+    1
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    8,
+    6
+   ],
+   "corners": [
+    2,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5967142",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 10,
+    "scored": 8,
+    "conceded": 10,
+    "no00": 10
+   },
+   "away": {
+    "n": 10,
+    "scored": 9,
+    "conceded": 9,
+    "no00": 10
+   }
+  },
+  "telegram": true
  }
 ]
