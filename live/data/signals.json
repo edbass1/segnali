@@ -6621,5 +6621,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-07 16:54"
+ },
+ {
+  "id": "5795509-xg",
+  "type": "xg",
+  "time": "2026-11-07 17:18",
+  "ts": 1794068317,
+  "league": "Premier League",
+  "country": "ENG",
+  "leagueId": 47,
+  "home": "Fulham",
+  "away": "Newcastle United",
+  "matchId": 5795509,
+  "reason": "xG atteso prematch 3.00 (casa 1.71 + ospite 1.30) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.35",
+    "0.60"
+   ],
+   "poss": [
+    61,
+    39
+   ],
+   "shots": [
+    6,
+    4
+   ],
+   "sot": [
+    2,
+    2
+   ],
+   "big": [
+    1,
+    2
+   ],
+   "box": [
+    14,
+    10
+   ],
+   "corners": [
+    2,
+    3
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5795509",
+  "over05": 1.33,
+  "over05_note": null,
+  "details": {
+   "total": 3.0,
+   "exp_home": 1.705,
+   "exp_away": 1.295,
+   "h_for": 1.868,
+   "h_ag": 1.493,
+   "a_for": 1.098,
+   "a_ag": 1.542,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
