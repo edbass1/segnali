@@ -6334,5 +6334,142 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5831220-subisce",
+  "type": "subisce",
+  "time": "2026-11-07 16:18",
+  "ts": 1794064701,
+  "league": "1. Liga",
+  "country": "CZE",
+  "leagueId": 122,
+  "home": "FC Zlín",
+  "away": "Slovácko",
+  "matchId": 5831220,
+  "reason": "Casa ha subito almeno 1 gol in 13/13 partite di campionato 2026/27 (Ospite: 11/13) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": [
+    26,
+    74
+   ],
+   "shots": [
+    2,
+    10
+   ],
+   "sot": [
+    0,
+    2
+   ],
+   "big": [
+    1,
+    1
+   ],
+   "box": [
+    8,
+    20
+   ],
+   "corners": [
+    3,
+    3
+   ],
+   "red": [
+    1,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5831220",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 13,
+    "scored": 8,
+    "conceded": 13,
+    "no00": 13
+   },
+   "away": {
+    "n": 13,
+    "scored": 10,
+    "conceded": 11,
+    "no00": 12
+   }
+  },
+  "telegram": true
+ },
+ {
+  "id": "5127995-storico",
+  "type": "storico",
+  "time": "2026-11-07 16:18",
+  "ts": 1794064704,
+  "league": "Ettan Soedra",
+  "country": "SWE",
+  "leagueId": 169,
+  "home": "Hässleholms IF",
+  "away": "Ängelholms FF",
+  "matchId": 5127995,
+  "reason": "Casa: almeno 73 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Ospite: 3 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5127995",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 73,
+    "complete": false,
+    "capped": false,
+    "last00": null,
+    "n": 50,
+    "zz": 0,
+    "avail": 73
+   },
+   "away": {
+    "streak": 28,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "19/04/2026",
+     "opp": "Lunds BK",
+     "home": true
+    },
+    "n": 50,
+    "zz": 3,
+    "avail": 61
+   },
+   "strong": "home"
+  },
+  "streak": 73,
+  "streak_complete": false,
+  "telegram": true
  }
 ]
