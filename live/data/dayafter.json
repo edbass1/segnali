@@ -1,6 +1,6 @@
 {
  "date": "2026-11-09",
- "generated_at": "2026-11-07 09:04",
+ "generated_at": "2026-11-07 09:54",
  "partial": false,
  "stats": {
   "matches_day": 64,
@@ -16,8 +16,8 @@
    "subisce": 1,
    "mai00": 0
   },
-  "requests": 184,
-  "seconds": 59
+  "requests": 176,
+  "seconds": 44
  },
  "skipped_leagues": {
   "ESP Liga F": "femminile"
