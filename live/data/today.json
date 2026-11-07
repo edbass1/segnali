@@ -1,23 +1,23 @@
 {
  "date": "2026-11-07",
- "generated_at": "2026-11-07 19:04",
+ "generated_at": "2026-11-07 19:38",
  "partial": true,
  "stats": {
   "matches_day": 636,
   "candidates": 534,
-  "evaluated": 218,
-  "qualified": 47,
+  "evaluated": 240,
+  "qualified": 53,
   "errors": 0,
-  "not_evaluated_budget": 294,
+  "not_evaluated_budget": 272,
   "by_type": {
-   "storico": 7,
-   "xg": 32,
+   "storico": 9,
+   "xg": 34,
    "segna": 4,
-   "subisce": 11,
+   "subisce": 13,
    "mai00": 0
   },
-  "requests": 1532,
-  "seconds": 429
+  "requests": 1608,
+  "seconds": 435
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -1242,6 +1242,51 @@
    }
   },
   {
+   "matchId": 5862748,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-11-07T13:00:00.000Z",
+   "league": "II Liga",
+   "country": "POL",
+   "leagueId": 8935,
+   "home": "Swit Skolwin",
+   "away": "Śląsk Wrocław ll",
+   "url": "https://www.fotmob.com/match/5862748",
+   "finished": true,
+   "score": "3-0",
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 12/14) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 14,
+     "strong_n": 14,
+     "strong_pct": 100,
+     "other_k": 12,
+     "other_n": 14,
+     "other_pct": 86
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 9,
+     "conceded": 14,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 12,
+     "no00": 14
+    }
+   }
+  },
+  {
    "matchId": 5868125,
    "kickoff": "14:00",
    "kickoff_utc": "2026-11-07T13:00:00.000Z",
@@ -1380,6 +1425,143 @@
    }
   },
   {
+   "matchId": 5911616,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-11-07T13:00:00.000Z",
+   "league": "Regionalliga Bayern",
+   "country": "GER",
+   "leagueId": 512,
+   "home": "Unterhaching",
+   "away": "TSV Schwaben Augsburg",
+   "url": "https://www.fotmob.com/match/5911616",
+   "finished": true,
+   "score": "0-2",
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: almeno 84 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Casa: 3 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 84,
+     "complete": false,
+     "capped": false,
+     "last00": null,
+     "other_zz": 3,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 16,
+     "scored": 11,
+     "conceded": 9,
+     "no00": 13
+    },
+    "away": {
+     "n": 16,
+     "scored": 11,
+     "conceded": 15,
+     "no00": 16
+    }
+   }
+  },
+  {
+   "matchId": 5916103,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-11-07T13:00:00.000Z",
+   "league": "Regionalliga Southwest",
+   "country": "GER",
+   "leagueId": 512,
+   "home": "SG Barockstadt Fulda Lehnerz",
+   "away": "TSV Steinbach",
+   "url": "https://www.fotmob.com/match/5916103",
+   "finished": true,
+   "score": "0-2",
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Casa: 53 partite di campionato consecutive senza 0-0 (ultimo 0-0: 12/04/2025 @ Eintracht Trier); Ospite: 2 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 53,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "12/04/2025",
+      "opp": "Eintracht Trier",
+      "home": false
+     },
+     "other_zz": 2,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 12,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5911255,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-11-07T13:00:00.000Z",
+   "league": "Regionalliga West",
+   "country": "GER",
+   "leagueId": 512,
+   "home": "Bonner SC",
+   "away": "FC Gütersloh",
+   "url": "https://www.fotmob.com/match/5911255",
+   "finished": true,
+   "score": "2-0",
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 15/15 partite di campionato 2026/27 (Ospite: 11/15) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 15,
+     "strong_n": 15,
+     "strong_pct": 100,
+     "other_k": 11,
+     "other_n": 15,
+     "other_pct": 73
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 13,
+     "conceded": 15,
+     "no00": 15
+    },
+    "away": {
+     "n": 15,
+     "scored": 14,
+     "conceded": 11,
+     "no00": 15
+    }
+   }
+  },
+  {
    "matchId": 6028611,
    "kickoff": "14:00",
    "kickoff_utc": "2026-11-07T13:00:00.000Z",
@@ -1425,6 +1607,48 @@
    }
   },
   {
+   "matchId": 5904802,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-11-07T13:00:00.000Z",
+   "league": "Super Lig",
+   "country": "TUR",
+   "leagueId": 71,
+   "home": "Samsunspor",
+   "away": "Konyaspor",
+   "url": "https://www.fotmob.com/match/5904802",
+   "finished": true,
+   "score": "1-0",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.92 (casa 1.42 + ospite 1.50) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.92,
+     "exp_home": 1.42,
+     "exp_away": 1.5,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 6,
+     "conceded": 9,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 4,
+     "conceded": 6,
+     "no00": 8
+    }
+   }
+  },
+  {
    "matchId": 5956759,
    "kickoff": "14:00",
    "kickoff_utc": "2026-11-07T13:00:00.000Z",
@@ -1466,6 +1690,48 @@
      "scored": 6,
      "conceded": 11,
      "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 5847223,
+   "kickoff": "14:30",
+   "kickoff_utc": "2026-11-07T13:30:00.000Z",
+   "league": "Premier League",
+   "country": "RUS",
+   "leagueId": 63,
+   "home": "FK Akhmat",
+   "away": "Rodina",
+   "url": "https://www.fotmob.com/match/5847223",
+   "finished": true,
+   "score": "1-0",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.73 (casa 1.75 + ospite 0.98) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.73,
+     "exp_home": 1.75,
+     "exp_away": 0.98,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 7,
+     "conceded": 11,
+     "no00": 11
+    },
+    "away": {
+     "n": 13,
+     "scored": 9,
+     "conceded": 12,
+     "no00": 13
     }
    }
   },
@@ -1907,7 +2173,7 @@
    "home": "Örgryte",
    "away": "Västerås SK",
    "url": "https://www.fotmob.com/match/5107656",
-   "finished": false,
+   "finished": true,
    "score": "0-0",
    "types": [
     "xg"
@@ -1992,7 +2258,7 @@
    "away": "Sion",
    "url": "https://www.fotmob.com/match/5804297",
    "finished": false,
-   "score": "0-3",
+   "score": "0-4",
    "types": [
     "xg",
     "segna"
@@ -2046,7 +2312,7 @@
    "away": "Viborg",
    "url": "https://www.fotmob.com/match/5739542",
    "finished": false,
-   "score": "0-2",
+   "score": "1-2",
    "types": [
     "xg"
    ],
@@ -2088,7 +2354,7 @@
    "away": "Casa Pia AC",
    "url": "https://www.fotmob.com/match/5887672",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
