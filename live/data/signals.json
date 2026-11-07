@@ -5932,5 +5932,66 @@
   },
   "telegram": true,
   "resolved": "2026-11-07 05:59"
+ },
+ {
+  "id": "6503952-xg",
+  "type": "xg",
+  "time": "2026-11-07 09:48",
+  "ts": 1794041320,
+  "league": "K-League 1 Final Group B",
+  "country": "KOR",
+  "leagueId": 9080,
+  "home": "Gimcheon Sangmu",
+  "away": "FC Anyang",
+  "matchId": 6503952,
+  "reason": "xG atteso prematch 2.89 (casa 1.44 + ospite 1.45) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": [
+    49,
+    51
+   ],
+   "shots": [
+    6,
+    6
+   ],
+   "sot": [
+    2,
+    1
+   ],
+   "big": null,
+   "box": null,
+   "corners": [
+    0,
+    3
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/6503952",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.893,
+   "exp_home": 1.44,
+   "exp_away": 1.453,
+   "h_for": 1.374,
+   "h_ag": 1.522,
+   "a_for": 1.385,
+   "a_ag": 1.505,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
  }
 ]
