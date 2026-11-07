@@ -6048,5 +6048,75 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5804033-xg",
+  "type": "xg",
+  "time": "2026-11-07 13:37",
+  "ts": 1794055042,
+  "league": "Ekstraklasa",
+  "country": "POL",
+  "leagueId": 196,
+  "home": "Korona Kielce",
+  "away": "Radomiak Radom",
+  "matchId": 5804033,
+  "reason": "xG atteso prematch 3.08 (casa 1.64 + ospite 1.44) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.62",
+    "0.13"
+   ],
+   "poss": [
+    55,
+    45
+   ],
+   "shots": [
+    21,
+    4
+   ],
+   "sot": [
+    4,
+    0
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    26,
+    13
+   ],
+   "corners": [
+    10,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5804033",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.077,
+   "exp_home": 1.641,
+   "exp_away": 1.437,
+   "h_for": 1.305,
+   "h_ag": 1.61,
+   "a_for": 1.263,
+   "a_ag": 1.977,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
