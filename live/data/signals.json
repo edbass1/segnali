@@ -7427,5 +7427,150 @@
   },
   "telegram": true,
   "resolved": "2026-11-07 20:26"
+ },
+ {
+  "id": "5781800-xg",
+  "type": "xg",
+  "time": "2026-11-07 22:17",
+  "ts": 1794086260,
+  "league": "Eredivisie",
+  "country": "NED",
+  "leagueId": 57,
+  "home": "Excelsior",
+  "away": "Go Ahead Eagles",
+  "matchId": 5781800,
+  "reason": "xG atteso prematch 3.83 (casa 1.46 + ospite 2.36) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.40",
+    "0.05"
+   ],
+   "poss": [
+    46,
+    54
+   ],
+   "shots": [
+    7,
+    2
+   ],
+   "sot": [
+    0,
+    0
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    8,
+    10
+   ],
+   "corners": [
+    3,
+    0
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5781800",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.828,
+   "exp_home": 1.463,
+   "exp_away": 2.365,
+   "h_for": 0.836,
+   "h_ag": 2.848,
+   "a_for": 1.882,
+   "a_ag": 2.09,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
+ },
+ {
+  "id": "5781800-subisce",
+  "type": "subisce",
+  "time": "2026-11-07 22:17",
+  "ts": 1794086260,
+  "league": "Eredivisie",
+  "country": "NED",
+  "leagueId": 57,
+  "home": "Excelsior",
+  "away": "Go Ahead Eagles",
+  "matchId": 5781800,
+  "reason": "Ospite ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Casa: 9/11) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.40",
+    "0.05"
+   ],
+   "poss": [
+    46,
+    54
+   ],
+   "shots": [
+    7,
+    2
+   ],
+   "sot": [
+    0,
+    0
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    8,
+    10
+   ],
+   "corners": [
+    3,
+    0
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5781800",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "season": "2026/27",
+   "strong": "away",
+   "home": {
+    "n": 11,
+    "scored": 8,
+    "conceded": 9,
+    "no00": 11
+   },
+   "away": {
+    "n": 11,
+    "scored": 10,
+    "conceded": 11,
+    "no00": 11
+   }
+  },
+  "telegram": true
  }
 ]
