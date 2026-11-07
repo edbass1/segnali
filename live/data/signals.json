@@ -7065,5 +7065,71 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5905972-segna",
+  "type": "segna",
+  "time": "2026-11-07 17:46",
+  "ts": 1794070002,
+  "league": "3. Liga",
+  "country": "GER",
+  "leagueId": 208,
+  "home": "Preussen Münster",
+  "away": "MSV Duisburg",
+  "matchId": 5905972,
+  "reason": "Ospite ha segnato almeno 1 gol in 12/12 partite di campionato 2026/27; Casa in 11/12 (92%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": [
+    47,
+    53
+   ],
+   "shots": [
+    7,
+    2
+   ],
+   "sot": [
+    2,
+    1
+   ],
+   "big": null,
+   "box": null,
+   "corners": [
+    1,
+    0
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5905972",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "season": "2026/27",
+   "strong": "away",
+   "home": {
+    "n": 12,
+    "scored": 11,
+    "conceded": 11,
+    "no00": 12
+   },
+   "away": {
+    "n": 12,
+    "scored": 12,
+    "conceded": 10,
+    "no00": 12
+   }
+  },
+  "telegram": true
  }
 ]
