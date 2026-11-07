@@ -6674,8 +6674,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "1-1",
   "url": "https://www.fotmob.com/match/5795509",
   "over05": 1.33,
   "over05_note": null,
@@ -6690,7 +6690,8 @@
    "method": "casa/trasferta",
    "season": "2026/2027"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-07 17:57"
  },
  {
   "id": "5953985-storico",
