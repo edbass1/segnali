@@ -7138,5 +7138,150 @@
   },
   "telegram": true,
   "resolved": "2026-11-07 18:21"
+ },
+ {
+  "id": "5967146-xg",
+  "type": "xg",
+  "time": "2026-11-07 18:34",
+  "ts": 1794072841,
+  "league": "Serie B",
+  "country": "ITA",
+  "leagueId": 86,
+  "home": "Mantova",
+  "away": "Hellas Verona",
+  "matchId": 5967146,
+  "reason": "xG atteso prematch 3.07 (casa 1.46 + ospite 1.61) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.22",
+    "1.15"
+   ],
+   "poss": [
+    48,
+    52
+   ],
+   "shots": [
+    11,
+    11
+   ],
+   "sot": [
+    0,
+    3
+   ],
+   "big": [
+    2,
+    2
+   ],
+   "box": [
+    15,
+    19
+   ],
+   "corners": [
+    3,
+    0
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5967146",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.066,
+   "exp_home": 1.458,
+   "exp_away": 1.608,
+   "h_for": 1.588,
+   "h_ag": 1.518,
+   "a_for": 1.698,
+   "a_ag": 1.328,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
+ },
+ {
+  "id": "5967146-segna",
+  "type": "segna",
+  "time": "2026-11-07 18:34",
+  "ts": 1794072841,
+  "league": "Serie B",
+  "country": "ITA",
+  "leagueId": 86,
+  "home": "Mantova",
+  "away": "Hellas Verona",
+  "matchId": 5967146,
+  "reason": "Ospite ha segnato almeno 1 gol in 10/10 partite di campionato 2026/27; Casa in 8/10 (80%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.22",
+    "1.15"
+   ],
+   "poss": [
+    48,
+    52
+   ],
+   "shots": [
+    11,
+    11
+   ],
+   "sot": [
+    0,
+    3
+   ],
+   "big": [
+    2,
+    2
+   ],
+   "box": [
+    15,
+    19
+   ],
+   "corners": [
+    3,
+    0
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5967146",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "season": "2026/27",
+   "strong": "away",
+   "home": {
+    "n": 10,
+    "scored": 8,
+    "conceded": 8,
+    "no00": 10
+   },
+   "away": {
+    "n": 10,
+    "scored": 10,
+    "conceded": 7,
+    "no00": 10
+   }
+  },
+  "telegram": true
  }
 ]
