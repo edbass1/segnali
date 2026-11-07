@@ -6263,5 +6263,75 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5804037-xg",
+  "type": "xg",
+  "time": "2026-11-07 15:51",
+  "ts": 1794063088,
+  "league": "Ekstraklasa",
+  "country": "POL",
+  "leagueId": 196,
+  "home": "Śląsk Wrocław",
+  "away": "Piast Gliwice",
+  "matchId": 5804037,
+  "reason": "xG atteso prematch 3.62 (casa 1.85 + ospite 1.77) ≥ 2.7",
+  "minute": 47,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 47,
+   "phase": "47",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.85",
+    "0.76"
+   ],
+   "poss": [
+    39,
+    61
+   ],
+   "shots": [
+    3,
+    8
+   ],
+   "sot": [
+    1,
+    1
+   ],
+   "big": [
+    1,
+    1
+   ],
+   "box": [
+    10,
+    13
+   ],
+   "corners": [
+    1,
+    5
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5804037",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.619,
+   "exp_home": 1.852,
+   "exp_away": 1.767,
+   "h_for": 1.513,
+   "h_ag": 2.152,
+   "a_for": 1.382,
+   "a_ag": 2.192,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
