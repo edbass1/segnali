@@ -7115,8 +7115,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "1-2",
   "url": "https://www.fotmob.com/match/5905972",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -7136,6 +7136,7 @@
     "no00": 12
    }
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-07 18:21"
  }
 ]
