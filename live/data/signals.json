@@ -6120,5 +6120,77 @@
   },
   "telegram": true,
   "resolved": "2026-11-07 14:12"
+ },
+ {
+  "id": "1000018506-subisce",
+  "type": "subisce",
+  "time": "2026-11-07 14:52",
+  "ts": 1794059541,
+  "league": "Saudi First Division",
+  "country": "KSA",
+  "leagueId": 10721,
+  "home": "Al-Jandal",
+  "away": "Hajer",
+  "matchId": 1000018506,
+  "reason": "Casa ha subito almeno 1 gol in 9/9 partite di campionato 2026/27 (Ospite: 7/9) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 61,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 61,
+   "phase": "61",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": [
+    53,
+    47
+   ],
+   "shots": [
+    5,
+    5
+   ],
+   "sot": [
+    0,
+    1
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    10,
+    3
+   ],
+   "corners": [
+    2,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000018506",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 9,
+    "scored": 6,
+    "conceded": 9,
+    "no00": 9
+   },
+   "away": {
+    "n": 9,
+    "scored": 5,
+    "conceded": 7,
+    "no00": 7
+   }
+  },
+  "telegram": true
  }
 ]
