@@ -7356,5 +7356,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-07 19:22"
+ },
+ {
+  "id": "5868126-xg",
+  "type": "xg",
+  "time": "2026-11-07 19:50",
+  "ts": 1794077407,
+  "league": "LaLiga",
+  "country": "ESP",
+  "leagueId": 87,
+  "home": "Osasuna",
+  "away": "Athletic Club",
+  "matchId": 5868126,
+  "reason": "xG atteso prematch 2.96 (casa 1.79 + ospite 1.18) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.25",
+    "0.44"
+   ],
+   "poss": [
+    40,
+    60
+   ],
+   "shots": [
+    9,
+    7
+   ],
+   "sot": [
+    2,
+    2
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    12,
+    13
+   ],
+   "corners": [
+    3,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5868126",
+  "over05": 1.5,
+  "over05_note": null,
+  "details": {
+   "total": 2.963,
+   "exp_home": 1.787,
+   "exp_away": 1.175,
+   "h_for": 1.522,
+   "h_ag": 0.936,
+   "a_for": 1.415,
+   "a_ag": 2.053,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
