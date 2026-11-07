@@ -1,23 +1,23 @@
 {
  "date": "2026-11-08",
- "generated_at": "2026-11-07 00:20",
+ "generated_at": "2026-11-07 01:13",
  "partial": true,
  "stats": {
   "matches_day": 504,
   "candidates": 416,
-  "evaluated": 364,
-  "qualified": 108,
+  "evaluated": 345,
+  "qualified": 102,
   "errors": 0,
-  "not_evaluated_budget": 33,
+  "not_evaluated_budget": 52,
   "by_type": {
-   "storico": 15,
-   "xg": 80,
+   "storico": 13,
+   "xg": 76,
    "segna": 11,
    "subisce": 20,
    "mai00": 1
   },
-  "requests": 2110,
-  "seconds": 430
+  "requests": 1936,
+  "seconds": 429
  },
  "skipped_leagues": {
   "JPN WE League": "femminile",
@@ -313,48 +313,6 @@
    }
   },
   {
-   "matchId": 5071498,
-   "kickoff": "01:00",
-   "kickoff_utc": "2026-11-08T00:00:00.000Z",
-   "league": "Major League Soccer",
-   "country": "USA",
-   "leagueId": 130,
-   "home": "San Diego FC",
-   "away": "Sporting Kansas City",
-   "url": "https://www.fotmob.com/match/5071498",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.24 (casa 1.97 + ospite 1.27) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.24,
-     "exp_home": 1.97,
-     "exp_away": 1.27,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 33,
-     "scored": 28,
-     "conceded": 25,
-     "no00": 33
-    },
-    "away": {
-     "n": 33,
-     "scored": 23,
-     "conceded": 32,
-     "no00": 33
-    }
-   }
-  },
-  {
    "matchId": 5071499,
    "kickoff": "01:00",
    "kickoff_utc": "2026-11-08T00:00:00.000Z",
@@ -393,6 +351,48 @@
      "scored": 27,
      "conceded": 20,
      "no00": 30
+    }
+   }
+  },
+  {
+   "matchId": 5071498,
+   "kickoff": "01:00",
+   "kickoff_utc": "2026-11-08T00:00:00.000Z",
+   "league": "Major League Soccer",
+   "country": "USA",
+   "leagueId": 130,
+   "home": "San Diego FC",
+   "away": "Sporting Kansas City",
+   "url": "https://www.fotmob.com/match/5071498",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.24 (casa 1.97 + ospite 1.27) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.24,
+     "exp_home": 1.97,
+     "exp_away": 1.27,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 33,
+     "scored": 28,
+     "conceded": 25,
+     "no00": 33
+    },
+    "away": {
+     "n": 33,
+     "scored": 23,
+     "conceded": 32,
+     "no00": 33
     }
    }
   },
@@ -1126,48 +1126,6 @@
    }
   },
   {
-   "matchId": 5847227,
-   "kickoff": "12:00",
-   "kickoff_utc": "2026-11-08T11:00:00.000Z",
-   "league": "Premier League",
-   "country": "RUS",
-   "leagueId": 63,
-   "home": "Krylya Sovetov Samara",
-   "away": "FC Orenburg",
-   "url": "https://www.fotmob.com/match/5847227",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.00 (casa 1.67 + ospite 1.34) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.0,
-     "exp_home": 1.67,
-     "exp_away": 1.34,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 10,
-     "conceded": 10,
-     "no00": 12
-    },
-    "away": {
-     "n": 13,
-     "scored": 8,
-     "conceded": 8,
-     "no00": 10
-    }
-   }
-  },
-  {
    "matchId": 5973000,
    "kickoff": "12:00",
    "kickoff_utc": "2026-11-08T11:00:00.000Z",
@@ -1209,6 +1167,48 @@
      "scored": 4,
      "conceded": 12,
      "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 5847227,
+   "kickoff": "12:00",
+   "kickoff_utc": "2026-11-08T11:00:00.000Z",
+   "league": "Premier League",
+   "country": "RUS",
+   "leagueId": 63,
+   "home": "Krylya Sovetov Samara",
+   "away": "FC Orenburg",
+   "url": "https://www.fotmob.com/match/5847227",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.00 (casa 1.67 + ospite 1.34) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.0,
+     "exp_home": 1.67,
+     "exp_away": 1.34,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 10,
+     "no00": 12
+    },
+    "away": {
+     "n": 13,
+     "scored": 8,
+     "conceded": 8,
+     "no00": 10
     }
    }
   },
@@ -1360,73 +1360,29 @@
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.80 (casa 0.91 + ospite 1.90) ≥ 2.7"
+    "xg": "xG atteso prematch 2.90 (casa 1.04 + ospite 1.86) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 2.8,
-     "exp_home": 0.91,
-     "exp_away": 1.9,
-     "method": "casa/trasferta",
+     "total": 2.9,
+     "exp_home": 1.04,
+     "exp_away": 1.86,
+     "method": "media generale",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 7,
-     "scored": 7,
-     "conceded": 7,
-     "no00": 7
+     "n": 0,
+     "scored": 0,
+     "conceded": 0,
+     "no00": 0
     },
     "away": {
-     "n": 7,
-     "scored": 4,
-     "conceded": 4,
-     "no00": 6
-    }
-   }
-  },
-  {
-   "matchId": 1000017778,
-   "kickoff": "12:00",
-   "kickoff_utc": "2026-11-08T11:00:00.000Z",
-   "league": "Thai League",
-   "country": "THA",
-   "leagueId": 8984,
-   "home": "BG Pathum United",
-   "away": "Rayong FC",
-   "url": "https://www.fotmob.com/match/1000017778",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: almeno 67 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Casa: 3 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 67,
-     "complete": false,
-     "capped": false,
-     "last00": null,
-     "other_zz": 3,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 7,
-     "scored": 5,
-     "conceded": 5,
-     "no00": 6
-    },
-    "away": {
-     "n": 7,
-     "scored": 6,
-     "conceded": 6,
-     "no00": 7
+     "n": 0,
+     "scored": 0,
+     "conceded": 0,
+     "no00": 0
     }
    }
   },
@@ -1542,29 +1498,29 @@
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.77 (casa 1.37 + ospite 1.40) ≥ 2.7"
+    "xg": "xG atteso prematch 2.81 (casa 1.40 + ospite 1.41) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 2.77,
-     "exp_home": 1.37,
-     "exp_away": 1.4,
-     "method": "casa/trasferta",
+     "total": 2.81,
+     "exp_home": 1.4,
+     "exp_away": 1.41,
+     "method": "media generale",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 6,
-     "scored": 4,
-     "conceded": 3,
-     "no00": 5
+     "n": 0,
+     "scored": 0,
+     "conceded": 0,
+     "no00": 0
     },
     "away": {
-     "n": 7,
-     "scored": 6,
-     "conceded": 6,
-     "no00": 7
+     "n": 0,
+     "scored": 0,
+     "conceded": 0,
+     "no00": 0
     }
    }
   },
@@ -1806,44 +1762,44 @@
    }
   },
   {
-   "matchId": 5881722,
+   "matchId": 5881717,
    "kickoff": "13:30",
    "kickoff_utc": "2026-11-08T12:30:00.000Z",
    "league": "2. Bundesliga",
    "country": "GER",
    "leagueId": 146,
-   "home": "Magdeburg",
-   "away": "St. Pauli",
-   "url": "https://www.fotmob.com/match/5881722",
+   "home": "Bochum",
+   "away": "Karlsruher SC",
+   "url": "https://www.fotmob.com/match/5881717",
    "finished": false,
    "score": null,
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.91 (casa 1.41 + ospite 1.49) ≥ 2.7"
+    "xg": "xG atteso prematch 2.84 (casa 1.53 + ospite 1.31) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 2.91,
-     "exp_home": 1.41,
-     "exp_away": 1.49,
-     "method": "casa/trasferta",
+     "total": 2.84,
+     "exp_home": 1.53,
+     "exp_away": 1.31,
+     "method": "media generale",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 10,
-     "scored": 9,
-     "conceded": 6,
-     "no00": 10
+     "n": 0,
+     "scored": 0,
+     "conceded": 0,
+     "no00": 0
     },
     "away": {
-     "n": 10,
-     "scored": 9,
-     "conceded": 7,
-     "no00": 9
+     "n": 0,
+     "scored": 0,
+     "conceded": 0,
+     "no00": 0
     }
    }
   },
@@ -1863,29 +1819,71 @@
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 3.81 (casa 2.25 + ospite 1.56) ≥ 2.7"
+    "xg": "xG atteso prematch 3.50 (casa 1.98 + ospite 1.52) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 3.81,
-     "exp_home": 2.25,
-     "exp_away": 1.56,
-     "method": "casa/trasferta",
+     "total": 3.5,
+     "exp_home": 1.98,
+     "exp_away": 1.52,
+     "method": "media generale",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 10,
-     "scored": 9,
-     "conceded": 7,
-     "no00": 9
+     "n": 0,
+     "scored": 0,
+     "conceded": 0,
+     "no00": 0
     },
     "away": {
-     "n": 10,
-     "scored": 7,
-     "conceded": 9,
-     "no00": 10
+     "n": 0,
+     "scored": 0,
+     "conceded": 0,
+     "no00": 0
+    }
+   }
+  },
+  {
+   "matchId": 5881722,
+   "kickoff": "13:30",
+   "kickoff_utc": "2026-11-08T12:30:00.000Z",
+   "league": "2. Bundesliga",
+   "country": "GER",
+   "leagueId": 146,
+   "home": "Magdeburg",
+   "away": "St. Pauli",
+   "url": "https://www.fotmob.com/match/5881722",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.84 (casa 1.27 + ospite 1.58) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.84,
+     "exp_home": 1.27,
+     "exp_away": 1.58,
+     "method": "media generale",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 0,
+     "scored": 0,
+     "conceded": 0,
+     "no00": 0
+    },
+    "away": {
+     "n": 0,
+     "scored": 0,
+     "conceded": 0,
+     "no00": 0
     }
    }
   },
@@ -2655,48 +2653,6 @@
    }
   },
   {
-   "matchId": 5795514,
-   "kickoff": "15:00",
-   "kickoff_utc": "2026-11-08T14:00:00.000Z",
-   "league": "Premier League",
-   "country": "ENG",
-   "leagueId": 47,
-   "home": "Sunderland",
-   "away": "Chelsea",
-   "url": "https://www.fotmob.com/match/5795514",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.72 (casa 1.48 + ospite 1.24) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.72,
-     "exp_home": 1.48,
-     "exp_away": 1.24,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 9,
-     "scored": 5,
-     "conceded": 7,
-     "no00": 8
-    },
-    "away": {
-     "n": 9,
-     "scored": 7,
-     "conceded": 7,
-     "no00": 9
-    }
-   }
-  },
-  {
    "matchId": 5795510,
    "kickoff": "15:00",
    "kickoff_utc": "2026-11-08T14:00:00.000Z",
@@ -2742,44 +2698,44 @@
    }
   },
   {
-   "matchId": 5749743,
+   "matchId": 5795514,
    "kickoff": "15:00",
    "kickoff_utc": "2026-11-08T14:00:00.000Z",
-   "league": "Serie A",
-   "country": "ITA",
-   "leagueId": 55,
-   "home": "Genoa",
-   "away": "Milan",
-   "url": "https://www.fotmob.com/match/5749743",
+   "league": "Premier League",
+   "country": "ENG",
+   "leagueId": 47,
+   "home": "Sunderland",
+   "away": "Chelsea",
+   "url": "https://www.fotmob.com/match/5795514",
    "finished": false,
    "score": null,
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.71 (casa 1.17 + ospite 1.54) ≥ 2.7"
+    "xg": "xG atteso prematch 2.72 (casa 1.48 + ospite 1.24) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 2.71,
-     "exp_home": 1.17,
-     "exp_away": 1.54,
+     "total": 2.72,
+     "exp_home": 1.48,
+     "exp_away": 1.24,
      "method": "casa/trasferta",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 10,
-     "scored": 7,
-     "conceded": 8,
-     "no00": 10
+     "n": 9,
+     "scored": 5,
+     "conceded": 7,
+     "no00": 8
     },
     "away": {
-     "n": 10,
-     "scored": 10,
+     "n": 9,
+     "scored": 7,
      "conceded": 7,
-     "no00": 10
+     "no00": 9
     }
    }
   },
@@ -2833,6 +2789,48 @@
      "n": 10,
      "scored": 8,
      "conceded": 9,
+     "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5749743,
+   "kickoff": "15:00",
+   "kickoff_utc": "2026-11-08T14:00:00.000Z",
+   "league": "Serie A",
+   "country": "ITA",
+   "leagueId": 55,
+   "home": "Genoa",
+   "away": "Milan",
+   "url": "https://www.fotmob.com/match/5749743",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.71 (casa 1.17 + ospite 1.54) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.71,
+     "exp_home": 1.17,
+     "exp_away": 1.54,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 10,
+     "scored": 7,
+     "conceded": 8,
+     "no00": 10
+    },
+    "away": {
+     "n": 10,
+     "scored": 10,
+     "conceded": 7,
      "no00": 10
     }
    }
@@ -3924,48 +3922,6 @@
    }
   },
   {
-   "matchId": 5105047,
-   "kickoff": "17:00",
-   "kickoff_utc": "2026-11-08T16:00:00.000Z",
-   "league": "Eliteserien",
-   "country": "NOR",
-   "leagueId": 59,
-   "home": "Sandefjord",
-   "away": "Molde",
-   "url": "https://www.fotmob.com/match/5105047",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.55 (casa 1.49 + ospite 2.05) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.55,
-     "exp_home": 1.49,
-     "exp_away": 2.05,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 25,
-     "scored": 16,
-     "conceded": 19,
-     "no00": 23
-    },
-    "away": {
-     "n": 25,
-     "scored": 23,
-     "conceded": 21,
-     "no00": 25
-    }
-   }
-  },
-  {
    "matchId": 5105042,
    "kickoff": "17:00",
    "kickoff_utc": "2026-11-08T16:00:00.000Z",
@@ -4023,6 +3979,48 @@
    }
   },
   {
+   "matchId": 5105047,
+   "kickoff": "17:00",
+   "kickoff_utc": "2026-11-08T16:00:00.000Z",
+   "league": "Eliteserien",
+   "country": "NOR",
+   "leagueId": 59,
+   "home": "Sandefjord",
+   "away": "Molde",
+   "url": "https://www.fotmob.com/match/5105047",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.55 (casa 1.49 + ospite 2.05) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.55,
+     "exp_home": 1.49,
+     "exp_away": 2.05,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 25,
+     "scored": 16,
+     "conceded": 19,
+     "no00": 23
+    },
+    "away": {
+     "n": 25,
+     "scored": 23,
+     "conceded": 21,
+     "no00": 25
+    }
+   }
+  },
+  {
    "matchId": 5793971,
    "kickoff": "17:00",
    "kickoff_utc": "2026-11-08T16:00:00.000Z",
@@ -4061,6 +4059,48 @@
      "scored": 8,
      "conceded": 10,
      "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 5802984,
+   "kickoff": "17:15",
+   "kickoff_utc": "2026-11-08T16:15:00.000Z",
+   "league": "Ligue 1",
+   "country": "FRA",
+   "leagueId": 53,
+   "home": "Brest",
+   "away": "Lyon",
+   "url": "https://www.fotmob.com/match/5802984",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.87 (casa 2.01 + ospite 0.86) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.87,
+     "exp_home": 2.01,
+     "exp_away": 0.86,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 9,
+     "scored": 8,
+     "conceded": 8,
+     "no00": 9
+    },
+    "away": {
+     "n": 9,
+     "scored": 7,
+     "conceded": 5,
+     "no00": 8
     }
    }
   },
@@ -4199,48 +4239,6 @@
      "scored": 8,
      "conceded": 7,
      "no00": 9
-    }
-   }
-  },
-  {
-   "matchId": 5802984,
-   "kickoff": "17:15",
-   "kickoff_utc": "2026-11-08T16:15:00.000Z",
-   "league": "Ligue 1",
-   "country": "FRA",
-   "leagueId": 53,
-   "home": "Brest",
-   "away": "Lyon",
-   "url": "https://www.fotmob.com/match/5802984",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.87 (casa 2.01 + ospite 0.86) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.87,
-     "exp_home": 2.01,
-     "exp_away": 0.86,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 9,
-     "scored": 8,
-     "conceded": 8,
-     "no00": 9
-    },
-    "away": {
-     "n": 9,
-     "scored": 7,
-     "conceded": 5,
-     "no00": 8
     }
    }
   },
@@ -4622,264 +4620,6 @@
      "scored": 8,
      "conceded": 11,
      "no00": 12
-    }
-   }
-  },
-  {
-   "matchId": 5811805,
-   "kickoff": "18:30",
-   "kickoff_utc": "2026-11-08T17:30:00.000Z",
-   "league": "Belgian Pro League",
-   "country": "BEL",
-   "leagueId": 40,
-   "home": "Union St.Gilloise",
-   "away": "Genk",
-   "url": "https://www.fotmob.com/match/5811805",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.89 (casa 1.68 + ospite 1.20) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.89,
-     "exp_home": 1.68,
-     "exp_away": 1.2,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 9,
-     "conceded": 5,
-     "no00": 9
-    },
-    "away": {
-     "n": 10,
-     "scored": 7,
-     "conceded": 7,
-     "no00": 9
-    }
-   }
-  },
-  {
-   "matchId": 1000022938,
-   "kickoff": "19:00",
-   "kickoff_utc": "2026-11-08T18:00:00.000Z",
-   "league": "Liga de Expansión MX - Apertura - Quarter-finals",
-   "country": "MEX",
-   "leagueId": 8976,
-   "home": "Leones Negros",
-   "away": "Alacranes de Durango",
-   "url": "https://www.fotmob.com/match/1000022938",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.80 (casa 1.52 + ospite 1.28) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.8,
-     "exp_home": 1.52,
-     "exp_away": 1.28,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 14,
-     "conceded": 13,
-     "no00": 16
-    },
-    "away": {
-     "n": 16,
-     "scored": 11,
-     "conceded": 8,
-     "no00": 14
-    }
-   }
-  },
-  {
-   "matchId": 1000013260,
-   "kickoff": "19:00",
-   "kickoff_utc": "2026-11-08T18:00:00.000Z",
-   "league": "Primera División",
-   "country": "CHI",
-   "leagueId": 273,
-   "home": "Universidad de Chile",
-   "away": "Cobresal",
-   "url": "https://www.fotmob.com/match/1000013260",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 50 partite di campionato consecutive senza 0-0 (ultimo 0-0: 16/03/2025 vs O'Higgins); Casa: 3 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 50,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "16/03/2025",
-      "opp": "O'Higgins",
-      "home": true
-     },
-     "other_zz": 3,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 26,
-     "scored": 20,
-     "conceded": 15,
-     "no00": 23
-    },
-    "away": {
-     "n": 25,
-     "scored": 18,
-     "conceded": 21,
-     "no00": 25
-    }
-   }
-  },
-  {
-   "matchId": 5904801,
-   "kickoff": "19:00",
-   "kickoff_utc": "2026-11-08T18:00:00.000Z",
-   "league": "Super Lig",
-   "country": "TUR",
-   "leagueId": 71,
-   "home": "Beşiktaş",
-   "away": "Gençlerbirliği",
-   "url": "https://www.fotmob.com/match/5904801",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.20 (casa 2.37 + ospite 0.83) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.2,
-     "exp_home": 2.37,
-     "exp_away": 0.83,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 8,
-     "conceded": 7,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 6,
-     "conceded": 8,
-     "no00": 10
-    }
-   }
-  },
-  {
-   "matchId": 5811807,
-   "kickoff": "19:15",
-   "kickoff_utc": "2026-11-08T18:15:00.000Z",
-   "league": "Belgian Pro League",
-   "country": "BEL",
-   "leagueId": 40,
-   "home": "St.Truiden",
-   "away": "Zulte Waregem",
-   "url": "https://www.fotmob.com/match/5811807",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.49 (casa 2.07 + ospite 1.42) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.49,
-     "exp_home": 2.07,
-     "exp_away": 1.42,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 7,
-     "conceded": 9,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 5,
-     "conceded": 7,
-     "no00": 9
-    }
-   }
-  },
-  {
-   "matchId": 5105043,
-   "kickoff": "19:15",
-   "kickoff_utc": "2026-11-08T18:15:00.000Z",
-   "league": "Eliteserien",
-   "country": "NOR",
-   "leagueId": 59,
-   "home": "Fredrikstad",
-   "away": "Brann",
-   "url": "https://www.fotmob.com/match/5105043",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.44 (casa 1.81 + ospite 1.64) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.44,
-     "exp_home": 1.81,
-     "exp_away": 1.64,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 25,
-     "scored": 19,
-     "conceded": 22,
-     "no00": 25
-    },
-    "away": {
-     "n": 25,
-     "scored": 21,
-     "conceded": 22,
-     "no00": 24
     }
    }
   },
