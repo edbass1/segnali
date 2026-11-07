@@ -6813,8 +6813,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "lost",
+  "final": "0-0",
   "url": "https://www.fotmob.com/match/5836931",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -6829,7 +6829,8 @@
    "method": "casa/trasferta",
    "season": "2026/2027"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-07 17:53"
  },
  {
   "id": "1000015502-xg",
