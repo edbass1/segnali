@@ -7736,5 +7736,145 @@
   },
   "telegram": true,
   "resolved": "2026-11-07 23:22"
+ },
+ {
+  "id": "5071487-xg",
+  "type": "xg",
+  "time": "2026-11-07 23:29",
+  "ts": 1794090599,
+  "league": "Major League Soccer",
+  "country": "USA",
+  "leagueId": 130,
+  "home": "DC United",
+  "away": "New York City FC",
+  "matchId": 5071487,
+  "reason": "xG atteso prematch 2.97 (casa 1.48 + ospite 1.50) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.25",
+    "0.64"
+   ],
+   "poss": [
+    34,
+    66
+   ],
+   "shots": [
+    3,
+    8
+   ],
+   "sot": [
+    2,
+    3
+   ],
+   "big": [
+    0,
+    2
+   ],
+   "box": [
+    7,
+    15
+   ],
+   "corners": [
+    5,
+    3
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5071487",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.974,
+   "exp_home": 1.479,
+   "exp_away": 1.495,
+   "h_for": 1.469,
+   "h_ag": 1.581,
+   "a_for": 1.409,
+   "a_ag": 1.488,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
+ },
+ {
+  "id": "5071486-xg",
+  "type": "xg",
+  "time": "2026-11-07 23:30",
+  "ts": 1794090611,
+  "league": "Major League Soccer",
+  "country": "USA",
+  "leagueId": 130,
+  "home": "FC Cincinnati",
+  "away": "Nashville SC",
+  "matchId": 5071486,
+  "reason": "xG atteso prematch 3.04 (casa 1.64 + ospite 1.41) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.60",
+    "0.35"
+   ],
+   "poss": [
+    46,
+    54
+   ],
+   "shots": [
+    9,
+    8
+   ],
+   "sot": [
+    4,
+    2
+   ],
+   "big": [
+    1,
+    1
+   ],
+   "box": [
+    14,
+    7
+   ],
+   "corners": [
+    2,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5071486",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.045,
+   "exp_home": 1.635,
+   "exp_away": 1.409,
+   "h_for": 2.096,
+   "h_ag": 1.448,
+   "a_for": 1.371,
+   "a_ag": 1.175,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
  }
 ]

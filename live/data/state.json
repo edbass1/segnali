@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-11-07 23:28",
+ "last_scan": "2026-11-07 23:30",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -214,7 +214,13 @@
   "1000019626": {},
   "1000013264": {},
   "5962474": {},
-  "1000014225": {}
+  "1000014225": {},
+  "5071487": {
+   "xg": "2026-11-07 23:29"
+  },
+  "5071486": {
+   "xg": "2026-11-07 23:30"
+  }
  },
  "checked": {
   "6365910": {
@@ -1658,15 +1664,37 @@
     "subisce": false,
     "mai00": false
    }
+  },
+  "5071487": {
+   "t": 1794090599,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": true,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5071486": {
+   "t": 1794090611,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": true,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
   }
  },
- "live_count": 22,
- "candidates_last": 0,
- "requests_last": 1,
- "last_write": "2026-11-07 23:28",
- "last_write_ts": 1794090517,
+ "live_count": 21,
+ "candidates_last": 2,
+ "requests_last": 54,
+ "last_write": "2026-11-07 23:30",
+ "last_write_ts": 1794090611,
  "telegram": {
-  "last_try": "2026-11-07 23:22",
+  "last_try": "2026-11-07 23:30",
   "ok": true,
   "error": ""
  },
@@ -1674,6 +1702,6 @@
   "remaining": "489",
   "used": "11",
   "last_cost": "0",
-  "time": "2026-11-07 22:46"
+  "time": "2026-11-07 23:30"
  }
 }
