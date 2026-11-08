@@ -8408,8 +8408,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "0-2",
   "url": "https://www.fotmob.com/match/5868123",
   "over05": 1.25,
   "over05_note": null,
@@ -8424,7 +8424,8 @@
    "method": "casa/trasferta",
    "season": "2026/2027"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-08 15:53"
  },
  {
   "id": "5861977-storico",
@@ -8493,6 +8494,76 @@
   },
   "streak": 58,
   "streak_complete": true,
+  "telegram": true
+ },
+ {
+  "id": "5804032-xg",
+  "type": "xg",
+  "time": "2026-11-08 15:53",
+  "ts": 1794149635,
+  "league": "Ekstraklasa",
+  "country": "POL",
+  "leagueId": 196,
+  "home": "Jagiellonia Białystok",
+  "away": "GKS Katowice",
+  "matchId": 5804032,
+  "reason": "xG atteso prematch 3.32 (casa 1.71 + ospite 1.60) ≥ 2.7",
+  "minute": 46,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 46,
+   "phase": "46",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.80",
+    "0.47"
+   ],
+   "poss": [
+    61,
+    39
+   ],
+   "shots": [
+    10,
+    3
+   ],
+   "sot": [
+    3,
+    0
+   ],
+   "big": [
+    0,
+    1
+   ],
+   "box": [
+    17,
+    9
+   ],
+   "corners": [
+    4,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5804032",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.317,
+   "exp_home": 1.714,
+   "exp_away": 1.602,
+   "h_for": 1.54,
+   "h_ag": 1.442,
+   "a_for": 1.763,
+   "a_ag": 1.889,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
   "telegram": true
  }
 ]
