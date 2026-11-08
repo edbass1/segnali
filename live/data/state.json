@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-11-08 15:15",
+ "last_scan": "2026-11-08 15:17",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -258,6 +258,9 @@
   "1000022019": {},
   "5107655": {
    "xg": "2026-11-08 15:15"
+  },
+  "5868123": {
+   "xg": "2026-11-08 15:17"
   }
  },
  "checked": {
@@ -2022,22 +2025,33 @@
     "subisce": false,
     "mai00": false
    }
+  },
+  "5868123": {
+   "t": 1794147461,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": true,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
   }
  },
- "live_count": 114,
+ "live_count": 112,
  "candidates_last": 1,
- "requests_last": 23,
- "last_write": "2026-11-08 15:15",
- "last_write_ts": 1794147345,
+ "requests_last": 10,
+ "last_write": "2026-11-08 15:17",
+ "last_write_ts": 1794147461,
  "telegram": {
-  "last_try": "2026-11-08 15:15",
+  "last_try": "2026-11-08 15:17",
   "ok": true,
   "error": ""
  },
  "odds_api": {
-  "remaining": "489",
-  "used": "11",
-  "last_cost": "0",
-  "time": "2026-11-08 15:15"
+  "remaining": "488",
+  "used": "12",
+  "last_cost": "1",
+  "time": "2026-11-08 15:17"
  }
 }
