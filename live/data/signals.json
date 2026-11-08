@@ -7878,5 +7878,145 @@
   },
   "telegram": true,
   "resolved": "2026-11-08 00:08"
+ },
+ {
+  "id": "5071495-xg",
+  "type": "xg",
+  "time": "2026-11-08 02:30",
+  "ts": 1794101436,
+  "league": "Major League Soccer",
+  "country": "USA",
+  "leagueId": 130,
+  "home": "Houston Dynamo FC",
+  "away": "St. Louis City",
+  "matchId": 5071495,
+  "reason": "xG atteso prematch 2.73 (casa 1.29 + ospite 1.45) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.81",
+    "0.44"
+   ],
+   "poss": [
+    36,
+    64
+   ],
+   "shots": [
+    12,
+    10
+   ],
+   "sot": [
+    2,
+    0
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    10,
+    17
+   ],
+   "corners": [
+    4,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5071495",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.735,
+   "exp_home": 1.287,
+   "exp_away": 1.448,
+   "h_for": 1.119,
+   "h_ag": 1.442,
+   "a_for": 1.454,
+   "a_ag": 1.454,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
+ },
+ {
+  "id": "5071498-xg",
+  "type": "xg",
+  "time": "2026-11-08 02:31",
+  "ts": 1794101460,
+  "league": "Major League Soccer",
+  "country": "USA",
+  "leagueId": 130,
+  "home": "San Diego FC",
+  "away": "Sporting Kansas City",
+  "matchId": 5071498,
+  "reason": "xG atteso prematch 3.24 (casa 1.97 + ospite 1.27) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.50",
+    "0.55"
+   ],
+   "poss": [
+    69,
+    31
+   ],
+   "shots": [
+    10,
+    9
+   ],
+   "sot": [
+    3,
+    2
+   ],
+   "big": [
+    1,
+    1
+   ],
+   "box": [
+    12,
+    11
+   ],
+   "corners": [
+    5,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5071498",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.243,
+   "exp_home": 1.975,
+   "exp_away": 1.268,
+   "h_for": 1.732,
+   "h_ag": 1.587,
+   "a_for": 0.95,
+   "a_ag": 2.217,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
  }
 ]
