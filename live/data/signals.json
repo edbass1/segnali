@@ -8637,5 +8637,75 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5868127-xg",
+  "type": "xg",
+  "time": "2026-11-08 17:36",
+  "ts": 1794155768,
+  "league": "LaLiga",
+  "country": "ESP",
+  "leagueId": 87,
+  "home": "Real Sociedad",
+  "away": "Rayo Vallecano",
+  "matchId": 5868127,
+  "reason": "xG atteso prematch 2.93 (casa 1.59 + ospite 1.34) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.56",
+    "0.36"
+   ],
+   "poss": [
+    55,
+    45
+   ],
+   "shots": [
+    12,
+    4
+   ],
+   "sot": [
+    1,
+    2
+   ],
+   "big": [
+    1,
+    1
+   ],
+   "box": [
+    24,
+    7
+   ],
+   "corners": [
+    6,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5868127",
+  "over05": 1.33,
+  "over05_note": null,
+  "details": {
+   "total": 2.93,
+   "exp_home": 1.587,
+   "exp_away": 1.343,
+   "h_for": 1.384,
+   "h_ag": 1.172,
+   "a_for": 1.514,
+   "a_ag": 1.79,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
