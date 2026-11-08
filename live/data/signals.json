@@ -8020,5 +8020,66 @@
   },
   "telegram": true,
   "resolved": "2026-11-08 03:05"
+ },
+ {
+  "id": "6503835-xg",
+  "type": "xg",
+  "time": "2026-11-08 07:20",
+  "ts": 1794118824,
+  "league": "K-League 1 Final Group A",
+  "country": "KOR",
+  "leagueId": 9080,
+  "home": "Daejeon Hana Citizen",
+  "away": "Incheon United",
+  "matchId": 6503835,
+  "reason": "xG atteso prematch 2.72 (casa 1.44 + ospite 1.28) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": [
+    43,
+    57
+   ],
+   "shots": [
+    4,
+    3
+   ],
+   "sot": [
+    2,
+    1
+   ],
+   "big": null,
+   "box": null,
+   "corners": [
+    4,
+    1
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/6503835",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.723,
+   "exp_home": 1.445,
+   "exp_away": 1.279,
+   "h_for": 1.655,
+   "h_ag": 1.178,
+   "a_for": 1.379,
+   "a_ag": 1.235,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
  }
 ]
