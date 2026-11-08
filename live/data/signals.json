@@ -8337,8 +8337,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "lost",
+  "final": "0-0",
   "url": "https://www.fotmob.com/match/5107655",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -8353,7 +8353,8 @@
    "method": "casa/trasferta",
    "season": "2026"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-08 15:49"
  },
  {
   "id": "5868123-xg",
@@ -8423,6 +8424,75 @@
    "method": "casa/trasferta",
    "season": "2026/2027"
   },
+  "telegram": true
+ },
+ {
+  "id": "5861977-storico",
+  "type": "storico",
+  "time": "2026-11-08 15:49",
+  "ts": 1794149388,
+  "league": "I Liga",
+  "country": "POL",
+  "leagueId": 197,
+  "home": "ŁKS Łódź",
+  "away": "Stal Rzeszów",
+  "matchId": 5861977,
+  "reason": "Ospite: 58 partite di campionato consecutive senza 0-0 (ultimo 0-0: 09/03/2025 vs Chrobry Głogów); Casa: 3 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5861977",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 7,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "28/08/2026",
+     "opp": "Odra Opole",
+     "home": false
+    },
+    "n": 50,
+    "zz": 3,
+    "avail": 82
+   },
+   "away": {
+    "streak": 58,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "09/03/2025",
+     "opp": "Chrobry Głogów",
+     "home": true
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 81
+   },
+   "strong": "away"
+  },
+  "streak": 58,
+  "streak_complete": true,
   "telegram": true
  }
 ]
