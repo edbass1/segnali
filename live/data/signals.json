@@ -8064,8 +8064,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "2-0",
   "url": "https://www.fotmob.com/match/6503835",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -8080,7 +8080,8 @@
    "method": "casa/trasferta",
    "season": "2026"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-08 07:57"
  },
  {
   "id": "5803653-xg",
