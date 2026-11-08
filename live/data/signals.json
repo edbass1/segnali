@@ -9251,5 +9251,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-08 18:53"
+ },
+ {
+  "id": "5811805-xg",
+  "type": "xg",
+  "time": "2026-11-08 19:50",
+  "ts": 1794163831,
+  "league": "Belgian Pro League",
+  "country": "BEL",
+  "leagueId": 40,
+  "home": "Union St.Gilloise",
+  "away": "Genk",
+  "matchId": 5811805,
+  "reason": "xG atteso prematch 2.89 (casa 1.68 + ospite 1.20) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.74",
+    "0.28"
+   ],
+   "poss": [
+    56,
+    44
+   ],
+   "shots": [
+    18,
+    5
+   ],
+   "sot": [
+    2,
+    0
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    17,
+    6
+   ],
+   "corners": [
+    7,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5811805",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.885,
+   "exp_home": 1.681,
+   "exp_away": 1.204,
+   "h_for": 2.12,
+   "h_ag": 1.16,
+   "a_for": 1.248,
+   "a_ag": 1.242,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
