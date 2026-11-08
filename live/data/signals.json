@@ -8567,5 +8567,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-08 16:41"
+ },
+ {
+  "id": "5868530-xg",
+  "type": "xg",
+  "time": "2026-11-08 17:19",
+  "ts": 1794154752,
+  "league": "LaLiga2",
+  "country": "ESP",
+  "leagueId": 140,
+  "home": "Girona",
+  "away": "Almería",
+  "matchId": 5868530,
+  "reason": "xG atteso prematch 2.75 (casa 1.60 + ospite 1.15) ≥ 2.7",
+  "minute": 48,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 48,
+   "phase": "48",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.22",
+    "0.24"
+   ],
+   "poss": [
+    42,
+    58
+   ],
+   "shots": [
+    5,
+    7
+   ],
+   "sot": [
+    1,
+    1
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    10,
+    6
+   ],
+   "corners": [
+    4,
+    1
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5868530",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.751,
+   "exp_home": 1.601,
+   "exp_away": 1.15,
+   "h_for": 1.829,
+   "h_ag": 1.13,
+   "a_for": 1.17,
+   "a_ag": 1.373,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
