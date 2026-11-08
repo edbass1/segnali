@@ -9322,5 +9322,77 @@
   },
   "telegram": true,
   "resolved": "2026-11-08 20:25"
+ },
+ {
+  "id": "1000015316-segna",
+  "type": "segna",
+  "time": "2026-11-08 20:50",
+  "ts": 1794167434,
+  "league": "Ligat ha'Al",
+  "country": "ISR",
+  "leagueId": 127,
+  "home": "Hapoel Beer Sheva",
+  "away": "Hapoel Tel Aviv",
+  "matchId": 1000015316,
+  "reason": "Casa ha segnato almeno 1 gol in 9/9 partite di campionato 2026/27; Ospite in 8/9 (89%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": [
+    55,
+    45
+   ],
+   "shots": [
+    5,
+    5
+   ],
+   "sot": [
+    0,
+    0
+   ],
+   "big": [
+    2,
+    0
+   ],
+   "box": [
+    9,
+    10
+   ],
+   "corners": [
+    3,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000015316",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 9,
+    "scored": 9,
+    "conceded": 6,
+    "no00": 9
+   },
+   "away": {
+    "n": 9,
+    "scored": 8,
+    "conceded": 3,
+    "no00": 8
+   }
+  },
+  "telegram": true
  }
 ]
