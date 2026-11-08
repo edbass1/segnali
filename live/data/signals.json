@@ -8229,5 +8229,59 @@
   },
   "telegram": true,
   "resolved": "2026-11-08 11:03"
+ },
+ {
+  "id": "5987551-subisce",
+  "type": "subisce",
+  "time": "2026-11-08 13:22",
+  "ts": 1794140538,
+  "league": "Premier League",
+  "country": "AZE",
+  "leagueId": 262,
+  "home": "Imisli FK",
+  "away": "Sumqayıt",
+  "matchId": 5987551,
+  "reason": "Ospite ha subito almeno 1 gol in 9/9 partite di campionato 2026/27 (Casa: 7/10) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5987551",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "away",
+   "home": {
+    "n": 10,
+    "scored": 7,
+    "conceded": 7,
+    "no00": 9
+   },
+   "away": {
+    "n": 9,
+    "scored": 8,
+    "conceded": 9,
+    "no00": 9
+   }
+  },
+  "telegram": true
  }
 ]
