@@ -8081,5 +8081,75 @@
    "season": "2026"
   },
   "telegram": true
+ },
+ {
+  "id": "5803653-xg",
+  "type": "xg",
+  "time": "2026-11-08 07:28",
+  "ts": 1794119297,
+  "league": "J. League",
+  "country": "JPN",
+  "leagueId": 223,
+  "home": "Machida Zelvia",
+  "away": "Sanfrecce Hiroshima",
+  "matchId": 5803653,
+  "reason": "xG atteso prematch 2.81 (casa 1.07 + ospite 1.74) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.48",
+    "0.57"
+   ],
+   "poss": [
+    52,
+    48
+   ],
+   "shots": [
+    6,
+    12
+   ],
+   "sot": [
+    2,
+    6
+   ],
+   "big": [
+    1,
+    2
+   ],
+   "box": [
+    8,
+    20
+   ],
+   "corners": [
+    1,
+    5
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5803653",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.81,
+   "exp_home": 1.072,
+   "exp_away": 1.737,
+   "h_for": 1.362,
+   "h_ag": 1.225,
+   "a_for": 2.25,
+   "a_ag": 0.783,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
