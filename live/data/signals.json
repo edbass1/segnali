@@ -9084,5 +9084,165 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5105045-storico",
+  "type": "storico",
+  "time": "2026-11-08 18:18",
+  "ts": 1794158319,
+  "league": "Eliteserien",
+  "country": "NOR",
+  "leagueId": 59,
+  "home": "Hamarkameratene",
+  "away": "Sarpsborg 08",
+  "matchId": 5105045,
+  "reason": "Casa: 53 partite di campionato consecutive senza 0-0 (ultimo 0-0: 02/05/2025 vs KFUM); Ospite: 3 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.88",
+    "0.97"
+   ],
+   "poss": [
+    52,
+    48
+   ],
+   "shots": [
+    7,
+    11
+   ],
+   "sot": [
+    1,
+    4
+   ],
+   "big": [
+    1,
+    2
+   ],
+   "box": [
+    16,
+    13
+   ],
+   "corners": [
+    2,
+    2
+   ],
+   "red": [
+    0,
+    1
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5105045",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "home": {
+    "streak": 53,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "02/05/2025",
+     "opp": "KFUM",
+     "home": true
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 58
+   },
+   "away": {
+    "streak": 9,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "30/08/2026",
+     "opp": "Tromsø",
+     "home": false
+    },
+    "n": 50,
+    "zz": 3,
+    "avail": 58
+   },
+   "strong": "home"
+  },
+  "streak": 53,
+  "streak_complete": true,
+  "telegram": true
+ },
+ {
+  "id": "5105045-xg",
+  "type": "xg",
+  "time": "2026-11-08 18:18",
+  "ts": 1794158319,
+  "league": "Eliteserien",
+  "country": "NOR",
+  "leagueId": 59,
+  "home": "Hamarkameratene",
+  "away": "Sarpsborg 08",
+  "matchId": 5105045,
+  "reason": "xG atteso prematch 3.36 (casa 1.54 + ospite 1.82) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.88",
+    "0.97"
+   ],
+   "poss": [
+    52,
+    48
+   ],
+   "shots": [
+    7,
+    11
+   ],
+   "sot": [
+    1,
+    4
+   ],
+   "big": [
+    1,
+    2
+   ],
+   "box": [
+    16,
+    13
+   ],
+   "corners": [
+    2,
+    2
+   ],
+   "red": [
+    0,
+    1
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5105045",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.36,
+   "exp_home": 1.539,
+   "exp_away": 1.822,
+   "h_for": 1.38,
+   "h_ag": 2.124,
+   "a_for": 1.519,
+   "a_ag": 1.698,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
  }
 ]
