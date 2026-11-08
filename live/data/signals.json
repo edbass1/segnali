@@ -9012,5 +9012,75 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5887676-xg",
+  "type": "xg",
+  "time": "2026-11-08 17:49",
+  "ts": 1794156552,
+  "league": "Liga Portugal",
+  "country": "POR",
+  "leagueId": 61,
+  "home": "Nacional",
+  "away": "Académico Viseu",
+  "matchId": 5887676,
+  "reason": "xG atteso prematch 3.07 (casa 1.71 + ospite 1.36) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.65",
+    "0.48"
+   ],
+   "poss": [
+    58,
+    42
+   ],
+   "shots": [
+    15,
+    6
+   ],
+   "sot": [
+    5,
+    2
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    23,
+    8
+   ],
+   "corners": [
+    5,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5887676",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.07,
+   "exp_home": 1.705,
+   "exp_away": 1.365,
+   "h_for": 1.45,
+   "h_ag": 1.448,
+   "a_for": 1.282,
+   "a_ag": 1.96,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
