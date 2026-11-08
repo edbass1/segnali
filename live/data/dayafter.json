@@ -1,6 +1,6 @@
 {
  "date": "2026-11-10",
- "generated_at": "2026-11-08 05:50",
+ "generated_at": "2026-11-08 06:47",
  "partial": false,
  "stats": {
   "matches_day": 75,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 102,
-  "seconds": 41
+  "seconds": 44
  },
  "skipped_leagues": {
   "DEN A-Liga": "femminile"
@@ -178,6 +178,51 @@
    }
   },
   {
+   "matchId": 5949312,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-10T19:45:00.000Z",
+   "league": "Northern Premier Division",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Bury",
+   "away": "Cleethorpes Town",
+   "url": "https://www.fotmob.com/match/5949312",
+   "finished": false,
+   "score": null,
+   "types": [
+    "segna"
+   ],
+   "reasons": {
+    "segna": "Ospite ha segnato almeno 1 gol in 16/16 partite di campionato 2026/27; Casa in 12/15 (80%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "segna": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 16,
+     "strong_n": 16,
+     "strong_pct": 100,
+     "other_k": 12,
+     "other_n": 15,
+     "other_pct": 80
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 12,
+     "conceded": 9,
+     "no00": 14
+    },
+    "away": {
+     "n": 16,
+     "scored": 16,
+     "conceded": 6,
+     "no00": 16
+    }
+   }
+  },
+  {
    "matchId": 5949319,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-10T19:45:00.000Z",
@@ -222,47 +267,47 @@
    }
   },
   {
-   "matchId": 5949312,
+   "matchId": 5953525,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Northern Premier Division",
+   "league": "Southern Premier Division Central",
    "country": "ENG",
    "leagueId": 8947,
-   "home": "Bury",
-   "away": "Cleethorpes Town",
-   "url": "https://www.fotmob.com/match/5949312",
+   "home": "Anstey Nomads",
+   "away": "Kettering Town FC",
+   "url": "https://www.fotmob.com/match/5953525",
    "finished": false,
    "score": null,
    "types": [
     "segna"
    ],
    "reasons": {
-    "segna": "Ospite ha segnato almeno 1 gol in 16/16 partite di campionato 2026/27; Casa in 12/15 (80%) [solo campionato in corso, min. 9 partite per squadra]"
+    "segna": "Casa ha segnato almeno 1 gol in 15/15 partite di campionato 2026/27; Ospite in 15/16 (94%) [solo campionato in corso, min. 9 partite per squadra]"
    },
    "info": {
     "segna": {
-     "strong": "away",
+     "strong": "home",
      "season": "2026/27",
-     "strong_k": 16,
-     "strong_n": 16,
+     "strong_k": 15,
+     "strong_n": 15,
      "strong_pct": 100,
-     "other_k": 12,
-     "other_n": 15,
-     "other_pct": 80
+     "other_k": 15,
+     "other_n": 16,
+     "other_pct": 94
     }
    },
    "cur": {
     "home": {
      "n": 15,
-     "scored": 12,
-     "conceded": 9,
-     "no00": 14
+     "scored": 15,
+     "conceded": 13,
+     "no00": 15
     },
     "away": {
      "n": 16,
-     "scored": 16,
-     "conceded": 6,
-     "no00": 16
+     "scored": 15,
+     "conceded": 10,
+     "no00": 15
     }
    }
   },
@@ -322,51 +367,6 @@
      "n": 15,
      "scored": 15,
      "conceded": 12,
-     "no00": 15
-    }
-   }
-  },
-  {
-   "matchId": 5953525,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Southern Premier Division Central",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Anstey Nomads",
-   "away": "Kettering Town FC",
-   "url": "https://www.fotmob.com/match/5953525",
-   "finished": false,
-   "score": null,
-   "types": [
-    "segna"
-   ],
-   "reasons": {
-    "segna": "Casa ha segnato almeno 1 gol in 15/15 partite di campionato 2026/27; Ospite in 15/16 (94%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "segna": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 15,
-     "strong_n": 15,
-     "strong_pct": 100,
-     "other_k": 15,
-     "other_n": 16,
-     "other_pct": 94
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 15,
-     "scored": 15,
-     "conceded": 13,
-     "no00": 15
-    },
-    "away": {
-     "n": 16,
-     "scored": 15,
-     "conceded": 10,
      "no00": 15
     }
    }
