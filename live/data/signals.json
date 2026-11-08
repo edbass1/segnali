@@ -8707,5 +8707,75 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5107657-xg",
+  "type": "xg",
+  "time": "2026-11-08 17:46",
+  "ts": 1794156376,
+  "league": "Allsvenskan",
+  "country": "SWE",
+  "leagueId": 67,
+  "home": "Brommapojkarna",
+  "away": "Mjällby",
+  "matchId": 5107657,
+  "reason": "xG atteso prematch 2.85 (casa 1.59 + ospite 1.26) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.94",
+    "0.24"
+   ],
+   "poss": [
+    47,
+    53
+   ],
+   "shots": [
+    11,
+    6
+   ],
+   "sot": [
+    5,
+    0
+   ],
+   "big": [
+    3,
+    0
+   ],
+   "box": [
+    19,
+    9
+   ],
+   "corners": [
+    3,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5107657",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.849,
+   "exp_home": 1.588,
+   "exp_away": 1.261,
+   "h_for": 1.272,
+   "h_ag": 1.355,
+   "a_for": 1.167,
+   "a_ag": 1.904,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
  }
 ]
