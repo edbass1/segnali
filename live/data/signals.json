@@ -8777,5 +8777,240 @@
    "season": "2026"
   },
   "telegram": true
+ },
+ {
+  "id": "5804294-storico",
+  "type": "storico",
+  "time": "2026-11-08 17:48",
+  "ts": 1794156493,
+  "league": "Super League",
+  "country": "SUI",
+  "leagueId": 69,
+  "home": "Servette",
+  "away": "FC Zürich",
+  "matchId": 5804294,
+  "reason": "Ospite: 57 partite di campionato consecutive senza 0-0 (ultimo 0-0: 05/04/2025 @ Winterthur); Casa: 1 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.22",
+    "0.52"
+   ],
+   "poss": [
+    45,
+    55
+   ],
+   "shots": [
+    2,
+    7
+   ],
+   "sot": [
+    1,
+    1
+   ],
+   "big": [
+    1,
+    1
+   ],
+   "box": [
+    6,
+    15
+   ],
+   "corners": [
+    3,
+    6
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5804294",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "home": {
+    "streak": 23,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "28/02/2026",
+     "opp": "Sion",
+     "home": true
+    },
+    "n": 50,
+    "zz": 1,
+    "avail": 88
+   },
+   "away": {
+    "streak": 57,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "05/04/2025",
+     "opp": "Winterthur",
+     "home": false
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 88
+   },
+   "strong": "away"
+  },
+  "streak": 57,
+  "streak_complete": true,
+  "telegram": true
+ },
+ {
+  "id": "5804294-xg",
+  "type": "xg",
+  "time": "2026-11-08 17:48",
+  "ts": 1794156493,
+  "league": "Super League",
+  "country": "SUI",
+  "leagueId": 69,
+  "home": "Servette",
+  "away": "FC Zürich",
+  "matchId": 5804294,
+  "reason": "xG atteso prematch 3.44 (casa 2.00 + ospite 1.44) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.22",
+    "0.52"
+   ],
+   "poss": [
+    45,
+    55
+   ],
+   "shots": [
+    2,
+    7
+   ],
+   "sot": [
+    1,
+    1
+   ],
+   "big": [
+    1,
+    1
+   ],
+   "box": [
+    6,
+    15
+   ],
+   "corners": [
+    3,
+    6
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5804294",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.443,
+   "exp_home": 2.0,
+   "exp_away": 1.443,
+   "h_for": 1.662,
+   "h_ag": 1.29,
+   "a_for": 1.597,
+   "a_ag": 2.338,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
+ },
+ {
+  "id": "5804294-subisce",
+  "type": "subisce",
+  "time": "2026-11-08 17:48",
+  "ts": 1794156493,
+  "league": "Super League",
+  "country": "SUI",
+  "leagueId": 69,
+  "home": "Servette",
+  "away": "FC Zürich",
+  "matchId": 5804294,
+  "reason": "Ospite ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Casa: 10/12) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.22",
+    "0.52"
+   ],
+   "poss": [
+    45,
+    55
+   ],
+   "shots": [
+    2,
+    7
+   ],
+   "sot": [
+    1,
+    1
+   ],
+   "big": [
+    1,
+    1
+   ],
+   "box": [
+    6,
+    15
+   ],
+   "corners": [
+    3,
+    6
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5804294",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "season": "2026/27",
+   "strong": "away",
+   "home": {
+    "n": 12,
+    "scored": 9,
+    "conceded": 10,
+    "no00": 12
+   },
+   "away": {
+    "n": 12,
+    "scored": 11,
+    "conceded": 12,
+    "no00": 12
+   }
+  },
+  "telegram": true
  }
 ]
