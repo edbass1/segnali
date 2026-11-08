@@ -8153,5 +8153,80 @@
   },
   "telegram": true,
   "resolved": "2026-11-08 08:02"
+ },
+ {
+  "id": "5803649-subisce",
+  "type": "subisce",
+  "time": "2026-11-08 10:21",
+  "ts": 1794129675,
+  "league": "J. League",
+  "country": "JPN",
+  "leagueId": 223,
+  "home": "JEF United Chiba",
+  "away": "Mito Hollyhock",
+  "matchId": 5803649,
+  "reason": "Ospite ha subito almeno 1 gol in 13/13 partite di campionato 2026/27 (Casa: 10/13) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.22",
+    "0.71"
+   ],
+   "poss": [
+    48,
+    52
+   ],
+   "shots": [
+    5,
+    12
+   ],
+   "sot": [
+    0,
+    0
+   ],
+   "big": [
+    0,
+    1
+   ],
+   "box": [
+    8,
+    18
+   ],
+   "corners": [
+    0,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5803649",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "season": "2026/27",
+   "strong": "away",
+   "home": {
+    "n": 13,
+    "scored": 9,
+    "conceded": 10,
+    "no00": 12
+   },
+   "away": {
+    "n": 13,
+    "scored": 7,
+    "conceded": 13,
+    "no00": 13
+   }
+  },
+  "telegram": true
  }
 ]
