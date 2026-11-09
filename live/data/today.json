@@ -1,6 +1,6 @@
 {
  "date": "2026-11-09",
- "generated_at": "2026-11-09 01:50",
+ "generated_at": "2026-11-09 02:58",
  "partial": false,
  "stats": {
   "matches_day": 64,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 324,
-  "seconds": 90
+  "seconds": 72
  },
  "skipped_leagues": {
   "ESP Liga F": "femminile"
@@ -89,7 +89,7 @@
    "away": "Deportivo Malacateco",
    "url": "https://www.fotmob.com/match/5861316",
    "finished": false,
-   "score": "1-0",
+   "score": "2-0",
    "types": [
     "storico"
    ],
