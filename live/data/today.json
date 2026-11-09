@@ -1,6 +1,6 @@
 {
  "date": "2026-11-09",
- "generated_at": "2026-11-09 20:25",
+ "generated_at": "2026-11-09 21:20",
  "partial": false,
  "stats": {
   "matches_day": 65,
@@ -16,8 +16,8 @@
    "subisce": 1,
    "mai00": 0
   },
-  "requests": 342,
-  "seconds": 71
+  "requests": 341,
+  "seconds": 81
  },
  "skipped_leagues": {
   "ESP Liga F": "femminile"
@@ -223,7 +223,7 @@
    "home": "Kristiansund",
    "away": "Vålerenga",
    "url": "https://www.fotmob.com/match/5105046",
-   "finished": false,
+   "finished": true,
    "score": "1-0",
    "types": [
     "storico",
