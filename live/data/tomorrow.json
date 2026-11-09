@@ -1,6 +1,6 @@
 {
  "date": "2026-11-10",
- "generated_at": "2026-11-09 11:47",
+ "generated_at": "2026-11-09 12:46",
  "partial": false,
  "stats": {
   "matches_day": 73,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 102,
-  "seconds": 37
+  "seconds": 40
  },
  "skipped_leagues": {
   "DEN A-Liga": "femminile"
@@ -85,51 +85,6 @@
    }
   },
   {
-   "matchId": 5948093,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Isthmian Premier Division",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Cray Wanderers",
-   "away": "Three Bridges",
-   "url": "https://www.fotmob.com/match/5948093",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Ospite ha subito almeno 1 gol in 15/15 partite di campionato 2026/27 (Casa: 9/10) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 15,
-     "strong_n": 15,
-     "strong_pct": 100,
-     "other_k": 9,
-     "other_n": 10,
-     "other_pct": 90
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 9,
-     "conceded": 9,
-     "no00": 9
-    },
-    "away": {
-     "n": 15,
-     "scored": 13,
-     "conceded": 15,
-     "no00": 15
-    }
-   }
-  },
-  {
    "matchId": 5948171,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-10T19:45:00.000Z",
@@ -178,47 +133,47 @@
    }
   },
   {
-   "matchId": 5949312,
+   "matchId": 5948093,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Northern Premier Division",
+   "league": "Isthmian Premier Division",
    "country": "ENG",
    "leagueId": 8947,
-   "home": "Bury",
-   "away": "Cleethorpes Town",
-   "url": "https://www.fotmob.com/match/5949312",
+   "home": "Cray Wanderers",
+   "away": "Three Bridges",
+   "url": "https://www.fotmob.com/match/5948093",
    "finished": false,
    "score": null,
    "types": [
-    "segna"
+    "subisce"
    ],
    "reasons": {
-    "segna": "Ospite ha segnato almeno 1 gol in 16/16 partite di campionato 2026/27; Casa in 12/15 (80%) [solo campionato in corso, min. 9 partite per squadra]"
+    "subisce": "Ospite ha subito almeno 1 gol in 15/15 partite di campionato 2026/27 (Casa: 9/10) [solo campionato in corso, min. 9 partite per squadra]"
    },
    "info": {
-    "segna": {
+    "subisce": {
      "strong": "away",
      "season": "2026/27",
-     "strong_k": 16,
-     "strong_n": 16,
+     "strong_k": 15,
+     "strong_n": 15,
      "strong_pct": 100,
-     "other_k": 12,
-     "other_n": 15,
-     "other_pct": 80
+     "other_k": 9,
+     "other_n": 10,
+     "other_pct": 90
     }
    },
    "cur": {
     "home": {
-     "n": 15,
-     "scored": 12,
+     "n": 10,
+     "scored": 9,
      "conceded": 9,
-     "no00": 14
+     "no00": 9
     },
     "away": {
-     "n": 16,
-     "scored": 16,
-     "conceded": 6,
-     "no00": 16
+     "n": 15,
+     "scored": 13,
+     "conceded": 15,
+     "no00": 15
     }
    }
   },
@@ -263,6 +218,51 @@
      "scored": 11,
      "conceded": 14,
      "no00": 17
+    }
+   }
+  },
+  {
+   "matchId": 5949312,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-10T19:45:00.000Z",
+   "league": "Northern Premier Division",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Bury",
+   "away": "Cleethorpes Town",
+   "url": "https://www.fotmob.com/match/5949312",
+   "finished": false,
+   "score": null,
+   "types": [
+    "segna"
+   ],
+   "reasons": {
+    "segna": "Ospite ha segnato almeno 1 gol in 16/16 partite di campionato 2026/27; Casa in 12/15 (80%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "segna": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 16,
+     "strong_n": 16,
+     "strong_pct": 100,
+     "other_k": 12,
+     "other_n": 15,
+     "other_pct": 80
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 12,
+     "conceded": 9,
+     "no00": 14
+    },
+    "away": {
+     "n": 16,
+     "scored": 16,
+     "conceded": 6,
+     "no00": 16
     }
    }
   },
