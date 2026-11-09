@@ -1,6 +1,6 @@
 {
  "date": "2026-11-09",
- "generated_at": "2026-11-09 18:30",
+ "generated_at": "2026-11-09 19:18",
  "partial": false,
  "stats": {
   "matches_day": 65,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 342,
-  "seconds": 74
+  "seconds": 102
  },
  "skipped_leagues": {
   "ESP Liga F": "femminile"
@@ -224,7 +224,7 @@
    "away": "Vålerenga",
    "url": "https://www.fotmob.com/match/5105046",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "storico",
     "xg"
