@@ -1,23 +1,23 @@
 {
  "date": "2026-11-11",
- "generated_at": "2026-11-09 04:46",
+ "generated_at": "2026-11-09 05:55",
  "partial": false,
  "stats": {
   "matches_day": 49,
   "candidates": 12,
-  "evaluated": 9,
-  "qualified": 1,
-  "errors": 2,
+  "evaluated": 11,
+  "qualified": 3,
+  "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 0,
-   "xg": 1,
+   "xg": 3,
    "segna": 0,
    "subisce": 0,
    "mai00": 0
   },
-  "requests": 66,
-  "seconds": 38
+  "requests": 91,
+  "seconds": 58
  },
  "skipped_leagues": {
   "SCO SWPL 1": "femminile"
@@ -36,6 +36,90 @@
   "mai00_other": 90
  },
  "matches": [
+  {
+   "matchId": 1000022941,
+   "kickoff": "01:00",
+   "kickoff_utc": "2026-11-11T00:00:00.000Z",
+   "league": "Liga de Expansión MX - Apertura - Semi-finals",
+   "country": "MEX",
+   "leagueId": 8976,
+   "home": "Piratas",
+   "away": "Atlético La Paz",
+   "url": "https://www.fotmob.com/match/1000022941",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.10 (casa 1.83 + ospite 1.27) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.1,
+     "exp_home": 1.83,
+     "exp_away": 1.27,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 17,
+     "scored": 13,
+     "conceded": 11,
+     "no00": 16
+    },
+    "away": {
+     "n": 17,
+     "scored": 16,
+     "conceded": 12,
+     "no00": 17
+    }
+   }
+  },
+  {
+   "matchId": 1000022942,
+   "kickoff": "01:00",
+   "kickoff_utc": "2026-11-11T00:00:00.000Z",
+   "league": "Liga de Expansión MX - Apertura - Semi-finals",
+   "country": "MEX",
+   "leagueId": 8976,
+   "home": "Atlético Morelia",
+   "away": "Leones Negros",
+   "url": "https://www.fotmob.com/match/1000022942",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.03 (casa 1.66 + ospite 1.37) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.03,
+     "exp_home": 1.66,
+     "exp_away": 1.37,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 17,
+     "scored": 16,
+     "conceded": 14,
+     "no00": 17
+    },
+    "away": {
+     "n": 17,
+     "scored": 15,
+     "conceded": 14,
+     "no00": 17
+    }
+   }
+  },
   {
    "matchId": 5190812,
    "kickoff": "23:00",
