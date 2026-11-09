@@ -1,6 +1,6 @@
 {
  "date": "2026-11-11",
- "generated_at": "2026-11-09 00:27",
+ "generated_at": "2026-11-09 01:00",
  "partial": false,
  "stats": {
   "matches_day": 49,
@@ -16,8 +16,8 @@
    "subisce": 0,
    "mai00": 0
   },
-  "requests": 60,
-  "seconds": 35
+  "requests": 71,
+  "seconds": 34
  },
  "skipped_leagues": {
   "SCO SWPL 1": "femminile"
