@@ -1,11 +1,11 @@
 {
  "date": "2026-11-10",
- "generated_at": "2026-11-09 08:04",
+ "generated_at": "2026-11-09 09:44",
  "partial": false,
  "stats": {
-  "matches_day": 75,
-  "candidates": 42,
-  "evaluated": 41,
+  "matches_day": 73,
+  "candidates": 39,
+  "evaluated": 38,
   "qualified": 9,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 1,
    "mai00": 0
   },
-  "requests": 108,
-  "seconds": 45
+  "requests": 102,
+  "seconds": 32
  },
  "skipped_leagues": {
   "DEN A-Liga": "femminile"
@@ -178,6 +178,50 @@
    }
   },
   {
+   "matchId": 5949319,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-10T19:45:00.000Z",
+   "league": "Northern Premier Division",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Quorn",
+   "away": "Stockton Town",
+   "url": "https://www.fotmob.com/match/5949319",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Casa: almeno 58 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Ospite: 2 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 58,
+     "complete": false,
+     "capped": false,
+     "last00": null,
+     "other_zz": 2,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 16,
+     "scored": 14,
+     "conceded": 13,
+     "no00": 16
+    },
+    "away": {
+     "n": 17,
+     "scored": 11,
+     "conceded": 14,
+     "no00": 17
+    }
+   }
+  },
+  {
    "matchId": 5949312,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-10T19:45:00.000Z",
@@ -219,50 +263,6 @@
      "scored": 16,
      "conceded": 6,
      "no00": 16
-    }
-   }
-  },
-  {
-   "matchId": 5949319,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Northern Premier Division",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Quorn",
-   "away": "Stockton Town",
-   "url": "https://www.fotmob.com/match/5949319",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Casa: almeno 58 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Ospite: 2 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "home",
-     "streak": 58,
-     "complete": false,
-     "capped": false,
-     "last00": null,
-     "other_zz": 2,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 14,
-     "conceded": 13,
-     "no00": 16
-    },
-    "away": {
-     "n": 17,
-     "scored": 11,
-     "conceded": 14,
-     "no00": 17
     }
    }
   },

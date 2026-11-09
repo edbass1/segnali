@@ -1,11 +1,11 @@
 {
  "date": "2026-11-11",
- "generated_at": "2026-11-09 08:06",
+ "generated_at": "2026-11-09 09:44",
  "partial": false,
  "stats": {
-  "matches_day": 49,
+  "matches_day": 50,
   "candidates": 12,
-  "evaluated": 11,
+  "evaluated": 10,
   "qualified": 3,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,10 +16,11 @@
    "subisce": 0,
    "mai00": 0
   },
-  "requests": 91,
-  "seconds": 63
+  "requests": 90,
+  "seconds": 44
  },
  "skipped_leagues": {
+  "FRA Premiere Ligue": "femminile",
   "SCO SWPL 1": "femminile"
  },
  "rules": {
