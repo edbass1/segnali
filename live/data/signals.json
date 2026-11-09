@@ -9395,5 +9395,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-08 21:26"
+ },
+ {
+  "id": "1000014642-xg",
+  "type": "xg",
+  "time": "2026-11-09 04:34",
+  "ts": 1794195248,
+  "league": "Liga MX",
+  "country": "MEX",
+  "leagueId": 230,
+  "home": "León",
+  "away": "Chivas",
+  "matchId": 1000014642,
+  "reason": "xG atteso prematch 2.73 (casa 1.19 + ospite 1.54) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.12",
+    "0.30"
+   ],
+   "poss": [
+    41,
+    59
+   ],
+   "shots": [
+    4,
+    7
+   ],
+   "sot": [
+    2,
+    1
+   ],
+   "big": [
+    0,
+    0
+   ],
+   "box": [
+    4,
+    8
+   ],
+   "corners": [
+    1,
+    3
+   ],
+   "red": [
+    1,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000014642",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.729,
+   "exp_home": 1.186,
+   "exp_away": 1.543,
+   "h_for": 1.314,
+   "h_ag": 1.446,
+   "a_for": 1.64,
+   "a_ag": 1.059,
+   "method": "casa/trasferta",
+   "season": "2026/2027 - Apertura"
+  },
+  "telegram": true
  }
 ]
