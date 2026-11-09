@@ -1,6 +1,6 @@
 {
  "date": "2026-11-10",
- "generated_at": "2026-11-09 16:23",
+ "generated_at": "2026-11-09 17:31",
  "partial": false,
  "stats": {
   "matches_day": 72,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 98,
-  "seconds": 43
+  "seconds": 36
  },
  "skipped_leagues": {
   "DEN A-Liga": "femminile"
@@ -178,50 +178,6 @@
    }
   },
   {
-   "matchId": 5949319,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Northern Premier Division",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Quorn",
-   "away": "Stockton Town",
-   "url": "https://www.fotmob.com/match/5949319",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Casa: almeno 58 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Ospite: 2 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "home",
-     "streak": 58,
-     "complete": false,
-     "capped": false,
-     "last00": null,
-     "other_zz": 2,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 14,
-     "conceded": 13,
-     "no00": 16
-    },
-    "away": {
-     "n": 17,
-     "scored": 11,
-     "conceded": 14,
-     "no00": 17
-    }
-   }
-  },
-  {
    "matchId": 5949312,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-10T19:45:00.000Z",
@@ -263,6 +219,50 @@
      "scored": 16,
      "conceded": 6,
      "no00": 16
+    }
+   }
+  },
+  {
+   "matchId": 5949319,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-10T19:45:00.000Z",
+   "league": "Northern Premier Division",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Quorn",
+   "away": "Stockton Town",
+   "url": "https://www.fotmob.com/match/5949319",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Casa: almeno 58 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Ospite: 2 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 58,
+     "complete": false,
+     "capped": false,
+     "last00": null,
+     "other_zz": 2,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 16,
+     "scored": 14,
+     "conceded": 13,
+     "no00": 16
+    },
+    "away": {
+     "n": 17,
+     "scored": 11,
+     "conceded": 14,
+     "no00": 17
     }
    }
   },
@@ -372,6 +372,51 @@
    }
   },
   {
+   "matchId": 5953988,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-10T19:45:00.000Z",
+   "league": "Southern Premier Division South",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Chertsey Town",
+   "away": "Chichester City FC",
+   "url": "https://www.fotmob.com/match/5953988",
+   "finished": false,
+   "score": null,
+   "types": [
+    "segna"
+   ],
+   "reasons": {
+    "segna": "Casa ha segnato almeno 1 gol in 15/15 partite di campionato 2026/27; Ospite in 13/16 (81%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "segna": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 15,
+     "strong_n": 15,
+     "strong_pct": 100,
+     "other_k": 13,
+     "other_n": 16,
+     "other_pct": 81
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 15,
+     "conceded": 12,
+     "no00": 15
+    },
+    "away": {
+     "n": 16,
+     "scored": 13,
+     "conceded": 13,
+     "no00": 16
+    }
+   }
+  },
+  {
    "matchId": 5953993,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-10T19:45:00.000Z",
@@ -416,51 +461,6 @@
      "scored": 9,
      "conceded": 14,
      "no00": 15
-    }
-   }
-  },
-  {
-   "matchId": 5953988,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Southern Premier Division South",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Chertsey Town",
-   "away": "Chichester City FC",
-   "url": "https://www.fotmob.com/match/5953988",
-   "finished": false,
-   "score": null,
-   "types": [
-    "segna"
-   ],
-   "reasons": {
-    "segna": "Casa ha segnato almeno 1 gol in 15/15 partite di campionato 2026/27; Ospite in 13/16 (81%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "segna": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 15,
-     "strong_n": 15,
-     "strong_pct": 100,
-     "other_k": 13,
-     "other_n": 16,
-     "other_pct": 81
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 15,
-     "scored": 15,
-     "conceded": 12,
-     "no00": 15
-    },
-    "away": {
-     "n": 16,
-     "scored": 13,
-     "conceded": 13,
-     "no00": 16
     }
    }
   }
