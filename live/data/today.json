@@ -1,11 +1,11 @@
 {
  "date": "2026-11-09",
- "generated_at": "2026-11-09 00:59",
+ "generated_at": "2026-11-09 01:50",
  "partial": false,
  "stats": {
-  "matches_day": 70,
-  "candidates": 54,
-  "evaluated": 51,
+  "matches_day": 64,
+  "candidates": 48,
+  "evaluated": 46,
   "qualified": 5,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,11 +16,10 @@
    "subisce": 1,
    "mai00": 0
   },
-  "requests": 418,
-  "seconds": 87
+  "requests": 324,
+  "seconds": 90
  },
  "skipped_leagues": {
-  "USA USL Super League": "femminile",
   "ESP Liga F": "femminile"
  },
  "rules": {
@@ -48,7 +47,7 @@
    "away": "Puebla",
    "url": "https://www.fotmob.com/match/1000014641",
    "finished": false,
-   "score": null,
+   "score": "0-2",
    "types": [
     "xg"
    ],
@@ -90,7 +89,7 @@
    "away": "Deportivo Malacateco",
    "url": "https://www.fotmob.com/match/5861316",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "storico"
    ],
