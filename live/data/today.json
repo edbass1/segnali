@@ -1,26 +1,27 @@
 {
- "date": "2026-11-10",
- "generated_at": "2026-11-10 19:25",
+ "date": "2026-11-11",
+ "generated_at": "2026-11-11 00:37",
  "partial": false,
  "stats": {
-  "matches_day": 71,
-  "candidates": 37,
-  "evaluated": 36,
-  "qualified": 9,
+  "matches_day": 48,
+  "candidates": 10,
+  "evaluated": 8,
+  "qualified": 1,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
-   "storico": 5,
-   "xg": 0,
-   "segna": 4,
-   "subisce": 1,
+   "storico": 0,
+   "xg": 1,
+   "segna": 0,
+   "subisce": 0,
    "mai00": 0
   },
-  "requests": 127,
-  "seconds": 52
+  "requests": 77,
+  "seconds": 39
  },
  "skipped_leagues": {
-  "DEN A-Liga": "femminile"
+  "FRA Premiere Ligue": "femminile",
+  "SCO SWPL 1": "femminile"
  },
  "rules": {
   "window": "60-70'",
@@ -37,430 +38,44 @@
  },
  "matches": [
   {
-   "matchId": 1000022378,
-   "kickoff": "01:30",
-   "kickoff_utc": "2026-11-10T00:30:00.000Z",
-   "league": "Primera División",
-   "country": "BOL",
-   "leagueId": 144,
-   "home": "Aurora",
-   "away": "Universitario de Vinto",
-   "url": "https://www.fotmob.com/match/1000022378",
-   "finished": true,
-   "score": "1-1",
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 52 partite di campionato consecutive senza 0-0 (ultimo 0-0: 04/04/2025 @ Oriente Petrolero); Casa: 3 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 52,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "04/04/2025",
-      "opp": "Oriente Petrolero",
-      "home": false
-     },
-     "other_zz": 3,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 24,
-     "scored": 19,
-     "conceded": 18,
-     "no00": 22
-    },
-    "away": {
-     "n": 24,
-     "scored": 18,
-     "conceded": 22,
-     "no00": 24
-    }
-   }
-  },
-  {
-   "matchId": 5948171,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Isthmian Premier Division",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Eastbourne Borough",
-   "away": "Dulwich Hamlet",
-   "url": "https://www.fotmob.com/match/5948171",
+   "matchId": 5190812,
+   "kickoff": "23:00",
+   "kickoff_utc": "2026-11-11T22:00:00.000Z",
+   "league": "Série B",
+   "country": "BRA",
+   "leagueId": 8814,
+   "home": "Londrina",
+   "away": "Náutico",
+   "url": "https://www.fotmob.com/match/5190812",
    "finished": false,
    "score": null,
    "types": [
-    "storico"
+    "xg"
    ],
    "reasons": {
-    "storico": "Casa: 52 partite di campionato consecutive senza 0-0 (ultimo 0-0: 20/09/2025 vs Salisbury); Ospite: 3 0-0 nelle ultime 50 di campionato"
+    "xg": "xG atteso prematch 3.03 (casa 1.76 + ospite 1.27) ≥ 2.7"
    },
    "info": {
-    "storico": {
-     "strong": "home",
-     "streak": 52,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "20/09/2025",
-      "opp": "Salisbury",
-      "home": true
-     },
-     "other_zz": 3,
-     "other_n": 50
+    "xg": {
+     "total": 3.03,
+     "exp_home": 1.76,
+     "exp_away": 1.27,
+     "method": "casa/trasferta",
+     "season": "2026"
     }
    },
    "cur": {
     "home": {
-     "n": 15,
-     "scored": 13,
-     "conceded": 9,
-     "no00": 15
+     "n": 37,
+     "scored": 24,
+     "conceded": 29,
+     "no00": 33
     },
     "away": {
-     "n": 16,
-     "scored": 12,
-     "conceded": 13,
-     "no00": 16
-    }
-   }
-  },
-  {
-   "matchId": 5948093,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Isthmian Premier Division",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Cray Wanderers",
-   "away": "Three Bridges",
-   "url": "https://www.fotmob.com/match/5948093",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Ospite ha subito almeno 1 gol in 15/15 partite di campionato 2026/27 (Casa: 9/10) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 15,
-     "strong_n": 15,
-     "strong_pct": 100,
-     "other_k": 9,
-     "other_n": 10,
-     "other_pct": 90
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 9,
-     "conceded": 9,
-     "no00": 9
-    },
-    "away": {
-     "n": 15,
-     "scored": 13,
-     "conceded": 15,
-     "no00": 15
-    }
-   }
-  },
-  {
-   "matchId": 5949312,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Northern Premier Division",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Bury",
-   "away": "Cleethorpes Town",
-   "url": "https://www.fotmob.com/match/5949312",
-   "finished": false,
-   "score": null,
-   "types": [
-    "segna"
-   ],
-   "reasons": {
-    "segna": "Ospite ha segnato almeno 1 gol in 16/16 partite di campionato 2026/27; Casa in 12/15 (80%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "segna": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 16,
-     "strong_n": 16,
-     "strong_pct": 100,
-     "other_k": 12,
-     "other_n": 15,
-     "other_pct": 80
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 15,
-     "scored": 12,
-     "conceded": 9,
-     "no00": 14
-    },
-    "away": {
-     "n": 16,
-     "scored": 16,
-     "conceded": 6,
-     "no00": 16
-    }
-   }
-  },
-  {
-   "matchId": 5949319,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Northern Premier Division",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Quorn",
-   "away": "Stockton Town",
-   "url": "https://www.fotmob.com/match/5949319",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Casa: almeno 58 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Ospite: 2 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "home",
-     "streak": 58,
-     "complete": false,
-     "capped": false,
-     "last00": null,
-     "other_zz": 2,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 14,
-     "conceded": 13,
-     "no00": 16
-    },
-    "away": {
-     "n": 17,
-     "scored": 11,
-     "conceded": 14,
-     "no00": 17
-    }
-   }
-  },
-  {
-   "matchId": 5953525,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Southern Premier Division Central",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Anstey Nomads",
-   "away": "Kettering Town FC",
-   "url": "https://www.fotmob.com/match/5953525",
-   "finished": false,
-   "score": null,
-   "types": [
-    "segna"
-   ],
-   "reasons": {
-    "segna": "Casa ha segnato almeno 1 gol in 15/15 partite di campionato 2026/27; Ospite in 15/16 (94%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "segna": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 15,
-     "strong_n": 15,
-     "strong_pct": 100,
-     "other_k": 15,
-     "other_n": 16,
-     "other_pct": 94
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 15,
-     "scored": 15,
-     "conceded": 13,
-     "no00": 15
-    },
-    "away": {
-     "n": 16,
-     "scored": 15,
-     "conceded": 10,
-     "no00": 15
-    }
-   }
-  },
-  {
-   "matchId": 5953527,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Southern Premier Division Central",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Leamington",
-   "away": "Bromsgrove Sporting",
-   "url": "https://www.fotmob.com/match/5953527",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico",
-    "segna"
-   ],
-   "reasons": {
-    "storico": "Ospite: 84 partite di campionato consecutive senza 0-0 (ultimo 0-0: 09/11/2024 @ Leiston); Casa: 1 0-0 nelle ultime 50 di campionato",
-    "segna": "Ospite ha segnato almeno 1 gol in 15/15 partite di campionato 2026/27; Casa in 14/16 (88%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 84,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "09/11/2024",
-      "opp": "Leiston",
-      "home": false
-     },
-     "other_zz": 1,
-     "other_n": 50
-    },
-    "segna": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 15,
-     "strong_n": 15,
-     "strong_pct": 100,
-     "other_k": 14,
-     "other_n": 16,
-     "other_pct": 88
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 14,
-     "conceded": 13,
-     "no00": 16
-    },
-    "away": {
-     "n": 15,
-     "scored": 15,
-     "conceded": 12,
-     "no00": 15
-    }
-   }
-  },
-  {
-   "matchId": 5953988,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Southern Premier Division South",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Chertsey Town",
-   "away": "Chichester City FC",
-   "url": "https://www.fotmob.com/match/5953988",
-   "finished": false,
-   "score": null,
-   "types": [
-    "segna"
-   ],
-   "reasons": {
-    "segna": "Casa ha segnato almeno 1 gol in 15/15 partite di campionato 2026/27; Ospite in 13/16 (81%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "segna": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 15,
-     "strong_n": 15,
-     "strong_pct": 100,
-     "other_k": 13,
-     "other_n": 16,
-     "other_pct": 81
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 15,
-     "scored": 15,
-     "conceded": 12,
-     "no00": 15
-    },
-    "away": {
-     "n": 16,
-     "scored": 13,
-     "conceded": 13,
-     "no00": 16
-    }
-   }
-  },
-  {
-   "matchId": 5953993,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-10T19:45:00.000Z",
-   "league": "Southern Premier Division South",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Sholing",
-   "away": "Chippenham Town",
-   "url": "https://www.fotmob.com/match/5953993",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 66 partite di campionato consecutive senza 0-0 (ultimo 0-0: 29/03/2025 @ Enfield Town); Casa: 3 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 66,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "29/03/2025",
-      "opp": "Enfield Town",
-      "home": false
-     },
-     "other_zz": 3,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 12,
-     "conceded": 9,
-     "no00": 12
-    },
-    "away": {
-     "n": 15,
-     "scored": 9,
-     "conceded": 14,
-     "no00": 15
+     "n": 37,
+     "scored": 22,
+     "conceded": 27,
+     "no00": 34
     }
    }
   }
