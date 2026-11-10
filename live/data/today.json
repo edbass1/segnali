@@ -1,9 +1,9 @@
 {
  "date": "2026-11-10",
- "generated_at": "2026-11-10 11:41",
+ "generated_at": "2026-11-10 19:25",
  "partial": false,
  "stats": {
-  "matches_day": 72,
+  "matches_day": 71,
   "candidates": 37,
   "evaluated": 36,
   "qualified": 9,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 127,
-  "seconds": 41
+  "seconds": 52
  },
  "skipped_leagues": {
   "DEN A-Liga": "femminile"
