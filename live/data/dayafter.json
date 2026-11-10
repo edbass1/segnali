@@ -1,23 +1,23 @@
 {
  "date": "2026-11-12",
- "generated_at": "2026-11-10 03:51",
+ "generated_at": "2026-11-10 11:42",
  "partial": false,
  "stats": {
-  "matches_day": 58,
-  "candidates": 11,
-  "evaluated": 10,
-  "qualified": 0,
+  "matches_day": 61,
+  "candidates": 13,
+  "evaluated": 12,
+  "qualified": 2,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 0,
-   "xg": 0,
+   "xg": 2,
    "segna": 0,
    "subisce": 0,
    "mai00": 0
   },
-  "requests": 25,
-  "seconds": 11
+  "requests": 82,
+  "seconds": 35
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile"
@@ -35,5 +35,90 @@
   "mai00_strong": 100,
   "mai00_other": 90
  },
- "matches": []
+ "matches": [
+  {
+   "matchId": 1000022941,
+   "kickoff": "03:00",
+   "kickoff_utc": "2026-11-12T02:00:00.000Z",
+   "league": "Liga de Expansión MX - Apertura - Semi-finals",
+   "country": "MEX",
+   "leagueId": 8976,
+   "home": "Piratas",
+   "away": "Atlético La Paz",
+   "url": "https://www.fotmob.com/match/1000022941",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.10 (casa 1.83 + ospite 1.27) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.1,
+     "exp_home": 1.83,
+     "exp_away": 1.27,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 17,
+     "scored": 13,
+     "conceded": 11,
+     "no00": 16
+    },
+    "away": {
+     "n": 17,
+     "scored": 16,
+     "conceded": 12,
+     "no00": 17
+    }
+   }
+  },
+  {
+   "matchId": 5190809,
+   "kickoff": "23:00",
+   "kickoff_utc": "2026-11-12T22:00:00.000Z",
+   "league": "Série B",
+   "country": "BRA",
+   "leagueId": 8814,
+   "home": "Ponte Preta",
+   "away": "Operário-PR",
+   "url": "https://www.fotmob.com/match/5190809",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.75 (casa 1.41 + ospite 1.35) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.75,
+     "exp_home": 1.41,
+     "exp_away": 1.35,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 37,
+     "scored": 17,
+     "conceded": 34,
+     "no00": 36
+    },
+    "away": {
+     "n": 37,
+     "scored": 28,
+     "conceded": 25,
+     "no00": 33
+    }
+   }
+  }
+ ]
 }
