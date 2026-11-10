@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-11-09 23:11",
+ "last_scan": "2026-11-10 04:42",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -14,26 +14,6 @@
   "mai00_other": 90
  },
  "sent": {
-  "5962474": {},
-  "1000014225": {},
-  "5071487": {
-   "xg": "2026-11-07 23:29"
-  },
-  "5071486": {
-   "xg": "2026-11-07 23:30"
-  },
-  "1000022595": {},
-  "1000023068": {},
-  "5833831": {},
-  "5071495": {
-   "xg": "2026-11-08 02:30"
-  },
-  "5071498": {
-   "xg": "2026-11-08 02:31"
-  },
-  "6365914": {},
-  "1000014226": {},
-  "1000023078": {},
   "6255280": {},
   "6284010": {},
   "6503835": {
@@ -155,138 +135,6 @@
   "6556309": {}
  },
  "checked": {
-  "5962474": {
-   "t": 1794090039,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "1000014225": {
-   "t": 1794090228,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "5071487": {
-   "t": 1794090599,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": true,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "5071486": {
-   "t": 1794090611,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": true,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "1000022595": {
-   "t": 1794097084,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "1000023068": {
-   "t": 1794097743,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "5833831": {
-   "t": 1794100751,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "5071495": {
-   "t": 1794101436,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": true,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "5071498": {
-   "t": 1794101460,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": true,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "6365914": {
-   "t": 1794106170,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "1000014226": {
-   "t": 1794107380,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "1000023078": {
-   "t": 1794108462,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
   "6255280": {
    "t": 1794111340,
    "r": "valutata",
@@ -1218,11 +1066,11 @@
    }
   }
  },
- "live_count": 3,
+ "live_count": 0,
  "candidates_last": 0,
  "requests_last": 1,
- "last_write": "2026-11-09 23:11",
- "last_write_ts": 1794262300,
+ "last_write": "2026-11-10 04:42",
+ "last_write_ts": 1794282146,
  "telegram": {
   "last_try": "2026-11-09 05:09",
   "ok": true,
