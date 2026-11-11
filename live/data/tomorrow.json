@@ -1,11 +1,11 @@
 {
  "date": "2026-11-12",
- "generated_at": "2026-11-11 00:38",
+ "generated_at": "2026-11-11 05:06",
  "partial": false,
  "stats": {
-  "matches_day": 53,
-  "candidates": 14,
-  "evaluated": 13,
+  "matches_day": 54,
+  "candidates": 15,
+  "evaluated": 14,
   "qualified": 2,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 0,
    "mai00": 0
   },
-  "requests": 114,
-  "seconds": 34
+  "requests": 118,
+  "seconds": 37
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile"
