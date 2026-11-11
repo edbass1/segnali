@@ -1,9 +1,9 @@
 {
  "date": "2026-11-11",
- "generated_at": "2026-11-11 13:00",
+ "generated_at": "2026-11-11 20:27",
  "partial": false,
  "stats": {
-  "matches_day": 47,
+  "matches_day": 46,
   "candidates": 10,
   "evaluated": 8,
   "qualified": 1,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 77,
-  "seconds": 52
+  "seconds": 42
  },
  "skipped_leagues": {
   "FRA Premiere Ligue": "femminile",
