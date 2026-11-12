@@ -1,26 +1,26 @@
 {
- "date": "2026-11-12",
- "generated_at": "2026-11-12 18:40",
+ "date": "2026-11-13",
+ "generated_at": "2026-11-13 00:05",
  "partial": false,
  "stats": {
-  "matches_day": 62,
-  "candidates": 15,
-  "evaluated": 14,
-  "qualified": 2,
+  "matches_day": 96,
+  "candidates": 40,
+  "evaluated": 39,
+  "qualified": 11,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
-   "storico": 0,
-   "xg": 2,
+   "storico": 5,
+   "xg": 3,
    "segna": 0,
-   "subisce": 0,
+   "subisce": 3,
    "mai00": 0
   },
-  "requests": 134,
-  "seconds": 39
+  "requests": 300,
+  "seconds": 74
  },
  "skipped_leagues": {
-  "USA USL Super League": "femminile"
+  "FRA Premiere Ligue": "femminile"
  },
  "rules": {
   "window": "60-70'",
@@ -37,48 +37,6 @@
  },
  "matches": [
   {
-   "matchId": 1000022941,
-   "kickoff": "03:00",
-   "kickoff_utc": "2026-11-12T02:00:00.000Z",
-   "league": "Liga de Expansión MX - Apertura - Semi-finals",
-   "country": "MEX",
-   "leagueId": 8976,
-   "home": "Piratas",
-   "away": "Atlético La Paz",
-   "url": "https://www.fotmob.com/match/1000022941",
-   "finished": true,
-   "score": "1-1",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.10 (casa 1.83 + ospite 1.27) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.1,
-     "exp_home": 1.83,
-     "exp_away": 1.27,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 17,
-     "scored": 13,
-     "conceded": 11,
-     "no00": 16
-    },
-    "away": {
-     "n": 17,
-     "scored": 16,
-     "conceded": 12,
-     "no00": 17
-    }
-   }
-  },
-  {
    "matchId": 5190809,
    "kickoff": "23:00",
    "kickoff_utc": "2026-11-12T22:00:00.000Z",
@@ -89,7 +47,7 @@
    "away": "Operário-PR",
    "url": "https://www.fotmob.com/match/5190809",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -117,6 +75,461 @@
      "scored": 28,
      "conceded": 25,
      "no00": 33
+    }
+   }
+  },
+  {
+   "matchId": 1000022942,
+   "kickoff": "03:00",
+   "kickoff_utc": "2026-11-13T02:00:00.000Z",
+   "league": "Liga de Expansión MX - Apertura - Semi-finals",
+   "country": "MEX",
+   "leagueId": 8976,
+   "home": "Atlético Morelia",
+   "away": "Leones Negros",
+   "url": "https://www.fotmob.com/match/1000022942",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.03 (casa 1.66 + ospite 1.37) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.03,
+     "exp_home": 1.66,
+     "exp_away": 1.37,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 17,
+     "scored": 16,
+     "conceded": 14,
+     "no00": 17
+    },
+    "away": {
+     "n": 17,
+     "scored": 15,
+     "conceded": 14,
+     "no00": 17
+    }
+   }
+  },
+  {
+   "matchId": 6103178,
+   "kickoff": "18:00",
+   "kickoff_utc": "2026-11-13T17:00:00.000Z",
+   "league": "NPFL",
+   "country": "NGA",
+   "leagueId": 533,
+   "home": "Shooting Stars",
+   "away": "Bendel Insurance",
+   "url": "https://www.fotmob.com/match/6103178",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Ospite ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Casa: 9/12) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 12,
+     "strong_n": 12,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 12,
+     "other_pct": 75
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 7,
+     "conceded": 9,
+     "no00": 10
+    },
+    "away": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 12,
+     "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 5864748,
+   "kickoff": "19:00",
+   "kickoff_utc": "2026-11-13T18:00:00.000Z",
+   "league": "2. Division",
+   "country": "DEN",
+   "leagueId": 239,
+   "home": "HIK",
+   "away": "B 93",
+   "url": "https://www.fotmob.com/match/5864748",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Casa: 73 partite di campionato consecutive senza 0-0 (ultimo 0-0: 18/10/2024 @ AB); Ospite: 0 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 73,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "18/10/2024",
+      "opp": "AB",
+      "home": false
+     },
+     "other_zz": 0,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 11,
+     "conceded": 13,
+     "no00": 15
+    },
+    "away": {
+     "n": 15,
+     "scored": 14,
+     "conceded": 11,
+     "no00": 15
+    }
+   }
+  },
+  {
+   "matchId": 5864908,
+   "kickoff": "19:00",
+   "kickoff_utc": "2026-11-13T18:00:00.000Z",
+   "league": "3. Division",
+   "country": "DEN",
+   "leagueId": 240,
+   "home": "FC Helsingør",
+   "away": "Holstebro Boldklub",
+   "url": "https://www.fotmob.com/match/5864908",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: 78 partite di campionato consecutive senza 0-0 (ultimo 0-0: 08/09/2023 @ Frem); Casa: 2 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 78,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "08/09/2023",
+      "opp": "Frem",
+      "home": false
+     },
+     "other_zz": 2,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 14,
+     "conceded": 12,
+     "no00": 15
+    },
+    "away": {
+     "n": 15,
+     "scored": 9,
+     "conceded": 14,
+     "no00": 15
+    }
+   }
+  },
+  {
+   "matchId": 5916110,
+   "kickoff": "19:00",
+   "kickoff_utc": "2026-11-13T18:00:00.000Z",
+   "league": "Regionalliga Southwest",
+   "country": "GER",
+   "leagueId": 512,
+   "home": "Homburg",
+   "away": "FSV Frankfurt",
+   "url": "https://www.fotmob.com/match/5916110",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: 90 partite di campionato consecutive senza 0-0 (ultimo 0-0: 02/04/2024 @ Hessen Kassel); Casa: 2 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 90,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "02/04/2024",
+      "opp": "Hessen Kassel",
+      "home": false
+     },
+     "other_zz": 2,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 11,
+     "conceded": 13,
+     "no00": 14
+    },
+    "away": {
+     "n": 15,
+     "scored": 14,
+     "conceded": 13,
+     "no00": 15
+    }
+   }
+  },
+  {
+   "matchId": 5956772,
+   "kickoff": "19:00",
+   "kickoff_utc": "2026-11-13T18:00:00.000Z",
+   "league": "Tweede Divisie",
+   "country": "NED",
+   "leagueId": 9195,
+   "home": "Kloetinge",
+   "away": "Hoek",
+   "url": "https://www.fotmob.com/match/5956772",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Ospite: 11/12) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 12,
+     "strong_n": 12,
+     "strong_pct": 100,
+     "other_k": 11,
+     "other_n": 12,
+     "other_pct": 92
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 12,
+     "no00": 12
+    },
+    "away": {
+     "n": 12,
+     "scored": 7,
+     "conceded": 11,
+     "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 5911957,
+   "kickoff": "19:30",
+   "kickoff_utc": "2026-11-13T18:30:00.000Z",
+   "league": "Regionalliga North",
+   "country": "GER",
+   "leagueId": 512,
+   "home": "SV Drochtersen/Assel",
+   "away": "Oldenburg",
+   "url": "https://www.fotmob.com/match/5911957",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Casa: 56 partite di campionato consecutive senza 0-0 (ultimo 0-0: 05/04/2025 @ Blau-Weiß Lohne); Ospite: 1 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 56,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "05/04/2025",
+      "opp": "Blau-Weiß Lohne",
+      "home": false
+     },
+     "other_zz": 1,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 17,
+     "scored": 15,
+     "conceded": 14,
+     "no00": 17
+    },
+    "away": {
+     "n": 16,
+     "scored": 15,
+     "conceded": 12,
+     "no00": 16
+    }
+   }
+  },
+  {
+   "matchId": 5868541,
+   "kickoff": "20:30",
+   "kickoff_utc": "2026-11-13T19:30:00.000Z",
+   "league": "LaLiga2",
+   "country": "ESP",
+   "leagueId": 140,
+   "home": "Leganés",
+   "away": "Burgos CF",
+   "url": "https://www.fotmob.com/match/5868541",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.06 (casa 1.64 + ospite 1.42) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.06,
+     "exp_home": 1.64,
+     "exp_away": 1.42,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 7,
+     "conceded": 10,
+     "no00": 12
+    },
+    "away": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 10,
+     "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 1000012618,
+   "kickoff": "21:00",
+   "kickoff_utc": "2026-11-13T20:00:00.000Z",
+   "league": "Highland League",
+   "country": "SCO",
+   "leagueId": 9545,
+   "home": "Strathspey Thistle",
+   "away": "Deveronvale",
+   "url": "https://www.fotmob.com/match/1000012618",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Casa: almeno 51 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Ospite: 2 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 51,
+     "complete": false,
+     "capped": false,
+     "last00": null,
+     "other_zz": 2,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 17,
+     "scored": 15,
+     "conceded": 14,
+     "no00": 17
+    },
+    "away": {
+     "n": 16,
+     "scored": 11,
+     "conceded": 12,
+     "no00": 15
+    }
+   }
+  },
+  {
+   "matchId": 1000016824,
+   "kickoff": "21:00",
+   "kickoff_utc": "2026-11-13T20:00:00.000Z",
+   "league": "Lowland League West",
+   "country": "SCO",
+   "leagueId": 9545,
+   "home": "Gretna FC 2008",
+   "away": "Dalbeattie Star",
+   "url": "https://www.fotmob.com/match/1000016824",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Ospite ha subito almeno 1 gol in 13/13 partite di campionato 2026/27 (Casa: 13/14) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 13,
+     "strong_n": 13,
+     "strong_pct": 100,
+     "other_k": 13,
+     "other_n": 14,
+     "other_pct": 93
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 13,
+     "conceded": 13,
+     "no00": 14
+    },
+    "away": {
+     "n": 13,
+     "scored": 6,
+     "conceded": 13,
+     "no00": 13
     }
    }
   }
