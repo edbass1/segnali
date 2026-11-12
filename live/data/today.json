@@ -1,27 +1,26 @@
 {
- "date": "2026-11-11",
- "generated_at": "2026-11-11 20:27",
+ "date": "2026-11-12",
+ "generated_at": "2026-11-12 02:37",
  "partial": false,
  "stats": {
-  "matches_day": 46,
-  "candidates": 10,
-  "evaluated": 8,
-  "qualified": 1,
+  "matches_day": 59,
+  "candidates": 15,
+  "evaluated": 14,
+  "qualified": 2,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 0,
-   "xg": 1,
+   "xg": 2,
    "segna": 0,
    "subisce": 0,
    "mai00": 0
   },
-  "requests": 77,
+  "requests": 134,
   "seconds": 42
  },
  "skipped_leagues": {
-  "FRA Premiere Ligue": "femminile",
-  "SCO SWPL 1": "femminile"
+  "USA USL Super League": "femminile"
  },
  "rules": {
   "window": "60-70'",
@@ -38,28 +37,70 @@
  },
  "matches": [
   {
-   "matchId": 5190812,
-   "kickoff": "23:00",
-   "kickoff_utc": "2026-11-11T22:00:00.000Z",
-   "league": "Série B",
-   "country": "BRA",
-   "leagueId": 8814,
-   "home": "Londrina",
-   "away": "Náutico",
-   "url": "https://www.fotmob.com/match/5190812",
+   "matchId": 1000022941,
+   "kickoff": "03:00",
+   "kickoff_utc": "2026-11-12T02:00:00.000Z",
+   "league": "Liga de Expansión MX - Apertura - Semi-finals",
+   "country": "MEX",
+   "leagueId": 8976,
+   "home": "Piratas",
+   "away": "Atlético La Paz",
+   "url": "https://www.fotmob.com/match/1000022941",
    "finished": false,
    "score": null,
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 3.03 (casa 1.76 + ospite 1.27) ≥ 2.7"
+    "xg": "xG atteso prematch 3.10 (casa 1.83 + ospite 1.27) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 3.03,
-     "exp_home": 1.76,
+     "total": 3.1,
+     "exp_home": 1.83,
      "exp_away": 1.27,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 17,
+     "scored": 13,
+     "conceded": 11,
+     "no00": 16
+    },
+    "away": {
+     "n": 17,
+     "scored": 16,
+     "conceded": 12,
+     "no00": 17
+    }
+   }
+  },
+  {
+   "matchId": 5190809,
+   "kickoff": "23:00",
+   "kickoff_utc": "2026-11-12T22:00:00.000Z",
+   "league": "Série B",
+   "country": "BRA",
+   "leagueId": 8814,
+   "home": "Ponte Preta",
+   "away": "Operário-PR",
+   "url": "https://www.fotmob.com/match/5190809",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.75 (casa 1.41 + ospite 1.35) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.75,
+     "exp_home": 1.41,
+     "exp_away": 1.35,
      "method": "casa/trasferta",
      "season": "2026"
     }
@@ -67,15 +108,15 @@
    "cur": {
     "home": {
      "n": 37,
-     "scored": 24,
-     "conceded": 29,
-     "no00": 33
+     "scored": 17,
+     "conceded": 34,
+     "no00": 36
     },
     "away": {
      "n": 37,
-     "scored": 22,
-     "conceded": 27,
-     "no00": 34
+     "scored": 28,
+     "conceded": 25,
+     "no00": 33
     }
    }
   }
