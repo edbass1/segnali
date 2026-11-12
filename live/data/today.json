@@ -1,9 +1,9 @@
 {
  "date": "2026-11-12",
- "generated_at": "2026-11-12 02:37",
+ "generated_at": "2026-11-12 10:04",
  "partial": false,
  "stats": {
-  "matches_day": 59,
+  "matches_day": 61,
   "candidates": 15,
   "evaluated": 14,
   "qualified": 2,
@@ -46,8 +46,8 @@
    "home": "Piratas",
    "away": "Atlético La Paz",
    "url": "https://www.fotmob.com/match/1000022941",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-1",
    "types": [
     "xg"
    ],

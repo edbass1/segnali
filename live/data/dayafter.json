@@ -1,11 +1,11 @@
 {
  "date": "2026-11-14",
- "generated_at": "2026-11-12 02:42",
+ "generated_at": "2026-11-12 10:09",
  "partial": false,
  "stats": {
-  "matches_day": 307,
-  "candidates": 214,
-  "evaluated": 186,
+  "matches_day": 310,
+  "candidates": 215,
+  "evaluated": 187,
   "qualified": 43,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 9,
    "mai00": 0
   },
-  "requests": 1042,
-  "seconds": 247
+  "requests": 1044,
+  "seconds": 250
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -735,48 +735,6 @@
    }
   },
   {
-   "matchId": 5837260,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "League One",
-   "country": "ENG",
-   "leagueId": 108,
-   "home": "Milton Keynes Dons",
-   "away": "Burton Albion",
-   "url": "https://www.fotmob.com/match/5837260",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.00 (casa 1.79 + ospite 1.22) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.0,
-     "exp_home": 1.79,
-     "exp_away": 1.22,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 10,
-     "conceded": 10,
-     "no00": 11
-    },
-    "away": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 12,
-     "no00": 13
-    }
-   }
-  },
-  {
    "matchId": 5837265,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -861,44 +819,44 @@
    }
   },
   {
-   "matchId": 5838027,
+   "matchId": 5837260,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "League Two",
+   "league": "League One",
    "country": "ENG",
-   "leagueId": 109,
-   "home": "Bristol Rovers",
-   "away": "Chesterfield",
-   "url": "https://www.fotmob.com/match/5838027",
+   "leagueId": 108,
+   "home": "Milton Keynes Dons",
+   "away": "Burton Albion",
+   "url": "https://www.fotmob.com/match/5837260",
    "finished": false,
    "score": null,
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 3.01 (casa 1.69 + ospite 1.33) ≥ 2.7"
+    "xg": "xG atteso prematch 3.00 (casa 1.79 + ospite 1.22) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 3.01,
-     "exp_home": 1.69,
-     "exp_away": 1.33,
+     "total": 3.0,
+     "exp_home": 1.79,
+     "exp_away": 1.22,
      "method": "casa/trasferta",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 14,
+     "n": 13,
      "scored": 10,
-     "conceded": 9,
-     "no00": 13
+     "conceded": 10,
+     "no00": 11
     },
     "away": {
      "n": 14,
-     "scored": 12,
+     "scored": 10,
      "conceded": 12,
-     "no00": 14
+     "no00": 13
     }
    }
   },
@@ -941,6 +899,48 @@
      "scored": 10,
      "conceded": 10,
      "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 5838027,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "League Two",
+   "country": "ENG",
+   "leagueId": 109,
+   "home": "Bristol Rovers",
+   "away": "Chesterfield",
+   "url": "https://www.fotmob.com/match/5838027",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.01 (casa 1.69 + ospite 1.33) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.01,
+     "exp_home": 1.69,
+     "exp_away": 1.33,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 10,
+     "conceded": 9,
+     "no00": 13
+    },
+    "away": {
+     "n": 14,
+     "scored": 12,
+     "conceded": 12,
+     "no00": 14
     }
    }
   },
@@ -1493,54 +1493,6 @@
    }
   },
   {
-   "matchId": 5954001,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "Southern Premier Division South",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Evesham United",
-   "away": "Gosport Borough",
-   "url": "https://www.fotmob.com/match/5954001",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 69 partite di campionato consecutive senza 0-0 (ultimo 0-0: 18/02/2025 @ Frome Town); Casa: 3 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 69,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "18/02/2025",
-      "opp": "Frome Town",
-      "home": false
-     },
-     "other_zz": 3,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 17,
-     "scored": 11,
-     "conceded": 14,
-     "no00": 16
-    },
-    "away": {
-     "n": 16,
-     "scored": 11,
-     "conceded": 15,
-     "no00": 16
-    }
-   }
-  },
-  {
    "matchId": 5953997,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -1583,6 +1535,54 @@
     "away": {
      "n": 16,
      "scored": 10,
+     "conceded": 15,
+     "no00": 16
+    }
+   }
+  },
+  {
+   "matchId": 5954001,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "Southern Premier Division South",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Evesham United",
+   "away": "Gosport Borough",
+   "url": "https://www.fotmob.com/match/5954001",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: 69 partite di campionato consecutive senza 0-0 (ultimo 0-0: 18/02/2025 @ Frome Town); Casa: 3 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 69,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "18/02/2025",
+      "opp": "Frome Town",
+      "home": false
+     },
+     "other_zz": 3,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 17,
+     "scored": 11,
+     "conceded": 14,
+     "no00": 16
+    },
+    "away": {
+     "n": 16,
+     "scored": 11,
      "conceded": 15,
      "no00": 16
     }
