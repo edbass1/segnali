@@ -1,11 +1,11 @@
 {
  "date": "2026-11-14",
- "generated_at": "2026-11-12 10:09",
+ "generated_at": "2026-11-12 18:45",
  "partial": false,
  "stats": {
-  "matches_day": 310,
-  "candidates": 215,
-  "evaluated": 187,
+  "matches_day": 316,
+  "candidates": 216,
+  "evaluated": 188,
   "qualified": 43,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 9,
    "mai00": 0
   },
-  "requests": 1044,
-  "seconds": 250
+  "requests": 1050,
+  "seconds": 237
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -735,6 +735,48 @@
    }
   },
   {
+   "matchId": 5837260,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Milton Keynes Dons",
+   "away": "Burton Albion",
+   "url": "https://www.fotmob.com/match/5837260",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.00 (casa 1.79 + ospite 1.22) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.0,
+     "exp_home": 1.79,
+     "exp_away": 1.22,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 10,
+     "no00": 11
+    },
+    "away": {
+     "n": 14,
+     "scored": 10,
+     "conceded": 12,
+     "no00": 13
+    }
+   }
+  },
+  {
    "matchId": 5837265,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -814,48 +856,6 @@
      "n": 14,
      "scored": 9,
      "conceded": 10,
-     "no00": 13
-    }
-   }
-  },
-  {
-   "matchId": 5837260,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "League One",
-   "country": "ENG",
-   "leagueId": 108,
-   "home": "Milton Keynes Dons",
-   "away": "Burton Albion",
-   "url": "https://www.fotmob.com/match/5837260",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.00 (casa 1.79 + ospite 1.22) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.0,
-     "exp_home": 1.79,
-     "exp_away": 1.22,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 10,
-     "conceded": 10,
-     "no00": 11
-    },
-    "away": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 12,
      "no00": 13
     }
    }
@@ -1493,54 +1493,6 @@
    }
   },
   {
-   "matchId": 5953997,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "Southern Premier Division South",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Basingstoke",
-   "away": "Chippenham Town",
-   "url": "https://www.fotmob.com/match/5953997",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 67 partite di campionato consecutive senza 0-0 (ultimo 0-0: 29/03/2025 @ Enfield Town); Casa: 1 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 67,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "29/03/2025",
-      "opp": "Enfield Town",
-      "home": false
-     },
-     "other_zz": 1,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 14,
-     "conceded": 14,
-     "no00": 16
-    },
-    "away": {
-     "n": 16,
-     "scored": 10,
-     "conceded": 15,
-     "no00": 16
-    }
-   }
-  },
-  {
    "matchId": 5954001,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -1583,6 +1535,54 @@
     "away": {
      "n": 16,
      "scored": 11,
+     "conceded": 15,
+     "no00": 16
+    }
+   }
+  },
+  {
+   "matchId": 5953997,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "Southern Premier Division South",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Basingstoke",
+   "away": "Chippenham Town",
+   "url": "https://www.fotmob.com/match/5953997",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: 67 partite di campionato consecutive senza 0-0 (ultimo 0-0: 29/03/2025 @ Enfield Town); Casa: 1 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 67,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "29/03/2025",
+      "opp": "Enfield Town",
+      "home": false
+     },
+     "other_zz": 1,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 16,
+     "scored": 14,
+     "conceded": 14,
+     "no00": 16
+    },
+    "away": {
+     "n": 16,
+     "scored": 10,
      "conceded": 15,
      "no00": 16
     }
@@ -1832,54 +1832,6 @@
    }
   },
   {
-   "matchId": 5832951,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-11-14T19:00:00.000Z",
-   "league": "Eerste Divisie",
-   "country": "NED",
-   "leagueId": 111,
-   "home": "RKC Waalwijk",
-   "away": "FC Den Bosch",
-   "url": "https://www.fotmob.com/match/5832951",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 54 partite di campionato consecutive senza 0-0 (ultimo 0-0: 28/04/2025 @ Jong AZ Alkmaar); Casa: 1 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 54,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "28/04/2025",
-      "opp": "Jong AZ Alkmaar",
-      "home": false
-     },
-     "other_zz": 1,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 12,
-     "conceded": 13,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 12,
-     "conceded": 12,
-     "no00": 14
-    }
-   }
-  },
-  {
    "matchId": 5832950,
    "kickoff": "20:00",
    "kickoff_utc": "2026-11-14T19:00:00.000Z",
@@ -1924,6 +1876,54 @@
      "scored": 10,
      "conceded": 12,
      "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5832951,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-11-14T19:00:00.000Z",
+   "league": "Eerste Divisie",
+   "country": "NED",
+   "leagueId": 111,
+   "home": "RKC Waalwijk",
+   "away": "FC Den Bosch",
+   "url": "https://www.fotmob.com/match/5832951",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: 54 partite di campionato consecutive senza 0-0 (ultimo 0-0: 28/04/2025 @ Jong AZ Alkmaar); Casa: 1 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 54,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "28/04/2025",
+      "opp": "Jong AZ Alkmaar",
+      "home": false
+     },
+     "other_zz": 1,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 12,
+     "conceded": 13,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 12,
+     "conceded": 12,
+     "no00": 14
     }
    }
   },
