@@ -1,9 +1,9 @@
 {
  "date": "2026-11-13",
- "generated_at": "2026-11-13 04:30",
+ "generated_at": "2026-11-13 12:27",
  "partial": false,
  "stats": {
-  "matches_day": 90,
+  "matches_day": 89,
   "candidates": 35,
   "evaluated": 34,
   "qualified": 10,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 241,
-  "seconds": 53
+  "seconds": 52
  },
  "skipped_leagues": {
   "FRA Premiere Ligue": "femminile"
@@ -46,7 +46,7 @@
    "home": "Atlético Morelia",
    "away": "Leones Negros",
    "url": "https://www.fotmob.com/match/1000022942",
-   "finished": false,
+   "finished": true,
    "score": "1-0",
    "types": [
     "xg"

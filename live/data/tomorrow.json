@@ -1,9 +1,9 @@
 {
  "date": "2026-11-14",
- "generated_at": "2026-11-13 04:34",
+ "generated_at": "2026-11-13 12:31",
  "partial": false,
  "stats": {
-  "matches_day": 315,
+  "matches_day": 316,
   "candidates": 216,
   "evaluated": 188,
   "qualified": 43,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 1071,
-  "seconds": 230
+  "seconds": 234
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -777,6 +777,48 @@
    }
   },
   {
+   "matchId": 5837260,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Milton Keynes Dons",
+   "away": "Burton Albion",
+   "url": "https://www.fotmob.com/match/5837260",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.00 (casa 1.79 + ospite 1.22) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.0,
+     "exp_home": 1.79,
+     "exp_away": 1.22,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 10,
+     "no00": 11
+    },
+    "away": {
+     "n": 14,
+     "scored": 10,
+     "conceded": 12,
+     "no00": 13
+    }
+   }
+  },
+  {
    "matchId": 5837262,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -819,44 +861,44 @@
    }
   },
   {
-   "matchId": 5837260,
+   "matchId": 5838032,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "League One",
+   "league": "League Two",
    "country": "ENG",
-   "leagueId": 108,
-   "home": "Milton Keynes Dons",
-   "away": "Burton Albion",
-   "url": "https://www.fotmob.com/match/5837260",
+   "leagueId": 109,
+   "home": "Port Vale",
+   "away": "Accrington Stanley",
+   "url": "https://www.fotmob.com/match/5838032",
    "finished": false,
    "score": null,
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 3.00 (casa 1.79 + ospite 1.22) ≥ 2.7"
+    "xg": "xG atteso prematch 2.74 (casa 1.74 + ospite 1.00) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 3.0,
-     "exp_home": 1.79,
-     "exp_away": 1.22,
+     "total": 2.74,
+     "exp_home": 1.74,
+     "exp_away": 1.0,
      "method": "casa/trasferta",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 13,
-     "scored": 10,
-     "conceded": 10,
+     "n": 12,
+     "scored": 7,
+     "conceded": 8,
      "no00": 11
     },
     "away": {
      "n": 14,
-     "scored": 10,
-     "conceded": 12,
-     "no00": 13
+     "scored": 11,
+     "conceded": 10,
+     "no00": 12
     }
    }
   },
@@ -941,48 +983,6 @@
      "scored": 12,
      "conceded": 12,
      "no00": 14
-    }
-   }
-  },
-  {
-   "matchId": 5838032,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "League Two",
-   "country": "ENG",
-   "leagueId": 109,
-   "home": "Port Vale",
-   "away": "Accrington Stanley",
-   "url": "https://www.fotmob.com/match/5838032",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.74 (casa 1.74 + ospite 1.00) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.74,
-     "exp_home": 1.74,
-     "exp_away": 1.0,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 7,
-     "conceded": 8,
-     "no00": 11
-    },
-    "away": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 10,
-     "no00": 12
     }
    }
   },
@@ -1173,51 +1173,6 @@
    }
   },
   {
-   "matchId": 1000016784,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "Lowland League West",
-   "country": "SCO",
-   "leagueId": 9545,
-   "home": "Newton Stewart",
-   "away": "Renfrew FC",
-   "url": "https://www.fotmob.com/match/1000016784",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Ospite: 12/13) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 12,
-     "strong_n": 12,
-     "strong_pct": 100,
-     "other_k": 12,
-     "other_n": 13,
-     "other_pct": 92
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 7,
-     "conceded": 12,
-     "no00": 12
-    },
-    "away": {
-     "n": 13,
-     "scored": 12,
-     "conceded": 12,
-     "no00": 13
-    }
-   }
-  },
-  {
    "matchId": 1000016771,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -1259,6 +1214,51 @@
      "scored": 13,
      "conceded": 10,
      "no00": 14
+    }
+   }
+  },
+  {
+   "matchId": 1000016784,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "Lowland League West",
+   "country": "SCO",
+   "leagueId": 9545,
+   "home": "Newton Stewart",
+   "away": "Renfrew FC",
+   "url": "https://www.fotmob.com/match/1000016784",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Ospite: 12/13) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 12,
+     "strong_n": 12,
+     "strong_pct": 100,
+     "other_k": 12,
+     "other_n": 13,
+     "other_pct": 92
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 7,
+     "conceded": 12,
+     "no00": 12
+    },
+    "away": {
+     "n": 13,
+     "scored": 12,
+     "conceded": 12,
+     "no00": 13
     }
    }
   },
@@ -1493,54 +1493,6 @@
    }
   },
   {
-   "matchId": 5954001,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "Southern Premier Division South",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Evesham United",
-   "away": "Gosport Borough",
-   "url": "https://www.fotmob.com/match/5954001",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 69 partite di campionato consecutive senza 0-0 (ultimo 0-0: 18/02/2025 @ Frome Town); Casa: 3 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 69,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "18/02/2025",
-      "opp": "Frome Town",
-      "home": false
-     },
-     "other_zz": 3,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 17,
-     "scored": 11,
-     "conceded": 14,
-     "no00": 16
-    },
-    "away": {
-     "n": 16,
-     "scored": 11,
-     "conceded": 15,
-     "no00": 16
-    }
-   }
-  },
-  {
    "matchId": 5953997,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -1589,50 +1541,50 @@
    }
   },
   {
-   "matchId": 5954004,
+   "matchId": 5954001,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
    "league": "Southern Premier Division South",
    "country": "ENG",
    "leagueId": 8947,
-   "home": "Hanwell Town",
-   "away": "Plymouth Parkway",
-   "url": "https://www.fotmob.com/match/5954004",
+   "home": "Evesham United",
+   "away": "Gosport Borough",
+   "url": "https://www.fotmob.com/match/5954001",
    "finished": false,
    "score": null,
    "types": [
     "storico"
    ],
    "reasons": {
-    "storico": "Ospite: 77 partite di campionato consecutive senza 0-0 (ultimo 0-0: 01/01/2025 vs Tiverton); Casa: 2 0-0 nelle ultime 50 di campionato"
+    "storico": "Ospite: 69 partite di campionato consecutive senza 0-0 (ultimo 0-0: 18/02/2025 @ Frome Town); Casa: 3 0-0 nelle ultime 50 di campionato"
    },
    "info": {
     "storico": {
      "strong": "away",
-     "streak": 77,
+     "streak": 69,
      "complete": true,
      "capped": false,
      "last00": {
-      "date": "01/01/2025",
-      "opp": "Tiverton",
-      "home": true
+      "date": "18/02/2025",
+      "opp": "Frome Town",
+      "home": false
      },
-     "other_zz": 2,
+     "other_zz": 3,
      "other_n": 50
     }
    },
    "cur": {
     "home": {
-     "n": 16,
-     "scored": 10,
-     "conceded": 15,
-     "no00": 15
+     "n": 17,
+     "scored": 11,
+     "conceded": 14,
+     "no00": 16
     },
     "away": {
-     "n": 15,
-     "scored": 14,
-     "conceded": 11,
-     "no00": 15
+     "n": 16,
+     "scored": 11,
+     "conceded": 15,
+     "no00": 16
     }
    }
   },
@@ -1681,6 +1633,54 @@
      "scored": 13,
      "conceded": 10,
      "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5954004,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "Southern Premier Division South",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Hanwell Town",
+   "away": "Plymouth Parkway",
+   "url": "https://www.fotmob.com/match/5954004",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: 77 partite di campionato consecutive senza 0-0 (ultimo 0-0: 01/01/2025 vs Tiverton); Casa: 2 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 77,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "01/01/2025",
+      "opp": "Tiverton",
+      "home": true
+     },
+     "other_zz": 2,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 16,
+     "scored": 10,
+     "conceded": 15,
+     "no00": 15
+    },
+    "away": {
+     "n": 15,
+     "scored": 14,
+     "conceded": 11,
+     "no00": 15
     }
    }
   },

@@ -1,9 +1,9 @@
 {
  "date": "2026-11-15",
- "generated_at": "2026-11-13 04:35",
+ "generated_at": "2026-11-13 12:32",
  "partial": false,
  "stats": {
-  "matches_day": 230,
+  "matches_day": 229,
   "candidates": 154,
   "evaluated": 129,
   "qualified": 12,
@@ -17,7 +17,7 @@
    "mai00": 1
   },
   "requests": 437,
-  "seconds": 98
+  "seconds": 103
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -26,8 +26,8 @@
   "ESP Liga F": "femminile",
   "NED Eredivisie Vrouwen": "femminile",
   "ITA Serie A Femminile": "femminile",
-  "NOR 1. Division Kvinner Qualification": "femminile",
   "SCO SWPL 1": "femminile",
+  "NOR 1. Division Kvinner Qualification": "femminile",
   "NOR Toppserien Qualification": "femminile"
  },
  "rules": {
@@ -547,16 +547,16 @@
    },
    "cur": {
     "home": {
-     "n": 17,
+     "n": 18,
      "scored": 15,
-     "conceded": 14,
-     "no00": 17
+     "conceded": 15,
+     "no00": 18
     },
     "away": {
-     "n": 17,
-     "scored": 16,
+     "n": 18,
+     "scored": 17,
      "conceded": 14,
-     "no00": 17
+     "no00": 18
     }
    }
   },
