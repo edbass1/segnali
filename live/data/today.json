@@ -1,6 +1,6 @@
 {
  "date": "2026-11-13",
- "generated_at": "2026-11-13 12:27",
+ "generated_at": "2026-11-13 19:40",
  "partial": false,
  "stats": {
   "matches_day": 89,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 241,
-  "seconds": 52
+  "seconds": 57
  },
  "skipped_leagues": {
   "FRA Premiere Ligue": "femminile"
@@ -89,7 +89,7 @@
    "away": "Bendel Insurance",
    "url": "https://www.fotmob.com/match/6103178",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "subisce"
    ],
@@ -134,7 +134,7 @@
    "away": "B 93",
    "url": "https://www.fotmob.com/match/5864748",
    "finished": false,
-   "score": null,
+   "score": "3-2",
    "types": [
     "storico"
    ],
@@ -182,7 +182,7 @@
    "away": "Holstebro Boldklub",
    "url": "https://www.fotmob.com/match/5864908",
    "finished": false,
-   "score": null,
+   "score": "2-2",
    "types": [
     "storico"
    ],
@@ -230,7 +230,7 @@
    "away": "FSV Frankfurt",
    "url": "https://www.fotmob.com/match/5916110",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "storico"
    ],
@@ -278,7 +278,7 @@
    "away": "Hoek",
    "url": "https://www.fotmob.com/match/5956772",
    "finished": false,
-   "score": null,
+   "score": "1-2",
    "types": [
     "subisce"
    ],
@@ -323,7 +323,7 @@
    "away": "Oldenburg",
    "url": "https://www.fotmob.com/match/5911957",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "storico"
    ],

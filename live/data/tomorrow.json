@@ -1,6 +1,6 @@
 {
  "date": "2026-11-14",
- "generated_at": "2026-11-13 12:31",
+ "generated_at": "2026-11-13 19:44",
  "partial": false,
  "stats": {
   "matches_day": 316,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 1071,
-  "seconds": 234
+  "seconds": 255
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -861,44 +861,44 @@
    }
   },
   {
-   "matchId": 5838032,
+   "matchId": 5838027,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
    "league": "League Two",
    "country": "ENG",
    "leagueId": 109,
-   "home": "Port Vale",
-   "away": "Accrington Stanley",
-   "url": "https://www.fotmob.com/match/5838032",
+   "home": "Bristol Rovers",
+   "away": "Chesterfield",
+   "url": "https://www.fotmob.com/match/5838027",
    "finished": false,
    "score": null,
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.74 (casa 1.74 + ospite 1.00) ≥ 2.7"
+    "xg": "xG atteso prematch 3.01 (casa 1.69 + ospite 1.33) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 2.74,
-     "exp_home": 1.74,
-     "exp_away": 1.0,
+     "total": 3.01,
+     "exp_home": 1.69,
+     "exp_away": 1.33,
      "method": "casa/trasferta",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 12,
-     "scored": 7,
-     "conceded": 8,
-     "no00": 11
+     "n": 14,
+     "scored": 10,
+     "conceded": 9,
+     "no00": 13
     },
     "away": {
      "n": 14,
-     "scored": 11,
-     "conceded": 10,
-     "no00": 12
+     "scored": 12,
+     "conceded": 12,
+     "no00": 14
     }
    }
   },
@@ -945,44 +945,44 @@
    }
   },
   {
-   "matchId": 5838027,
+   "matchId": 5838032,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
    "league": "League Two",
    "country": "ENG",
    "leagueId": 109,
-   "home": "Bristol Rovers",
-   "away": "Chesterfield",
-   "url": "https://www.fotmob.com/match/5838027",
+   "home": "Port Vale",
+   "away": "Accrington Stanley",
+   "url": "https://www.fotmob.com/match/5838032",
    "finished": false,
    "score": null,
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 3.01 (casa 1.69 + ospite 1.33) ≥ 2.7"
+    "xg": "xG atteso prematch 2.74 (casa 1.74 + ospite 1.00) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 3.01,
-     "exp_home": 1.69,
-     "exp_away": 1.33,
+     "total": 2.74,
+     "exp_home": 1.74,
+     "exp_away": 1.0,
      "method": "casa/trasferta",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 9,
-     "no00": 13
+     "n": 12,
+     "scored": 7,
+     "conceded": 8,
+     "no00": 11
     },
     "away": {
      "n": 14,
-     "scored": 12,
-     "conceded": 12,
-     "no00": 14
+     "scored": 11,
+     "conceded": 10,
+     "no00": 12
     }
    }
   },
@@ -1044,48 +1044,6 @@
    }
   },
   {
-   "matchId": 5838037,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "League Two",
-   "country": "ENG",
-   "leagueId": 109,
-   "home": "Swindon Town",
-   "away": "Grimsby Town",
-   "url": "https://www.fotmob.com/match/5838037",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.24 (casa 1.67 + ospite 1.56) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.24,
-     "exp_home": 1.67,
-     "exp_away": 1.56,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 7,
-     "conceded": 12,
-     "no00": 12
-    },
-    "away": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 10,
-     "no00": 13
-    }
-   }
-  },
-  {
    "matchId": 5838036,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -1122,6 +1080,48 @@
     "away": {
      "n": 14,
      "scored": 9,
+     "conceded": 10,
+     "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5838037,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "League Two",
+   "country": "ENG",
+   "leagueId": 109,
+   "home": "Swindon Town",
+   "away": "Grimsby Town",
+   "url": "https://www.fotmob.com/match/5838037",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.24 (casa 1.67 + ospite 1.56) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.24,
+     "exp_home": 1.67,
+     "exp_away": 1.56,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 7,
+     "conceded": 12,
+     "no00": 12
+    },
+    "away": {
+     "n": 14,
+     "scored": 11,
      "conceded": 10,
      "no00": 13
     }
@@ -1400,6 +1400,51 @@
    }
   },
   {
+   "matchId": 5953542,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "Southern Premier Division Central",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Leighton Town",
+   "away": "Stratford Town",
+   "url": "https://www.fotmob.com/match/5953542",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 15/15 partite di campionato 2026/27 (Ospite: 13/17) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 15,
+     "strong_n": 15,
+     "strong_pct": 100,
+     "other_k": 13,
+     "other_n": 17,
+     "other_pct": 76
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 11,
+     "conceded": 15,
+     "no00": 15
+    },
+    "away": {
+     "n": 17,
+     "scored": 13,
+     "conceded": 13,
+     "no00": 14
+    }
+   }
+  },
+  {
    "matchId": 5953535,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -1448,47 +1493,50 @@
    }
   },
   {
-   "matchId": 5953542,
+   "matchId": 5954001,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "Southern Premier Division Central",
+   "league": "Southern Premier Division South",
    "country": "ENG",
    "leagueId": 8947,
-   "home": "Leighton Town",
-   "away": "Stratford Town",
-   "url": "https://www.fotmob.com/match/5953542",
+   "home": "Evesham United",
+   "away": "Gosport Borough",
+   "url": "https://www.fotmob.com/match/5954001",
    "finished": false,
    "score": null,
    "types": [
-    "subisce"
+    "storico"
    ],
    "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 15/15 partite di campionato 2026/27 (Ospite: 13/17) [solo campionato in corso, min. 9 partite per squadra]"
+    "storico": "Ospite: 69 partite di campionato consecutive senza 0-0 (ultimo 0-0: 18/02/2025 @ Frome Town); Casa: 3 0-0 nelle ultime 50 di campionato"
    },
    "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 15,
-     "strong_n": 15,
-     "strong_pct": 100,
-     "other_k": 13,
-     "other_n": 17,
-     "other_pct": 76
+    "storico": {
+     "strong": "away",
+     "streak": 69,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "18/02/2025",
+      "opp": "Frome Town",
+      "home": false
+     },
+     "other_zz": 3,
+     "other_n": 50
     }
    },
    "cur": {
     "home": {
-     "n": 15,
+     "n": 17,
      "scored": 11,
-     "conceded": 15,
-     "no00": 15
+     "conceded": 14,
+     "no00": 16
     },
     "away": {
-     "n": 17,
-     "scored": 13,
-     "conceded": 13,
-     "no00": 14
+     "n": 16,
+     "scored": 11,
+     "conceded": 15,
+     "no00": 16
     }
    }
   },
@@ -1535,54 +1583,6 @@
     "away": {
      "n": 16,
      "scored": 10,
-     "conceded": 15,
-     "no00": 16
-    }
-   }
-  },
-  {
-   "matchId": 5954001,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "Southern Premier Division South",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Evesham United",
-   "away": "Gosport Borough",
-   "url": "https://www.fotmob.com/match/5954001",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 69 partite di campionato consecutive senza 0-0 (ultimo 0-0: 18/02/2025 @ Frome Town); Casa: 3 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 69,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "18/02/2025",
-      "opp": "Frome Town",
-      "home": false
-     },
-     "other_zz": 3,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 17,
-     "scored": 11,
-     "conceded": 14,
-     "no00": 16
-    },
-    "away": {
-     "n": 16,
-     "scored": 11,
      "conceded": 15,
      "no00": 16
     }
