@@ -309,8 +309,56 @@ export function normalizeBet(input) {
     result,
     resultManual: !!input.resultManual,
     cashoutAmount: cash != null && cash >= 0 ? roundMoney(cash) : null,
+    bonusId: clip(input.bonusId, 80),
     selections,
   };
+}
+
+function positiveDecimal(v, digits) {
+  const n = parseDecimal(v);
+  if (n == null || n <= 0) return null;
+  return roundTo(n, digits);
+}
+
+export function normalizeBonusDraft(input) {
+  const src = input && typeof input === 'object' ? input : {};
+  const minSelections = Math.round(parseDecimal(src.minSelections) || 3);
+  const minOdds = positiveDecimal(src.minOdds, 2);
+  const mult = positiveDecimal(src.wagerMultiplier, 2);
+  return {
+    amount: positiveDecimal(src.amount, 2),
+    minSelections: Math.min(20, Math.max(1, minSelections)),
+    minOdds: minOdds != null && minOdds > 1 ? minOdds : 1.5,
+    wagerMode: src.wagerMode === 'amount' ? 'amount' : 'multiplier',
+    wagerAmount: positiveDecimal(src.wagerAmount, 2),
+    wagerMultiplier: mult || 3,
+  };
+}
+
+export function normalizeBonus(input) {
+  if (!input || typeof input !== 'object') return null;
+  const draft = normalizeBonusDraft(input);
+  if (draft.amount == null) return null;
+  const id = clip(input.id, 80) || stableId({
+    amount: draft.amount, createdAt: input.createdAt, minOdds: draft.minOdds, minSelections: draft.minSelections,
+  });
+  return {
+    id,
+    amount: draft.amount,
+    minSelections: draft.minSelections,
+    minOdds: draft.minOdds,
+    wagerMode: draft.wagerMode,
+    wagerAmount: draft.wagerAmount,
+    wagerMultiplier: draft.wagerMultiplier,
+    createdAt: clip(input.createdAt, 40),
+    updatedAt: clip(input.updatedAt, 40),
+  };
+}
+
+export function wagerTargetOf(bonus) {
+  if (!bonus) return 0;
+  if (bonus.wagerMode === 'amount' && bonus.wagerAmount) return bonus.wagerAmount;
+  return roundMoney(bonus.amount * (bonus.wagerMultiplier || 1));
 }
 
 function normalizeSlip(slip) {
@@ -338,10 +386,13 @@ function normalizeSlip(slip) {
     });
   }
   items.sort((a, b) => a.date.localeCompare(b.date) || String(a.kickoff).localeCompare(String(b.kickoff)) || a.key.localeCompare(b.key));
+  const mode = src.mode === 'multipla' ? 'multipla' : src.mode === 'bonus' ? 'bonus' : 'singole';
   return {
-    mode: src.mode === 'multipla' ? 'multipla' : 'singole',
+    mode,
     items,
     updatedAt: clip(src.updatedAt, 40),
+    bonusId: clip(src.bonusId, 80),
+    bonusDraft: normalizeBonusDraft(src.bonusDraft),
   };
 }
 
@@ -376,6 +427,15 @@ export function normalizeState(input) {
     drafts.push(bet);
   }
   drafts.sort(byCreated);
+  const bonuses = [];
+  const bonusIds = new Set();
+  for (const raw of arr(src.bonuses)) {
+    const bonus = normalizeBonus(raw);
+    if (!bonus || deletedSet.has(bonus.id) || bonusIds.has(bonus.id)) continue;
+    bonusIds.add(bonus.id);
+    bonuses.push(bonus);
+  }
+  bonuses.sort(byCreated);
   return {
     version: 1,
     updatedAt: clip(src.updatedAt, 40),
@@ -388,6 +448,7 @@ export function normalizeState(input) {
     slip: normalizeSlip(src.slip),
     drafts,
     bets,
+    bonuses,
     deletedIds: deleted,
   };
 }
@@ -416,6 +477,7 @@ export function toRemote(state) {
     slip: n.slip,
     drafts: n.drafts,
     bets: n.bets,
+    bonuses: n.bonuses,
     deletedIds: n.deletedIds,
   };
 }
@@ -428,9 +490,10 @@ export function meaningfulFingerprint(state) {
   const r = toRemote(state);
   return JSON.stringify({
     settings: r.settings,
-    slip: { mode: r.slip.mode, items: r.slip.items },
+    slip: { mode: r.slip.mode, items: r.slip.items, bonusId: r.slip.bonusId, bonusDraft: r.slip.bonusDraft },
     drafts: r.drafts,
     bets: r.bets,
+    bonuses: r.bonuses,
     deletedIds: r.deletedIds,
   });
 }
@@ -469,6 +532,7 @@ export function mergeStates(local, remote) {
     slip,
     drafts: mergeById(L.drafts, R.drafts, deletedSet),
     bets: mergeById(L.bets, R.bets, deletedSet),
+    bonuses: mergeById(L.bonuses, R.bonuses, deletedSet),
     deletedIds: deleted,
   });
 }
@@ -515,7 +579,7 @@ function selectionFromItem(item) {
   };
 }
 
-export function createDraft(kind, items, settings = {}) {
+export function createDraft(kind, items, settings = {}, extra = {}) {
   const now = new Date().toISOString();
   return normalizeBet({
     id: uid(),
@@ -527,13 +591,14 @@ export function createDraft(kind, items, settings = {}) {
     playedAt: '',
     settledAt: '',
     bookmaker: '',
-    stake: null,
+    stake: extra.stake ?? null,
     commissionPct: settings.defaultCommission ?? null,
     totalOdds: null,
     totalOddsManual: false,
     result: null,
     resultManual: false,
     cashoutAmount: null,
+    bonusId: extra.bonusId || '',
     selections: items.map(selectionFromItem),
   });
 }
@@ -563,7 +628,19 @@ export function toggleSlipItem(state, item) {
 }
 
 export function sendSlip(state) {
-  if (!state.slip.items.length) return [];
+  state.slip.notice = '';
+  if (!state.slip.items.length) {
+    state.slip.notice = 'Nessuna partita in schedina.';
+    return [];
+  }
+  if (state.slip.mode === 'bonus') {
+    const result = state.slip.bonusId ? continueBonusFromSlip(state) : startBonusFromSlip(state);
+    if (!result.ok) {
+      state.slip.notice = result.message;
+      return [];
+    }
+    return result.created;
+  }
   const items = [...state.slip.items];
   const created = [];
   if (state.slip.mode === 'multipla') created.push(createDraft('multipla', items, state.settings));
@@ -576,7 +653,127 @@ export function sendSlip(state) {
   return created;
 }
 
-export function playable(bet) {
+function clearSlip(state) {
+  const now = new Date().toISOString();
+  state.slip.items = [];
+  state.slip.bonusId = '';
+  state.slip.updatedAt = now;
+  state.updatedAt = now;
+}
+
+export function startBonusFromSlip(state) {
+  const draft = normalizeBonusDraft(state.slip.bonusDraft);
+  if (draft.amount == null) return { ok: false, message: 'Inserisci l\'importo del bonus.' };
+  if (state.slip.items.length < draft.minSelections) {
+    return { ok: false, message: `Questo bonus chiede almeno ${draft.minSelections} partite in schedina.` };
+  }
+  if (draft.wagerMode === 'amount' && !draft.wagerAmount) return { ok: false, message: 'Inserisci quanti euro vanno rigiocati.' };
+  const probe = { ...draft, id: 'probe' };
+  if (wagerTargetOf(probe) <= 0) return { ok: false, message: 'Indica quanto va rigiocato, in euro oppure come moltiplicatore.' };
+  const now = new Date().toISOString();
+  const bonus = normalizeBonus({ ...draft, id: uid(), createdAt: now, updatedAt: now });
+  const bet = createDraft('multipla', state.slip.items, state.settings, { bonusId: bonus.id, stake: bonus.amount });
+  state.bonuses = [bonus, ...(state.bonuses || [])];
+  state.drafts = [bet, ...state.drafts];
+  clearSlip(state);
+  return { ok: true, created: [bet], bonus };
+}
+
+export function continueBonusFromSlip(state) {
+  const bonus = (state.bonuses || []).find((b) => b.id === state.slip.bonusId);
+  if (!bonus) return { ok: false, message: 'Bonus non trovato.' };
+  const snap = evaluateBonus(state, bonus);
+  if (snap.status !== 'open') return { ok: false, message: 'Questo bonus è già chiuso.' };
+  if (snap.available <= 0) return { ok: false, message: 'Non c\'è saldo bonus libero per una nuova giocata.' };
+  if (state.slip.items.length < bonus.minSelections) {
+    return { ok: false, message: `Servono almeno ${bonus.minSelections} partite. Il saldo disponibile è ${formatPlainMoney(snap.available)}.` };
+  }
+  const bet = createDraft('multipla', state.slip.items, state.settings, { bonusId: bonus.id, stake: snap.available });
+  state.drafts = [bet, ...state.drafts];
+  clearSlip(state);
+  return { ok: true, created: [bet], bonus };
+}
+
+export function linkedBets(state, bonusId) {
+  return [...(state.drafts || []), ...(state.bets || [])]
+    .filter((b) => b.bonusId === bonusId)
+    .sort((a, b) => String(a.createdAt).localeCompare(String(b.createdAt)) || String(a.id).localeCompare(String(b.id)));
+}
+
+export function evaluateBonus(state, bonus) {
+  const bets = linkedBets(state, bonus.id);
+  const settled = bets.filter((b) => b.status === 'settled')
+    .sort((a, b) => String(a.settledAt).localeCompare(String(b.settledAt)) || String(a.id).localeCompare(String(b.id)));
+  let balance = bonus.amount;
+  let wagered = 0;
+  for (const bet of settled) {
+    const stake = parseDecimal(bet.stake) || 0;
+    if (bet.result === 'void') continue;
+    wagered = roundMoney(wagered + stake);
+    const profit = profitOf(bet);
+    if (profit != null) balance = roundMoney(balance + profit);
+  }
+  const reserved = bets
+    .filter((b) => b.status !== 'settled')
+    .reduce((sum, b) => sum + (parseDecimal(b.stake) || 0), 0);
+  const target = wagerTargetOf(bonus);
+  const pending = bets.filter((b) => b.status !== 'settled').length;
+  let status = 'open';
+  if (pending === 0 && settled.length) {
+    if (balance <= 0) status = 'lost';
+    else if (wagered + 0.001 >= target) status = 'completed';
+  }
+  const dates = settled.map((b) => betDate(b) || String(b.settledAt || '').slice(0, 10)).filter((d) => /^\d{4}-\d{2}-\d{2}$/.test(d)).sort();
+  return {
+    balance: roundMoney(Math.max(0, balance)),
+    available: roundMoney(Math.max(0, balance - reserved)),
+    wagered,
+    target,
+    remaining: roundMoney(Math.max(0, target - wagered)),
+    progress: target > 0 ? Math.max(0, Math.min(1, wagered / target)) : 0,
+    status,
+    converted: status === 'completed' ? roundMoney(Math.max(0, balance)) : 0,
+    closeDate: dates[dates.length - 1] || '',
+    bets,
+    pending,
+  };
+}
+
+export function maxStakeFor(state, bet) {
+  if (!bet.bonusId) return null;
+  const bonus = (state.bonuses || []).find((b) => b.id === bet.bonusId);
+  if (!bonus) return null;
+  const snap = evaluateBonus(state, bonus);
+  const own = bet.status === 'settled' ? 0 : (parseDecimal(bet.stake) || 0);
+  return roundMoney(snap.available + own);
+}
+
+export function bonusIssues(state, bet) {
+  if (!bet.bonusId) return [];
+  const bonus = (state.bonuses || []).find((b) => b.id === bet.bonusId);
+  if (!bonus) return ['Il bonus collegato non c\'è più.'];
+  const snap = evaluateBonus(state, bonus);
+  const issues = [];
+  if (snap.status === 'lost') issues.push('Il bonus è già perso.');
+  if (snap.status === 'completed') issues.push('Il bonus è già completato.');
+  if (bet.side === 'lay') issues.push('Il bonus si gioca in back, non in lay.');
+  if (bet.selections.length < bonus.minSelections) {
+    issues.push(`Servono almeno ${bonus.minSelections} selezioni: ora sono ${bet.selections.length}.`);
+  }
+  const low = bet.selections.some((s) => {
+    const odds = parseDecimal(s.odds);
+    return odds == null || odds + 0.0001 < bonus.minOdds;
+  });
+  if (low) issues.push(`Ogni quota deve essere almeno ${formatOdds(bonus.minOdds)}.`);
+  const stake = parseDecimal(bet.stake);
+  const max = maxStakeFor(state, bet);
+  if (stake != null && max != null && stake > max + 0.001) {
+    issues.push(`La puntata supera il saldo bonus. Massimo ${formatPlainMoney(max)}.`);
+  }
+  return issues;
+}
+
+export function playable(bet, state = null) {
   const stake = parseDecimal(bet.stake);
   if (stake == null || stake <= 0) return { ok: false, message: 'Inserisci la puntata.' };
   const comm = parseDecimal(bet.commissionPct);
@@ -588,6 +785,10 @@ export function playable(bet) {
   }
   const odds = bet.kind === 'multipla' && bet.totalOddsManual ? parseDecimal(bet.totalOdds) : combinedOdds(bet.selections);
   if (odds == null || odds <= 1) return { ok: false, message: 'Controlla la quota totale.' };
+  if (state && bet.bonusId) {
+    const issue = bonusIssues(state, bet)[0];
+    if (issue) return { ok: false, message: issue };
+  }
   return { ok: true, message: '' };
 }
 
@@ -595,7 +796,7 @@ export function playDraft(state, id) {
   const idx = state.drafts.findIndex((b) => b.id === id);
   if (idx < 0) return { ok: false, message: 'Giocata non trovata.' };
   const bet = state.drafts[idx];
-  const check = playable(bet);
+  const check = playable(bet, state);
   if (!check.ok) return check;
   const now = new Date().toISOString();
   for (const s of bet.selections) s.market = s.market.trim();
@@ -623,20 +824,65 @@ export function deleteEverywhere(state, id) {
 
 export function suggestResult(bet) {
   const rs = bet.selections.map((s) => s.result);
-  if (!rs.length || rs.some((r) => r == null)) return null;
+  if (!rs.length) return null;
   if (rs.some((r) => r === 'persa')) return 'persa';
+  if (rs.some((r) => r == null)) return null;
   if (rs.every((r) => r === 'void')) return 'void';
   if (rs.every((r) => r === 'vinta' || r === 'void')) return 'vinta';
   return null;
 }
 
+export function openSelectionCount(bet) {
+  return bet.selections.filter((s) => !s.result).length;
+}
+
+export function outcomeOf(bet) {
+  const open = openSelectionCount(bet);
+  const total = bet.selections.length;
+  if (bet.status === 'draft') return { closed: false, tone: 'draft', title: 'DA COMPLETARE', detail: '', amount: null };
+  if (bet.status === 'settled' && bet.result === 'vinta') {
+    return { closed: true, tone: 'win', title: 'FINITA – HAI VINTO', detail: '', amount: profitOf(bet) };
+  }
+  if (bet.status === 'settled' && bet.result === 'persa') {
+    return {
+      closed: true,
+      tone: 'loss',
+      title: 'FINITA – HAI PERSO',
+      detail: open > 0 ? 'Chiusa subito: basta una selezione persa.' : '',
+      amount: profitOf(bet),
+    };
+  }
+  if (bet.status === 'settled' && bet.result === 'void') {
+    return { closed: true, tone: 'void', title: 'FINITA – RIMBORSO', detail: 'Puntata restituita.', amount: 0 };
+  }
+  if (bet.status === 'settled' && bet.result === 'cashout') {
+    const amount = profitOf(bet);
+    return { closed: true, tone: amount != null && amount < 0 ? 'loss' : 'win', title: 'FINITA – CASH OUT', detail: '', amount };
+  }
+  const detail = total > 1
+    ? `${open} ${open === 1 ? 'selezione ancora aperta' : 'selezioni ancora aperte'} su ${total}`
+    : 'In attesa del risultato';
+  return { closed: false, tone: 'open', title: 'IN CORSO', detail, amount: null, open, total };
+}
+
 export function setBetResult(bet, result) {
   const now = new Date().toISOString();
+  const wasSettled = bet.status === 'settled';
+  if (bet.selections.length === 1 && result !== 'cashout') {
+    const only = bet.selections[0];
+    only.result = bet.result === result ? null : result;
+  }
   if (bet.result === result && result !== 'cashout') {
     bet.result = null;
     bet.resultManual = false;
     bet.status = 'active';
     bet.settledAt = '';
+    if (bet.selections.length === 1) bet.selections[0].result = null;
+  } else if (result === 'vinta' && suggestResult(bet) !== 'vinta') {
+    return { ok: false, closed: false, message: 'Puoi segnare vinta solo quando ogni selezione è vinta. Una rimborsata conta come quota 1,00. Se una è persa, la giocata è già persa.' };
+  } else if (bet.selections.some((s) => s.result === 'persa') && result !== 'persa') {
+    applySuggested(bet, now);
+    return { ok: false, closed: bet.status === 'settled' && !wasSettled, message: 'C\'è una selezione persa: la giocata è chiusa in perdita.' };
   } else {
     bet.result = result;
     bet.resultManual = true;
@@ -649,15 +895,20 @@ export function setBetResult(bet, result) {
     }
   }
   bet.updatedAt = now;
+  return { ok: true, closed: !wasSettled && bet.status === 'settled', message: '' };
 }
 
 export function setSelectionResult(bet, selId, result) {
   const sel = bet.selections.find((s) => s.id === selId);
-  if (!sel) return;
+  if (!sel) return { ok: false, closed: false };
+  const wasSettled = bet.status === 'settled';
   const now = new Date().toISOString();
   sel.result = sel.result === result ? null : result;
   bet.updatedAt = now;
-  if (!bet.resultManual) applySuggested(bet, now);
+  if (!bet.resultManual || result === 'persa' || sel.result === 'persa' || bet.selections.some((s) => s.result === 'persa')) {
+    applySuggested(bet, now);
+  }
+  return { ok: true, closed: !wasSettled && bet.status === 'settled' };
 }
 
 export function applySuggestedResult(bet) {
@@ -668,12 +919,19 @@ export function applySuggestedResult(bet) {
 function applySuggested(bet, now) {
   const suggested = suggestResult(bet);
   bet.updatedAt = now;
+  if (suggested === 'persa') {
+    bet.result = 'persa';
+    bet.resultManual = false;
+    bet.status = 'settled';
+    bet.settledAt = bet.settledAt || now;
+    return;
+  }
+  if (bet.result === 'cashout') return;
+  if (bet.resultManual) return;
   if (!suggested) {
-    if (bet.result !== 'cashout') {
-      bet.result = null;
-      bet.status = 'active';
-      bet.settledAt = '';
-    }
+    bet.result = null;
+    bet.status = bet.status === 'draft' ? 'draft' : 'active';
+    bet.settledAt = '';
     return;
   }
   bet.result = suggested;
@@ -854,8 +1112,9 @@ function resultCounts(bet, acc) {
 export function analyze(state, { view = 'tutto', today = '2026-01-01', from = '', to = '' } = {}) {
   const range = rangeForView(view, today, { from: from || null, to: to || null });
   const granularity = granularityFor(view, range.from, range.to);
-  const settled = state.bets.filter((b) => b.status === 'settled' && inRange(betDate(b), range.from, range.to)).sort(chrono);
-  const open = state.bets.filter((b) => b.status !== 'settled' && inRange(betDate(b), range.from, range.to));
+  const settled = state.bets.filter((b) => !b.bonusId && b.status === 'settled' && inRange(betDate(b), range.from, range.to)).sort(chrono);
+  const open = state.bets.filter((b) => !b.bonusId && b.status !== 'settled' && inRange(betDate(b), range.from, range.to));
+  const bonus = bonusSummary(state, range);
   let profit = 0;
   let staked = 0;
   let incomplete = 0;
@@ -908,8 +1167,33 @@ export function analyze(state, { view = 'tutto', today = '2026-01-01', from = ''
     const pk = periodKey(date, granularity);
     addBreakdown(byPeriod, pk, periodLabel(pk, granularity, date), bet, p);
     dayEquity.set(date, roundMoney((dayEquity.get(date) || 0) + p));
-    rows.push(csvRow(bet, p, turn, price));
+    rows.push(csvRow(bet, p, turn, price, 'Soldi veri'));
   }
+  for (const conv of bonus.conversions) {
+    if (!inRange(conv.date, range.from, range.to)) continue;
+    dayEquity.set(conv.date, roundMoney((dayEquity.get(conv.date) || 0) + conv.amount));
+    rows.push({
+      Data: formatDateShort(conv.date),
+      Orario: '',
+      Tipo: 'Bonus',
+      Lato: '',
+      Partite: 'Bonus convertito in soldi veri',
+      Campionato: '',
+      Mercato: 'Bonus',
+      Quote: '',
+      Quota: '',
+      Puntata: '',
+      Rischio: '',
+      Bookmaker: '',
+      'Commissione %': '',
+      Esito: 'Completato',
+      'Cash out': '',
+      Punteggio: '',
+      Utile: String(conv.amount).replace('.', ','),
+      Conto: 'Soldi veri',
+    });
+  }
+  profit = roundMoney(profit + bonus.converted);
 
   const startBank = state.settings.startingBankroll || 0;
   let running = 0;
@@ -961,7 +1245,14 @@ export function analyze(state, { view = 'tutto', today = '2026-01-01', from = ''
       biggestLoss,
       ...streaks(settled.filter((b) => profitOf(b) != null)),
       startingBankroll: state.settings.startingBankroll,
+      bonusConverted: bonus.converted,
+      bonusProfit: bonus.bonusProfit,
+      bonusOpenBalance: bonus.openBalance,
+      bonusOpen: bonus.open,
+      bonusLost: bonus.lost,
+      bonusCompleted: bonus.completed,
     },
+    bonus,
     equity,
     byPeriod: finishBreakdown(byPeriod).sort((a, b) => a.key.localeCompare(b.key)),
     byKind: finishBreakdown(byKind),
@@ -973,7 +1264,35 @@ export function analyze(state, { view = 'tutto', today = '2026-01-01', from = ''
   };
 }
 
-function csvRow(bet, profit, turn, price) {
+export function bonusSummary(state, range = { from: null, to: null }) {
+  let converted = 0;
+  let bonusProfit = 0;
+  let openBalance = 0;
+  let open = 0;
+  let lost = 0;
+  let completed = 0;
+  const conversions = [];
+  for (const bonus of state.bonuses || []) {
+    const snap = evaluateBonus(state, bonus);
+    for (const bet of snap.bets) {
+      if (bet.status !== 'settled') continue;
+      const profit = profitOf(bet);
+      if (profit != null) bonusProfit = roundMoney(bonusProfit + profit);
+    }
+    if (snap.status === 'open') {
+      open += 1;
+      openBalance = roundMoney(openBalance + snap.balance);
+    } else if (snap.status === 'lost') lost += 1;
+    else if (snap.status === 'completed') {
+      completed += 1;
+      conversions.push({ id: bonus.id, date: snap.closeDate, amount: snap.converted });
+      if (inRange(snap.closeDate, range.from, range.to)) converted = roundMoney(converted + snap.converted);
+    }
+  }
+  return { converted, bonusProfit, openBalance, open, lost, completed, conversions };
+}
+
+function csvRow(bet, profit, turn, price, conto = 'Soldi veri') {
   return {
     Data: formatDateShort(betDate(bet)),
     Orario: betKickoff(bet),
@@ -992,13 +1311,14 @@ function csvRow(bet, profit, turn, price) {
     'Cash out': bet.cashoutAmount == null ? '' : String(bet.cashoutAmount).replace('.', ','),
     Punteggio: (bet.selections || []).map((s) => s.score).filter(Boolean).join(' | '),
     Utile: String(profit).replace('.', ','),
+    Conto: conto,
   };
 }
 
 export function toCsv(rows) {
   const headers = rows[0] ? Object.keys(rows[0]) : [
     'Data', 'Orario', 'Tipo', 'Lato', 'Partite', 'Campionato', 'Mercato', 'Quote', 'Quota',
-    'Puntata', 'Rischio', 'Bookmaker', 'Commissione %', 'Esito', 'Cash out', 'Punteggio', 'Utile',
+    'Puntata', 'Rischio', 'Bookmaker', 'Commissione %', 'Esito', 'Cash out', 'Punteggio', 'Utile', 'Conto',
   ];
   const lines = [headers.join(';')];
   for (const row of rows) {

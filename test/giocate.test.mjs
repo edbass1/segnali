@@ -2,10 +2,10 @@ import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import {
-  analyze, applySuggestedResult, combinedOdds, deleteEverywhere, emptyState, exportBackup,
-  importBackup, isoWeekKey, loadState, meaningfulFingerprint, mergeStates, oddsForBet,
-  playDraft, profitOf, rangeForView, saveState, sendSlip, setSelectionResult, streaks,
-  toCsv, toRemote, toggleSlipItem,
+  analyze, applySuggestedResult, bonusIssues, combinedOdds, deleteEverywhere, emptyState,
+  evaluateBonus, exportBackup, importBackup, isoWeekKey, loadState, meaningfulFingerprint,
+  mergeStates, normalizeState, oddsForBet, outcomeOf, playDraft, profitOf, rangeForView,
+  saveState, sendSlip, setBetResult, setSelectionResult, streaks, toCsv, toRemote, toggleSlipItem,
 } from '../live/giocate-model.js';
 import { decodeContent, encodeContent, syncRemote } from '../live/giocate-github.js';
 import { buildPost, sendTelegramPhoto } from '../live/giocate-telegram.js';
@@ -344,3 +344,135 @@ test('la pagina live conserva archivio, segnali e il pulsante AGGIUNGI', () => {
   assert.match(html, /data\/dayafter\.json/);
   assert.match(html, /AGGIUNGI/);
 });
+
+function leg(id, odds, result) {
+  return sel({ id, odds, result, home: 'Casa ' + id, away: 'Ospite ' + id });
+}
+
+test('la multipla si chiude persa appena una selezione è persa, vinta solo se tutte sono chiuse', () => {
+  const bet = played({
+    id: 'm',
+    kind: 'multipla',
+    status: 'active',
+    result: null,
+    stake: 10,
+    selections: [leg('a', 1.8, null), leg('b', 1.5, null), leg('c', 2, 'void')],
+  });
+  setSelectionResult(bet, 'b', 'persa');
+  assert.equal(bet.status, 'settled');
+  assert.equal(bet.result, 'persa');
+  assert.equal(profitOf(bet), -10);
+  assert.equal(outcomeOf(bet).title, 'FINITA – HAI PERSO');
+  assert.match(outcomeOf(bet).detail, /subito/);
+
+  const open = played({
+    id: 'o',
+    kind: 'multipla',
+    status: 'active',
+    result: null,
+    selections: [leg('a', 1.8, 'vinta'), leg('b', 1.5, null)],
+  });
+  assert.equal(open.status, 'active');
+  assert.equal(outcomeOf(open).title, 'IN CORSO');
+  assert.match(outcomeOf(open).detail, /1 selezione ancora aperta/);
+
+  const won = played({
+    id: 'w',
+    kind: 'multipla',
+    status: 'active',
+    result: null,
+    stake: 10,
+    selections: [leg('a', 2, null), leg('b', 1.5, 'void')],
+  });
+  setSelectionResult(won, 'a', 'vinta');
+  assert.equal(won.result, 'vinta');
+  assert.equal(profitOf(won), 10);
+  assert.equal(outcomeOf(won).title, 'FINITA – HAI VINTO');
+
+  const single = played({ id: 's', status: 'active', result: null, selections: [sel({ result: null, odds: 1.8 })] });
+  const closed = setBetResult(single, 'vinta');
+  assert.equal(closed.closed, true);
+  assert.equal(outcomeOf(single).title, 'FINITA – HAI VINTO');
+  assert.equal(profitOf(single), 8);
+});
+
+test('bonus: rigioco, perdita a saldo zero, completamento e file vecchio', () => {
+  const old = normalizeState({ bets: [played({ id: 'vecchia' })], settings: { showStakeOnImage: false } });
+  assert.deepEqual(old.bonuses, []);
+  assert.equal(old.bets[0].bonusId, '');
+  assert.equal(toRemote(old).bonuses.length, 0);
+
+  const state = emptyState();
+  state.slip.mode = 'bonus';
+  state.slip.bonusDraft = { amount: 50, minSelections: 3, minOdds: 1.5, wagerMode: 'multiplier', wagerMultiplier: 3 };
+  for (const [id, home] of [[1, 'A'], [2, 'B'], [3, 'C']]) {
+    toggleSlipItem(state, { matchId: id, date: '2026-11-07', kickoff: '15:0' + id, home, away: 'X', league: 'Serie A', country: 'ITA' });
+  }
+  const first = sendSlip(state)[0];
+  assert.equal(first.bonusId, state.bonuses[0].id);
+  assert.equal(first.stake, 50);
+  first.selections.forEach((s, i) => { s.market = 'Over 1.5'; s.odds = [1.4, 1.6, 1.7][i]; });
+  assert.match(bonusIssues(state, first)[0], /almeno 1,50/);
+  first.selections[0].odds = 1.6;
+  assert.equal(playDraft(state, first.id).ok, true);
+  const placed = state.bets[0];
+  setSelectionResult(placed, placed.selections[0].id, 'vinta');
+  setSelectionResult(placed, placed.selections[1].id, 'vinta');
+  setSelectionResult(placed, placed.selections[2].id, 'vinta');
+  let snap = evaluateBonus(state, state.bonuses[0]);
+  assert.equal(snap.status, 'open');
+  assert.equal(snap.wagered, 50);
+  assert.equal(snap.target, 150);
+  assert.equal(snap.balance, 50 + profitOf(placed));
+
+  state.slip.mode = 'bonus';
+  state.slip.bonusId = state.bonuses[0].id;
+  for (const id of [4, 5, 6]) {
+    toggleSlipItem(state, { matchId: id, date: '2026-11-08', kickoff: '18:00', home: 'H' + id, away: 'A', league: 'Serie A', country: 'ITA' });
+  }
+  const second = sendSlip(state)[0];
+  assert.equal(second.stake, snap.balance);
+  second.selections.forEach((s) => { s.market = '1'; s.odds = 1.8; });
+  assert.equal(playDraft(state, second.id).ok, true);
+  const follow = state.bets.find((b) => b.id === second.id);
+  setSelectionResult(follow, follow.selections[0].id, 'persa');
+  assert.equal(follow.status, 'settled');
+  assert.equal(follow.result, 'persa');
+  assert.equal(openSelectionCountSafe(follow), 2);
+  snap = evaluateBonus(state, state.bonuses[0]);
+  assert.equal(snap.status, 'lost');
+  assert.equal(snap.balance, 0);
+  const report = analyze(state, { view: 'tutto', today: '2026-11-08' });
+  assert.equal(report.kpis.profit, 0);
+  assert.equal(report.kpis.staked, 0);
+  assert.equal(report.kpis.bonusProfit, roundProfit(profitOf(placed) + profitOf(follow)));
+
+  const done = emptyState();
+  done.bonuses = [{
+    id: 'bn', amount: 10, minSelections: 1, minOdds: 1.2, wagerMode: 'multiplier', wagerMultiplier: 2,
+    createdAt: '2026-11-01T00:00:00.000Z', updatedAt: '2026-11-01T00:00:00.000Z',
+  }];
+  const win = (id, date, stake) => played({
+    id, bonusId: 'bn', stake, result: 'vinta', status: 'settled',
+    selections: [sel({ id: id + 's', date, odds: 2, result: 'vinta' })],
+    settledAt: date + 'T20:00:00.000Z',
+  });
+  done.bets = [win('one', '2026-11-02', 10), win('two', '2026-11-03', 10)];
+  const finished = evaluateBonus(done, done.bonuses[0]);
+  assert.equal(finished.status, 'completed');
+  assert.equal(finished.wagered, 20);
+  assert.equal(finished.converted, 30);
+  const money = analyze(done, { view: 'tutto', today: '2026-11-03' });
+  assert.equal(money.kpis.profit, 30);
+  assert.equal(money.kpis.staked, 0);
+  assert.equal(money.kpis.bets, 0);
+  const merged = mergeStates(done, { bonuses: [{ ...done.bonuses[0], amount: 99, updatedAt: '2026-10-01T00:00:00.000Z' }] });
+  assert.equal(merged.bonuses[0].amount, 10);
+});
+
+function openSelectionCountSafe(bet) {
+  return bet.selections.filter((s) => !s.result).length;
+}
+function roundProfit(n) {
+  return Math.round((n + Number.EPSILON) * 100) / 100;
+}
