@@ -1,6 +1,6 @@
 {
  "date": "2026-11-14",
- "generated_at": "2026-11-13 00:09",
+ "generated_at": "2026-11-13 04:34",
  "partial": false,
  "stats": {
   "matches_day": 315,
@@ -16,8 +16,8 @@
    "subisce": 9,
    "mai00": 0
   },
-  "requests": 1054,
-  "seconds": 252
+  "requests": 1071,
+  "seconds": 230
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -777,48 +777,6 @@
    }
   },
   {
-   "matchId": 5837260,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "League One",
-   "country": "ENG",
-   "leagueId": 108,
-   "home": "Milton Keynes Dons",
-   "away": "Burton Albion",
-   "url": "https://www.fotmob.com/match/5837260",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.00 (casa 1.79 + ospite 1.22) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.0,
-     "exp_home": 1.79,
-     "exp_away": 1.22,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 10,
-     "conceded": 10,
-     "no00": 11
-    },
-    "away": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 12,
-     "no00": 13
-    }
-   }
-  },
-  {
    "matchId": 5837262,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -856,6 +814,48 @@
      "n": 14,
      "scored": 9,
      "conceded": 10,
+     "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5837260,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Milton Keynes Dons",
+   "away": "Burton Albion",
+   "url": "https://www.fotmob.com/match/5837260",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.00 (casa 1.79 + ospite 1.22) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.0,
+     "exp_home": 1.79,
+     "exp_away": 1.22,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 10,
+     "no00": 11
+    },
+    "away": {
+     "n": 14,
+     "scored": 10,
+     "conceded": 12,
      "no00": 13
     }
    }
@@ -1128,51 +1128,6 @@
    }
   },
   {
-   "matchId": 1000016771,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "Lowland League West",
-   "country": "SCO",
-   "leagueId": 9545,
-   "home": "Kilwinning Rangers",
-   "away": "Cumnock Juniors",
-   "url": "https://www.fotmob.com/match/1000016771",
-   "finished": false,
-   "score": null,
-   "types": [
-    "segna"
-   ],
-   "reasons": {
-    "segna": "Casa ha segnato almeno 1 gol in 13/13 partite di campionato 2026/27; Ospite in 13/14 (93%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "segna": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 13,
-     "strong_n": 13,
-     "strong_pct": 100,
-     "other_k": 13,
-     "other_n": 14,
-     "other_pct": 93
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 13,
-     "conceded": 8,
-     "no00": 13
-    },
-    "away": {
-     "n": 14,
-     "scored": 13,
-     "conceded": 10,
-     "no00": 14
-    }
-   }
-  },
-  {
    "matchId": 1000016750,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -1259,6 +1214,51 @@
      "scored": 12,
      "conceded": 12,
      "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 1000016771,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "Lowland League West",
+   "country": "SCO",
+   "leagueId": 9545,
+   "home": "Kilwinning Rangers",
+   "away": "Cumnock Juniors",
+   "url": "https://www.fotmob.com/match/1000016771",
+   "finished": false,
+   "score": null,
+   "types": [
+    "segna"
+   ],
+   "reasons": {
+    "segna": "Casa ha segnato almeno 1 gol in 13/13 partite di campionato 2026/27; Ospite in 13/14 (93%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "segna": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 13,
+     "strong_n": 13,
+     "strong_pct": 100,
+     "other_k": 13,
+     "other_n": 14,
+     "other_pct": 93
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 13,
+     "conceded": 8,
+     "no00": 13
+    },
+    "away": {
+     "n": 14,
+     "scored": 13,
+     "conceded": 10,
+     "no00": 14
     }
    }
   },
@@ -1589,54 +1589,6 @@
    }
   },
   {
-   "matchId": 5954003,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "Southern Premier Division South",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Gloucester City",
-   "away": "Sholing",
-   "url": "https://www.fotmob.com/match/5954003",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Casa: 74 partite di campionato consecutive senza 0-0 (ultimo 0-0: 01/02/2025 vs AFC Totton); Ospite: 3 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "home",
-     "streak": 74,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "01/02/2025",
-      "opp": "AFC Totton",
-      "home": true
-     },
-     "other_zz": 3,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 12,
-     "conceded": 13,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 13,
-     "conceded": 10,
-     "no00": 13
-    }
-   }
-  },
-  {
    "matchId": 5954004,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -1681,6 +1633,54 @@
      "scored": 14,
      "conceded": 11,
      "no00": 15
+    }
+   }
+  },
+  {
+   "matchId": 5954003,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "Southern Premier Division South",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Gloucester City",
+   "away": "Sholing",
+   "url": "https://www.fotmob.com/match/5954003",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Casa: 74 partite di campionato consecutive senza 0-0 (ultimo 0-0: 01/02/2025 vs AFC Totton); Ospite: 3 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 74,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "01/02/2025",
+      "opp": "AFC Totton",
+      "home": true
+     },
+     "other_zz": 3,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 12,
+     "conceded": 13,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 13,
+     "conceded": 10,
+     "no00": 13
     }
    }
   },
