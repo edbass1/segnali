@@ -9466,5 +9466,74 @@
   },
   "telegram": true,
   "resolved": "2026-11-09 05:09"
+ },
+ {
+  "id": "5916110-storico",
+  "type": "storico",
+  "time": "2026-11-13 20:18",
+  "ts": 1794597500,
+  "league": "Regionalliga Southwest",
+  "country": "GER",
+  "leagueId": 512,
+  "home": "Homburg",
+  "away": "FSV Frankfurt",
+  "matchId": 5916110,
+  "reason": "Ospite: 90 partite di campionato consecutive senza 0-0 (ultimo 0-0: 02/04/2024 @ Hessen Kassel); Casa: 2 0-0 nelle ultime 50 di campionato",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5916110",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "home": {
+    "streak": 1,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "30/10/2026",
+     "opp": "Eintracht Trier",
+     "home": true
+    },
+    "n": 50,
+    "zz": 2,
+    "avail": 83
+   },
+   "away": {
+    "streak": 90,
+    "complete": true,
+    "capped": false,
+    "last00": {
+     "date": "02/04/2024",
+     "opp": "Hessen Kassel",
+     "home": false
+    },
+    "n": 50,
+    "zz": 0,
+    "avail": 117
+   },
+   "strong": "away"
+  },
+  "streak": 90,
+  "streak_complete": true,
+  "telegram": true
  }
 ]
