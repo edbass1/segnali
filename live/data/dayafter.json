@@ -1,35 +1,25 @@
 {
- "date": "2026-11-15",
- "generated_at": "2026-11-13 19:46",
+ "date": "2026-11-16",
+ "generated_at": "2026-11-14 01:11",
  "partial": false,
  "stats": {
-  "matches_day": 229,
-  "candidates": 154,
-  "evaluated": 129,
-  "qualified": 12,
+  "matches_day": 58,
+  "candidates": 21,
+  "evaluated": 21,
+  "qualified": 2,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 0,
-   "xg": 5,
-   "segna": 3,
-   "subisce": 6,
-   "mai00": 1
+   "xg": 1,
+   "segna": 0,
+   "subisce": 1,
+   "mai00": 0
   },
-  "requests": 437,
-  "seconds": 108
+  "requests": 63,
+  "seconds": 21
  },
- "skipped_leagues": {
-  "USA USL Super League": "femminile",
-  "JPN WE League": "femminile",
-  "DEN A-Liga": "femminile",
-  "ESP Liga F": "femminile",
-  "NED Eredivisie Vrouwen": "femminile",
-  "ITA Serie A Femminile": "femminile",
-  "NOR 1. Division Kvinner Qualification": "femminile",
-  "SCO SWPL 1": "femminile",
-  "NOR Toppserien Qualification": "femminile"
- },
+ "skipped_leagues": {},
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -45,340 +35,22 @@
  },
  "matches": [
   {
-   "matchId": 1000014556,
-   "kickoff": "00:00",
-   "kickoff_utc": "2026-11-14T23:00:00.000Z",
-   "league": "Liga MX",
-   "country": "MEX",
-   "leagueId": 230,
-   "home": "Querétaro FC",
-   "away": "Monterrey",
-   "url": "https://www.fotmob.com/match/1000014556",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.04 (casa 1.56 + ospite 1.48) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.04,
-     "exp_home": 1.56,
-     "exp_away": 1.48,
-     "method": "casa/trasferta",
-     "season": "2026/2027 - Apertura"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 15,
-     "scored": 11,
-     "conceded": 11,
-     "no00": 14
-    },
-    "away": {
-     "n": 15,
-     "scored": 11,
-     "conceded": 12,
-     "no00": 14
-    }
-   }
-  },
-  {
-   "matchId": 1000022943,
-   "kickoff": "04:00",
-   "kickoff_utc": "2026-11-15T03:00:00.000Z",
-   "league": "Liga de Expansión MX - Apertura - Semi-finals",
-   "country": "MEX",
-   "leagueId": 8976,
-   "home": "Atlético La Paz",
-   "away": "Piratas",
-   "url": "https://www.fotmob.com/match/1000022943",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.89 (casa 1.45 + ospite 1.45) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.89,
-     "exp_home": 1.45,
-     "exp_away": 1.45,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 18,
-     "scored": 17,
-     "conceded": 13,
-     "no00": 18
-    },
-    "away": {
-     "n": 18,
-     "scored": 14,
-     "conceded": 12,
-     "no00": 17
-    }
-   }
-  },
-  {
-   "matchId": 5874276,
-   "kickoff": "13:30",
-   "kickoff_utc": "2026-11-15T12:30:00.000Z",
-   "league": "Second Professional League",
-   "country": "BUL",
-   "leagueId": 9096,
-   "home": "Pirin Blagoevgrad",
-   "away": "Montana",
-   "url": "https://www.fotmob.com/match/5874276",
+   "matchId": 6140264,
+   "kickoff": "13:00",
+   "kickoff_utc": "2026-11-16T12:00:00.000Z",
+   "league": "Super League 2",
+   "country": "GRE",
+   "leagueId": 8815,
+   "home": "GS Marko",
+   "away": "Zakynthos APS",
+   "url": "https://www.fotmob.com/match/6140264",
    "finished": false,
    "score": null,
    "types": [
     "subisce"
    ],
    "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 15/15 partite di campionato 2026/27 (Ospite: 12/15) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 15,
-     "strong_n": 15,
-     "strong_pct": 100,
-     "other_k": 12,
-     "other_n": 15,
-     "other_pct": 80
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 15,
-     "scored": 5,
-     "conceded": 15,
-     "no00": 15
-    },
-    "away": {
-     "n": 15,
-     "scored": 11,
-     "conceded": 12,
-     "no00": 14
-    }
-   }
-  },
-  {
-   "matchId": 5868545,
-   "kickoff": "14:00",
-   "kickoff_utc": "2026-11-15T13:00:00.000Z",
-   "league": "LaLiga2",
-   "country": "ESP",
-   "leagueId": 140,
-   "home": "Tenerife",
-   "away": "AD Ceuta FC",
-   "url": "https://www.fotmob.com/match/5868545",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg",
-    "subisce"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.73 (casa 1.46 + ospite 1.26) ≥ 2.7",
-    "subisce": "Ospite ha subito almeno 1 gol in 13/13 partite di campionato 2026/27 (Casa: 10/12) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "xg": {
-     "total": 2.73,
-     "exp_home": 1.46,
-     "exp_away": 1.26,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "subisce": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 13,
-     "strong_n": 13,
-     "strong_pct": 100,
-     "other_k": 10,
-     "other_n": 12,
-     "other_pct": 83
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 10,
-     "conceded": 10,
-     "no00": 12
-    },
-    "away": {
-     "n": 13,
-     "scored": 8,
-     "conceded": 13,
-     "no00": 13
-    }
-   }
-  },
-  {
-   "matchId": 5990943,
-   "kickoff": "14:30",
-   "kickoff_utc": "2026-11-15T13:30:00.000Z",
-   "league": "Serie C Grp. B",
-   "country": "ITA",
-   "leagueId": 147,
-   "home": "Pescara",
-   "away": "Sambenedettese",
-   "url": "https://www.fotmob.com/match/5990943",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Ospite ha subito almeno 1 gol in 13/13 partite di campionato 2026/27 (Casa: 7/13) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 13,
-     "strong_n": 13,
-     "strong_pct": 100,
-     "other_k": 7,
-     "other_n": 13,
-     "other_pct": 54
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 11,
-     "conceded": 7,
-     "no00": 11
-    },
-    "away": {
-     "n": 13,
-     "scored": 11,
-     "conceded": 13,
-     "no00": 13
-    }
-   }
-  },
-  {
-   "matchId": 5921288,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-15T15:00:00.000Z",
-   "league": "Segunda Federacion - Group 2",
-   "country": "ESP",
-   "leagueId": 9138,
-   "home": "CF Calamocha",
-   "away": "Reus",
-   "url": "https://www.fotmob.com/match/5921288",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Ospite: 7/10) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 7,
-     "other_n": 10,
-     "other_pct": 70
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 10,
-     "scored": 3,
-     "conceded": 10,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
-     "scored": 8,
-     "conceded": 7,
-     "no00": 10
-    }
-   }
-  },
-  {
-   "matchId": 5883728,
-   "kickoff": "16:30",
-   "kickoff_utc": "2026-11-15T15:30:00.000Z",
-   "league": "Primera Federacion - Group 2",
-   "country": "ESP",
-   "leagueId": 8968,
-   "home": "Algeciras",
-   "away": "Antequera",
-   "url": "https://www.fotmob.com/match/5883728",
-   "finished": false,
-   "score": null,
-   "types": [
-    "segna"
-   ],
-   "reasons": {
-    "segna": "Casa ha segnato almeno 1 gol in 11/11 partite di campionato 2026/27; Ospite in 9/11 (82%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "segna": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 11,
-     "strong_n": 11,
-     "strong_pct": 100,
-     "other_k": 9,
-     "other_n": 11,
-     "other_pct": 82
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 11,
-     "scored": 11,
-     "conceded": 8,
-     "no00": 11
-    },
-    "away": {
-     "n": 11,
-     "scored": 9,
-     "conceded": 10,
-     "no00": 11
-    }
-   }
-  },
-  {
-   "matchId": 5884242,
-   "kickoff": "17:00",
-   "kickoff_utc": "2026-11-15T16:00:00.000Z",
-   "league": "Segunda Federacion - Group 1",
-   "country": "ESP",
-   "leagueId": 9138,
-   "home": "Coruxo FC",
-   "away": "UD Llanera",
-   "url": "https://www.fotmob.com/match/5884242",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Ospite ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Casa: 8/10) [solo campionato in corso, min. 9 partite per squadra]"
+    "subisce": "Ospite ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Casa: 5/10) [solo campionato in corso, min. 9 partite per squadra]"
    },
    "info": {
     "subisce": {
@@ -387,221 +59,65 @@
      "strong_k": 10,
      "strong_n": 10,
      "strong_pct": 100,
-     "other_k": 8,
+     "other_k": 5,
      "other_n": 10,
-     "other_pct": 80
+     "other_pct": 50
     }
    },
    "cur": {
     "home": {
      "n": 10,
-     "scored": 8,
-     "conceded": 8,
-     "no00": 10
-    },
-    "away": {
-     "n": 10,
      "scored": 9,
-     "conceded": 10,
-     "no00": 10
-    }
-   }
-  },
-  {
-   "matchId": 5885639,
-   "kickoff": "17:00",
-   "kickoff_utc": "2026-11-15T16:00:00.000Z",
-   "league": "Segunda Federacion - Group 5",
-   "country": "ESP",
-   "leagueId": 9138,
-   "home": "Conquense",
-   "away": "CD Guadalajara",
-   "url": "https://www.fotmob.com/match/5885639",
-   "finished": false,
-   "score": null,
-   "types": [
-    "segna",
-    "subisce",
-    "mai00"
-   ],
-   "reasons": {
-    "segna": "Casa ha segnato almeno 1 gol in 9/9 partite di campionato 2026/27; Ospite in 8/10 (80%) [solo campionato in corso, min. 9 partite per squadra]",
-    "subisce": "Ospite ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Casa: 6/9) [solo campionato in corso, min. 9 partite per squadra]",
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 9/9 partite di campionato 2026/27; Ospite: 10/10 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "segna": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 9,
-     "strong_n": 9,
-     "strong_pct": 100,
-     "other_k": 8,
-     "other_n": 10,
-     "other_pct": 80
-    },
-    "subisce": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 6,
-     "other_n": 9,
-     "other_pct": 67
-    },
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 9,
-     "strong_n": 9,
-     "strong_pct": 100,
-     "other_k": 10,
-     "other_n": 10,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 9,
-     "scored": 9,
-     "conceded": 6,
+     "conceded": 5,
      "no00": 9
     },
     "away": {
      "n": 10,
-     "scored": 8,
+     "scored": 6,
      "conceded": 10,
      "no00": 10
     }
    }
   },
   {
-   "matchId": 5868538,
-   "kickoff": "18:30",
-   "kickoff_utc": "2026-11-15T17:30:00.000Z",
+   "matchId": 5868536,
+   "kickoff": "20:30",
+   "kickoff_utc": "2026-11-16T19:30:00.000Z",
    "league": "LaLiga2",
    "country": "ESP",
    "leagueId": 140,
-   "home": "Eibar",
-   "away": "Cádiz",
-   "url": "https://www.fotmob.com/match/5868538",
+   "home": "Albacete",
+   "away": "Celta Fortuna",
+   "url": "https://www.fotmob.com/match/5868536",
    "finished": false,
    "score": null,
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.70 (casa 1.67 + ospite 1.03) ≥ 2.7"
+    "xg": "xG atteso prematch 2.93 (casa 1.66 + ospite 1.26) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 2.7,
-     "exp_home": 1.67,
-     "exp_away": 1.03,
+     "total": 2.93,
+     "exp_home": 1.66,
+     "exp_away": 1.26,
      "method": "casa/trasferta",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 12,
-     "scored": 11,
-     "conceded": 8,
-     "no00": 12
+     "n": 13,
+     "scored": 9,
+     "conceded": 12,
+     "no00": 13
     },
     "away": {
      "n": 13,
-     "scored": 9,
+     "scored": 10,
      "conceded": 11,
      "no00": 12
-    }
-   }
-  },
-  {
-   "matchId": 1000022944,
-   "kickoff": "19:00",
-   "kickoff_utc": "2026-11-15T18:00:00.000Z",
-   "league": "Liga de Expansión MX - Apertura - Semi-finals",
-   "country": "MEX",
-   "leagueId": 8976,
-   "home": "Leones Negros",
-   "away": "Atlético Morelia",
-   "url": "https://www.fotmob.com/match/1000022944",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.99 (casa 1.59 + ospite 1.40) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.99,
-     "exp_home": 1.59,
-     "exp_away": 1.4,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 18,
-     "scored": 15,
-     "conceded": 15,
-     "no00": 18
-    },
-    "away": {
-     "n": 18,
-     "scored": 17,
-     "conceded": 14,
-     "no00": 18
-    }
-   }
-  },
-  {
-   "matchId": 5862758,
-   "kickoff": "19:30",
-   "kickoff_utc": "2026-11-15T18:30:00.000Z",
-   "league": "II Liga",
-   "country": "POL",
-   "leagueId": 8935,
-   "home": "Stal Stalowa Wola",
-   "away": "Olimpia Grudziądz",
-   "url": "https://www.fotmob.com/match/5862758",
-   "finished": false,
-   "score": null,
-   "types": [
-    "segna"
-   ],
-   "reasons": {
-    "segna": "Ospite ha segnato almeno 1 gol in 15/15 partite di campionato 2026/27; Casa in 13/15 (87%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "segna": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 15,
-     "strong_n": 15,
-     "strong_pct": 100,
-     "other_k": 13,
-     "other_n": 15,
-     "other_pct": 87
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 15,
-     "scored": 13,
-     "conceded": 11,
-     "no00": 15
-    },
-    "away": {
-     "n": 15,
-     "scored": 15,
-     "conceded": 12,
-     "no00": 15
     }
    }
   }
