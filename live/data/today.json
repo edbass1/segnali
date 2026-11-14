@@ -1,6 +1,6 @@
 {
  "date": "2026-11-14",
- "generated_at": "2026-11-14 14:58",
+ "generated_at": "2026-11-14 19:59",
  "partial": false,
  "stats": {
   "matches_day": 315,
@@ -16,8 +16,8 @@
    "subisce": 9,
    "mai00": 0
   },
-  "requests": 1151,
-  "seconds": 256
+  "requests": 1150,
+  "seconds": 247
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -147,8 +147,8 @@
    "home": "Hørsholm Usserød IK",
    "away": "Næsby",
    "url": "https://www.fotmob.com/match/5864910",
-   "finished": false,
-   "score": "0-0",
+   "finished": true,
+   "score": "3-0",
    "types": [
     "storico"
    ],
@@ -191,8 +191,8 @@
    "home": "Real Valladolid",
    "away": "Castellón",
    "url": "https://www.fotmob.com/match/5868546",
-   "finished": false,
-   "score": "0-0",
+   "finished": true,
+   "score": "0-1",
    "types": [
     "xg"
    ],
@@ -233,7 +233,7 @@
    "home": "TSV Schwaben Augsburg",
    "away": "FC Schweinfurt",
    "url": "https://www.fotmob.com/match/5911627",
-   "finished": false,
+   "finished": true,
    "score": "0-0",
    "types": [
     "storico"
@@ -277,8 +277,8 @@
    "home": "Lübeck",
    "away": "Eintracht Norderstedt",
    "url": "https://www.fotmob.com/match/5911960",
-   "finished": false,
-   "score": "2-0",
+   "finished": true,
+   "score": "3-0",
    "types": [
     "storico"
    ],
@@ -325,8 +325,8 @@
    "home": "SG Barockstadt Fulda Lehnerz",
    "away": "Kickers Offenbach",
    "url": "https://www.fotmob.com/match/5916113",
-   "finished": false,
-   "score": "0-1",
+   "finished": true,
+   "score": "1-1",
    "types": [
     "storico"
    ],
@@ -373,8 +373,8 @@
    "home": "GVVV Veenendaal",
    "away": "Spakenburg",
    "url": "https://www.fotmob.com/match/5956768",
-   "finished": false,
-   "score": "0-1",
+   "finished": true,
+   "score": "3-2",
    "types": [
     "storico"
    ],
@@ -421,8 +421,8 @@
    "home": "Rijnsburgse Boys",
    "away": "Koninklijke HFC",
    "url": "https://www.fotmob.com/match/5956770",
-   "finished": false,
-   "score": "0-2",
+   "finished": true,
+   "score": "1-4",
    "types": [
     "subisce"
    ],
@@ -466,8 +466,8 @@
    "home": "Rohda Raalte",
    "away": "Katwijk",
    "url": "https://www.fotmob.com/match/5956775",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-1",
    "types": [
     "subisce"
    ],
@@ -511,8 +511,8 @@
    "home": "IJsselmeervogels",
    "away": "Barendrecht",
    "url": "https://www.fotmob.com/match/5956771",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-1",
    "types": [
     "storico"
    ],
@@ -559,8 +559,8 @@
    "home": "Forres Mechanics",
    "away": "Rothes",
    "url": "https://www.fotmob.com/match/1000012616",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-2",
    "types": [
     "storico",
     "subisce"
@@ -615,8 +615,8 @@
    "home": "Welling United",
    "away": "Three Bridges",
    "url": "https://www.fotmob.com/match/5948175",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "4-0",
    "types": [
     "subisce"
    ],
@@ -660,8 +660,8 @@
    "home": "AFC Wimbledon",
    "away": "Blackpool",
    "url": "https://www.fotmob.com/match/5837255",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -702,8 +702,8 @@
    "home": "Stockport County",
    "away": "Reading",
    "url": "https://www.fotmob.com/match/5837264",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "3-1",
    "types": [
     "xg"
    ],
@@ -735,6 +735,48 @@
    }
   },
   {
+   "matchId": 5837265,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Wigan Athletic",
+   "away": "Barnsley",
+   "url": "https://www.fotmob.com/match/5837265",
+   "finished": true,
+   "score": "2-1",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.06 (casa 1.59 + ospite 1.48) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.06,
+     "exp_home": 1.59,
+     "exp_away": 1.48,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 6,
+     "conceded": 11,
+     "no00": 12
+    },
+    "away": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 11,
+     "no00": 11
+    }
+   }
+  },
+  {
    "matchId": 5837260,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -744,8 +786,8 @@
    "home": "Milton Keynes Dons",
    "away": "Burton Albion",
    "url": "https://www.fotmob.com/match/5837260",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "6-2",
    "types": [
     "xg"
    ],
@@ -786,8 +828,8 @@
    "home": "Sheffield Wednesday",
    "away": "Plymouth Argyle",
    "url": "https://www.fotmob.com/match/5837262",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "3-0",
    "types": [
     "xg"
    ],
@@ -819,44 +861,44 @@
    }
   },
   {
-   "matchId": 5837265,
+   "matchId": 5838028,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "League One",
+   "league": "League Two",
    "country": "ENG",
-   "leagueId": 108,
-   "home": "Wigan Athletic",
-   "away": "Barnsley",
-   "url": "https://www.fotmob.com/match/5837265",
-   "finished": false,
-   "score": null,
+   "leagueId": 109,
+   "home": "Colchester United",
+   "away": "Gillingham",
+   "url": "https://www.fotmob.com/match/5838028",
+   "finished": true,
+   "score": "2-0",
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 3.06 (casa 1.59 + ospite 1.48) ≥ 2.7"
+    "xg": "xG atteso prematch 2.70 (casa 1.55 + ospite 1.16) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 3.06,
-     "exp_home": 1.59,
-     "exp_away": 1.48,
+     "total": 2.7,
+     "exp_home": 1.55,
+     "exp_away": 1.16,
      "method": "casa/trasferta",
      "season": "2026/2027"
     }
    },
    "cur": {
     "home": {
-     "n": 14,
-     "scored": 6,
+     "n": 13,
+     "scored": 9,
      "conceded": 11,
      "no00": 12
     },
     "away": {
-     "n": 12,
-     "scored": 9,
-     "conceded": 11,
-     "no00": 11
+     "n": 14,
+     "scored": 10,
+     "conceded": 10,
+     "no00": 12
     }
    }
   },
@@ -870,8 +912,8 @@
    "home": "Port Vale",
    "away": "Accrington Stanley",
    "url": "https://www.fotmob.com/match/5838032",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "4-2",
    "types": [
     "xg"
    ],
@@ -912,8 +954,8 @@
    "home": "Bristol Rovers",
    "away": "Chesterfield",
    "url": "https://www.fotmob.com/match/5838027",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-2",
    "types": [
     "xg"
    ],
@@ -945,90 +987,6 @@
    }
   },
   {
-   "matchId": 5838028,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "League Two",
-   "country": "ENG",
-   "leagueId": 109,
-   "home": "Colchester United",
-   "away": "Gillingham",
-   "url": "https://www.fotmob.com/match/5838028",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.70 (casa 1.55 + ospite 1.16) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.7,
-     "exp_home": 1.55,
-     "exp_away": 1.16,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 9,
-     "conceded": 11,
-     "no00": 12
-    },
-    "away": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 10,
-     "no00": 12
-    }
-   }
-  },
-  {
-   "matchId": 5838037,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "League Two",
-   "country": "ENG",
-   "leagueId": 109,
-   "home": "Swindon Town",
-   "away": "Grimsby Town",
-   "url": "https://www.fotmob.com/match/5838037",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.24 (casa 1.67 + ospite 1.56) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.24,
-     "exp_home": 1.67,
-     "exp_away": 1.56,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 7,
-     "conceded": 12,
-     "no00": 12
-    },
-    "away": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 10,
-     "no00": 13
-    }
-   }
-  },
-  {
    "matchId": 5838033,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -1038,8 +996,8 @@
    "home": "Rochdale",
    "away": "York City",
    "url": "https://www.fotmob.com/match/5838033",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-1",
    "types": [
     "storico",
     "xg"
@@ -1095,8 +1053,8 @@
    "home": "Shrewsbury Town",
    "away": "Oldham Athletic",
    "url": "https://www.fotmob.com/match/5838036",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-1",
    "types": [
     "xg"
    ],
@@ -1128,6 +1086,48 @@
    }
   },
   {
+   "matchId": 5838037,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "League Two",
+   "country": "ENG",
+   "leagueId": 109,
+   "home": "Swindon Town",
+   "away": "Grimsby Town",
+   "url": "https://www.fotmob.com/match/5838037",
+   "finished": true,
+   "score": "1-4",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.24 (casa 1.67 + ospite 1.56) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.24,
+     "exp_home": 1.67,
+     "exp_away": 1.56,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 7,
+     "conceded": 12,
+     "no00": 12
+    },
+    "away": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 10,
+     "no00": 13
+    }
+   }
+  },
+  {
    "matchId": 1000016771,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -1137,8 +1137,8 @@
    "home": "Kilwinning Rangers",
    "away": "Cumnock Juniors",
    "url": "https://www.fotmob.com/match/1000016771",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-2",
    "types": [
     "segna"
    ],
@@ -1182,8 +1182,8 @@
    "home": "Beith Juniors",
    "away": "Auchinleck Talbot",
    "url": "https://www.fotmob.com/match/1000016750",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-4",
    "types": [
     "subisce"
    ],
@@ -1227,8 +1227,8 @@
    "home": "Newton Stewart",
    "away": "Renfrew FC",
    "url": "https://www.fotmob.com/match/1000016784",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-3",
    "types": [
     "subisce"
    ],
@@ -1272,8 +1272,8 @@
    "home": "Eastleigh",
    "away": "AFC Fylde",
    "url": "https://www.fotmob.com/match/5906550",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-2",
    "types": [
     "storico"
    ],
@@ -1320,8 +1320,8 @@
    "home": "Yeovil Town",
    "away": "Boreham Wood",
    "url": "https://www.fotmob.com/match/5906560",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-2",
    "types": [
     "segna"
    ],
@@ -1365,8 +1365,8 @@
    "home": "Leighton Town",
    "away": "Stratford Town",
    "url": "https://www.fotmob.com/match/5953542",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-2",
    "types": [
     "subisce"
    ],
@@ -1410,8 +1410,8 @@
    "home": "Basingstoke",
    "away": "Chippenham Town",
    "url": "https://www.fotmob.com/match/5953997",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-1",
    "types": [
     "storico"
    ],
@@ -1458,8 +1458,8 @@
    "home": "Evesham United",
    "away": "Gosport Borough",
    "url": "https://www.fotmob.com/match/5954001",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "5-3",
    "types": [
     "storico"
    ],
@@ -1497,6 +1497,50 @@
    }
   },
   {
+   "matchId": 5954003,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-14T15:00:00.000Z",
+   "league": "Southern Premier Division South",
+   "country": "ENG",
+   "leagueId": 8947,
+   "home": "Gloucester City",
+   "away": "Sholing",
+   "url": "https://www.fotmob.com/match/5954003",
+   "finished": true,
+   "score": "0-0",
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Casa: almeno 58 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Ospite: 3 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "home",
+     "streak": 58,
+     "complete": false,
+     "capped": false,
+     "last00": null,
+     "other_zz": 3,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 12,
+     "conceded": 13,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 13,
+     "conceded": 10,
+     "no00": 13
+    }
+   }
+  },
+  {
    "matchId": 5954004,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-14T15:00:00.000Z",
@@ -1506,8 +1550,8 @@
    "home": "Hanwell Town",
    "away": "Plymouth Parkway",
    "url": "https://www.fotmob.com/match/5954004",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-1",
    "types": [
     "storico"
    ],
@@ -1545,54 +1589,6 @@
    }
   },
   {
-   "matchId": 5954003,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-14T15:00:00.000Z",
-   "league": "Southern Premier Division South",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Gloucester City",
-   "away": "Sholing",
-   "url": "https://www.fotmob.com/match/5954003",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Casa: 74 partite di campionato consecutive senza 0-0 (ultimo 0-0: 01/02/2025 vs AFC Totton); Ospite: 3 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "home",
-     "streak": 74,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "01/02/2025",
-      "opp": "AFC Totton",
-      "home": true
-     },
-     "other_zz": 3,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 12,
-     "conceded": 13,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 13,
-     "conceded": 10,
-     "no00": 13
-    }
-   }
-  },
-  {
    "matchId": 5868542,
    "kickoff": "18:30",
    "kickoff_utc": "2026-11-14T17:30:00.000Z",
@@ -1603,7 +1599,7 @@
    "away": "Córdoba",
    "url": "https://www.fotmob.com/match/5868542",
    "finished": false,
-   "score": null,
+   "score": "1-2",
    "types": [
     "xg"
    ],
@@ -1645,7 +1641,7 @@
    "away": "Ross County",
    "url": "https://www.fotmob.com/match/5794587",
    "finished": false,
-   "score": null,
+   "score": "1-1",
    "types": [
     "segna"
    ],
