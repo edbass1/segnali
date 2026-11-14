@@ -1,11 +1,12 @@
 // Interfaccia schedina, giocate, bilancio e post Telegram.
 import {
-  BOOKS, MARKETS, amountStaked, analyze, applySuggestedResult, betDate, betKickoff,
-  combinedOdds, deleteEverywhere, exportBackup, formatDateIT, formatDateShort, formatOdds,
-  formatOddsInput, formatPct, formatPlainMoney, formatSignedMoney, importBackup, loadState,
-  matchLabel, meaningfulFingerprint, mergeStates, normalizeTarget, oddsForBet, parseDecimal,
-  playDraft, previewWinProfit, profitOf, removeSelection, romeToday, saveState, sendSlip,
-  setBetResult, setSelectionResult, targetKey, toCsv, toggleSlipItem, validateTarget,
+  BOOKS, MARKETS, amountStaked, analyze, applySuggestedResult, betDate, betKickoff, bonusIssues,
+  combinedOdds, deleteEverywhere, evaluateBonus, exportBackup, formatDateIT, formatDateShort,
+  formatOdds, formatOddsInput, formatPct, formatPlainMoney, formatSignedMoney, importBackup,
+  loadState, matchLabel, maxStakeFor, meaningfulFingerprint, mergeStates, normalizeBonusDraft,
+  normalizeTarget, oddsForBet, outcomeOf, parseDecimal, playDraft, previewWinProfit, profitOf,
+  removeSelection, romeToday, saveState, sendSlip, setBetResult, setSelectionResult, targetKey,
+  toCsv, toggleSlipItem, validateTarget, wagerTargetOf,
 } from './giocate-model.js';
 import { syncRemote } from './giocate-github.js';
 import { buildPost, canvasToJpeg, drawTicket, sendTelegramPhoto, sortForPost } from './giocate-telegram.js';
@@ -179,6 +180,7 @@ function applyMerged(next) {
   state.bets = next.bets;
   state.deletedIds = next.deletedIds;
   state.slip = next.slip;
+  state.bonuses = next.bonuses || [];
   state.settings = next.settings;
   state.settingsUpdatedAt = next.settingsUpdatedAt;
   state.updatedAt = next.updatedAt;
@@ -320,8 +322,7 @@ function refreshDerived(card, bet) {
   const prof = card.querySelector('[data-derived="profit"]');
   if (prof) {
     const p = bet.result ? profitOf(bet) : null;
-    prof.textContent = p == null ? 'Utile —' : formatSignedMoney(p);
-    prof.className = 'g-profit ' + (p > 0 ? 'pos' : p < 0 ? 'neg' : '');
+    prof.textContent = p == null ? '—' : formatSignedMoney(p);
   }
 }
 
@@ -407,17 +408,28 @@ function sideHtml(bet) {
   </div>`;
 }
 
+function bannerHtml(bet) {
+  if (bet.status === 'draft') return '';
+  const outcome = outcomeOf(bet);
+  const amount = outcome.amount == null ? '' : `<div class="a" data-derived="profit">${esc(formatSignedMoney(outcome.amount))}</div>`;
+  const detail = outcome.detail ? `<div class="d">${esc(outcome.detail)}</div>` : '';
+  return `<div class="g-banner ${esc(outcome.tone)}"><div class="t">${esc(outcome.title)}</div>${amount}${detail}</div>`;
+}
+
 function cardHtml(bet) {
   const form = bet.status === 'draft' || bet.editing;
   const phase = bet.status === 'draft' ? 'DA COMPLETARE' : bet.status === 'settled' ? 'CHIUSA' : 'IN CORSO';
   const kind = bet.kind === 'multipla' ? 'MULTIPLA' : 'SINGOLA';
-  const profit = bet.result ? profitOf(bet) : null;
-  return `<article class="g-card" data-id="${esc(bet.id)}">
-    <div class="g-kicker">${phase} · ${kind} · ${bet.side === 'lay' ? 'LAY' : 'BACK'}</div>
-    ${bet.status === 'draft' ? '' : `<div class="g-profit ${profit > 0 ? 'pos' : profit < 0 ? 'neg' : ''}" data-derived="profit">${profit == null ? 'Utile —' : esc(formatSignedMoney(profit))}</div>`}
+  const issues = bet.bonusId && bet.status !== 'settled' ? bonusIssues(state, bet) : [];
+  const maxStake = bet.bonusId ? maxStakeFor(state, bet) : null;
+  return `<article class="g-card${bet.bonusId ? ' g-bonus-bet' : ''}" data-id="${esc(bet.id)}">
+    ${bannerHtml(bet)}
+    <div class="g-kicker">${phase} · ${kind} · ${bet.side === 'lay' ? 'LAY' : 'BACK'}${bet.bonusId ? ' · BONUS' : ''}</div>
     ${bet.selections.map((s) => legHtml(bet, s, form)).join('')}
     ${form ? sideHtml(bet) : ''}
     ${moneyHtml(bet, form)}
+    ${maxStake != null && form ? `<p class="g-hint">Puntata massima del bonus: ${esc(formatPlainMoney(maxStake))}.</p>` : ''}
+    ${issues.length ? `<div class="g-err">${issues.map((line) => esc(line)).join('<br>')}</div>` : ''}
     ${form ? `<div class="g-preview" data-derived="preview"></div><div class="g-err" data-derived="err"></div>` : ''}
     ${bet.status === 'draft' ? '' : `<div class="g-actions">
       ${betBtn(bet, 'vinta', 'VINTA', 'good')}
@@ -437,11 +449,81 @@ function cardHtml(bet) {
   </article>`;
 }
 
+function bonusCard(bonus) {
+  const snap = evaluateBonus(state, bonus);
+  const pct = Math.round(snap.progress * 100);
+  const head = snap.status === 'completed'
+    ? `<div class="g-banner win"><div class="t">BONUS COMPLETATO</div><div class="a">${esc(formatSignedMoney(snap.converted))}</div><div class="d">Il saldo è diventato soldi veri.</div></div>`
+    : snap.status === 'lost'
+      ? '<div class="g-banner loss"><div class="t">BONUS PERSO</div><div class="d">Saldo a zero. Il rigioco si ferma.</div></div>'
+      : `<div class="g-banner open"><div class="t">BONUS IN CORSO</div><div class="d">Saldo ${esc(formatPlainMoney(snap.balance))}</div></div>`;
+  const next = snap.status === 'open' && snap.available > 0
+    ? `<button type="button" class="g-btn primary" data-act="bonus-next" data-bonus="${esc(bonus.id)}">APRI SCOMMESSA SUCCESSIVA</button>`
+    : '';
+  return `<section class="g-bonus">
+    <h3>Bonus ${esc(formatPlainMoney(bonus.amount))}</h3>
+    ${head}
+    <p class="g-hint">Minimo ${bonus.minSelections} selezioni · quota minima ${esc(formatOdds(bonus.minOdds))} · rigioco ${esc(formatPlainMoney(snap.target))}</p>
+    <div class="g-progress" role="progressbar" aria-valuenow="${pct}" aria-valuemin="0" aria-valuemax="100"><div style="width:${pct}%"></div></div>
+    <p><b>${esc(formatPlainMoney(snap.wagered))}</b> rigiocati su ${esc(formatPlainMoney(snap.target))}. Ne restano <b>${esc(formatPlainMoney(snap.remaining))}</b>. Saldo libero <b>${esc(formatPlainMoney(snap.available))}</b>.</p>
+    ${next}
+    <div class="g-chain">${snap.bets.map(cardHtml).join('') || '<p class="g-empty">Nessuna giocata collegata.</p>'}</div>
+  </section>`;
+}
+
+function bonusStatusOf(id) {
+  if (!id) return '';
+  const bonus = (state.bonuses || []).find((b) => b.id === id);
+  return bonus ? evaluateBonus(state, bonus).status : '';
+}
+
+function finale(html) {
+  const modal = document.getElementById('g-modal');
+  const text = modal.querySelector('p');
+  const yes = modal.querySelector('[data-yes]');
+  const no = modal.querySelector('[data-no]');
+  text.innerHTML = html;
+  yes.textContent = 'HO CAPITO';
+  no.hidden = true;
+  modal.hidden = false;
+  return new Promise((resolve) => {
+    const done = () => {
+      modal.hidden = true;
+      no.hidden = false;
+      yes.textContent = 'ELIMINA';
+      text.textContent = '';
+      yes.onclick = null;
+      resolve();
+    };
+    yes.onclick = done;
+  });
+}
+
+function maybeFinale(bet, wasSettled, bonusBefore) {
+  const justClosed = !wasSettled && bet.status === 'settled';
+  let bonusHtml = '';
+  if (bet.bonusId) {
+    const bonus = (state.bonuses || []).find((b) => b.id === bet.bonusId);
+    const snap = bonus ? evaluateBonus(state, bonus) : null;
+    if (snap && bonusBefore === 'open' && snap.status === 'completed') {
+      bonusHtml = `<div class="g-banner win"><div class="t">BONUS COMPLETATO</div><div class="a">${esc(formatSignedMoney(snap.converted))}</div><div class="d">Questo saldo diventa soldi veri.</div></div>`;
+    } else if (snap && bonusBefore === 'open' && snap.status === 'lost') {
+      bonusHtml = '<div class="g-banner loss"><div class="t">BONUS PERSO</div><div class="d">Il saldo del bonus è arrivato a zero.</div></div>';
+    }
+  }
+  if (!justClosed && !bonusHtml) return;
+  const outcome = outcomeOf(bet);
+  const amount = outcome.amount == null ? '' : `<div class="a">${esc(formatSignedMoney(outcome.amount))}</div>`;
+  const detail = outcome.detail ? `<div class="d">${esc(outcome.detail)}</div>` : '';
+  finale(`<div class="g-banner ${esc(outcome.tone)}"><div class="t">${esc(outcome.title)}</div>${amount}${detail}</div>${bonusHtml}`);
+}
+
 function visibleBets() {
   const byKick = (a, b) => betDate(a).localeCompare(betDate(b)) || betKickoff(a).localeCompare(betKickoff(b));
-  const drafts = [...state.drafts].sort(byKick);
-  const active = state.bets.filter((b) => b.status !== 'settled').sort(byKick);
-  const closed = state.bets.filter((b) => b.status === 'settled').sort((a, b) => betDate(b).localeCompare(betDate(a)) || betKickoff(b).localeCompare(betKickoff(a)));
+  const own = (list) => list.filter((b) => !b.bonusId);
+  const drafts = own(state.drafts).sort(byKick);
+  const active = own(state.bets).filter((b) => b.status !== 'settled').sort(byKick);
+  const closed = own(state.bets).filter((b) => b.status === 'settled').sort((a, b) => betDate(b).localeCompare(betDate(a)) || betKickoff(b).localeCompare(betKickoff(a)));
   if (ui.filter === 'bozze') return drafts;
   if (ui.filter === 'corso') return active;
   if (ui.filter === 'chiuse') return closed;
@@ -459,7 +541,9 @@ function renderGiocateList() {
     corso: 'Nessuna giocata in corso.',
     chiuse: 'Nessuna giocata chiusa.',
   }[ui.filter];
-  list.innerHTML = bets.length ? bets.map(cardHtml).join('') : `<div class="g-empty">${empty}</div>`;
+  const bonuses = (state.bonuses || []).map(bonusCard).join('');
+  const body = bets.length ? bets.map(cardHtml).join('') : ((state.bonuses || []).length ? '' : `<div class="g-empty">${empty}</div>`);
+  list.innerHTML = bonuses + body;
   list.querySelectorAll('.g-card').forEach((card) => {
     const bet = findBet(card.dataset.id);
     if (bet) refreshDerived(card, bet);
@@ -473,7 +557,7 @@ function ensureGiocate() {
   if (panel.dataset.ready) return;
   panel.dataset.ready = '1';
   panel.innerHTML = `<h2>Giocate</h2>
-    <p class="g-lead">Compila tipo di giocata, quota e puntata, poi premi GIOCA. Dopo la partita segna VINTA, PERSA, RIMBORSO o CASH OUT. Una giocata resta salvata finché non la elimini tu.</p>
+    <p class="g-lead">Compila tipo di giocata, quota e puntata, poi premi GIOCA. Quando tutte le selezioni hanno un esito, compare FINITA. Una selezione persa chiude subito la multipla. Il bonus con rigioco sta nelle schede gialle, separato dai soldi veri.</p>
     <div class="g-chips">
       <button type="button" class="g-btn g-chip" data-filter="tutte">Tutte</button>
       <button type="button" class="g-btn g-chip" data-filter="bozze">Da completare</button>
@@ -490,8 +574,11 @@ function ensureGiocate() {
     const bet = findBet(card.dataset.id);
     if (!bet) return;
     if (e.target.dataset.f === 'totalOdds') bet.totalOddsManual = true;
+    const wasSettled = bet.status === 'settled';
+    const bonusBefore = bonusStatusOf(bet.bonusId);
     const changed = readCard(card, bet);
     refreshDerived(card, bet);
+    if (!wasSettled && bet.status === 'settled') maybeFinale(bet, wasSettled, bonusBefore);
     if (changed) persistDirty();
   });
   panel.addEventListener('focusout', () => {
@@ -512,6 +599,15 @@ function onGiocateClick(e) {
   }
   const act = e.target.closest('[data-act]');
   if (!act) return;
+  if (act.dataset.act === 'bonus-next') {
+    state.slip.bonusId = act.dataset.bonus;
+    state.slip.mode = 'bonus';
+    state.slip.updatedAt = new Date().toISOString();
+    persistDirty();
+    applyTab('schedina');
+    toast('Aggiungi le partite della prossima giocata e premi INVIA. La puntata sarà il saldo bonus.');
+    return;
+  }
   flushGiocateForms();
   const card = act.closest('.g-card');
   if (!card) return;
@@ -546,16 +642,30 @@ function onGiocateClick(e) {
     return;
   }
   if (action === 'result') {
-    setBetResult(bet, act.dataset.result);
+    const wasSettled = bet.status === 'settled';
+    const bonusBefore = bonusStatusOf(bet.bonusId);
+    const res = setBetResult(bet, act.dataset.result);
+    if (res && res.message && !res.ok) toast(res.message);
+    maybeFinale(bet, wasSettled, bonusBefore);
     afterStructural();
     return;
   }
   if (action === 'sel-result') {
+    const wasSettled = bet.status === 'settled';
+    const bonusBefore = bonusStatusOf(bet.bonusId);
     setSelectionResult(bet, act.dataset.selId, act.dataset.result);
+    maybeFinale(bet, wasSettled, bonusBefore);
     afterStructural();
     return;
   }
-  if (action === 'suggest') { applySuggestedResult(bet); afterStructural(); return; }
+  if (action === 'suggest') {
+    const wasSettled = bet.status === 'settled';
+    const bonusBefore = bonusStatusOf(bet.bonusId);
+    applySuggestedResult(bet);
+    maybeFinale(bet, wasSettled, bonusBefore);
+    afterStructural();
+    return;
+  }
   if (action === 'recalc') {
     bet.totalOddsManual = false;
     bet.totalOdds = combinedOdds(bet.selections);
@@ -585,17 +695,54 @@ function afterStructural() {
   if (panelOn('telegram')) renderTelegramPreview();
 }
 
+function bonusTargetLabel() {
+  const draft = normalizeBonusDraft(state.slip.bonusDraft);
+  if (draft.amount == null) return 'Rigioco richiesto: inserisci prima l\'importo del bonus.';
+  const target = wagerTargetOf(draft);
+  const how = draft.wagerMode === 'amount' ? 'importo fisso' : `${formatOdds(draft.wagerMultiplier)}× il bonus`;
+  return `Rigioco richiesto: ${formatPlainMoney(target)} (${how}).`;
+}
+
+function readBonusForm(root) {
+  const form = root.querySelector('[data-bonus-form]');
+  if (!form) return;
+  const draft = state.slip.bonusDraft;
+  draft.amount = parseDecimal(form.querySelector('[data-f="b-amount"]').value);
+  draft.minSelections = parseDecimal(form.querySelector('[data-f="b-min"]').value);
+  draft.minOdds = parseDecimal(form.querySelector('[data-f="b-odds"]').value);
+  draft.wagerMultiplier = parseDecimal(form.querySelector('[data-f="b-mult"]').value);
+  draft.wagerAmount = parseDecimal(form.querySelector('[data-f="b-wager"]').value);
+  const mode = form.querySelector('[data-f="b-mode"]:checked');
+  draft.wagerMode = mode && mode.value === 'amount' ? 'amount' : 'multiplier';
+  state.slip.bonusDraft = normalizeBonusDraft(draft);
+  if (form.querySelector('[data-f="b-amount"]').value.trim() === '') state.slip.bonusDraft.amount = null;
+}
+
 function renderSlip() {
   const el = document.getElementById('p-schedina');
   if (!el) return;
   const items = state.slip.items;
-  const mode = state.slip.mode === 'multipla' ? 'multipla' : 'singole';
+  const mode = state.slip.mode === 'multipla' || state.slip.mode === 'bonus' ? state.slip.mode : 'singole';
+  const draft = normalizeBonusDraft(state.slip.bonusDraft);
+  const linked = state.slip.bonusId ? (state.bonuses || []).find((b) => b.id === state.slip.bonusId) : null;
+  const linkedSnap = linked ? evaluateBonus(state, linked) : null;
+  const bonusBox = mode !== 'bonus' ? '' : linked ? `<div class="g-warn">Prossima giocata del bonus da ${esc(formatPlainMoney(linked.amount))}. Saldo libero <b>${esc(formatPlainMoney(linkedSnap.available))}</b>. Minimo ${linked.minSelections} partite, quota minima ${esc(formatOdds(linked.minOdds))}. INVIA precompila la puntata con il saldo.</div>` : `<div class="g-fields" data-bonus-form>
+      <label>Importo bonus € <input data-f="b-amount" inputmode="decimal" value="${esc(draft.amount == null ? '' : numInput(draft.amount))}" placeholder="50"></label>
+      <label>Minimo selezioni <input data-f="b-min" inputmode="numeric" value="${esc(String(draft.minSelections))}"></label>
+      <label>Quota minima per selezione <input data-f="b-odds" inputmode="decimal" value="${esc(numInput(draft.minOdds))}"></label>
+      <label class="g-check"><input type="radio" name="b-mode" data-f="b-mode" value="multiplier" ${draft.wagerMode !== 'amount' ? 'checked' : ''}> Rigioco in moltiplicatore</label>
+      <label>Moltiplicatore <input data-f="b-mult" inputmode="decimal" value="${esc(numInput(draft.wagerMultiplier))}" placeholder="3"></label>
+      <label class="g-check"><input type="radio" name="b-mode" data-f="b-mode" value="amount" ${draft.wagerMode === 'amount' ? 'checked' : ''}> Rigioco in euro</label>
+      <label>Rigioco fisso € <input data-f="b-wager" inputmode="decimal" value="${esc(draft.wagerAmount == null ? '' : numInput(draft.wagerAmount))}" placeholder="150"></label>
+    </div><p class="g-hint" data-bonus-target>${esc(bonusTargetLabel())}</p>`;
   el.innerHTML = `<h2>Schedina</h2>
-    <p class="g-lead">SINGOLE: ogni partita diventa una giocata. MULTIPLA: tutte le partite in una giocata sola. INVIA le sposta in Giocate.</p>
+    <p class="g-lead">SINGOLE: una giocata per partita. MULTIPLA: tutte insieme. BONUS: una multipla col saldo bonus e le condizioni di rigioco.</p>
     <div class="g-switch">
       <button type="button" class="g-btn${mode === 'singole' ? ' on' : ''}" data-mode="singole">SINGOLE</button>
       <button type="button" class="g-btn${mode === 'multipla' ? ' on' : ''}" data-mode="multipla">MULTIPLA</button>
+      <button type="button" class="g-btn${mode === 'bonus' ? ' on' : ''}" data-mode="bonus">BONUS</button>
     </div>
+    ${bonusBox}
     ${items.length ? items.map((item) => `<article class="g-card">
         <div class="g-when">${esc(formatDateShort(item.date))} · ${esc(item.kickoff || '—')}</div>
         <div class="g-teams">${esc(item.home)} – ${esc(item.away)}</div>
@@ -604,12 +751,27 @@ function renderSlip() {
       </article>`).join('') : '<div class="g-empty">Nessuna partita. Apri Partite del giorno e premi AGGIUNGI.</div>'}
     <button type="button" class="g-btn primary" data-invia ${items.length ? '' : 'disabled'}>INVIA</button>`;
   el.querySelectorAll('[data-mode]').forEach((b) => b.addEventListener('click', () => {
+    if (b.closest('[data-bonus-form]')) return;
+    readBonusForm(el);
     state.slip.mode = b.dataset.mode;
+    if (b.dataset.mode !== 'bonus') state.slip.bonusId = '';
     state.slip.updatedAt = new Date().toISOString();
     state.updatedAt = state.slip.updatedAt;
     persistDirty();
     renderSlip();
   }));
+  if (!el.dataset.bonusBound) {
+    el.dataset.bonusBound = '1';
+    const onBonusEdit = (e) => {
+      if (!e.target.closest('[data-bonus-form]')) return;
+      readBonusForm(el);
+      const hint = el.querySelector('[data-bonus-target]');
+      if (hint) hint.textContent = bonusTargetLabel();
+      persistDirty();
+    };
+    el.addEventListener('input', onBonusEdit);
+    el.addEventListener('change', onBonusEdit);
+  }
   el.querySelectorAll('[data-remove]').forEach((b) => b.addEventListener('click', () => {
     const item = state.slip.items.find((x) => x.key === b.dataset.remove);
     if (item) toggleSlipItem(state, item);
@@ -618,14 +780,23 @@ function renderSlip() {
   }));
   const send = el.querySelector('[data-invia]');
   if (send) send.addEventListener('click', () => {
-    const multipla = state.slip.mode === 'multipla';
+    readBonusForm(el);
+    const modeNow = state.slip.mode;
     const n = state.slip.items.length;
     if (!n) return;
-    sendSlip(state);
+    const created = sendSlip(state);
+    if (!created.length) {
+      toast(state.slip.notice || 'Controlla la schedina.');
+      renderSlip();
+      return;
+    }
     persistDirty();
     renderSlip();
     applyTab('giocate');
-    toast(multipla ? 'Multipla inviata in Giocate.' : `${n} ${n === 1 ? 'giocata inviata' : 'giocate inviate'}. Compila e premi GIOCA.`);
+    const msg = modeNow === 'bonus' ? 'Bonus inviato in Giocate. Compila le quote e premi GIOCA.'
+      : modeNow === 'multipla' ? 'Multipla inviata in Giocate.'
+        : `${n} ${n === 1 ? 'giocata inviata' : 'giocate inviate'}. Compila e premi GIOCA.`;
+    toast(msg);
   });
 }
 
@@ -715,7 +886,7 @@ function renderBalanceBody() {
     </tr>`).join('');
   body.innerHTML = `<p class="g-hint">${esc(range)}${k.startingBankroll ? ` · bankroll iniziale ${esc(formatPlainMoney(k.startingBankroll))}` : ''}</p>
     <div class="g-kpis">
-      ${kpi('Utile', esc(formatSignedMoney(k.profit)), '', moneyCls(k.profit))}
+      ${kpi('Utile soldi veri', esc(formatSignedMoney(k.profit)), k.bonusConverted ? `di cui ${esc(formatPlainMoney(k.bonusConverted))} da bonus completati` : 'senza le giocate bonus', moneyCls(k.profit))}
       ${kpi('Puntato', esc(formatPlainMoney(k.staked)), 'rimborsi esclusi')}
       ${kpi('Yield', esc(formatPct(k.yield)))}
       ${kpi('ROI', esc(formatPct(k.roi)), k.startingBankroll ? 'sul bankroll' : 'come la yield')}
@@ -728,6 +899,11 @@ function renderBalanceBody() {
       ${kpi('Serie attuale', esc(streakLabel(k.current)), `record vinte ${k.longestWin} · perse ${k.longestLoss}`)}
       ${kpi('In corso', String(k.openBets), `a rischio ${esc(formatPlainMoney(k.openStaked))}`)}
     </div>
+    ${(state.bonuses || []).length ? `<h3>Bonus e soldi veri</h3><div class="g-kpis">
+      ${kpi('Convertito dai bonus', esc(formatSignedMoney(k.bonusConverted)), 'entra nell\'utile vero', moneyCls(k.bonusConverted))}
+      ${kpi('Utile giocate bonus', esc(formatSignedMoney(k.bonusProfit)), 'non è denaro proprio', moneyCls(k.bonusProfit))}
+      ${kpi('Saldo bonus in corso', esc(formatPlainMoney(k.bonusOpenBalance)), `${k.bonusOpen} aperti · ${k.bonusCompleted} completati · ${k.bonusLost} persi`)}
+    </div><p class="g-hint">Le giocate bonus non entrano nel puntato né nello strike dei soldi veri. A rigioco finito, il saldo che resta diventa utile vero. Se il saldo va a zero, il bonus è perso e i soldi veri non cambiano.</p>` : ''}
     ${report.incomplete ? `<p class="g-hint">${report.incomplete} giocate senza quota o puntata: escluse dall'utile.</p>` : ''}
     ${k.bets ? `<div class="g-charts two">
       <div class="g-chart"><h3>Curva bankroll</h3><canvas id="g-equity"></canvas></div>
