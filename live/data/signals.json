@@ -9568,8 +9568,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "0-1",
   "url": "https://www.fotmob.com/match/5921288",
   "over05": null,
   "over05_note": "campionato non coperto",
@@ -9589,7 +9589,8 @@
     "no00": 10
    }
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-15 21:35"
  },
  {
   "id": "5883728-segna",
@@ -9622,8 +9623,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "2-1",
   "url": "https://www.fotmob.com/match/5883728",
   "over05": null,
   "over05_note": "campionato non coperto",
@@ -9643,6 +9644,7 @@
     "no00": 11
    }
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-15 21:35"
  }
 ]
