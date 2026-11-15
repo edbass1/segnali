@@ -9590,5 +9590,59 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5883728-segna",
+  "type": "segna",
+  "time": "2026-11-15 17:32",
+  "ts": 1794760353,
+  "league": "Primera Federacion - Group 2",
+  "country": "ESP",
+  "leagueId": 8968,
+  "home": "Algeciras",
+  "away": "Antequera",
+  "matchId": 5883728,
+  "reason": "Casa ha segnato almeno 1 gol in 11/11 partite di campionato 2026/27; Ospite in 9/11 (82%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 48,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 48,
+   "phase": "48",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5883728",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 11,
+    "scored": 11,
+    "conceded": 8,
+    "no00": 11
+   },
+   "away": {
+    "n": 11,
+    "scored": 9,
+    "conceded": 10,
+    "no00": 11
+   }
+  },
+  "telegram": true
  }
 ]
