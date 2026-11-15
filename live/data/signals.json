@@ -9536,5 +9536,59 @@
   "streak_complete": true,
   "telegram": true,
   "resolved": "2026-11-14 00:55"
+ },
+ {
+  "id": "5921288-subisce",
+  "type": "subisce",
+  "time": "2026-11-15 17:19",
+  "ts": 1794759575,
+  "league": "Segunda Federacion - Group 2",
+  "country": "ESP",
+  "leagueId": 9138,
+  "home": "CF Calamocha",
+  "away": "Reus",
+  "matchId": 5921288,
+  "reason": "Casa ha subito almeno 1 gol in 10/10 partite di campionato 2026/27 (Ospite: 7/10) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5921288",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 10,
+    "scored": 3,
+    "conceded": 10,
+    "no00": 10
+   },
+   "away": {
+    "n": 10,
+    "scored": 8,
+    "conceded": 7,
+    "no00": 10
+   }
+  },
+  "telegram": true
  }
 ]
