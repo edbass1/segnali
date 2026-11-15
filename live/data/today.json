@@ -1,6 +1,6 @@
 {
  "date": "2026-11-15",
- "generated_at": "2026-11-15 17:46",
+ "generated_at": "2026-11-15 22:27",
  "partial": false,
  "stats": {
   "matches_day": 231,
@@ -17,7 +17,7 @@
    "mai00": 1
   },
   "requests": 551,
-  "seconds": 112
+  "seconds": 118
  },
  "skipped_leagues": {
   "JPN WE League": "femminile",
@@ -282,7 +282,7 @@
    "home": "CF Calamocha",
    "away": "Reus",
    "url": "https://www.fotmob.com/match/5921288",
-   "finished": false,
+   "finished": true,
    "score": "0-1",
    "types": [
     "subisce"
@@ -327,8 +327,8 @@
    "home": "Algeciras",
    "away": "Antequera",
    "url": "https://www.fotmob.com/match/5883728",
-   "finished": false,
-   "score": "0-0",
+   "finished": true,
+   "score": "2-1",
    "types": [
     "segna"
    ],
@@ -372,8 +372,8 @@
    "home": "Coruxo FC",
    "away": "UD Llanera",
    "url": "https://www.fotmob.com/match/5884242",
-   "finished": false,
-   "score": "2-1",
+   "finished": true,
+   "score": "3-1",
    "types": [
     "subisce"
    ],
@@ -417,8 +417,8 @@
    "home": "Conquense",
    "away": "CD Guadalajara",
    "url": "https://www.fotmob.com/match/5885639",
-   "finished": false,
-   "score": "1-0",
+   "finished": true,
+   "score": "3-1",
    "types": [
     "segna",
     "subisce",
@@ -486,8 +486,8 @@
    "home": "Eibar",
    "away": "Cádiz",
    "url": "https://www.fotmob.com/match/5868538",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-1",
    "types": [
     "xg"
    ],
@@ -528,8 +528,8 @@
    "home": "Leones Negros",
    "away": "Atlético Morelia",
    "url": "https://www.fotmob.com/match/1000022944",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -570,8 +570,8 @@
    "home": "Stal Stalowa Wola",
    "away": "Olimpia Grudziądz",
    "url": "https://www.fotmob.com/match/5862758",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-0",
    "types": [
     "segna"
    ],
