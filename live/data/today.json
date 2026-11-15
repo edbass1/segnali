@@ -1,6 +1,6 @@
 {
  "date": "2026-11-15",
- "generated_at": "2026-11-15 10:44",
+ "generated_at": "2026-11-15 17:46",
  "partial": false,
  "stats": {
   "matches_day": 231,
@@ -16,8 +16,8 @@
    "subisce": 6,
    "mai00": 1
   },
-  "requests": 552,
-  "seconds": 132
+  "requests": 551,
+  "seconds": 112
  },
  "skipped_leagues": {
   "JPN WE League": "femminile",
@@ -138,8 +138,8 @@
    "home": "Pirin Blagoevgrad",
    "away": "Montana",
    "url": "https://www.fotmob.com/match/5874276",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-1",
    "types": [
     "subisce"
    ],
@@ -183,8 +183,8 @@
    "home": "Tenerife",
    "away": "AD Ceuta FC",
    "url": "https://www.fotmob.com/match/5868545",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-0",
    "types": [
     "xg",
     "subisce"
@@ -237,8 +237,8 @@
    "home": "Pescara",
    "away": "Sambenedettese",
    "url": "https://www.fotmob.com/match/5990943",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "3-1",
    "types": [
     "subisce"
    ],
@@ -283,7 +283,7 @@
    "away": "Reus",
    "url": "https://www.fotmob.com/match/5921288",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "subisce"
    ],
@@ -328,7 +328,7 @@
    "away": "Antequera",
    "url": "https://www.fotmob.com/match/5883728",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "segna"
    ],
@@ -373,7 +373,7 @@
    "away": "UD Llanera",
    "url": "https://www.fotmob.com/match/5884242",
    "finished": false,
-   "score": null,
+   "score": "2-1",
    "types": [
     "subisce"
    ],
@@ -418,7 +418,7 @@
    "away": "CD Guadalajara",
    "url": "https://www.fotmob.com/match/5885639",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "segna",
     "subisce",
