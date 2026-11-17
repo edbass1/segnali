@@ -1,25 +1,28 @@
 {
- "date": "2026-11-17",
- "generated_at": "2026-11-16 19:45",
+ "date": "2026-11-18",
+ "generated_at": "2026-11-17 03:16",
  "partial": false,
  "stats": {
-  "matches_day": 92,
-  "candidates": 31,
-  "evaluated": 31,
-  "qualified": 6,
+  "matches_day": 64,
+  "candidates": 24,
+  "evaluated": 18,
+  "qualified": 5,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
-   "storico": 3,
-   "xg": 0,
+   "storico": 1,
+   "xg": 1,
    "segna": 1,
-   "subisce": 3,
-   "mai00": 1
+   "subisce": 2,
+   "mai00": 0
   },
-  "requests": 83,
-  "seconds": 25
+  "requests": 103,
+  "seconds": 60
  },
- "skipped_leagues": {},
+ "skipped_leagues": {
+  "JPN WE League": "femminile",
+  "SCO SWPL 1": "femminile"
+ },
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -35,180 +38,112 @@
  },
  "matches": [
   {
-   "matchId": 5948145,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-17T19:45:00.000Z",
-   "league": "Isthmian Premier Division",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Burgess Hill Town",
-   "away": "Brentwood Town",
-   "url": "https://www.fotmob.com/match/5948145",
+   "matchId": 5884244,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-11-18T19:00:00.000Z",
+   "league": "Segunda Federacion - Group 1",
+   "country": "ESP",
+   "leagueId": 9138,
+   "home": "Bergantiños CF",
+   "away": "Sestao",
+   "url": "https://www.fotmob.com/match/5884244",
    "finished": false,
    "score": null,
    "types": [
-    "storico"
+    "segna"
    ],
    "reasons": {
-    "storico": "Casa: almeno 58 partite di campionato consecutive senza 0-0 (dati disponibili finiti, nessuno 0-0 trovato); Ospite: 1 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "home",
-     "streak": 58,
-     "complete": false,
-     "capped": false,
-     "last00": null,
-     "other_zz": 1,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 14,
-     "conceded": 14,
-     "no00": 16
-    },
-    "away": {
-     "n": 16,
-     "scored": 12,
-     "conceded": 14,
-     "no00": 16
-    }
-   }
-  },
-  {
-   "matchId": 5948149,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-17T19:45:00.000Z",
-   "league": "Isthmian Premier Division",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Dartford",
-   "away": "Three Bridges",
-   "url": "https://www.fotmob.com/match/5948149",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Ospite ha subito almeno 1 gol in 17/17 partite di campionato 2026/27 (Casa: 12/16) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 17,
-     "strong_n": 17,
-     "strong_pct": 100,
-     "other_k": 12,
-     "other_n": 16,
-     "other_pct": 75
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 14,
-     "conceded": 12,
-     "no00": 16
-    },
-    "away": {
-     "n": 17,
-     "scored": 13,
-     "conceded": 17,
-     "no00": 17
-    }
-   }
-  },
-  {
-   "matchId": 1000016773,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-17T19:45:00.000Z",
-   "league": "Lowland League West",
-   "country": "SCO",
-   "leagueId": 9545,
-   "home": "Cumbernauld Colts",
-   "away": "Pollok",
-   "url": "https://www.fotmob.com/match/1000016773",
-   "finished": false,
-   "score": null,
-   "types": [
-    "segna",
-    "subisce",
-    "mai00"
-   ],
-   "reasons": {
-    "segna": "Ospite ha segnato almeno 1 gol in 12/12 partite di campionato 2026/27; Casa in 10/12 (83%) [solo campionato in corso, min. 9 partite per squadra]",
-    "subisce": "Casa ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Ospite: 10/12) [solo campionato in corso, min. 9 partite per squadra]",
-    "mai00": "Casa: over 0.5 totali (nessuno 0-0) in 12/12 partite di campionato 2026/27; Ospite: 12/12 senza 0-0 (100%) [solo campionato in corso, min. 9 partite per squadra]"
+    "segna": "Casa ha segnato almeno 1 gol in 10/10 partite di campionato 2026/27; Ospite in 8/10 (80%) [solo campionato in corso, min. 9 partite per squadra]"
    },
    "info": {
     "segna": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 12,
-     "strong_n": 12,
-     "strong_pct": 100,
-     "other_k": 10,
-     "other_n": 12,
-     "other_pct": 83
-    },
-    "subisce": {
      "strong": "home",
      "season": "2026/27",
-     "strong_k": 12,
-     "strong_n": 12,
+     "strong_k": 10,
+     "strong_n": 10,
      "strong_pct": 100,
-     "other_k": 10,
-     "other_n": 12,
-     "other_pct": 83
-    },
-    "mai00": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 12,
-     "strong_n": 12,
-     "strong_pct": 100,
-     "other_k": 12,
-     "other_n": 12,
-     "other_pct": 100
+     "other_k": 8,
+     "other_n": 10,
+     "other_pct": 80
     }
    },
    "cur": {
     "home": {
-     "n": 12,
+     "n": 10,
      "scored": 10,
-     "conceded": 12,
-     "no00": 12
+     "conceded": 7,
+     "no00": 10
     },
     "away": {
-     "n": 12,
-     "scored": 12,
-     "conceded": 10,
-     "no00": 12
+     "n": 10,
+     "scored": 8,
+     "conceded": 2,
+     "no00": 9
     }
    }
   },
   {
-   "matchId": 1000016772,
+   "matchId": 1000017041,
    "kickoff": "20:45",
-   "kickoff_utc": "2026-11-17T19:45:00.000Z",
-   "league": "Lowland League West",
+   "kickoff_utc": "2026-11-18T19:45:00.000Z",
+   "league": "Lowland League East",
    "country": "SCO",
    "leagueId": 9545,
-   "home": "Dalbeattie Star",
-   "away": "Caledonian Braves",
-   "url": "https://www.fotmob.com/match/1000016772",
+   "home": "Dunipace",
+   "away": "Linlithgow Rose",
+   "url": "https://www.fotmob.com/match/1000017041",
    "finished": false,
    "score": null,
    "types": [
     "subisce"
    ],
    "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 11/13) [solo campionato in corso, min. 9 partite per squadra]"
+    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 7/13) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 11,
+     "strong_n": 11,
+     "strong_pct": 100,
+     "other_k": 7,
+     "other_n": 13,
+     "other_pct": 54
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 6,
+     "conceded": 11,
+     "no00": 11
+    },
+    "away": {
+     "n": 13,
+     "scored": 12,
+     "conceded": 7,
+     "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 1000016776,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-18T19:45:00.000Z",
+   "league": "Lowland League West",
+   "country": "SCO",
+   "leagueId": 9545,
+   "home": "Beith Juniors",
+   "away": "Johnstone Burgh",
+   "url": "https://www.fotmob.com/match/1000016776",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 10/12) [solo campionato in corso, min. 9 partite per squadra]"
    },
    "info": {
     "subisce": {
@@ -217,101 +152,53 @@
      "strong_k": 14,
      "strong_n": 14,
      "strong_pct": 100,
-     "other_k": 11,
-     "other_n": 13,
-     "other_pct": 85
+     "other_k": 10,
+     "other_n": 12,
+     "other_pct": 83
     }
    },
    "cur": {
     "home": {
      "n": 14,
-     "scored": 6,
+     "scored": 10,
      "conceded": 14,
      "no00": 14
     },
     "away": {
-     "n": 13,
-     "scored": 12,
-     "conceded": 11,
-     "no00": 13
+     "n": 12,
+     "scored": 11,
+     "conceded": 10,
+     "no00": 12
     }
    }
   },
   {
-   "matchId": 5907107,
+   "matchId": 5953936,
    "kickoff": "20:45",
-   "kickoff_utc": "2026-11-17T19:45:00.000Z",
-   "league": "National League North",
+   "kickoff_utc": "2026-11-18T19:45:00.000Z",
+   "league": "Southern Premier Division South",
    "country": "ENG",
-   "leagueId": 8944,
-   "home": "South Shields",
-   "away": "Harborough Town FC",
-   "url": "https://www.fotmob.com/match/5907107",
+   "leagueId": 8947,
+   "home": "Gosport Borough",
+   "away": "Chertsey Town",
+   "url": "https://www.fotmob.com/match/5953936",
    "finished": false,
    "score": null,
    "types": [
     "storico"
    ],
    "reasons": {
-    "storico": "Casa: 55 partite di campionato consecutive senza 0-0 (ultimo 0-0: 06/09/2025 @ Southport); Ospite: 3 0-0 nelle ultime 50 di campionato"
+    "storico": "Casa: 70 partite di campionato consecutive senza 0-0 (ultimo 0-0: 18/02/2025 @ Frome Town); Ospite: 1 0-0 nelle ultime 50 di campionato"
    },
    "info": {
     "storico": {
      "strong": "home",
-     "streak": 55,
+     "streak": 70,
      "complete": true,
      "capped": false,
      "last00": {
-      "date": "06/09/2025",
-      "opp": "Southport",
-      "home": false
-     },
-     "other_zz": 3,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 15,
-     "scored": 14,
-     "conceded": 10,
-     "no00": 15
-    },
-    "away": {
-     "n": 14,
-     "scored": 9,
-     "conceded": 11,
-     "no00": 13
-    }
-   }
-  },
-  {
-   "matchId": 5907625,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-17T19:45:00.000Z",
-   "league": "National League South",
-   "country": "ENG",
-   "leagueId": 8944,
-   "home": "Tonbridge Angels",
-   "away": "Chesham United",
-   "url": "https://www.fotmob.com/match/5907625",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 50 partite di campionato consecutive senza 0-0 (ultimo 0-0: 11/10/2025 @ Maidstone United); Casa: 1 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 50,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "11/10/2025",
-      "opp": "Maidstone United",
+      "date": "18/02/2025",
+      "opp": "Frome Town",
       "home": false
      },
      "other_zz": 1,
@@ -320,16 +207,58 @@
    },
    "cur": {
     "home": {
-     "n": 16,
-     "scored": 14,
-     "conceded": 10,
-     "no00": 16
+     "n": 17,
+     "scored": 12,
+     "conceded": 16,
+     "no00": 17
     },
     "away": {
-     "n": 15,
-     "scored": 9,
+     "n": 16,
+     "scored": 16,
      "conceded": 13,
-     "no00": 15
+     "no00": 16
+    }
+   }
+  },
+  {
+   "matchId": 5103711,
+   "kickoff": "23:30",
+   "kickoff_utc": "2026-11-18T22:30:00.000Z",
+   "league": "Série A",
+   "country": "BRA",
+   "leagueId": 268,
+   "home": "Coritiba",
+   "away": "Santos",
+   "url": "https://www.fotmob.com/match/5103711",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.78 (casa 1.36 + ospite 1.42) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.78,
+     "exp_home": 1.36,
+     "exp_away": 1.42,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 34,
+     "scored": 22,
+     "conceded": 27,
+     "no00": 33
+    },
+    "away": {
+     "n": 34,
+     "scored": 30,
+     "conceded": 27,
+     "no00": 32
     }
    }
   }

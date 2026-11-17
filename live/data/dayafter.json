@@ -1,27 +1,26 @@
 {
- "date": "2026-11-18",
- "generated_at": "2026-11-16 19:46",
+ "date": "2026-11-19",
+ "generated_at": "2026-11-17 03:17",
  "partial": false,
  "stats": {
-  "matches_day": 64,
-  "candidates": 24,
-  "evaluated": 18,
+  "matches_day": 58,
+  "candidates": 28,
+  "evaluated": 27,
   "qualified": 5,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
-   "storico": 1,
-   "xg": 1,
-   "segna": 1,
-   "subisce": 2,
+   "storico": 0,
+   "xg": 4,
+   "segna": 0,
+   "subisce": 1,
    "mai00": 0
   },
-  "requests": 101,
-  "seconds": 44
+  "requests": 282,
+  "seconds": 89
  },
  "skipped_leagues": {
-  "JPN WE League": "femminile",
-  "SCO SWPL 1": "femminile"
+  "JPN WE League": "femminile"
  },
  "rules": {
   "window": "60-70'",
@@ -38,67 +37,106 @@
  },
  "matches": [
   {
-   "matchId": 5884244,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-11-18T19:00:00.000Z",
-   "league": "Segunda Federacion - Group 1",
-   "country": "ESP",
-   "leagueId": 9138,
-   "home": "Bergantiños CF",
-   "away": "Sestao",
-   "url": "https://www.fotmob.com/match/5884244",
+   "matchId": 5103713,
+   "kickoff": "00:00",
+   "kickoff_utc": "2026-11-18T23:00:00.000Z",
+   "league": "Série A",
+   "country": "BRA",
+   "leagueId": 268,
+   "home": "Remo",
+   "away": "Chapecoense",
+   "url": "https://www.fotmob.com/match/5103713",
    "finished": false,
    "score": null,
    "types": [
-    "segna"
+    "xg"
    ],
    "reasons": {
-    "segna": "Casa ha segnato almeno 1 gol in 10/10 partite di campionato 2026/27; Ospite in 8/10 (80%) [solo campionato in corso, min. 9 partite per squadra]"
+    "xg": "xG atteso prematch 2.77 (casa 1.63 + ospite 1.14) ≥ 2.7"
    },
    "info": {
-    "segna": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 10,
-     "strong_n": 10,
-     "strong_pct": 100,
-     "other_k": 8,
-     "other_n": 10,
-     "other_pct": 80
+    "xg": {
+     "total": 2.77,
+     "exp_home": 1.63,
+     "exp_away": 1.14,
+     "method": "casa/trasferta",
+     "season": "2026"
     }
    },
    "cur": {
     "home": {
-     "n": 10,
-     "scored": 10,
-     "conceded": 7,
-     "no00": 10
+     "n": 34,
+     "scored": 23,
+     "conceded": 30,
+     "no00": 32
     },
     "away": {
-     "n": 10,
-     "scored": 8,
-     "conceded": 2,
-     "no00": 9
+     "n": 34,
+     "scored": 22,
+     "conceded": 32,
+     "no00": 33
     }
    }
   },
   {
-   "matchId": 1000017041,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-18T19:45:00.000Z",
-   "league": "Lowland League East",
-   "country": "SCO",
-   "leagueId": 9545,
-   "home": "Dunipace",
-   "away": "Linlithgow Rose",
-   "url": "https://www.fotmob.com/match/1000017041",
+   "matchId": 5103710,
+   "kickoff": "01:30",
+   "kickoff_utc": "2026-11-19T00:30:00.000Z",
+   "league": "Série A",
+   "country": "BRA",
+   "leagueId": 268,
+   "home": "Grêmio",
+   "away": "Bahia",
+   "url": "https://www.fotmob.com/match/5103710",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.05 (casa 1.53 + ospite 1.52) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.05,
+     "exp_home": 1.53,
+     "exp_away": 1.52,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 34,
+     "scored": 24,
+     "conceded": 26,
+     "no00": 30
+    },
+    "away": {
+     "n": 34,
+     "scored": 29,
+     "conceded": 25,
+     "no00": 32
+    }
+   }
+  },
+  {
+   "matchId": 1000023175,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-11-19T13:00:00.000Z",
+   "league": "Persian Gulf",
+   "country": "IRN",
+   "leagueId": 523,
+   "home": "Malavan",
+   "away": "Gol Gohar",
+   "url": "https://www.fotmob.com/match/1000023175",
    "finished": false,
    "score": null,
    "types": [
     "subisce"
    ],
    "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 7/13) [solo campionato in corso, min. 9 partite per squadra]"
+    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 6/11) [solo campionato in corso, min. 9 partite per squadra]"
    },
    "info": {
     "subisce": {
@@ -107,142 +145,49 @@
      "strong_k": 11,
      "strong_n": 11,
      "strong_pct": 100,
-     "other_k": 7,
-     "other_n": 13,
-     "other_pct": 54
+     "other_k": 6,
+     "other_n": 11,
+     "other_pct": 55
     }
    },
    "cur": {
     "home": {
      "n": 11,
-     "scored": 6,
+     "scored": 7,
      "conceded": 11,
      "no00": 11
     },
     "away": {
-     "n": 13,
-     "scored": 12,
-     "conceded": 7,
-     "no00": 13
+     "n": 11,
+     "scored": 4,
+     "conceded": 6,
+     "no00": 9
     }
    }
   },
   {
-   "matchId": 1000016776,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-18T19:45:00.000Z",
-   "league": "Lowland League West",
-   "country": "SCO",
-   "leagueId": 9545,
-   "home": "Beith Juniors",
-   "away": "Johnstone Burgh",
-   "url": "https://www.fotmob.com/match/1000016776",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 10/12) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 10,
-     "other_n": 12,
-     "other_pct": 83
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 14,
-     "no00": 14
-    },
-    "away": {
-     "n": 12,
-     "scored": 11,
-     "conceded": 10,
-     "no00": 12
-    }
-   }
-  },
-  {
-   "matchId": 5953936,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-18T19:45:00.000Z",
-   "league": "Southern Premier Division South",
-   "country": "ENG",
-   "leagueId": 8947,
-   "home": "Gosport Borough",
-   "away": "Chertsey Town",
-   "url": "https://www.fotmob.com/match/5953936",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Casa: 70 partite di campionato consecutive senza 0-0 (ultimo 0-0: 18/02/2025 @ Frome Town); Ospite: 1 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "home",
-     "streak": 70,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "18/02/2025",
-      "opp": "Frome Town",
-      "home": false
-     },
-     "other_zz": 1,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 17,
-     "scored": 12,
-     "conceded": 16,
-     "no00": 17
-    },
-    "away": {
-     "n": 16,
-     "scored": 16,
-     "conceded": 13,
-     "no00": 16
-    }
-   }
-  },
-  {
-   "matchId": 5103711,
+   "matchId": 5103712,
    "kickoff": "23:30",
-   "kickoff_utc": "2026-11-18T22:30:00.000Z",
+   "kickoff_utc": "2026-11-19T22:30:00.000Z",
    "league": "Série A",
    "country": "BRA",
    "leagueId": 268,
-   "home": "Coritiba",
-   "away": "Santos",
-   "url": "https://www.fotmob.com/match/5103711",
+   "home": "Vitória",
+   "away": "RB Bragantino",
+   "url": "https://www.fotmob.com/match/5103712",
    "finished": false,
    "score": null,
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.78 (casa 1.36 + ospite 1.42) ≥ 2.7"
+    "xg": "xG atteso prematch 2.72 (casa 1.46 + ospite 1.26) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 2.78,
-     "exp_home": 1.36,
-     "exp_away": 1.42,
+     "total": 2.72,
+     "exp_home": 1.46,
+     "exp_away": 1.26,
      "method": "casa/trasferta",
      "season": "2026"
     }
@@ -250,15 +195,57 @@
    "cur": {
     "home": {
      "n": 34,
-     "scored": 22,
-     "conceded": 27,
-     "no00": 33
+     "scored": 23,
+     "conceded": 23,
+     "no00": 32
     },
     "away": {
      "n": 34,
-     "scored": 30,
-     "conceded": 27,
+     "scored": 26,
+     "conceded": 25,
+     "no00": 33
+    }
+   }
+  },
+  {
+   "matchId": 5103705,
+   "kickoff": "23:30",
+   "kickoff_utc": "2026-11-19T22:30:00.000Z",
+   "league": "Série A",
+   "country": "BRA",
+   "leagueId": 268,
+   "home": "Vasco da Gama",
+   "away": "Internacional",
+   "url": "https://www.fotmob.com/match/5103705",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.90 (casa 1.77 + ospite 1.12) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.9,
+     "exp_home": 1.77,
+     "exp_away": 1.12,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 34,
+     "scored": 24,
+     "conceded": 29,
      "no00": 32
+    },
+    "away": {
+     "n": 34,
+     "scored": 24,
+     "conceded": 26,
+     "no00": 31
     }
    }
   }
