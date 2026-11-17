@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-11-17 10:24",
+ "last_scan": "2026-11-17 18:47",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -14,110 +14,10 @@
   "mai00_other": 90
  },
  "sent": {
-  "5975100": {},
-  "5975097": {},
-  "5921288": {
-   "subisce": "2026-11-15 17:19"
-  },
-  "6103175": {},
-  "5975101": {},
-  "6103171": {},
-  "5975102": {},
-  "5883728": {
-   "segna": "2026-11-15 17:32"
-  },
   "6561780": {},
   "5962489": {}
  },
  "checked": {
-  "5975100": {
-   "t": 1794758852,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "5975097": {
-   "t": 1794759512,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "5921288": {
-   "t": 1794759575,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": true,
-    "mai00": false
-   }
-  },
-  "6103175": {
-   "t": 1794759632,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "5975101": {
-   "t": 1794759634,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "6103171": {
-   "t": 1794759691,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "5975102": {
-   "t": 1794759991,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "5883728": {
-   "t": 1794760353,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": true,
-    "subisce": false,
-    "mai00": false
-   }
-  },
   "6561780": {
    "t": 1794788596,
    "r": "valutata",
@@ -141,11 +41,11 @@
    }
   }
  },
- "live_count": 1,
+ "live_count": 16,
  "candidates_last": 0,
  "requests_last": 1,
- "last_write": "2026-11-17 10:24",
- "last_write_ts": 1794907444,
+ "last_write": "2026-11-17 18:47",
+ "last_write_ts": 1794937674,
  "telegram": {
   "last_try": "2026-11-15 21:35",
   "ok": true,
