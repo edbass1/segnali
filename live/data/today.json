@@ -1,9 +1,9 @@
 {
  "date": "2026-11-17",
- "generated_at": "2026-11-17 03:15",
+ "generated_at": "2026-11-17 11:56",
  "partial": false,
  "stats": {
-  "matches_day": 92,
+  "matches_day": 90,
   "candidates": 31,
   "evaluated": 31,
   "qualified": 6,
@@ -17,7 +17,7 @@
    "mai00": 1
   },
   "requests": 89,
-  "seconds": 34
+  "seconds": 36
  },
  "skipped_leagues": {},
  "rules": {
