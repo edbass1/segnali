@@ -1,23 +1,23 @@
 {
  "date": "2026-11-17",
- "generated_at": "2026-11-17 11:56",
+ "generated_at": "2026-11-17 20:33",
  "partial": false,
  "stats": {
   "matches_day": 90,
-  "candidates": 31,
-  "evaluated": 31,
-  "qualified": 6,
+  "candidates": 29,
+  "evaluated": 29,
+  "qualified": 5,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 3,
    "xg": 0,
    "segna": 1,
-   "subisce": 3,
+   "subisce": 2,
    "mai00": 1
   },
-  "requests": 89,
-  "seconds": 36
+  "requests": 84,
+  "seconds": 32
  },
  "skipped_leagues": {},
  "rules": {
@@ -189,51 +189,6 @@
      "scored": 12,
      "conceded": 10,
      "no00": 12
-    }
-   }
-  },
-  {
-   "matchId": 1000016772,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-17T19:45:00.000Z",
-   "league": "Lowland League West",
-   "country": "SCO",
-   "leagueId": 9545,
-   "home": "Dalbeattie Star",
-   "away": "Caledonian Braves",
-   "url": "https://www.fotmob.com/match/1000016772",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 14/14 partite di campionato 2026/27 (Ospite: 11/13) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 14,
-     "strong_n": 14,
-     "strong_pct": 100,
-     "other_k": 11,
-     "other_n": 13,
-     "other_pct": 85
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 6,
-     "conceded": 14,
-     "no00": 14
-    },
-    "away": {
-     "n": 13,
-     "scored": 12,
-     "conceded": 11,
-     "no00": 13
     }
    }
   },
