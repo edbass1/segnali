@@ -1,11 +1,11 @@
 {
  "date": "2026-11-18",
- "generated_at": "2026-11-18 10:54",
+ "generated_at": "2026-11-18 19:35",
  "partial": false,
  "stats": {
   "matches_day": 65,
-  "candidates": 24,
-  "evaluated": 18,
+  "candidates": 23,
+  "evaluated": 17,
   "qualified": 5,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 2,
    "mai00": 0
   },
-  "requests": 110,
-  "seconds": 55
+  "requests": 108,
+  "seconds": 44
  },
  "skipped_leagues": {
   "JPN WE League": "femminile",
