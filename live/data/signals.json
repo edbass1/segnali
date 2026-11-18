@@ -9646,5 +9646,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-15 21:35"
+ },
+ {
+  "id": "5103711-xg",
+  "type": "xg",
+  "time": "2026-11-19 00:58",
+  "ts": 1795046289,
+  "league": "Série A",
+  "country": "BRA",
+  "leagueId": 268,
+  "home": "Coritiba",
+  "away": "Santos",
+  "matchId": 5103711,
+  "reason": "xG atteso prematch 2.78 (casa 1.36 + ospite 1.42) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.36",
+    "0.62"
+   ],
+   "poss": [
+    43,
+    57
+   ],
+   "shots": [
+    8,
+    8
+   ],
+   "sot": [
+    3,
+    3
+   ],
+   "big": [
+    0,
+    1
+   ],
+   "box": [
+    11,
+    14
+   ],
+   "corners": [
+    1,
+    3
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5103711",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.775,
+   "exp_home": 1.356,
+   "exp_away": 1.419,
+   "h_for": 1.131,
+   "h_ag": 1.426,
+   "a_for": 1.411,
+   "a_ag": 1.582,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
  }
 ]
