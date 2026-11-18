@@ -1,6 +1,6 @@
 {
  "date": "2026-11-20",
- "generated_at": "2026-11-18 03:04",
+ "generated_at": "2026-11-18 10:58",
  "partial": false,
  "stats": {
   "matches_day": 168,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 812,
-  "seconds": 209
+  "seconds": 155
  },
  "skipped_leagues": {
   "DEN A-Liga": "femminile",
@@ -986,51 +986,6 @@
    }
   },
   {
-   "matchId": 5832957,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-11-20T19:00:00.000Z",
-   "league": "Eerste Divisie",
-   "country": "NED",
-   "leagueId": 111,
-   "home": "Helmond Sport",
-   "away": "FC Dordrecht",
-   "url": "https://www.fotmob.com/match/5832957",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 15/15 partite di campionato 2026/27 (Ospite: 13/15) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 15,
-     "strong_n": 15,
-     "strong_pct": 100,
-     "other_k": 13,
-     "other_n": 15,
-     "other_pct": 87
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 15,
-     "scored": 13,
-     "conceded": 15,
-     "no00": 15
-    },
-    "away": {
-     "n": 15,
-     "scored": 11,
-     "conceded": 13,
-     "no00": 14
-    }
-   }
-  },
-  {
    "matchId": 5832955,
    "kickoff": "20:00",
    "kickoff_utc": "2026-11-20T19:00:00.000Z",
@@ -1087,6 +1042,51 @@
      "scored": 15,
      "conceded": 11,
      "no00": 15
+    }
+   }
+  },
+  {
+   "matchId": 5832957,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-11-20T19:00:00.000Z",
+   "league": "Eerste Divisie",
+   "country": "NED",
+   "leagueId": 111,
+   "home": "Helmond Sport",
+   "away": "FC Dordrecht",
+   "url": "https://www.fotmob.com/match/5832957",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 15/15 partite di campionato 2026/27 (Ospite: 13/15) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 15,
+     "strong_n": 15,
+     "strong_pct": 100,
+     "other_k": 13,
+     "other_n": 15,
+     "other_pct": 87
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 13,
+     "conceded": 15,
+     "no00": 15
+    },
+    "away": {
+     "n": 15,
+     "scored": 11,
+     "conceded": 13,
+     "no00": 14
     }
    }
   },
@@ -1217,48 +1217,6 @@
    }
   },
   {
-   "matchId": 5803318,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-11-20T19:00:00.000Z",
-   "league": "Ligue 2",
-   "country": "FRA",
-   "leagueId": 110,
-   "home": "Guingamp",
-   "away": "Rodez",
-   "url": "https://www.fotmob.com/match/5803318",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.14 (casa 1.87 + ospite 1.27) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.14,
-     "exp_home": 1.87,
-     "exp_away": 1.27,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 9,
-     "conceded": 9,
-     "no00": 12
-    },
-    "away": {
-     "n": 12,
-     "scored": 7,
-     "conceded": 11,
-     "no00": 12
-    }
-   }
-  },
-  {
    "matchId": 5803320,
    "kickoff": "20:00",
    "kickoff_utc": "2026-11-20T19:00:00.000Z",
@@ -1297,6 +1255,48 @@
      "scored": 7,
      "conceded": 7,
      "no00": 9
+    }
+   }
+  },
+  {
+   "matchId": 5803318,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-11-20T19:00:00.000Z",
+   "league": "Ligue 2",
+   "country": "FRA",
+   "leagueId": 110,
+   "home": "Guingamp",
+   "away": "Rodez",
+   "url": "https://www.fotmob.com/match/5803318",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.14 (casa 1.87 + ospite 1.27) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.14,
+     "exp_home": 1.87,
+     "exp_away": 1.27,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 9,
+     "no00": 12
+    },
+    "away": {
+     "n": 12,
+     "scored": 7,
+     "conceded": 11,
+     "no00": 12
     }
    }
   },
