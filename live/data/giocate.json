@@ -1,0 +1,57 @@
+{
+ "version": 1,
+ "updatedAt": "2026-11-14T11:34:26.668Z",
+ "settingsUpdatedAt": "2026-11-06T18:24:09.681Z",
+ "settings": {
+  "startingBankroll": null,
+  "defaultCommission": null,
+  "showStakeOnImage": true
+ },
+ "slip": {
+  "mode": "singole",
+  "items": [],
+  "updatedAt": "2026-11-14T11:32:44.748Z"
+ },
+ "drafts": [],
+ "bets": [
+  {
+   "id": "b801a2db-e7c4-4bf3-ab30-4d184ebbb006",
+   "kind": "singola",
+   "side": "back",
+   "status": "settled",
+   "createdAt": "2026-11-14T11:32:44.747Z",
+   "updatedAt": "2026-11-14T14:31:20.561Z",
+   "playedAt": "2026-11-14T11:34:26.668Z",
+   "settledAt": "2026-11-14T14:31:20.561Z",
+   "bookmaker": "Bet365",
+   "stake": 10,
+   "commissionPct": null,
+   "totalOdds": 1.71,
+   "totalOddsManual": false,
+   "result": "vinta",
+   "resultManual": true,
+   "cashoutAmount": null,
+   "selections": [
+    {
+     "id": "b847ff23-9fba-4015-947a-a0921583d535",
+     "matchId": "6548825",
+     "date": "2026-11-14",
+     "kickoff": "13:00",
+     "home": "Kjelsås",
+     "away": "Bjarg",
+     "league": "1. Divisjon Qualification",
+     "country": "NOR",
+     "url": "https://www.fotmob.com/match/6548825",
+     "market": "MULTIGOAL 3-6 e Segnano entrambe",
+     "odds": 1.71,
+     "result": null,
+     "score": "2-3"
+    }
+   ]
+  }
+ ],
+ "deletedIds": [
+  "4de1c86e-1dd2-43c7-8bbb-ea4886c62b13",
+  "8c6c0cfc-42c3-4155-aed5-5520cd389ae0"
+ ]
+}
