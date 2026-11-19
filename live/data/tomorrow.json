@@ -1,6 +1,6 @@
 {
  "date": "2026-11-20",
- "generated_at": "2026-11-19 09:21",
+ "generated_at": "2026-11-19 18:34",
  "partial": false,
  "stats": {
   "matches_day": 169,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 830,
-  "seconds": 191
+  "seconds": 172
  },
  "skipped_leagues": {
   "DEN A-Liga": "femminile",
@@ -218,6 +218,48 @@
    }
   },
   {
+   "matchId": 5803661,
+   "kickoff": "11:00",
+   "kickoff_utc": "2026-11-20T10:00:00.000Z",
+   "league": "J. League",
+   "country": "JPN",
+   "leagueId": 223,
+   "home": "Kashiwa Reysol",
+   "away": "JEF United Chiba",
+   "url": "https://www.fotmob.com/match/5803661",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.98 (casa 1.73 + ospite 1.24) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.98,
+     "exp_home": 1.73,
+     "exp_away": 1.24,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 13
+    },
+    "away": {
+     "n": 14,
+     "scored": 10,
+     "conceded": 10,
+     "no00": 13
+    }
+   }
+  },
+  {
    "matchId": 5803667,
    "kickoff": "11:00",
    "kickoff_utc": "2026-11-20T10:00:00.000Z",
@@ -268,48 +310,6 @@
      "scored": 7,
      "conceded": 14,
      "no00": 14
-    }
-   }
-  },
-  {
-   "matchId": 5803661,
-   "kickoff": "11:00",
-   "kickoff_utc": "2026-11-20T10:00:00.000Z",
-   "league": "J. League",
-   "country": "JPN",
-   "leagueId": 223,
-   "home": "Kashiwa Reysol",
-   "away": "JEF United Chiba",
-   "url": "https://www.fotmob.com/match/5803661",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.98 (casa 1.73 + ospite 1.24) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.98,
-     "exp_home": 1.73,
-     "exp_away": 1.24,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 11,
-     "no00": 13
-    },
-    "away": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 10,
-     "no00": 13
     }
    }
   },
