@@ -1,23 +1,23 @@
 {
  "date": "2026-11-20",
- "generated_at": "2026-11-19 01:59",
+ "generated_at": "2026-11-19 09:21",
  "partial": false,
  "stats": {
   "matches_day": 169,
   "candidates": 139,
   "evaluated": 137,
-  "qualified": 39,
+  "qualified": 40,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 8,
    "xg": 23,
-   "segna": 5,
+   "segna": 6,
    "subisce": 9,
    "mai00": 0
   },
-  "requests": 829,
-  "seconds": 218
+  "requests": 830,
+  "seconds": 191
  },
  "skipped_leagues": {
   "DEN A-Liga": "femminile",
@@ -487,6 +487,51 @@
      "scored": 3,
      "conceded": 3,
      "no00": 3
+    }
+   }
+  },
+  {
+   "matchId": 5944215,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-20T15:00:00.000Z",
+   "league": "Kategoria Superiore",
+   "country": "ALB",
+   "leagueId": 260,
+   "home": "Skënderbeu",
+   "away": "Egnatia",
+   "url": "https://www.fotmob.com/match/5944215",
+   "finished": false,
+   "score": null,
+   "types": [
+    "segna"
+   ],
+   "reasons": {
+    "segna": "Ospite ha segnato almeno 1 gol in 11/11 partite di campionato 2026/27; Casa in 9/11 (82%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "segna": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 11,
+     "strong_n": 11,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 11,
+     "other_pct": 82
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 9,
+     "conceded": 9,
+     "no00": 11
+    },
+    "away": {
+     "n": 11,
+     "scored": 11,
+     "conceded": 8,
+     "no00": 11
     }
    }
   },
