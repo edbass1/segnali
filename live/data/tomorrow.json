@@ -1,14 +1,14 @@
 {
  "date": "2026-11-21",
- "generated_at": "2026-11-20 08:45",
+ "generated_at": "2026-11-20 17:45",
  "partial": true,
  "stats": {
-  "matches_day": 595,
-  "candidates": 512,
+  "matches_day": 596,
+  "candidates": 513,
   "evaluated": 323,
   "qualified": 97,
   "errors": 0,
-  "not_evaluated_budget": 179,
+  "not_evaluated_budget": 180,
   "by_type": {
    "storico": 12,
    "xg": 73,
@@ -17,7 +17,7 @@
    "mai00": 1
   },
   "requests": 2007,
-  "seconds": 430
+  "seconds": 429
  },
  "skipped_leagues": {
   "JPN WE League": "femminile",
@@ -1752,48 +1752,6 @@
    }
   },
   {
-   "matchId": 5904809,
-   "kickoff": "14:00",
-   "kickoff_utc": "2026-11-21T13:00:00.000Z",
-   "league": "Süper Lig",
-   "country": "TUR",
-   "leagueId": 71,
-   "home": "Galatasaray",
-   "away": "Samsunspor",
-   "url": "https://www.fotmob.com/match/5904809",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.05 (casa 2.25 + ospite 0.80) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.05,
-     "exp_home": 2.25,
-     "exp_away": 0.8,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 11,
-     "scored": 10,
-     "conceded": 7,
-     "no00": 11
-    },
-    "away": {
-     "n": 11,
-     "scored": 7,
-     "conceded": 9,
-     "no00": 11
-    }
-   }
-  },
-  {
    "matchId": 5904806,
    "kickoff": "14:00",
    "kickoff_utc": "2026-11-21T13:00:00.000Z",
@@ -1832,6 +1790,48 @@
      "scored": 7,
      "conceded": 8,
      "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5904809,
+   "kickoff": "14:00",
+   "kickoff_utc": "2026-11-21T13:00:00.000Z",
+   "league": "Süper Lig",
+   "country": "TUR",
+   "leagueId": 71,
+   "home": "Galatasaray",
+   "away": "Samsunspor",
+   "url": "https://www.fotmob.com/match/5904809",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.05 (casa 2.25 + ospite 0.80) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.05,
+     "exp_home": 2.25,
+     "exp_away": 0.8,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 10,
+     "conceded": 7,
+     "no00": 11
+    },
+    "away": {
+     "n": 11,
+     "scored": 7,
+     "conceded": 9,
+     "no00": 11
     }
    }
   },
@@ -3236,6 +3236,48 @@
    }
   },
   {
+   "matchId": 5837270,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-21T15:00:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Burton Albion",
+   "away": "Luton Town",
+   "url": "https://www.fotmob.com/match/5837270",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.81 (casa 1.31 + ospite 1.50) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.81,
+     "exp_home": 1.31,
+     "exp_away": 1.5,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 11,
+     "conceded": 13,
+     "no00": 14
+    },
+    "away": {
+     "n": 14,
+     "scored": 13,
+     "conceded": 12,
+     "no00": 14
+    }
+   }
+  },
+  {
    "matchId": 5837272,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-21T15:00:00.000Z",
@@ -3316,48 +3358,6 @@
      "scored": 10,
      "conceded": 9,
      "no00": 12
-    }
-   }
-  },
-  {
-   "matchId": 5837270,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-21T15:00:00.000Z",
-   "league": "League One",
-   "country": "ENG",
-   "leagueId": 108,
-   "home": "Burton Albion",
-   "away": "Luton Town",
-   "url": "https://www.fotmob.com/match/5837270",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.81 (casa 1.31 + ospite 1.50) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.81,
-     "exp_home": 1.31,
-     "exp_away": 1.5,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 15,
-     "scored": 11,
-     "conceded": 13,
-     "no00": 14
-    },
-    "away": {
-     "n": 14,
-     "scored": 13,
-     "conceded": 12,
-     "no00": 14
     }
    }
   },
@@ -3446,48 +3446,6 @@
    }
   },
   {
-   "matchId": 5837273,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-21T15:00:00.000Z",
-   "league": "League One",
-   "country": "ENG",
-   "leagueId": 108,
-   "home": "Leyton Orient",
-   "away": "AFC Wimbledon",
-   "url": "https://www.fotmob.com/match/5837273",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.76 (casa 1.40 + ospite 1.36) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.76,
-     "exp_home": 1.4,
-     "exp_away": 1.36,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 10,
-     "conceded": 7,
-     "no00": 12
-    },
-    "away": {
-     "n": 14,
-     "scored": 9,
-     "conceded": 8,
-     "no00": 12
-    }
-   }
-  },
-  {
    "matchId": 5837276,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-21T15:00:00.000Z",
@@ -3538,6 +3496,48 @@
      "scored": 13,
      "conceded": 10,
      "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5837273,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-21T15:00:00.000Z",
+   "league": "League One",
+   "country": "ENG",
+   "leagueId": 108,
+   "home": "Leyton Orient",
+   "away": "AFC Wimbledon",
+   "url": "https://www.fotmob.com/match/5837273",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.76 (casa 1.40 + ospite 1.36) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.76,
+     "exp_home": 1.4,
+     "exp_away": 1.36,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 7,
+     "no00": 12
+    },
+    "away": {
+     "n": 14,
+     "scored": 9,
+     "conceded": 8,
+     "no00": 12
     }
    }
   },
@@ -3722,48 +3722,6 @@
    }
   },
   {
-   "matchId": 5838043,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-21T15:00:00.000Z",
-   "league": "League Two",
-   "country": "ENG",
-   "leagueId": 109,
-   "home": "Crawley Town",
-   "away": "Fleetwood Town",
-   "url": "https://www.fotmob.com/match/5838043",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.32 (casa 1.78 + ospite 1.54) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.32,
-     "exp_home": 1.78,
-     "exp_away": 1.54,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 9,
-     "conceded": 11,
-     "no00": 12
-    },
-    "away": {
-     "n": 15,
-     "scored": 13,
-     "conceded": 10,
-     "no00": 14
-    }
-   }
-  },
-  {
    "matchId": 5838042,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-21T15:00:00.000Z",
@@ -3806,6 +3764,48 @@
    }
   },
   {
+   "matchId": 5838043,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-21T15:00:00.000Z",
+   "league": "League Two",
+   "country": "ENG",
+   "leagueId": 109,
+   "home": "Crawley Town",
+   "away": "Fleetwood Town",
+   "url": "https://www.fotmob.com/match/5838043",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.32 (casa 1.78 + ospite 1.54) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.32,
+     "exp_home": 1.78,
+     "exp_away": 1.54,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 11,
+     "no00": 12
+    },
+    "away": {
+     "n": 15,
+     "scored": 13,
+     "conceded": 10,
+     "no00": 14
+    }
+   }
+  },
+  {
    "matchId": 5838045,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-21T15:00:00.000Z",
@@ -3821,12 +3821,12 @@
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.90 (casa 1.81 + ospite 1.08) ≥ 2.7"
+    "xg": "xG atteso prematch 2.91 (casa 1.83 + ospite 1.08) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 2.9,
-     "exp_home": 1.81,
+     "total": 2.91,
+     "exp_home": 1.83,
      "exp_away": 1.08,
      "method": "casa/trasferta",
      "season": "2026/2027"

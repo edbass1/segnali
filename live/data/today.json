@@ -1,6 +1,6 @@
 {
  "date": "2026-11-20",
- "generated_at": "2026-11-20 08:38",
+ "generated_at": "2026-11-20 17:38",
  "partial": false,
  "stats": {
   "matches_day": 168,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 887,
-  "seconds": 195
+  "seconds": 200
  },
  "skipped_leagues": {
   "DEN A-Liga": "femminile",
@@ -47,8 +47,8 @@
    "home": "Garudayaksa FC",
    "away": "Madura United",
    "url": "https://www.fotmob.com/match/6011909",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-0",
    "types": [
     "subisce"
    ],
@@ -92,8 +92,8 @@
    "home": "PSS Sleman",
    "away": "Arema",
    "url": "https://www.fotmob.com/match/6011910",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-3",
    "types": [
     "segna"
    ],
@@ -137,19 +137,19 @@
    "home": "Western Sydney Wanderers FC",
    "away": "Adelaide United",
    "url": "https://www.fotmob.com/match/1000017581",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "4-2",
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.84 (casa 1.90 + ospite 0.94) ≥ 2.7"
+    "xg": "xG atteso prematch 3.90 (casa 2.49 + ospite 1.41) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 2.84,
-     "exp_home": 1.9,
-     "exp_away": 0.94,
+     "total": 3.9,
+     "exp_home": 2.49,
+     "exp_away": 1.41,
      "method": "media generale",
      "season": "2026/2027"
     }
@@ -179,8 +179,8 @@
    "home": "Negeri Sembilan",
    "away": "Kuching City",
    "url": "https://www.fotmob.com/match/5998176",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-2",
    "types": [
     "storico"
    ],
@@ -218,6 +218,48 @@
    }
   },
   {
+   "matchId": 5803661,
+   "kickoff": "11:00",
+   "kickoff_utc": "2026-11-20T10:00:00.000Z",
+   "league": "J. League",
+   "country": "JPN",
+   "leagueId": 223,
+   "home": "Kashiwa Reysol",
+   "away": "JEF United Chiba",
+   "url": "https://www.fotmob.com/match/5803661",
+   "finished": true,
+   "score": "0-1",
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.98 (casa 1.73 + ospite 1.24) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.98,
+     "exp_home": 1.73,
+     "exp_away": 1.24,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 13
+    },
+    "away": {
+     "n": 14,
+     "scored": 10,
+     "conceded": 10,
+     "no00": 13
+    }
+   }
+  },
+  {
    "matchId": 5803667,
    "kickoff": "11:00",
    "kickoff_utc": "2026-11-20T10:00:00.000Z",
@@ -227,8 +269,8 @@
    "home": "Vissel Kobe",
    "away": "Mito Hollyhock",
    "url": "https://www.fotmob.com/match/5803667",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-2",
    "types": [
     "xg",
     "subisce"
@@ -272,48 +314,6 @@
    }
   },
   {
-   "matchId": 5803661,
-   "kickoff": "11:00",
-   "kickoff_utc": "2026-11-20T10:00:00.000Z",
-   "league": "J. League",
-   "country": "JPN",
-   "leagueId": 223,
-   "home": "Kashiwa Reysol",
-   "away": "JEF United Chiba",
-   "url": "https://www.fotmob.com/match/5803661",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.98 (casa 1.73 + ospite 1.24) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.98,
-     "exp_home": 1.73,
-     "exp_away": 1.24,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 11,
-     "no00": 13
-    },
-    "away": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 10,
-     "no00": 13
-    }
-   }
-  },
-  {
    "matchId": 6362018,
    "kickoff": "12:30",
    "kickoff_utc": "2026-11-20T11:30:00.000Z",
@@ -323,19 +323,19 @@
    "home": "East Bengal FC",
    "away": "SC Delhi",
    "url": "https://www.fotmob.com/match/6362018",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-2",
    "types": [
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 3.76 (casa 2.37 + ospite 1.39) ≥ 2.7"
+    "xg": "xG atteso prematch 3.69 (casa 2.13 + ospite 1.56) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 3.76,
-     "exp_home": 2.37,
-     "exp_away": 1.39,
+     "total": 3.69,
+     "exp_home": 2.13,
+     "exp_away": 1.56,
      "method": "media generale",
      "season": "2026/2027"
     }
@@ -365,8 +365,8 @@
    "home": "Shkendija Haracine",
    "away": "Bashkimi",
    "url": "https://www.fotmob.com/match/5804972",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-1",
    "types": [
     "subisce"
    ],
@@ -410,8 +410,8 @@
    "home": "Viettel",
    "away": "Song Lam Nghe An",
    "url": "https://www.fotmob.com/match/6095774",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-0",
    "types": [
     "storico"
    ],
@@ -458,8 +458,8 @@
    "home": "Bengaluru FC",
    "away": "Mumbai City FC",
    "url": "https://www.fotmob.com/match/6362019",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-0",
    "types": [
     "xg"
    ],
@@ -501,7 +501,7 @@
    "away": "Egnatia",
    "url": "https://www.fotmob.com/match/5944215",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "segna"
    ],
@@ -546,7 +546,7 @@
    "away": "Gandzasar",
    "url": "https://www.fotmob.com/match/5973009",
    "finished": false,
-   "score": null,
+   "score": "3-0",
    "types": [
     "subisce"
    ],
@@ -1031,51 +1031,6 @@
    }
   },
   {
-   "matchId": 5832957,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-11-20T19:00:00.000Z",
-   "league": "Eerste Divisie",
-   "country": "NED",
-   "leagueId": 111,
-   "home": "Helmond Sport",
-   "away": "FC Dordrecht",
-   "url": "https://www.fotmob.com/match/5832957",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 15/15 partite di campionato 2026/27 (Ospite: 13/15) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 15,
-     "strong_n": 15,
-     "strong_pct": 100,
-     "other_k": 13,
-     "other_n": 15,
-     "other_pct": 87
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 15,
-     "scored": 13,
-     "conceded": 15,
-     "no00": 15
-    },
-    "away": {
-     "n": 15,
-     "scored": 11,
-     "conceded": 13,
-     "no00": 14
-    }
-   }
-  },
-  {
    "matchId": 5832955,
    "kickoff": "20:00",
    "kickoff_utc": "2026-11-20T19:00:00.000Z",
@@ -1132,6 +1087,51 @@
      "scored": 15,
      "conceded": 11,
      "no00": 15
+    }
+   }
+  },
+  {
+   "matchId": 5832957,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-11-20T19:00:00.000Z",
+   "league": "Eerste Divisie",
+   "country": "NED",
+   "leagueId": 111,
+   "home": "Helmond Sport",
+   "away": "FC Dordrecht",
+   "url": "https://www.fotmob.com/match/5832957",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 15/15 partite di campionato 2026/27 (Ospite: 13/15) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 15,
+     "strong_n": 15,
+     "strong_pct": 100,
+     "other_k": 13,
+     "other_n": 15,
+     "other_pct": 87
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 13,
+     "conceded": 15,
+     "no00": 15
+    },
+    "away": {
+     "n": 15,
+     "scored": 11,
+     "conceded": 13,
+     "no00": 14
     }
    }
   },

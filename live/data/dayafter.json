@@ -1,11 +1,11 @@
 {
  "date": "2026-11-22",
- "generated_at": "2026-11-20 08:51",
+ "generated_at": "2026-11-20 17:51",
  "partial": false,
  "stats": {
-  "matches_day": 384,
-  "candidates": 303,
-  "evaluated": 283,
+  "matches_day": 382,
+  "candidates": 301,
+  "evaluated": 281,
   "qualified": 81,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 19,
    "mai00": 1
   },
-  "requests": 1557,
-  "seconds": 347
+  "requests": 1553,
+  "seconds": 341
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -659,6 +659,51 @@
    }
   },
   {
+   "matchId": 6140275,
+   "kickoff": "13:00",
+   "kickoff_utc": "2026-11-22T12:00:00.000Z",
+   "league": "Super League 2",
+   "country": "GRE",
+   "leagueId": 8815,
+   "home": "Zakynthos APS",
+   "away": "Panserraikos FC",
+   "url": "https://www.fotmob.com/match/6140275",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 8/11) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 11,
+     "strong_n": 11,
+     "strong_pct": 100,
+     "other_k": 8,
+     "other_n": 11,
+     "other_pct": 73
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 6,
+     "conceded": 11,
+     "no00": 11
+    },
+    "away": {
+     "n": 11,
+     "scored": 8,
+     "conceded": 8,
+     "no00": 10
+    }
+   }
+  },
+  {
    "matchId": 1000017788,
    "kickoff": "13:00",
    "kickoff_utc": "2026-11-22T12:00:00.000Z",
@@ -1111,51 +1156,6 @@
      "scored": 10,
      "conceded": 10,
      "no00": 13
-    }
-   }
-  },
-  {
-   "matchId": 6140275,
-   "kickoff": "14:00",
-   "kickoff_utc": "2026-11-22T13:00:00.000Z",
-   "league": "Super League 2",
-   "country": "GRE",
-   "leagueId": 8815,
-   "home": "Zakynthos APS",
-   "away": "Panserraikos FC",
-   "url": "https://www.fotmob.com/match/6140275",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 8/11) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 11,
-     "strong_n": 11,
-     "strong_pct": 100,
-     "other_k": 8,
-     "other_n": 11,
-     "other_pct": 73
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 11,
-     "scored": 6,
-     "conceded": 11,
-     "no00": 11
-    },
-    "away": {
-     "n": 11,
-     "scored": 8,
-     "conceded": 8,
-     "no00": 10
     }
    }
   },
@@ -1847,51 +1847,6 @@
    }
   },
   {
-   "matchId": 5974756,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-22T15:00:00.000Z",
-   "league": "National Division",
-   "country": "LUX",
-   "leagueId": 229,
-   "home": "Racing FC Union Luxembourg",
-   "away": "FC Wiltz 71",
-   "url": "https://www.fotmob.com/match/5974756",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Ospite ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Casa: 8/12) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 12,
-     "strong_n": 12,
-     "strong_pct": 100,
-     "other_k": 8,
-     "other_n": 12,
-     "other_pct": 67
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 10,
-     "conceded": 8,
-     "no00": 11
-    },
-    "away": {
-     "n": 12,
-     "scored": 10,
-     "conceded": 12,
-     "no00": 12
-    }
-   }
-  },
-  {
    "matchId": 5974753,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-22T15:00:00.000Z",
@@ -1932,6 +1887,51 @@
      "n": 12,
      "scored": 11,
      "conceded": 9,
+     "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 5974756,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-22T15:00:00.000Z",
+   "league": "National Division",
+   "country": "LUX",
+   "leagueId": 229,
+   "home": "Racing FC Union Luxembourg",
+   "away": "FC Wiltz 71",
+   "url": "https://www.fotmob.com/match/5974756",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Ospite ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Casa: 8/12) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 12,
+     "strong_n": 12,
+     "strong_pct": 100,
+     "other_k": 8,
+     "other_n": 12,
+     "other_pct": 67
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 10,
+     "conceded": 8,
+     "no00": 11
+    },
+    "away": {
+     "n": 12,
+     "scored": 10,
+     "conceded": 12,
      "no00": 12
     }
    }
@@ -2297,48 +2297,6 @@
    }
   },
   {
-   "matchId": 5804298,
-   "kickoff": "16:30",
-   "kickoff_utc": "2026-11-22T15:30:00.000Z",
-   "league": "Super League",
-   "country": "SUI",
-   "leagueId": 69,
-   "home": "Basel",
-   "away": "Luzern",
-   "url": "https://www.fotmob.com/match/5804298",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.40 (casa 1.80 + ospite 1.59) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.4,
-     "exp_home": 1.8,
-     "exp_away": 1.59,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 13,
-     "scored": 10,
-     "conceded": 11,
-     "no00": 12
-    },
-    "away": {
-     "n": 13,
-     "scored": 11,
-     "conceded": 12,
-     "no00": 13
-    }
-   }
-  },
-  {
    "matchId": 5943299,
    "kickoff": "16:30",
    "kickoff_utc": "2026-11-22T15:30:00.000Z",
@@ -2377,6 +2335,48 @@
      "scored": 8,
      "conceded": 5,
      "no00": 9
+    }
+   }
+  },
+  {
+   "matchId": 5804298,
+   "kickoff": "16:30",
+   "kickoff_utc": "2026-11-22T15:30:00.000Z",
+   "league": "Super League",
+   "country": "SUI",
+   "leagueId": 69,
+   "home": "Basel",
+   "away": "Luzern",
+   "url": "https://www.fotmob.com/match/5804298",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.40 (casa 1.80 + ospite 1.59) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.4,
+     "exp_home": 1.8,
+     "exp_away": 1.59,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 13,
+     "scored": 10,
+     "conceded": 11,
+     "no00": 12
+    },
+    "away": {
+     "n": 13,
+     "scored": 11,
+     "conceded": 12,
+     "no00": 13
     }
    }
   },
