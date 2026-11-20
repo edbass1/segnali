@@ -1,23 +1,23 @@
 {
  "date": "2026-11-20",
- "generated_at": "2026-11-20 01:11",
+ "generated_at": "2026-11-20 08:38",
  "partial": false,
  "stats": {
-  "matches_day": 173,
-  "candidates": 143,
-  "evaluated": 141,
-  "qualified": 42,
+  "matches_day": 168,
+  "candidates": 138,
+  "evaluated": 136,
+  "qualified": 40,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 8,
-   "xg": 25,
+   "xg": 23,
    "segna": 6,
    "subisce": 9,
    "mai00": 0
   },
-  "requests": 967,
-  "seconds": 232
+  "requests": 887,
+  "seconds": 195
  },
  "skipped_leagues": {
   "DEN A-Liga": "femminile",
@@ -37,90 +37,6 @@
   "mai00_other": 90
  },
  "matches": [
-  {
-   "matchId": 5103705,
-   "kickoff": "23:30",
-   "kickoff_utc": "2026-11-19T22:30:00.000Z",
-   "league": "Série A",
-   "country": "BRA",
-   "leagueId": 268,
-   "home": "Vasco da Gama",
-   "away": "Internacional",
-   "url": "https://www.fotmob.com/match/5103705",
-   "finished": false,
-   "score": "2-1",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.90 (casa 1.77 + ospite 1.12) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.9,
-     "exp_home": 1.77,
-     "exp_away": 1.12,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 34,
-     "scored": 24,
-     "conceded": 29,
-     "no00": 32
-    },
-    "away": {
-     "n": 34,
-     "scored": 24,
-     "conceded": 26,
-     "no00": 31
-    }
-   }
-  },
-  {
-   "matchId": 5103712,
-   "kickoff": "23:30",
-   "kickoff_utc": "2026-11-19T22:30:00.000Z",
-   "league": "Série A",
-   "country": "BRA",
-   "leagueId": 268,
-   "home": "Vitória",
-   "away": "RB Bragantino",
-   "url": "https://www.fotmob.com/match/5103712",
-   "finished": false,
-   "score": "2-0",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.72 (casa 1.46 + ospite 1.26) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.72,
-     "exp_home": 1.46,
-     "exp_away": 1.26,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 34,
-     "scored": 23,
-     "conceded": 23,
-     "no00": 32
-    },
-    "away": {
-     "n": 34,
-     "scored": 26,
-     "conceded": 25,
-     "no00": 33
-    }
-   }
-  },
   {
    "matchId": 6011909,
    "kickoff": "09:30",
@@ -302,48 +218,6 @@
    }
   },
   {
-   "matchId": 5803661,
-   "kickoff": "11:00",
-   "kickoff_utc": "2026-11-20T10:00:00.000Z",
-   "league": "J. League",
-   "country": "JPN",
-   "leagueId": 223,
-   "home": "Kashiwa Reysol",
-   "away": "JEF United Chiba",
-   "url": "https://www.fotmob.com/match/5803661",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.98 (casa 1.73 + ospite 1.24) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.98,
-     "exp_home": 1.73,
-     "exp_away": 1.24,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 11,
-     "conceded": 11,
-     "no00": 13
-    },
-    "away": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 10,
-     "no00": 13
-    }
-   }
-  },
-  {
    "matchId": 5803667,
    "kickoff": "11:00",
    "kickoff_utc": "2026-11-20T10:00:00.000Z",
@@ -394,6 +268,48 @@
      "scored": 7,
      "conceded": 14,
      "no00": 14
+    }
+   }
+  },
+  {
+   "matchId": 5803661,
+   "kickoff": "11:00",
+   "kickoff_utc": "2026-11-20T10:00:00.000Z",
+   "league": "J. League",
+   "country": "JPN",
+   "leagueId": 223,
+   "home": "Kashiwa Reysol",
+   "away": "JEF United Chiba",
+   "url": "https://www.fotmob.com/match/5803661",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.98 (casa 1.73 + ospite 1.24) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.98,
+     "exp_home": 1.73,
+     "exp_away": 1.24,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 11,
+     "conceded": 11,
+     "no00": 13
+    },
+    "away": {
+     "n": 14,
+     "scored": 10,
+     "conceded": 10,
+     "no00": 13
     }
    }
   },
