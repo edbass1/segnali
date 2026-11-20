@@ -9717,5 +9717,59 @@
   },
   "telegram": true,
   "resolved": "2026-11-19 05:12"
+ },
+ {
+  "id": "5910941-segna",
+  "type": "segna",
+  "time": "2026-11-20 20:01",
+  "ts": 1795201286,
+  "league": "Regionalliga Northeast",
+  "country": "GER",
+  "leagueId": 512,
+  "home": "RW Erfurt",
+  "away": "VSG Altglienicke",
+  "matchId": 5910941,
+  "reason": "Casa ha segnato almeno 1 gol in 16/16 partite di campionato 2026/27; Ospite in 13/16 (81%) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 46,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 46,
+   "phase": "46",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5910941",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 16,
+    "scored": 16,
+    "conceded": 12,
+    "no00": 16
+   },
+   "away": {
+    "n": 16,
+    "scored": 13,
+    "conceded": 14,
+    "no00": 16
+   }
+  },
+  "telegram": true
  }
 ]
