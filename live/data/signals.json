@@ -9842,5 +9842,75 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "1000017583-xg",
+  "type": "xg",
+  "time": "2026-11-21 08:21",
+  "ts": 1795245690,
+  "league": "A-League",
+  "country": "AUS",
+  "leagueId": 113,
+  "home": "Central Coast Mariners",
+  "away": "Perth Glory",
+  "matchId": 1000017583,
+  "reason": "xG atteso prematch 2.83 (casa 1.51 + ospite 1.32) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.59",
+    "0.35"
+   ],
+   "poss": [
+    52,
+    48
+   ],
+   "shots": [
+    8,
+    9
+   ],
+   "sot": [
+    0,
+    1
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    16,
+    9
+   ],
+   "corners": [
+    2,
+    6
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/1000017583",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.827,
+   "exp_home": 1.511,
+   "exp_away": 1.316,
+   "h_for": 1.614,
+   "h_ag": 1.384,
+   "a_for": 1.247,
+   "a_ag": 1.408,
+   "method": "media generale",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
