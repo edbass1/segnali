@@ -9984,5 +9984,145 @@
    "season": "2026"
   },
   "telegram": true
+ },
+ {
+  "id": "5881227-xg",
+  "type": "xg",
+  "time": "2026-11-21 16:48",
+  "ts": 1795276100,
+  "league": "Bundesliga",
+  "country": "GER",
+  "leagueId": 54,
+  "home": "Borussia Mönchengladbach",
+  "away": "Borussia Dortmund",
+  "matchId": 5881227,
+  "reason": "xG atteso prematch 3.59 (casa 1.95 + ospite 1.64) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.44",
+    "1.18"
+   ],
+   "poss": [
+    46,
+    54
+   ],
+   "shots": [
+    9,
+    10
+   ],
+   "sot": [
+    2,
+    3
+   ],
+   "big": [
+    1,
+    2
+   ],
+   "box": [
+    15,
+    16
+   ],
+   "corners": [
+    7,
+    6
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5881227",
+  "over05": 1.29,
+  "over05_note": null,
+  "details": {
+   "total": 3.588,
+   "exp_home": 1.948,
+   "exp_away": 1.64,
+   "h_for": 1.847,
+   "h_ag": 1.98,
+   "a_for": 1.3,
+   "a_ag": 2.048,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
+ },
+ {
+  "id": "5881229-xg",
+  "type": "xg",
+  "time": "2026-11-21 16:48",
+  "ts": 1795276109,
+  "league": "Bundesliga",
+  "country": "GER",
+  "leagueId": 54,
+  "home": "Elversberg",
+  "away": "Freiburg",
+  "matchId": 5881229,
+  "reason": "xG atteso prematch 3.66 (casa 1.59 + ospite 2.07) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.71",
+    "0.25"
+   ],
+   "poss": [
+    49,
+    51
+   ],
+   "shots": [
+    8,
+    5
+   ],
+   "sot": [
+    1,
+    0
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    10,
+    10
+   ],
+   "corners": [
+    4,
+    3
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5881229",
+  "over05": 1.4,
+  "over05_note": null,
+  "details": {
+   "total": 3.655,
+   "exp_home": 1.589,
+   "exp_away": 2.066,
+   "h_for": 1.732,
+   "h_ag": 2.45,
+   "a_for": 1.683,
+   "a_ag": 1.445,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
