@@ -9772,5 +9772,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-21 01:15"
+ },
+ {
+  "id": "5803662-xg",
+  "type": "xg",
+  "time": "2026-11-21 08:19",
+  "ts": 1795245576,
+  "league": "J. League",
+  "country": "JPN",
+  "leagueId": 223,
+  "home": "Kawasaki Frontale",
+  "away": "Avispa Fukuoka",
+  "matchId": 5803662,
+  "reason": "xG atteso prematch 2.75 (casa 1.71 + ospite 1.04) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.00",
+    "0.06"
+   ],
+   "poss": [
+    68,
+    32
+   ],
+   "shots": [
+    15,
+    1
+   ],
+   "sot": [
+    4,
+    0
+   ],
+   "big": [
+    2,
+    0
+   ],
+   "box": [
+    28,
+    1
+   ],
+   "corners": [
+    6,
+    1
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5803662",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.746,
+   "exp_home": 1.707,
+   "exp_away": 1.039,
+   "h_for": 2.014,
+   "h_ag": 1.207,
+   "a_for": 0.87,
+   "a_ag": 1.4,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
