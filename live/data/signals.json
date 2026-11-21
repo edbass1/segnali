@@ -9825,8 +9825,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "1-0",
   "url": "https://www.fotmob.com/match/5803662",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -9841,7 +9841,8 @@
    "method": "casa/trasferta",
    "season": "2026/2027"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-21 08:57"
  },
  {
   "id": "1000017583-xg",
@@ -9895,8 +9896,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "lost",
+  "final": "0-0",
   "url": "https://www.fotmob.com/match/1000017583",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -9911,6 +9912,7 @@
    "method": "media generale",
    "season": "2026/2027"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-21 08:57"
  }
 ]
