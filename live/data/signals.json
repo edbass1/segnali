@@ -9914,5 +9914,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-21 08:57"
+ },
+ {
+  "id": "5107661-xg",
+  "type": "xg",
+  "time": "2026-11-21 16:22",
+  "ts": 1795274561,
+  "league": "Allsvenskan",
+  "country": "SWE",
+  "leagueId": 67,
+  "home": "AIK",
+  "away": "Degerfors",
+  "matchId": 5107661,
+  "reason": "xG atteso prematch 3.18 (casa 1.81 + ospite 1.37) ≥ 2.7",
+  "minute": 65,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 65,
+   "phase": "65",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.55",
+    "0.55"
+   ],
+   "poss": [
+    71,
+    29
+   ],
+   "shots": [
+    5,
+    8
+   ],
+   "sot": [
+    2,
+    3
+   ],
+   "big": [
+    1,
+    1
+   ],
+   "box": [
+    19,
+    10
+   ],
+   "corners": [
+    3,
+    3
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5107661",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.18,
+   "exp_home": 1.809,
+   "exp_away": 1.371,
+   "h_for": 1.863,
+   "h_ag": 1.926,
+   "a_for": 0.816,
+   "a_ag": 1.756,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
  }
 ]
