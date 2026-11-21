@@ -9749,8 +9749,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "3-0",
   "url": "https://www.fotmob.com/match/5910941",
   "over05": null,
   "over05_note": "campionato non coperto",
@@ -9770,6 +9770,7 @@
     "no00": 16
    }
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-21 01:15"
  }
 ]
