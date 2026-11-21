@@ -10269,5 +10269,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-21 22:42"
+ },
+ {
+  "id": "5103722-xg",
+  "type": "xg",
+  "time": "2026-11-21 22:52",
+  "ts": 1795297950,
+  "league": "Série A",
+  "country": "BRA",
+  "leagueId": 268,
+  "home": "Bahia",
+  "away": "Coritiba",
+  "matchId": 5103722,
+  "reason": "xG atteso prematch 2.83 (casa 1.67 + ospite 1.16) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.39",
+    "0.51"
+   ],
+   "poss": [
+    57,
+    43
+   ],
+   "shots": [
+    11,
+    5
+   ],
+   "sot": [
+    3,
+    2
+   ],
+   "big": [
+    1,
+    0
+   ],
+   "box": [
+    15,
+    8
+   ],
+   "corners": [
+    4,
+    6
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5103722",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.833,
+   "exp_home": 1.671,
+   "exp_away": 1.161,
+   "h_for": 1.555,
+   "h_ag": 1.264,
+   "a_for": 1.058,
+   "a_ag": 1.788,
+   "method": "casa/trasferta",
+   "season": "2026"
+  },
+  "telegram": true
  }
 ]
