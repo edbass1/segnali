@@ -1,23 +1,23 @@
 {
  "date": "2026-11-23",
- "generated_at": "2026-11-21 13:11",
+ "generated_at": "2026-11-21 20:02",
  "partial": false,
  "stats": {
   "matches_day": 96,
   "candidates": 66,
   "evaluated": 61,
-  "qualified": 18,
+  "qualified": 17,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 2,
    "xg": 14,
-   "segna": 1,
+   "segna": 0,
    "subisce": 3,
    "mai00": 0
   },
   "requests": 331,
-  "seconds": 76
+  "seconds": 92
  },
  "skipped_leagues": {
   "JPN WE League": "femminile",
@@ -603,51 +603,6 @@
      "scored": 7,
      "conceded": 11,
      "no00": 12
-    }
-   }
-  },
-  {
-   "matchId": 5907688,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-23T19:45:00.000Z",
-   "league": "National League South",
-   "country": "ENG",
-   "leagueId": 8944,
-   "home": "Chelmsford",
-   "away": "Maidstone United",
-   "url": "https://www.fotmob.com/match/5907688",
-   "finished": false,
-   "score": null,
-   "types": [
-    "segna"
-   ],
-   "reasons": {
-    "segna": "Ospite ha segnato almeno 1 gol in 16/16 partite di campionato 2026/27; Casa in 13/16 (81%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "segna": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 16,
-     "strong_n": 16,
-     "strong_pct": 100,
-     "other_k": 13,
-     "other_n": 16,
-     "other_pct": 81
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 13,
-     "conceded": 11,
-     "no00": 14
-    },
-    "away": {
-     "n": 16,
-     "scored": 16,
-     "conceded": 13,
-     "no00": 16
     }
    }
   },

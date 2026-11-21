@@ -1,23 +1,23 @@
 {
  "date": "2026-11-22",
- "generated_at": "2026-11-21 13:10",
+ "generated_at": "2026-11-21 20:00",
  "partial": false,
  "stats": {
-  "matches_day": 383,
-  "candidates": 301,
-  "evaluated": 281,
-  "qualified": 81,
+  "matches_day": 381,
+  "candidates": 299,
+  "evaluated": 279,
+  "qualified": 80,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 5,
    "xg": 61,
    "segna": 9,
-   "subisce": 19,
+   "subisce": 18,
    "mai00": 1
   },
-  "requests": 1602,
-  "seconds": 325
+  "requests": 1615,
+  "seconds": 394
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -1802,46 +1802,46 @@
    }
   },
   {
-   "matchId": 6103183,
+   "matchId": 5974756,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-22T15:00:00.000Z",
-   "league": "NPFL",
-   "country": "NGA",
-   "leagueId": 533,
-   "home": "Bendel Insurance",
-   "away": "Doma United",
-   "url": "https://www.fotmob.com/match/6103183",
+   "league": "National Division",
+   "country": "LUX",
+   "leagueId": 229,
+   "home": "Racing FC Union Luxembourg",
+   "away": "FC Wiltz 71",
+   "url": "https://www.fotmob.com/match/5974756",
    "finished": false,
    "score": null,
    "types": [
     "subisce"
    ],
    "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 13/13 partite di campionato 2026/27 (Ospite: 8/13) [solo campionato in corso, min. 9 partite per squadra]"
+    "subisce": "Ospite ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Casa: 8/12) [solo campionato in corso, min. 9 partite per squadra]"
    },
    "info": {
     "subisce": {
-     "strong": "home",
+     "strong": "away",
      "season": "2026/27",
-     "strong_k": 13,
-     "strong_n": 13,
+     "strong_k": 12,
+     "strong_n": 12,
      "strong_pct": 100,
      "other_k": 8,
-     "other_n": 13,
-     "other_pct": 62
+     "other_n": 12,
+     "other_pct": 67
     }
    },
    "cur": {
     "home": {
-     "n": 13,
+     "n": 12,
      "scored": 10,
-     "conceded": 13,
-     "no00": 13
+     "conceded": 8,
+     "no00": 11
     },
     "away": {
-     "n": 13,
-     "scored": 11,
-     "conceded": 8,
+     "n": 12,
+     "scored": 10,
+     "conceded": 12,
      "no00": 12
     }
    }
@@ -1887,51 +1887,6 @@
      "n": 12,
      "scored": 11,
      "conceded": 9,
-     "no00": 12
-    }
-   }
-  },
-  {
-   "matchId": 5974756,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-22T15:00:00.000Z",
-   "league": "National Division",
-   "country": "LUX",
-   "leagueId": 229,
-   "home": "Racing FC Union Luxembourg",
-   "away": "FC Wiltz 71",
-   "url": "https://www.fotmob.com/match/5974756",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Ospite ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Casa: 8/12) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 12,
-     "strong_n": 12,
-     "strong_pct": 100,
-     "other_k": 8,
-     "other_n": 12,
-     "other_pct": 67
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 10,
-     "conceded": 8,
-     "no00": 11
-    },
-    "away": {
-     "n": 12,
-     "scored": 10,
-     "conceded": 12,
      "no00": 12
     }
    }
@@ -2549,48 +2504,6 @@
    }
   },
   {
-   "matchId": 5105054,
-   "kickoff": "17:00",
-   "kickoff_utc": "2026-11-22T16:00:00.000Z",
-   "league": "Eliteserien",
-   "country": "NOR",
-   "leagueId": 59,
-   "home": "Kristiansund",
-   "away": "Sandefjord",
-   "url": "https://www.fotmob.com/match/5105054",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.48 (casa 1.77 + ospite 1.70) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.48,
-     "exp_home": 1.77,
-     "exp_away": 1.7,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 26,
-     "scored": 19,
-     "conceded": 22,
-     "no00": 25
-    },
-    "away": {
-     "n": 26,
-     "scored": 17,
-     "conceded": 20,
-     "no00": 24
-    }
-   }
-  },
-  {
    "matchId": 5105053,
    "kickoff": "17:00",
    "kickoff_utc": "2026-11-22T16:00:00.000Z",
@@ -2629,6 +2542,48 @@
      "scored": 22,
      "conceded": 23,
      "no00": 25
+    }
+   }
+  },
+  {
+   "matchId": 5105054,
+   "kickoff": "17:00",
+   "kickoff_utc": "2026-11-22T16:00:00.000Z",
+   "league": "Eliteserien",
+   "country": "NOR",
+   "leagueId": 59,
+   "home": "Kristiansund",
+   "away": "Sandefjord",
+   "url": "https://www.fotmob.com/match/5105054",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.48 (casa 1.77 + ospite 1.70) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.48,
+     "exp_home": 1.77,
+     "exp_away": 1.7,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 26,
+     "scored": 19,
+     "conceded": 22,
+     "no00": 25
+    },
+    "away": {
+     "n": 26,
+     "scored": 17,
+     "conceded": 20,
+     "no00": 24
     }
    }
   },
@@ -3215,48 +3170,6 @@
    }
   },
   {
-   "matchId": 5868550,
-   "kickoff": "18:30",
-   "kickoff_utc": "2026-11-22T17:30:00.000Z",
-   "league": "LaLiga2",
-   "country": "ESP",
-   "leagueId": 140,
-   "home": "Celta Fortuna",
-   "away": "Real Valladolid",
-   "url": "https://www.fotmob.com/match/5868550",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.80 (casa 1.38 + ospite 1.43) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.8,
-     "exp_home": 1.38,
-     "exp_away": 1.43,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 12,
-     "no00": 13
-    },
-    "away": {
-     "n": 14,
-     "scored": 10,
-     "conceded": 12,
-     "no00": 14
-    }
-   }
-  },
-  {
    "matchId": 5868553,
    "kickoff": "18:30",
    "kickoff_utc": "2026-11-22T17:30:00.000Z",
@@ -3295,6 +3208,48 @@
      "scored": 12,
      "conceded": 9,
      "no00": 13
+    }
+   }
+  },
+  {
+   "matchId": 5868550,
+   "kickoff": "18:30",
+   "kickoff_utc": "2026-11-22T17:30:00.000Z",
+   "league": "LaLiga2",
+   "country": "ESP",
+   "leagueId": 140,
+   "home": "Celta Fortuna",
+   "away": "Real Valladolid",
+   "url": "https://www.fotmob.com/match/5868550",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.80 (casa 1.38 + ospite 1.43) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.8,
+     "exp_home": 1.38,
+     "exp_away": 1.43,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 14,
+     "scored": 10,
+     "conceded": 12,
+     "no00": 13
+    },
+    "away": {
+     "n": 14,
+     "scored": 10,
+     "conceded": 12,
+     "no00": 14
     }
    }
   },
