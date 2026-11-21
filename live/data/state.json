@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-11-21 17:14",
+ "last_scan": "2026-11-21 17:16",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -45,7 +45,14 @@
   "5944216": {},
   "5948181": {},
   "5884922": {},
-  "5949369": {}
+  "5949369": {},
+  "5794763": {},
+  "6141016": {},
+  "5953548": {},
+  "5954017": {},
+  "5954018": {},
+  "5836936": {},
+  "5837275": {}
  },
  "checked": {
   "5944213": {
@@ -267,13 +274,90 @@
     "subisce": false,
     "mai00": false
    }
+  },
+  "5794763": {
+   "t": 1795277777,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "6141016": {
+   "t": 1795277780,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5953548": {
+   "t": 1795277784,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5954017": {
+   "t": 1795277787,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5954018": {
+   "t": 1795277790,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5836936": {
+   "t": 1795277803,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
+  },
+  "5837275": {
+   "t": 1795277817,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
   }
  },
- "live_count": 196,
- "candidates_last": 1,
- "requests_last": 4,
- "last_write": "2026-11-21 17:14",
- "last_write_ts": 1795277655,
+ "live_count": 197,
+ "candidates_last": 7,
+ "requests_last": 52,
+ "last_write": "2026-11-21 17:16",
+ "last_write_ts": 1795277817,
  "telegram": {
   "last_try": "2026-11-21 16:52",
   "ok": true,
