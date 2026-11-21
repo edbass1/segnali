@@ -1,6 +1,6 @@
 {
  "date": "2026-11-22",
- "generated_at": "2026-11-21 04:54",
+ "generated_at": "2026-11-21 13:10",
  "partial": false,
  "stats": {
   "matches_day": 383,
@@ -17,7 +17,7 @@
    "mai00": 1
   },
   "requests": 1602,
-  "seconds": 330
+  "seconds": 325
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -2549,48 +2549,6 @@
    }
   },
   {
-   "matchId": 5105053,
-   "kickoff": "17:00",
-   "kickoff_utc": "2026-11-22T16:00:00.000Z",
-   "league": "Eliteserien",
-   "country": "NOR",
-   "leagueId": 59,
-   "home": "KFUM",
-   "away": "Brann",
-   "url": "https://www.fotmob.com/match/5105053",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.59 (casa 1.83 + ospite 1.76) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.59,
-     "exp_home": 1.83,
-     "exp_away": 1.76,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 26,
-     "scored": 21,
-     "conceded": 21,
-     "no00": 25
-    },
-    "away": {
-     "n": 26,
-     "scored": 22,
-     "conceded": 23,
-     "no00": 25
-    }
-   }
-  },
-  {
    "matchId": 5105054,
    "kickoff": "17:00",
    "kickoff_utc": "2026-11-22T16:00:00.000Z",
@@ -2629,6 +2587,48 @@
      "scored": 17,
      "conceded": 20,
      "no00": 24
+    }
+   }
+  },
+  {
+   "matchId": 5105053,
+   "kickoff": "17:00",
+   "kickoff_utc": "2026-11-22T16:00:00.000Z",
+   "league": "Eliteserien",
+   "country": "NOR",
+   "leagueId": 59,
+   "home": "KFUM",
+   "away": "Brann",
+   "url": "https://www.fotmob.com/match/5105053",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.59 (casa 1.83 + ospite 1.76) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.59,
+     "exp_home": 1.83,
+     "exp_away": 1.76,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 26,
+     "scored": 21,
+     "conceded": 21,
+     "no00": 25
+    },
+    "away": {
+     "n": 26,
+     "scored": 22,
+     "conceded": 23,
+     "no00": 25
     }
    }
   },
