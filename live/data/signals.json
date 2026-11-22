@@ -10340,5 +10340,59 @@
   },
   "telegram": true,
   "resolved": "2026-11-22 01:57"
+ },
+ {
+  "id": "5884272-subisce",
+  "type": "subisce",
+  "time": "2026-11-22 17:03",
+  "ts": 1795363411,
+  "league": "Segunda Federacion - Group 1",
+  "country": "ESP",
+  "leagueId": 9138,
+  "home": "UD Llanera",
+  "away": "Ourense",
+  "matchId": 5884272,
+  "reason": "Casa ha subito almeno 1 gol in 11/11 partite di campionato 2026/27 (Ospite: 6/11) [solo campionato in corso, min. 9 partite per squadra]",
+  "minute": 46,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 46,
+   "phase": "46",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": null,
+   "poss": null,
+   "shots": null,
+   "sot": null,
+   "big": null,
+   "box": null,
+   "corners": null,
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5884272",
+  "over05": null,
+  "over05_note": "campionato non coperto",
+  "details": {
+   "season": "2026/27",
+   "strong": "home",
+   "home": {
+    "n": 11,
+    "scored": 10,
+    "conceded": 11,
+    "no00": 11
+   },
+   "away": {
+    "n": 11,
+    "scored": 6,
+    "conceded": 6,
+    "no00": 10
+   }
+  },
+  "telegram": true
  }
 ]
