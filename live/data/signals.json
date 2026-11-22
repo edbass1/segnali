@@ -10394,5 +10394,75 @@
    }
   },
   "telegram": true
+ },
+ {
+  "id": "5739548-xg",
+  "type": "xg",
+  "time": "2026-11-22 17:17",
+  "ts": 1795364255,
+  "league": "Superligaen",
+  "country": "DEN",
+  "leagueId": 46,
+  "home": "Sønderjyske",
+  "away": "OB",
+  "matchId": 5739548,
+  "reason": "xG atteso prematch 2.79 (casa 1.52 + ospite 1.28) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "1.19",
+    "0.60"
+   ],
+   "poss": [
+    33,
+    67
+   ],
+   "shots": [
+    6,
+    9
+   ],
+   "sot": [
+    4,
+    2
+   ],
+   "big": [
+    2,
+    0
+   ],
+   "box": [
+    12,
+    35
+   ],
+   "corners": [
+    3,
+    4
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5739548",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.794,
+   "exp_home": 1.518,
+   "exp_away": 1.276,
+   "h_for": 1.027,
+   "h_ag": 1.463,
+   "a_for": 1.089,
+   "a_ag": 2.009,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
