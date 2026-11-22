@@ -1,6 +1,6 @@
 {
  "date": "2026-11-24",
- "generated_at": "2026-11-22 14:09",
+ "generated_at": "2026-11-22 21:23",
  "partial": false,
  "stats": {
   "matches_day": 154,
@@ -16,8 +16,8 @@
    "subisce": 4,
    "mai00": 0
   },
-  "requests": 587,
-  "seconds": 125
+  "requests": 590,
+  "seconds": 119
  },
  "skipped_leagues": {},
  "rules": {
@@ -119,48 +119,6 @@
    }
   },
   {
-   "matchId": 5967167,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-11-24T19:00:00.000Z",
-   "league": "Serie B",
-   "country": "ITA",
-   "leagueId": 86,
-   "home": "Palermo",
-   "away": "Südtirol",
-   "url": "https://www.fotmob.com/match/5967167",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.07 (casa 1.89 + ospite 1.17) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.07,
-     "exp_home": 1.89,
-     "exp_away": 1.17,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 12,
-     "conceded": 10,
-     "no00": 12
-    },
-    "away": {
-     "n": 12,
-     "scored": 9,
-     "conceded": 8,
-     "no00": 11
-    }
-   }
-  },
-  {
    "matchId": 5967160,
    "kickoff": "20:00",
    "kickoff_utc": "2026-11-24T19:00:00.000Z",
@@ -199,6 +157,48 @@
      "scored": 9,
      "conceded": 8,
      "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5967167,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-11-24T19:00:00.000Z",
+   "league": "Serie B",
+   "country": "ITA",
+   "leagueId": 86,
+   "home": "Palermo",
+   "away": "Südtirol",
+   "url": "https://www.fotmob.com/match/5967167",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.07 (casa 1.89 + ospite 1.17) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.07,
+     "exp_home": 1.89,
+     "exp_away": 1.17,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 12,
+     "conceded": 10,
+     "no00": 12
+    },
+    "away": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 8,
+     "no00": 11
     }
    }
   },
@@ -566,12 +566,12 @@
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 2.86 (casa 1.48 + ospite 1.37) ≥ 2.7"
+    "xg": "xG atteso prematch 2.86 (casa 1.49 + ospite 1.37) ≥ 2.7"
    },
    "info": {
     "xg": {
      "total": 2.86,
-     "exp_home": 1.48,
+     "exp_home": 1.49,
      "exp_away": 1.37,
      "method": "casa/trasferta",
      "season": "2026/2027"
@@ -743,6 +743,51 @@
    }
   },
   {
+   "matchId": 5906578,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-24T19:45:00.000Z",
+   "league": "National League",
+   "country": "ENG",
+   "leagueId": 117,
+   "home": "Forest Green Rovers",
+   "away": "Southend United",
+   "url": "https://www.fotmob.com/match/5906578",
+   "finished": false,
+   "score": null,
+   "types": [
+    "segna"
+   ],
+   "reasons": {
+    "segna": "Ospite ha segnato almeno 1 gol in 18/18 partite di campionato 2026/27; Casa in 13/15 (87%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "segna": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 18,
+     "strong_n": 18,
+     "strong_pct": 100,
+     "other_k": 13,
+     "other_n": 15,
+     "other_pct": 87
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 13,
+     "conceded": 12,
+     "no00": 15
+    },
+    "away": {
+     "n": 18,
+     "scored": 18,
+     "conceded": 17,
+     "no00": 18
+    }
+   }
+  },
+  {
    "matchId": 5906577,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-24T19:45:00.000Z",
@@ -786,51 +831,6 @@
      "n": 18,
      "scored": 17,
      "conceded": 14,
-     "no00": 18
-    }
-   }
-  },
-  {
-   "matchId": 5906578,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-24T19:45:00.000Z",
-   "league": "National League",
-   "country": "ENG",
-   "leagueId": 117,
-   "home": "Forest Green Rovers",
-   "away": "Southend United",
-   "url": "https://www.fotmob.com/match/5906578",
-   "finished": false,
-   "score": null,
-   "types": [
-    "segna"
-   ],
-   "reasons": {
-    "segna": "Ospite ha segnato almeno 1 gol in 18/18 partite di campionato 2026/27; Casa in 13/15 (87%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "segna": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 18,
-     "strong_n": 18,
-     "strong_pct": 100,
-     "other_k": 13,
-     "other_n": 15,
-     "other_pct": 87
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 15,
-     "scored": 13,
-     "conceded": 12,
-     "no00": 15
-    },
-    "away": {
-     "n": 18,
-     "scored": 18,
-     "conceded": 17,
      "no00": 18
     }
    }
@@ -980,54 +980,6 @@
    }
   },
   {
-   "matchId": 5907696,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-24T19:45:00.000Z",
-   "league": "National League South",
-   "country": "ENG",
-   "leagueId": 8944,
-   "home": "Salisbury",
-   "away": "AFC Totton",
-   "url": "https://www.fotmob.com/match/5907696",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 67 partite di campionato consecutive senza 0-0 (ultimo 0-0: 18/04/2025 @ Basingstoke); Casa: 1 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 67,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "18/04/2025",
-      "opp": "Basingstoke",
-      "home": false
-     },
-     "other_zz": 1,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 15,
-     "conceded": 9,
-     "no00": 15
-    },
-    "away": {
-     "n": 17,
-     "scored": 10,
-     "conceded": 14,
-     "no00": 17
-    }
-   }
-  },
-  {
    "matchId": 5907698,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-24T19:45:00.000Z",
@@ -1066,6 +1018,54 @@
      "scored": 10,
      "conceded": 11,
      "no00": 14
+    },
+    "away": {
+     "n": 17,
+     "scored": 10,
+     "conceded": 14,
+     "no00": 17
+    }
+   }
+  },
+  {
+   "matchId": 5907696,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-24T19:45:00.000Z",
+   "league": "National League South",
+   "country": "ENG",
+   "leagueId": 8944,
+   "home": "Salisbury",
+   "away": "AFC Totton",
+   "url": "https://www.fotmob.com/match/5907696",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: 67 partite di campionato consecutive senza 0-0 (ultimo 0-0: 18/04/2025 @ Basingstoke); Casa: 1 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 67,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "18/04/2025",
+      "opp": "Basingstoke",
+      "home": false
+     },
+     "other_zz": 1,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 16,
+     "scored": 15,
+     "conceded": 9,
+     "no00": 15
     },
     "away": {
      "n": 17,
