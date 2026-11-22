@@ -1,6 +1,6 @@
 {
  "date": "2026-11-24",
- "generated_at": "2026-11-22 00:50",
+ "generated_at": "2026-11-22 05:42",
  "partial": false,
  "stats": {
   "matches_day": 154,
@@ -980,54 +980,6 @@
    }
   },
   {
-   "matchId": 5907696,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-24T19:45:00.000Z",
-   "league": "National League South",
-   "country": "ENG",
-   "leagueId": 8944,
-   "home": "Salisbury",
-   "away": "AFC Totton",
-   "url": "https://www.fotmob.com/match/5907696",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 67 partite di campionato consecutive senza 0-0 (ultimo 0-0: 18/04/2025 @ Basingstoke); Casa: 1 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 67,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "18/04/2025",
-      "opp": "Basingstoke",
-      "home": false
-     },
-     "other_zz": 1,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 15,
-     "conceded": 9,
-     "no00": 15
-    },
-    "away": {
-     "n": 17,
-     "scored": 10,
-     "conceded": 14,
-     "no00": 17
-    }
-   }
-  },
-  {
    "matchId": 5907698,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-24T19:45:00.000Z",
@@ -1066,6 +1018,54 @@
      "scored": 10,
      "conceded": 11,
      "no00": 14
+    },
+    "away": {
+     "n": 17,
+     "scored": 10,
+     "conceded": 14,
+     "no00": 17
+    }
+   }
+  },
+  {
+   "matchId": 5907696,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-24T19:45:00.000Z",
+   "league": "National League South",
+   "country": "ENG",
+   "leagueId": 8944,
+   "home": "Salisbury",
+   "away": "AFC Totton",
+   "url": "https://www.fotmob.com/match/5907696",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: 67 partite di campionato consecutive senza 0-0 (ultimo 0-0: 18/04/2025 @ Basingstoke); Casa: 1 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 67,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "18/04/2025",
+      "opp": "Basingstoke",
+      "home": false
+     },
+     "other_zz": 1,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 16,
+     "scored": 15,
+     "conceded": 9,
+     "no00": 15
     },
     "away": {
      "n": 17,

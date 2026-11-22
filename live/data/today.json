@@ -1,23 +1,23 @@
 {
  "date": "2026-11-22",
- "generated_at": "2026-11-22 00:47",
+ "generated_at": "2026-11-22 05:38",
  "partial": false,
  "stats": {
-  "matches_day": 385,
-  "candidates": 302,
-  "evaluated": 281,
-  "qualified": 81,
+  "matches_day": 381,
+  "candidates": 299,
+  "evaluated": 279,
+  "qualified": 80,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 5,
-   "xg": 62,
+   "xg": 61,
    "segna": 9,
    "subisce": 18,
    "mai00": 1
   },
-  "requests": 2055,
-  "seconds": 416
+  "requests": 2036,
+  "seconds": 394
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -44,48 +44,6 @@
  },
  "matches": [
   {
-   "matchId": 1000014647,
-   "kickoff": "23:50",
-   "kickoff_utc": "2026-11-21T22:50:00.000Z",
-   "league": "Liga MX",
-   "country": "MEX",
-   "leagueId": 230,
-   "home": "Pachuca",
-   "away": "Toluca",
-   "url": "https://www.fotmob.com/match/1000014647",
-   "finished": false,
-   "score": "0-0",
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.43 (casa 1.69 + ospite 1.74) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.43,
-     "exp_home": 1.69,
-     "exp_away": 1.74,
-     "method": "casa/trasferta",
-     "season": "2026/2027 - Apertura"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 14,
-     "conceded": 12,
-     "no00": 16
-    },
-    "away": {
-     "n": 16,
-     "scored": 15,
-     "conceded": 11,
-     "no00": 15
-    }
-   }
-  },
-  {
    "matchId": 1000014646,
    "kickoff": "00:00",
    "kickoff_utc": "2026-11-21T23:00:00.000Z",
@@ -95,8 +53,8 @@
    "home": "Santos Laguna",
    "away": "León",
    "url": "https://www.fotmob.com/match/1000014646",
-   "finished": false,
-   "score": "0-1",
+   "finished": true,
+   "score": "1-2",
    "types": [
     "xg"
    ],
@@ -137,8 +95,8 @@
    "home": "Oriente Petrolero",
    "away": "Independiente Petrolero",
    "url": "https://www.fotmob.com/match/1000022381",
-   "finished": false,
-   "score": "0-0",
+   "finished": true,
+   "score": "2-2",
    "types": [
     "storico"
    ],
@@ -185,8 +143,8 @@
    "home": "Chapecoense",
    "away": "Cruzeiro",
    "url": "https://www.fotmob.com/match/5103723",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-2",
    "types": [
     "xg"
    ],
@@ -227,8 +185,8 @@
    "home": "Pumas",
    "away": "Monterrey",
    "url": "https://www.fotmob.com/match/1000014648",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-2",
    "types": [
     "xg"
    ],
@@ -269,8 +227,8 @@
    "home": "Real España",
    "away": "CD Marathón",
    "url": "https://www.fotmob.com/match/6365920",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-2",
    "types": [
     "segna"
    ],
@@ -314,8 +272,8 @@
    "home": "Atlético Morelia",
    "away": "Atlético La Paz",
    "url": "https://www.fotmob.com/match/1000024180",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "4-1",
    "types": [
     "xg"
    ],
@@ -357,7 +315,7 @@
    "away": "CF América",
    "url": "https://www.fotmob.com/match/1000014649",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -1844,51 +1802,6 @@
    }
   },
   {
-   "matchId": 5974753,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-22T15:00:00.000Z",
-   "league": "National Division",
-   "country": "LUX",
-   "leagueId": 229,
-   "home": "Swift Hesperange",
-   "away": "Atert Bissen",
-   "url": "https://www.fotmob.com/match/5974753",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Casa ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Ospite: 9/12) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 12,
-     "strong_n": 12,
-     "strong_pct": 100,
-     "other_k": 9,
-     "other_n": 12,
-     "other_pct": 75
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 1,
-     "conceded": 12,
-     "no00": 12
-    },
-    "away": {
-     "n": 12,
-     "scored": 11,
-     "conceded": 9,
-     "no00": 12
-    }
-   }
-  },
-  {
    "matchId": 5974756,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-22T15:00:00.000Z",
@@ -1929,6 +1842,51 @@
      "n": 12,
      "scored": 10,
      "conceded": 12,
+     "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 5974753,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-22T15:00:00.000Z",
+   "league": "National Division",
+   "country": "LUX",
+   "leagueId": 229,
+   "home": "Swift Hesperange",
+   "away": "Atert Bissen",
+   "url": "https://www.fotmob.com/match/5974753",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Casa ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Ospite: 9/12) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "home",
+     "season": "2026/27",
+     "strong_k": 12,
+     "strong_n": 12,
+     "strong_pct": 100,
+     "other_k": 9,
+     "other_n": 12,
+     "other_pct": 75
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 1,
+     "conceded": 12,
+     "no00": 12
+    },
+    "away": {
+     "n": 12,
+     "scored": 11,
+     "conceded": 9,
      "no00": 12
     }
    }
@@ -2546,48 +2504,6 @@
    }
   },
   {
-   "matchId": 5105053,
-   "kickoff": "17:00",
-   "kickoff_utc": "2026-11-22T16:00:00.000Z",
-   "league": "Eliteserien",
-   "country": "NOR",
-   "leagueId": 59,
-   "home": "KFUM",
-   "away": "Brann",
-   "url": "https://www.fotmob.com/match/5105053",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.59 (casa 1.83 + ospite 1.76) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.59,
-     "exp_home": 1.83,
-     "exp_away": 1.76,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 26,
-     "scored": 21,
-     "conceded": 21,
-     "no00": 25
-    },
-    "away": {
-     "n": 26,
-     "scored": 22,
-     "conceded": 23,
-     "no00": 25
-    }
-   }
-  },
-  {
    "matchId": 5105054,
    "kickoff": "17:00",
    "kickoff_utc": "2026-11-22T16:00:00.000Z",
@@ -2626,6 +2542,48 @@
      "scored": 17,
      "conceded": 20,
      "no00": 24
+    }
+   }
+  },
+  {
+   "matchId": 5105053,
+   "kickoff": "17:00",
+   "kickoff_utc": "2026-11-22T16:00:00.000Z",
+   "league": "Eliteserien",
+   "country": "NOR",
+   "leagueId": 59,
+   "home": "KFUM",
+   "away": "Brann",
+   "url": "https://www.fotmob.com/match/5105053",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.59 (casa 1.83 + ospite 1.76) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.59,
+     "exp_home": 1.83,
+     "exp_away": 1.76,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 26,
+     "scored": 21,
+     "conceded": 21,
+     "no00": 25
+    },
+    "away": {
+     "n": 26,
+     "scored": 22,
+     "conceded": 23,
+     "no00": 25
     }
    }
   },
