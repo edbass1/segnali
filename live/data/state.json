@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-11-22 17:34",
+ "last_scan": "2026-11-22 22:16",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -14,12 +14,6 @@
   "mai00_other": 90
  },
  "sent": {
-  "5944213": {},
-  "5911636": {},
-  "5910941": {
-   "segna": "2026-11-20 20:01"
-  },
-  "5916123": {},
   "6671297": {},
   "1000013272": {},
   "5803662": {
@@ -80,53 +74,12 @@
   "5811814": {},
   "5975106": {},
   "5975111": {},
-  "1000013274": {}
+  "1000013274": {},
+  "5868548": {
+   "xg": "2026-11-22 22:16"
+  }
  },
  "checked": {
-  "5944213": {
-   "t": 1795200921,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "5911636": {
-   "t": 1795201283,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "5910941": {
-   "t": 1795201286,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": true,
-    "subisce": false,
-    "mai00": false
-   }
-  },
-  "5916123": {
-   "t": 1795201291,
-   "r": "valutata",
-   "res": {
-    "storico": false,
-    "xg": false,
-    "segna": false,
-    "subisce": false,
-    "mai00": false
-   }
-  },
   "6671297": {
    "t": 1795220135,
    "r": "valutata",
@@ -555,22 +508,33 @@
     "subisce": false,
     "mai00": false
    }
+  },
+  "5868548": {
+   "t": 1795382179,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": true,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
   }
  },
- "live_count": 93,
- "candidates_last": 0,
- "requests_last": 1,
- "last_write": "2026-11-22 17:34",
- "last_write_ts": 1795365261,
+ "live_count": 18,
+ "candidates_last": 1,
+ "requests_last": 16,
+ "last_write": "2026-11-22 22:16",
+ "last_write_ts": 1795382179,
  "telegram": {
-  "last_try": "2026-11-22 17:18",
+  "last_try": "2026-11-22 22:16",
   "ok": true,
   "error": ""
  },
  "odds_api": {
-  "remaining": "480",
-  "used": "20",
+  "remaining": "479",
+  "used": "21",
   "last_cost": "0",
-  "time": "2026-11-22 17:18"
+  "time": "2026-11-22 22:16"
  }
 }

@@ -10372,8 +10372,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "2-0",
   "url": "https://www.fotmob.com/match/5884272",
   "over05": null,
   "over05_note": "campionato non coperto",
@@ -10393,7 +10393,8 @@
     "no00": 10
    }
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-22 22:16"
  },
  {
   "id": "5739548-xg",
@@ -10447,8 +10448,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "1-2",
   "url": "https://www.fotmob.com/match/5739548",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -10463,7 +10464,8 @@
    "method": "casa/trasferta",
    "season": "2026/2027"
   },
-  "telegram": true
+  "telegram": true,
+  "resolved": "2026-11-22 22:16"
  },
  {
   "id": "5943300-xg",
@@ -10517,8 +10519,8 @@
     0
    ]
   },
-  "status": "pending",
-  "final": null,
+  "status": "won",
+  "final": "1-0",
   "url": "https://www.fotmob.com/match/5943300",
   "over05": null,
   "over05_note": "quota non offerta",
@@ -10530,6 +10532,77 @@
    "h_ag": 1.738,
    "a_for": 0.736,
    "a_ag": 2.13,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true,
+  "resolved": "2026-11-22 22:16"
+ },
+ {
+  "id": "5868548-xg",
+  "type": "xg",
+  "time": "2026-11-22 22:16",
+  "ts": 1795382179,
+  "league": "LaLiga2",
+  "country": "ESP",
+  "leagueId": 140,
+  "home": "Burgos CF",
+  "away": "Albacete",
+  "matchId": 5868548,
+  "reason": "xG atteso prematch 3.02 (casa 1.81 + ospite 1.20) ≥ 2.7",
+  "minute": 62,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 62,
+   "phase": "62",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.61",
+    "0.72"
+   ],
+   "poss": [
+    40,
+    60
+   ],
+   "shots": [
+    7,
+    12
+   ],
+   "sot": [
+    2,
+    1
+   ],
+   "big": [
+    0,
+    1
+   ],
+   "box": [
+    10,
+    15
+   ],
+   "corners": [
+    2,
+    6
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5868548",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 3.016,
+   "exp_home": 1.812,
+   "exp_away": 1.204,
+   "h_for": 1.632,
+   "h_ag": 1.136,
+   "a_for": 1.271,
+   "a_ag": 1.991,
    "method": "casa/trasferta",
    "season": "2026/2027"
   },
