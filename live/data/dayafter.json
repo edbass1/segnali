@@ -1,6 +1,6 @@
 {
  "date": "2026-11-24",
- "generated_at": "2026-11-22 05:42",
+ "generated_at": "2026-11-22 14:09",
  "partial": false,
  "stats": {
   "matches_day": 154,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 587,
-  "seconds": 122
+  "seconds": 125
  },
  "skipped_leagues": {},
  "rules": {
@@ -119,48 +119,6 @@
    }
   },
   {
-   "matchId": 5967160,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-11-24T19:00:00.000Z",
-   "league": "Serie B",
-   "country": "ITA",
-   "leagueId": 86,
-   "home": "Cesena",
-   "away": "Ascoli",
-   "url": "https://www.fotmob.com/match/5967160",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.78 (casa 1.47 + ospite 1.31) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.78,
-     "exp_home": 1.47,
-     "exp_away": 1.31,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 10,
-     "conceded": 10,
-     "no00": 12
-    },
-    "away": {
-     "n": 12,
-     "scored": 9,
-     "conceded": 8,
-     "no00": 10
-    }
-   }
-  },
-  {
    "matchId": 5967167,
    "kickoff": "20:00",
    "kickoff_utc": "2026-11-24T19:00:00.000Z",
@@ -199,6 +157,48 @@
      "scored": 9,
      "conceded": 8,
      "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 5967160,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-11-24T19:00:00.000Z",
+   "league": "Serie B",
+   "country": "ITA",
+   "leagueId": 86,
+   "home": "Cesena",
+   "away": "Ascoli",
+   "url": "https://www.fotmob.com/match/5967160",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.78 (casa 1.47 + ospite 1.31) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.78,
+     "exp_home": 1.47,
+     "exp_away": 1.31,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 10,
+     "conceded": 10,
+     "no00": 12
+    },
+    "away": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 8,
+     "no00": 10
     }
    }
   },
@@ -980,54 +980,6 @@
    }
   },
   {
-   "matchId": 5907698,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-24T19:45:00.000Z",
-   "league": "National League South",
-   "country": "ENG",
-   "leagueId": 8944,
-   "home": "Torquay United",
-   "away": "Chesham United",
-   "url": "https://www.fotmob.com/match/5907698",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 52 partite di campionato consecutive senza 0-0 (ultimo 0-0: 11/10/2025 @ Maidstone United); Casa: 3 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 52,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "11/10/2025",
-      "opp": "Maidstone United",
-      "home": false
-     },
-     "other_zz": 3,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 10,
-     "conceded": 11,
-     "no00": 14
-    },
-    "away": {
-     "n": 17,
-     "scored": 10,
-     "conceded": 14,
-     "no00": 17
-    }
-   }
-  },
-  {
    "matchId": 5907696,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-24T19:45:00.000Z",
@@ -1066,6 +1018,54 @@
      "scored": 15,
      "conceded": 9,
      "no00": 15
+    },
+    "away": {
+     "n": 17,
+     "scored": 10,
+     "conceded": 14,
+     "no00": 17
+    }
+   }
+  },
+  {
+   "matchId": 5907698,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-24T19:45:00.000Z",
+   "league": "National League South",
+   "country": "ENG",
+   "leagueId": 8944,
+   "home": "Torquay United",
+   "away": "Chesham United",
+   "url": "https://www.fotmob.com/match/5907698",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: 52 partite di campionato consecutive senza 0-0 (ultimo 0-0: 11/10/2025 @ Maidstone United); Casa: 3 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 52,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "11/10/2025",
+      "opp": "Maidstone United",
+      "home": false
+     },
+     "other_zz": 3,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 16,
+     "scored": 10,
+     "conceded": 11,
+     "no00": 14
     },
     "away": {
      "n": 17,

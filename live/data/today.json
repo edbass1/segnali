@@ -1,6 +1,6 @@
 {
  "date": "2026-11-22",
- "generated_at": "2026-11-22 05:38",
+ "generated_at": "2026-11-22 14:05",
  "partial": false,
  "stats": {
   "matches_day": 381,
@@ -17,7 +17,7 @@
    "mai00": 1
   },
   "requests": 2036,
-  "seconds": 394
+  "seconds": 408
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile",
@@ -314,8 +314,8 @@
    "home": "Tigres",
    "away": "CF América",
    "url": "https://www.fotmob.com/match/1000014649",
-   "finished": false,
-   "score": "0-0",
+   "finished": true,
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -356,8 +356,8 @@
    "home": "Gwangju FC",
    "away": "Bucheon FC 1995",
    "url": "https://www.fotmob.com/match/6503956",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "4-2",
    "types": [
     "xg"
    ],
@@ -398,8 +398,8 @@
    "home": "Erzurumspor FK",
    "away": "Göztepe",
    "url": "https://www.fotmob.com/match/5904811",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-1",
    "types": [
     "xg"
    ],
@@ -441,7 +441,7 @@
    "away": "FC Krasnodar",
    "url": "https://www.fotmob.com/match/5847234",
    "finished": false,
-   "score": null,
+   "score": "1-1",
    "types": [
     "xg"
    ],
@@ -482,8 +482,8 @@
    "home": "Alcorcón",
    "away": "Algeciras",
    "url": "https://www.fotmob.com/match/5883739",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-0",
    "types": [
     "segna"
    ],
@@ -527,8 +527,8 @@
    "home": "Utebo",
    "away": "CF Calamocha",
    "url": "https://www.fotmob.com/match/5921287",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-0",
    "types": [
     "subisce"
    ],
@@ -572,8 +572,8 @@
    "home": "Bangkok United",
    "away": "Ayutthaya United FC",
    "url": "https://www.fotmob.com/match/1000017786",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-1",
    "types": [
     "xg"
    ],
@@ -615,7 +615,7 @@
    "away": "Widzew Łódź",
    "url": "https://www.fotmob.com/match/5804045",
    "finished": false,
-   "score": null,
+   "score": "2-1",
    "types": [
     "xg",
     "subisce"
@@ -669,7 +669,7 @@
    "away": "Panserraikos FC",
    "url": "https://www.fotmob.com/match/6140275",
    "finished": false,
-   "score": null,
+   "score": "1-3",
    "types": [
     "subisce"
    ],
@@ -714,7 +714,7 @@
    "away": "Rasisalai United",
    "url": "https://www.fotmob.com/match/1000017788",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -756,7 +756,7 @@
    "away": "Hertha BSC",
    "url": "https://www.fotmob.com/match/5881727",
    "finished": false,
-   "score": null,
+   "score": "0-1",
    "types": [
     "xg"
    ],
@@ -798,7 +798,7 @@
    "away": "Dynamo Dresden",
    "url": "https://www.fotmob.com/match/5881730",
    "finished": false,
-   "score": null,
+   "score": "1-2",
    "types": [
     "xg"
    ],
@@ -840,7 +840,7 @@
    "away": "VfL Osnabrück",
    "url": "https://www.fotmob.com/match/5881731",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -1616,48 +1616,6 @@
    }
   },
   {
-   "matchId": 5749752,
-   "kickoff": "15:00",
-   "kickoff_utc": "2026-11-22T14:00:00.000Z",
-   "league": "Serie A",
-   "country": "ITA",
-   "leagueId": 55,
-   "home": "Bologna",
-   "away": "Udinese",
-   "url": "https://www.fotmob.com/match/5749752",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.10 (casa 1.76 + ospite 1.34) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.1,
-     "exp_home": 1.76,
-     "exp_away": 1.34,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 11,
-     "scored": 8,
-     "conceded": 10,
-     "no00": 11
-    },
-    "away": {
-     "n": 11,
-     "scored": 7,
-     "conceded": 10,
-     "no00": 10
-    }
-   }
-  },
-  {
    "matchId": 5749759,
    "kickoff": "15:00",
    "kickoff_utc": "2026-11-22T14:00:00.000Z",
@@ -1699,6 +1657,48 @@
      "scored": 8,
      "conceded": 9,
      "no00": 11
+    }
+   }
+  },
+  {
+   "matchId": 5749752,
+   "kickoff": "15:00",
+   "kickoff_utc": "2026-11-22T14:00:00.000Z",
+   "league": "Serie A",
+   "country": "ITA",
+   "leagueId": 55,
+   "home": "Bologna",
+   "away": "Udinese",
+   "url": "https://www.fotmob.com/match/5749752",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.10 (casa 1.76 + ospite 1.34) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.1,
+     "exp_home": 1.76,
+     "exp_away": 1.34,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 11,
+     "scored": 8,
+     "conceded": 10,
+     "no00": 11
+    },
+    "away": {
+     "n": 11,
+     "scored": 7,
+     "conceded": 10,
+     "no00": 10
     }
    }
   },
@@ -1802,51 +1802,6 @@
    }
   },
   {
-   "matchId": 5974756,
-   "kickoff": "16:00",
-   "kickoff_utc": "2026-11-22T15:00:00.000Z",
-   "league": "National Division",
-   "country": "LUX",
-   "leagueId": 229,
-   "home": "Racing FC Union Luxembourg",
-   "away": "FC Wiltz 71",
-   "url": "https://www.fotmob.com/match/5974756",
-   "finished": false,
-   "score": null,
-   "types": [
-    "subisce"
-   ],
-   "reasons": {
-    "subisce": "Ospite ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Casa: 8/12) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "subisce": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 12,
-     "strong_n": 12,
-     "strong_pct": 100,
-     "other_k": 8,
-     "other_n": 12,
-     "other_pct": 67
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 10,
-     "conceded": 8,
-     "no00": 11
-    },
-    "away": {
-     "n": 12,
-     "scored": 10,
-     "conceded": 12,
-     "no00": 12
-    }
-   }
-  },
-  {
    "matchId": 5974753,
    "kickoff": "16:00",
    "kickoff_utc": "2026-11-22T15:00:00.000Z",
@@ -1887,6 +1842,51 @@
      "n": 12,
      "scored": 11,
      "conceded": 9,
+     "no00": 12
+    }
+   }
+  },
+  {
+   "matchId": 5974756,
+   "kickoff": "16:00",
+   "kickoff_utc": "2026-11-22T15:00:00.000Z",
+   "league": "National Division",
+   "country": "LUX",
+   "leagueId": 229,
+   "home": "Racing FC Union Luxembourg",
+   "away": "FC Wiltz 71",
+   "url": "https://www.fotmob.com/match/5974756",
+   "finished": false,
+   "score": null,
+   "types": [
+    "subisce"
+   ],
+   "reasons": {
+    "subisce": "Ospite ha subito almeno 1 gol in 12/12 partite di campionato 2026/27 (Casa: 8/12) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "subisce": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 12,
+     "strong_n": 12,
+     "strong_pct": 100,
+     "other_k": 8,
+     "other_n": 12,
+     "other_pct": 67
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 10,
+     "conceded": 8,
+     "no00": 11
+    },
+    "away": {
+     "n": 12,
+     "scored": 10,
+     "conceded": 12,
      "no00": 12
     }
    }
