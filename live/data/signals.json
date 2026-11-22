@@ -10464,5 +10464,75 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5943300-xg",
+  "type": "xg",
+  "time": "2026-11-22 17:18",
+  "ts": 1795364315,
+  "league": "Super League",
+  "country": "GRE",
+  "leagueId": 135,
+  "home": "Panetolikos",
+  "away": "NFC Volos",
+  "matchId": 5943300,
+  "reason": "xG atteso prematch 2.86 (casa 1.62 + ospite 1.24) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.85",
+    "0.55"
+   ],
+   "poss": [
+    49,
+    51
+   ],
+   "shots": [
+    5,
+    13
+   ],
+   "sot": [
+    2,
+    3
+   ],
+   "big": [
+    3,
+    0
+   ],
+   "box": [
+    11,
+    10
+   ],
+   "corners": [
+    2,
+    1
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5943300",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.856,
+   "exp_home": 1.619,
+   "exp_away": 1.237,
+   "h_for": 1.108,
+   "h_ag": 1.738,
+   "a_for": 0.736,
+   "a_ag": 2.13,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
