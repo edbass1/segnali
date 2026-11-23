@@ -1,23 +1,23 @@
 {
  "date": "2026-11-25",
- "generated_at": "2026-11-23 09:55",
+ "generated_at": "2026-11-23 21:53",
  "partial": false,
  "stats": {
-  "matches_day": 149,
-  "candidates": 78,
-  "evaluated": 77,
-  "qualified": 14,
+  "matches_day": 145,
+  "candidates": 74,
+  "evaluated": 73,
+  "qualified": 10,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
    "storico": 0,
-   "xg": 11,
+   "xg": 7,
    "segna": 1,
    "subisce": 2,
    "mai00": 0
   },
-  "requests": 447,
-  "seconds": 106
+  "requests": 391,
+  "seconds": 95
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile"
@@ -36,174 +36,6 @@
   "mai00_other": 90
  },
  "matches": [
-  {
-   "matchId": 1000022852,
-   "kickoff": "01:00",
-   "kickoff_utc": "2026-11-25T00:00:00.000Z",
-   "league": "Liga MX - Apertura - Quarter-finals",
-   "country": "MEX",
-   "leagueId": 230,
-   "home": "León",
-   "away": "Cruz Azul",
-   "url": "https://www.fotmob.com/match/1000022852",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.00 (casa 1.27 + ospite 1.73) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.0,
-     "exp_home": 1.27,
-     "exp_away": 1.73,
-     "method": "casa/trasferta",
-     "season": "2026/2027 - Apertura"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 17,
-     "scored": 16,
-     "conceded": 13,
-     "no00": 17
-    },
-    "away": {
-     "n": 17,
-     "scored": 14,
-     "conceded": 15,
-     "no00": 17
-    }
-   }
-  },
-  {
-   "matchId": 1000022854,
-   "kickoff": "01:00",
-   "kickoff_utc": "2026-11-25T00:00:00.000Z",
-   "league": "Liga MX - Apertura - Quarter-finals",
-   "country": "MEX",
-   "leagueId": 230,
-   "home": "Toluca",
-   "away": "Atlas",
-   "url": "https://www.fotmob.com/match/1000022854",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.34 (casa 2.01 + ospite 1.32) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.34,
-     "exp_home": 2.01,
-     "exp_away": 1.32,
-     "method": "casa/trasferta",
-     "season": "2026/2027 - Apertura"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 17,
-     "scored": 15,
-     "conceded": 12,
-     "no00": 16
-    },
-    "away": {
-     "n": 17,
-     "scored": 16,
-     "conceded": 13,
-     "no00": 17
-    }
-   }
-  },
-  {
-   "matchId": 1000022851,
-   "kickoff": "01:00",
-   "kickoff_utc": "2026-11-25T00:00:00.000Z",
-   "league": "Liga MX - Apertura - Quarter-finals",
-   "country": "MEX",
-   "leagueId": 230,
-   "home": "Pachuca",
-   "away": "Chivas",
-   "url": "https://www.fotmob.com/match/1000022851",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.19 (casa 1.48 + ospite 1.71) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.19,
-     "exp_home": 1.48,
-     "exp_away": 1.71,
-     "method": "casa/trasferta",
-     "season": "2026/2027 - Apertura"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 17,
-     "scored": 15,
-     "conceded": 12,
-     "no00": 17
-    },
-    "away": {
-     "n": 17,
-     "scored": 15,
-     "conceded": 10,
-     "no00": 17
-    }
-   }
-  },
-  {
-   "matchId": 1000022853,
-   "kickoff": "01:00",
-   "kickoff_utc": "2026-11-25T00:00:00.000Z",
-   "league": "Liga MX - Apertura - Quarter-finals",
-   "country": "MEX",
-   "leagueId": 230,
-   "home": "Monterrey",
-   "away": "CF América",
-   "url": "https://www.fotmob.com/match/1000022853",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.26 (casa 1.73 + ospite 1.52) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.26,
-     "exp_home": 1.73,
-     "exp_away": 1.52,
-     "method": "casa/trasferta",
-     "season": "2026/2027 - Apertura"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 17,
-     "scored": 13,
-     "conceded": 12,
-     "no00": 16
-    },
-    "away": {
-     "n": 17,
-     "scored": 16,
-     "conceded": 13,
-     "no00": 17
-    }
-   }
-  },
   {
    "matchId": 5803670,
    "kickoff": "11:00",

@@ -1,11 +1,11 @@
 {
  "date": "2026-11-23",
- "generated_at": "2026-11-23 09:51",
+ "generated_at": "2026-11-23 21:49",
  "partial": false,
  "stats": {
-  "matches_day": 96,
-  "candidates": 65,
-  "evaluated": 60,
+  "matches_day": 97,
+  "candidates": 66,
+  "evaluated": 61,
   "qualified": 17,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,7 +16,7 @@
    "subisce": 3,
    "mai00": 0
   },
-  "requests": 545,
+  "requests": 546,
   "seconds": 144
  },
  "skipped_leagues": {
@@ -131,8 +131,8 @@
    "home": "Asteras Tripolis",
    "away": "Aris Thessaloniki",
    "url": "https://www.fotmob.com/match/5943295",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-1",
    "types": [
     "xg"
    ],
@@ -173,8 +173,8 @@
    "home": "Krasava Ypsonas FC",
    "away": "Anorthosis",
    "url": "https://www.fotmob.com/match/5975452",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-2",
    "types": [
     "subisce"
    ],
@@ -218,8 +218,8 @@
    "home": "TS Podbeskidzie Bielsko-Biała",
    "away": "Termalica Nieciecza",
    "url": "https://www.fotmob.com/match/5861989",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-1",
    "types": [
     "storico"
    ],
@@ -266,8 +266,8 @@
    "home": "Başakşehir",
    "away": "Çorum FK",
    "url": "https://www.fotmob.com/match/5904805",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "4-2",
    "types": [
     "xg"
    ],
@@ -308,8 +308,8 @@
    "home": "Hammarby",
    "away": "IFK Göteborg",
    "url": "https://www.fotmob.com/match/5107662",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "3-1",
    "types": [
     "xg"
    ],
@@ -350,8 +350,8 @@
    "home": "Örgryte",
    "away": "Kalmar FF",
    "url": "https://www.fotmob.com/match/5107664",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "3-2",
    "types": [
     "xg"
    ],
@@ -392,8 +392,8 @@
    "home": "Wieczysta Kraków",
    "away": "Motor Lublin",
    "url": "https://www.fotmob.com/match/5804046",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-1",
    "types": [
     "xg"
    ],
@@ -434,8 +434,8 @@
    "home": "Brøndby IF",
    "away": "FC Midtjylland",
    "url": "https://www.fotmob.com/match/5739549",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-2",
    "types": [
     "xg"
    ],
@@ -477,7 +477,7 @@
    "away": "Guabirá",
    "url": "https://www.fotmob.com/match/1000022385",
    "finished": false,
-   "score": null,
+   "score": "0-2",
    "types": [
     "storico"
    ],
@@ -521,7 +521,7 @@
    "away": "Almería",
    "url": "https://www.fotmob.com/match/5868551",
    "finished": false,
-   "score": null,
+   "score": "2-2",
    "types": [
     "xg",
     "subisce"
@@ -575,7 +575,7 @@
    "away": "Dunkerque",
    "url": "https://www.fotmob.com/match/5803325",
    "finished": false,
-   "score": null,
+   "score": "1-1",
    "types": [
     "xg"
    ],
@@ -617,7 +617,7 @@
    "away": "Fiorentina",
    "url": "https://www.fotmob.com/match/5749756",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "xg",
     "subisce"
@@ -671,7 +671,7 @@
    "away": "Elche",
    "url": "https://www.fotmob.com/match/5868135",
    "finished": false,
-   "score": null,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -713,7 +713,7 @@
    "away": "Everton",
    "url": "https://www.fotmob.com/match/5795517",
    "finished": false,
-   "score": null,
+   "score": "2-0",
    "types": [
     "xg"
    ],
