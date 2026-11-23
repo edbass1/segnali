@@ -1,6 +1,6 @@
 {
  "date": "2026-11-24",
- "generated_at": "2026-11-23 02:05",
+ "generated_at": "2026-11-23 09:54",
  "partial": false,
  "stats": {
   "matches_day": 154,
@@ -17,7 +17,7 @@
    "mai00": 0
   },
   "requests": 653,
-  "seconds": 173
+  "seconds": 163
  },
  "skipped_leagues": {},
  "rules": {
@@ -119,48 +119,6 @@
    }
   },
   {
-   "matchId": 5967167,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-11-24T19:00:00.000Z",
-   "league": "Serie B",
-   "country": "ITA",
-   "leagueId": 86,
-   "home": "Palermo",
-   "away": "Südtirol",
-   "url": "https://www.fotmob.com/match/5967167",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.07 (casa 1.89 + ospite 1.17) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.07,
-     "exp_home": 1.89,
-     "exp_away": 1.17,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 12,
-     "scored": 12,
-     "conceded": 10,
-     "no00": 12
-    },
-    "away": {
-     "n": 12,
-     "scored": 9,
-     "conceded": 8,
-     "no00": 11
-    }
-   }
-  },
-  {
    "matchId": 5967160,
    "kickoff": "20:00",
    "kickoff_utc": "2026-11-24T19:00:00.000Z",
@@ -199,6 +157,48 @@
      "scored": 9,
      "conceded": 8,
      "no00": 10
+    }
+   }
+  },
+  {
+   "matchId": 5967167,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-11-24T19:00:00.000Z",
+   "league": "Serie B",
+   "country": "ITA",
+   "leagueId": 86,
+   "home": "Palermo",
+   "away": "Südtirol",
+   "url": "https://www.fotmob.com/match/5967167",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.07 (casa 1.89 + ospite 1.17) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.07,
+     "exp_home": 1.89,
+     "exp_away": 1.17,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 12,
+     "scored": 12,
+     "conceded": 10,
+     "no00": 12
+    },
+    "away": {
+     "n": 12,
+     "scored": 9,
+     "conceded": 8,
+     "no00": 11
     }
    }
   },
@@ -743,51 +743,6 @@
    }
   },
   {
-   "matchId": 5906578,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-24T19:45:00.000Z",
-   "league": "National League",
-   "country": "ENG",
-   "leagueId": 117,
-   "home": "Forest Green Rovers",
-   "away": "Southend United",
-   "url": "https://www.fotmob.com/match/5906578",
-   "finished": false,
-   "score": null,
-   "types": [
-    "segna"
-   ],
-   "reasons": {
-    "segna": "Ospite ha segnato almeno 1 gol in 18/18 partite di campionato 2026/27; Casa in 13/15 (87%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "segna": {
-     "strong": "away",
-     "season": "2026/27",
-     "strong_k": 18,
-     "strong_n": 18,
-     "strong_pct": 100,
-     "other_k": 13,
-     "other_n": 15,
-     "other_pct": 87
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 15,
-     "scored": 13,
-     "conceded": 12,
-     "no00": 15
-    },
-    "away": {
-     "n": 18,
-     "scored": 18,
-     "conceded": 17,
-     "no00": 18
-    }
-   }
-  },
-  {
    "matchId": 5906577,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-24T19:45:00.000Z",
@@ -831,6 +786,51 @@
      "n": 18,
      "scored": 17,
      "conceded": 14,
+     "no00": 18
+    }
+   }
+  },
+  {
+   "matchId": 5906578,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-24T19:45:00.000Z",
+   "league": "National League",
+   "country": "ENG",
+   "leagueId": 117,
+   "home": "Forest Green Rovers",
+   "away": "Southend United",
+   "url": "https://www.fotmob.com/match/5906578",
+   "finished": false,
+   "score": null,
+   "types": [
+    "segna"
+   ],
+   "reasons": {
+    "segna": "Ospite ha segnato almeno 1 gol in 18/18 partite di campionato 2026/27; Casa in 13/15 (87%) [solo campionato in corso, min. 9 partite per squadra]"
+   },
+   "info": {
+    "segna": {
+     "strong": "away",
+     "season": "2026/27",
+     "strong_k": 18,
+     "strong_n": 18,
+     "strong_pct": 100,
+     "other_k": 13,
+     "other_n": 15,
+     "other_pct": 87
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 15,
+     "scored": 13,
+     "conceded": 12,
+     "no00": 15
+    },
+    "away": {
+     "n": 18,
+     "scored": 18,
+     "conceded": 17,
      "no00": 18
     }
    }
