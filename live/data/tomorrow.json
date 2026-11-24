@@ -1,23 +1,23 @@
 {
  "date": "2026-11-25",
- "generated_at": "2026-11-24 06:10",
+ "generated_at": "2026-11-24 17:09",
  "partial": false,
  "stats": {
-  "matches_day": 145,
-  "candidates": 74,
-  "evaluated": 73,
-  "qualified": 10,
+  "matches_day": 133,
+  "candidates": 69,
+  "evaluated": 68,
+  "qualified": 11,
   "errors": 0,
   "not_evaluated_budget": 0,
   "by_type": {
-   "storico": 0,
+   "storico": 1,
    "xg": 7,
    "segna": 1,
    "subisce": 2,
    "mai00": 0
   },
-  "requests": 409,
-  "seconds": 105
+  "requests": 413,
+  "seconds": 108
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile"
@@ -36,6 +36,54 @@
   "mai00_other": 90
  },
  "matches": [
+  {
+   "matchId": 5987270,
+   "kickoff": "10:30",
+   "kickoff_utc": "2026-11-25T09:30:00.000Z",
+   "league": "J. League 3",
+   "country": "JPN",
+   "leagueId": 9136,
+   "home": "SC Sagamihara",
+   "away": "Ehime FC",
+   "url": "https://www.fotmob.com/match/5987270",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: 55 partite di campionato consecutive senza 0-0 (ultimo 0-0: 28/06/2025 @ Ventforet Kofu); Casa: 3 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 55,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "28/06/2025",
+      "opp": "Ventforet Kofu",
+      "home": false
+     },
+     "other_zz": 3,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 18,
+     "scored": 15,
+     "conceded": 11,
+     "no00": 16
+    },
+    "away": {
+     "n": 18,
+     "scored": 15,
+     "conceded": 14,
+     "no00": 18
+    }
+   }
+  },
   {
    "matchId": 5803670,
    "kickoff": "11:00",

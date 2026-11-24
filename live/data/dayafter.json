@@ -1,11 +1,11 @@
 {
  "date": "2026-11-26",
- "generated_at": "2026-11-24 06:11",
+ "generated_at": "2026-11-24 17:10",
  "partial": false,
  "stats": {
-  "matches_day": 75,
-  "candidates": 21,
-  "evaluated": 21,
+  "matches_day": 76,
+  "candidates": 22,
+  "evaluated": 22,
   "qualified": 5,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,7 +16,7 @@
    "subisce": 0,
    "mai00": 0
   },
-  "requests": 220,
+  "requests": 224,
   "seconds": 57
  },
  "skipped_leagues": {},
@@ -50,13 +50,13 @@
     "xg"
    ],
    "reasons": {
-    "xg": "xG atteso prematch 3.34 (casa 2.01 + ospite 1.32) ≥ 2.7"
+    "xg": "xG atteso prematch 3.31 (casa 2.00 + ospite 1.31) ≥ 2.7"
    },
    "info": {
     "xg": {
-     "total": 3.34,
-     "exp_home": 2.01,
-     "exp_away": 1.32,
+     "total": 3.31,
+     "exp_home": 2.0,
+     "exp_away": 1.31,
      "method": "casa/trasferta",
      "season": "2026/2027 - Apertura"
     }

@@ -1,11 +1,11 @@
 {
  "date": "2026-11-24",
- "generated_at": "2026-11-24 06:09",
+ "generated_at": "2026-11-24 17:08",
  "partial": false,
  "stats": {
   "matches_day": 153,
-  "candidates": 92,
-  "evaluated": 92,
+  "candidates": 93,
+  "evaluated": 93,
   "qualified": 31,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 4,
    "mai00": 0
   },
-  "requests": 696,
-  "seconds": 188
+  "requests": 701,
+  "seconds": 187
  },
  "skipped_leagues": {},
  "rules": {
@@ -44,8 +44,8 @@
    "home": "Northeast United FC",
    "away": "SC Delhi",
    "url": "https://www.fotmob.com/match/6362023",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-1",
    "types": [
     "xg"
    ],
@@ -329,48 +329,6 @@
    }
   },
   {
-   "matchId": 5836951,
-   "kickoff": "20:45",
-   "kickoff_utc": "2026-11-24T19:45:00.000Z",
-   "league": "Championship",
-   "country": "ENG",
-   "leagueId": 48,
-   "home": "Portsmouth",
-   "away": "West Ham United",
-   "url": "https://www.fotmob.com/match/5836951",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.98 (casa 1.41 + ospite 1.57) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.98,
-     "exp_home": 1.41,
-     "exp_away": 1.57,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 12,
-     "conceded": 12,
-     "no00": 14
-    },
-    "away": {
-     "n": 16,
-     "scored": 16,
-     "conceded": 12,
-     "no00": 16
-    }
-   }
-  },
-  {
    "matchId": 5836952,
    "kickoff": "20:45",
    "kickoff_utc": "2026-11-24T19:45:00.000Z",
@@ -409,6 +367,48 @@
      "scored": 14,
      "conceded": 12,
      "no00": 15
+    }
+   }
+  },
+  {
+   "matchId": 5836951,
+   "kickoff": "20:45",
+   "kickoff_utc": "2026-11-24T19:45:00.000Z",
+   "league": "Championship",
+   "country": "ENG",
+   "leagueId": 48,
+   "home": "Portsmouth",
+   "away": "West Ham United",
+   "url": "https://www.fotmob.com/match/5836951",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.98 (casa 1.41 + ospite 1.57) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.98,
+     "exp_home": 1.41,
+     "exp_away": 1.57,
+     "method": "casa/trasferta",
+     "season": "2026/2027"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 16,
+     "scored": 12,
+     "conceded": 12,
+     "no00": 14
+    },
+    "away": {
+     "n": 16,
+     "scored": 16,
+     "conceded": 12,
+     "no00": 16
     }
    }
   },
