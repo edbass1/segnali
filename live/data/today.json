@@ -1,11 +1,11 @@
 {
  "date": "2026-11-25",
- "generated_at": "2026-11-25 10:39",
+ "generated_at": "2026-11-25 20:44",
  "partial": false,
  "stats": {
   "matches_day": 131,
-  "candidates": 66,
-  "evaluated": 65,
+  "candidates": 65,
+  "evaluated": 64,
   "qualified": 11,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 2,
    "mai00": 0
   },
-  "requests": 473,
-  "seconds": 124
+  "requests": 463,
+  "seconds": 115
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile"
@@ -46,8 +46,8 @@
    "home": "SC Sagamihara",
    "away": "Ehime FC",
    "url": "https://www.fotmob.com/match/5987270",
-   "finished": false,
-   "score": "0-0",
+   "finished": true,
+   "score": "3-0",
    "types": [
     "storico"
    ],
@@ -94,8 +94,8 @@
    "home": "FC Tokyo",
    "away": "Sanfrecce Hiroshima",
    "url": "https://www.fotmob.com/match/5803670",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-2",
    "types": [
     "xg"
    ],
@@ -136,8 +136,8 @@
    "home": "Mito Hollyhock",
    "away": "Tokyo Verdy",
    "url": "https://www.fotmob.com/match/5803671",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-0",
    "types": [
     "subisce"
    ],
@@ -181,8 +181,8 @@
    "home": "V-Varen Nagasaki",
    "away": "Kawasaki Frontale",
    "url": "https://www.fotmob.com/match/5803674",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-2",
    "types": [
     "xg"
    ],
@@ -223,8 +223,8 @@
    "home": "Shonan Bellmare",
    "away": "Ventforet Kofu",
    "url": "https://www.fotmob.com/match/5836393",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-0",
    "types": [
     "subisce"
    ],
@@ -268,8 +268,8 @@
    "home": "Urawa Red Diamonds",
    "away": "Cerezo Osaka",
    "url": "https://www.fotmob.com/match/5803673",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-2",
    "types": [
     "xg"
    ],
@@ -310,8 +310,8 @@
    "home": "Al-Ula FC",
    "away": "Al-Adalah",
    "url": "https://www.fotmob.com/match/1000018521",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "3-0",
    "types": [
     "segna"
    ],
@@ -356,7 +356,7 @@
    "away": "Arezzo",
    "url": "https://www.fotmob.com/match/5967165",
    "finished": false,
-   "score": null,
+   "score": "1-0",
    "types": [
     "xg"
    ],

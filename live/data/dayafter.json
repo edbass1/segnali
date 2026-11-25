@@ -1,11 +1,11 @@
 {
  "date": "2026-11-27",
- "generated_at": "2026-11-25 10:43",
+ "generated_at": "2026-11-25 20:48",
  "partial": false,
  "stats": {
-  "matches_day": 148,
-  "candidates": 118,
-  "evaluated": 118,
+  "matches_day": 149,
+  "candidates": 119,
+  "evaluated": 119,
   "qualified": 37,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 10,
    "mai00": 0
   },
-  "requests": 755,
-  "seconds": 177
+  "requests": 765,
+  "seconds": 174
  },
  "skipped_leagues": {},
  "rules": {
@@ -1046,54 +1046,6 @@
    }
   },
   {
-   "matchId": 5832970,
-   "kickoff": "20:00",
-   "kickoff_utc": "2026-11-27T19:00:00.000Z",
-   "league": "Eerste Divisie",
-   "country": "NED",
-   "leagueId": 111,
-   "home": "NAC Breda",
-   "away": "FC Den Bosch",
-   "url": "https://www.fotmob.com/match/5832970",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico"
-   ],
-   "reasons": {
-    "storico": "Ospite: 56 partite di campionato consecutive senza 0-0 (ultimo 0-0: 28/04/2025 @ Jong AZ Alkmaar); Casa: 3 0-0 nelle ultime 50 di campionato"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 56,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "28/04/2025",
-      "opp": "Jong AZ Alkmaar",
-      "home": false
-     },
-     "other_zz": 3,
-     "other_n": 50
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 16,
-     "scored": 14,
-     "conceded": 12,
-     "no00": 15
-    },
-    "away": {
-     "n": 16,
-     "scored": 13,
-     "conceded": 13,
-     "no00": 16
-    }
-   }
-  },
-  {
    "matchId": 5832971,
    "kickoff": "20:00",
    "kickoff_utc": "2026-11-27T19:00:00.000Z",
@@ -1137,6 +1089,54 @@
      "n": 16,
      "scored": 14,
      "conceded": 14,
+     "no00": 16
+    }
+   }
+  },
+  {
+   "matchId": 5832970,
+   "kickoff": "20:00",
+   "kickoff_utc": "2026-11-27T19:00:00.000Z",
+   "league": "Eerste Divisie",
+   "country": "NED",
+   "leagueId": 111,
+   "home": "NAC Breda",
+   "away": "FC Den Bosch",
+   "url": "https://www.fotmob.com/match/5832970",
+   "finished": false,
+   "score": null,
+   "types": [
+    "storico"
+   ],
+   "reasons": {
+    "storico": "Ospite: 56 partite di campionato consecutive senza 0-0 (ultimo 0-0: 28/04/2025 @ Jong AZ Alkmaar); Casa: 3 0-0 nelle ultime 50 di campionato"
+   },
+   "info": {
+    "storico": {
+     "strong": "away",
+     "streak": 56,
+     "complete": true,
+     "capped": false,
+     "last00": {
+      "date": "28/04/2025",
+      "opp": "Jong AZ Alkmaar",
+      "home": false
+     },
+     "other_zz": 3,
+     "other_n": 50
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 16,
+     "scored": 14,
+     "conceded": 12,
+     "no00": 15
+    },
+    "away": {
+     "n": 16,
+     "scored": 13,
+     "conceded": 13,
      "no00": 16
     }
    }
