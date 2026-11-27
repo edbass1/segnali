@@ -10678,5 +10678,75 @@
    "season": "2026/2027"
   },
   "telegram": true
+ },
+ {
+  "id": "5749769-xg",
+  "type": "xg",
+  "time": "2026-11-27 22:05",
+  "ts": 1795813514,
+  "league": "Serie A",
+  "country": "ITA",
+  "leagueId": 55,
+  "home": "Venezia",
+  "away": "Bologna",
+  "matchId": 5749769,
+  "reason": "xG atteso prematch 3.26 (casa 1.26 + ospite 2.00) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.95",
+    "0.41"
+   ],
+   "poss": [
+    51,
+    49
+   ],
+   "shots": [
+    9,
+    7
+   ],
+   "sot": [
+    3,
+    3
+   ],
+   "big": [
+    1,
+    1
+   ],
+   "box": [
+    8,
+    11
+   ],
+   "corners": [
+    3,
+    2
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5749769",
+  "over05": 1.57,
+  "over05_note": null,
+  "details": {
+   "total": 3.258,
+   "exp_home": 1.262,
+   "exp_away": 1.997,
+   "h_for": 1.425,
+   "h_ag": 2.228,
+   "a_for": 1.765,
+   "a_ag": 1.098,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
