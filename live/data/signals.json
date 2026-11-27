@@ -10608,5 +10608,75 @@
   },
   "telegram": true,
   "resolved": "2026-11-22 22:49"
+ },
+ {
+  "id": "5868564-xg",
+  "type": "xg",
+  "time": "2026-11-27 21:47",
+  "ts": 1795812432,
+  "league": "LaLiga2",
+  "country": "ESP",
+  "leagueId": 140,
+  "home": "Leganés",
+  "away": "Sabadell",
+  "matchId": 5868564,
+  "reason": "xG atteso prematch 2.89 (casa 1.54 + ospite 1.35) ≥ 2.7",
+  "minute": 60,
+  "score_at_signal": "0 - 0",
+  "stats": {
+   "minute": 60,
+   "phase": "60",
+   "finished": false,
+   "score": "0 - 0",
+   "xg": [
+    "0.58",
+    "0.29"
+   ],
+   "poss": [
+    59,
+    41
+   ],
+   "shots": [
+    4,
+    9
+   ],
+   "sot": [
+    1,
+    1
+   ],
+   "big": [
+    3,
+    0
+   ],
+   "box": [
+    9,
+    13
+   ],
+   "corners": [
+    3,
+    8
+   ],
+   "red": [
+    0,
+    0
+   ]
+  },
+  "status": "pending",
+  "final": null,
+  "url": "https://www.fotmob.com/match/5868564",
+  "over05": null,
+  "over05_note": "quota non offerta",
+  "details": {
+   "total": 2.89,
+   "exp_home": 1.545,
+   "exp_away": 1.346,
+   "h_for": 1.894,
+   "h_ag": 1.609,
+   "a_for": 1.083,
+   "a_ag": 1.195,
+   "method": "casa/trasferta",
+   "season": "2026/2027"
+  },
+  "telegram": true
  }
 ]
