@@ -1,5 +1,5 @@
 {
- "last_scan": "2026-11-27 21:32",
+ "last_scan": "2026-11-27 21:35",
  "rules": {
   "window": "60-70'",
   "hist_n": 50,
@@ -16,7 +16,8 @@
  "sent": {
   "6775371": {},
   "5804976": {},
-  "6095779": {}
+  "6095779": {},
+  "5861999": {}
  },
  "checked": {
   "6775371": {
@@ -51,13 +52,24 @@
     "subisce": false,
     "mai00": false
    }
+  },
+  "5861999": {
+   "t": 1795811706,
+   "r": "valutata",
+   "res": {
+    "storico": false,
+    "xg": false,
+    "segna": false,
+    "subisce": false,
+    "mai00": false
+   }
   }
  },
  "live_count": 42,
- "candidates_last": 0,
- "requests_last": 1,
- "last_write": "2026-11-27 21:32",
- "last_write_ts": 1795811523,
+ "candidates_last": 1,
+ "requests_last": 5,
+ "last_write": "2026-11-27 21:35",
+ "last_write_ts": 1795811706,
  "telegram": {
   "last_try": "2026-11-22 22:49",
   "ok": true,
