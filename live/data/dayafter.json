@@ -1,23 +1,23 @@
 {
  "date": "2026-11-29",
- "generated_at": "2026-11-27 14:12",
- "partial": false,
+ "generated_at": "2026-11-27 23:04",
+ "partial": true,
  "stats": {
   "matches_day": 377,
   "candidates": 323,
-  "evaluated": 319,
-  "qualified": 89,
+  "evaluated": 306,
+  "qualified": 87,
   "errors": 0,
-  "not_evaluated_budget": 0,
+  "not_evaluated_budget": 13,
   "by_type": {
-   "storico": 12,
-   "xg": 73,
-   "segna": 12,
+   "storico": 11,
+   "xg": 71,
+   "segna": 11,
    "subisce": 12,
    "mai00": 1
   },
-  "requests": 2046,
-  "seconds": 434
+  "requests": 1892,
+  "seconds": 435
  },
  "skipped_leagues": {
   "USA USL Super League": "femminile"
@@ -1590,48 +1590,6 @@
    }
   },
   {
-   "matchId": 5107676,
-   "kickoff": "15:00",
-   "kickoff_utc": "2026-11-29T14:00:00.000Z",
-   "league": "Allsvenskan",
-   "country": "SWE",
-   "leagueId": 67,
-   "home": "Halmstads BK",
-   "away": "Mjällby",
-   "url": "https://www.fotmob.com/match/5107676",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.10 (casa 1.51 + ospite 1.59) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.1,
-     "exp_home": 1.51,
-     "exp_away": 1.59,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 29,
-     "scored": 16,
-     "conceded": 26,
-     "no00": 29
-    },
-    "away": {
-     "n": 29,
-     "scored": 16,
-     "conceded": 23,
-     "no00": 25
-    }
-   }
-  },
-  {
    "matchId": 5107669,
    "kickoff": "15:00",
    "kickoff_utc": "2026-11-29T14:00:00.000Z",
@@ -1716,6 +1674,48 @@
    }
   },
   {
+   "matchId": 5107676,
+   "kickoff": "15:00",
+   "kickoff_utc": "2026-11-29T14:00:00.000Z",
+   "league": "Allsvenskan",
+   "country": "SWE",
+   "leagueId": 67,
+   "home": "Halmstads BK",
+   "away": "Mjällby",
+   "url": "https://www.fotmob.com/match/5107676",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.10 (casa 1.51 + ospite 1.59) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.1,
+     "exp_home": 1.51,
+     "exp_away": 1.59,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 29,
+     "scored": 16,
+     "conceded": 26,
+     "no00": 29
+    },
+    "away": {
+     "n": 29,
+     "scored": 16,
+     "conceded": 23,
+     "no00": 25
+    }
+   }
+  },
+  {
    "matchId": 5107670,
    "kickoff": "15:00",
    "kickoff_utc": "2026-11-29T14:00:00.000Z",
@@ -1773,6 +1773,48 @@
    }
   },
   {
+   "matchId": 5107671,
+   "kickoff": "15:00",
+   "kickoff_utc": "2026-11-29T14:00:00.000Z",
+   "league": "Allsvenskan",
+   "country": "SWE",
+   "leagueId": 67,
+   "home": "Malmö FF",
+   "away": "Brommapojkarna",
+   "url": "https://www.fotmob.com/match/5107671",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 2.97 (casa 1.53 + ospite 1.44) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 2.97,
+     "exp_home": 1.53,
+     "exp_away": 1.44,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 29,
+     "scored": 23,
+     "conceded": 18,
+     "no00": 26
+    },
+    "away": {
+     "n": 29,
+     "scored": 20,
+     "conceded": 24,
+     "no00": 27
+    }
+   }
+  },
+  {
    "matchId": 5107674,
    "kickoff": "15:00",
    "kickoff_utc": "2026-11-29T14:00:00.000Z",
@@ -1826,48 +1868,6 @@
      "scored": 26,
      "conceded": 17,
      "no00": 29
-    }
-   }
-  },
-  {
-   "matchId": 5107671,
-   "kickoff": "15:00",
-   "kickoff_utc": "2026-11-29T14:00:00.000Z",
-   "league": "Allsvenskan",
-   "country": "SWE",
-   "leagueId": 67,
-   "home": "Malmö FF",
-   "away": "Brommapojkarna",
-   "url": "https://www.fotmob.com/match/5107671",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.97 (casa 1.53 + ospite 1.44) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.97,
-     "exp_home": 1.53,
-     "exp_away": 1.44,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 29,
-     "scored": 23,
-     "conceded": 18,
-     "no00": 26
-    },
-    "away": {
-     "n": 29,
-     "scored": 20,
-     "conceded": 24,
-     "no00": 27
     }
    }
   },
@@ -2886,48 +2886,6 @@
    }
   },
   {
-   "matchId": 5105062,
-   "kickoff": "17:00",
-   "kickoff_utc": "2026-11-29T16:00:00.000Z",
-   "league": "Eliteserien",
-   "country": "NOR",
-   "leagueId": 59,
-   "home": "Sandefjord",
-   "away": "Tromsø",
-   "url": "https://www.fotmob.com/match/5105062",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 3.15 (casa 1.64 + ospite 1.51) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 3.15,
-     "exp_home": 1.64,
-     "exp_away": 1.51,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 27,
-     "scored": 18,
-     "conceded": 21,
-     "no00": 25
-    },
-    "away": {
-     "n": 27,
-     "scored": 19,
-     "conceded": 18,
-     "no00": 24
-    }
-   }
-  },
-  {
    "matchId": 5105060,
    "kickoff": "17:00",
    "kickoff_utc": "2026-11-29T16:00:00.000Z",
@@ -2966,6 +2924,48 @@
      "scored": 20,
      "conceded": 23,
      "no00": 26
+    }
+   }
+  },
+  {
+   "matchId": 5105062,
+   "kickoff": "17:00",
+   "kickoff_utc": "2026-11-29T16:00:00.000Z",
+   "league": "Eliteserien",
+   "country": "NOR",
+   "leagueId": 59,
+   "home": "Sandefjord",
+   "away": "Tromsø",
+   "url": "https://www.fotmob.com/match/5105062",
+   "finished": false,
+   "score": null,
+   "types": [
+    "xg"
+   ],
+   "reasons": {
+    "xg": "xG atteso prematch 3.15 (casa 1.64 + ospite 1.51) ≥ 2.7"
+   },
+   "info": {
+    "xg": {
+     "total": 3.15,
+     "exp_home": 1.64,
+     "exp_away": 1.51,
+     "method": "casa/trasferta",
+     "season": "2026"
+    }
+   },
+   "cur": {
+    "home": {
+     "n": 27,
+     "scored": 18,
+     "conceded": 21,
+     "no00": 25
+    },
+    "away": {
+     "n": 27,
+     "scored": 19,
+     "conceded": 18,
+     "no00": 24
     }
    }
   },
@@ -3992,117 +3992,6 @@
      "scored": 10,
      "conceded": 9,
      "no00": 11
-    }
-   }
-  },
-  {
-   "matchId": 5887687,
-   "kickoff": "21:30",
-   "kickoff_utc": "2026-11-29T20:30:00.000Z",
-   "league": "Liga Portugal",
-   "country": "POR",
-   "leagueId": 61,
-   "home": "FC Porto",
-   "away": "Sporting CP",
-   "url": "https://www.fotmob.com/match/5887687",
-   "finished": false,
-   "score": null,
-   "types": [
-    "storico",
-    "xg",
-    "segna"
-   ],
-   "reasons": {
-    "storico": "Ospite: 64 partite di campionato consecutive senza 0-0 (ultimo 0-0: 22/12/2024 @ Gil Vicente); Casa: 1 0-0 nelle ultime 50 di campionato",
-    "xg": "xG atteso prematch 3.23 (casa 1.75 + ospite 1.47) ≥ 2.7",
-    "segna": "Casa ha segnato almeno 1 gol in 11/11 partite di campionato 2026/27; Ospite in 11/11 (100%) [solo campionato in corso, min. 9 partite per squadra]"
-   },
-   "info": {
-    "storico": {
-     "strong": "away",
-     "streak": 64,
-     "complete": true,
-     "capped": false,
-     "last00": {
-      "date": "22/12/2024",
-      "opp": "Gil Vicente",
-      "home": false
-     },
-     "other_zz": 1,
-     "other_n": 50
-    },
-    "xg": {
-     "total": 3.23,
-     "exp_home": 1.75,
-     "exp_away": 1.47,
-     "method": "casa/trasferta",
-     "season": "2026/2027"
-    },
-    "segna": {
-     "strong": "home",
-     "season": "2026/27",
-     "strong_k": 11,
-     "strong_n": 11,
-     "strong_pct": 100,
-     "other_k": 11,
-     "other_n": 11,
-     "other_pct": 100
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 11,
-     "scored": 11,
-     "conceded": 5,
-     "no00": 11
-    },
-    "away": {
-     "n": 11,
-     "scored": 11,
-     "conceded": 7,
-     "no00": 11
-    }
-   }
-  },
-  {
-   "matchId": 5103730,
-   "kickoff": "22:30",
-   "kickoff_utc": "2026-11-29T21:30:00.000Z",
-   "league": "Série A",
-   "country": "BRA",
-   "leagueId": 268,
-   "home": "Internacional",
-   "away": "RB Bragantino",
-   "url": "https://www.fotmob.com/match/5103730",
-   "finished": false,
-   "score": null,
-   "types": [
-    "xg"
-   ],
-   "reasons": {
-    "xg": "xG atteso prematch 2.99 (casa 1.72 + ospite 1.27) ≥ 2.7"
-   },
-   "info": {
-    "xg": {
-     "total": 2.99,
-     "exp_home": 1.72,
-     "exp_away": 1.27,
-     "method": "casa/trasferta",
-     "season": "2026"
-    }
-   },
-   "cur": {
-    "home": {
-     "n": 36,
-     "scored": 26,
-     "conceded": 28,
-     "no00": 33
-    },
-    "away": {
-     "n": 36,
-     "scored": 28,
-     "conceded": 26,
-     "no00": 35
     }
    }
   }

@@ -1,11 +1,11 @@
 {
  "date": "2026-11-27",
- "generated_at": "2026-11-27 13:57",
+ "generated_at": "2026-11-27 22:49",
  "partial": false,
  "stats": {
-  "matches_day": 150,
-  "candidates": 117,
-  "evaluated": 117,
+  "matches_day": 148,
+  "candidates": 114,
+  "evaluated": 114,
   "qualified": 36,
   "errors": 0,
   "not_evaluated_budget": 0,
@@ -16,8 +16,8 @@
    "subisce": 10,
    "mai00": 0
   },
-  "requests": 844,
-  "seconds": 183
+  "requests": 829,
+  "seconds": 197
  },
  "skipped_leagues": {},
  "rules": {
@@ -128,8 +128,8 @@
    "home": "Geylang International FC",
    "away": "Tanjong Pagar United FC",
    "url": "https://www.fotmob.com/match/5973218",
-   "finished": false,
-   "score": "3-0",
+   "finished": true,
+   "score": "5-0",
    "types": [
     "storico"
    ],
@@ -176,8 +176,8 @@
    "home": "Maccabi Petach Tikva",
    "away": "Hapoel Tel Aviv",
    "url": "https://www.fotmob.com/match/1000015317",
-   "finished": false,
-   "score": "1-0",
+   "finished": true,
+   "score": "2-0",
    "types": [
     "segna",
     "subisce"
@@ -233,8 +233,8 @@
    "home": "Uthai Thani FC",
    "away": "Sisaket United",
    "url": "https://www.fotmob.com/match/1000017789",
-   "finished": false,
-   "score": "1-1",
+   "finished": true,
+   "score": "2-2",
    "types": [
     "xg"
    ],
@@ -275,8 +275,8 @@
    "home": "Al Kholood",
    "away": "Al Khaleej",
    "url": "https://www.fotmob.com/match/1000021474",
-   "finished": false,
-   "score": "1-1",
+   "finished": true,
+   "score": "2-1",
    "types": [
     "xg",
     "subisce"
@@ -329,8 +329,8 @@
    "home": "Esteghlal Khuzestan",
    "away": "Malavan",
    "url": "https://www.fotmob.com/match/1000023187",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-0",
    "types": [
     "subisce"
    ],
@@ -374,8 +374,8 @@
    "home": "Al-Sailiya",
    "away": "Al-Gharafa",
    "url": "https://www.fotmob.com/match/5952310",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-2",
    "types": [
     "subisce"
    ],
@@ -419,8 +419,8 @@
    "home": "Al Qadsiah",
    "away": "Al-Fayha",
    "url": "https://www.fotmob.com/match/1000021476",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-0",
    "types": [
     "xg"
    ],
@@ -461,8 +461,8 @@
    "home": "Kagera Sugar",
    "away": "Dodoma Jiji FC",
    "url": "https://www.fotmob.com/match/5998369",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-0",
    "types": [
     "subisce"
    ],
@@ -506,8 +506,8 @@
    "home": "AEK Larnaca",
    "away": "Apollon Limassol",
    "url": "https://www.fotmob.com/match/5975456",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-0",
    "types": [
     "storico"
    ],
@@ -554,8 +554,8 @@
    "home": "Raków Częstochowa",
    "away": "Piast Gliwice",
    "url": "https://www.fotmob.com/match/5804054",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-2",
    "types": [
     "xg",
     "subisce"
@@ -608,8 +608,8 @@
    "home": "Alanyaspor",
    "away": "Konyaspor",
    "url": "https://www.fotmob.com/match/5904814",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-2",
    "types": [
     "xg"
    ],
@@ -650,8 +650,8 @@
    "home": "Rizespor",
    "away": "Kasımpaşa",
    "url": "https://www.fotmob.com/match/5904815",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "3-2",
    "types": [
     "xg"
    ],
@@ -692,8 +692,8 @@
    "home": "FC Heidenheim",
    "away": "1. FC Nürnberg",
    "url": "https://www.fotmob.com/match/5881738",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "3-1",
    "types": [
     "xg"
    ],
@@ -734,8 +734,8 @@
    "home": "Al Ittihad",
    "away": "Neom SC",
    "url": "https://www.fotmob.com/match/1000021473",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -776,8 +776,8 @@
    "home": "Hvidovre",
    "away": "Kolding IF",
    "url": "https://www.fotmob.com/match/5764478",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-1",
    "types": [
     "segna"
    ],
@@ -821,8 +821,8 @@
    "home": "Hansa Rostock",
    "away": "TSV Havelse",
    "url": "https://www.fotmob.com/match/5905989",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-0",
    "types": [
     "storico",
     "subisce"
@@ -881,8 +881,8 @@
    "home": "BFC Dynamo",
    "away": "RW Erfurt",
    "url": "https://www.fotmob.com/match/5910949",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-2",
    "types": [
     "segna"
    ],
@@ -926,8 +926,8 @@
    "home": "Sønderjyske",
    "away": "Brøndby IF",
    "url": "https://www.fotmob.com/match/5739555",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-1",
    "types": [
     "xg"
    ],
@@ -968,8 +968,8 @@
    "home": "Grazer AK",
    "away": "Altach",
    "url": "https://www.fotmob.com/match/5846031",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-3",
    "types": [
     "xg"
    ],
@@ -1010,8 +1010,8 @@
    "home": "Kriens",
    "away": "Aarau",
    "url": "https://www.fotmob.com/match/5804623",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-2",
    "types": [
     "subisce"
    ],
@@ -1055,8 +1055,8 @@
    "home": "NAC Breda",
    "away": "FC Den Bosch",
    "url": "https://www.fotmob.com/match/5832970",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "6-2",
    "types": [
     "storico"
    ],
@@ -1103,8 +1103,8 @@
    "home": "Francs Borains",
    "away": "Eupen",
    "url": "https://www.fotmob.com/match/1000015518",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-2",
    "types": [
     "xg"
    ],
@@ -1145,8 +1145,8 @@
    "home": "Winterthur",
    "away": "FC Rapperswil-Jona",
    "url": "https://www.fotmob.com/match/5804625",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "6-1",
    "types": [
     "storico"
    ],
@@ -1193,8 +1193,8 @@
    "home": "Werder Bremen",
    "away": "Borussia Mönchengladbach",
    "url": "https://www.fotmob.com/match/5881241",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "3-3",
    "types": [
     "xg"
    ],
@@ -1235,8 +1235,8 @@
    "home": "Górnik Zabrze",
    "away": "Wisła Płock",
    "url": "https://www.fotmob.com/match/5804049",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "3-2",
    "types": [
     "xg"
    ],
@@ -1277,8 +1277,8 @@
    "home": "Leganés",
    "away": "Sabadell",
    "url": "https://www.fotmob.com/match/5868564",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -1319,8 +1319,8 @@
    "home": "OH Leuven",
    "away": "Kortrijk",
    "url": "https://www.fotmob.com/match/5811821",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-2",
    "types": [
     "xg"
    ],
@@ -1361,8 +1361,8 @@
    "home": "Brest",
    "away": "Paris FC",
    "url": "https://www.fotmob.com/match/5803002",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "1-0",
    "types": [
     "xg"
    ],
@@ -1403,8 +1403,8 @@
    "home": "Scunthorpe United",
    "away": "Wealdstone",
    "url": "https://www.fotmob.com/match/5906585",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "4-1",
    "types": [
     "storico"
    ],
@@ -1451,8 +1451,8 @@
    "home": "Cambrian United",
    "away": "Trefelin BGC",
    "url": "https://www.fotmob.com/match/5882162",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "2-1",
    "types": [
     "subisce"
    ],
@@ -1496,8 +1496,8 @@
    "home": "Cardiff Met FC",
    "away": "Airbus UK Broughton",
    "url": "https://www.fotmob.com/match/5882163",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "3-0",
    "types": [
     "storico"
    ],
@@ -1544,8 +1544,8 @@
    "home": "Venezia",
    "away": "Bologna",
    "url": "https://www.fotmob.com/match/5749769",
-   "finished": false,
-   "score": null,
+   "finished": true,
+   "score": "0-0",
    "types": [
     "xg"
    ],
@@ -1587,7 +1587,7 @@
    "away": "Middlesbrough",
    "url": "https://www.fotmob.com/match/5836965",
    "finished": false,
-   "score": null,
+   "score": "2-0",
    "types": [
     "xg"
    ],
@@ -1629,7 +1629,7 @@
    "away": "Racing Santander",
    "url": "https://www.fotmob.com/match/5868146",
    "finished": false,
-   "score": null,
+   "score": "1-2",
    "types": [
     "xg",
     "subisce"
